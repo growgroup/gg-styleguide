@@ -1,0 +1,143 @@
+.c-card {
+  &__block {
+    width: 100%;
+    display:  block;
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(32)!important;
+    }
+    span,
+    small {
+      display: block;
+    }
+    // マージン付きの場合
+    &.is-margin-bottom {
+      margin-bottom: rem-calc(48);
+    }
+  }
+  &__image {
+    transition: all .2s;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    margin-top: rem-calc(12);
+  }
+  &__title {
+    font-weight: 700;
+    font-size: rem-calc(20);
+    letter-spacing: 0.1em;
+    margin: 0;
+    @include breakpoint(small only) {
+      font-size: rem-calc(20)*0.9;
+    }
+  }
+  &__text {
+    margin-top: rem-calc(12);
+    font-size: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(6);
+    }
+  }
+  // ナンバー入りカード
+  &.is-number-left {
+    .c-card__block {
+      position: relative;
+      padding-top: rem-calc(52);
+    }
+    .c-card__number {
+      text-align: center;
+      color: $color-primary;
+      @include webfont-bold();
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      left: 8px;
+      small {
+        @include webfont-bold();
+        font-size: rem-calc(18);
+        letter-spacing: 0.1em;
+      }
+      span {
+        font-size: rem-calc(60);
+        letter-spacing: 0;
+      }
+    }
+    .c-card__text {
+      font-size: $font-base-size;
+      @include breakpoint(small only) {
+        font-size: $font-base-size*0.85;
+      }
+    }
+  }
+  // リンクカード
+  &.is-link {
+    //*hover
+    .c-card__block {
+      &:hover {
+        opacity: 1;
+        .c-card__image {
+          opacity: 0.7;
+        }
+      }
+    }
+    //*アイコン
+    .c-card__title {
+      position: relative;
+      padding-left: rem-calc(20);
+      @include breakpoint(small only) {
+        padding-left: rem-calc(16);
+      }
+      &:before {
+        content: "\f105";
+        font-family: "FontAwesome";
+        color: $color-primary;
+        font-weight: 400;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  //オーバーレイ
+  &.is-overlay {
+    .c-card__image {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-black,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .c-card__items {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 99;
+      text-align: center;
+      color: $color-white;
+      width: 100%;
+    }
+    .c-card__items-title {
+      font-size: rem-calc(20);
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+    .c-card__items-subtitle {
+      font-size: rem-calc(14);
+      @include webfont-bold();
+      letter-spacing: 0.1em;
+      margin-top: rem-calc(4);
+    }
+  }
+}

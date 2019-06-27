@@ -1,0 +1,51 @@
+.c-step {
+  &__inner {
+    display: flex;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__block {
+    width: 283/897*100%;
+    margin-right: 24/897*100%;
+    @include breakpoint(small only) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  &__head {
+    position: relative;
+    padding-top: 32px;
+  }
+  &__number {
+    @include webfont();
+    color: $color-primary;
+    font-size: 65px;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    line-height: 1;
+    @media (max-width: 900px) {
+      font-size: 56px;
+    }
+  }
+  &__image {
+    margin-bottom: 10px;
+    @include breakpoint(small only) {
+      margin-bottom: 12px;
+    }
+  }
+  &__title {
+    @extend .heading;
+    @extend .heading.is-sm;
+    margin-top: 0;
+    margin-bottom: 6px;
+    @include breakpoint(small only) {
+      margin-bottom: 4px;
+    }
+  }
+}

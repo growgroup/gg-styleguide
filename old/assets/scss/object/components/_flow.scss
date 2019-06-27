@@ -1,0 +1,115 @@
+.c-flow {
+  &__heading {
+    @extend .heading;
+    @extend .heading.is-lg;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 48px;
+    @include breakpoint(small only) {
+      margin-bottom: 24px;
+    }
+  }
+  &__block {
+    margin: 0 64px 24px;
+    padding-bottom: 48px;
+    position: relative;
+    @include breakpoint(small only) {
+      margin: 0 0 24px;
+      padding-bottom: 40px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 18px 15px 0 15px;
+      border-color: $color-primary transparent transparent transparent;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -15px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: rgba($color-primary,0.1);
+    @include breakpoint(small only) {
+      background-color: transparent;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+  }
+  &__label {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 140px;
+    @include webfont();
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+    padding: 12px 6px 9px;
+    @include breakpoint(small only) {
+      width: 120px;
+      padding: 5px 6px 4px;
+    }
+    span {
+      font-size: 18px;
+      display: block;
+      padding-right: 10px;
+      @include breakpoint(small only) {
+        font-size: 14px;
+        padding-right: 6px;
+      }
+    }
+    small {
+      font-size: 28px;
+      display: block;
+      @include breakpoint(small only) {
+        font-size: 24px;
+      }
+    }
+  }
+  &__title {
+    width: calc(100% - 140px);
+    font-size: 22px;
+    font-weight: 500;
+    padding: 0px 16px;
+    @include breakpoint(small only) {
+      width: calc(100% - 120px);
+      font-size: 18px;
+      padding: 0px 12px;
+      font-weight: 600;
+    }
+  }
+  &__content {
+    display: flex;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__text {
+    width: calc(100% - 276px - 32px);
+    @include breakpoint(small only) {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+  }
+  &__image {
+    width: 276px;
+    margin-left: auto;
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+}

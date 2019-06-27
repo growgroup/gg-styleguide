@@ -1,0 +1,19 @@
+# editorconfig ファイル
+# 各IDE, テキストエディタに用意してあるパッケージ、プラグインをインストールしてください
+# editorconfig.org
+
+root = true
+
+## すべての拡張子
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+## MarkDown, Pug は行末のスペースを削除しない
+[*.md,*.pug]
+trim_trailing_whitespace = false

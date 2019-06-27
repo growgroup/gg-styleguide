@@ -1,0 +1,146 @@
+.c-offer-simple {
+  background: #3786c7 url("../images/ptn-dots.png") repeat;
+  @extend %clearfix;
+  overflow: hidden;
+  color: $color-white;
+  &__left {
+    width: rem-calc(340);
+    height: 100%;
+    float: left;
+    background: $color-primary;
+    padding-top: rem-calc(64);
+    padding-bottom: rem-calc(60);
+    text-align: center;
+    position: relative;
+    @include breakpoint(small only) {
+      width: calc(100% + 32px);
+      margin-left: rem-calc(-16);
+      float: none;
+      padding-top: rem-calc(60);
+      padding-bottom: rem-calc(56);
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: rem-calc(1000);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: rem-calc(-1000);
+      background-color: $color-primary;
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: rem-calc(115);
+      height: 200%;
+      position: absolute;
+      top: -100px;
+      right: rem-calc(-45);
+      background-color: $color-primary;
+      transform: rotate(25deg);
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    z-index: 999;
+    margin-bottom: rem-calc(10);
+    strong {
+      @include webfont();
+      font-size : 32px;
+      line-height : 20px;
+      letter-spacing : 6px;
+      display: block;
+      padding-bottom: rem-calc(12);
+      &:before,
+      &:after {
+        content: "-";
+        padding: 0 14px;
+
+      }
+    }
+    small {
+      font-size: rem-calc(16);
+      letter-spacing: 1px;
+      display: block;
+      font-weight: bold;
+      @include breakpoint(small only) {
+        font-size: rem-calc(14);
+      }
+    }
+  }
+  &__text {
+    color: $color-white;
+    font-size: rem-calc(14);
+    letter-spacing: 0;
+    position: relative;
+    z-index: 999;
+  }
+  &__right {
+    margin-left: rem-calc(340 + 115);
+    padding-top: rem-calc(70);
+    @extend %clearfix;
+    @include breakpoint(small only) {
+      margin-left: 0;
+      padding-top: rem-calc(40);
+      text-align: center;
+      padding-bottom: rem-calc(56);
+    }
+  }
+  &__tel {
+    text-align: center;
+    float: left;
+    @include breakpoint(small only) {
+      float: none;
+    }
+    &__title {
+      font-weight: bold;
+      margin-bottom: rem-calc(7);
+      @include breakpoint(small only) {
+        font-size: rem-calc(16);
+      }
+    }
+    &__number {
+      a,
+      div {
+        color: $color-white;
+        text-decoration: none;
+        @include webfont();
+        font-size: rem-calc(32);
+        letter-spacing: 2px;
+        span {
+          font-size: rem-calc(24);
+        }
+      }
+    }
+    &__sub {
+      font-size: rem-calc(14);
+      letter-spacing: 2px;
+      line-height: 1.2;
+      @include breakpoint(small only) {
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+  &__mail {
+    float: right;
+    text-align: center;
+    @include breakpoint(small only) {
+      float: none;
+      padding-top: rem-calc(40);
+    }
+    &__title {
+      font-weight: bold;
+      margin-bottom: rem-calc(18);
+      @include breakpoint(small only) {
+        font-size: rem-calc(16);
+      }
+    }
+  }
+}

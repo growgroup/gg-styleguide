@@ -1,0 +1,63 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "history" // ページのID
+  - current.title = "沿革" // タイトル
+  - current.description = "これは沿革の説明文です" // 説明文
+  - current.bodyClass = "history" // body に付与するクラス
+  - current.depth = 3 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","沿 革","COMPANY")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span: +a("/") 企業情報
+      span >
+      span 沿革
+
+block body
+  section.l-main
+    .l-section.is-lg
+      .l-container
+        .row
+          .large-10.is-push-lg-1.small-12
+            h2.heading.is-lg.is-primary.u-text-center.is-bottom 株式会社サンプルの歩み
+            table.c-table.u-mbs.is-top.is-md
+              tr
+                th 1986年 1月
+                td 株式会社サンプルを創立
+              tr
+                th 1988年 1月
+                td システム開発事業の立ち上げ
+              tr
+                th 1996年 1月
+                td プロジェクトマネジメント事業の立ち上げ
+              tr
+                th 1997年 1月
+                td 年商20億円突破
+              tr
+                th 2001年 1月
+                td 社員研修事業の立ち上げ
+              tr
+                th 2003年 1月
+                td インフラ部門を設置
+              tr
+                th 2005年 1月
+                td 従業員100名に
+
+    .l-section.is-bg.is-md
+      .l-container
+        +c.other-content
+          +e.inner
+            +a("/company/greeting/").c-other-content__block
+              +bgimg("img-card-01.jpg").c-other-content__image
+              +e.text 代表あいさつ
+            +a("/company/profile/").c-other-content__block
+              +bgimg("img-card-02.jpg").c-other-content__image
+              +e.text 会社概要
+            +a("/recruit/").c-other-content__block
+              +bgimg("img-card-04.jpg").c-other-content__image
+              +e.text 採用情報
+  +c_relation()
+  +c_offer()

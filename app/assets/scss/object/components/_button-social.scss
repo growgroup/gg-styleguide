@@ -1,0 +1,28 @@
+// ソーシャルシェア
+//
+// markup:
+// <div class="c-social-share">
+//     <a class="c-social-share__facebook" href="#facebook">Facebook</a>
+//     <a class="c-social-share__twitter" href="#twitter">Twitter</a>
+//     <a class="c-social-share__googleplus" href="#twitter">Google+</a>
+// </div>
+//
+// Styleguide 2.21.0
+
+.c-button-social {
+  > a{
+    @extend .c-button;
+    // Facebook
+    &.c-social-share__facebook {
+      background: #3b5998;
+    }
+    // Twitter
+    &.c-social-share__twitter {
+      background: #00aced;
+    }
+    // Google+
+    &.c-social-share__googleplus {
+      background: #d34836;
+    }
+  }
+}

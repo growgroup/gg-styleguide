@@ -1,0 +1,25 @@
+// ポジション
+//
+// .u-f-left: 左にフロート
+//
+// .u-f-right: 右にフロート
+//
+// .u-f-none: フロートなし
+//
+//
+// markup:
+//
+// Styleguide 4.4.0
+
+
+.u-f-left {
+  float: left !important;
+}
+
+.u-f-right {
+  float: right !important;
+}
+
+.u-f-none {
+  float: none !important;
+}

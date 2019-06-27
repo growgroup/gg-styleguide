@@ -1,0 +1,36 @@
+header.l-header-simple
+  .l-container
+    .l-header-simple__upper
+      h1.l-header-simple__heading ここに説明文章が入ります。ここに説明文章が入ります。ここに説明文章が入ります。
+      ul.l-header-simple__menu
+        li: +a("/sitemap/") サイトマップ
+        li: +a("/access/") アクセス
+    .l-header-simple__content
+        +a("/").l-header-simple__logo
+          +img("logo.png","株式会社サンプル")
+        .l-header-simple__contact
+          .l-header-simple__tel.u-hidden-sm
+            <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
+            <small>平日 9:00〜18:00 (土日祝除く)</small>
+          .l-header-simple__button
+            +a("/contact/").c-button.is-xxxs.is-white.is-round.u-hidden-sm <i class="fa fa-envelope-o" aria-hidden="true"></i>お問い合わせ
+//- グローバルナビゲーション
+nav.l-global-nav-simple
+  .l-container
+    ul
+      each item in nav("global_nav")
+        li
+          +a(item.url)!= item.text
+          .l-global-nav-simple__submenu
+            ul
+              li: a(href="#") 会社概要
+              li: a(href="#") 会社概要
+              li: a(href="#") 会社概要
+              li: a(href="#") 会社概要
+              li: a(href="#") 会社概要
+
+          if item.children
+            ul
+            each child_item in item.children
+              li
+                +a(child_item.url)!= child_item.text

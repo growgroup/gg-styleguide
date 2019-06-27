@@ -1,0 +1,25 @@
+//- スマホメニュー
+mixin c_slidebar
+  //-> スマホメニューのボタン
+  a(href="#").c-slidebar-button.js-slidebar-button
+    span.c-slidebar-button__line
+      span
+      span
+      span
+    span.c-slidebar-button__text.is-open MENU
+    span.c-slidebar-button__text.is-close 閉じる
+  .c-slidebar-menu.js-slidebar-menu.is-top-to-bottom
+    ul
+      li: +a("#") メニュー1
+      li: +a("#") メニュー2
+      li.c-slidebar-menu__parent.js-accordion
+        span(data-accordion-title="menu-title") メニュー3
+        ul.c-slidebar-menu__children(data-accordion-content="menu-text")
+          li: +a("#") メニュー3-1
+          li: +a("#") メニュー3-2
+          li: +a("#") メニュー3-3
+      li: +a("#") メニュー4
+      li: +a("#") メニュー5
+      li: +a("#") メニュー6
+  //- スマホメニュー用のコンテナ
+  .c-slidebar-container.js-slidebar-container.is-top-to-bottom

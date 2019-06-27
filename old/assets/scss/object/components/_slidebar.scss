@@ -1,0 +1,262 @@
+// スライドメニュー
+//
+// スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
+//
+// markup:
+//  <!-- メニュー -->
+// <div class="slidebar-menu js-slidebar-menu">
+//   <ul>
+//    <li class="is-current">
+//        <a href="#">サンプル1</a>
+//   </li>
+//  </ul>
+// </div>
+//  <!-- ボタン -->
+//  <a href="#" class="slidebar-button js-slidebar-button">
+//    <i class="fa fa-bars"></i>
+//  </a>
+//  <!-- 全体を包むラッパー -->
+//  <div class="slidebar-container js-slidebar-container">
+//     hogehoge
+//  </div>
+//
+// Styleguide 4.5
+
+$slidebar-menu-bg: $color-primary !default;
+$slidebar-menu-width: 75% !default;
+$slidebar-menu-eaasing: all ease-in-out .2s !default;
+$slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
+
+@media (min-width: 951px) {
+  .c-slidebar-button {
+    display: none !important;
+  }
+  .c-slidebar-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 950px) {
+
+  // トリガーとなるボタン
+  .c-slidebar-button {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    text-align: center;
+    font-size: rem-calc(12);
+    z-index: 100000;
+    text-decoration: none;
+    padding: 10px 4px 4px;
+    background-color: $color-white;
+    line-height: 1;
+    color: $color-primary;
+    width: 55px;
+    height: 55px;
+    // ボーダー
+    &__line {
+      > span {
+        display: block;
+        height: 4px;
+        background: $color-primary;
+        width: 100%;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        transition: all ease .2s;
+        &:last-child {
+          margin-bottom: 3px;
+        }
+      }
+    }
+    // メニューテキスト
+    &__text {
+      transition: all ease .2s;
+      font-size: 9px;
+      letter-spacing: 0.4px;
+      @include webfont();
+    }
+  }
+
+  // メニュー自体
+  .c-slidebar-menu {
+    height: calc(100vh - 55px)!important;
+    position: fixed;
+    background-color: $color-white;
+    z-index: 9980;
+    width: $slidebar-menu-width;
+    -webkit-transform: translateX(100%);
+    transform: translate3d(100%, 0px, 0px);
+    right: 0;
+    -webkit-transition: $slidebar-menu-eaasing;
+    transition: $slidebar-menu-eaasing;
+    overflow-x: scroll;
+    top: 0;
+    -webkit-overflow-scrolling: touch;
+    &.is-active {
+      height: calc(100% - 65px)!important;
+    }
+    // 上から下へ
+    &.is-top-to-bottom {
+      -webkit-transform: translateX(0%);
+      -webkit-transform: translateY(-100%);
+      transform: translate3d(0px, -100%, 0px);
+      height: auto;
+      width: 100%;
+      opacity: 0;
+    }
+
+    &__children {
+      display: none;
+      background-color: $font-base-color!important;
+      li {
+        border-bottom: none!important;
+        &:last-child {
+          a {
+            padding-bottom: 10px!important;
+          }
+        }
+        a {
+          color: $color-white!important;
+          padding-top: 10px!important;
+          padding-bottom: 4px!important;
+          padding-left: 50px!important;
+          font-weight: 500!important;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__parent {
+      a,
+      span {
+        &:before {
+          content: "\f107"!important;
+        }
+      }
+      &.is-open {
+        a,
+        span {
+          &:before {
+            content: "\f106"!important;
+          }
+        }
+      }
+    }
+
+    ul {
+      background: $color-white;
+      li {
+        border-bottom: 1px solid $border-base-color;
+        a,
+        span {
+          font-size: rem-calc(15);
+          display: block;
+          padding-left: 28px;
+          padding-top: 11px;
+          padding-bottom: 11px;
+          padding-right: 16px;
+          text-decoration: none;
+          color: $font-base-color;
+          font-weight: 600;
+          &:before {
+            content: "\f105";
+            font-family: "FontAwesome";
+            padding-right: 12px;
+            color: $color-primary;
+          }
+          &.is-contact {
+            background-color: $color-accent-orange;
+            border-bottom: none;
+            color: $color-white;
+            &:before {
+              color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // メニュー以外をラップする要素
+  // メニュー以外をラップする要素
+  .c-slidebar-container {
+    height: 100%;
+    -webkit-transition: $slidebar-menu-eaasing;
+    transition: $slidebar-menu-eaasing;
+    &:after {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: $slidebar-container-bg;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: $slidebar-menu-eaasing;
+      transition: $slidebar-menu-eaasing;
+      display: none;
+      z-index: 999;
+    }
+  }
+
+  // 有効時
+  .is-slidebar-active {
+    cursor: pointer;
+    .c-slidebar-button {
+      &__line {
+        > span {
+          &:nth-child(1){
+            transform: rotate(-45deg) translateY(11px) translateX(-8px);
+          }
+          &:nth-child(2){
+            transform: rotate(45deg) translateY(1px) translateX(5px);
+          }
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
+      &__text {
+        display: none;
+      }
+    }
+    .c-slidebar-container {
+      -webkit-transform: translateX(-$slidebar-menu-width);
+      transform: translate3d(-$slidebar-menu-width, 0px, 0px);
+      &:after {
+        content: "";
+        opacity: 1;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: $slidebar-container-bg;
+        display: block;
+        top: 0;
+        left: 0;
+      }
+
+      // 上から下の場合
+      &.is-top-to-bottom {
+        -webkit-transform: translateX(0px);
+        transform: translate3d(0px, 0px, 0px);
+        &:after {
+          top: 55px;
+        }
+      }
+    }
+
+    .c-slidebar-menu {
+      -webkit-transform: translateX(0);
+      transform: translate3d(0, 0, 0);
+      &.is-top-to-bottom {
+        -webkit-transform: translateY(55px);
+        transform: translate3d(0, 55px, 0);
+        opacity: 1;
+      }
+    }
+  }
+}

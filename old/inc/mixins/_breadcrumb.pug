@@ -1,0 +1,16 @@
+//- パンくずコンポーネント
+//- Use case
+//- +breadcrumb()
+mixin breadcrumb(navs)
+  .c-breadcrumb
+    if block
+      block
+    else if typeof navs === "object"
+      ul
+        each li in navs
+          if typeof li === "object"
+            li
+              a(href=li.link)= li.text
+          else
+            li= li
+

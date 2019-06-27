@@ -1,0 +1,44 @@
+// スライダー
+
+.c-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.c-slider-outer {
+  cursor: pointer;
+  > * {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+
+  }
+}
+
+.c-slider__prev,
+.c-slider__next {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1000px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding-top: 8px;
+  line-height: 1;
+  color: #fff;
+}
+
+.c-slider__next {
+  right: 10%;
+}
+
+.c-slider__prev {
+  left: 10%;
+}
+
+.c-slider .is-transition {
+  transition: all ease .4s;
+}

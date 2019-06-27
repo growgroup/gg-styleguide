@@ -1,0 +1,118 @@
+// お知らせブロック
+// -> 通常
+div.u-mbs.is-bottom
+  +c.news
+    .row
+      .large-3.small-12
+        +e.head
+          h2.c-news__title.c-heading.is-xlg
+            span NEWS
+            small お知らせ
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+      .large-9.small-12
+        +e.content
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.text お知らせの投稿タイトルがここに入ります。
+// -> ワンカラム
+div.u-mbs.is-bottom
+  +c.news.is-onecolumn
+    .row
+      .large-10.is-push-lg-1.small-12
+        h2.c-news__title.c-heading.is-xlg
+          span NEWS
+          small お知らせ
+        +e.content
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+        +e.button: +a("#").c-button.is-sm 一覧を見る
+// -> 2行お知らせ
+div.u-mbs.is-bottom
+  .row
+    .large-6.small-12
+      +c.news-twoline
+        +e.head
+          h2.c-news-twoline__title.c-heading.is-xlg
+            span NEWS
+            small お知らせ
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+        +e.content
+          +a("#").c-news-twoline__block
+            +e.date 2018.10.10
+            +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news-twoline__block
+            +e.date 2018.10.10
+            +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news-twoline__block
+            +e.date 2018.10.10
+            +e.text お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news-twoline__block
+            +e.date 2018.10.10
+            +e.text お知らせの投稿タイトルがここに入ります。
+    .large-6.small-12
+      +c.news-twoline
+        +e.head
+          h2.c-news-twoline__title.c-heading.is-xlg
+            span BLOG
+            small ブログ
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+        +e.content
+          +a("#").c-news-twoline__block.is-image-display
+            +e.image: +img("img-blog-01.jpg")
+            +e.item
+              +e.date 2018.10.10
+              +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news-twoline__block.is-image-display
+            +e.image: +img("img-blog-01.jpg")
+            +e.item
+              +e.date 2018.10.10
+              +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+          +a("#").c-news-twoline__block.is-image-display
+            +e.image: +img("img-blog-01.jpg")
+            +e.item
+              +e.date 2018.10.10
+              +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+
+// -> 一行お知らせ
+div.u-mbs.is-bottom
+  .row
+    .large-10.is-push-lg-1.small-12
+      +c.news-oneline
+        h2.c-news-oneline__title NEWS
+        +e.content
+          +e.label.c-label カテゴリ
+          +e.date 2018.10.10
+          +a("#").c-news-oneline__text お知らせの投稿タイトルがここに入ります。
+

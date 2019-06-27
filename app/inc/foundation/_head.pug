@@ -1,0 +1,60 @@
+include /inc/mixins/_mixins.pug
+doctype html
+html(lang="ja")
+  head
+    block config
+      include /inc/_settings.pug
+
+    meta(charset='UTF-8')
+    //- サイトのタイトル
+    block title
+      if current.id == "top"
+        title= config.site.title
+      else
+        title= (current.title + '｜' + config.site.title)
+    //- メタ情報
+    block meta
+      -
+        var desc = false
+        if (current.description)
+          desc = current.description
+        else if ( getPagesValue(current.id, "description") )
+          desc = getPagesValue(current.id, "description")
+        else
+          desc = config.site.description
+      meta(name='description', content=desc)
+      meta(name="viewport", content=config.site.viewport)
+
+    //- OGP
+    block meta_ogp
+      meta(property="og:locale", content=config.site.ogp.locale)
+      meta(property="og:type",content=config.site.ogp.type)
+      meta(property="og:title", content=getPagesValue(current.id, "title"))
+      meta(property="og:description", content=getPagesValue(id, "description") )
+      meta(property="og:url", content=config.site.ogp.url + "/" + current.id + "/")
+      meta(property="og:site_name", content=config.site.ogp.site_name)
+      meta(property="og:image", content=config.site.ogp.image)
+
+    //- リンクファイル
+    block link
+      +link("/assets/images/favicon.ico")(rel='icon')
+      +link("/assets/images/favicon.ico")(rel='shortcut icon')
+      +link("/assets/images/web-clipicon.png")(rel='apple-touch-icon')
+
+    //- スタイルシート
+    block stylesheet
+      +link("/assets/css/style.css")(rel="stylesheet")
+      +link("/assets/css/app.css")(rel="stylesheet")
+
+    //- ヘッダーに組み込むスクリプト
+    block head_script
+      |  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  body(class!=current.bodyClass)
+    //- スマホメニュー
+    +c_slidebar
+    block layout
+
+    //- フッターに組み込むスクリプト
+    block footer_scripts
+      +script('/assets/js/app.js')

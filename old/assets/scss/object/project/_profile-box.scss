@@ -1,0 +1,49 @@
+// プロフィールボックス
+//
+// markup:
+// <div class="p-profile-box">
+//     <div class="p-profile-box__thumbnail">
+//         <img src="https://placehold.jp/150x150.png">
+//     </div>
+//     <div class="p-profile-box__content">
+//         <h2 class="p-profile-box__authorname">
+//             田中 太郎
+//         </h2>
+//         <p class="p-profile-box__detail">
+//             ここに著者紹介テキストが入ります。ここに著者紹介テキストが入ります。ここに著者紹介テキストが入ります。ここに著者紹介テキストが入ります。ここに著者紹介テキストが入ります。
+//         </p>
+//         <div class="p-profile-box__social-share c-social-share">
+//             <a class="c-social-share__facebook" href="#facebook">Facebook</a>
+//             <a class="c-social-share__twitter" href="#twitter">Twitter</a>
+//             <a class="c-social-share__googleplus" href="#twitter">Google+</a>
+//         </div>
+//     </div>
+// </div>
+//
+// Styleguide 3.1.0
+
+.p-profile-box {
+
+  border: 1px solid $color-tertiary;
+  padding: $margin-md;
+
+  @extend %clearfix;
+
+  &__thumbnail {
+    float: left;
+    text-align: center;
+    margin-right: $margin-md;
+  }
+
+  &__content {
+    //@include span(9);
+  }
+
+  &__authorname {
+    margin-top: 0;
+    font-size: rem-calc(18);
+    line-height: rem-calc(18);
+    margin-bottom: $margin-base;
+  }
+
+}

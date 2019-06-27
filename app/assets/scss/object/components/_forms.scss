@@ -1,0 +1,135 @@
+.c-forms {
+  &__block {
+    display: flex;
+    border-bottom: 1px solid $border-base-color;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__title {
+    min-width: rem-calc(258);
+    background-color: rgba($font-base-color,0.05);
+    padding: rem-calc(16) rem-calc(32);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0;
+    @include breakpoint(small only) {
+      width: 100%;
+      background-color: transparent;
+      padding: rem-calc(12) 0 0;
+      font-weight: 700;
+    }
+    &.is-vertical-top {
+      align-items: flex-start;
+      .c-forms__label {
+        margin-top: rem-calc(3);
+      }
+    }
+  }
+  //ラベル
+  &__label {
+    display: block;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: rem-calc(12);
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: rem-calc(1) rem-calc(10);
+    margin-left: rem-calc(16);
+    min-width: rem-calc(48);
+  }
+  &__content {
+    width: 100%;
+    padding: rem-calc(16) rem-calc(32);
+    @include breakpoint(small only) {
+      padding: rem-calc(12) 0;
+    }
+    &.is-vertical-middle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  //インプット
+  &__input {
+    //
+    &.is-sm {
+      width: rem-calc(180);
+    }
+  }
+  //ラジオボタン,チェックボックス
+  &__radio,
+  &__checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    label {
+      display: flex;
+      align-items: center;
+      margin-right: rem-calc(64);
+      @include breakpoint(small only) {
+        margin-right: rem-calc(48);
+        margin-bottom: rem-calc(8);
+      }
+    }
+    input {
+      margin-right: rem-calc(8);
+      margin-top: rem-calc(2);
+    }
+  }
+  &__checkbox {
+    input {
+      margin-right: rem-calc(6);
+      margin-top: rem-calc(4);
+    }
+  }
+  &__privacy {
+    a {
+      font-weight: 400;
+      text-decoration: underline;
+      color: $font-base-color;
+    }
+  }
+  &__flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: rem-calc(16);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      min-width: rem-calc(120);
+      @include breakpoint(small only) {
+        min-width: 100%;
+        margin-bottom: rem-calc(8);
+      }
+    }
+  }
+  // 住所自動入力ボタン
+  &__button {
+    max-width: rem-calc(150);
+    border: 1px solid $font-base-color;
+    outline: none;
+    background-color: $color-white;
+    padding: rem-calc(3) rem-calc(12);
+    display: block;
+    text-align: center;
+    margin-left: rem-calc(16);
+    @include breakpoint(small only) {
+      padding: rem-calc(9) rem-calc(12);
+    }
+  }
+  // 送信ボタン
+  &__submit {
+    text-align: center;
+    margin-top: rem-calc(56);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(32);
+    }
+    //横並び
+    &.is-two-columns {
+    }
+  }
+}

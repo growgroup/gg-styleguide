@@ -1,0 +1,7 @@
+//- メッセージコンポーネント
+mixin message(type,text)
+  .c-message(class!="c-message is-" + type)
+    if text
+      p= text
+    if block
+      block

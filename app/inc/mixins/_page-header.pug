@@ -1,0 +1,7 @@
+//- ページヘッダー
+mixin c_page_header(image,title,subtitle)
+  +c.page-header
+    +e.image: +img(image)
+    +e.inner
+      h1.c-page-header__title=title
+      +e.subtitle=subtitle

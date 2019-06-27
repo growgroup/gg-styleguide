@@ -1,0 +1,85 @@
+// カプセルナビ
+//
+// markup:
+// <div class="c-capsule-nav">
+//    <ul>
+//         <li><a href="#" class="c-button is-outline is-expand">カプセルナビ1</a><li>
+//         <li><a href="#" class="c-button is-outline is-expand">カプセルナビ2</a><li>
+//         <li><a href="#" class="c-button is-outline is-expand">カプセルナビ3</a><li>
+//         <li><a href="#" class="c-button is-outline is-expand">カプセルナビ4</a><li>
+//    </ul>
+// </div>
+//
+// Styleguide 2.24.0
+
+.c-capsule-nav {
+ ul {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-bottom: 64px;
+   @media (max-width: 900px) {
+     justify-content: flex-start;
+     margin-bottom: 40px;
+   }
+   li {
+     width: 252/896*100%;
+     margin-right: 24/896*100%;
+     &:last-child {
+       margin-right: 0;
+     }
+     @media (max-width: 900px) {
+       width: calc(50% - 8px);
+       margin-right: 16px;
+       margin-bottom: 16px;
+       &:nth-child(2n) {
+         margin-right: 0;
+       }
+     }
+     @include breakpoint(small only) {
+       width: 100%;
+       margin-right: 0 !important;
+       margin-bottom: 8px;
+     }
+     a {
+       display: block;
+       background-color: $color-white;
+       color: $font-base-color;
+       text-decoration: none;
+       text-align: center;
+       border: 1px solid #95989A;
+       border-radius: 4px;
+       padding: 18px 16px;
+       font-size: 16px;
+       position: relative;
+       transition: all .3s;
+       font-weight: 500;
+       @include breakpoint(small only) {
+         font-size: 15px;
+         padding: 14px 16px;
+         font-weight: 500;
+       }
+       &:after {
+         content: "\f107";
+         font-family: "FontAwesome";
+         position: absolute;
+         top: 50%;
+         margin-top: -12px;
+         right: 20px;
+         @include breakpoint(small only) {
+           position: absolute;
+           right: 24px;
+           top: 50%;
+           margin-top: -12px;
+         }
+       }
+       &:hover {
+         opacity: 1;
+         color: $color-white;
+         background-color: $color-primary;
+         border-color: $color-primary;
+       }
+     }
+   }
+ }
+}

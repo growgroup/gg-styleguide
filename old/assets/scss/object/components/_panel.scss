@@ -1,0 +1,72 @@
+// パネル
+//
+// パネルボックス
+//
+// markup:
+// <div class="c-panel">
+//     <h1 class="c-panel__title">パネルタイトル</h1>
+//     <div class="c-panel__content">
+//         <p>パネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツ</p>
+//     </div>
+// </div>
+// <div class="c-panel is-danger">
+//     <h1 class="c-panel__title">パネルタイトル</h1>
+//     <div class="c-panel__content">
+//         <p>パネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツ</p>
+//     </div>
+// </div>
+// <div class="c-panel is-warning">
+//     <h1 class="c-panel__title">パネルタイトル</h1>
+//     <div class="c-panel__content">
+//         <p>パネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツ</p>
+//     </div>
+// </div>
+// <div class="c-panel is-info">
+//     <h1 class="c-panel__title">パネルタイトル</h1>
+//     <div class="c-panel__content">
+//         <p>パネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツ</p>
+//     </div>
+// </div>
+// <div class="c-panel is-success">
+//     <h1 class="c-panel__title">パネルタイトル</h1>
+//     <div class="c-panel__content">
+//         <p>パネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツパネルコンテンツ</p>
+//     </div>
+// </div>
+//
+// Styleguide 2.9.0
+
+.c-panel {
+
+  // タイトル
+  &__title {
+    background: $color-primary;
+    color: $color-white;
+    padding: $margin-md $margin-lg;
+    margin-bottom: 0;
+    font-size: rem-calc(18);
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  // コンテンツ
+  &__content {
+    padding: $margin-md $margin-lg;
+    border: 1px solid $color-tertiary;
+    border-radius: 0 0 $border-radius $border-radius;
+    background: $color-white;
+  }
+
+  &.is-danger .c-panel__title {
+    background: $color-state-danger;
+  }
+  &.is-warning .c-panel__title {
+    background: $color-state-warning;
+  }
+  &.is-success .c-panel__title {
+    background: $color-state-success;
+  }
+  &.is-info .c-panel__title {
+    background: $color-state-info;
+  }
+
+}

@@ -1,0 +1,95 @@
+// ナビゲーション
+// -> カプセルナビゲーション
+div.u-mbs.is-bottom
+  +c.capsul-nav
+    .row
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg.is-current テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg.is-current テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+      .large-3.small-12
+        +a("#").c-capsul-nav__block.c-button.is-white.is-lg テキストテキスト
+
+// -> ページ内リンク
+div.u-mbs.is-bottom
+  +c.anchor-nav
+    .row
+      .large-3.small-6
+        +a("#").c-anchor-nav__block ページ内リンク
+      .large-3.small-6
+        +a("#").c-anchor-nav__block ページ内リンク
+      .large-3.small-6
+        +a("#").c-anchor-nav__block ページ内リンク
+      .large-3.small-6
+        +a("#").c-anchor-nav__block ページ内リンク
+
+// -> ページネーション
+div.u-mbs.is-bottom
+  +c.pagination
+    ul
+      li: +a("#").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+      li: span.is-current 1
+      li: +a("#") 2
+      li: +a("#") 3
+      li: +a("#") 4
+      li: +a("#") 5
+      li: +a("#").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+// -> ポストナビ
+div.u-mbs.is-bottom
+  +c.post-navs
+    ul
+      li: +a("#").c-post-navs__prev.c-button.is-sm.is-arrow-left 前の記事へ
+      li: +a("#").c-post-navs__archive.c-button.is-sm <i class="fa fa-th" aria-hidden="true"></i>記事一覧へ
+      li: +a("#").c-post-navs__next.c-button.is-sm 次の記事へ
+
+// -> メニューリスト
+div.u-mbs.is-bottom
+  .row
+    .large-4.small-12
+      +c.menu-list
+        +e.head ページ_2カラム
+        ul
+          li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+    .large-4.small-12
+      +c.menu-list
+        +e.head ページ_2カラム
+        ul
+          li
+            +a("#") カテゴリ
+            ul
+              li: +a("#") カテゴリ
+              li: +a("#") カテゴリ
+              li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+          li: +a("#") カテゴリ
+    .large-4.small-12
+      +c.menu-list
+        +e.head ページ_2カラム
+        +e.banners.js-accordion
+          +a("#").c-menu-list__block(data-accordion-title="accordion-title") コンテンツタイトル
+          ul.c-menu-list__submenu(data-accordion-content="accordion-text")
+            li: +a("#") カテゴリ
+            li: +a("#") カテゴリ
+            li: +a("#") カテゴリ
+        +e.banners
+          +a("#").c-menu-list__block コンテンツタイトルコンテンツタイトルコンテンツタイトル
+        +e.banners
+          +a("#").c-menu-list__block コンテンツタイトル
+        +e.banners
+          +a("#").c-menu-list__block コンテンツタイトル
+

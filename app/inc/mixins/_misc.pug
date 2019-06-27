@@ -1,0 +1,64 @@
+//- img タグ
+mixin img(file,alt)
+  -
+    if ( typeof alt === "undefined" ){
+    var alt = ""
+    }
+  img(src=config.rootpath + "/assets/images/" + file, alt!=alt)&attributes(attributes)
+
+//- 背景画像
+mixin bgimg(file)
+  div(style="background-image: url(" + config.rootpath + "/assets/images/" + file + ")")&attributes(attributes)
+    block
+
+//- ループ
+//- +loop(10)
+//-   p ここにループするコンテンツ
+mixin loop(count)
+  - var n = 0
+  while n < count
+    block
+    - n++
+
+//- ページネーション
+mixin c_pagination()
+  +c.pagination
+    ul
+      li: +a("#").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+      li: span.is-current 1
+      li: +a("#") 2
+      li: +a("#") 3
+      li: +a("#") 4
+      li: +a("#") 5
+      li: +a("#").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+
+//- 投稿ページナビゲーション
+mixin c_post_nav()
+  nav.c-post-navs
+    ul
+      li.c-post-navs__prev: +a("#") 前の記事へ
+      li.c-post-navs__next: +a("#") 次の記事へ
+
+//- table row
+mixin tr(th, td)
+  tr&attributes(attributes)
+    th!= th
+    td!= td
+
+mixin c_relation()
+  +c.relation
+    .l-container
+      +e.title 関連するコンテンツ
+      +e.button
+        ul
+          li: +a("/aboutus/") 私たちについて
+          li: +a("/company/greeting/") 代表あいさつ
+          li: +a("/company/profile/") 会社概要
+          li: +a("/company/history/") 沿革
+
+mixin link(href)
+  link(href=config.rootpath + href)&attributes(attributes)
+
+mixin script(src)
+  script(src=config.rootpath + src)&attributes(attributes)

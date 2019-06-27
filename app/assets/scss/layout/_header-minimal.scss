@@ -1,0 +1,187 @@
+/*
+---
+name: HeaderMinimal
+category: Layout
+---
+# ミニマルヘッダー
+```types.html
+<header class="l-header-minimal">
+      <div class="l-header-minimal__inner">
+        <div class="l-header-minimal__text">テキストテキストテキストテキストテキスト</div><a class="l-header-minimal__tel" href="tel: 00-0000-0000"><span><i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000</span><small>受付時間 / 平日00：00～00：00</small></a>
+      </div>
+      <div class="l-header-minimal__content">
+        <div class="l-header-minimal__heading"><a href="/"><img src="/dist/assets/images/logo.png" alt="株式会社サンプル"></a>
+        </div>
+        <nav class="l-header-minimal__nav">
+          <ul>
+            <li><a href="/onecolumn/">1COLUMN</a>
+            </li>
+            <li><a href="/twocolumns/">2COLUMN</a>
+            </li>
+            <li><a href="/format/">FORMAT</a>
+            </li>
+            <li><a href="/archive-onecolumn/">ARCHIVE1</a>
+            </li>
+            <li><a href="/archive-twocolumns/">ARCHIVE2</a>
+            </li>
+          </ul>
+        </nav><a class="l-header-minimal__button c-button is-sm" href="/contact/"><i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ</a>
+      </div>
+    </header>
+```
+*/
+.l-header-minimal {
+  background-color: $color-white;
+  width: 100%;
+  z-index: 9990;
+  padding: rem-calc(16) rem-calc(32) rem-calc(24);
+  @include breakpoint(medium down) {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
+    height: rem-calc(55);
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    @include breakpoint(medium down) {
+      flex-wrap: wrap;
+    }
+  }
+  &__text {
+    font-size: rem-calc(12);
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin: 0;
+    font-weight: 400;
+    @include breakpoint(medium down) {
+      font-size: rem-calc(10);
+      letter-spacing: 0;
+      display: none;
+    }
+  }
+  &__tel {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-left: rem-calc(20);
+    margin-left: auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    //電話番号
+    span {
+      color: $color-primary;
+      @include webfont();
+      font-size: rem-calc(24);
+      letter-spacing: 0.02em;
+      margin-right: rem-calc(16);
+    }
+    //アイコン
+    i {
+      margin-right: rem-calc(6);
+    }
+    //受付時間
+    small {
+      font-size: rem-calc(13);
+      letter-spacing: 0;
+    }
+  }
+  &__heading {
+    margin: 0;
+    width: rem-calc(175);
+    flex-shrink: 0;
+    @include breakpoint(medium down) {
+      width: rem-calc(148);
+    }
+    a,
+    img {
+      display: block;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__nav {
+    margin-left: auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      li {
+        margin-left: rem-calc(12);
+        margin-right: 32px;
+        a {
+          text-decoration: none;
+          color: $font-base-color;
+          font-size: rem-calc(14);
+          position: relative;
+          padding-bottom: rem-calc(36);
+          transition: all .3s ease;
+          //装飾
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: rem-calc(2);
+            background-color: $color-primary;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all .3s ease;
+          }
+          //*hover
+          &:hover {
+            opacity: 1;
+            color: $color-primary;
+            &:after {
+              width: 100%;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    //*矢印削除
+    max-width: rem-calc(196)!important;
+    margin-left: rem-calc(24);
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+    //*アイコン
+    i {
+      font-size: rem-calc(16);
+      padding-right: rem-calc(8);
+    }
+  }
+}
+
+// スマホメニューopen時
+.is-slidebar-active {
+  .l-header-minimal {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+

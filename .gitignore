@@ -1,0 +1,74 @@
+### PhpStorm ###
+
+*.iml
+.idea/
+.ipr
+*.iws
+
+### OSX ###
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### WordPress ###
+
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+/readme.html
+/license.txt
+*.sql
+
+### Node ###
+
+# Logs
+logs
+*.log
+npm-debug.log*
+node_modules
+.npm
+.node_repl_history
+
+### Sass ###
+
+.sass-cache/
+*.css.map
+
+### Bower ###
+
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+### App ###
+dist/
+styleguide/
+base/
+tests/results/
+

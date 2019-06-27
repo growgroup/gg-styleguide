@@ -1,0 +1,13 @@
+// 2カラム サイドバー
+$layout-sidebar-width: rem-calc(320) !default;
+$layout-sidebar-float: left !default;
+
+.l-aside {
+  width: 100%;
+  max-width: rem-calc(293);
+  margin-left: auto;
+  @include breakpoint(medium down) {
+    width: 100%;
+    max-width: 100%;
+  }
+}

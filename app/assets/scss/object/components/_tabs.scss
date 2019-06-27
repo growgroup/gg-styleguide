@@ -1,0 +1,111 @@
+// タブ
+//
+//
+// markup:
+// <div class="c-tabs">
+//     <ul class="c-tabs__navs">
+//         <li><a href="#" class="is-active">リスト1</a></li>
+//         <li><a href="#">リスト2</a></li>
+//         <li><a href="#">リスト3</a></li>
+//         <li><a href="#">リスト4</a></li>
+//     </ul>
+//     <div class="c-tabs__content">
+//         <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+//     </div>
+// </div>
+//
+// Styleguide 2.19.0
+
+.c-tabs {
+  // タブ
+  &__navs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: rem-calc(32);
+    li {
+      width: 50%;
+      max-width: rem-calc(276);
+      margin-bottom: rem-calc(8);
+      border: 2px solid $color-primary;
+      @include breakpoint(small only) {
+        border-width: 1px;
+      }
+      a {
+        background-color: $color-white;
+        color: $color-primary;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        padding: rem-calc(10) rem-calc(24);
+        position: relative;
+        transition: all .3s;
+        @include breakpoint(small only) {
+          padding: rem-calc(6) rem-calc(24);
+        }
+        &:after {
+          content: "\f107";
+          font-family: "FontAwesome";
+          position: absolute;
+          font-size: rem-calc(24);
+          font-weight: 400;
+          right: rem-calc(16);
+          top: calc(50% + 1px);
+          transform: translateY(-50%);
+          transition: all .3s;
+          @include breakpoint(small only) {
+            font-size: rem-calc(24)*0.8;
+          }
+        }
+        // *hover
+        &:hover {
+          background-color: lighten($color-primary, 45);
+          opacity: 1;
+        }
+        // *選択時
+        &.is-active {
+          background-color: $color-primary;
+          color: $color-white;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  // コンテンツ
+  &__content {
+    display: none;
+    &.is-active {
+      display: block;
+    }
+  }
+  // インデックスタブ
+  &.is-index {
+    .c-tabs {
+      &__navs {
+        li {
+          width: inherit;
+          min-width: rem-calc(160);
+          border-width: 1px;
+          border-bottom: none;
+          margin: 0 rem-calc(8) 0 0;
+          @include breakpoint(small only) {
+            width: inherit;
+            min-width: inherit;
+            border: 1px solid $color-primary;
+            margin-bottom: rem-calc(8);
+          }
+          a {
+            font-size: rem-calc(14);
+            letter-spacing: 0.1em;
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "company" // ページのID
+  - current.title = "企業情報" // タイトル
+  - current.description = "これは企業情報の説明文です" // 説明文
+  - current.bodyClass = "company" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","企業情報","COMPANY")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span 企業情報
+
+block body
+  section.l-main
+    .l-section.is-md
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 株式会社サンプルは、IT黎明期から活動を開始しました。
+        p.u-text-center 今から30年前。ITという言葉がまだ一般的になる前から、私たち株式会社サンプルは創業をはじめました。<br>創業から変わらぬ代表の思いから、この会社の歴史をご紹介します。
+    .l-section.is-gray.is-md
+      .l-container
+        +c.card.is-three-column
+          +e.inner
+            +a("/company/greeting/").c-card__block
+              +bgimg("img-card-01.jpg").c-card__image
+              +e.title 代表あいさつ
+            +a("/company/profile/").c-card__block
+              +bgimg("img-card-02.jpg").c-card__image
+              +e.title 会社概要
+            +a("/company/history/").c-card__block
+              +bgimg("img-card-03.jpg").c-card__image
+              +e.title 沿革
+    .l-section.is-lg
+      .l-container
+        +c.bnr-lg
+          +a("/recruit/").c-bnr-lg__block
+            +bgimg("bnr-recruit.jpg").c-bnr-lg__image
+            +e.text 採用情報はこちら
+
+  +c_offer()

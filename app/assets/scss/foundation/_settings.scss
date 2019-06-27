@@ -1,0 +1,129 @@
+// 変数設定
+//
+// プロジェクトのCSSで利用する変数を定義
+
+// # 1. Color
+$color-white: #fff !default; // 白
+$color-black: #000 !default; // 黒
+
+// # プライマリ
+$color-primary: #65A04D !default; // プライマリカラー
+$color-primary-dark: darken($color-primary, 10) !default; // 濃いプライマリカラー
+$color-primary-light: lighten($color-primary, 10) !default; // 薄いプライマリカラー
+
+// # セカンダリー
+$color-secondary: #F9F7F0 !default; // セカンダリカラー
+$color-secondary-dark: darken($color-secondary, 10) !default; // 濃いセカンダリカラー
+$color-secondary-light: lighten($color-secondary, 10) !default; // 薄いセカンダリカラー
+
+// # グレイスケールカラー
+$color-tertiary: #CCCCCC !default; // ターシャリカラー
+$color-tertiary-light: darken($color-tertiary, 10) !default; // 薄いグレイスケールカラー
+$color-tertiary-dark: lighten($color-tertiary, 10) !default; // 濃いグレイスケールカラー
+
+// # アクセント
+$color-accent: #E04B3A !default; // ターシャリカラー
+$color-accent-green: #65AC29 !default; // ターシャリカラー
+$color-accent-orange: #E6A54D !default; // ターシャリカラー
+$color-accent-light: darken($color-tertiary, 10) !default; // 薄いアクセントカラー
+$color-accent-dark: lighten($color-tertiary, 10) !default; // 濃いアクセントカラー
+
+// # 灰色
+$color-gray-dark: #252525 !default; // 濃い灰色
+$color-gray-darken: #999999 !default; // やや濃い灰色
+$color-gray: #cccccc !default; // 灰色
+$color-gray-lighten: #d8d8d8 !default; // やや薄い灰色
+$color-gray-light: #f2f2f2 !default; // 薄い灰色
+
+// # 役割別
+$color-state-danger: #cc2919 !default; // 危険
+$color-state-warning: #cc9e12 !default; // 警告
+$color-state-info: #378da3 !default; // お知らせ
+$color-state-success: #13a83a !default; // 成功
+
+// # 2. Grid
+
+$grid-row-width: 1140px !default; // グリッドの幅
+$grid-column-count: 12 !default; // グリッド数
+$grid-column-responsive-gutter: (// カラムとカラムの間隔
+        small: 16px, // モバイル
+        medium: 36px, // タブレット以上
+);
+
+// # 3. font
+$font-base-size: 16px !default; // body のフォントサイズ
+$font-base-line-hight: 1.75 !default; // body のフォントサイズ
+$font-base-letter-spacing: 0.1em !default; // body のフォントサイズ
+$font-base-color: #333 !default; // body のフォントカラー
+$font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
+$font-base-weight: normal !default; // フォント幅
+$font-base-style: normal !default; // フォントスタイル
+
+$font-heading-sizes: (// 見出しのフォントサイズ
+        small: (
+                'h1': 24px,
+                'h2': 20px,
+                'h3': 19px,
+                'h4': 18px,
+                'h5': 17px,
+                'h6': 16px,
+        ),
+
+        medium: (
+                'h1': 48px,
+                'h2': 40px,
+                'h3': 31px,
+                'h4': 25px,
+                'h5': 20px,
+                'h6': 16px,
+        ),
+);
+
+$font-heading-color: #000 !default; // 見出しカラー
+
+$font-large-size: $font-base-size*1.4 !default; // <strong> フォントサイズ
+$font-large-color: $color-gray !default; // <strong> フォントサイズ
+
+$font-small-size: $font-base-size*0.8 !default; // <small> フォントサイズ
+$font-small-color: $color-gray !default; // <small> フォントサイズ
+
+// # 4. Margin
+
+$margin-base: 8px !default;
+$margin-xlg: $margin-base*12.5 !default;
+$margin-lg: $margin-base*8 !default;
+$margin-md: $margin-base*4 !default;
+$margin-sm: $margin-base*2 !default;
+$margin-xs: $margin-base !default;
+
+// # 5. border
+
+$border-base-color: #CCC;
+$border-base-width: 1px !default;
+
+$border-radius: 3px !default;
+$border-radius-xlg: $border-radius*4 !default;
+$border-radius-lg: $border-radius*3 !default;
+$border-radius-md: $border-radius*2 !default;
+$border-radius-sm: $border-radius/2 !default;
+$border-radius-xs: $border-radius/3 !default;
+
+// # 6. breakpoint
+
+$breakpoints: (
+        small: 0,
+        medium: 750px,
+        large: 950px,
+        xlarge: 1140px,
+        xxlarge: 1440px,
+) !default;
+
+$breakpoint-classes: (small medium large) !default;
+
+// # 7. layouts
+
+$layout-sidebar-width: rem-calc(320);
+$layout-sidebar-float: left;
+
+$layout-main-width: calc(100% - rem-calc(320));
+$layout-main-float: left;

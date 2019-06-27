@@ -1,0 +1,40 @@
+//- filename: footer.jade
+//- description: フッター
+
+footer.l-footer
+  .l-container
+    .l-footer__menu
+      .l-footer__block
+        ul.l-footer__menulist
+          li: +a("/") ホーム
+          li: +a("/aboutus/") 私たちについて
+          li: +a("/case/") 導入事例
+      .l-footer__block
+        .l-footer__menutitle <span>企業情報</span>
+        ul.l-footer__menulist.is-sub
+          li: +a("/company/greeting/") 代表あいさつ
+          li: +a("/company/profile/") 会社概要
+          li: +a("/company/history/") 沿革
+          li: +a("/recruit/") 採用情報
+      .l-footer__block
+        .l-footer__menutitle <span>事業紹介</span>
+        ul.l-footer__menulist.is-sub
+          li: +a("/service/traning/") 社員研修事業
+          li: +a("/service/project-management/") プロジェクトマネジメント事業
+          li: +a("/service/system/") システム開発事業
+      .l-footer__block
+        .l-footer__menutitle <span>お知らせ</span>
+        ul.l-footer__menulist.is-sub
+          li: +a("/news/") 更新情報
+          li: +a("/news/") ニュースリリース
+      .l-footer__block
+        ul.l-footer__menulist
+          li: +a("/blog/") 企業ブログ
+          li: +a("/media/") 企業メディア
+          li: +a("/faq/") よくあるご質問
+          li: +a("/voice/") お客様の声
+          li: +a("/contact/") お問い合わせ
+    .l-footer__content
+      +a("/").l-footer__logo: +img("logo-white.png","ロゴ")
+      address.l-footer__address 〒464-0850 <br>愛知県名古屋市千種区今池3丁目12-20 KAビル6F<br>TEL：052-753-6413 / FAX：052-753-6414
+      small.l-footer__copyright ＠2019 サンプル Co.Ltd.

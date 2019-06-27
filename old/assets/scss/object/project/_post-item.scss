@@ -1,0 +1,113 @@
+// 投稿一覧 : 一行
+//
+// markup:
+// <div class="p-post-list">
+//     <div class="p-post-item is-line">
+//         <div class="p-post-item__thumbnail">
+//             <img src="https://placehold.jp/300x200.png">
+//         </div>
+//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
+//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
+//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
+//     </div>
+//     <div class="p-post-item is-line">
+//         <div class="p-post-item__thumbnail">
+//             <img src="https://placehold.jp/300x200.png">
+//         </div>
+//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
+//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
+//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
+//     </div>
+//     <div class="p-post-item is-line">
+//         <div class="p-post-item__thumbnail">
+//             <img src="https://placehold.jp/300x200.png">
+//         </div>
+//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
+//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
+//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
+//     </div>
+// </div>
+//
+// Styleguide 3.2.2
+// 1行スタイル
+.p-post-item.is-line {
+  border-bottom: 1px solid $border-base-color;
+  @extend %clearfix;
+  padding: 14px 40px 14px 0;
+  display: flex;
+  margin-bottom: 0;
+  position: relative;
+  text-decoration: none;
+  @include breakpoint(small only) {
+    padding: 14px 24px 18px 0;
+    .p-post-item__sup {
+      overflow: hidden;
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+  &:before {
+    content: "\f105";
+    font-family: "FontAwesome";
+    color: $color-primary;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    margin-top: rem-calc(-13);
+    @include breakpoint(small only) {
+      top: auto;
+      bottom: 14px;
+      margin-top: 0;
+    }
+  }
+
+  // サムネイル
+  .p-post-item__thumbnail {
+    float: left;
+    margin-right: $margin-md;
+    margin-bottom: 0;
+    > img {
+      max-height: rem-calc(24);
+      width: auto;
+    }
+  }
+
+  // カテゴリ、日付
+  .p-post-item__date {
+    @include webfont();
+    margin-right: rem-calc(24);
+  }
+  .p-post-item__date,
+  .p-post-item__category {
+    float: left;
+    color: $font-base-color;
+  }
+
+  // タイトル
+  .p-post-item__title {
+    color: $font-base-color;
+    margin-bottom: 0;
+    font-size: rem-calc(16);
+    margin-top: rem-calc(3);
+    margin-right: rem-calc(24);
+    margin-left: rem-calc(24);
+    font-weight: normal;
+    position: relative;
+    line-height: 1.7;
+    max-width: 60%;
+    @include breakpoint(small only) {
+      float: none;
+      padding-top: rem-calc(12);
+      margin-left: 0;
+    }
+  }
+
+  &:hover {
+    .p-post-item__title {
+      text-decoration: underline;
+    }
+  }
+}

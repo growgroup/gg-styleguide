@@ -1,0 +1,74 @@
+//- コンポーネント
+mixin c(el)
+  -
+    var temp_class = ""
+    var target_component_class_key = 0
+    if (typeof el === "undefined") {
+      var el = "div"
+    }
+    if ( typeof attributes.class !== "undefined" ){
+
+      var classlist = attributes.class.split(" ")
+      if ( isUpperCase(classlist[0]) ){
+        var el = classlist[0].toLowerCase()
+        delete classlist[0]
+        target_component_class_key = 1
+      }
+      temp_class = classlist[target_component_class_key]
+      delete classlist[target_component_class_key]
+      attributes.class =  classlist.join(" ")
+      cssrules.addComponent(temp_class)
+      locals.locals.addComponentFile(temp_class)
+    }
+  #{el}(class!="c-" + temp_class )&attributes(attributes)
+    block
+
+
+//- 要素
+mixin e(el,component_name,history)
+  -
+    var temp_element = ""
+    var temp_component = false
+    var before_component_name = false
+    var target_component_class_key = 0
+    if (typeof el === "undefined") {
+      var el = "div"
+    }
+    if ( typeof attributes.class !== "undefined" ){
+      var classlist = attributes.class.split(" ")
+      if ( isUpperCase(classlist[0]) ){
+        var el = classlist[0].toLowerCase()
+        delete classlist[0]
+        target_component_class_key = 1
+      }
+
+      temp_element = classlist[target_component_class_key]
+      delete classlist[target_component_class_key]
+      attributes.class =  classlist.join(" ")
+      cssrules.element = temp_element
+    }
+    if ( typeof component_name !== "undefined" ){
+      // リセットの場合
+      if ( component_name === "reset" ){
+        if ( typeof history === "undefined" ){
+          var history = 1
+        }
+        temp_component = cssrules.getComponent(history)
+      } else {
+        // コンポーネント名が指定されている場合
+        before_component_name = cssrules.currentComponent
+        cssrules.addComponent(component_name)
+        temp_component = component_name;
+      }
+    }
+
+    if ( ! temp_component ){
+      temp_component = cssrules.currentComponent
+    }
+  #{el}(class!="c-" + temp_component + "__" + temp_element)&attributes(attributes)
+    block
+  -
+    if ( typeof before_component_name !== "undefined" && before_component_name ){
+      cssrules.addComponent(before_component_name)
+    }
+

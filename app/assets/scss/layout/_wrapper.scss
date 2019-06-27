@@ -1,0 +1,12 @@
+
+.l-wrapper {
+  padding-bottom: rem-calc(80);
+  padding-top: rem-calc(64);
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  @include breakpoint(small only) {
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(40);
+  }
+}

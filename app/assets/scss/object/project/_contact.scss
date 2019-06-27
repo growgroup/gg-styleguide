@@ -1,0 +1,29 @@
+.p-contact {
+  max-width: 680px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  background: #fff;
+  padding-top: rem-calc(8);
+  padding-bottom: rem-calc(32);
+  box-shadow: 0 4px 24px 4px rgba(0, 0, 0, 0.1);
+
+  &__title {
+
+  }
+
+  &__button {
+    margin-top: 24px;
+  }
+
+  &__tel {
+    font-size: rem-calc(24);
+    letter-spacing: 2px;
+    margin-top: 24px;
+    i.fa {
+      margin-right: 8px;
+    }
+  }
+
+}

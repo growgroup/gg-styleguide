@@ -1,0 +1,31 @@
+.c-card-lg {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__block {
+    width: 33.3333%;
+  }
+  &__content {
+    padding: rem-calc(20);
+    @include breakpoint(small only) {
+      padding: rem-calc(12);
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: rem-calc(20);
+    letter-spacing: 0.1em;
+    margin: 0;
+    @include breakpoint(small only) {
+      font-size: rem-calc(20)*0.9;
+    }
+  }
+  &__text {
+    margin-top: rem-calc(12);
+    font-size: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(6);
+    }
+  }
+}

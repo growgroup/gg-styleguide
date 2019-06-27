@@ -1,0 +1,73 @@
+// 投稿詳細ナビゲーション
+//
+// 投稿詳細ページの記事ナビゲーション
+//
+// markup:
+// <nav class="c-post-navs">
+//     <ul>
+//         <li class="c-post-navs__prev"><a href="#">前の記事へ</a></li>
+//         <li class="c-post-navs__next"><a href="#">次の記事へ</a></li>
+//     </ul>
+// </nav>
+//
+// Styleguide 2.16.0
+.c-post-navs {
+  margin-top: rem-calc(64);
+  @include breakpoint(small only) {
+    margin-top: rem-calc(32);
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__prev,
+  &__next {
+    a {
+      border: 1px solid $color-primary;
+      background-color: $color-primary;
+      color: $color-white;
+      display: block;
+      text-decoration: none;
+      padding: 6px 6px 6px 22px;
+      min-width: rem-calc(160);
+      text-align: center;
+      position: relative;
+      transition: all .3s;
+      @include breakpoint(small only) {
+        min-width: rem-calc(140);
+        padding-left: 19px;
+      }
+      &:before {
+        content: "\f104";
+        font-family: "FontAwesome";
+        position: absolute;
+        left: 12px;
+        @include breakpoint(small only) {
+          left: 10px;
+        }
+      }
+      &:hover {
+        background: $color-white;
+        color: $color-primary;
+      }
+    }
+  }
+  &__next {
+    a {
+      padding-left: 0;
+      padding-right: 22px;
+      @include breakpoint(small only) {
+        padding-right: 19px;
+      }
+      &:before {
+        content: "\f105";
+        left: auto;
+        right: 12px;
+        @include breakpoint(small only) {
+          right: 10px;
+        }
+      }
+    }
+  }
+}

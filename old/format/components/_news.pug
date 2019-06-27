@@ -1,0 +1,92 @@
+.u-format-group
+  .u-format-group__title お知らせ
+  .u-format-group__content
+    .u-format
+      .u-format__title 2カラム / お知らせ + ブログパターン
+      .u-format__content
+        +c.top-post-content
+          +e.inner.l-container
+            //- お知らせ
+            +e.block.is-news
+              +e.block-title
+                +e.subtitle お知らせ
+                +e.title NEWS
+              +a("/news/page/").c-top-post-content__post
+                +e.post-title
+                  +e.date 2018.04.06
+                +e.text お知らせの投稿タイトルがここに入ります。
+              +a("/news/page/").c-top-post-content__post
+                +e.post-title
+                  +e.date 2018.04.06
+                +e.text お知らせの投稿タイトルがここに入ります。
+              +a("/news/page/").c-top-post-content__post
+                +e.post-title
+                  +e.date 2018.04.06
+                +e.text お知らせの投稿タイトルがここに入ります。
+              +a("/news/page/").c-top-post-content__post.is-last
+                +e.post-title
+                  +e.date 2018.04.06
+                +e.text お知らせの投稿タイトルがここに入ります。
+              +e.button
+                +a("/news/").c-button.is-xs.is-box.is-expand <span>More</span>
+            // ブログ
+            +e.block.is-blog
+              +e.block-title
+                +e.subtitle コンテンツブログ
+                +e.title BLOG
+              +a("/internship-use-blog/page/").c-top-post-content__post
+                +e.image-content
+                  +img("img-top-post-01.jpg","img").top-post-content__image
+                +e.text-content
+                  +e.post-title
+                    +e.date 2018.04.06
+                  +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+
+              +a("/internship-use-blog/page/").c-top-post-content__post
+                +e.image-content
+                  +img("img-top-post-02.jpg","img").top-post-content__image
+                +e.text-content
+                  +e.post-title
+                    +e.date 2018.04.06
+                  +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+
+              +a("/internship-use-blog/page/").c-top-post-content__post.is-last
+                +e.image-content
+                  +img("img-top-post-03.jpg","img").top-post-content__image
+                +e.text-content
+                  +e.post-title
+                    +e.date 2018.04.06
+                  +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+              +e.button
+                +a("/internship-use-blog/").c-button.is-xs.is-box.is-expand <span>More</span>
+    .u-format
+      .u-format__title シンプル / お知らせ
+      .u-format__content
+        .l-section.is-sp-bottom-lg
+          .l-container
+            .row
+              .large-3.small-12
+                +c.news-head
+                  h2.heading.is-lg.is-bottom お知らせ
+                  +e.button.u-mbs.is-top.is-xxs
+                    +a("/news/").c-button.is-sm.is-box.is-outline <span>一覧を見る</span>
+              .large-9.small-12
+                .p-post-list
+                  a.p-post-item.is-line(href='/news/single/')
+                    .p-post-item__sup
+                      .p-post-item__date 2018.01.01
+                      .p-post-item__category
+                        span.c-label 研　修
+                    h3.p-post-item__title お知らせのタイトルがここに入ります。
+                  a.p-post-item.is-line(href='/news/single/')
+                    .p-post-item__sup
+                      .p-post-item__date 2018.01.01
+                      .p-post-item__category
+                        span.c-label 採　用
+                    h3.p-post-item__title お知らせのタイトルがここに入ります。
+                  a.p-post-item.is-line(href='/news/single/')
+                    .p-post-item__sup
+                      .p-post-item__date 2018.01.01
+                      .p-post-item__category
+                        span.c-label お知らせ
+                    h3.p-post-item__title お知らせのタイトルがここに入ります。お知らせのタイトルがここに入ります。お知らせのタイトルがここに入ります。

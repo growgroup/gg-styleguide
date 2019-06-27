@@ -1,0 +1,62 @@
+// ヒーローブロック
+// -> 通常
+div.u-mbs.is-bottom
+  +c.hero-block
+    +e.block
+      +e.image: +img("img-aboutus-01.jpg")
+      .l-container
+        +e.content
+          +e.title.c-heading.is-sm.is-bottom タイトルがここに入ります。
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+
+    +e.block
+      +e.image: +img("img-aboutus-01.jpg")
+      .l-container
+        +e.content
+          +e.title.c-heading.is-sm.is-bottom タイトルがここに入ります。
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+// -> skew
+div.u-mbs.is-bottom
+  +c.hero-block.is-skew
+    +e.block
+      +e.image: +img("img-aboutus-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            +e.head
+              small 01
+              span TITLE
+            +e.title.c-heading.is-md.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキスト
+    +e.block
+      +e.image: +img("img-aboutus-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            +e.head
+              small 02
+              span TITLE
+            +e.title.c-heading.is-md.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキスト
+
+// -> 枡形
+div.u-mbs.is-bottom
+  +c.hero-block-square
+    +e.block
+      +e.image: +img("img-hero-block-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +e.button: +a("#").c-button.is-sm ボタンテキスト
+    +e.block
+      +e.image: +img("img-hero-block-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +e.button: +a("#").c-button.is-sm ボタンテキスト

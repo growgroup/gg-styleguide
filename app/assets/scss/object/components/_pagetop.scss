@@ -1,0 +1,15 @@
+.c-pagetop {
+  &__button {
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    font-size: 44px;
+    line-height: 0.7;
+    font-weight: 600;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    background-color: $color-primary;
+    text-align: center;
+    transition: all .3s;
+  }
+}

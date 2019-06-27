@@ -1,0 +1,44 @@
+// 管理画面 TinyMce用css
+// 
+// ヴィジュアルエディタ画面調整用css
+//
+
+#tinymce {
+  //min-width: $grid-row-width !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: rem-calc(12);
+  padding-bottom: rem-calc(12);
+  font-family: $font-base-family !important;
+  overflow: scroll;
+  @include breakpoint(small only) {
+    min-width: inherit !important;
+    width: 100%;
+  }
+
+  //投稿画面
+  &.post-type-post {
+    //max-width: rem-calc(736);
+    @extend .l-post-content;
+  }
+
+  //固定ページ
+  &.post-type-page {
+    //max-width: rem-calc(1080);
+    @extend .l-post-content;
+  }
+
+  //ACF tinyMce
+  &.mce-content-body.acf_content {
+    //max-width: rem-calc(1080);
+    @extend .l-post-content;
+  }
+
+  //アコーディオン 開放
+  .js-accordion {
+    .c-accordion,
+    .c-faq__text {
+      display: block !important;
+    }
+  }
+}

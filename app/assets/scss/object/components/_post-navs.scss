@@ -1,0 +1,65 @@
+// 投稿詳細ナビゲーション
+//
+// 投稿詳細ページの記事ナビゲーション
+//
+// markup:
+// <nav class="c-post-navs">
+//     <ul>
+//         <li class="c-post-navs__prev"><a href="#">前の記事へ</a></li>
+//         <li class="c-post-navs__next"><a href="#">次の記事へ</a></li>
+//     </ul>
+// </nav>
+//
+// Styleguide 2.16.0
+.c-post-navs {
+  margin: rem-calc(64) 0;
+  @include breakpoint(small only) {
+    margin: rem-calc(32) 0;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      width: rem-calc(155);
+      @include breakpoint(small only) {
+        width: calc(33% - 8px);
+      }
+      a {
+        display: block;
+        @include breakpoint(small only) {
+          font-size: rem-calc(12)!important;
+          letter-spacing: 0!important;
+        }
+      }
+    }
+  }
+  &__prev {
+    @include breakpoint(small only) {
+      padding-left: rem-calc(20)!important;
+      padding-right: rem-calc(8)!important;
+    }
+  }
+  &__archive {
+    display: inline-flex;
+    align-items: center;
+    &:after {
+      display: none;
+    }
+    i {
+      margin-right: rem-calc(12);
+      font-size: rem-calc(18);
+      margin-top: rem-calc(2);
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+  }
+  &__next {
+    margin-left: auto;
+    @include breakpoint(small only) {
+      padding-right: rem-calc(20)!important;
+      padding-left: rem-calc(8)!important;
+    }
+  }
+}

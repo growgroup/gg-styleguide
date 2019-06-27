@@ -1,0 +1,81 @@
+.c-news-twoline {
+  @include breakpoint(small only) {
+    position: relative;
+    padding-bottom: rem-calc(72);
+  }
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0!important;
+    small {
+      color: $font-base-color;
+      margin-left: rem-calc(16);
+    }
+  }
+  &__button {
+    margin-left: auto;
+    width: inherit;
+    @include breakpoint(small only) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .c-button {
+      width: rem-calc(155)!important;
+      @include breakpoint(small only) {
+        width: 100%!important;
+        max-width: rem-calc(225)!important;
+      }
+    }
+  }
+  &__block {
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    border-bottom: 1px solid #E2E2E2;
+    display: block;
+    padding: rem-calc(20) 0;
+    font-size: rem-calc(14);
+    letter-spacing: 0.05em;
+    @include breakpoint(small only) {
+      padding: rem-calc(16) 0;
+    }
+    //*画像有りver
+    &.is-image-display {
+      display: flex;
+      align-items: flex-start;
+    }
+    .c-news-twoline__image {
+      flex-shrink: 0;
+      margin-right: rem-calc(24);
+      width: rem-calc(120);
+      @include breakpoint(small only) {
+        margin-right: rem-calc(16);
+        width: rem-calc(96);
+      }
+    }
+    .c-news-twoline__date {
+      line-height: 1;
+      margin-bottom: rem-calc(10);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(6);
+      }
+    }
+  }
+  &__date {
+    color: $color-primary;
+    @include webfont();
+    margin-bottom: rem-calc(2);
+  }
+}

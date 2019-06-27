@@ -1,0 +1,66 @@
+//- filename: index.jade
+//- description: サイトのトップページ
+
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "top" // ページのID
+  - current.title = "トップページ" // タイトル
+  - current.description = "これはトップページの説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 1 // ページの階層
+
+block body
+  +c_mainvisual()
+  section.l-main
+    +c.opening
+      .l-container
+        h2.c-opening__title 現場を補強する、力になれます。<br>教育から開発までトータルに。
+        p.c-opening__text SE各自の開発力・技術力だけに頼ることなく、1ワークに複数のSEを投入するグループワーク制を採用しています。<br class="u-hidden-sm">一人ひとりがSEとして研鑽を積んできた経験と技術に加えて、<br class="u-hidden-sm">集団で発送し、集団で開発し管理進行を行い、高い品質と確実な納期をお約束しています。
+        +a("/service/").c-button.is-lg 事業紹介を見る
+    .l-section.is-bg.is-md
+      .l-container
+        h2.heading.is-xlg.is-bottom
+          span 企業情報
+          small COMPANY
+        +c.card
+          +e.inner
+            +a("/company/greeting/").c-card__block
+              +bgimg("img-card-01.jpg").c-card__image
+              +e.title 代表あいさつ
+            +a("/company/profile/").c-card__block
+              +bgimg("img-card-02.jpg").c-card__image
+              +e.title 会社概要
+            +a("/company/history/").c-card__block
+              +bgimg("img-card-03.jpg").c-card__image
+              +e.title 沿革
+            +a("/recruit/").c-card__block
+              +bgimg("img-card-04.jpg").c-card__image
+              +e.title 採用情報
+
+    .l-section.is-md
+      .l-container
+        h2.heading.is-xlg.is-bottom.is-top
+          span 最新ニュース
+          small NEWS
+        +c.post-item
+          +e.inner
+            +a("/news/page/").c-post-item__block
+              +e.sup
+                +e.category 更新情報
+                +e.date 2017.01.01
+              +e.title タイトルがここに入ります。タイトルがここに入ります。
+            +a("/news/page/").c-post-item__block
+              +e.sup
+                +e.category 更新情報
+                +e.date 2017.01.01
+              +e.title タイトルがここに入ります。タイトルがここに入ります。
+            +a("/news/page/").c-post-item__block
+              +e.sup
+                +e.category 更新情報
+                +e.date 2017.01.01
+              +e.title タイトルがここに入ります。タイトルがここに入ります。
+          +e.button
+            +a("/news/").c-button.is-lg ニュース一覧を見る
+
+  // オファーブロック
+  +c_offer()

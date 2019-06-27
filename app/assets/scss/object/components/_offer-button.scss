@@ -1,0 +1,81 @@
+.c-offer-button {
+  overflow: hidden;
+  &__inner {
+    display: flex;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__block {
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    min-height: rem-calc(140);
+    position: relative;
+    padding: rem-calc(24) rem-calc(32);
+    @include breakpoint(small only) {
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      min-height: rem-calc(120);
+      justify-content: flex-start;
+      padding: rem-calc(24) rem-calc(48);
+    }
+    i {
+      font-size: rem-calc(40);
+      margin-right: rem-calc(24);
+      @include breakpoint(small only) {
+        font-size: rem-calc(32);
+        margin-right: rem-calc(12);
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: rem-calc(1000);
+      height: 100%;
+      background-color: $color-primary;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      z-index: -1;
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+    // カラー設定
+    &.is-color-darken {
+      background-color: $color-primary-dark;
+      &:after {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+        background-color: $color-primary-dark;
+      }
+    }
+  }
+  &__text {
+    text-align: center;
+    span {
+      display: block;
+      @include webfont-bold();
+      font-size: rem-calc(38);
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+      @include breakpoint(small only) {
+        font-size: rem-calc(38)*0.8;
+      }
+    }
+    small {
+      display: block;
+      font-size: rem-calc(16);
+      @include breakpoint(small only) {
+        font-size: rem-calc(16)*0.8;
+      }
+    }
+  }
+}

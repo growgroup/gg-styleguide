@@ -1,0 +1,144 @@
+.c-post-item {
+  width: 100%;
+  max-width: 933px;
+  margin: 0 auto;
+  &__inner {
+    padding-top: 32px;
+    padding-bottom: 40px;
+    @include breakpoint(small only) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  &__block {
+    text-decoration: none;
+    font-weight: 400;
+    color: $font-base-color;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 56px 10px 16px;
+    border-radius: 4px;
+    position: relative;
+    transition: all .3s;
+    @include breakpoint(small only) {
+      display: block;
+      padding: 10px 0;
+    }
+    &:after {
+      content: "\f105";
+      font-family: "FontAwesome";
+      position: absolute;
+      top: 50%;
+      margin-top: -12px;
+      right: 20px;
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+    &:hover {
+      opacity: 1;
+      background-color: rgba($color-primary,0.1);
+    }
+  }
+  &__sup {
+    display: flex;
+    align-items: center;
+    @include breakpoint(small only) {
+      margin-bottom: 8px;
+    }
+  }
+  &__category {
+    @extend .c-label;
+    margin-right: 28px;
+    @include breakpoint(small only) {
+      margin-right: 14px;
+    }
+  }
+  &__date {
+    color: $color-primary;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-right: 32px;
+    @include webfont-normal();
+
+    @include breakpoint(small only) {
+      margin-right: 0;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    @include breakpoint(small only) {
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  }
+  &__button {
+    text-align: center;
+    @include breakpoint(small only) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// アーカイブページ
+.c-post-item.is-list {
+  max-width: 100%;
+  .c-post-item__inner {
+    padding: 0;
+  }
+  .c-post-item__block {
+    display: block;
+    border-bottom: 1px solid $border-base-color;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    padding-right: 16px;
+    border-radius: 0;
+    &:after {
+      display: none;
+    }
+  }
+  .c-post-item__sup {
+    margin-bottom: 14px;
+    @include breakpoint(small only) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// サムネイルあり
+.c-post-item.is-thumbnail {
+  .c-post-item__block {
+    display: flex;
+    border-bottom: 1px solid $border-base-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 16px;
+    &:after {
+      display: none;
+    }
+  }
+  .c-post-item__image {
+    width: 174px;
+    height:109px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include breakpoint(small only) {
+      width: 110px;
+      height: 70px;
+    }
+  }
+  .c-post-item__content {
+    margin-left: auto;
+    width: calc(100% - 174px - 32px);
+    @include breakpoint(small only) {
+      width: calc(100% - 110px - 16px);
+    }
+  }
+  .c-post-item__sup {
+    margin-bottom: 14px;
+    @include breakpoint(small only) {
+      margin-bottom: 8px;
+    }
+  }
+}

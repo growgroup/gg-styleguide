@@ -1,0 +1,28 @@
+.u-format-group
+  .u-format-group__title メインビジュアル
+  .u-format-group__content
+    .u-format
+      .u-format__title 通常
+      .u-format__content.is-fullwidth
+        +c.main-visual
+          +bgimg("main-visual.jpg").c-main-visual__image
+          +e.inner
+            +e.text: +img("main-visual-text.png","現場のスペシャリスト集団。それがサンプルです。")
+            +a("/aboutus/").c-main-visual__button 私たちについて
+
+    .u-format
+      .u-format__title スライダー
+      .u-format__content.is-fullwidth
+        +c.mainvisual-slider.owl-carousel.owl-theme
+          +e.item.is-animate
+            a(href="#")
+              +img("main-visual.jpg")
+          +e.item
+            a(href="#")
+              +img("main-visual.jpg")
+          +e.item
+            a(href="#")
+              +img("main-visual.jpg")
+          +e.item
+            a(href="#")
+              +img("main-visual.jpg")

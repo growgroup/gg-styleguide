@@ -1,0 +1,25 @@
+.u-format-group
+  .u-format-group__title バナー
+  .u-format-group__content
+    .u-format
+      .u-format__title リンクバナー_3カラム
+      .u-format__content
+        +c.other-content
+          +e.inner
+            +a("/company/greeting/").c-other-content__block
+              +bgimg("img-card-01.jpg").c-other-content__image
+              +e.text 代表あいさつ
+            +a("/company/history/").c-other-content__block
+              +bgimg("img-card-03.jpg").c-other-content__image
+              +e.text 沿　革
+            +a("/recruit/").c-other-content__block
+              +bgimg("img-card-04.jpg").c-other-content__image
+              +e.text 採用情報
+    .u-format
+      .u-format__title リンクバナー_大
+      .u-format__content
+        div.u-mbs.is-top.is-lg
+          +c.bnr-lg
+            +a("/recruit/").c-bnr-lg__block
+              +bgimg("bnr-recruit.jpg").c-bnr-lg__image
+              +e.text 採用情報はこちら

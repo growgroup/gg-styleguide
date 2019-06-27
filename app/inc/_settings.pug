@@ -1,0 +1,170 @@
+//- サイトの設定
+-
+  // --------------------------
+  // 現在のページを保持するための変数
+  // --------------------------
+  current = {
+    depth: 1,
+    id: "",
+    title: "",
+    description: "",
+    bodyClass: ""
+  }
+
+  config = {
+
+    get rootpath(){
+      if ( this.root === "" ){
+        return this.root;
+      }
+      // 第一階層の場合
+      if ( current.depth === 1 ){
+        return this.root
+      }
+      var i = current.depth
+      var path = ""
+      while( i > 1 ){
+        path += "../"
+        i--;
+      }
+      // 末尾のスラッシュを削除
+      return path.replace(/\/$/g,"")
+    },
+
+    // --------------------------
+    // 1. サイト情報
+    // --------------------------
+
+    // サイトのルートパスを設定
+    // "" でドメイン直下からパスを開始
+    root: "",
+    site: {
+      title: "株式会社 サンプル",
+      titleSeparator: " | ",
+      description: "説明文",
+      keywords: "キーワード",
+      viewport: "width=device-width,initial-scale=1",
+      favicon: "",
+      "apple-touch-icon": "",
+      ogp: {
+        locale: "ja_JP",
+        type: "website",
+        title: "株式会社 サンプル",
+        description: "説明文",
+        url: "",
+        site_name: "株式会社 サンプル",
+        image: "/assets/images/ogp.png"
+      },
+    },
+
+    // --------------------------
+    // ナビゲーション
+    // nav("global_nav") 等で呼び出し可能
+    // --------------------------
+    navs: {
+      global_nav: [
+        {
+          url: "/",
+          text: "ホーム"
+        },{
+          url: "/aboutus/",
+          text: "私たちについて"
+        },{
+          url: "/service/",
+          text: "事業紹介"
+        },{
+          url: "/company/",
+          text: "企業情報"
+        },{
+          url: "/recruit/",
+          text: "採用情報"
+        },{
+          url: "/contact/",
+          text: "お問い合わせ"
+        },
+      ]
+    },
+
+    // ページ情報
+    pages: {
+      'top': {
+        name: "top",
+        title: "ホーム",
+        description: "",
+      },
+      'about': {
+        name: "about",
+        title: "私たちについて",
+        description: "",
+      },
+      'service': {
+        name: "service",
+        title: "サービス紹介",
+        description: "",
+      },
+      'works': {
+        name: "works",
+        title: "実績紹介",
+        description: "",
+      },
+      'contact': {
+        name: "contact",
+        title: "お問合せ",
+        description: "",
+      },
+    },
+  }
+
+  cssrules = {
+    component: [],
+    cleanComponent: function(){
+      var tempComponents = []
+      for(var key in cssrules.component){
+        tempComponents.push(cssrules.component[key])
+      }
+      cssrules.component = tempComponents
+    },
+    addComponent: function(component){
+      cssrules.cleanComponent()
+      cssrules.component.push(component)
+    },
+    getComponent: function(number){
+      if ( typeof cssrules.component[cssrules.component.length-(number+1)] !== "undefined" ){
+        return cssrules.component[cssrules.component.length-(number+1)]
+      }
+      return false
+    },
+    get currentComponent(){
+      cssrules.cleanComponent()
+      if ( typeof cssrules.component[cssrules.component.length-1] !== "undefined" ){
+        return cssrules.component[cssrules.component.length-1]
+      }
+      return false
+    },
+    element: "",
+  }
+
+  // ページごとの情報を取得
+  getPagesValue = function(id,key){
+    if ( typeof config.pages[id] !== "undefined" && typeof config.pages[id][key] !== "undefined" ){
+      return config.pages[id][key];
+    }
+    // タイトル,説明文等についてはサイトの設定を返す
+    if ( typeof config.site[key] !== "undefined" ){
+      return config.site[key]
+    }
+    return "";
+  }
+  // ナビゲーションを取得
+  nav = function(id) {
+    if ( typeof config.navs[id] === "undefined" ){
+      return false;
+    }
+    return config.navs[id]
+  }
+
+  isUpperCase = function(word){
+    return (word[0] === word[0].toUpperCase());
+  }
+
+

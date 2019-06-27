@@ -1,0 +1,69 @@
+.c-bnr-lg {
+  &__block {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    max-width: 896px;
+    height: 244px;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-white;
+    position: relative;
+    transition: all .3s;
+    @include breakpoint(small only) {
+      height: 140px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: calc(100% - 18px);
+      height: calc(100% - 18px);
+      top: 0;
+      left: 0;
+      margin: 8px;
+      border: 1px solid rgba($color-white,0.5);
+      @include breakpoint(small only) {
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        margin: 6px;
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-black,0.5);
+    }
+  }
+  &__text {
+    font-size: 24px;
+    letter-spacing: 1.6px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    font-weight: 500;
+    @include breakpoint(small only) {
+      font-size: 20px;
+      letter-spacing: 1.1px;
+    }
+  }
+}

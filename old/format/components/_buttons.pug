@@ -1,0 +1,50 @@
+// ボタン関係
+.u-format-group
+  .u-format-group__title ボタン
+  .u-format-group__content
+    .u-format
+      .u-format__title 大きさ
+      .u-format__content
+        +a("#").c-button.is-xs 最小サイズ
+        +a("#").c-button.is-sm 小サイズ
+        +a("#").c-button 中サイズ
+        +a("#").c-button.is-lg 大サイズ
+        +a("#").c-button.is-xlg 最大サイズ
+    .u-format
+      .u-format__title 色
+      .u-format__content
+        +a("#").c-button.is-primary ブランドカラー
+        +a("#").c-button.is-secondary セカンダリーカラー
+        +a("#").c-button.is-tertiary ターシャリーカラー
+        +a("#").c-button.is-warning 注意色
+        +a("#").c-button.is-danger 警告色
+        +a("#").c-button.is-success 成功色
+        +a("#").c-button.is-info お知らせ色
+        +a("#").c-button.is-accent アクセント色
+    .u-format
+      .u-format__title その他
+      .u-format__content
+        +a("#").c-button.is-round 角丸ボタン
+        +a("#").c-button.is-outline 枠線ボタン
+        +a("#").c-button.is-expand 幅最大ボタン
+        +a("#").c-button.is-form フォームボタン
+    .u-format
+      .u-format__title 関連ナビ
+      .u-format__content
+        +c.relation
+          +e.title 関連するコンテンツ
+          +e.button
+            ul
+              li: +a("/company/greeting/") 代表あいさつ
+              li: +a("/company/profile/") 私たちの強み
+              li: +a("/company/profile/") 会社概要
+              li: +a("/company/history/") 沿革
+    .u-format
+      .u-format__title カプセルナビ
+      .u-format__content
+        +c.capsule-nav
+          ul
+            li: +a("#faq01").js-anchor 支払いについて
+            li: +a("#faq02").js-anchor 支払いについて
+            li: +a("#faq03").js-anchor 支払いについて
+

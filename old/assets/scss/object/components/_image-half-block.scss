@@ -1,0 +1,127 @@
+//.is-revers 逆のレイアウト
+
+.c-image-half-block{
+  position: relative;
+  min-height: 492px;
+  height: 100%;
+  margin-bottom: 80px;
+  overflow: hidden;
+  &:last-child{
+    margin-bottom: 0px;
+  }
+  @include breakpoint(small only){
+    min-height: inherit;
+    margin-bottom: 16px;
+    overflow: visible;
+  }
+
+  &__image{
+    width: 722/1080*100%;
+    height: 453px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    @include breakpoint(small only){
+      width: 100%;
+      height: 0;
+      padding-bottom: 54%;
+      position: static;
+      top: 0px;
+    }
+  }
+
+  &__content{
+    max-width: 1080px;
+    margin: 0 auto;
+    @include breakpoint(small only){
+      padding-top: 0;
+      margin: -24px auto 0 auto;
+      width: 90%;
+    }
+  }
+  &__inner{
+    width: 460/1080*100%;
+    height: 452px;
+    margin-left: auto;
+    padding-top: 96px;
+    padding-bottom: 32px;
+    padding-left: 60px;
+    padding-right: 1rem;
+    background: $color-white;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px rgba($color-black,0.1);
+    @include breakpoint(small only){
+      width: 100%;
+      height: 100%;
+      padding: 28px 24px 8px 24px!important;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 2000px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -2000px;
+      background: $color-white;
+      box-shadow: 0px 0px 3px 1px rgba($color-black,0.1);
+      z-index: -1;
+      @include breakpoint(small only){
+        display: none;
+      }
+    }
+  }
+  &__bg-layer{
+    &:after{
+      position: absolute;
+      top: 0;
+      right: -100%;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: $color-white;
+      @include breakpoint(small only){
+        display: none;
+      }
+    }
+  }
+  &__title{
+    margin-bottom: 24px;
+    @include breakpoint(small only){
+      margin-bottom: 16px;
+    }
+  }
+
+  //逆のレイアウト
+  &.is-reverse{
+    .c-image-half-block__image{
+      right: 0;
+      left: auto;
+    }
+    .c-image-half-block__inner{
+      margin-left: 0;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 60px;
+      &:after {
+        right: auto;
+        left: -2000px;
+        z-index: -1;
+      }
+    }
+    .c-image-half-block__bg-layer{
+      &:after{
+        right: auto;
+        left: -100%;
+      }
+    }
+  }
+}
+
+

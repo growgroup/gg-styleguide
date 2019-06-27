@@ -1,0 +1,408 @@
+// Mixin
+//
+// テンプレート内で利用できる mixin と function を定義
+//
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// rem へ変換
+@function to-rem($value, $base: null) {
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  @if unit($value) != 'rem' {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  @if $value == 0rem {
+    $value: 0;
+  }
+  @return $value;
+}
+
+// rem 計算
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+
+  @if $base == null {
+    $base: $font-base-size;
+  }
+
+  @if unit($base) == '%' {
+    $base: ($base / 100%) * 16px;
+  }
+
+  @if $count == 1 {
+    @return to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, to-rem(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+// em へ変換
+@function to-em($value) {
+  @if unit($value) == 'px' or unitless($value) {
+    $value: rem-calc($value, $base: 16px);
+  }
+  @return strip-unit($value) * 1em;
+}
+
+// ブレイクポイントのテキストを返す
+@function breakpoint($val: small) {
+
+  $bp: nth($val, 1);
+
+  $bp-max: 0;
+
+  $dir: if(length($val) > 1, nth($val, 2), up);
+
+  $str: '';
+
+  $named: false;
+
+  @if $bp == 'landscape' or $bp == 'portrait' {
+    @return '(orientation: #{$bp})';
+  }
+  @else if $bp == 'retina' {
+    @return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
+  }
+
+
+  @if type-of($bp) == 'string' {
+    @if map-has-key($breakpoints, $bp) {
+      @if $dir == 'only' or $dir == 'down' {
+        $next-bp: map-next($breakpoints, $bp);
+
+        @if $next-bp == null {
+          $bp-max: null;
+          @warn 'breakpoint(): the media query "#{$val}" cannot be used because #{$bp} is the largest breakpoint.';
+        }
+        @else {
+          $bp-max: $next-bp;
+        }
+      }
+
+      $bp: map-get($breakpoints, $bp);
+      $named: true;
+    }
+    @else {
+      $bp: 0;
+    }
+  }
+
+  $bp: to-em($bp);
+  @if $bp-max {
+    $bp-max: to-em($bp-max) - (1/16);
+  }
+
+  @if $bp > 0em or $dir == 'only' or $dir == 'down' {
+
+    @if $dir == 'only' {
+      @if $named == true {
+        $str: $str + '(min-width: #{$bp})';
+
+        @if $bp-max != null {
+          $str: $str + ' and (max-width: #{$bp-max})';
+        }
+      }
+      @else {
+        @warn 'Only named media queries can have an `only` range.';
+      }
+    }
+
+    @else if $dir == 'down' {
+      $max: 0;
+
+      @if $named {
+        $max: $bp-max;
+      }
+      @else {
+        $max: $bp;
+      }
+
+      @if $named or $bp > 0em {
+        $str: $str + '(max-width: #{$max})';
+      }
+    }
+    @else if $bp > 0em {
+      $str: $str + '(min-width: #{$bp})';
+    }
+  }
+  @return $str;
+}
+
+
+// ブレイクポイントを出力
+@mixin breakpoint($value) {
+  $str: breakpoint($value);
+
+  @if $str == '' {
+    @content;
+  }
+
+  @else {
+    @media screen and #{$str} {
+      @content;
+    }
+  }
+}
+
+
+// map にアクセス
+@function map-next($map, $key) {
+  $values: map-values($map);
+
+  $i: 1;
+  $found: false;
+  @each $val in map-keys($map) {
+    @if $found == false {
+      @if ($key == $val) {
+        $found: true;
+      }
+      $i: $i + 1;
+    }
+  }
+  @if $i > length($map) {
+    @return null;
+  }
+  @else {
+    @return nth($values, $i);
+  }
+}
+
+// フォームの有効化時のスタイル
+@mixin input-active(){
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+// センタリング
+@mixin center-block() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// トランジション
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// クリアフィックス
+@mixin clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// box sizing
+@mixin box-sizing($type) {
+  -webkit-box-sizing:$type;
+  -moz-box-sizing:$type;
+  box-sizing:$type;
+}
+
+// センターに合わせる
+@mixin center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+// クリアフィックス
+%clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// スクロールバーを常時表示する
+@mixin always_display_scrollbar($scrollbar-color) {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track-piece:start {
+    background: $scrollbar-color;
+  }
+  &::-webkit-scrollbar-track-piece:end {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+
+@mixin button_colors($color){
+  background: $color;
+  border-color: $color;
+  &:hover {
+    background: #fff;
+    color: $color;
+  }
+}
+
+// Pug Mixin
+//
+// Pug テンプレート内で利用可能なMixin一覧
+//
+// Styleguide 6.0.0
+
+// タイトル
+//
+// タイトルを出力します。<br>
+// <br>
+// <code>
+// @el : 要素を指定 eg. h2<br>
+// @type : 大きさを指定 eg. xlg
+// </code>
+//
+// markup:
+// <pre>+heading(el,type)</pre>
+//
+// Styleguide 6.1.0
+
+// ボタン
+//
+// ボタンの出力<br>
+// <br>
+// <code>
+// @el : 要素を指定 eg. "a"<br>
+// @link : リンク先 eg. "http://example.com"
+// </code>
+//
+// markup:
+// <pre>+c_button(el,link)</pre>
+//
+// Styleguide 6.2.0
+
+// リスト
+//
+// リストの出力<br>
+// <br>
+// <code>
+// @data : リストの情報をJsで指定</code>
+// <h4>サンプル</h4>
+// <pre>
+// +list(["リスト1","リスト2","リスト3",<br>
+// {
+//     attr: {
+//         class: "is-active"
+//     },
+//     link: "http://asdfasdfasdf.com",
+//     text: "テキスト"
+// },
+// {
+//     attr: {
+//         class: "is-active"
+//     },
+//     link: {
+//         href: "text",
+//         target: "_blank",
+//     },
+//     text: "テキスト",
+// }
+// ])</pre>
+//
+// markup:
+// <pre>+list(data)</pre>
+//
+// Styleguide 6.3.0
+
+// テーブル
+//
+// テーブルの出力<br>
+// <br>
+// <code>
+// @data : 表データのオブジェクト。キーの値は適当に指定して下さい<br>
+// @headers : 見出しデータのオブジェクト
+// </code>
+// <h4>サンプル</h4>
+// <pre>
+// +c_table([
+//         {
+//              th: "見出し1",
+//             _1: "通常",
+//             _2: "通常",
+//         }, {
+//             th: "見出し1",
+//             _1: "通常",
+//             _2: "通常",
+//         }, {
+//             th: "見出し1",
+//             _1: {
+//                 attr: {
+//                     colspan: 2
+//                 },
+//                 text: "通常"
+//             },
+//         },
+//         ])
+// </pre>
+//
+// markup:
+// <pre>+c_table(data,headers)</pre>
+//
+// Styleguide 6.4.0
+
+// 投稿記事
+//
+// 一覧ページでの記事表示<br>
+// <br>
+// <code>
+// @el : 要素<br>
+// @image : 画像URL<br>
+// @title : 投稿タイトル<br>
+// @date : 日付<br>
+// @category : カテゴリ<br>
+// @text : 抜粋文章<br>
+// </code>
+// <h4>サンプル</h4>
+// <pre>
+// +p_post_item("div","https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150","タイトル","2016.10.10","カテゴリ","説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文").is-horizon
+// </pre>
+//
+// markup:
+// <pre>+p_post_item(el,image,title,date,category,text)</pre>
+//
+// Styleguide 6.5.0
+
+@mixin bg-option(){
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

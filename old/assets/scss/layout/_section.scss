@@ -1,0 +1,89 @@
+// セクション
+//
+// セクションのスタイル
+//
+// markup:
+// <dev class="l-section [is-lg | is-md | is-sm | is-bottom | is-top]"></dev>
+//
+// Styleguide 5.3.0
+.l-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &.is-xlg {
+    padding-top: 80px !important;
+    padding-bottom: 96px !important;
+    @include breakpoint(small only) {
+      padding-top: 48px !important;
+      padding-bottom: 48px !important;
+    }
+  }
+
+  &.is-lg {
+    padding-top: 64px !important;
+    padding-bottom: 96px !important;
+    @include breakpoint(small only) {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+  }
+
+  &.is-md {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+    @include breakpoint(small only) {
+      padding-top: 32px !important;
+      padding-bottom: 32px !important;
+    }
+  }
+
+  &.is-sm {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    @include breakpoint(small only) {
+      padding-top: 24px !important;
+      padding-bottom: 24px !important;
+    }
+  }
+
+  &.is-top {
+    padding-bottom: 0 !important;
+  }
+
+  &.is-bottom {
+    padding-top: 0 !important;
+  }
+
+  // 背景
+  &.is-gray {
+    background-color: #F6F7F9;
+  }
+  &.is-bg {
+    background: url("../images/ptn-stripe.png") repeat;
+  }
+
+  &.is-half-bg {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 64px;
+    @include breakpoint(small only) {
+      background: url("../images/ptn-stripe.png") repeat;
+      padding-bottom: 40px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      background: url("../images/ptn-stripe.png") repeat;
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 96px);
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+  }
+
+}

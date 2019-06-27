@@ -1,0 +1,49 @@
+// ラベル
+//
+// markup:
+// <span class="c-label">ラベル : .c-label</span>
+// <span class="c-label is-lg">ラベル : .c-label.is-lg</span>
+// <span class="c-label is-sm">ラベル : .c-label.is-sm</span>
+// <span class="c-label is-secondary">ラベル : .c-label.is-secondary</span>
+// <span class="c-label is-tertiary">ラベル : .c-label.is-tertiary</span>
+// <span class="c-label is-danger">ラベル :.c-label.is-danger</span>
+// <span class="c-label is-warning">ラベル :.c-label.is-warning</span>
+// <span class="c-label is-info">ラベル :.c-label.is-info</span>
+// <span class="c-label is-success">ラベル :.c-label.is-success</span>
+//
+// Styleguide 2.5.0
+
+.c-label {
+  background-color: $color-primary;
+  color: $color-white;
+  display: inline-block;
+  text-align: center;
+  min-width: rem-calc(116);
+  font-size: rem-calc(13);
+  padding: rem-calc(1) rem-calc(8);
+  border: 1px solid $color-primary;
+  font-weight: 700;
+  @include breakpoint(small only) {
+    font-size: rem-calc(12);
+    min-width: rem-calc(88);
+  }
+  &.is-lg {
+    min-width: rem-calc(160);
+    font-size: rem-calc(13);
+  }
+  &.is-sm {
+    min-width: rem-calc(80);
+    font-size: rem-calc(12);
+    padding: 0 rem-calc(8);
+  }
+
+  // カラー
+  &.is-white {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+  &.is-secondary {
+    background: $color-secondary;
+    color: $font-base-color;
+  }
+}

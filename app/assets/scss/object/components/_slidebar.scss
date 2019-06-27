@@ -1,0 +1,270 @@
+// スライドメニュー
+//
+// スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
+//
+// markup:
+//  <!-- メニュー -->
+// <div class="slidebar-menu js-slidebar-menu">
+//   <ul>
+//    <li class="is-current">
+//        <a href="#">サンプル1</a>
+//   </li>
+//  </ul>
+// </div>
+//  <!-- ボタン -->
+//  <a href="#" class="slidebar-button js-slidebar-button">
+//    <i class="fa fa-bars"></i>
+//  </a>
+//  <!-- 全体を包むラッパー -->
+//  <div class="slidebar-container js-slidebar-container">
+//     hogehoge
+//  </div>
+//
+// Styleguide 4.5
+
+$slidebar-menu-bg: $color-primary !default;
+$slidebar-menu-width: 75% !default;
+$slidebar-menu-eaasing: all ease-in-out .2s !default;
+$slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
+
+@include breakpoint(large up) {
+  .c-slidebar-button {
+    display: none !important;
+  }
+  .c-slidebar-menu {
+    display: none !important;
+  }
+}
+
+@include breakpoint(medium down) {
+  // トリガーとなるボタン
+  .c-slidebar-button {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    text-align: center;
+    font-size: rem-calc(12);
+    z-index: 9999;
+    text-decoration: none;
+    padding: rem-calc(10) rem-calc(4) rem-calc(4);
+    background-color: $color-primary;
+    line-height: 1;
+    color: $color-white;
+    width: rem-calc(55);
+    height: rem-calc(55);
+    &:active,
+    &:hover {
+      opacity: 1!important;
+    }
+    // ボーダー
+    &__line {
+      > span {
+        display: block;
+        height: 4px;
+        background: $color-white;
+        width: 100%;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        transition: all ease .2s;
+        &:last-child {
+          margin-bottom: 3px;
+        }
+      }
+    }
+    // メニューテキスト
+    &__text {
+      transition: all ease .2s;
+      font-size: 9px;
+      letter-spacing: 0.4px;
+      @include webfont();
+      &.is-close {
+        display: none;
+      }
+    }
+  }
+
+  // メニュー自体
+  .c-slidebar-menu {
+    height: calc(100vh - 55px)!important;
+    position: fixed;
+    background-color: $color-primary;
+    z-index: 9980;
+    width: $slidebar-menu-width;
+    -webkit-transform: translateX(100%);
+    transform: translate3d(100%, 0px, 0px);
+    right: 0;
+    -webkit-transition: $slidebar-menu-eaasing;
+    transition: $slidebar-menu-eaasing;
+    overflow-x: scroll;
+    top: 0;
+    -webkit-overflow-scrolling: touch;
+    padding-left: rem-calc(24);
+    &.is-active {
+      height: calc(100% - 65px)!important;
+    }
+    // 上から下へ
+    &.is-top-to-bottom {
+      -webkit-transform: translateX(0%);
+      -webkit-transform: translateY(-100%);
+      transform: translate3d(0px, -100%, 0px);
+      height: auto;
+      width: 100%;
+      opacity: 0;
+    }
+
+    &__children {
+      display: none;
+      background-color: $color-primary-dark!important;
+      padding-left: rem-calc(24)!important;
+      li {
+        &:last-child {
+          border-bottom: none!important;
+        }
+        a {
+          color: $color-white!important;
+          padding: rem-calc(16) 0!important;
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__parent {
+      a,
+      span {
+        position: relative;
+        &:after,
+        &:before {
+          content: "";
+          display: block;
+          width: rem-calc(2);
+          height: rem-calc(18);
+          background-color: $color-white;
+          position: absolute;
+          top: 50%;
+          right: rem-calc(24);
+          transform: translateY(-50%);
+        }
+        &:after {
+          width: rem-calc(18);
+          height: rem-calc(2);
+          right: rem-calc(16);
+        }
+      }
+      &.is-open {
+        a,
+        span {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    ul {
+      background:$color-primary;
+      li {
+        border-bottom: 1px solid $border-base-color;
+        a,
+        span {
+          font-size: rem-calc(15);
+          display: block;
+          padding: rem-calc(14) 0;
+          text-decoration: none;
+          color: $color-white;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  // メニュー以外をラップする要素
+  // メニュー以外をラップする要素
+  .c-slidebar-container {
+    height: 100%;
+    -webkit-transition: $slidebar-menu-eaasing;
+    transition: $slidebar-menu-eaasing;
+    &:after {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: $slidebar-container-bg;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: $slidebar-menu-eaasing;
+      transition: $slidebar-menu-eaasing;
+      display: none;
+      z-index: 999;
+    }
+  }
+
+  // 有効時
+  .is-slidebar-active {
+    cursor: pointer;
+    .c-slidebar-button {
+      padding-top: rem-calc(6);
+      &__line {
+        > span {
+          &:nth-child(1){
+            transform: rotate(-45deg) translateY(11px) translateX(-9px);
+          }
+          &:nth-child(2){
+            transform: rotate(45deg) translateY(3px) translateX(5px);
+          }
+          &:nth-child(3){
+            display: none;
+          }
+        }
+      }
+      &__text {
+        &.is-close {
+          display: block;
+          margin-top: rem-calc(20);
+        }
+        &.is-open {
+          display: none;
+        }
+      }
+    }
+    .c-slidebar-container {
+      -webkit-transform: translateX(-$slidebar-menu-width);
+      transform: translate3d(-$slidebar-menu-width, 0px, 0px);
+      &:after {
+        content: "";
+        opacity: 1;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: $slidebar-container-bg;
+        display: block;
+        top: 0;
+        left: 0;
+      }
+
+      // 上から下の場合
+      &.is-top-to-bottom {
+        -webkit-transform: translateX(0px);
+        transform: translate3d(0px, 0px, 0px);
+        &:after {
+          top: 55px;
+        }
+      }
+    }
+
+    .c-slidebar-menu {
+      -webkit-transform: translateX(0);
+      transform: translate3d(0, 0, 0);
+      &.is-top-to-bottom {
+        -webkit-transform: translateY(55px);
+        transform: translate3d(0, 55px, 0);
+        opacity: 1;
+      }
+    }
+  }
+}

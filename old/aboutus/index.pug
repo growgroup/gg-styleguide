@@ -1,0 +1,60 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "aboutus" // ページのID
+  - current.title = "私たちについて" // タイトル
+  - current.description = "これは私たちについての説明文です" // 説明文
+  - current.bodyClass = "aboutus" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","私たちについて","ABOUT US")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span 私たちについて
+
+block body
+  section.l-main
+    .l-section.is-lg
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 私たちは、<br class="u-hidden-lg">現場のスペシャリストです。
+        p.u-text-center 株式会社サンプルは、システム開発のソリューションは「現場である」と目標を定め、常に尽力をつくしてきました。<br>なぜ、現場に力をそそぐ必要があるのか。その理由をご説明します。
+        +c.special.u-mbs.is-top.is-lg
+          +e.inner
+            +e.block
+              +e.head
+                +e.number 01
+                +img("img-aboutus-01.jpg")
+              +e.content
+                +e.title だれが開発を行うのか
+                +e.text.
+                  開発を行うのは、常に「現場」です。現場の作業員こそが最終成果物を作るのであり、そこに、指示をした上司や、設計者などは間接的な関わりしかありません。<br>
+                  現場での作業者、作業に対してこだわりを持つことが、最終成果物を成功へと導く鍵になるのです。
+            +e.block
+              +e.head
+                +e.number 02
+                +img("img-aboutus-02.jpg")
+              +e.content
+                +e.title だれが責任をもつのか
+                +e.text.
+                  責任をもつのは、プロジェクトマネージャーです。開発が行われる現場を管理することは、プロジェクトマネージャーの重要な責務でもあります。<br>
+                  株式会社サンプルは、これまで培った経験から、現場で注意すべき点を明確に定義し、プロジェクトマネージャと協力しながら、「現場」の管理を成功に導きます。
+            +e.block
+              +e.head
+                +e.number 03
+                +img("img-aboutus-03.jpg")
+              +e.content
+                +e.title 価値を決めるのはだれか
+                +e.text.
+                  最終的に成果物ができた時、その価値に起因するのは現場での作業に他なりません。<br>
+                  最終成果物の価値を少しでも高めるべく、これまでのノウハウにのっとった弊社独自のテストフローを提供し、現場での作業をサポートします。
+    .l-section.is-bg.is-md
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 現場の重要さを知っています。<br>だからこそ、安心してお任せください。
+        p.u-text-center 現場での力を知っている私たちだからこそ、できることがあります。<br>株式会社サンプルでは、業界では数少ない現場のプロフェッショナルが、御社のプロジェクトを成功へと導きます。
+        div.u-text-center.u-mbs.is-top.is-sm
+          +a("/service/").c-button.is-lg 事業紹介を見る
+
+  +c_relation()
+  +c_offer()

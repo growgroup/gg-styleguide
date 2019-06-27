@@ -1,0 +1,52 @@
+.c-anchor-nav {
+  margin-bottom: rem-calc(64);
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(64)/2;
+  }
+  .c-button {
+    max-width: 100%!important;
+    margin-bottom: rem-calc(8);
+  }
+  &__block {
+    text-decoration: none;
+    color: $font-base-color;
+    border-bottom: 2px solid $border-base-color;
+    display: block;
+    text-align: center;
+    padding: rem-calc(10) rem-calc(16);
+    position: relative;
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(8);
+      border-width: 1px;
+    }
+    &:after {
+      content: "\f0dd";
+      font-family: "FontAwesome";
+      font-size: rem-calc(12);
+      position: absolute;
+      top: 50%;
+      right: rem-calc(8);
+      transform: translateY(-50%);
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%,2px);
+      opacity: 0;
+      transition: all .2s;
+    }
+    &:hover {
+      opacity: 1;
+      &:before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+}

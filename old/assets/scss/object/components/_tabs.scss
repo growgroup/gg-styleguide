@@ -1,0 +1,67 @@
+// タブ
+//
+//
+// markup:
+// <div class="c-tabs">
+//     <ul class="c-tabs__navs">
+//         <li><a href="#" class="is-active">リスト1</a></li>
+//         <li><a href="#">リスト2</a></li>
+//         <li><a href="#">リスト3</a></li>
+//         <li><a href="#">リスト4</a></li>
+//     </ul>
+//     <div class="c-tabs__content">
+//         <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+//     </div>
+// </div>
+//
+// Styleguide 2.19.0
+
+.c-tabs {
+  &__navs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    @include breakpoint(small only) {
+      margin-bottom: 32px;
+    }
+    li {
+      width: 50%;
+      max-width: 264px;
+      a {
+        background-color: $color-white;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        padding: 11px;
+        position: relative;
+        @include breakpoint(small only) {
+          padding: 6px;
+        }
+        &:after {
+          content: "\f107";
+          font-family: "FontAwesome";
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          margin-top: -12px;
+        }
+        &.is-active {
+          background-color: $color-primary;
+          color: $color-white;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__content {
+    display: none;
+    &.is-active {
+      display: block;
+    }
+  }
+}

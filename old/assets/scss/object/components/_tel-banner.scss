@@ -1,0 +1,26 @@
+// 電話バナー
+//
+//
+// markup:
+// <div class="c-tel-banner">
+//     <p class="c-tel-banner__number">0120-000-0000</p>
+//     <p class="c-tel-banner__text">営業時間 : 09:00〜18:00まで (365日年中無休 )</p>
+// </div>
+//
+// Styleguide 2.20.0
+
+.c-tel-banner{
+
+  // 電話番号
+  &__number {
+    font-size: rem-calc(30);
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+
+  // テキスト
+  &__text {
+    font-size: rem-calc(12);
+  }
+}

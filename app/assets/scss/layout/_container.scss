@@ -1,0 +1,34 @@
+// レイアウト
+//
+// Webサイトのレイアウトに関するコンポーネント群
+//
+//
+// Styleguide 5.0.0
+
+// コンテナー
+//
+// 全体で共通となるコンテナ
+//
+// markup:
+// <div class="l-container"></div>
+//
+// Styleguide 5.5.0
+
+.l-container {
+  @extend .container;
+  @media (max-width: 1200px) {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  @include breakpoint(small only) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  &.is-two-columns {
+    display: flex;
+    padding: 0!important;
+    @media (max-width: 900px) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+//
+// Grow Template
+//  Copyright 2015 GrowGroup Inc. All rights reserved.
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      https://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License
+//
+@import '../../../node_modules/susy/sass/susy';
+
+@import "foundation/_webfont";
+@import "foundation/_settings";
+@import "foundation/_mixin";
+@import "foundation/_normalize";
+@import "foundation/_forms";
+
+// モジュール
+//
+// サイトで複数回利用する可能性のある粒度の細かい要素をモジュールを定義しています。
+//
+// Styleguide 2.0.0
+
+@import "object/components/*";
+
+// ブロック
+//
+// ベース・モジュールを利用した、サイトで利用するブロックを定義しています。
+//
+// Styleguide 3.0.0
+@import "object/project/*";
+
+@import "layout/*";
+
+// ユーティリティ
+//
+// サイトのヘルパーとなるスタイル群です。
+//
+// Styleguide 4.0.0
+
+@import "object/utility/*";

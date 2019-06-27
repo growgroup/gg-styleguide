@@ -1,0 +1,34 @@
+// 表示
+//
+// .u-display-block: ブロック
+//
+// .u-display-none: 非表示
+//
+// .u-display-inlineblock: インラインブロック
+//
+// .u-display-inline: インライン
+//
+// markup:
+// <span class="u-display-block">ブロック</span>
+// <span class="u-display-none">非表示</span>
+// <div class="u-display-inlineblock">インラインブロック</div>
+// <div class="u-display-inline">インライン</div>
+//
+// Styleguide 4.2.0
+
+.u-display-block {
+  display: block !important;
+}
+
+.u-display-none {
+  display: none !important;
+}
+
+.u-display-inlineblock {
+  display: inline-block !important;
+}
+
+.u-display-inline {
+  display: inline !important;
+}
+

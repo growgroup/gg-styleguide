@@ -1,0 +1,68 @@
+// ボックス
+// -> 2カラム
+div.u-mbs.is-bottom
+  +c.box
+    +e.block
+      .row
+        .large-4.small-12
+          +e.image: +img("img-block-01.jpg")
+        .large-8.small-12
+          +e.content
+            div.c-heading.is-sm.is-bottom 見出しレベル4見出しレベル4
+            p ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト
+            div.u-mbs.is-top.is-xs.u-text-right
+              +a("#").c-button.is-sm 詳細はこちら
+
+// -> 1カラム
+div.u-mbs.is-bottom
+  +c.box
+    +e.block
+      +e.content
+        div.c-heading.is-xxs.is-color-primary.is-icon.is-bottom <i class="fa fa-circle-o" aria-hidden="true"></i>見出しレベル5
+        p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
+
+// -> ナンバーボックス01
+div.u-mbs.is-bottom
+  +c.box.is-number-left
+    +e.block
+      +e.number
+        small STEP
+        span 01
+      .row
+        .large-4.small-12
+          +e.image: +img("img-block-01.jpg")
+        .large-8.small-12
+          +e.content
+            div.c-heading.is-sm.is-bottom 見出しレベル4見出しレベル4
+            p ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト
+    +e.block
+      +e.number
+        small STEP
+        span 01
+      .row
+        .large-4.small-12
+          +e.image: +img("img-block-01.jpg")
+        .large-8.small-12
+          +e.content
+            div.c-heading.is-sm.is-bottom 見出しレベル4見出しレベル4
+            p ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキスト
+
+// -> ナンバーボックス01
+div.u-mbs.is-bottom
+  +c.box-number
+    +e.block
+      +e.head
+        +e.number
+          small STEP
+          span 01
+      +e.content
+        div.c-heading.is-xxxs.is-bottom 見出しレベル6見出しレベル6
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    +e.block
+      +e.head
+        +e.number
+          small STEP
+          span 02
+      +e.content
+        div.c-heading.is-xxxs.is-bottom 見出しレベル6見出しレベル6
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト

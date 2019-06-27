@@ -1,0 +1,93 @@
+extends /inc/foundation/_base-twocolumn.pug
+block append config
+  - current.id = "news" // ページのID
+  - current.title = "お知らせ" // タイトル
+  - current.description = "これはお知らせの説明文です" // 説明文
+  - current.bodyClass = "news" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","お知らせ","NEWS")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span お知らせ
+
+block body
+  +c.post-item.is-list
+    +e.inner
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+      +a("/news/page/").c-post-item__block
+        +e.sup
+          +e.category 更新情報
+          +e.date 2017.01.01
+        +e.title タイトルがここに入ります。タイトルがここに入ります。
+  <div class="c-pagination">
+  <ul>
+  // <li><a class="c-pagination__prev" href="#/"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+  <li><span class="is-active">1</span></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a class="c-pagination__next" href="#/"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+  </ul>
+  </div>
+
+block aside
+  include /inc/layout/_aside.pug

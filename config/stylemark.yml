@@ -1,0 +1,35 @@
+name: GG StyleGuide
+
+excludeDir:
+- dist
+- docs
+
+assets:
+- dist
+
+theme:
+    sidebar:
+        background: "#3b2a55"
+        textColor: "#fff"
+examples:
+    css:
+            - dist/assets/css/app.css
+            - dist/assets/css/style.css
+    js:
+        - https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+        - dist/assets/js/app.js
+
+    doctypeTag: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    htmlTag: <html id="acme">
+    bodyTag: <body class="acme-body">
+
+    headHtml: |
+        <meta name="google-site-verification" content="52cae…">
+        <script>
+            window.disableRouting = true;
+        </script>
+
+    bodyHtml: |
+        <div style="padding: 20px">
+            {html}
+        </div>

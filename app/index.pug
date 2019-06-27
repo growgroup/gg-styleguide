@@ -1,0 +1,90 @@
+//- filename: index.jade
+//- description: サイトのトップページ
+
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "top" // ページのID
+  - current.title = "トップページ" // タイトル
+  - current.description = "これはトップページの説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 1 // ページの階層
+
+block body
+  +c_main-visual()
+  main.l-main
+    section.l-section.is-lg.is-color-secondary
+      .l-container
+        h2.c-heading.is-xlg.is-bottom
+          span ABOUT
+          small 私たちについて
+        p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        +c.card.u-mbs.is-top.is-lg
+          .row
+            .large-4.small-12
+              +e.block
+                +e.image: +img("img-card-01.jpg")
+                +e.content
+                  h3.c-card__title コンセプトタイトル
+                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+            .large-4.small-12
+              +e.block
+                +e.image: +img("img-card-01.jpg")
+                +e.content
+                  h3.c-card__title コンセプトタイトル
+                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+            .large-4.small-12
+              +e.block
+                +e.image: +img("img-card-01.jpg")
+                +e.content
+                  h3.c-card__title コンセプトタイトル
+                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    section.l-section.is-lg.is-top
+      .l-container
+        h2.c-heading.is-xlg.is-bottom
+          span SERVICE
+          small 事業内容
+      +c.hero-block-square
+        +e.block
+          +e.image: +img("img-hero-block-01.jpg")
+          .l-container
+            +e.content
+              +e.inner
+                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                +e.button: +a("#").c-button.is-sm ボタンテキスト
+        +e.block
+          +e.image: +img("img-hero-block-01.jpg")
+          .l-container
+            +e.content
+              +e.inner
+                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                +e.button: +a("#").c-button.is-sm ボタンテキスト
+        +e.block
+          +e.image: +img("img-hero-block-01.jpg")
+          .l-container
+            +e.content
+              +e.inner
+                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                +e.button: +a("#").c-button.is-sm ボタンテキスト
+    section.l-section.is-lg
+      .l-container
+        +c.news
+          .row
+            .large-3.small-12
+              +e.head
+                h2.c-news__title.c-heading.is-xlg
+                  span NEWS
+                  small お知らせ
+                +e.button: +a("/news/").c-button.is-sm 一覧を見る
+            .large-9.small-12
+              +e.content
+                -for (var i = 0; i<3; i++){
+                  +a("/news/page/").c-news__block
+                    +e.date 2018.10.10
+                    +e.label.c-label.is-white カテゴリ
+                    +e.text お知らせの投稿タイトルがここに入ります。
+                - }
+  // オファーブロック
+  +c_offer()

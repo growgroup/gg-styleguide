@@ -1,0 +1,77 @@
+.c-special {
+  &__block {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 32px;
+    padding-left: 16px;
+    margin-bottom: 48px;
+    @media (max-width: 900px) {
+      display: block;
+      padding-left: 24px;
+      padding-right: 24px;
+      margin-bottom: 32px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__head {
+    width: 100%;
+    max-width: 418px;
+    position: relative;
+    @media (max-width: 900px) {
+      max-width: 320px;
+    }
+    @include breakpoint(small only) {
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+  &__number {
+    @include webfont();
+    font-size: 65px;
+    position: absolute;
+    top: -32px;
+    left: -16px;
+    line-height: 1;
+    @media (max-width: 900px) {
+      font-size: 56px;
+    }
+  }
+  &__content {
+    width: 100%;
+    max-width: calc(100% - 418px - 32px);
+    margin-left: auto;
+    @media (max-width: 900px) {
+      max-width: calc(100% - 320px - 32px);
+    }
+    @include breakpoint(small only) {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    @extend .heading;
+    @extend .heading.is-md;
+    @extend .heading.is-underline;
+    margin-top: 0;
+    margin-bottom: 20px;
+    @include breakpoint(small only) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// PC版では偶数番目のブロックは画像を右に配置
+@media (min-width: 750px) {
+  .c-special__block:nth-child(even) {
+    .c-special__head {
+      order: 2;
+      margin-left: auto;
+    }
+    .c-special__content {
+      order: 1;
+      margin-left: 0;
+    }
+  }
+
+}

@@ -1,0 +1,29 @@
+//- filename: footer.jade
+//- description: フッター
+
++c.pagetop
+  +a("#").c-pagetop__button.js-anchor(data-anchor-target="body") <i class="fa fa-angle-up" aria-hidden="true"></i>
+footer.l-footer-simple
+  .l-container
+    nav.l-footer-simple__nav
+      ul
+        li
+          +a("/") ホーム
+        li
+          +a("/business/") 事業内容
+        li
+          +a("/store-guide/") 店舗案内
+        li
+          +a("/purchase-flow/") 買取の流れ
+        li
+          +a("/news/") お知らせ
+        li
+          +a("/recruit/") 採用情報
+        li
+          +a("/company/") 会社案内
+        li
+          +a("/contact/") お問い合わせ
+  .l-footer-simple__copyright
+    p Copyright © 2018 株式会社サンプル All Rights Reserved.
+
+

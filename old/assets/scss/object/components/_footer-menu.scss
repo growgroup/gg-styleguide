@@ -1,0 +1,103 @@
+.c-footer-menu {
+  padding-top: 64px;
+  padding-bottom: 88px;
+  background-color: $font-base-color;
+  @include breakpoint(small only) {
+    padding: 0;
+    background-color: transparent;
+  }
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include breakpoint(small only) {
+      display: block;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+    }
+  }
+  &__block {
+    padding-right: 40px;
+    @media (max-width: 900px) {
+      padding-right: 24px;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    @include breakpoint(small only) {
+      padding: 0;
+    }
+  }
+  &__title {
+    color: $color-white;
+    margin-bottom: 20px;
+    font-weight: 500;
+    @include breakpoint(small only) {
+      border-bottom: 1px solid $border-base-color;
+      padding: 12px 24px;
+      margin: 0;
+      background-color: $font-base-color;
+      &:before {
+        content: "\f107";
+        font-family: "FontAwesome";
+        color: $color-primary;
+        padding-right: 12px;
+      }
+      &.is-open {
+        &:before {
+          content: "\f106";
+        }
+      }
+    }
+  }
+  &__list {
+    li {
+      margin-bottom: 24px;
+      @include breakpoint(small only) {
+        margin: 0!important;
+        border-bottom: 1px solid $border-base-color;
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: 500;
+        @include breakpoint(small only) {
+          padding: 14px 24px;
+          display: block;
+          background-color: $font-base-color;
+          &:hover {
+            opacity: 1;
+          }
+          &:before {
+            content: "\f105";
+            font-family: "FontAwesome";
+            color: $color-primary;
+            padding-right: 12px;
+          }
+        }
+      }
+    }
+    &.is-sub {
+      @include breakpoint(small only) {
+        display: none;
+      }
+      li {
+        margin-bottom: 11px;
+        @include breakpoint(small only) {
+          border: none;
+        }
+        a {
+          font-weight: 400;
+          color: rgba($color-white,0.8);
+          @include breakpoint(small only) {
+            background-color: rgba($font-base-color,0.8);
+            padding: 10px 44px;
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

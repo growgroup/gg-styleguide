@@ -1,0 +1,71 @@
+// メインビジュアル
+//
+// markup:
+// <div class="c-main-visual">
+//
+// </div>
+//
+// Styleguide 2.6.0
+
+.c-main-visual {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  @media (max-width: 950px) {
+    margin-top: 55px;
+  }
+  @include breakpoint(small only) {
+    height: 50vw;
+    min-height: 280px;
+  }
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba($color-black,0.2) url("../images/ptn-dots.png") repeat;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 99;
+    text-align: center;
+    padding: 0 16px;
+  }
+  &__text {
+    margin-bottom: 56px;
+    @include breakpoint(small only) {
+      margin-bottom: 6.4vw;
+    }
+    img {
+      width: 100%;
+      max-width: rem-calc(1082)/2;
+      height: auto;
+      @include breakpoint(small only) {
+        width: 88%;
+        max-width: 400px;
+      }
+    }
+  }
+  &__button {
+    @extend .c-button;
+    border-color: $color-white;
+    background-color: rgba($color-primary,0.5);
+  }
+}

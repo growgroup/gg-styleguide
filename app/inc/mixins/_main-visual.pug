@@ -1,0 +1,11 @@
+//- メインビジュアル
+mixin c_main-visual
+  +c.main-visual
+    +e.slider.owl-carousel
+      +bgimg("img-main-visual-01.jpg").c-main-visual__image
+      +bgimg("img-main-visual-01.jpg").c-main-visual__image
+      +bgimg("img-main-visual-01.jpg").c-main-visual__image
+    +e.inner
+      +e.text: +img("img-main-visual-text.png","キャッチコピーが入ります")
+      +e.button: +a("/aboutus/").c-button.is-lg 詳細はこちら
+

@@ -1,0 +1,49 @@
+// ヘッダー
+//->通常
+div.u-mbs.is-bottom
+    .l-header
+        .l-container
+            .l-header__inner
+                if current.id == 'top'
+                    h1.l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+                else
+                    .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+                .l-header__content
+                    ul.l-header__submenu
+                        li: +a("#") <i class="fa fa-hospital-o" aria-hidden="true"></i>医療機関様へ
+                        li: +a("#") <i class="fa fa-map-marker" aria-hidden="true"></i>交通アクセス
+                    a(href="tel: 00-0000-0000").l-header__tel
+                        span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
+                        small 受付時間 / 平日00：00～00：00
+                    +a("/contact/").l-header__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+    nav.l-global-nav
+        .l-container
+            ul
+                li: +a("#") ホーム
+                li: +a("#") メニュー1
+                li: +a("#") メニュー2
+                li: +a("#") メニュー3
+                li: +a("#") メニュー4
+                li: +a("#") メニュー5
+                li: +a("#") メニュー6
+//->ミニマルヘッダー
+div.u-mbs.is-bottom
+    .l-header-minimal
+        .l-header-minimal__inner
+            .l-header-minimal__text テキストテキストテキストテキストテキスト
+            a(href="tel: 00-0000-0000").l-header-minimal__tel
+                span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
+                small 受付時間 / 平日00：00～00：00
+        .l-header-minimal__content
+            if current.id == 'top'
+                h1.l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
+            else
+                .l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
+            nav.l-header-minimal__nav
+                ul
+                    li: +a("#") メニュー1
+                    li: +a("#") メニュー2
+                    li: +a("#") メニュー3
+                    li: +a("#") メニュー4
+                    li: +a("#") メニュー5
+            +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ

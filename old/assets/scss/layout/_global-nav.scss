@@ -1,0 +1,66 @@
+// グローバルナビゲーション
+//
+// グローバルナビゲーションのスタイル
+//
+// markup:
+// <header class="l-header"></header>
+//
+// Styleguide 5.4.0
+
+.l-global-nav {
+  margin-left: auto;
+  padding-top: 4px;
+  @media (max-width: 950px) {
+    display: none;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      margin-left: 48px;
+      @media (max-width: 1080px) {
+        margin-left: 32px;
+      }
+      @media (max-width: 970px) {
+        margin-left: 24px;
+      }
+      a {
+        color: $font-base-color;
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        transition: all .3s;
+        &:hover {
+          opacity: 1;
+          color: $color-primary;
+          &:before {
+            width: 50px;
+            opacity: 1;
+            left: calc(50% - 25px);
+          }
+        }
+        &:before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 3px;
+          background-color: $color-primary;
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          opacity: 0;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+  // 固定の場合
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000000;
+  }
+
+}

@@ -1,0 +1,79 @@
+// ドロップダウン
+//
+// markup:
+// <div class="c-dropdown">
+//     <div class="c-dropdown__trigger">
+//       トリガー
+//       <ul class="c-dropdown__list">
+//           <li><a href="#">ドロップダウンメニュー1</a></li>
+//           <li><a href="#">ドロップダウンメニュー2</a></li>
+//           <li><a href="#">ドロップダウンメニュー3</a></li>
+//           <li><a href="#">ドロップダウンメニュー4</a></li>
+//           <li><a href="#">ドロップダウンメニュー5</a></li>
+//       </ul>
+//    </div>
+// </div>
+// <br>
+// <br>
+// <br>
+// <br>
+// <br>
+// <br>
+//
+// Styleguide 2.1.0
+
+
+.c-dropdown {
+  position: relative;
+  text-align: center;
+}
+
+
+.c-dropdown__list {
+  padding-left: 0;
+  border-left: 1px solid $border-base-color;
+  border-right: 1px solid $border-base-color;
+  border-top: 1px solid $border-base-color;
+  list-style: none;
+  max-width: 240px;
+  border-radius: $border-radius-sm;
+  position: absolute;
+  left: 50%;
+  margin-top: $margin-sm;
+  margin-bottom: 0;
+  margin-left: -102px;
+  display: none;
+  opacity: 0;
+  z-index: 10000000;
+
+  li {
+    border-bottom: 1px solid $border-base-color;
+
+    &:last-child {
+      border-radius: 0 0 $border-radius-sm $border-radius-sm;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      padding-top: $margin-base;
+      padding-bottom: $margin-base;
+      padding-left: $margin-md;
+      padding-right: $margin-md;
+      @extend small;
+      &:hover {
+        background: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.c-dropdown__trigger:hover{
+  cursor: pointer;
+}
+
+.c-dropdown__trigger:hover  .c-dropdown__list {
+  display: block;
+  opacity: 1;
+}

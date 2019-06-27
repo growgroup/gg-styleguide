@@ -1,0 +1,43 @@
+// レスポンシブ用ユーティリティクラス
+
+// スマートフォンだけ隠す
+@include breakpoint(small only) {
+  .u-hidden-sm {
+    display: none !important;
+  }
+}
+
+// デスクトップだけ隠す
+@include breakpoint(medium up) {
+  .u-hidden-lg {
+    display: none !important;
+  }
+}
+
+
+// 表示
+
+.u-visible-sm,
+.u-visible-md,
+.u-visible-lg {
+  display: none !important;
+}
+
+@include breakpoint(small only) {
+  .u-visible-sm {
+    display: block !important;
+    &.is-inlineblock {
+      display: inline-block !important;
+    }
+  }
+}
+
+// デスクトップだけ隠す
+@include breakpoint(medium up) {
+  .u-visible-lg {
+    display: block !important;
+    &.is-inlineblock {
+      display: inline-block !important;
+    }
+  }
+}

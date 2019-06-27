@@ -1,0 +1,222 @@
+// カードデザイン
+//->通常
+div.u-mbs.is-bottom
+  .row
+    //-->ノーマル
+    .large-4.small-12
+      +c.card
+        +e.block
+          +e.image: +img("img-card-01.jpg")
+          +e.content
+            +e.title コンセプトタイトル
+            +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    .large-4.small-12
+      //-->ナンバーカード
+      +c.card.is-number-left
+        +e.block
+          +e.number
+            small POINT
+            span 01
+          +e.image: +img("img-card-01.jpg")
+          +e.content
+            +e.title コンセプトタイトル
+            +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    .large-4.small-12
+      //-->リンクカード01
+      +c.card.is-link
+        +a("#").c-card__block
+          span.c-card__image: +img("img-card-01.jpg")
+          span.c-card__content
+            span.c-card__title コンセプトタイトル
+            span.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+//-->リンクカード02
+div.u-mbs.is-bottom
+  .row
+    .large-4.small-12
+      +c.card.is-link.is-overlay
+        +a("#").c-card__block
+          span.c-card__image
+            +img("img-card-01.jpg")
+            span.c-card__items
+              span.c-card__items-title コンセプトタイトル
+              span.c-card__items-subtitle CONCEPT TITLE
+          span.c-card__content
+            span.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    .large-4.small-12
+      +c.card.is-link.is-overlay
+        +a("#").c-card__block
+          span.c-card__image
+            +img("img-card-01.jpg")
+            span.c-card__items
+              span.c-card__items-title コンセプトタイトル
+              span.c-card__items-subtitle CONCEPT TITLE
+          span.c-card__content
+            span.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+    .large-4.small-12
+      +c.card.is-link.is-overlay
+        +a("#").c-card__block
+          span.c-card__image
+            +img("img-card-01.jpg")
+            span.c-card__items
+              span.c-card__items-title コンセプトタイトル
+              span.c-card__items-subtitle CONCEPT TITLE
+          span.c-card__content
+            span.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+//->ポストアイテムカード01
+div.u-mbs.is-bottom
+  .row
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+    .large-4.small-12
+      +c.card-post
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+            span.c-card-post__label.c-label.is-lg カテゴリ名
+          +e.content
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.sup
+              +e.date 2018.01.01
+              +e.tag
+                ul
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+                  li: +a("") #タグ
+
+//->ポストアイテムカード02
+div.u-mbs.is-bottom
+  .row
+    .large-3.small-12
+      +c.card-post.is-tag-hidden
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+    .large-3.small-12
+      +c.card-post.is-tag-hidden
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+    .large-3.small-12
+      +c.card-post.is-tag-hidden
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+    .large-3.small-12
+      +c.card-post.is-tag-hidden
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+//->カード大
+div.u-mbs.is-bottom
+  +c.card-lg
+    +e.inner
+      +e.block
+        +e.image: +img("img-card-01.jpg")
+        +e.content
+          +e.title コンセプトタイトル
+          p.c-card-lg__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+      +e.block
+        +e.image: +img("img-card-01.jpg")
+        +e.content
+          +e.title コンセプトタイトル
+          p.c-card-lg__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+      +e.block
+        +e.image: +img("img-card-01.jpg")
+        +e.content
+          +e.title コンセプトタイトル
+          p.c-card-lg__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。

@@ -1,0 +1,90 @@
+// ヘッダー
+//
+// ヘッダーの標準スタイル
+//
+// markup:
+// <header class="l-header"></header>
+//
+// Styleguide 5.1.0
+
+.l-header {
+  padding-top: 12px;
+  background-color: $color-white;
+  @media (max-width: 950px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 9990;
+    padding-top: 5px;
+    box-shadow: 1px 1px 1px rgba($color-black,0.1);
+  }
+  &__content {
+    display: flex;
+  }
+
+  &__heading {
+    font-size: 12px;
+    margin: 0;
+    color: #9A9A9A;
+    font-weight: 400;
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+
+  // 電話番号
+  &__tel {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+  &__number {
+    display: block;
+    font-size: 23px;
+    @include webfont();
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    &:before {
+      content: "\f095";
+      font-family: "FontAwesome";
+      padding-right: 6px;
+      font-size: 21px;
+    }
+  }
+  &__text {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    padding-left: 12px;
+  }
+
+  // ロゴ
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 17px;
+  }
+  &__logo {
+    display: block;
+    width: rem-calc(532)/2;
+    @media (max-width: 950px) {
+      width: rem-calc(380)/2;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+
+
+
+

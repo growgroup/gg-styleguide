@@ -1,0 +1,285 @@
+// ボタン
+//
+// ボタンのスタイル
+//
+// markup:
+// <p><a href="#" class="c-button">通常ボタン</a><p>
+// <p><a href="#" class="c-button is-lg">大ボタン</a><p>
+// <p><a href="#" class="c-button is-sm">小ボタン</a><p>
+// <p><a href="#" class="c-button is-xs">極小ボタン</a><p>
+// <p><a href="#" class="c-button is-secondary">セカンダリーボタン</a><p>
+// <p><a href="#" class="c-button is-tertiary">ターシャリボタン</a><p>
+// <p><a href="#" class="c-button is-danger">危険ボタン</a><p>
+// <p><a href="#" class="c-button is-warning">警告ボタン</a><p>
+// <p><a href="#" class="c-button is-success">成功ボタン</a><p>
+// <p><a href="#" class="c-button is-info">情報ボタン</a><p>
+// <p><a href="#" class="c-button is-round">丸角ボタン</a><p>
+// <p><a href="#" class="c-button is-lg is-success is-round">丸角ボタン</a><p>
+// <p><a href="#" class="c-button is-lg is-expand">最大幅</a><p>
+//
+// Styleguide 2.11.0
+.c-button {
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  max-width: rem-calc(203);
+  text-align: center;
+  background-color: $color-primary;
+  color: $color-white;
+  border: 1px solid $color-primary;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: rem-calc(13) rem-calc(24);
+  position: relative;
+  transition: all .3s;
+  font-weight: 700;
+  // *アイコン
+  &:after {
+    content: "\f105";
+    display: block;
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 50%;
+    right: rem-calc(16);
+    transform: translateY(-50%);
+    font-weight: 400;
+  }
+  // *hover
+  &:hover {
+    opacity: 1;
+    background-color: $color-white;
+    color: $color-primary;
+  }
+
+  // width: 100%
+  &.is-display-block {
+    max-width: 100%!important;
+  }
+  // カラー設定
+  // -> セカンダリカラー
+  &.is-secondary {
+    background-color: lighten($color-primary, 40);
+    color: $color-primary;
+    border-color: lighten($color-primary, 40);
+    &:hover {
+      background-color: $color-white;
+      border-color: $color-primary;
+    }
+  }
+  // -> アクセントカラー
+  &.is-accent {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+  // -> ホワイトカラー
+  &.is-white {
+    background-color: $color-white;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  // サイズ設定
+  // -> 大
+  &.is-xlg {
+    max-width: rem-calc(392);
+    padding: rem-calc(26) rem-calc(32);
+    font-size: rem-calc(18);
+    @include breakpoint(small only) {
+      font-size: rem-calc(18)*0.9;
+      padding: rem-calc(20) rem-calc(32);
+    }
+    &:after {
+      font-size: rem-calc(24);
+      @include breakpoint(small only) {
+        font-size: rem-calc(24)*0.9;
+      }
+    }
+  }
+  // -> 中
+  &.is-lg {
+    max-width: rem-calc(356);
+    padding: rem-calc(16) rem-calc(24);
+  }
+  // -> 小
+  &.is-sm {
+    max-width: rem-calc(155);
+    padding: rem-calc(10) rem-calc(18);
+    font-size: rem-calc(14);
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: rem-calc(14)*0.9;
+    }
+    &:after {
+      right: rem-calc(10);
+    }
+  }
+  // -> 極小
+  &.is-xs {
+    width: inherit;
+    max-width: 100%;
+    background-color: transparent;
+    padding: 0 rem-calc(16) 0 0;
+    border: none!important;
+    color: $font-base-color;
+    font-size: rem-calc(14);
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: rem-calc(14)*0.9;
+    }
+    &:after {
+      color: $color-primary;
+      right: 0;
+    }
+    // *hover
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  // デザイン設定
+  // ->矢印左
+  &.is-arrow-left {
+    &:after {
+      content: "\f104";
+      right: auto;
+      left: rem-calc(12);
+    }
+  }
+  // -> ラインライト
+  &.is-line-right {
+    background-color: $color-white;
+    border: 1px solid $font-base-color;
+    color: $font-base-color;
+    border-radius: 0;
+    &:after {
+      content: "";
+      width: rem-calc(32);
+      height: rem-calc(1);
+      background-color: $font-base-color;
+      position: absolute;
+    }
+    // *hover
+    &:hover {
+      opacity: 1;
+      &:after {
+        transform: translate(16px,-50%);
+      }
+    }
+    // *極小
+    &.is-xs {
+      padding-right: rem-calc(78);
+      @include breakpoint(small only) {
+        padding-right: rem-calc(64);
+      }
+      &:after {
+        width: rem-calc(64);
+        @include breakpoint(small only) {
+          width: rem-calc(48);
+        }
+      }
+    }
+  }
+
+  // -> 矢印
+  &.is-arrow-right {
+    border-radius: 0;
+    &:after {
+      content: "";
+      width: rem-calc(36);
+      height: rem-calc(1);
+      background-color: $color-white;
+      top: calc(50% + 6px);
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: rem-calc(12);
+      height: 1px;
+      background-color: $color-white;
+      position: absolute;
+      right:  rem-calc(16);
+      top: calc(50% + 3px);
+      transform: translate(1px, -50%) rotate(40deg);
+      transition: all .3s;
+      @include breakpoint(small only) {
+        top: calc(50% + 2px);
+      }
+    }
+    // *hover
+    &:hover {
+      opacity: 1;
+      &:after,
+      &:before {
+        right: rem-calc(8);
+        background-color: $color-primary;
+      }
+    }
+    // *極小
+    &.is-xs {
+      padding-right: rem-calc(58);
+      &:after {
+        width: rem-calc(48);
+        background-color: $font-base-color;
+      }
+      &:before {
+        background-color: $font-base-color;
+        right: 0;
+      }
+      // *hover
+      &:hover {
+        &:after,
+        &:before {
+          right: rem-calc(-8);
+        }
+      }
+    }
+  }
+  // -> アイコン
+  &.is-icon-right {
+    border-radius: 0;
+    &:after {
+      border: 2px solid $color-white;
+      width: rem-calc(24);
+      height: rem-calc(24);
+      border-radius: 1000px;
+      font-size: rem-calc(13);
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: rem-calc(3);
+      padding-bottom: rem-calc(1);
+      @include breakpoint(small only) {
+        border-width: 1px;
+        width: rem-calc(22);
+        height: rem-calc(22);
+        font-size: rem-calc(12);
+        padding-bottom: 0;
+      }
+    }
+    // *hover
+    &:hover {
+      &:after {
+        border-color: $color-primary;
+      }
+    }
+    // *極小
+    &.is-xs {
+      color: $color-primary;
+      padding-right: 32px;
+      &:after {
+        border-color: $color-primary;
+        right: 0;
+      }
+    }
+  }
+}

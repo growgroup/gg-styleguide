@@ -1,0 +1,43 @@
+.c-box-share {
+  width: 100%;
+  min-height: rem-calc(270);
+  background: url("../images/img-sample.jpg");
+  @include bg-option();
+  position: relative;
+  text-align: center;
+  margin: rem-calc(48) 0;
+  @include breakpoint(small only) {
+    margin: rem-calc(24) 0;
+    min-height: rem-calc(200);
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black,0.6);
+  }
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+    width: 100%;
+  }
+  &__title {
+    color: $color-white;
+    font-weight: 700;
+    font-size: rem-calc(24);
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-bottom: rem-calc(20);
+    @include breakpoint(small only) {
+      font-size: rem-calc(20);
+      margin-bottom: rem-calc(14);
+    }
+  }
+}

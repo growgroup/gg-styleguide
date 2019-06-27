@@ -1,0 +1,29 @@
+// メディア
+//
+// キャプション付き画像や、動画
+//
+// markup:
+// <figure class="c-media">
+//   <img src="https://placehold.jp/200x200.png">
+//   <figcaption>画像タイトル</figcaption>
+// </figure>
+//
+// Styleguide 2.15.0
+
+.c-media {
+
+  > img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  > figcaption {
+    margin-top: 0;
+    background: $color-tertiary;
+    text-align: center;
+    padding: rem-calc($margin-base) rem-calc($margin-md);
+
+  }
+
+}

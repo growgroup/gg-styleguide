@@ -1,0 +1,23 @@
+// 投稿記事
+//
+
+.p-landing-block {
+  display: table;
+  margin-bottom: rem-calc(48);
+  &__thumbnail {
+    display: table-cell;
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repet;
+  }
+  &__content {
+    display: table-cell;
+    padding-left: rem-calc(64);
+    padding-right: rem-calc(64);
+    padding-top: rem-calc(64);;
+    padding-bottom: rem-calc(64);;
+    &__inner {
+
+    }
+  }
+}

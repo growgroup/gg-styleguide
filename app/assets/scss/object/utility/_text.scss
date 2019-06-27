@@ -1,0 +1,103 @@
+// テキスト
+//
+// Styleguide 1.2.0
+
+// テキスト - 通常
+//
+// markup:
+// <p>通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。</p>
+// <span class="text-normal">通常テキスト</span>
+//
+// Styleguide 1.2.1
+
+p,
+.u-text-normal {
+  margin: 0;
+}
+
+// テキスト - 縮小
+//
+// markup:
+// <span class="text-small">テキスト - 縮小</span>
+// <small>テキスト - 縮小</small>
+//
+// Styleguide 1.2.2
+
+small,
+.u-text-small {
+  font-size: 0.85em;
+}
+
+// テキスト - 強調
+//
+// markup:
+// <span class="text-strong">テキスト - 強調</span>
+// <strong>テキスト - 強調</strong>
+//
+// Styleguide 1.2.3
+
+strong,
+.u-text-strong {
+  font-weight: 700;
+}
+
+// テキスト - 打ち消し線
+//
+// markup:
+// <span class="text-del">テキスト - 打ち消し線</span>
+// <del>テキスト - 打ち消し線</del>
+//
+// Styleguide 1.2.4
+
+del,
+.u-text-del {
+  text-decoration: line-through;
+}
+
+// テキスト - リンク
+//
+// markup:
+// <span class="u-text-link">テキスト - リンク</span>
+// <p><a href="#">テキスト - リンク : 通常</a></p>
+// <p><a href="#" class="u-text-link is-hover">テキスト - リンク : ホバー</a></p>
+// <p><a href="#" class="u-text-link is-active">テキスト - リンク : アクティブ</a></p>
+//
+// Styleguide 1.2.5
+
+a,
+.u-text-link {
+  color: $color-primary;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover,
+.u-text-link:hover,
+.u-text-link.is-hover {
+  opacity: 0.8;
+}
+
+a:active,
+.u-text-link:active,
+.u-text-link.is-active {
+  // color: darken($color-primary, 10);
+}
+
+p a:visited {
+  color: #887EBF;
+}
+
+
+// 用途別テキストカラー
+.u-text-danger {
+  color: $color-state-danger;
+}
+
+.u-text-info {
+  color: $color-state-info;
+}
+
+.u-text-success {
+  color: $color-state-info;
+}

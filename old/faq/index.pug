@@ -1,0 +1,74 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "faq" // ページのID
+  - current.title = "よくあるご質問" // タイトル
+  - current.description = "これはよくあるご質問の説明文です" // 説明文
+  - current.bodyClass = "faq" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","よくあるご質問","FAQ")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span 私たちについて
+
+block body
+  section.l-main
+    .l-section.is-lg
+      .l-container
+        .row
+          .large-10.is-push-lg-1.small-12
+            p.u-text-center 皆様からいただいた、よくあるご質問をご紹介いたします。
+            +c.capsule-nav.u-mbs.is-top.is-sm
+              ul
+                li: +a("#faq01").js-anchor 支払いについて
+                li: +a("#faq02").js-anchor 支払いについて
+                li: +a("#faq03").js-anchor 支払いについて
+            +c.faq
+              +e.box#faq01
+                +e.heading 支払いについて
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              +e.box#faq02
+                +e.heading 支払いについて
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              +e.box#faq03
+                +e.heading 支払いについて
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                +e.block.js-accordion
+                  +e.title(data-accordion-title="faq-title") お支払について教えてください。
+                  +e.text(data-accordion-content="faq-text").
+                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+  +c_relation()
+  +c_offer()

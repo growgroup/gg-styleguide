@@ -1,0 +1,31 @@
+blockquote {
+  border-left: 2px solid $color-primary;
+  margin-top: $margin-md;
+  margin-bottom: $margin-md;
+  background-color: rgba($color-primary,0.1);
+  padding: 30px 45px;
+  position: relative;
+  @include breakpoint(small only) {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 16px 24px 16px 40px;
+  }
+  &:before {
+    content: "\f10d";
+    display: block;
+    font-family: "FontAwesome";
+    font-size: 20px;
+    color: $color-primary;
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    @include breakpoint(small only) {
+      font-size: 16px;
+      top: 6px;
+    }
+  }
+  cite{
+    display: block;
+    text-align: right;
+  }
+}

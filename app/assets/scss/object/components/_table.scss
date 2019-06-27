@@ -1,0 +1,54 @@
+// テーブル
+//
+// テーブルのスタイル
+//
+// markup:
+// <table class="c-table">
+//     <tbody>
+//         <tr>
+//              <th width="300">テーブル見出し</th>
+//              <td>テーブルセル</td>
+//         <tr>
+//         <tr>
+//              <th>テーブル見出し</th>
+//              <td>テーブルセル</td>
+//         <tr>
+//     </tbody>
+// </table>
+//
+// Styleguide 2.12.0
+
+.c-table {
+  width: 100%;
+  border-top: 1px solid $border-base-color;
+  tbody {
+    th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid $border-base-color;
+      padding: rem-calc(24);
+      vertical-align: top;
+      @include breakpoint(small only) {
+        padding: rem-calc(12);
+      }
+    }
+    th {
+      color: $color-primary;
+      width: rem-calc(196);
+      position: relative;
+      @include breakpoint(small only) {
+        width: rem-calc(96);
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-primary;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+      }
+    }
+  }
+}

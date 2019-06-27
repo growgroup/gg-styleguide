@@ -1,0 +1,19 @@
+//- パンくずリスト
+mixin c_breadcrumb(parent,parentURL)
+  if parent
+    +c.breadcrumb
+      .l-container
+        +e.inner
+          span: +a("/") ホーム
+          span >
+          span: +a('/'+parentURL+'/')=parent
+          span >
+          span=current.title
+  else
+    +c.breadcrumb
+      .l-container
+        +e.inner
+          span: +a("/") ホーム
+          span >
+          span=current.title
+

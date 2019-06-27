@@ -1,0 +1,45 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "greeting" // ページのID
+  - current.title = "代表あいさつ" // タイトル
+  - current.description = "これは代表あいさつの説明文です" // 説明文
+  - current.bodyClass = "greeting" // body に付与するクラス
+  - current.depth = 3 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","代表あいさつ","COMPANY")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span: +a("/") 企業情報
+      span >
+      span 代表あいさつ
+
+block body
+  section.l-main
+    .l-section.is-xlg
+      .l-container
+        +c.message
+          +e.image: +img("img-message-01.jpg")
+          +e.title 自分たちの手で、世の中の価値基準を変える
+          +e.text.
+            ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表あいさつがはいります。ここに代表
+          +e.name
+            small 代表取締役社長
+            span サンプル太郎
+    .l-section.is-bg.is-md
+      .l-container
+        +c.other-content
+          +e.inner
+            +a("/company/profile/").c-other-content__block
+              +bgimg("img-card-02.jpg").c-other-content__image
+              +e.text 会社概要
+            +a("/company/history/").c-other-content__block
+              +bgimg("img-card-03.jpg").c-other-content__image
+              +e.text 沿　革
+            +a("/recruit/").c-other-content__block
+              +bgimg("img-card-04.jpg").c-other-content__image
+              +e.text 採用情報
+  +c_relation()
+  +c_offer()

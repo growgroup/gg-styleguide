@@ -1,0 +1,108 @@
+.c-point {
+  &__heading {
+    @extend .heading;
+    @extend .heading.is-lg;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 48px;
+    @include breakpoint(small only) {
+      margin-bottom: 24px;
+    }
+  }
+  &__block {
+    display: flex;
+    background-color: $color-white;
+    box-shadow: 1px 1px 10px rgba($color-black,0.1);
+    padding: 32px;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include breakpoint(small only) {
+      display: block;
+      padding: 24px;
+    }
+  }
+  &__image {
+    width: 388px;
+    @media (max-width: 950px) {
+      width: 280px;
+    }
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+  &__content {
+    width: calc(100% - 388px - 32px);
+    margin-left: auto;
+    @media (max-width: 950px) {
+      width: calc(100% - 280px - 32px);
+    }
+    @include breakpoint(small only) {
+      width: 100%;
+      margin-top: -16px;
+      padding-left: 8px;
+      padding-right: 8px;
+      position: relative;
+      z-index: 99;
+    }
+  }
+  &__label {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 140px;
+    @include webfont();
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+    padding: 7px 6px 5px;
+    margin-bottom: 14px;
+    @include breakpoint(small only) {
+      width: 120px;
+      padding: 5px 6px 4px;
+      margin-bottom: 10px;
+    }
+    span {
+      font-size: 18px;
+      display: block;
+      padding-right: 10px;
+      @include breakpoint(small only) {
+        font-size: 14px;
+        padding-right: 6px;
+      }
+    }
+    small {
+      font-size: 28px;
+      display: block;
+      @include breakpoint(small only) {
+        font-size: 24px;
+      }
+    }
+  }
+  &__title {
+    @extend .heading;
+    @extend .heading.is-md;
+    @extend .heading.is-underline;
+    margin-top: 0;
+    margin-bottom: 20px;
+    @include breakpoint(small only) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+
+// PC版では偶数番目のブロックは画像を右に配置
+@media (min-width: 750px) {
+  .c-point__block:nth-child(even) {
+    .c-point__image {
+      order: 2;
+      margin-left: auto;
+    }
+    .c-point__content {
+      order: 1;
+      margin-left: 0;
+    }
+  }
+}

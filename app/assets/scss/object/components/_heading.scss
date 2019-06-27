@@ -1,0 +1,361 @@
+// ベース
+//
+// Styleguide 1.0.0
+
+// 見出し
+//
+// Styleguide 1.1.0
+
+$heading-color: $font-base-color !default;
+$heading-weight: normal !default;
+$heading-accent-color: $font-base-color !default;
+
+.c-heading {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.5;
+  small {
+    font-size: 0.65em;
+  }
+}
+
+// 見出し - 極大
+//
+// markup:
+// <h1 class="heading is-xlg"><span>TEXTLEVEL1</span><small>見出しレベル1</small</h1>
+//
+// Styleguide 1.1.1
+
+.c-heading.is-xlg {
+  text-align: center;
+  color: $color-primary;
+  margin-bottom: rem-calc(24);
+  @include breakpoint(small only) {
+
+  }
+  span {
+    display: block;
+    @include webfont-bold();
+    font-size: rem-calc(42);
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: rem-calc(42)*0.8;
+    }
+  }
+  small {
+    display: block;
+    font-weight: 700;
+    font-size: rem-calc(16);
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: rem-calc(16)*0.8;
+    }
+  }
+}
+
+// 見出し - 大
+//
+// markup:
+// <h1 class="heading is-lg"><span>見出しレベル1見出しレベル1</span><small>TEXTLEVEL1</small</h1>
+//
+// Styleguide 1.1.2
+
+.c-heading.is-lg {
+  text-align: center;
+  color: $color-primary;
+  font-size: rem-calc(32);
+  letter-spacing: 0.1em;
+  margin-bottom: rem-calc(24);
+  @include breakpoint(small only) {
+    font-size: rem-calc(32)*0.8;
+    margin-bottom: rem-calc(24)/2;
+  }
+  small {
+    display: block;
+    @include webfont-bold();
+    font-size: rem-calc(16);
+    letter-spacing: 0.1em;
+    margin-top: rem-calc(6);
+    @include breakpoint(small only) {
+      font-size: rem-calc(16)*0.8;
+    }
+  }
+}
+
+// 見出し - 中
+//
+// markup:
+// <h1 class="heading is-md">見出し:中 <small>heading middle</small</h1>
+//
+// Styleguide 1.1.3
+
+.c-heading.is-md {
+  font-size: rem-calc(28);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: rem-calc(20);
+  @include breakpoint(small only) {
+    font-size: rem-calc(28)*0.8;
+    margin-bottom: rem-calc(20)/2;
+  }
+  small {
+    display: block;
+    font-size: rem-calc(16);
+    letter-spacing: 0.1em;
+    color: $color-primary;
+    margin-top: rem-calc(6);
+    @include breakpoint(small only) {
+      font-size: rem-calc(16)*0.8;
+    }
+  }
+}
+
+// 見出し - 小
+//
+// markup:
+// <h1 class="heading is-sm">見出し:小 <small>heading small</small</h1>
+//
+// Styleguide 1.1.4
+
+.c-heading.is-sm {
+  font-size: rem-calc(24);
+  letter-spacing: 0.1em;
+  @include breakpoint(small only) {
+    font-size: rem-calc(24)*0.8;
+  }
+}
+
+// 見出し - 極小
+//
+// markup:
+// <h1 class="heading is-xs">見出し:極小 <small>heading small</small</h1>
+//
+// Styleguide 1.1.5
+
+.c-heading.is-xs {
+  font-size: rem-calc(20);
+  letter-spacing: 0.1em;
+  margin-bottom: rem-calc(16);
+  @include breakpoint(small only) {
+    font-size: rem-calc(20)*0.8;
+    margin-bottom: rem-calc(16)/2;
+  }
+}
+
+.c-heading.is-xxs {
+  font-size: rem-calc(20);
+  letter-spacing: 0.1em;
+  @include breakpoint(small only) {
+    font-size: rem-calc(20)*0.8;
+  }
+}
+
+.c-heading.is-xxxs {
+  font-size: rem-calc(18);
+  letter-spacing: 0.1em;
+  margin-bottom: rem-calc(6);
+  @include breakpoint(small only) {
+    font-size: rem-calc(18)*0.8;
+  }
+}
+
+// 装飾
+.c-heading.is-line-under {
+  position: relative;
+  padding-bottom: rem-calc(24);
+  @include breakpoint(small only) {
+    padding-bottom: rem-calc(24)/2;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: rem-calc(84);
+    height: rem-calc(3);
+    background-color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include breakpoint(small only) {
+      width: rem-calc(64);
+      height: rem-calc(2);
+    }
+  }
+  // 各フォントサイズ
+  &.is-md {
+    &:after {
+      width: rem-calc(72);
+      height: rem-calc(2);
+      @include breakpoint(small only) {
+
+      }
+    }
+  }
+}
+
+.c-heading.is-line-top {
+  border-top: 2px solid $color-primary;
+  text-align: left;
+  padding-top: rem-calc(16);
+  @include breakpoint(small only) {
+    padding-top: rem-calc(12);
+  }
+}
+
+.c-heading.is-line-side {
+  span {
+    position: relative;
+    @include breakpoint(small only) {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+      width: rem-calc(56);
+      height: rem-calc(3);
+      border-top: 1px solid $color-primary;
+      border-bottom: 2px solid $color-primary;
+      @include breakpoint(small only) {
+        width: rem-calc(32);
+        height: rem-calc(2);
+      }
+    }
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(calc(-100% - 32px),calc(-50% + 1px));
+      @include breakpoint(small only) {
+        transform: translate(calc(-100% - 8px),calc(-50% + 1px));
+      }
+    }
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(calc(100% + 32px),calc(-50% + 1px));
+      @include breakpoint(small only) {
+        transform: translate(calc(100% + 8px),calc(-50% + 1px));
+      }
+    }
+  }
+}
+
+.c-heading.is-line-left {
+  border-left: 4px solid $color-primary;
+  padding-left: rem-calc(20);
+  @include breakpoint(small only) {
+    border-width: rem-calc(2);
+  }
+}
+
+// ボーダー
+.c-heading.is-border-under {
+  border-bottom: 3px solid #E2E2E2;
+  padding-bottom: rem-calc(20);
+  position: relative;
+  @include breakpoint(small only) {
+    border-width: 2px;
+    padding-bottom: rem-calc(24)/2;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: rem-calc(100);
+    height: rem-calc(3);
+    background-color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    @include breakpoint(small only) {
+      width: rem-calc(100)*0.8;
+      height: rem-calc(2);
+    }
+  }
+}
+
+.c-heading.is-border-top-under {
+  border-top: 2px solid #E2E2E2;
+  border-bottom: 2px solid #E2E2E2;
+  padding: rem-calc(16) 0;
+  @include breakpoint(small only) {
+    padding: rem-calc(12) 0;
+  }
+}
+
+.c-heading.is-border-primary {
+  border-bottom: 2px solid $color-primary;
+  padding-bottom: rem-calc(16);
+  @include breakpoint(small only) {
+    border-width: 1px;
+    padding-bottom: rem-calc(12);
+  }
+}
+
+// 背景色
+.c-heading.is-bg-color {
+  background-color: $color-secondary;
+  padding: rem-calc(16) rem-calc(28);
+  border-left: 4px solid $color-primary;
+  margin-bottom: rem-calc(24);
+  @include breakpoint(small only) {
+    border-width: 2px;
+    padding: rem-calc(8) rem-calc(16);
+    margin-bottom: rem-calc(24)/2;
+  }
+  &.is-xs {
+    padding: rem-calc(10) rem-calc(20);
+    @include breakpoint(small only) {
+      padding: rem-calc(5) rem-calc(16);
+    }
+  }
+}
+
+.c-heading.is-icon {
+  position: relative;
+  padding-left: rem-calc(32);
+  @include breakpoint(small only) {
+    padding-left: rem-calc(24);
+  }
+  i,
+  span,
+  &:before {
+    font-size: rem-calc(24);
+    color: $color-primary;
+    position: absolute;
+    left: 0;
+    top: rem-calc(3);
+    @include breakpoint(small only) {
+      font-size: rem-calc(24)*0.8;
+      top: rem-calc(4);
+    }
+  }
+}
+
+// カラー
+.c-heading.is-color-primary {
+  color: $color-primary;
+}
+
+// マージン調整
+.c-heading.is-top {
+  margin-bottom: 0!important;
+}
+
+.c-heading.is-bottom {
+  margin-top: 0!important;
+}
+
+// ステータス
+.c-heading.is-text-left {
+  text-align: left;
+  &:after {
+    left: 0;
+    transform: translateX(0);
+  }
+}

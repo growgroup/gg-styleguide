@@ -1,0 +1,168 @@
+.c-top-post-content {
+  margin-top: 60px;
+  margin-bottom: 130px;
+  @media (max-width: 960px) {
+    margin-bottom: 75px;
+  }
+  @include breakpoint(small only) {
+    margin-top: 30px;
+    margin-bottom: 18px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 960px) {
+      display: block;
+    }
+  }
+
+  &__block {
+    width: 539/1212*100%;
+    position: relative;
+    @media (max-width: 960px) {
+      width: 100%;
+      margin-bottom: rem-calc(30);
+    }
+    &:last-child {
+      @media (max-width: 960px) {
+        margin-bottom: rem-calc(0);
+      }
+    }
+  }
+  &__block-title {
+    width: 100%;
+    margin-bottom: rem-calc(36);
+    padding-bottom: 16px;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-size: cover;
+      background-position: left center;
+      background-image: url("../images/bg-heading-dot-border.png");
+      @include breakpoint(small only) {
+        height: 3.75px;
+      }
+    }
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(24);
+      padding-bottom: 12px;
+    }
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    color: $font-base-color;
+    margin-bottom: 10px;
+    @include breakpoint(small only) {
+      padding-top: 3px;
+      font-size: rem-calc(14);
+      letter-spacing: 2.3px;
+      margin-bottom: 6px;
+    }
+  }
+
+  &__title {
+    font-size: 34px;
+    letter-spacing: 3.4px;
+    color: $color-primary;
+    line-height: 1;
+
+    @include breakpoint(small only) {
+      font-size: 25.5px;
+      letter-spacing: 2.5px;
+    }
+  }
+
+  &__post {
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid rgba($font-base-color, 0.05);
+    transition: all 0.2s;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    &.is-last {
+      border-bottom: none;
+      margin-bottom: 0;
+      .c-top-post-content__text {
+        margin-bottom: 0;
+        @include breakpoint(small only) {
+          margin-bottom: rem-calc(33);
+        }
+      }
+      .c-top-post-content__text-content {
+        margin-bottom: 0;
+        @include breakpoint(small only) {
+          margin-bottom: rem-calc(33);
+        }
+      }
+
+    }
+  }
+  &__post-title {
+    margin-bottom: rem-calc(4);
+  }
+
+  &__date {
+    width: auto;
+    vertical-align: middle;
+    font-size: rem-calc(14);
+    line-height: 24px;
+    color: $font-base-color;
+    line-height: 1;
+    padding-right: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  &__text {
+    margin-bottom: rem-calc(20);
+    color: $font-base-color;
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 26px;
+    right: 3px;
+    width: 160px;
+    @include breakpoint(small only) {
+      position: static;
+      width: 100%;
+    }
+  }
+
+  //ブログコンテンツのみ
+  &__image-content {
+    width: 496/120*100%;
+    max-width: 120px;
+    float: left;
+    margin-right: 24px;
+  }
+
+  &__image {
+
+  }
+  /*
+  &__text-content{
+    color: $font-base-color;
+    letter-spacing: 0.3px;
+    line-height: 1.65;
+    margin-bottom: rem-calc(24);
+  }
+  */
+}

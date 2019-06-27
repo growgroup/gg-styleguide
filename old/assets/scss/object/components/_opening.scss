@@ -1,0 +1,33 @@
+.c-opening {
+  background: url("../images/bg-opening.jpg") center center no-repeat;
+  background-size: cover;
+  padding-top: 82px;
+  padding-bottom: 72px;
+  text-align: center;
+  @include breakpoint(small only) {
+    padding-top: 32px;
+    padding-bottom: 48px;
+    text-align: left;
+  }
+  &__title {
+    margin-top: 0;
+    font-size: 32px;
+    letter-spacing: 1.6px;
+    font-weight: 500;
+    color: $color-primary;
+    margin-bottom: 14px;
+    @include breakpoint(small only) {
+      font-size: 21px;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+  }
+  &__text {
+    margin-bottom: 36px;
+    @include breakpoint(small only) {
+      margin-bottom: 24px;
+    }
+  }
+}

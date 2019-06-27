@@ -1,0 +1,122 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "service" // ページのID
+  - current.title = "社員研修事業" // タイトル
+  - current.description = "これは社員研修事業の説明文です" // 説明文
+  - current.bodyClass = "service" // body に付与するクラス
+  - current.depth = 3 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","社員研修事業","SERVICE")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span: +a("/service/") 事業紹介
+      span >
+      span 社員研修事業
+
+block body
+  section.l-main
+    .l-section.is-md
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 社員を育てる力。これまでと違う刺激が、起爆剤となります。
+        p.u-text-center 今の時代、社員教育はOJTとしてどこの会社でも注力を入れていることでしょう。<br>株式会社サンプルでは、これまで200社以上への外部社員研修として社員教育プログラムを組み、改善し、実行してきました。<br>これまでの社員教育からもっとレベルを上げたい。そんな企業様に私たちは選ばれ続けています。
+    .l-section.is-gray.is-lg
+      .l-container
+        +c.point
+          +e.heading 社員研修のアウトソージングすることのメリットとは
+          +e.inner
+            +e.block
+              +e.image: +img("img-aboutus-01.jpg")
+              +e.content
+                +e.label
+                  span MELIT
+                  small 01
+                +e.title 社員研修の見直しにかかるコストを削減
+                +e.text.
+                  社員研修といえど、その手法は数え切れない程存在します。<br>
+                  また、年々手法も更新されより良い社員研修方法が生み出されています。<br>
+                  その方法をインプットするためにかかるコストは膨大で、専任者が複数人いないと社員教育の価値を上げ続けることは難しいと株式会社サンプルはかんがえます。<br>
+                  株式会社サンプルに社員研修をアウトソージングすることで、社員研修の価値向上にかかるコストをより抑えることができます。
+            +e.block
+              +e.image: +img("img-aboutus-02.jpg")
+              +e.content
+                +e.label
+                  span MELIT
+                  small 02
+                +e.title より、柔軟な社員研修へ対応します。
+                +e.text.
+                  社員研修は、今後の会社の方向性を決定づけるような重要な事項であることを株式会社サンプルは認識しています。これまでも、「外部へ任せて大丈夫なのか？」「社員を管理するのが大変になるのではないか」というお客様の声を頂戴したことがございます。<br>
+                  株式会社サンプルでは、そのようなお客様のご懸念を解決すべく、より柔軟な社員研修プログラムを組むことができるように、様々な機能を準備しています。
+            +e.block
+              +e.image: +img("img-aboutus-03.jpg")
+              +e.content
+                +e.label
+                  span MELIT
+                  small 03
+                +e.title 効果まで測定します。
+                +e.text.
+                  社員研修を行った結果、どのような変化が起ったのか。そのトラッキングの術を株式会社サンプルはもっています。<br>
+                  社員研修対象者、社員研修担当者にWeb上のアンケートフォームに答えてもらうことで、弊社が蓄積しているこれまでのデータと突き合わせ、どの程度の効果があったのかを指標として示します。
+    .l-section.is-lg
+      .l-container
+        +c.flow
+          +e.heading 導入までのフロー
+          +e.inner
+            +e.block
+              +e.head
+                +e.label
+                  span FLOW
+                  small 01
+                +e.title 入念なヒアリング
+              +e.content
+                +e.text 社員研修を通してどのような人材に育て上げたいのか、すべての根底となる事項について、これまでのノウハウをベースに抜かりなくヒアリングを行います。
+                +e.image: +img("img-aboutus-01.jpg")
+            +e.block
+              +e.head
+                +e.label
+                  span FLOW
+                  small 02
+                +e.title 研修プログラムの設計
+              +e.content
+                +e.text ヒアリング事項を元に、社員研修プログラムを設計します。<br>もちろん、研修プログラムに対する修正はある前提として行いますので、修正による追加料金は頂戴することはありません。
+                +e.image: +img("img-aboutus-02.jpg")
+            +e.block
+              +e.head
+                +e.label
+                  span FLOW
+                  small 03
+                +e.title 研修プログラムのテスト
+              +e.content
+                +e.text 研修プログラムを要所をかいつまみ、実際に弊社社内にてテストを行います。<br>テスト時には、ご担当者様もご出席いただけます。
+                +e.image: +img("img-aboutus-03.jpg")
+            +e.block
+              +e.head
+                +e.label
+                  span FLOW
+                  small 04
+                +e.title 社員研修の導入
+              +e.content
+                +e.text テストにて問題がなかった場合、実際の社員研修を遂行します。
+                +e.image: +img("img-aboutus-01.jpg")
+    .l-section.is-bg.is-md
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 未来の「御社」を、形づくるお手伝いをさせてください
+        p.u-text-center 株式会社サンプルの社員研修プログラムのその概要は、このページにすべては載せられません。<br>詳細な資料、お見積りは、フォームからお問い合わせください。
+        div.u-text-center.u-mbs.is-top.is-sm
+          +a("/contact/").c-button.is-lg 資料請求・お見積りはこちら
+    .l-section.is-md
+      .l-container
+        +c.other-content
+          +e.title 他の事業を見る
+          +e.inner
+            +a("/service/project-management/").c-other-content__block
+              +bgimg("img-aboutus-02.jpg").c-other-content__image
+              +e.text プロジェクトマネジメント
+            +a("/service/system/").c-other-content__block.is-green
+              +bgimg("img-aboutus-03.jpg").c-other-content__image
+              +e.text システム開発事業
+
+  +c_relation()
+  +c_offer()

@@ -1,0 +1,27 @@
+// 印刷対応
+//
+// Styleguide 5.6.0
+
+@media print {
+
+  html,body {
+    min-width: $grid-row-width;
+  }
+
+  // スライドバー, スマホ時のみ表示要素を非表示に
+  .slidebar-menu,
+  .slidebar-button,
+  .u-hidden-lg {
+    display: none;
+  }
+
+  // グリッドの対応
+  @for $i from 1 through $grid-column-count {
+    .large-#{$i} {
+      width: span($i);
+    }
+    .is-push-lg-#{$i} {
+      width: push($i);
+    }
+  }
+}

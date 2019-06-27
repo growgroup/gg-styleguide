@@ -1,0 +1,17 @@
+.c-block {
+  &__block {
+    margin-top: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(48)/2;
+    }
+  }
+  &__image {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

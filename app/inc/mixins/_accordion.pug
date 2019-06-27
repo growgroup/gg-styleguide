@@ -1,0 +1,10 @@
+//- アコーディオン
+//- Use Case
+//- +accordion("danger","これがタイトルです。","これがコンテンツです")
+mixin accordion(type,title,text)
+  .c-accordion.js-accordion(class!="is-" + type)&attributes(attributes)
+    if block
+      block
+    else
+      .c-accordion__title(data-accordion-title="true")= title
+      .c-accordion__content(data-accordion-content="true")= text

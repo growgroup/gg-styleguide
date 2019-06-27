@@ -1,0 +1,54 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "service" // ページのID
+  - current.title = "事業紹介" // タイトル
+  - current.description = "これは事業紹介の説明文です" // 説明文
+  - current.bodyClass = "service" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +c_page_header("pagehead-default.jpg","事業紹介","SERVICE")
+  +c.breadcrumb
+    .l-container
+      span: +a("/") ホーム
+      span >
+      span 事業紹介
+
+block body
+  section.l-main
+    .l-section.is-lg
+      .l-container
+        h2.heading.is-lg.is-primary.u-text-center.is-bottom 信頼、安心、その上での改善。<br class="u-hidden-lg">株式会社サンプルの3つの事業
+        p.u-text-center 株式会社サンプルは、信頼、安心、改善をモットーに、3つの事業を展開しています。
+    .l-section.is-half-bg
+      .l-container
+        +c.bnr-content
+          +e.inner
+            +e.block
+              +e.image: +img("img-aboutus-01.jpg")
+              +e.content
+                +e.head
+                  +e.number 01
+                  +e.title 社員研修事業
+                +e.text 現場で働く社員へ、技術的な教育からマネジメントまで、普段の業務では身につけにくいことを終点的に指導します。
+                +a("/service/traning/").c-bnr-content__button 詳しくはこちら
+            +e.block.is-emerald
+              +e.image: +img("img-aboutus-02.jpg")
+              +e.content
+                +e.head
+                  +e.number 02
+                  +e.title マネジメント事業
+                +e.text プロジェクトを成功へと導くために、幾千の経験を持つプロジェクトマネージャーが御社のプロジェクトの手助けを行います。
+                +a("/service/project-management/").c-bnr-content__button 詳しくはこちら
+            +e.block.is-green
+              +e.image: +img("img-aboutus-03.jpg")
+              +e.content
+                +e.head
+                  +e.number 03
+                  +e.title システム開発事業
+                +e.text 御社の事業自体をシステム化によってさらに効率化し、既存の事業を改善するお手伝いをします。
+                +a("/service/system/").c-bnr-content__button 詳しくはこちら
+
+
+  +c_relation()
+  +c_offer()

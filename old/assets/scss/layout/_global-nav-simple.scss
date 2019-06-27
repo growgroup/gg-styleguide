@@ -1,0 +1,146 @@
+// グローバルナビゲーション
+//
+// グローバルナビゲーションのスタイル
+//
+// markup:
+// <header class="l-header"></header>
+//
+// Styleguide 5.4.0
+
+.l-global-nav-simple {
+  background: $color-white;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  @include breakpoint(small only) {
+    display: none;
+  }
+  > div > ul {
+    width: 100%;
+    @extend %clearfix;
+    display: flex;
+    justify-content: space-between;
+    > li {
+      border-left: 1px solid #CCC;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      &:last-child {
+        border-right: 1px solid #CCC;
+      }
+      &:hover {
+        .l-global-nav-simple__submenu {
+          height: auto;
+          overflow: visible;
+          display: block;
+          transform: scale3d(1, 1, 1) translateY(0);
+          opacity: 1;
+        }
+      }
+      > a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: $font-base-color;
+        padding: 12px 16.5px;
+        font-weight: bold;
+        position: relative;
+        &:hover {
+          background-color: #EDF1F3;
+          opacity: 1;
+          &:after {
+            content: "";
+            width: 100%;
+            height: rem-calc(2);
+            background-color: $color-primary;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        &.is-current {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // 固定の場合
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000000;
+  }
+
+  // サブナビゲーション
+  &__submenu {
+    position: absolute;
+    background: #FFF;
+    left: 0px;
+    top: 50px;
+    z-index: 10000;
+    width: auto;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    transform: translateY(10px);
+    height: 0px;
+    opacity: 0;
+    transition: transform ease .3s, opacity ease .2s;
+    /*overflow: hidden;*/
+    overflow: hidden;
+    width: 100%;
+    &:before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background: #FFF;
+      transform: rotate(45deg);
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      display: block;
+      margin-left: -7px;
+      border-left: 1px solid #d8d8d8;
+      border-top: 1px solid #d8d8d8;
+    }
+    ul {
+      max-width: $grid-row-width;
+      margin-left: auto;
+      margin-right: auto;
+      li {
+        border-left: none;
+        border-right: none;
+        float: none;
+        a {
+          text-align: left;
+          padding-top: 8px;
+          font-size: 14px;
+          display: block;
+          text-decoration: none;
+          width: 100%;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e8e8e8;
+          word-break: keep-all;
+          padding-left: 16px;
+          color: $font-base-color;
+          &:after {
+            width: 4px;
+            left: 0;
+            height: 100%;
+          }
+        }
+      }
+      > li:last-child {
+        border-right: none;
+        a {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

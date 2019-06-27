@@ -1,0 +1,110 @@
+.c-card {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include breakpoint(small only) {
+      justify-content: flex-start;
+    }
+  }
+  &__block {
+    display: block;
+    text-decoration: none;
+    color: $font-base-color;
+    width: 253/1080*100%;
+    margin-right: 22/1080*100%;
+    font-weight: 400;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    @include breakpoint(small only) {
+      width: calc(50% - 12px)!important;
+      margin-right: 24px!important;
+      margin-bottom: 16px!important;
+      &:nth-child(2n) {
+        margin-right: 0!important;
+      }
+    }
+    @media (min-width: 750px) {
+      &:hover {
+        opacity: 1;
+        .c-card__image {
+          &:after {
+            opacity: 1;
+          }
+          &:before {
+            opacity: 1;
+            width: 100%;
+            left: 0;
+          }
+        }
+        .c-card__title {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-top: 164/253*100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 6px;
+    @include breakpoint(small only) {
+      margin-bottom: 4px!important;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: 2px 2px 8px rgba($color-black,0.3);
+      opacity: 0;
+      transition: all .3s;
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 4px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      opacity: 0;
+      transition: all .3s ease;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    transition: all .3s;
+    @include breakpoint(small only) {
+      font-size: 14px!important;
+      font-weight: 600!important;
+    }
+  }
+}
+
+// ３つ並び
+.c-card.is-three-column {
+  .c-card__block {
+    width: 344/1080*100%;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  .c-card__image {
+    padding-top: 220/344*100%;
+  }
+  .c-card__title {
+    font-size: 20px;
+  }
+}

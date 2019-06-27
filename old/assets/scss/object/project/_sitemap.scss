@@ -1,0 +1,24 @@
+.p-sitemap {
+  margin-bottom: rem-calc(48);
+
+  &__title {
+    font-size: rem-calc(18);
+    color: $font-base-color;
+    margin-bottom: rem-calc(24);
+  }
+
+  > ul {
+    > li {
+      list-style: disc;
+      list-style-position: inside;
+      margin-bottom: rem-calc(8);
+      a {
+        text-decoration: none;
+        &:hover  {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+}
