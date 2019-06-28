@@ -4,12 +4,10 @@ name: カラー別
 category: Buttons
 ---
 ```types.html
-<div class="u-mbs is-bottom">
 <a class="c-button" href="#">ボタンテキスト</a>
 <a class="c-button is-secondary" href="#">ボタンテキスト</a>
 <a class="c-button is-accent" href="#">ボタンテキスト</a>
 <a class="c-button is-white" href="#">ボタンテキスト</a>
-        </div>
 ```
 */
 .c-button {
@@ -86,12 +84,10 @@ name: 大きさ別
 category: Buttons
 ---
 ```types.html
-<div class="u-mbs is-bottom">
-<a class="c-button" href="#">ボタンテキスト</a>
-<a class="c-button is-secondary" href="#">ボタンテキスト</a>
-<a class="c-button is-accent" href="#">ボタンテキスト</a>
-<a class="c-button is-white" href="#">ボタンテキスト</a>
-        </div>
+<a class="c-button is-xlg" href="#">ボタンテキスト</a>
+<a class="c-button is-lg" href="#">ボタンテキスト</a>
+<a class="c-button is-sm" href="#">ボタンテキスト</a>
+<a class="c-button is-xs" href="#">ボタンテキスト</a>
 ```
 */
 .c-button {
@@ -136,7 +132,7 @@ category: Buttons
     max-width: 100%;
     background-color: transparent;
     padding: 0 rem-calc(16) 0 0;
-    border: none!important;
+    border: none !important;
     color: $font-base-color;
     font-size: rem-calc(14);
     letter-spacing: 0.1em;
@@ -152,7 +148,43 @@ category: Buttons
       opacity: 0.6;
     }
   }
-
+}
+/*
+---
+name: デザイン01
+category: Buttons
+---
+```types.html
+<a class="c-button is-xlg is-line-right" href="#">ボタンテキスト</a>
+<a class="c-button is-lg is-line-right" href="#">ボタンテキスト</a>
+<a class="c-button is-sm is-line-right" href="#">MORE</a>
+<a class="c-button is-xs is-line-right" href="#">MORE</a>
+```
+*/
+/*
+---
+name: デザイン02
+category: Buttons
+---
+```types.html
+<a class="c-button is-xlg is-arrow-right" href="#">ボタンテキスト</a>
+<a class="c-button is-lg is-arrow-right" href="#">ボタンテキスト</a>
+<a class="c-button is-xs is-arrow-right" href="#">MORE</a>
+```
+*/
+/*
+---
+name: デザイン03
+category: Buttons
+---
+```types.html
+<a class="c-button is-xlg is-icon-right" href="#">ボタンテキスト</a>
+<a class="c-button is-lg is-icon-right" href="#">ボタンテキスト</a>
+<a class="c-button is-sm is-icon-right" href="#">MORE</a>
+<a class="c-button is-xs is-icon-right" href="#">ボタンテキスト</a>
+```
+*/
+.c-button {
   // デザイン設定
   // ->矢印左
   &.is-arrow-left {
@@ -206,6 +238,7 @@ category: Buttons
       height: rem-calc(1);
       background-color: $color-white;
       top: calc(50% + 6px);
+      transition: all .3s;
     }
     &:before {
       content: "";
