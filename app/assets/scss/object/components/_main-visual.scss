@@ -1,9 +1,9 @@
 /*
 ---
-name: MainVisual
+name: MainVisual_01
 category: Components
 ---
-# 通常 メインビジュアル
+# 通常_メインビジュアル
 ```types.html
 <div class="c-main-visual">
           <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
@@ -16,7 +16,12 @@ category: Components
           </div>
         </div>
 ```
-
+*/
+/*
+---
+name: MainVisual_02
+category: Components
+---
 # スライダー_メインビジュアル
 ```types.html
 <div class="c-main-visual">
@@ -35,7 +40,8 @@ category: Components
             </div>
           </div>
         </div>
-      </div>```
+      </div>
+```
 */
 
 .c-main-visual {

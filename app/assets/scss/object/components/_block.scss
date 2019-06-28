@@ -1,3 +1,59 @@
+/*
+---
+name: 通常ブロック
+category: Components
+---
+```types.html
+<div class="c-block">
+            <div class="c-block__block">
+              <div class="row">
+                <div class="large-5 small-12">
+                  <div class="c-block__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                  </div>
+                </div>
+                <div class="large-7 small-12">
+                  <div class="c-block__content">
+                    <div class="c-heading is-xs is-color-primary is-bg-color is-bottom">見出しレベル4見出しレベル4</div>
+                    <p>ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c-block__block">
+              <div class="c-heading is-xs is-color-primary is-bg-color is-bottom">見出しレベル4見出しレベル4</div>
+              <div class="row">
+                <div class="large-7 small-12">
+                  <div class="c-block__content">
+                    <p>ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブ</p>
+                  </div>
+                </div>
+                <div class="large-5 small-12">
+                  <div class="c-block__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c-block__block">
+              <div class="row">
+                <div class="large-5 small-12">
+                  <div class="c-block__content">
+                    <div class="c-block__image"><img src="/dist/assets/images/img-block-01.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="large-7 small-12">
+                  <div class="c-block__content">
+                    <div class="c-heading is-sm is-border-under is-bottom">見出しレベル4見出しレベル4</div>
+                    <p>ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブ</p>
+                    <div class="u-mbs is-top is-xxs"><a class="c-button is-sm" href="#">詳細はこちら</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-block {
   &__block {
     margin-top: rem-calc(48);

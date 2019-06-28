@@ -1,12 +1,37 @@
+/*
+---
+name: 通常カード
+category: Components
+---
+```types.html
+<div class="c-card">
+  <div class="row">
+        <div class="large-4 small-12">
+            <div class="c-card__block">
+              <div class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt="">
+              </div>
+              <div class="c-card__content">
+                <div class="c-card__title">コンセプトタイトル
+                </div>
+                <div class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+```
+*/
 .c-card {
   &__block {
     width: 100%;
-    display:  block;
+    display: block;
     text-decoration: none;
     color: $font-base-color;
     font-weight: 400;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(32)!important;
+      margin-bottom: rem-calc(32) !important;
     }
     span,
     small {
@@ -43,7 +68,35 @@
       margin-top: rem-calc(6);
     }
   }
-  // ナンバー入りカード
+}
+/*
+---
+name: ポイントカード
+category: Components
+---
+```types.html
+<div class="c-card is-number-left">
+  <div class="row">
+        <div class="large-4 small-12">
+            <div class="c-card__block">
+                  <div class="c-card__number"><small>POINT</small><span>01</span>
+                  </div>
+                  <div class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt="">
+                  </div>
+                  <div class="c-card__content">
+                    <div class="c-card__title">コンセプトタイトル
+                    </div>
+                    <div class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+  </div>
+```
+*/
+.c-card {
   &.is-number-left {
     .c-card__block {
       position: relative;
@@ -74,7 +127,40 @@
       }
     }
   }
-  // リンクカード
+}
+/*
+---
+name: リンクカード
+category: Components
+---
+```types.html
+<div class="c-card is-link">
+  <div class="row">
+        <div class="large-4 small-12">
+            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
+          </div>
+        </div>
+      </div>
+  </div>
+```
+*/
+/*
+---
+name: オーバーレイカード
+category: Components
+---
+```types.html
+<div class="c-card is-overlay">
+  <div class="row">
+        <div class="large-4 small-12">
+            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
+          </div>
+        </div>
+      </div>
+  </div>
+```
+*/
+.c-card {
   &.is-link {
     //*hover
     .c-card__block {
@@ -103,7 +189,6 @@
       }
     }
   }
-  //オーバーレイ
   &.is-overlay {
     .c-card__image {
       position: relative;

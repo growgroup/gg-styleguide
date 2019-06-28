@@ -1,3 +1,79 @@
+/*
+---
+name: ヒーローブロック_通常
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block">
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__title  c-heading is-sm is-bottom">タイトルがここに入ります。
+        </div>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-hero-block__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: ヒーローブロック_平行四辺形
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block is-skew">
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>01</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>02</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
 .c-hero-block {
   overflow: hidden;
   &__block {
@@ -8,7 +84,7 @@
     @include breakpoint(small only) {
       margin-bottom: rem-calc(48);
       min-height: inherit;
-      padding-top: 0!important;
+      padding-top: 0 !important;
     }
     // 偶数番目
     &:nth-child(even) {
@@ -41,7 +117,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: auto;
       height: auto;
       min-width: 100%;
@@ -78,7 +154,7 @@
       margin-bottom: rem-calc(24)/2;
     }
     small {
-     @include webfont-bold();
+      @include webfont-bold();
       font-size: rem-calc(100);
       opacity: 0.25;
       line-height: 1;

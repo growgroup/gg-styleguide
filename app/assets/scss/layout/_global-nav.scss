@@ -1,33 +1,3 @@
-/*
----
-name: GlobalNav
-category: Layout
----
-# 通常グローバルナビ
-```types.html
-<nav class="l-global-nav">
-          <div class="l-container">
-            <ul>
-              <li><a href="#">ホーム</a>
-              </li>
-              <li><a href="#">メニュー1</a>
-              </li>
-              <li><a href="#">メニュー2</a>
-              </li>
-              <li><a href="#">メニュー3</a>
-              </li>
-              <li><a href="#">メニュー4</a>
-              </li>
-              <li><a href="#">メニュー5</a>
-              </li>
-              <li><a href="#">メニュー6</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-```
-*/
-
 .l-global-nav {
   border-top: 1px solid #E2E2E2;
   border-bottom: 1px solid #E2E2E2;

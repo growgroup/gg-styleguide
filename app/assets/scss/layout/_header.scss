@@ -1,9 +1,8 @@
 /*
 ---
-name: Header
+name: 通常ヘッダー
 category: Layout
 ---
-# 通常ヘッダー
 ```types.html
 <header class="l-header">
           <div class="l-container">
@@ -21,6 +20,26 @@ category: Layout
             </div>
           </div>
         </header>
+        <nav class="l-global-nav">
+          <div class="l-container">
+            <ul>
+              <li><a href="#">ホーム</a>
+              </li>
+              <li><a href="#">メニュー1</a>
+              </li>
+              <li><a href="#">メニュー2</a>
+              </li>
+              <li><a href="#">メニュー3</a>
+              </li>
+              <li><a href="#">メニュー4</a>
+              </li>
+              <li><a href="#">メニュー5</a>
+              </li>
+              <li><a href="#">メニュー6</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 ```
 */
 .l-header {

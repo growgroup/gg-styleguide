@@ -1,0 +1,183 @@
+/*
+---
+name: 通常オファー
+category: Layout
+---
+```types.html
+<div class="l-offer">
+<div class="l-container">
+<div class="l-offer__inner">
+<h2 class="c-heading is-md is-bottom">オファータイトルオファータイトル</h2>
+<div class="l-offer__text">オファーテキストオファーテキストオファーテキストへのお問い合わせは下記からお願いします。</div>
+<div class="l-offer__items">
+<div class="row">
+<div class="large-5 is-push-lg-1 small-12"><a class="l-offer__button is-tel" href="tel:00-000-0000"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000</a>
+<div class="l-offer__subtext">お電話での受付時間は平日 9:00〜18:00 （土日祝除く）</div>
+</div>
+<div class="large-5 small-12"><a class="l-offer__button" href="#">メールでのお問い合わせはこちら</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+```
+*/
+.l-offer {
+  background-image: url("../images/bg-offer.jpg");
+  @include bg-option();
+  text-align: center;
+  color: $color-white;
+  padding: rem-calc(48) 0;
+  @include breakpoint(small only) {
+    padding: rem-calc(40) 0;
+  }
+  &__items {
+    margin-top: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(24);
+    }
+  }
+  &__button {
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: rem-calc(16);
+    letter-spacing: 0.05em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $color-white;
+    padding: rem-calc(24) rem-calc(32);
+    position: relative;
+    width: 100%;
+    min-height: rem-calc(88);
+    @include breakpoint(small only) {
+      font-size: rem-calc(15);
+      min-height: rem-calc(64);
+    }
+    &:after {
+      content: "\f105";
+      font-family: "FontAwesome";
+      position: absolute;
+      font-size: rem-calc(20);
+      top: 50%;
+      right: rem-calc(24);
+      transform: translateY(-50%);
+      font-weight: 400;
+      @include breakpoint(small only) {
+        font-size: rem-calc(18);
+      }
+    }
+    &.is-tel {
+      @include webfont-bold();
+      font-size: rem-calc(32);
+      line-height: 1;
+      @include breakpoint(small only) {
+        font-size: rem-calc(28);
+      }
+      i {
+        margin-right: rem-calc(8);
+      }
+    }
+  }
+  &__subtext {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(6);
+      font-size: rem-calc(12);
+      font-weight: 400;
+      margin-bottom: rem-calc(24);
+    }
+  }
+}
+/*
+---
+name: その他オファー
+category: Layout
+---
+```types.html
+<div class="l-offer is-color-primary">
+          <div class="l-container">
+            <div class="l-offer__inner">
+              <h2 class="c-heading is-xlg is-white is-bottom"><span>CONTACT</span><small>お問い合わせ</small></h2>
+              <div class="l-offer__text">弊社のサービスへ興味をお持ちの方は、<br>下記の電話番号、もしくはお問い合わせフォームよりお気軽に問い合わせください。</div>
+              <div class="l-offer__items">
+                <div class="row">
+                  <div class="large-5 is-push-lg-1 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">お電話の際は「ホームページを見て」と<br>お伝えください。</div>
+                      <div class="l-offer__box-tel"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000<small>電話受付時間 / 平日00：00～00：00</small></div>
+                    </div>
+                  </div>
+                  <div class="large-5 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">メールでのご相談・ご質問は<br>お問い合わせフォームをご活用ください。</div><a class="c-button is-lg is-white" href="#">お問い合わせフォーム</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+```
+*/
+.l-offer {
+  // primary
+  &.is-color-primary {
+    background-image: none;
+    background-color: $color-primary;
+    padding: rem-calc(64) 0;
+    @include breakpoint(small only) {
+      padding: rem-calc(48) 0;
+    }
+    .c-heading {
+      color: $color-white;
+      margin-bottom: rem-calc(32);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(24);
+      }
+    }
+    .l-offer__items {
+      margin-top: rem-calc(32);
+    }
+    .l-offer__box {
+      border: 1px solid $color-white;
+      height: 100%;
+      text-align: center;
+      padding: rem-calc(32) rem-calc(48);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(8);
+        height: inherit;
+        padding: rem-calc(24);
+      }
+    }
+    .l-offer__box-text {
+      font-size: rem-calc(14);
+      letter-spacing: 0.1em;
+      margin-bottom: rem-calc(20);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(12);
+      }
+    }
+    .l-offer__box-tel {
+      @include webfont-bold();
+      font-size: rem-calc(32);
+      line-height: 1;
+      i {
+        margin-right: rem-calc(8);
+      }
+      small {
+        display: block;
+        font-size: rem-calc(13);
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        margin-top: rem-calc(8);
+      }
+    }
+  }
+}

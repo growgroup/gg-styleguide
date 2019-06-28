@@ -1,3 +1,23 @@
+/*
+---
+name: カプセルナビゲーション_ページ内リンク
+category: Navigation
+---
+```types.html
+<div class="c-anchor-nav">
+            <div class="row">
+              <div class="large-3 small-6"><a class="c-anchor-nav__block" href="#">ページ内リンク</a>
+              </div>
+              <div class="large-3 small-6"><a class="c-anchor-nav__block" href="#">ページ内リンク</a>
+              </div>
+              <div class="large-3 small-6"><a class="c-anchor-nav__block" href="#">ページ内リンク</a>
+              </div>
+              <div class="large-3 small-6"><a class="c-anchor-nav__block" href="#">ページ内リンク</a>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-anchor-nav {
   margin-bottom: rem-calc(64);
   @include breakpoint(small only) {

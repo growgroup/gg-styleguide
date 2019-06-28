@@ -1,30 +1,27 @@
-// リスト
-//
-// Styleguide 1.3.0
 .c-list {
   li {
     margin-bottom: rem-calc(6);
   }
 }
 
-// 順序なしリスト
-//
-// markup:
-// <ul class="u-list">
-//     <li>リスト1</li>
-//     <li>リスト2</li>
-//     <li>リスト3</li>
-//     <li>
-//         <ul>
-//             <li>小リスト1</li>
-//             <li>小リスト2</li>
-//             <li>小リスト3</li>
-//         </ul>
-//     </li>
-// </ul>
-//
-// Styleguide 1.3.1
-
+/*
+---
+name: <ul> 順序なしテキスト
+category: Base
+---
+```types.html
+<ul class="c-list is-disc">
+            <li>リスト1</li>
+            <li>リスト2
+              <ul>
+                <li>リスト2の子要素</li>
+                <li>リスト2の子要素</li>
+              </ul>
+            </li>
+            <li>リスト2</li>
+          </ul>
+```
+*/
 .c-list.is-disc {
   li {
     position: relative;
@@ -57,25 +54,24 @@
   }
 }
 
-
-// 順序ありリスト
-//
-// markup:
-// <ol class="u-list.is-outline">
-//     <li>リスト1</li>
-//     <li>リスト2</li>
-//     <li>リスト3</li>
-//     <li>
-//         <ol>
-//             <li>小リスト1</li>
-//             <li>小リスト2</li>
-//             <li>小リスト3</li>
-//         </ol>
-//     </li>
-// </ol>
-//
-// Styleguide 1.3.2
-
+/*
+---
+name: <ol> 順序ありテキスト
+category: Base
+---
+```types.html
+<ol class="c-list is-outline">
+            <li>リスト1</li>
+            <li>リスト2
+              <ul>
+                <li>リスト2の子要素</li>
+                <li>リスト2の子要素</li>
+              </ul>
+            </li>
+            <li>リスト2</li>
+          </ol>
+```
+*/
 .c-list.is-outline {
   padding-left: rem-calc(32)!important;
   li {

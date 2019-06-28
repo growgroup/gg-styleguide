@@ -1,3 +1,75 @@
+/*
+---
+name: お知らせ_2カラム
+category: News
+---
+```types.html
+<div class="row">
+            <div class="large-6 small-12">
+              <div class="c-news-twoline">
+                <div class="c-news-twoline__head">
+                  <h2 class="c-news-twoline__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                  <div class="c-news-twoline__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+                <div class="c-news-twoline__content"><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news-twoline__block" href="#">
+                    <div class="c-news-twoline__date">2018.10.10
+                    </div>
+                    <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a>
+                </div>
+              </div>
+            </div>
+            <div class="large-6 small-12">
+              <div class="c-news-twoline">
+                <div class="c-news-twoline__head">
+                  <h2 class="c-news-twoline__title c-heading is-xlg"><span>BLOG</span><small>ブログ</small></h2>
+                  <div class="c-news-twoline__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+                <div class="c-news-twoline__content"><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news-twoline__block is-image-display" href="#">
+                    <div class="c-news-twoline__image"><img src="/dist/assets/images/img-blog-01.jpg" alt="">
+                    </div>
+                    <div class="c-news-twoline__item">
+                      <div class="c-news-twoline__date">2018.10.10
+                      </div>
+                      <div class="c-news-twoline__text">お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-news-twoline {
   @include breakpoint(small only) {
     position: relative;

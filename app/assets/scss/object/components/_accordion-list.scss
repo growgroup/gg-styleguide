@@ -1,3 +1,42 @@
+/*
+---
+name: アコーディオン
+category: Components
+---
+```types.html
+<div class="c-accordion-list">
+            <div class="c-accordion-list__block  js-accordion">
+              <div class="c-accordion-list__head" data-accordion-title="accordion-title">2018年
+              </div>
+              <div class="c-accordion-list__content" data-accordion-content="accordion--text">
+                <ul>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="c-accordion-list__block  js-accordion">
+              <div class="c-accordion-list__head" data-accordion-title="accordion-title">2018年
+              </div>
+              <div class="c-accordion-list__content" data-accordion-content="accordion--text">
+                <ul>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                  <li><a href="#">「平成30年12月期 決算短信」の一部訂正について（PDF形式：130KB）</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+```
+*/
+
 .c-accordion-list {
   &__block {
     margin-bottom: rem-calc(20);

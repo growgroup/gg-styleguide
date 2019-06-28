@@ -1,3 +1,35 @@
+/*
+---
+name: ステップボックス_画像なし
+category: Components
+---
+```types.html
+<div class="c-box-number">
+            <div class="c-box-number__block">
+              <div class="c-box-number__head">
+                <div class="c-box-number__number"><small>STEP</small><span>01</span>
+                </div>
+              </div>
+              <div class="c-box-number__content">
+                <div class="c-heading is-xxxs is-bottom">見出しレベル6見出しレベル6</div>
+                <div class="c-box-number__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </div>
+              </div>
+            </div>
+            <div class="c-box-number__block">
+              <div class="c-box-number__head">
+                <div class="c-box-number__number"><small>STEP</small><span>02</span>
+                </div>
+              </div>
+              <div class="c-box-number__content">
+                <div class="c-heading is-xxxs is-bottom">見出しレベル6見出しレベル6</div>
+                <div class="c-box-number__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-box-number {
   &__block {
     display: flex;

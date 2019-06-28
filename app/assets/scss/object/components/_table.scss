@@ -1,23 +1,27 @@
-// テーブル
-//
-// テーブルのスタイル
-//
-// markup:
-// <table class="c-table">
-//     <tbody>
-//         <tr>
-//              <th width="300">テーブル見出し</th>
-//              <td>テーブルセル</td>
-//         <tr>
-//         <tr>
-//              <th>テーブル見出し</th>
-//              <td>テーブルセル</td>
-//         <tr>
-//     </tbody>
-// </table>
-//
-// Styleguide 2.12.0
-
+/*
+---
+name: <table> テーブル
+category: Base
+---
+```types.html
+<table class="c-table">
+            <tbody>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキスト</td>
+              </tr>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキスト</td>
+              </tr>
+              <tr>
+                <th>thテキスト</th>
+                <td>tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</td>
+              </tr>
+            </tbody>
+          </table>
+```
+*/
 .c-table {
   width: 100%;
   border-top: 1px solid $border-base-color;

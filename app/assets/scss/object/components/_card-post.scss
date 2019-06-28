@@ -1,3 +1,37 @@
+/*
+---
+name: ポストカード
+category: Components
+---
+```types.html
+<div class="c-card-post">
+  <div class="row">
+        <div class="large-4 small-12">
+          <div class="c-card-post__block"><a class="c-card-post__image" href="undefined"><img src="/dist/assets/images/img-card-01.jpg" alt=""><span class="c-card-post__label c-label is-lg">カテゴリ名</span></a>
+                  <div class="c-card-post__content">
+                    <div class="c-card-post__title">タイトルが入ります。タイトルが入ります。
+                    </div>
+                    <div class="c-card-post__sup">
+                      <div class="c-card-post__date">2018.01.01
+                      </div>
+                      <div class="c-card-post__tag">
+                        <ul>
+                          <li><a href="">#タグ</a>
+                          </li>
+                          <li><a href="">#タグ</a>
+                          </li>
+                          <li><a href="">#タグ</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+  </div>
+```
+*/
 .c-card-post {
   &__block {
     width: 100%;
@@ -61,6 +95,32 @@
       }
     }
   }
+}
+/*
+---
+name: ポストカード_タグなし
+category: Components
+---
+```types.html
+<div class="c-card-post is-tag-hidden">
+  <div class="row">
+        <div class="large-3 small-6">
+          <div class="c-card-post__block"><a class="c-card-post__image" href="undefined"><img src="/dist/assets/images/img-card-01.jpg" alt=""></a>
+                  <div class="c-card-post__content">
+                    <div class="c-card-post__sup"><span class="c-card-post__label c-label">カテゴリ名</span>
+                      <div class="c-card-post__date">2018.01.01
+                      </div>
+                    </div>
+                    <div class="c-card-post__title">タイトルが入ります。タイトルが入ります。
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+  </div>
+```
+*/
+.c-card-post {
   // タグなしver
   &.is-tag-hidden {
     margin-botom: rem-calc(32);

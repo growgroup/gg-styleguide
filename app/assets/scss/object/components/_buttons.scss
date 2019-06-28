@@ -1,23 +1,17 @@
-// ボタン
-//
-// ボタンのスタイル
-//
-// markup:
-// <p><a href="#" class="c-button">通常ボタン</a><p>
-// <p><a href="#" class="c-button is-lg">大ボタン</a><p>
-// <p><a href="#" class="c-button is-sm">小ボタン</a><p>
-// <p><a href="#" class="c-button is-xs">極小ボタン</a><p>
-// <p><a href="#" class="c-button is-secondary">セカンダリーボタン</a><p>
-// <p><a href="#" class="c-button is-tertiary">ターシャリボタン</a><p>
-// <p><a href="#" class="c-button is-danger">危険ボタン</a><p>
-// <p><a href="#" class="c-button is-warning">警告ボタン</a><p>
-// <p><a href="#" class="c-button is-success">成功ボタン</a><p>
-// <p><a href="#" class="c-button is-info">情報ボタン</a><p>
-// <p><a href="#" class="c-button is-round">丸角ボタン</a><p>
-// <p><a href="#" class="c-button is-lg is-success is-round">丸角ボタン</a><p>
-// <p><a href="#" class="c-button is-lg is-expand">最大幅</a><p>
-//
-// Styleguide 2.11.0
+/*
+---
+name: カラー別
+category: Buttons
+---
+```types.html
+<div class="u-mbs is-bottom">
+<a class="c-button" href="#">ボタンテキスト</a>
+<a class="c-button is-secondary" href="#">ボタンテキスト</a>
+<a class="c-button is-accent" href="#">ボタンテキスト</a>
+<a class="c-button is-white" href="#">ボタンテキスト</a>
+        </div>
+```
+*/
 .c-button {
   outline: none;
   display: inline-block;
@@ -53,7 +47,7 @@
 
   // width: 100%
   &.is-display-block {
-    max-width: 100%!important;
+    max-width: 100% !important;
   }
   // カラー設定
   // -> セカンダリカラー
@@ -85,7 +79,22 @@
       color: $color-white;
     }
   }
-
+}
+/*
+---
+name: 大きさ別
+category: Buttons
+---
+```types.html
+<div class="u-mbs is-bottom">
+<a class="c-button" href="#">ボタンテキスト</a>
+<a class="c-button is-secondary" href="#">ボタンテキスト</a>
+<a class="c-button is-accent" href="#">ボタンテキスト</a>
+<a class="c-button is-white" href="#">ボタンテキスト</a>
+        </div>
+```
+*/
+.c-button {
   // サイズ設定
   // -> 大
   &.is-xlg {

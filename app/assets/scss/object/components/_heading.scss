@@ -1,11 +1,3 @@
-// ベース
-//
-// Styleguide 1.0.0
-
-// 見出し
-//
-// Styleguide 1.1.0
-
 $heading-color: $font-base-color !default;
 $heading-weight: normal !default;
 $heading-accent-color: $font-base-color !default;
@@ -20,13 +12,16 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 見出し - 極大
-//
-// markup:
-// <h1 class="heading is-xlg"><span>TEXTLEVEL1</span><small>見出しレベル1</small</h1>
-//
-// Styleguide 1.1.1
-
+/*
+---
+name: Heading_xlg
+category: Heading
+---
+# font-size:42px
+```types.html
+<div class="c-heading is-xlg"><span>TEXTLEVEL1</span><small>見出しレベル1</small></div>
+```
+*/
 .c-heading.is-xlg {
   text-align: center;
   color: $color-primary;
@@ -54,13 +49,16 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 見出し - 大
-//
-// markup:
-// <h1 class="heading is-lg"><span>見出しレベル1見出しレベル1</span><small>TEXTLEVEL1</small</h1>
-//
-// Styleguide 1.1.2
-
+/*
+---
+name: Heading_lg
+category: Heading
+---
+# font-size:32px
+```types.html
+<div class="c-heading is-lg">見出しレベル1見出しレベル1<small>TEXTLEVEL1</small></div>
+```
+*/
 .c-heading.is-lg {
   text-align: center;
   color: $color-primary;
@@ -83,13 +81,16 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 見出し - 中
-//
-// markup:
-// <h1 class="heading is-md">見出し:中 <small>heading middle</small</h1>
-//
-// Styleguide 1.1.3
-
+/*
+---
+name: Heading_md
+category: Heading
+---
+# font-size:28px
+```types.html
+<div class="c-heading is-md">見出しレベル2見出しレベル2見出しレベル2</div>
+```
+*/
 .c-heading.is-md {
   font-size: rem-calc(28);
   text-align: center;
@@ -111,13 +112,16 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 見出し - 小
-//
-// markup:
-// <h1 class="heading is-sm">見出し:小 <small>heading small</small</h1>
-//
-// Styleguide 1.1.4
-
+/*
+---
+name: Heading_sm
+category: Heading
+---
+# font-size:24px
+```types.html
+<div class="c-heading is-sm">見出しレベル2見出しレベル2見出しレベル2</div>
+```
+*/
 .c-heading.is-sm {
   font-size: rem-calc(24);
   letter-spacing: 0.1em;
@@ -126,13 +130,16 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 見出し - 極小
-//
-// markup:
-// <h1 class="heading is-xs">見出し:極小 <small>heading small</small</h1>
-//
-// Styleguide 1.1.5
-
+/*
+---
+name: Heading_xs
+category: Heading
+---
+# font-size:20px
+```types.html
+<div class="c-heading is-md">見出しレベル2見出しレベル2見出しレベル2</div>
+```
+*/
 .c-heading.is-xs {
   font-size: rem-calc(20);
   letter-spacing: 0.1em;
@@ -142,16 +149,17 @@ $heading-accent-color: $font-base-color !default;
     margin-bottom: rem-calc(16)/2;
   }
 }
-
+/*
+---
+name: Heading_xxs
+category: Heading
+---
+# font-size:18px
+```types.html
+<div class="c-heading is-xxs">見出しレベル2見出しレベル2見出しレベル2</div>
+```
+*/
 .c-heading.is-xxs {
-  font-size: rem-calc(20);
-  letter-spacing: 0.1em;
-  @include breakpoint(small only) {
-    font-size: rem-calc(20)*0.8;
-  }
-}
-
-.c-heading.is-xxxs {
   font-size: rem-calc(18);
   letter-spacing: 0.1em;
   margin-bottom: rem-calc(6);
@@ -160,7 +168,6 @@ $heading-accent-color: $font-base-color !default;
   }
 }
 
-// 装飾
 .c-heading.is-line-under {
   position: relative;
   padding-bottom: rem-calc(24);

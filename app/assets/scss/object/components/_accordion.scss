@@ -1,45 +1,41 @@
-// アコーディオン
-//
-//
-// markup:
-// <div class="c-accordion">
-//     <h1 class="c-accordion__title">アコーディオンタイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>アコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツ</p>
-//     </div>
-// </div>
-// <div class="c-accordion is-danger">
-//     <h1 class="c-accordion__title">アコーディオンタイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>アコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツ</p>
-//     </div>
-// </div>
-// <div class="c-accordion is-warning">
-//     <h1 class="c-accordion__title">アコーディオンタイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>アコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツ</p>
-//     </div>
-// </div>
-// <div class="c-accordion is-info">
-//     <h1 class="c-accordion__title">アコーディオンタイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>アコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツ</p>
-//     </div>
-// </div>
-// <div class="c-accordion is-success">
-//     <h1 class="c-accordion__title">アコーディオンタイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>アコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツアコーディオンコンテンツ</p>
-//     </div>
-// </div>
-// <div class="c-accordion is-faq">
-//     <h1 class="c-accordion__title">よくあるご質問タイトル</h1>
-//     <div class="c-accordion__content">
-//         <p>よくあるご質問のコンテンツよくあるご質問のコンテンツよくあるご質問のコンテンツよくあるご質問のコンテンツよくあるご質問のコンテンツ</p>
-//     </div>
-// </div>
-//
-// Styleguide 2.18.0
+/*
+---
+name: よくあるご質問ボックス
+category: Components
+---
+```types.html
+<div class="c-accordion">
+            <div class="c-accordion__block  js-accordion">
+              <div class="c-accordion__head" data-accordion-title="accordion-title">
+                <div class="c-accordion__icon">Q
+                </div>
+                <div class="c-accordion__title">見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
+                </div>
+              </div>
+              <div class="c-accordion__content" data-accordion-content="accordion--text">
+                <div class="c-accordion__icon  is-color-accent">A
+                </div>
+                <div class="c-accordion__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </div>
+              </div>
+            </div>
+            <div class="c-accordion__block  js-accordion">
+              <div class="c-accordion__head" data-accordion-title="accordion-title">
+                <div class="c-accordion__icon">Q
+                </div>
+                <div class="c-accordion__title">見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
+                </div>
+              </div>
+              <div class="c-accordion__content" data-accordion-content="accordion--text">
+                <div class="c-accordion__icon  is-color-accent">A
+                </div>
+                <div class="c-accordion__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 
 .c-accordion {
   &__block {

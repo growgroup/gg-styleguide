@@ -1,3 +1,20 @@
+/*
+---
+name: お知らせ_1行
+category: News
+---
+```types.html
+<div class="c-news-oneline">
+                <h2 class="c-news-oneline__title">NEWS</h2>
+                <div class="c-news-oneline__content">
+                  <div class="c-news-oneline__label  c-label">カテゴリ
+                  </div>
+                  <div class="c-news-oneline__date">2018.10.10
+                  </div><a class="c-news-oneline__text" href="#">お知らせの投稿タイトルがここに入ります。</a>
+                </div>
+              </div>
+```
+*/
 .c-news-oneline {
   display: flex;
   align-items: center;

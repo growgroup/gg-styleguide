@@ -1,0 +1,79 @@
+/*
+---
+name: オファー_小
+category: Layout
+---
+```types.html
+<div class="l-offer-sm">
+                <h2 class="c-heading is-sm is-bottom">いつでもお気軽にご相談ください。</h2>
+                <div class="l-offer-sm__items">
+                  <div class="l-offer-sm__block">
+                    <div class="l-offer-sm__subtitle is-border-bottom">お電話でのお問い合わせ</div>
+                    <div class="l-offer-sm__tel"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000<small>診察受付 / 8:30～12:00   月〜土（日祝を除く）</small></div>
+                  </div>
+                  <div class="l-offer-sm__block">
+                    <div class="l-offer__subtitle">メールでのお問い合わせ</div><a class="c-button is-lg is-white" href="#">お問い合わせ</a>
+                  </div>
+                </div>
+              </div>
+```
+*/
+.l-offer-sm {
+  text-align: center;
+  background-color: rgba($color-primary,0.1);
+  padding: rem-calc(40) rem-calc(56);
+  @include breakpoint(small only) {
+    padding: rem-calc(32);
+  }
+  .c-heading {
+    color: $color-primary;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__block {
+    width: 50%;
+    @include breakpoint(small only) {
+      width: 100%;
+      margin-bottom: rem-calc(32);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__subtitle {
+    font-size: rem-calc(14);
+    font-weight: 700;
+    margin-bottom: rem-calc(12);
+    &.is-border-bottom {
+      border-bottom: 1px solid $border-base-color;
+      padding-bottom: rem-calc(10);
+    }
+  }
+  &__tel {
+    color: $color-primary;
+    @include webfont-bold();
+    display: block;
+    font-size: rem-calc(24);
+    i {
+      margin-right: rem-calc(8);
+    }
+    small {
+      color: $font-base-color;
+      font-size: rem-calc(12);
+      display: block;
+      margin-top: rem-calc(8);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+  }
+}

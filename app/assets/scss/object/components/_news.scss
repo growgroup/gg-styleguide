@@ -1,3 +1,44 @@
+/*
+---
+name: お知らせブロック
+category: News
+---
+```types.html
+<div class="c-news">
+            <div class="row">
+              <div class="large-3 small-12">
+                <div class="c-news__head">
+                  <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                  <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                  </div>
+                </div>
+              </div>
+              <div class="large-9 small-12">
+                <div class="c-news__content"><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                    </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-news {
   @include breakpoint(small only) {
     position: relative;
@@ -9,8 +50,8 @@
     }
   }
   &__title {
-    text-align: left!important;
-    margin: 0!important;
+    text-align: left !important;
+    margin: 0 !important;
   }
   &__button {
     margin-top: rem-calc(56);
@@ -36,7 +77,7 @@
     padding: rem-calc(24) 0 rem-calc(16);
     @include breakpoint(small only) {
       flex-wrap: wrap;
-      padding: rem-calc(16) 0 rem-calc(12)!important;
+      padding: rem-calc(16) 0 rem-calc(12) !important;
     }
     &:first-child {
       padding-top: 0;
@@ -65,7 +106,67 @@
       margin-top: rem-calc(8);
     }
   }
-  // ワンカラム
+}
+/*
+---
+name: お知らせブロック_シンプル
+category: News
+---
+```types.html
+<div class="c-news  is-onecolumn">
+            <div class="row">
+              <div class="large-10 is-push-lg-1 small-12">
+                <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
+                <div class="c-news__content"><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a><a class="c-news__block" href="#">
+                    <div class="c-news__date">2018.10.10
+                    </div>
+                    <div class="c-news__label  c-label is-white">カテゴリ
+                    </div>
+                    <div class="c-news__inner">
+                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                    </div></a>
+                </div>
+                <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
+.c-news {
   &.is-onecolumn {
     .c-news__block {
       padding: rem-calc(24) 0;

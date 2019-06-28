@@ -1,15 +1,14 @@
-// 区切り線
-//
-// Styleguide 1.4.0
-
-// 区切り線
-//
-// markup:
-// <hr>
-// <div class="u-hr"></div>
-//
-// Styleguide 1.4.1
-
+/*
+---
+name: <hr>区切り線
+category: Base
+---
+```types.html
+<hr class="c-hr">
+<hr class="c-hr is-border-dotted">
+<hr class="c-hr is-line-double">
+```
+*/
 hr,
 .c-hr {
   border-top: 1px solid $border-base-color;

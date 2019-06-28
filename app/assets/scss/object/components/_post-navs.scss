@@ -1,16 +1,21 @@
-// 投稿詳細ナビゲーション
-//
-// 投稿詳細ページの記事ナビゲーション
-//
-// markup:
-// <nav class="c-post-navs">
-//     <ul>
-//         <li class="c-post-navs__prev"><a href="#">前の記事へ</a></li>
-//         <li class="c-post-navs__next"><a href="#">次の記事へ</a></li>
-//     </ul>
-// </nav>
-//
-// Styleguide 2.16.0
+/*
+---
+name: 投稿ナビゲーション
+category: Navigation
+---
+```types.html
+<div class="c-post-navs">
+            <ul>
+              <li><a class="c-post-navs__prev c-button is-sm is-arrow-left" href="#">前の記事へ</a>
+              </li>
+              <li><a class="c-post-navs__archive c-button is-sm" href="#"><i class="fa fa-th" aria-hidden="true"></i>記事一覧へ</a>
+              </li>
+              <li><a class="c-post-navs__next c-button is-sm" href="#">次の記事へ</a>
+              </li>
+            </ul>
+          </div>
+```
+*/
 .c-post-navs {
   margin: rem-calc(64) 0;
   @include breakpoint(small only) {

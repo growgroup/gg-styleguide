@@ -1,0 +1,98 @@
+/*
+---
+name: 通常ページヘッダー
+category: Layout
+---
+```types.html
+<div class="l-page-header">
+      <div class="l-page-header__image"><img src="/dist/assets/images/img-page-header-format.jpg" alt="">
+      </div>
+      <div class="l-page-header__inner">
+        <h1 class="l-page-header__title">スタイルガイド</h1>
+        <div class="l-page-header__subtitle">STYLE GUIDE</div>
+      </div>
+    </div>
+```
+*/
+/*
+---
+name: 単色ページヘッダー
+category: Layout
+---
+```types.html
+<div class="l-page-header is-image-hidden">
+          <div class="l-page-header__inner">
+            <h1 class="c-page-header__title">PAGE TITLE</h1>
+            <div class="l-page-header__subtitle">ページタイトル</div>
+          </div>
+        </div>
+```
+*/
+.l-page-header {
+  width: 100%;
+  height: rem-calc(330);
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(small only) {
+    height: 44vw;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-black,0.2);
+    top: 0;
+    left: 0;
+  }
+  &__image {
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:100%;
+      height: auto;
+      min-height: rem-calc(330);
+      min-width: rem-calc(1400);
+    }
+  }
+  &__inner {
+    text-align: center;
+    color: $color-white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    padding: 0 rem-calc(16);
+  }
+  &__title {
+    @include webfont-bold();
+    font-size: rem-calc(42);
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    margin: 0;
+    @include breakpoint(small only) {
+      font-size: rem-calc(42)/1.5;
+    }
+  }
+  &__subtitle {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  // 画像なし単色
+  &.is-image-hidden {
+    height: rem-calc(200);
+    background-color: $color-secondary;
+    &:after {
+      display: none;
+    }
+    .l-page-header__inner {
+      color: $color-primary;
+    }
+  }
+}

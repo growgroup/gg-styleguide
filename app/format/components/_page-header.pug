@@ -1,9 +1,9 @@
 // ページヘッダー・breadcrumb
 // -> 通常
 div.u-mbs.is-bottom
-  +c.page-header
-    +e.image: +img("img-page-header-format.jpg")
-    +e.inner
+  .l-page-header
+    .l-page-header__image: +img("img-page-header-format.jpg")
+    .l-page-header__inner
       h1.c-page-header__title PAGE TITLE
       +e.subtitle ページタイトル
   .c-breadcrumb
@@ -14,10 +14,10 @@ div.u-mbs.is-bottom
         span 企業情報
 // -> 画像なし単色
 div.u-mbs.is-bottom
-  +c.page-header.is-image-hidden
-    +e.inner
+  .l-page-header.is-image-hidden
+    .l-page-header__inner
       h1.c-page-header__title PAGE TITLE
-      +e.subtitle ページタイトル
+      .l-page-header__subtitle ページタイトル
     +c.breadcrumb
       .l-container
         +e.inner
