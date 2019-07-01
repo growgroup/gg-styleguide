@@ -1,6 +1,6 @@
 /*
 ---
-name: 通常カード
+name: カード_通常
 category: Components
 ---
 ```types.html
@@ -71,7 +71,7 @@ category: Components
 }
 /*
 ---
-name: ポイントカード
+name: カード_数字付き
 category: Components
 ---
 ```types.html
@@ -130,7 +130,7 @@ category: Components
 }
 /*
 ---
-name: リンクカード
+name: カード_リンクあり
 category: Components
 ---
 ```types.html
@@ -146,14 +146,14 @@ category: Components
 */
 /*
 ---
-name: オーバーレイカード
+name: カード_フィルタ付き
 category: Components
 ---
 ```types.html
 <div class="c-card is-overlay">
   <div class="row">
         <div class="large-4 small-12">
-            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
+            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
           </div>
         </div>
       </div>

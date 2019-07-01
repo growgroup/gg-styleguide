@@ -1,6 +1,6 @@
 /*
 ---
-name: カラー別
+name: ボタン_カラー別
 category: Buttons
 ---
 ```types.html
@@ -80,7 +80,7 @@ category: Buttons
 }
 /*
 ---
-name: 大きさ別
+name: ボタン_サイズ別
 category: Buttons
 ---
 ```types.html
@@ -88,6 +88,12 @@ category: Buttons
 <a class="c-button is-lg" href="#">ボタンテキスト</a>
 <a class="c-button is-sm" href="#">ボタンテキスト</a>
 <a class="c-button is-xs" href="#">ボタンテキスト</a>
+```
+```types.pug
++a("#").c-button.is-xlg ボタンテキスト
++a("#").c-button.is-lg ボタンテキスト
++a("#").c-button.is-sm ボタンテキスト
++a("#").c-button.is-xs ボタンテキスト
 ```
 */
 .c-button {
@@ -151,7 +157,7 @@ category: Buttons
 }
 /*
 ---
-name: デザイン01
+name: ボタン_デザイン01
 category: Buttons
 ---
 ```types.html
@@ -163,7 +169,7 @@ category: Buttons
 */
 /*
 ---
-name: デザイン02
+name: ボタン_デザイン02
 category: Buttons
 ---
 ```types.html
@@ -174,7 +180,7 @@ category: Buttons
 */
 /*
 ---
-name: デザイン03
+name: ボタン_デザイン03
 category: Buttons
 ---
 ```types.html

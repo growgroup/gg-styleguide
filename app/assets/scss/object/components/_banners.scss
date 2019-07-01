@@ -1,3 +1,21 @@
+/*
+---
+name: バナー_2カラム
+category: Banners
+---
+```types.html
+<div class="row">
+            <div class="large-5 is-push-lg-1 small-12">
+              <div class="c-banners"><a class="c-banners__block" href="#"><span class="c-banners__image"><img src="/dist/assets/images/img-banners-01.jpg" alt=""></span><span class="c-banners__text"><span>会社案内</span><small>COMPANY</small></span></a>
+              </div>
+            </div>
+            <div class="large-5 small-12">
+              <div class="c-banners"><a class="c-banners__block" href="#"><span class="c-banners__image"><img src="/dist/assets/images/img-banners-01.jpg" alt=""></span><span class="c-banners__text"><span>会社案内</span><small>COMPANY</small></span></a>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-banners {
   &__block {
     display: flex;
@@ -32,7 +50,7 @@
       opacity: 1;
       .c-banners__image {
         img {
-          transform: translate(-50%,-50%) scale(1.15);
+          transform: translate(-50%, -50%) scale(1.15);
         }
       }
     }
@@ -43,7 +61,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: auto;
       height: auto;
       min-width: 100%;
@@ -78,6 +96,27 @@
       }
     }
   }
+}
+/*
+---
+name: バナー_3カラム
+category: Banners
+---
+```types.html
+<div class="c-banners  is-lg">
+  <a class="c-banners__block" href="#">
+    <span class="c-banners__image"><img src="/dist/assets/images/img-banners-lg-01.jpg" alt=""></span><span class="c-banners__text"><span>COMPANY</span><small>会社案内</small></span>
+  </a>
+  <a class="c-banners__block" href="#">
+    <span class="c-banners__image"><img src="/dist/assets/images/img-banners-lg-01.jpg" alt=""></span><span class="c-banners__text"><span>COMPANY</span><small>会社案内</small></span>
+  </a>
+    <a class="c-banners__block" href="#">
+    <span class="c-banners__image"><img src="/dist/assets/images/img-banners-lg-01.jpg" alt=""></span><span class="c-banners__text"><span>COMPANY</span><small>会社案内</small></span>
+  </a>
+</div>
+```
+*/
+.c-banners {
   //-> 大
   &.is-lg {
     display: flex;
