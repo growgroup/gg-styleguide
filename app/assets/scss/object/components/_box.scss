@@ -82,6 +82,31 @@ category: Components
           </div>
 ```
 */
+/*
+---
+name: 関連コンテンツ
+category: PostContent
+---
+```types.html
+<h4 class="c-heading is-xs is-bg-color">この記事を書いた人</h4>
+<div class="c-block">
+  <div class="row">
+    <div class="large-3 small-4">
+      <div class="c-block__image"><img src="/dist/assets/images/img-thumbnail-01.jpg" alt="">
+      </div>
+    </div>
+    <div class="large-9 small-8">
+      <div class="c-block__content">
+        <h6>名前名前</h6>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="u-text-right u-mbs is-top is-xxs"><a class="c-button is-xs" href="">この執筆者の記事一覧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
 .c-box {
   &__block {
     background-color: $color-secondary;

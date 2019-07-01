@@ -1,3 +1,25 @@
+/*
+---
+name: お知らせ_ヘッダー
+category: PostContent
+---
+```types.html
+<div class="c-news-header">
+  <h1 class="c-news-header__title">ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。</h1>
+  <div class="c-news-header__sup">
+    <div class="c-news-header__label  c-label">カテゴリ</div>
+    <div class="c-news-header__date">2018.10.10</div>
+    <div class="c-news-header__tag">
+      <ul>
+        <li><a href="#">#タグ</a></li>
+        <li><a href="#">#タグ</a></li>
+        <li><a href="#">#タグ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+*/
 .c-news-header {
   margin-bottom: rem-calc(32);
   @include breakpoint(small only) {

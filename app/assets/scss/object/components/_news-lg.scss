@@ -1,3 +1,33 @@
+/*
+---
+name: お知らせ_1カラム_アーカイブ02
+category: News
+---
+```types.html
+<div class="c-news-lg"><a class="c-news-lg__block" href="/archive-onecolumn/page/">
+                      <div class="c-news-lg__sup">
+                        <div class="c-news-lg__label  c-label is-sm">お知らせ
+                        </div>
+                        <div class="c-news-lg__date">2018.06.01
+                        </div>
+                      </div>
+                      <div class="c-news-lg__title">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                      <div class="c-news-lg__excerpt">簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+                      </div></a><a class="c-news-lg__block" href="/archive-onecolumn/page/">
+                      <div class="c-news-lg__sup">
+                        <div class="c-news-lg__label  c-label is-sm">お知らせ
+                        </div>
+                        <div class="c-news-lg__date">2018.06.01
+                        </div>
+                      </div>
+                      <div class="c-news-lg__title">お知らせの投稿タイトルがここに入ります。
+                      </div>
+                      <div class="c-news-lg__excerpt">簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+                      </div></a>
+                  </div>
+```
+*/
 .c-news-lg {
   &__block {
     display: block;
