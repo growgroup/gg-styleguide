@@ -33,3 +33,17 @@ examples:
         <div style="padding: 20px">
             {html}
         </div>
+order:
+- +Base
+- +Layout
+- +Components
+- +SpecialComponents
+- +Components
+- +Heading
+- +Buttons
+- +Banners
+- +Navigation
+- +News
+- +PostContent
+- +Tabs
+- +Forms

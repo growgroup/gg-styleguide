@@ -22,7 +22,7 @@ Homebrew、もしくはその他の方法でインストールすること。
 ## インストール
 
 ```shell
-git clone https://github.com/growgroup/grow-template
+git clone https://github.com/growgroup/gg-styleguide.git
 ```
 
 もしくは **Download** ボタンからダウンロードし、プロジェクトルートディレクトリへ展開してください。

@@ -1,22 +1,9 @@
-// フォーム
-//
-// Styleguide 1.6.0
-
 $forms-transition: all ease-in-out .2s !default;
 
 $forms-input-font-size: 15px;
 $forms-input-border-color: #ccc;
 $forms-input-active-border-color: $color-primary;
 
-// テキストボックス
-//
-// markup:
-// <div class="form-group">
-//     <label>テキストボックス</label>
-//     <input type="text" value="テキストボックス">
-// </div>
-//
-// Styleguide 1.6.1
 input[type="text"],
 input[type="url"],
 input[type="search"],
