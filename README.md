@@ -1,8 +1,9 @@
-# Grow Template [![Build Status](https://travis-ci.org/growgroup/grow-template.svg?branch=master)](https://travis-ci.org/growgroup/grow-template)
+# GG SYSTEGUIDE [![Build Status](https://travis-ci.org/growgroup/grow-template.svg?branch=master)](https://travis-ci.org/growgroup/grow-template)
 
-Sass & Pug を利用した必要最小限のHTMLコーディング用テンプレートです。
+GrowGroupデザインシステムに基づいて作成したスタイルガイドです。
 
-より効率的なHTMLコーディングを実現するために作成しています。
+1カラム、2カラム、アーカイブ、シングルページのHTMLコーディング用テンプレートも用意されています。
+SCSS & Pug を利用しています。
 
 なお、最終的に WordPress の子テーマとしての利用を前提として作成しています。
 
@@ -36,7 +37,12 @@ npm install
 基本的に、```npm run script```にてタスクを実行します。
 詳細は、package.json を確認してください。
 
-#### 開発時 (サーバーが立ち上がります)
+#### スタイルガイド (デフォルト：local:3100)
+```
+npm run styleguide
+```
+
+#### 開発サーバー (デフォルト：local:3000)
 ```
 npm run develop -s
 ```
@@ -60,31 +66,30 @@ dist ディレクトリ内に展開します。
 │   │   ├── images
 │   │   ├── js
 │   │   └── scss
-│   │       ├── base
-│   │       ├── components
+│   │       ├── foundation
 │   │       ├── layout
+│   │       ├── object
+│   │       │    ├── components
+│   │       │    ├── project
+│   │       │    └── utility
 │   │       └── style.scss
 │   ├── inc
+│   │   ├── foundation
+│   │   ├── layout
+│   │   ├── mixins
+│   │   └── _settings.pug
+│   ├── onecolumn
+│   ├── twocolumns
+│   ├── archive-onecolumn
+│   ├── archive-twocolumns
+│   ├── format
+│   │   ├── layout
 │   │   ├── components
-│   │   ├── core
-│   │   │   └── _base.pug
-│   │   └── layouts
-│   │       ├── _aside.pug
-│   │       ├── _footer.pug
-│   │       └── _header.pug
-│   └── index.pug
-├── bower.json
-├── bower_components/
-├── dist
-│   ├── assets
-│   │   ├── css
-│   │   │   └── style.css
-│   │   └── js
-│   │       ├── main.js
-│   │       ├── scripts.js
-│   │       └── vendor.js
-│   └── index.html
-├── docs
+│   │   └── index.pug
+│   └── robots.txt
+├── build
+├── config
+├── node_modules
 ├── webpack.config.babel.js
 ├── server.js
 └── package.json
@@ -101,60 +106,31 @@ app/inc/_settings.pug ファイルの値を変更することで、
 自動的に変数に値がセットされ、HTMLにコンパイル時に反映されます。
 
 ```pug
-    //- サイトの設定
-    -
-      config = {
-
-        // サイト情報
+    // --------------------------
+        // 1. サイト情報
+        // --------------------------
+    
+        // サイトのルートパスを設定
+        // "" でドメイン直下からパスを開始
+        root: "",
         site: {
-          title: "サイト名",
+          title: "株式会社 サンプル",
+          titleSeparator: " | ",
           description: "説明文",
           keywords: "キーワード",
           viewport: "width=device-width,initial-scale=1",
           favicon: "",
           "apple-touch-icon": "",
           ogp: {
-            locale: "ja",
-            type: "type",
-            title: "title",
-            description: "description",
+            locale: "ja_JP",
+            type: "website",
+            title: "株式会社 サンプル",
+            description: "説明文",
             url: "",
-            site_name: "",
-            image: ""
+            site_name: "株式会社 サンプル",
+            image: "/assets/images/ogp.png"
           },
         },
-
-        // ページ情報
-        pages: {
-          'top': {
-            name: "top",
-            title: "ホーム",
-            description: "",
-          },
-          'about': {
-            name: "about",
-            title: "私たちについて",
-            description: "",
-          },
-          'service': {
-            name: "service",
-            title: "サービス紹介",
-            description: "",
-          },
-          'works': {
-            name: "works",
-            title: "実績紹介",
-            description: "",
-          },
-          'contact': {
-            name: "contact",
-            title: "お問合せ",
-            description: "",
-          },
-
-        },
-      }
-
 
 ```
 
