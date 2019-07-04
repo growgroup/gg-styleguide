@@ -19,36 +19,13 @@ block body
             .large-10.is-push-lg-1.small-12
               h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
               +e.content
-                +a("/archive-onecolumn/page/").c-news__block
-                  +e.date 2018.10.10
-                  +e.label.c-label.is-white カテゴリ
-                  +e.inner
-                    +e.text お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-                +a("/archive-onecolumn/page/").c-news__block
-                  +e.date 2018.10.10
-                  +e.label.c-label.is-white カテゴリ
-                  +e.inner
-                    +e.text お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-                +a("/archive-onecolumn/page/").c-news__block
-                  +e.date 2018.10.10
-                  +e.label.c-label.is-white カテゴリ
-                  +e.inner
-                    +e.text お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-                +a("/archive-onecolumn/page/").c-news__block
-                  +e.date 2018.10.10
-                  +e.label.c-label.is-white カテゴリ
-                  +e.inner
-                    +e.text お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-                +a("/archive-onecolumn/page/").c-news__block
-                  +e.date 2018.10.10
-                  +e.label.c-label.is-white カテゴリ
-                  +e.inner
-                    +e.text お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+                +loop(5)
+                  +a("/archive-onecolumn/page/").c-news__block
+                    +e.date 2018.10.10
+                    +e.label.c-label.is-white カテゴリ
+                    +e.inner
+                      +e.text お知らせの投稿タイトルがここに入ります。
+                      +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
               +c.pagination
                 ul
                   li: +a("/archive-onecolumn/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
@@ -80,18 +57,13 @@ block body
                       li: +a("/archive-onecolumn/page/") 2019年01月
               div.u-mbs.is-top.is-lg
                 +c.news-lg
-                  +a("/archive-onecolumn/page/").c-news-lg__block
-                    +e.sup
-                      +e.label.c-label.is-sm お知らせ
-                      +e.date 2018.06.01
-                    +e.title お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
-                  +a("/archive-onecolumn/page/").c-news-lg__block
-                    +e.sup
-                      +e.label.c-label.is-sm お知らせ
-                      +e.date 2018.06.01
-                    +e.title お知らせの投稿タイトルがここに入ります。
-                    +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+                  +loop(5)
+                    +a("/archive-onecolumn/page/").c-news-lg__block
+                      +e.sup
+                        +e.label.c-label.is-sm お知らせ
+                        +e.date 2018.06.01
+                      +e.title お知らせの投稿タイトルがここに入ります。
+                      +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
                 +c.pagination.is-align-left
                   ul
                     li: +a("/archive-onecolumn/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
@@ -105,42 +77,16 @@ block body
         div.u-mbs.is-top.is-lg
           +c.card-post.is-tag-hidden
             .row
-              .large-3.small-6
-                +e.block
-                  +a.c-card-post__image
-                    +img("img-card-01.jpg")
-                  +e.content
-                    +e.sup
-                      span.c-card-post__label.c-label カテゴリ名
-                      +e.date 2018.01.01
-                    +e.title タイトルが入ります。タイトルが入ります。
-              .large-3.small-6
-                +e.block
-                  +a.c-card-post__image
-                    +img("img-card-01.jpg")
-                  +e.content
-                    +e.sup
-                      span.c-card-post__label.c-label カテゴリ名
-                      +e.date 2018.01.01
-                    +e.title タイトルが入ります。タイトルが入ります。
-              .large-3.small-6
-                +e.block
-                  +a.c-card-post__image
-                    +img("img-card-01.jpg")
-                  +e.content
-                    +e.sup
-                      span.c-card-post__label.c-label カテゴリ名
-                      +e.date 2018.01.01
-                    +e.title タイトルが入ります。タイトルが入ります。
-              .large-3.small-6
-                +e.block
-                  +a.c-card-post__image
-                    +img("img-card-01.jpg")
-                  +e.content
-                    +e.sup
-                      span.c-card-post__label.c-label カテゴリ名
-                      +e.date 2018.01.01
-                    +e.title タイトルが入ります。タイトルが入ります。
+              +loop(4)
+                .large-3.small-6
+                  +e.block
+                    +a.c-card-post__image
+                      +img("img-card-01.jpg")
+                    +e.content
+                      +e.sup
+                        span.c-card-post__label.c-label カテゴリ名
+                        +e.date 2018.01.01
+                      +e.title タイトルが入ります。タイトルが入ります。
           +c.pagination
             ul
               li: +a("/archive-onecolumn/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>

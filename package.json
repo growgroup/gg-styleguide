@@ -71,5 +71,15 @@
   },
   "skipInheritances": [
     "node_modules"
-  ]
+  ],
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/growgroup/gg-styleguide.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/growgroup/gg-styleguide/issues"
+  },
+  "homepage": "https://github.com/growgroup/gg-styleguide#readme"
 }

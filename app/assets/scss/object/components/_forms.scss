@@ -1,3 +1,233 @@
+/*
+---
+name: フォーム_通常
+category: Forms
+---
+```types.html
+<div class="c-forms">
+            <!-- -> インプット-->
+            <div class="c-forms__block">
+              <div class="c-forms__title">インプット<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" placeholder="（例）">
+              </div>
+            </div>
+            <!-- -> パスワード-->
+            <div class="c-forms__block">
+              <div class="c-forms__title">パスワード
+              </div>
+              <div class="c-forms__content">
+                <input type="password">
+              </div>
+            </div>
+            <!-- -> チェックボックス-->
+            <div class="c-forms__block">
+              <div class="c-forms__title">チェックボックス
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__checkbox"><span>
+                    <label>
+                      <input type="checkbox" name="チェックボックス" value="選択肢1" checked=""><span>選択肢1</span>
+                    </label></span><span>
+                    <label>
+                      <input type="checkbox" name="チェックボックス" value="選択肢2"><span>選択肢2</span>
+                    </label></span>
+                </div>
+              </div>
+            </div>
+            <!-- -> ラジオボタン-->
+            <div class="c-forms__block">
+              <div class="c-forms__title">ラジオボタン
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__radio"><span>
+                    <label>
+                      <input type="radio" name="ラジオボタン" value="選択肢1" checked=""><span>選択肢1</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="ラジオボタン" value="選択肢2"><span>選択肢2</span>
+                    </label></span>
+                </div>
+              </div>
+            </div>
+            <!-- -> テキストエリア-->
+            <div class="c-forms__block">
+              <div class="c-forms__title  is-vertical-top">テキストエリア<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__radio">
+                  <textarea name="テキストエリア" placeholder="お問い合わせ内容をご記入ください。"></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- -> セレクトボックス-->
+            <div class="c-forms__block">
+              <div class="c-forms__title">セレクトボックス
+              </div>
+              <div class="c-forms__content">
+                <select name="セレクトボックス">
+                  <option>選択してください</option>
+                </select>
+              </div>
+            </div>
+            <div class="c-forms__privacy u-mbs is-top is-xxs">
+              <input type="checkbox" id="privacy-policy" name="「個人情報保護の取り扱いに関するご確認」を確認する" value="確認しました">
+              <label for="privacy-policy"><a href="/privacy-policy/">個人情報保護の取り扱い</a>に関するご確認
+              </label>
+            </div>
+          </div>
+```
+*/
+/*
+---
+name: フォーム_テンプレート
+category: Forms
+---
+```types.html
+<div class="c-forms">
+            <div class="c-forms__block">
+              <div class="c-forms__title">貴社名<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="貴社名" placeholder="（例）株式会社サンプル">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">部署・役職
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="部署・役職" placeholder="（例）営業部">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">お問い合わせ種別<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__radio"><span>
+                    <label>
+                      <input type="radio" name="お問い合わせ種別" value="選択肢1" checked=""><span>選択肢1</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="お問い合わせ種別" value="選択肢2"><span>選択肢2</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="お問い合わせ種別" value="選択肢3" checked=""><span>選択肢3</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="お問い合わせ種別" value="選択肢4"><span>選択肢4</span>
+                    </label></span>
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">お名前<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="お名前" placeholder="（例）山田 太郎">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">フリガナ<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="フリガナ" placeholder="（例）ヤマダ タロウ">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">メールアドレス<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="メールアドレス" placeholder="（例）info@grow-group.jp">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">TEL<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <input type="text" name="TEL" placeholder="（例）052-753-6413">
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">住所<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__flexbox"><span>郵便番号</span>
+                  <input class="c-forms__input is-sm" type="text" name="郵便番号" placeholder="（例）464-0850">
+                  <button class="c-forms__button" id="zipauto">住所を自動入力</button>
+                </div>
+                <div class="c-forms__flexbox"><span>住所</span>
+                  <input type="text" name="住所" placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F">
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title  is-vertical-top">お問い合わせ内容
+              </div>
+              <div class="c-forms__content">
+                <div class="c-forms__radio">
+                  <textarea name="テキストエリア" placeholder="お問い合わせ内容をご記入ください。"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">どこで知ったか<br class="u-hidden-sm">(複数選択)
+              </div>
+              <div class="c-forms__content  is-vertical-middle">
+                <div class="c-forms__checkbox"><span>
+                    <label>
+                      <input type="checkbox" name="どこで知ったか" value="選択肢1" checked=""><span>選択肢1</span>
+                    </label></span><span>
+                    <label>
+                      <input type="checkbox" name="どこで知ったか" value="選択肢2"><span>選択肢2</span>
+                    </label></span>
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">当社からのご連絡<br class="u-hidden-sm">方法について<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content  is-vertical-middle">
+                <div class="c-forms__radio"><span>
+                    <label>
+                      <input type="radio" name="当社からのご連絡方法について" value="電話" checked=""><span>電話</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="当社からのご連絡方法について" value="メール"><span>メール</span>
+                    </label></span><span>
+                    <label>
+                      <input type="radio" name="当社からのご連絡方法について" value="いずれでも可"><span>いずれでも可</span>
+                    </label></span>
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__block">
+              <div class="c-forms__title">個人情報の<br class="u-hidden-sm">取扱いについて<span class="c-forms__label">必須</span>
+              </div>
+              <div class="c-forms__content  is-vertical-middle">
+                <div class="c-forms__privacy">
+                  <input type="checkbox" id="privacy-policy" name="「個人情報保護の取り扱いに関するご確認」を確認する" value="確認しました" checked="">
+                  <label for="privacy-policy"><a href="/privacy-policy/">個人情報保護の取り扱い</a>に関するご確認
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="c-forms__submit">
+              <button class="c-button is-lg">確認画面へ</button>
+            </div>
+            <div class="c-forms__submit  is-two-columns">
+              <div class="row">
+                <div class="large-3 is-push-lg-3 small-6">
+                  <button class="c-button is-lg is-secondary is-arrow-left">戻る</button>
+                </div>
+                <div class="large-3 small-6">
+                  <button class="c-button is-lg">送信する</button>
+                </div>
+              </div>
+            </div>
+          </div>
+```
+*/
 .c-forms {
   &__block {
     display: flex;

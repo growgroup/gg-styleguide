@@ -80,11 +80,10 @@ block body
                 +e.button: +a("/news/").c-button.is-sm 一覧を見る
             .large-9.small-12
               +e.content
-                -for (var i = 0; i<3; i++){
+                +loop(3)
                   +a("/news/page/").c-news__block
                     +e.date 2018.10.10
                     +e.label.c-label.is-white カテゴリ
                     +e.text お知らせの投稿タイトルがここに入ります。
-                - }
   // オファーブロック
   +l_offer
