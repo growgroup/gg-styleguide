@@ -37,14 +37,15 @@ npm install
 基本的に、```npm run script```にてタスクを実行します。
 詳細は、package.json を確認してください。
 
-#### スタイルガイド (デフォルト：local:3100)
-```
-npm run styleguide
-```
-
 #### 開発サーバー (デフォルト：local:3000)
 ```
 npm run develop -s
+```
+
+#### スタイルガイド (デフォルト：local:3100)
+開発サーバーを立ち上げた後、もしくはdistを生成した後に起動してください。
+```
+npm run styleguide
 ```
 
 #### 公開時
