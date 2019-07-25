@@ -74,6 +74,47 @@ category: SpecialComponents
 </div>
 ```
 */
+/*
+---
+name: ヒーローブロック_斜め下
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block is-down">
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>01</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block__block">
+    <div class="c-hero-block__image"><img src="/dist/assets/images/img-aboutus-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block__content">
+        <div class="c-hero-block__inner">
+          <div class="c-hero-block__head"><small>02</small><span>TITLE</span>
+          </div>
+          <div class="c-hero-block__title  c-heading is-md is-bottom">タイトルがここに入ります。
+          </div>
+          <p>テキストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
 .c-hero-block {
   overflow: hidden;
   &__block {
@@ -256,6 +297,56 @@ category: SpecialComponents
           transform: translateX(-100%);
         }
       }
+    }
+  }
+
+  //斜め下
+  &.is-down {
+    .c-hero-block__block {
+      display: flex;
+      align-items: flex-end;
+      min-height: inherit;
+      padding-top: 0;
+      padding-bottom: rem-calc(64);
+      margin-bottom: rem-calc(64);
+      @include breakpoint(small only) {
+        display: block;
+        padding-bottom: 0;
+      }
+      &:nth-child(even) {
+        .c-hero-block__image {
+          order: 2;
+        }
+        .c-hero-block__content {
+          order: 1;
+          margin-left: 0;
+          margin-right: rem-calc(-134);
+          @include breakpoint(small only) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .c-hero-block__image {
+      position: inherit;
+      width: 686/1140*100%;
+      @include breakpoint(small only) {
+        position: relative;
+        width: 100%;
+      }
+    }
+    .c-hero-block__content {
+      border: none;
+      margin-left: rem-calc(-134);
+      margin-bottom: rem-calc(-64);
+      @include breakpoint(small only) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+    }
+    .c-hero-block__button {
+      text-align: left;
     }
   }
 }

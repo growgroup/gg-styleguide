@@ -158,6 +158,21 @@ div.u-mbs.is-bottom
                   li: +a("") #タグ
                   li: +a("") #タグ
 
+//->ポストカード_テキストあり
++c.card-post.is-tag-hidden
+  .row
+    +loop(3)
+      .large-4.small-12
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.text タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。
+
 //->ポストアイテムカード02
 div.u-mbs.is-bottom
   .row
@@ -201,6 +216,7 @@ div.u-mbs.is-bottom
               span.c-card-post__label.c-label カテゴリ名
               +e.date 2018.01.01
             +e.title タイトルが入ります。タイトルが入ります。
+
 //->カード大
 div.u-mbs.is-bottom
   +c.card-lg
@@ -220,3 +236,26 @@ div.u-mbs.is-bottom
         +e.content
           +e.title コンセプトタイトル
           p.c-card-lg__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+//->ポストカード_テキストあり
++c.card-post.is-author
+  .row.js-card-slider.owl-carousel
+    +loop(6)
+      .large-12.small-12
+        +e.block
+          +a.c-card-post__image
+            +img("img-card-01.jpg")
+          +e.content
+            +e.sup
+              span.c-card-post__label.c-label カテゴリ名
+              +e.date 2018.01.01
+            +e.title タイトルが入ります。タイトルが入ります。
+            +e.tag
+              ul
+                li: +a("") # タグ
+                li: +a("") # タグ
+            +e.author
+              +e.photo: +img("img-card-author.png")
+              +e.info
+                +e.name 山田 太郎
+                +e.pos 人事・広報

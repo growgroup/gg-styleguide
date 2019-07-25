@@ -41,6 +41,23 @@ div.u-mbs.is-bottom
             +e.title.c-heading.is-md.is-bottom タイトルがここに入ります。
             p テキストテキストテキストテキスト
 
+// -> 斜め下
+div.u-mbs.is-bottom
+  +c.hero-block.is-down
+    .l-container
+      +e.block
+        +e.image: +img("img-aboutus-01.jpg")
+        +e.content
+          +e.title.c-heading.is-sm.is-bottom タイトルがここに入ります。
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+      +e.block
+        +e.image: +img("img-aboutus-01.jpg")
+        +e.content
+          +e.title.c-heading.is-sm.is-bottom タイトルがここに入ります。
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          +e.button: +a("#").c-button.is-sm 一覧を見る
+
 // -> 枡形
 div.u-mbs.is-bottom
   +c.hero-block-square
@@ -58,5 +75,29 @@ div.u-mbs.is-bottom
         +e.content
           +e.inner
             h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +e.button: +a("#").c-button.is-sm ボタンテキスト
+
+// -> 枡形_数字付き
+div.u-mbs.is-bottom
+  +c.hero-block-square.is-number
+    +e.block
+      +e.image: +img("img-hero-block-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            +e.heading
+              span 01
+              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+            p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +e.button: +a("#").c-button.is-sm ボタンテキスト
+    +e.block
+      +e.image: +img("img-hero-block-01.jpg")
+      .l-container
+        +e.content
+          +e.inner
+            +e.heading
+              span 02
+              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
             p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
             +e.button: +a("#").c-button.is-sm ボタンテキスト

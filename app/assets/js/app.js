@@ -90,18 +90,61 @@ class App {
           //->カルーセル
           owls.imagesLoaded(function () {
               $('.c-main-visual__carousel').owlCarousel({
-                  items: 3,
-                  margin: 0,
+                  items: 1,
+                  margin: 16,
                   dots: true,
                   loop: true,
-                  nav: false,
+                  nav: true,
+                  autoplayHoverPause: true,
+                  autoplay: false,
+                  autoplaySpeed: 500,
+                  autoWidth: false,
+                  autoHeight: false,
+                  center: true,
+                  navText: ['<div class="c-main-visual__nav is-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>','<div class="c-main-visual__nav is-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>'],
+                  responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                      stagePadding: 32,
+                    },
+                    // breakpoint from 750  up
+                    750 : {
+                      stagePadding: 64,
+                    },
+                    // breakpoint from 950 up
+                    950 : {
+                      stagePadding: 156,
+                    },
+                    1400 : {
+                      stagePadding: 312,
+                    }
+                  }
+              });
+          });
+          //->カード_カルーセル
+          owls.imagesLoaded(function () {
+              $('.js-card-slider').owlCarousel({
+                  margin: 0,
+                  dots: false,
+                  loop: true,
+                  nav: true,
                   autoplayHoverPause: true,
                   autoplay: true,
                   autoplaySpeed: 500,
                   autoWidth: false,
                   autoHeight: false,
                   center: true,
-                  navText: ['<img src="/assets/images/icon-slider-prev.png" />','<img src="/assets/images/icon-slider-next.png" />'],
+                  navText: ['<img src="../assets/images/icon-slider-prev.svg" />','<img src="../assets/images/icon-slider-next.svg" />'],
+                  responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                      items: 1,
+                    },
+                    // breakpoint from 750 up
+                    750 : {
+                      items: 3,
+                    }
+                  }
               });
           });
       }

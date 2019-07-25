@@ -41,3 +41,46 @@ div.u-mbs.is-bottom
                 +a("/").l-footer__logo: +img("logo-white.png","ロゴ")
                 address.l-footer__address 〒464-0850 愛知県名古屋市千種区今池3丁目12-20 KAビル6F<br>TEL：052-753-6413 / FAX：052-753-6414
                 small.l-footer__copyright ＠2019 サンプル Co.Ltd.
+
+div.u-mbs.is-bottom
+    footer.l-footer-normal
+        .l-footer-normal__inner
+            .l-footer-normal__content
+                +a("/").l-footer-normal__logo: +img("logo.png","ロゴ")
+                address.l-footer-normal__address 〒464-0850 愛知県名古屋市千種区今池3丁目12-20 KAビル6F<br>TEL：052-753-6413 / FAX：052-753-6414
+            .l-footer-normal__menu
+                .l-footer-normal__block
+                    ul.l-footer-normal__menulist
+                        li: +a("/") ホーム
+                        li: +a("/aboutus/") 私たちについて
+                        li: +a("/company/") 会社案内
+                .l-footer-normal__block
+                    .l-footer-normal__menutitle <span>事業内容</span>
+                    ul.l-footer-normal__menulist.is-sub
+                        li: +a("/service/service1/") サービス1
+                        li: +a("/service/service2") サービス2
+                        li: +a("/service/service3/") サービス3
+                .l-footer-normal__block
+                    .l-footer-normal__menutitle <span>採用情報</span>
+                    ul.l-footer-normal__menulist.is-sub
+                        li: +a("/recruit/staff/") 社員紹介
+                        li: +a("/recruit/offer/") 募集要項
+                        li: +a("/recruit/entry/") エントリー
+                .l-footer-normal__block
+                    ul.l-footer-normal__menulist
+                        li: +a("/news/") お知らせ
+                        li: +a("/faq/") よくあるご質問
+                        li: +a("/contact/") お問い合わせ
+                    ul.l-footer-normal__menulist.is-sub.is-menu-bottom
+                        li: +a("/privacy-policy/") 個人情報保護方針
+        .l-footer-normal__copyright
+            small ＠2019 サンプル Co.Ltd.
+
+div.u-mbs.is-bottom
+    footer.l-footer-simple
+        .l-container
+            .l-footer-simple__content
+                +a("/").l-footer-simple__logo: +img("logo-white.png","ロゴ")
+                address.l-footer-simple__address 〒464-0850 愛知県名古屋市千種区今池3丁目12-20 KAビル6F<br>TEL：052-753-6413 / FAX：052-753-6414
+                .l-footer-simple__copyright
+                    small ＠2019 サンプル Co.Ltd.

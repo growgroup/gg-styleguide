@@ -36,6 +36,48 @@ category: SpecialComponents
 </div>
 ```
 */
+/*
+---
+name: ヒーローブロック_枡目型_数字付き
+category: SpecialComponents
+---
+```types.html
+<div class="c-hero-block-square  is-number">
+  <div class="c-hero-block-square__block">
+    <div class="c-hero-block-square__image"><img src="/assets/images/img-hero-block-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block-square__content">
+        <div class="c-hero-block-square__inner">
+          <div class="c-hero-block-square__heading"><span>01</span>
+            <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
+          </div>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-hero-block-square__block">
+    <div class="c-hero-block-square__image"><img src="/assets/images/img-hero-block-01.jpg" alt="">
+    </div>
+    <div class="l-container">
+      <div class="c-hero-block-square__content">
+        <div class="c-hero-block-square__inner">
+          <div class="c-hero-block-square__heading"><span>02</span>
+            <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
+          </div>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
 .c-hero-block-square {
   &__block {
     position: relative;
@@ -103,5 +145,29 @@ category: SpecialComponents
   .c-hero-block-square__content {
     margin-left: 0;
     padding: rem-calc(56) rem-calc(64) rem-calc(56) 0;
+  }
+}
+
+// 数字付き
+.c-hero-block-square.is-number {
+  .c-hero-block-square__heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(8);
+
+    span {
+      @include webfont-bold();
+      font-size: 60px;
+      line-height: 71/60*1;
+      letter-spacing: 0;
+      color: $color-primary;
+      margin-right: rem-calc(16);
+      @include breakpoint(small only) {
+        font-size: rem-calc(48);
+      }
+    }
+    .c-heading {
+      margin-bottom: 0;
+    }
   }
 }

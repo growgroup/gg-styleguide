@@ -89,6 +89,7 @@ category: Components
       width: 100%;
       max-width: rem-calc(1048)/2;
       height: auto;
+      margin:  0 auto;
       @include breakpoint(medium down) {
         width: 90%;
         max-width: rem-calc(420);
@@ -104,6 +105,32 @@ category: Components
       }
     }
   }
+
+  &__carousel {
+    padding: rem-calc(32) 0 rem-calc(68);
+    background-color: #FCF7E7;
+    @include breakpoint(medium down) {
+      padding: rem-calc(16) 0 rem-calc(48);
+    }
+
+    .c-main-visual__image {
+      min-height: 480px;
+      height: 34vw;
+      @include breakpoint(medium down) {
+        min-height: 200px;
+      }
+    }
+
+    // owl.calousel
+    .owl-dot {
+      background-color: $border-base-color !important;
+    }
+
+    &.is-normal {
+      background-color: transparent;
+    }
+  }
+
   // owl.calousel
   .owl-dots {
     position: absolute;
@@ -127,6 +154,30 @@ category: Components
       outline: none;
       &.active {
         background-color: $color-primary!important;
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    z-index: 999;
+    bottom: rem-calc(20);
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include breakpoint(medium down) {
+      bottom: rem-calc(4);
+    }
+
+    .c-main-visual__nav {
+      position: relative;
+      color: $color-primary;
+      font-size: rem-calc(36);
+      line-height: 1;
+      outline: none;
+      &.is-left {
+        right: 60px;
+      }
+      &.is-right {
+        left: 60px;
       }
     }
   }

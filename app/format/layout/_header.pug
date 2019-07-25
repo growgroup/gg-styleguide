@@ -47,3 +47,32 @@ div.u-mbs.is-bottom
                     li: +a("#") メニュー4
                     li: +a("#") メニュー5
             +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+//->可変ヘッダー
+div.u-mbs.is-bottom
+  .l-header-variable
+    .l-header-variable__content
+      h1.l-header-variable__heading: +a("/"): +img("logo-simple.png","株式会社サンプル")
+      .l-header-variable__text 株式会社●● 採用サイト
+      nav.l-header-variable__nav
+        .l-header-variable__inner
+          a(href="tel: 00-0000-0000").l-header-variable__tel
+            span 00-0000-0000
+        ul
+          li: +a("#")
+            span MENU1
+            small メニュー1
+          li: +a("#")
+            span MENU2
+            small メニュー2
+          li: +a("#")
+            span MENU3
+            small メニュー3
+          li: +a("#")
+            span MENU4
+            small メニュー4
+          li: +a("#")
+            span MENU5
+            small メニュー5
+      +a("/contact/").l-header-variable__button.c-button.is-sm <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        span CONTACT
+        small お問い合わせ

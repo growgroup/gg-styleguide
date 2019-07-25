@@ -1,0 +1,19 @@
+.l-header-minimal
+  .l-header-minimal__inner
+    .l-header-minimal__text テキストテキストテキストテキストテキスト
+    a(href="tel: 00-0000-0000").l-header-minimal__tel
+      span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
+      small 受付時間 / 平日00：00～00：00
+  .l-header-minimal__content
+    if current.id == 'top'
+      h1.l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
+    else
+      .l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
+    nav.l-header-minimal__nav
+      ul
+        li: +a("/onecolumn/") 1COLUMN
+        li: +a("/twocolumns/") 2COLUMN
+        li: +a("/format/") FORMAT
+        li: +a("/archive-onecolumn/") ARCHIVE1
+        li: +a("/archive-twocolumns/") ARCHIVE2
+    +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ

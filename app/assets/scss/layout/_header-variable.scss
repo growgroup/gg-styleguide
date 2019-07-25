@@ -1,0 +1,229 @@
+/*
+---
+name: ヘッダー_可変
+category: Layout
+---
+```types.html
+<header class="l-header-variable">
+  <div class="l-header-variable__content">
+    <h1 class="l-header-variable__heading"><a href="/"><img src="/assets/images/logo-simple.png" alt="株式会社サンプル"></a>
+    </h1>
+    <div class="l-header-variable__text">株式会社●● 採用サイト</div>
+    <nav class="l-header-variable__nav">
+      <div class="l-header-variable__inner"><a class="l-header-variable__tel" href="tel: 00-0000-0000"><span>00-0000-0000</span></a></div>
+      <ul>
+        <li><a href="#"><span>MENU1</span><small>メニュー1</small></a>
+        </li>
+        <li><a href="#"><span>MENU2</span><small>メニュー2</small></a>
+        </li>
+        <li><a href="#"><span>MENU3</span><small>メニュー3</small></a>
+        </li>
+        <li><a href="#"><span>MENU4</span><small>メニュー4</small></a>
+        </li>
+        <li><a href="#"><span>MENU5</span><small>メニュー5</small></a>
+        </li>
+      </ul>
+    </nav><a class="l-header-variable__button c-button is-sm" href="/contact/"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>CONTACT</span><small>お問い合わせ</small></a>
+  </div>
+</header>
+```
+*/
+.l-header-variable {
+  background-color: $color-white;
+  width: 100%;
+  z-index: 9990;
+  padding: rem-calc(16) rem-calc(0) rem-calc(24) rem-calc(32);
+  @include breakpoint(medium down) {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    padding: rem-calc(14) rem-calc(64) rem-calc(14) rem-calc(16);
+    height: rem-calc(55);
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    @include breakpoint(medium down) {
+      flex-wrap: wrap;
+    }
+  }
+  &__text {
+    color: rgba($font-base-color, 0.7);
+    font-size: rem-calc(13);
+    letter-spacing: 0;
+    margin: 0 0 0 rem-calc(22);
+    font-weight: 400;
+    @include breakpoint(medium down) {
+      font-size: rem-calc(10);
+      letter-spacing: 0;
+      display: none;
+    }
+  }
+  &__tel {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-left: rem-calc(20);
+    margin-left: auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    //電話番号
+    span {
+      color: $font-base-color;
+      @include webfont-bold();
+      font-size: rem-calc(22) !important;
+      letter-spacing: 0;
+      line-height: 24/22*1;
+      margin-right: rem-calc(16);
+      //アイコン
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
+        background-image: url(../images/icon-tel.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        position: relative;
+        top: 2px;
+      }
+    }
+    //受付時間
+    small {
+      font-size: rem-calc(13);
+      letter-spacing: 0;
+    }
+  }
+  &__heading {
+    margin: 0;
+    width: rem-calc(152)/2;
+    flex-shrink: 0;
+    @include breakpoint(medium down) {
+      width: rem-calc(152)/3;
+    }
+    a,
+    img {
+      display: block;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__nav {
+    margin-left: auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      li {
+        margin-left: rem-calc(12);
+        margin-right: 32px;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: $font-base-color;
+          font-size: rem-calc(14);
+          position: relative;
+          padding-bottom: rem-calc(28);
+          transition: all .3s ease;
+          //装飾
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: rem-calc(2);
+            background-color: $color-primary;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all .3s ease;
+          }
+          //*hover
+          &:hover {
+            opacity: 1;
+            color: $color-primary;
+            &:after {
+              width: 100%;
+              opacity: 1;
+            }
+          }
+
+          span {
+            @include webfont-bold();
+            letter-spacing: 0.1em;
+          }
+          small {
+            text-align: center;
+            font-size: 10px;
+            line-height: 12/10*1;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    //*矢印削除
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: rem-calc(150)!important;
+    margin-left: rem-calc(24);
+    height: 124px;
+    border-radius: 0;
+
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+    //*アイコン
+    i {
+      font-size: rem-calc(16);
+      padding-right: rem-calc(8);
+    }
+  }
+  span {
+    display: block;
+    @include webfont-bold();
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-top: 12px;
+  }
+  small {
+    display: block;
+    font-size: 10px;
+    line-height: 12/10*1;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
+}
+
+// スマホメニューopen時
+.is-slidebar-active {
+  .l-header-variable {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+
