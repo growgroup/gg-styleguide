@@ -1,0 +1,62 @@
+// その他
+// -> 複合検索（検索結果が違うページにあるパターン）
+div.u-mbs.is-bottom
+  +c.composite-search
+    +e.inner
+      +a("#").c-composite-search__block
+        +bgimg("icon-area.png").c-composite-search__icon
+        +e.title エリア検索
+      +a("#").c-composite-search__block
+        +bgimg("icon-route.png").c-composite-search__icon
+        +e.title 路線検索
+      +a("#").c-composite-search__block
+        +bgimg("icon-terms.png").c-composite-search__icon
+        +e.title 条件・こだわり検索
+      +e.block.is-triangle-hidden
+        +e.buttons
+          +a("#").c-composite-search__button カテゴリー名
+          +a("#").c-composite-search__button カテゴリー名
+          +a("#").c-composite-search__button カテゴリー名
+          +a("#").c-composite-search__button カテゴリー名
+          +a("#").c-composite-search__button カテゴリー名
+          +a("#").c-composite-search__button.is-more-button MORE
+        +e.title 特徴から探す
+    +e.input-box
+      +e.input-inner
+        +e.input-title キーワード検索
+        +e.input
+          input(type="text", name="", placeholder="物件名・駅・市区などのキーワードを入力ください。")
+          button(type="button"): +img("icon-search.png")
+// -> フォントサイズ変換
+div.u-mbs.is-bottom
+    +c.fontsize-changer
+        +e.text 文字サイズ
+        +e.btns
+            +e.btn#small
+                span 小
+            +e.btn.is-active#medium
+                span 中
+            +e.btn#large
+                span 大
+
+// -> フォントサイズ変換_標準拡大
+div.u-mbs.is-bottom
+  +c.fontsize-changer.is-two-btn
+    +e.text 文字サイズ
+    +e.btns
+      +e.btn.is-active#medium
+        span 標準
+      +e.btn#large
+        span 拡大
+
+// -> SNSボタン
+div.u-mbs.is-bottom
+  +c.sns-btns
+    +e.inner
+      +a("").c-sns-btns__btn: +img("icon-instagram.png")
+      +a("").c-sns-btns__btn: +img("icon-line.png")
+      +a("").c-sns-btns__btn: +img("icon-twitter.png")
+      +a("").c-sns-btns__btn: +img("icon-facebook.png")
+      +a("").c-sns-btns__btn: +img("icon-youtube-01.png")
+      +a("").c-sns-btns__btn: +img("icon-youtube-02.png")
+      +a("").c-sns-btns__btn: +img("icon-youtube-03.png")

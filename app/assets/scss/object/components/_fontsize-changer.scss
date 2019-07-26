@@ -1,0 +1,128 @@
+/*
+---
+name: アクセシビリティ
+category: Other
+---
+```types.html
+<div class="c-fontsize-changer">
+  <div class="c-fontsize-changer__text">文字サイズ
+  </div>
+  <div class="c-fontsize-changer__btns">
+    <div class="c-fontsize-changer__btn" id="small"><span>小</span>
+    </div>
+    <div class="c-fontsize-changer__btn  is-active" id="medium"><span>中</span>
+    </div>
+    <div class="c-fontsize-changer__btn" id="large"><span>大</span>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: アクセシビリティ_標準拡大
+category: Other
+---
+```types.html
+<div class="c-fontsize-changer  is-two-btn">
+  <div class="c-fontsize-changer__text">文字サイズ
+  </div>
+  <div class="c-fontsize-changer__btns">
+    <div class="c-fontsize-changer__btn  is-active" id="medium"><span>標準</span>
+    </div>
+    <div class="c-fontsize-changer__btn" id="large"><span>拡大</span>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-fontsize-changer {
+  display: flex;
+  align-items: center;
+  &__text {
+    font-size: rem-calc(13);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-right: rem-calc(5);
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__btn {
+    width: rem-calc(34);
+    height: rem-calc(34);
+    padding: rem-calc(4);
+    margin-right: rem-calc(2);
+    background-color: #F0F1ED;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s;
+
+    span {
+      color: $color-primary;
+      font-size: rem-calc(14);
+      line-height: 1;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      transition: all .3s;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      span {
+        color: $color-white;
+      }
+    }
+
+    &.is-active {
+      background-color: $color-primary;
+      span {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.c-fontsize-changer.is-two-btn {
+  .c-fontsize-changer__text {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 24/13*1;
+    margin-right: rem-calc(8);
+  }
+  .c-fontsize-changer__btn {
+    background-color: $color-secondary;
+    border: 2px solid $color-primary;
+    margin-right: rem-calc(8);
+
+    &:first-child {
+      width: rem-calc(44);
+      height: rem-calc(44);
+      span {
+        font-size: rem-calc(13);
+      }
+    }
+    &:last-child {
+      width: rem-calc(62);
+      height: rem-calc(62);
+      span {
+        font-size: rem-calc(16);
+      }
+    }
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &.is-active {
+      border-color: $color-primary;
+      background-color: $color-primary;
+    }
+  }
+}

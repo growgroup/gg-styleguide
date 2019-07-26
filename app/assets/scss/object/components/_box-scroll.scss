@@ -1,0 +1,47 @@
+/*
+---
+name: ボックス_スクロール
+category: Components
+---
+```types.html
+<div class="c-box-scroll">
+  <div class="c-box-scroll__inner">
+    <div class="c-box-scroll__title">個人情報の取り扱いについて
+    </div>
+    <div class="c-box-scroll__text">
+      当サイトでは、「個人情報保護方針」に基づき、プライバシーポリシーを定めております。<br>
+      ご入力頂いたお客様の情報は、当ホームページプライバシーポリシーに則り適切に取扱いします。<br>
+      当サイトでは、「個人情報保護方針」に基づき、プライバシーポリシーを定めております。<br>
+      ご入力頂いたお客様の情報は、当ホームページプライバシーポリシーに則り適切に取扱いします。<br>
+      当サイトでは、「個人情報保護方針」に基づき、プライバシーポリシーを定めております。<br>
+      ご入力頂いたお客様の情報は、当ホームページプライバシーポリシーに則り適切に取扱いします。<br>
+      当サイトでは、「個人情報保護方針」に基づき、プライバシーポリシーを定めております。<br>
+      ご入力頂いたお客様の情報は、当ホームページプライバシーポリシーに則り適切に取扱いします。<br>
+      当サイトでは、「個人情報保護方針」に基づき、プライバシーポリシーを定めております。<br>
+      ご入力頂いたお客様の情報は、当ホームページプライバシーポリシーに則り適切に取扱いします。<br>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-box-scroll {
+  max-height: rem-calc(150);
+  margin: 0 rem-calc(68);
+  border: 1px solid $font-base-color;
+  overflow: scroll;
+  @include breakpoint(small only) {
+    margin: 0;
+  }
+
+  &__inner {
+    padding: rem-calc(24) 150/1140*100% rem-calc(36);
+  }
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 26/16*1;
+    margin-bottom: rem-calc(18);
+  }
+}

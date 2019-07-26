@@ -1,0 +1,96 @@
+/*
+---
+name: フォーム_ステップ
+category: Forms
+---
+```types.html
+<div class="c-forms-step">
+  <div class="c-forms-step__inner">
+    <div class="c-forms-step__block  is-active">
+      <div class="c-forms-step__number">STEP.01
+      </div>
+      <div class="c-forms-step__title">お客様情報入力
+      </div>
+    </div>
+    <div class="c-forms-step__block">
+      <div class="c-forms-step__number">STEP.02
+      </div>
+      <div class="c-forms-step__title">内容確認
+      </div>
+    </div>
+    <div class="c-forms-step__block">
+      <div class="c-forms-step__number">STEP.03
+      </div>
+      <div class="c-forms-step__title">送信完了
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-forms-step {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__block {
+    padding: rem-calc(10) 0;
+    border: 2px solid $font-base-color;
+    border-radius: 5px;
+    text-align: center;
+    min-width: rem-calc(160);
+    margin-right: 134/1140*100%;
+    position: relative;
+    @include breakpoint(small only) {
+      min-width: rem-calc(108);
+      padding: rem-calc(6) 0;
+      margin-right: 8/1140*100%;
+    }
+    &:after {
+      content: '';
+      width: rem-calc(102);
+      height: 2px;
+      background-color: rgba($font-base-color, 0.2);
+      position: absolute;
+      top: calc(50% - 1px);
+      right: rem-calc(-118);
+      @media (max-width: 1140px) {
+        width: 9vw;
+        right: -10.2vw;
+      }
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+      &:after {
+        content: none;
+      }
+    }
+    &.is-active {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+  &__number {
+    @include webfont();
+    font-size: 14px;
+    line-height: 16/14*1;
+    letter-spacing: 0.05em;
+    margin-bottom: rem-calc(8);
+    @include breakpoint(small only) {
+      font-size: 12px;
+      margin-bottom: rem-calc(4);
+    }
+  }
+  &__title {
+    line-height: 1;
+    letter-spacing: 0.05em;
+    @include breakpoint(small only) {
+      font-size: 14px;
+    }
+  }
+}

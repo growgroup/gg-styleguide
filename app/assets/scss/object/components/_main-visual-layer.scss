@@ -1,0 +1,119 @@
+/*
+---
+name: メインビジュアル_カルーセル_レイヤー
+category: Components
+---
+```types.html
+<div class="c-main-visual-layer">
+  <div class="c-main-visual-layer__carousel owl-carousel">
+    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
+    </div>
+    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
+    </div>
+    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
+    </div>
+  </div>
+  <div class="c-main-visual-layer__inner">
+    <div class="c-main-visual-layer__text"><img src="/dist/assets/images/img-main-visual-layer-text.png" alt="キャッチコピーが入ります">
+    </div>
+    <div class="c-main-visual-layer__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-main-visual-layer {
+  width: 100%;
+  position: relative;
+  &__image {
+    width: 1174/1600*100%;
+    height: 41.13vw;
+    max-height: rem-calc(658);
+    margin-left: auto;
+    top: 0;
+    left: 0;
+    @include bg-option();
+    @include breakpoint(medium down) {
+      height: 50vw;
+      min-height: 280px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 99;
+    text-align: left;
+    margin-top: rem-calc(32);
+    padding-left: 140/1600*100%;
+    @include breakpoint(medium down) {
+      margin-top: rem-calc(8);
+    }
+  }
+  &__text {
+    margin-bottom: rem-calc(40);
+    @include breakpoint(small only) {
+      margin-bottom: 4vw;
+    }
+    img {
+      width: 100%;
+      max-width: 524/1600*100%;
+      height: auto;
+      margin:  0 auto;
+      @include breakpoint(medium down) {
+        min-width: rem-calc(300);
+        max-width: 524/1600*100%;
+      }
+    }
+  }
+  &__button {
+    .c-button {
+      max-width: rem-calc(252)!important;
+      @include breakpoint(medium down) {
+        padding: rem-calc(12) rem-calc(24);
+        max-width: rem-calc(198)!important;
+      }
+    }
+  }
+
+  // owl.calousel
+  .owl-dots {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 140/1600*100%;
+    z-index: 99;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include breakpoint(medium down) {
+    }
+    .owl-dot {
+      margin: 0 rem-calc(6);
+      width: rem-calc(12);
+      height: rem-calc(12);
+      background-color: $color-primary;
+      border-radius: 1000px;
+      display: block;
+      outline: none;
+      &.active {
+        background-color: $color-white!important;
+        border: 2px solid $color-primary;
+      }
+    }
+  }
+}

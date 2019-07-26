@@ -180,6 +180,46 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         }
       }
     }
+
+    &__button {
+      margin-top: rem-calc(32);
+      max-width: calc(100% - 24px);
+      background-color: $color-white;
+      color: $color-primary;
+      font-size: rem-calc(16);
+
+      &:before {
+        content: "\f0e0";
+        font-family: "FontAwesome";
+        color: $color-primary;
+        font-size: rem-calc(18);
+        margin-right: rem-calc(12);
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &__sns-btns {
+      max-width: calc(100% - 24px);
+      margin-top: rem-calc(40);
+      display: flex;
+      justify-content: center;
+    }
+
+    &__sns-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem-calc(44);
+      height: rem-calc(44);
+      background-color: $color-white;
+      border-radius: 1000px;
+      font-size: rem-calc(20);
+      margin: 0 rem-calc(10);
+      text-decoration: none;
+    }
   }
 
   // メニュー以外をラップする要素

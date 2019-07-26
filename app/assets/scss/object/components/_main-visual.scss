@@ -23,22 +23,93 @@ category: Components
 ---
 ```types.html
 <div class="c-main-visual">
-          <div class="c-main-visual__slider  owl-carousel">
-            <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-            </div>
-            <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-            </div>
-            <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-            </div>
-          </div>
-          <div class="c-main-visual__inner">
-            <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-            </div>
-            <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-            </div>
-          </div>
+  <div class="c-main-visual__slider  owl-carousel">
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+    </div>
+  </div>
+  <div class="c-main-visual__inner">
+    <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+    </div>
+    <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: メインビジュアル_カルーセル
+category: Components
+---
+```types.html
+<div class="c-main-visual">
+  <div class="c-main-visual__carousel  owl-carousel">
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
         </div>
       </div>
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: メインビジュアル_カルーセル_ノーマル
+category: Components
+---
+```types.html
+<div class="c-main-visual">
+  <div class="c-main-visual__carousel is-normal is-dot-lg owl-carousel">
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
+      <div class="c-main-visual__inner">
+        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
+        </div>
+        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 */
 
@@ -114,8 +185,7 @@ category: Components
     }
 
     .c-main-visual__image {
-      min-height: 480px;
-      height: 34vw;
+      max-height: rem-calc(480);
       @include breakpoint(medium down) {
         min-height: 200px;
       }
@@ -126,8 +196,96 @@ category: Components
       background-color: $border-base-color !important;
     }
 
+    .owl-nav {
+      position: absolute;
+      z-index: 999;
+      bottom: rem-calc(10);
+      left: 50%;
+      transform: translate(-50%, 0);
+      visibility: hidden;
+      @include breakpoint(medium down) {
+        bottom: rem-calc(-6);
+      }
+
+      .c-main-visual__nav {
+        color: $color-primary;
+        font-size: rem-calc(36);
+      }
+
+      button {
+        visibility: visible;
+        position: relative;
+        outline: none;
+        &.owl-prev {
+          right: 60px;
+        }
+        &.owl-next {
+          left: 60px;
+        }
+      }
+    }
+
     &.is-normal {
       background-color: transparent;
+      position: relative;
+
+      .owl-nav {
+        width: 100%;
+        position: static;
+        transform: none;
+
+        .c-main-visual__nav {
+          width: 48px;
+          height: 48px;
+          background-color: $color-primary;
+          border-radius: 1000px;
+          color: $color-white !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        button {
+          position: absolute;
+          top: calc(50% - 24px);
+          &.owl-prev {
+            right: auto;
+            left: 280px;
+            @media (max-width: 1400px) {
+              left: 124px;
+            }
+            @media (max-width: 950px) {
+              left: 32px;
+            }
+            @include breakpoint(small only)  {
+              left: 0px;
+            }
+          }
+          &.owl-next {
+            left: auto;
+            right: 280px;
+            @media (max-width: 1400px) {
+              right: 124px;
+            }
+            @media (max-width: 950px) {
+              right: 32px;
+            }
+            @include breakpoint(small only)  {
+              right: 0px;
+            }
+          }
+        }
+      }
+      &.is-dot-lg {
+        .owl-dot {
+          margin: 0 rem-calc(6);
+          width: rem-calc(52);
+          height: rem-calc(4);
+          &.active {
+            background-color: $color-primary!important;
+          }
+        }
+      }
     }
   }
 
@@ -154,30 +312,6 @@ category: Components
       outline: none;
       &.active {
         background-color: $color-primary!important;
-      }
-    }
-  }
-  .owl-nav {
-    position: absolute;
-    z-index: 999;
-    bottom: rem-calc(20);
-    left: 50%;
-    transform: translate(-50%, 0);
-    @include breakpoint(medium down) {
-      bottom: rem-calc(4);
-    }
-
-    .c-main-visual__nav {
-      position: relative;
-      color: $color-primary;
-      font-size: rem-calc(36);
-      line-height: 1;
-      outline: none;
-      &.is-left {
-        right: 60px;
-      }
-      &.is-right {
-        left: 60px;
       }
     }
   }

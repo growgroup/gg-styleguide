@@ -35,10 +35,10 @@ div.u-mbs.is-bottom
                     +e.text: +img("img-main-visual-text.png","キャッチコピーが入ります")
                     +e.button: +a("/aboutus/").c-button.is-lg 詳細はこちら
 
-// -> カルーセル型_背景色なし・矢印画像の間
+// -> カルーセル型_ノーマル
 div.u-mbs.is-bottom
     +c.main-visual
-        +e.carousel.is-normal.owl-carousel
+        +e.carousel.is-normal.is-dot-lg.owl-carousel
             +bgimg("img-main-visual-01.jpg").c-main-visual__image
                 +e.inner
                     +e.text: +img("img-main-visual-text.png","キャッチコピーが入ります")
@@ -51,3 +51,14 @@ div.u-mbs.is-bottom
                 +e.inner
                     +e.text: +img("img-main-visual-text.png","キャッチコピーが入ります")
                     +e.button: +a("/aboutus/").c-button.is-lg 詳細はこちら
+
+// -> カルーセル型_レイヤー
+div.u-mbs.is-bottom
+    +c.main-visual-layer
+        +e.carousel.owl-carousel
+            +bgimg("img-main-visual-layer-01.jpg").c-main-visual-layer__image
+            +bgimg("img-main-visual-layer-01.jpg").c-main-visual-layer__image
+            +bgimg("img-main-visual-layer-01.jpg").c-main-visual-layer__image
+        +e.inner
+            +e.text: +img("img-main-visual-layer-text.png","キャッチコピーが入ります")
+            +e.button: +a("/aboutus/").c-button.is-lg 詳細はこちら
