@@ -1,10 +1,58 @@
+/*
+---
+name: 複合検索（検索結果が違うページにあるパターン）
+category: Other
+---
+```types.html
+<div class="c-composite-search">
+  <div class="c-composite-search__inner"><a class="c-composite-search__block" href="#">
+      <div class="c-composite-search__icon" style="background-image: url(/assets/images/icon-area.png)">
+      </div>
+      <div class="c-composite-search__title">エリア検索
+      </div></a><a class="c-composite-search__block" href="#">
+      <div class="c-composite-search__icon" style="background-image: url(/assets/images/icon-route.png)">
+      </div>
+      <div class="c-composite-search__title">路線検索
+      </div></a><a class="c-composite-search__block" href="#">
+      <div class="c-composite-search__icon" style="background-image: url(/assets/images/icon-terms.png)">
+      </div>
+      <div class="c-composite-search__title">条件・こだわり検索
+      </div></a>
+    <div class="c-composite-search__block  is-triangle-hidden">
+      <div class="c-composite-search__buttons"><a class="c-composite-search__button" href="#">カテゴリー名</a><a class="c-composite-search__button" href="#">カテゴリー名</a><a class="c-composite-search__button" href="#">カテゴリー名</a><a class="c-composite-search__button" href="#">カテゴリー名</a><a class="c-composite-search__button" href="#">カテゴリー名</a><a class="c-composite-search__button is-more-button" href="#">MORE</a>
+      </div>
+      <div class="c-composite-search__title">特徴から探す
+      </div>
+    </div>
+  </div>
+  <div class="c-composite-search__input-box">
+    <div class="c-composite-search__input-inner">
+      <div class="c-composite-search__input-title">キーワード検索
+      </div>
+      <div class="c-composite-search__input">
+        <input type="text" name="" placeholder="物件名・駅・市区などのキーワードを入力ください。">
+        <button type="button"><img src="/assets/images/icon-search.png" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
 .c-composite-search {
   background-color: rgba(226,226,226,0.5);
   padding: rem-calc(102) 0 rem-calc(70);
+  @include breakpoint(small only) {
+    padding: rem-calc(56) 0 rem-calc(24);
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    @include breakpoint(small only) {
+      display: block;
+    }
   }
   &__block {
     width: 278/1140*100%;
@@ -18,6 +66,11 @@
     flex-direction: column;
     position: relative;
     transition: all .2s;
+    @include breakpoint(small only) {
+      width: 100%;
+      margin-bottom: rem-calc(8);
+      padding: rem-calc(12);
+    }
 
     &:after {
       content: '';
@@ -58,6 +111,9 @@
     background-position: center center;
     background-size: contain;
     margin-bottom: rem-calc(20);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(10);
+    }
   }
   &__title {
     letter-spacing: 0.2em;
@@ -115,6 +171,9 @@
     padding: 0 0 rem-calc(10);
     margin: 0 rem-calc(32);
     border-bottom: 1px solid $border-base-color;
+    @include breakpoint(small only) {
+      margin: 0 rem-calc(16);
+    }
   }
   &__input-title {
     font-size: rem-calc(16);
@@ -123,6 +182,11 @@
     padding-right: rem-calc(30);
     min-width: rem-calc(160);
     border-right: 1px solid $border-base-color;
+    @include breakpoint(small only) {
+      font-size: rem-calc(12);
+      padding-right: rem-calc(16);
+      min-width: rem-calc(112);
+    }
   }
   &__input {
     width: 925/1076*100%;
@@ -130,6 +194,10 @@
     input {
       border: none;
       padding: rem-calc(3) 0 rem-calc(3) rem-calc(26);
+      @include breakpoint(small only) {
+        padding: rem-calc(3) 0 rem-calc(3) rem-calc(16);
+        font-size: rem-calc(12);
+      }
     }
     button {
       padding: 0;

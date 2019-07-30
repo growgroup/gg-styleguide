@@ -21,5 +21,8 @@ category: Other
     width: rem-calc(44);
     margin-right: rem-calc(20);
     transition: all .3s;
+    @include breakpoint(small only) {
+      margin-right: rem-calc(8);
+    }
   }
 }

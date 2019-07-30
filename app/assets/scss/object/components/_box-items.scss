@@ -1,0 +1,230 @@
+/*
+---
+name: ボックス_アイテム
+category: Other
+---
+```types.html
+<div class="c-box-items">
+  <div class="c-box-items__block">
+    <div class="c-box-items__heading">
+      <div class="c-box-items__title"><span>職種名　公共工事の交通誘導</span><small>日本総合警備株式会　立川本社</small>
+      </div>
+      <div class="c-box-items__button  u-hidden-sm"><a href="">詳細を見る</a>
+      </div>
+    </div>
+    <div class="c-box-items__inner">
+      <div class="c-box-items__image"><img src="/assets/images/img-box-item.jpg" alt="">
+      </div>
+      <div class="c-box-items__content">
+        <dl class="u-hidden-sm">
+          <dt class="is-icon is-icon-time">勤務時間</dt>
+          <dd>[1] 08:00～17:00 ｜ [2] 20:00～翌05:00</dd>
+        </dl>
+        <dl>
+          <dt class="is-icon is-icon-money">給与</dt>
+          <dd>
+            日給 1万1000円 以上 <br>
+            (1)日勤:1万1000円（一律交通費1,000円込）<br>
+            (2)夜勤:1万3000円（一律交通費1,000円込）
+          </dd>
+        </dl>
+        <dl>
+          <dt class="is-icon is-icon-pos">勤務地</dt>
+          <dd>●●区内</dd>
+        </dl>
+        <dl class="u-hidden-sm">
+          <dt class="is-icon is-icon-tag">特長</dt>
+          <dd class="is-tags-flex"><span>未経験OK</span><span>大学生歓迎</span><span>フリーター歓迎</span><span>主婦・主夫歓迎</span><span>シニア歓迎</span><span>長期歓迎</span></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="c-box-items__button  u-hidden-lg"><a href="">詳細を見る<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.c-box-items {
+  padding: rem-calc(40) rem-calc(50);
+  background-color: $color-white;
+  border: 1px solid #E2E2E2;
+  border-top: 3px solid $font-base-color;
+  @include breakpoint(small only) {
+    padding: rem-calc(16) rem-calc(20) rem-calc(56);
+    position: relative;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: rem-calc(20);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(10);
+    }
+  }
+  &__title {
+    span {
+      display: block;
+      font-size: rem-calc(24);
+      font-weight: 700;
+      letter-spacing: 0;
+      @include breakpoint(small only) {
+        font-size: rem-calc(18);
+        line-height: 1;
+      }
+    }
+    small {
+      font-size: rem-calc(16);
+      line-height: 26/16*1;
+      letter-spacing: 0;
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+      }
+    }
+  }
+  &__button {
+    width: rem-calc(240);
+    @include breakpoint(small only) {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    a {
+      padding: rem-calc(10) rem-calc(16) rem-calc(10);
+      max-width: rem-calc(240);
+      margin-left: auto;
+      display: block;
+      text-decoration: none;
+      color: $font-base-color;
+      font-size: rem-calc(16);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 26/16*1;
+      text-align: center;
+      background-color: $color-white;
+      border: 1px solid $font-base-color;
+      border-radius: 2px;
+      box-shadow: 0 3px 3px rgba($color-black, 0.15);
+      position: relative;
+      @include breakpoint(small only) {
+        border: none;
+        box-shadow: none;
+        max-width: inherit;
+        width: 100%;
+        font-size: rem-calc(12);
+        background-color: #E7E7E7;
+        padding: rem-calc(10) rem-calc(16) rem-calc(11);
+      }
+      &:after {
+        content: '\f105';
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        @include breakpoint(small only) {
+          display: none;
+        }
+      }
+      i {
+        @include breakpoint(small only) {
+          margin-left: rem-calc(12);
+        }
+      }
+    }
+  }
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__image {
+    margin-right: rem-calc(36);
+    min-width: rem-calc(243);
+    @include breakpoint(small only) {
+      margin-right: rem-calc(16);
+      min-width: rem-calc(114);
+    }
+  }
+  &__content {
+    dl {
+      display: flex;
+      margin-bottom: rem-calc(6);
+      @include breakpoint(small only) {
+        display: block;
+        margin-bottom: rem-calc(10);
+      }
+      dt {
+        min-width: rem-calc(100);
+        font-weight: 700;
+        margin-right: rem-calc(24);
+        padding-left: rem-calc(24);
+        letter-spacing: 0;
+        position: relative;
+        @include breakpoint(small only) {
+          min-width: inherit;
+          font-weight: 400;
+          margin-right: 0;
+          font-size: rem-calc(12);
+          padding-left: rem-calc(16);
+        }
+        &.is-icon {
+          &:before {
+            content: '';
+            font-family: "FontAwesome";
+            color: #83CE8B;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+        &.is-icon-time {
+          &:before {
+            content: '\f017';
+          }
+        }
+        &.is-icon-money {
+          &:before {
+            content: '\f157';
+          }
+        }
+        &.is-icon-pos {
+          &:before {
+            content: '\f041';
+          }
+        }
+        &.is-icon-tag {
+          &:before {
+            content: '\f02b';
+          }
+        }
+      }
+      dd {
+        letter-spacing: 0;
+        @include breakpoint(small only) {
+          font-size: rem-calc(12);
+        }
+
+        .is-tags-flex {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        span {
+          display: inline-block;
+          min-width: rem-calc(124);
+          text-align: center;
+          padding: rem-calc(0) rem-calc(10);
+          font-size: rem-calc(14);
+          line-height: 24/14*1;
+          background-color: #E7E7E7;
+          border-radius: 1000px;
+          margin-right: rem-calc(8);
+          margin-bottom: rem-calc(8);
+        }
+      }
+    }
+  }
+}

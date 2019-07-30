@@ -1,0 +1,182 @@
+/*
+---
+name: マップ検索
+category: Other
+---
+```types.html
+<div class="c-map-search">
+  <div class="c-map-search__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6773055.127092922!2d133.96455865812015!3d38.22044839209497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2z5pel5pys!5e0!3m2!1sja!2sjp!4v1564376401917!5m2!1sja!2sjp" frameborder="0" style="border:0"></iframe>
+  </div>
+  <div class="c-map-search__content">
+    <form name="" action="">
+      <div class="c-map-search__input">
+        <div class="c-map-search__select">
+          <select name="">
+            <option value="">都道府県から探す</option>
+            <option value="">岐阜県</option>
+            <option value="">岐阜県</option>
+          </select>
+        </div>
+        <input type="text" name="" placeholder="駅名や店舗名などをご入力ください。">
+        <div class="c-map-search__submit">
+          <input type="submit" value="絞り込み検索">
+        </div>
+      </div>
+    </form><a class="c-map-search__pos" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
+  </div>
+</div>
+```
+*/
+
+.c-map-search {
+  margin: 0 rem-calc(62);
+  padding: rem-calc(48) rem-calc(52) rem-calc(40);
+  background-color: $color-secondary;
+  @include breakpoint(small only) {
+    margin: 0;
+    padding: rem-calc(24) rem-calc(32) rem-calc(20);
+  }
+  &__map {
+    width: 100%;
+    height: rem-calc(366);
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: rem-calc(5);
+    padding-bottom: rem-calc(5);
+    margin-top: rem-calc(18);
+    @media (max-width: 1050px) {
+      display: block;
+    }
+  }
+  form {
+    width: 100%;
+    padding-right: rem-calc(18);
+    margin-right: rem-calc(18);
+    position: relative;
+    @media (max-width: 1050px) {
+      padding-right: 0;
+      margin-right: 0;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: rem-calc(1);
+      height: rem-calc(58);
+      background-color: $border-base-color;
+      position: absolute;
+      right: 0;
+      top: rem-calc(-5);
+      @media (max-width: 1050px) {
+        display: none;
+      }
+    }
+  }
+  &__input {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $color-primary;
+    border-radius: rem-calc(2);
+    @media (max-width: 1050px) {
+      margin-bottom: rem-calc(8);
+    }
+    input[type="text"] {
+      border: none;
+      width: 100%;
+      padding-left: rem-calc(24);
+      @include breakpoint(small only) {
+        padding-left: rem-calc(16);
+      }
+    }
+  }
+  &__select {
+    width: 100%;
+    max-width: rem-calc(205);
+    position: relative;
+    @include breakpoint(small only) {
+      display: none;
+    }
+    &:before {
+      content: '\f0d7';
+      font-family: "FontAwesome";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:after {
+      content: '';
+      display: block;
+      height: rem-calc(38);
+      width: 1px;
+      background-color: $border-base-color;
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+    select {
+      padding-left: rem-calc(24);
+      border: none;
+      outline: none;
+      box-shadow: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+  &__submit {
+    width: 100%;
+    max-width: rem-calc(160);
+    position: relative;
+    color: $color-white;
+    &:before {
+      content: '\f002';
+      font-family: "FontAwesome";
+      position: absolute;
+      left: rem-calc(20);
+      top: 50%;
+      transform: translateY(-50%);
+      @include breakpoint(small only) {
+        left: rem-calc(16);
+      }
+    }
+    input[type="submit"] {
+      width: 100%;
+      height: 100%;
+      padding-left: rem-calc(30);
+      border: none;
+      outline: none;
+      box-shadow: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      text-align: center;
+      font-weight: 700;
+      background-color: $color-primary;
+    }
+  }
+  &__pos {
+    padding: rem-calc(10) rem-calc(14);
+    text-align: center;
+    min-width: rem-calc(178);
+    display: inline-block;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: 2px;
+    position: relative;
+    @media (max-width: 1050px) {
+      width: 100%;
+      min-width: inherit;
+    }
+    i {
+      margin-right: rem-calc(10);
+    }
+  }
+}

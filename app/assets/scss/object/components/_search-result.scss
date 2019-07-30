@@ -1,0 +1,75 @@
+/*
+---
+name: 検索結果
+category: Other
+---
+```types.html
+<div class="c-search-result">
+  <div class="c-search-result__title">求人検索結果「2件」
+  </div>
+  <div class="c-search-result__content">
+    <div class="c-search-result__heading">現在の検索条件
+    </div>
+    <dl>
+      <dt>勤務地</dt>
+      <dd><span>「八王子」</span></dd>
+    </dl>
+    <dl>
+      <dt>特徴</dt>
+      <dd><span>「週3日以内OK」</span><span>「週3日以内OK」</span><span>「週3日以内OK」</span></dd>
+    </dl>
+  </div>
+</div>
+```
+*/
+
+.c-search-result {
+  padding: rem-calc(30) rem-calc(34) rem-calc(34);
+  border: 1px solid $border-base-color;
+  @include breakpoint(small only) {
+    padding: rem-calc(16) rem-calc(20) rem-calc(20);
+  }
+  &__title {
+    font-size: rem-calc(24);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 34/24*1;
+    text-align: center;
+    margin-bottom: rem-calc(28);
+    @include breakpoint(small only) {
+      font-size: rem-calc(20);
+      margin-bottom: rem-calc(16);
+    }
+  }
+  &__content {
+  background-color: #F5F7FA;
+    padding: rem-calc(22) rem-calc(40) rem-calc(18) rem-calc(27);
+    @include breakpoint(small only) {
+      padding: rem-calc(20) rem-calc(24) rem-calc(16);
+    }
+  }
+  &__heading {
+    font-size: rem-calc(18);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 28/18*1;
+    padding-bottom: rem-calc(10);
+    border-bottom: 1px solid #E2E2E2;
+    margin-bottom: rem-calc(10);
+    @include breakpoint(small only) {
+      font-size: rem-calc(16);
+    }
+  }
+  dl {
+    display: flex;
+    dt {
+      min-width: rem-calc(60);
+      font-weight: 700;
+      line-height: 28/16*1;
+      margin-right: rem-calc(20);
+    }
+    dd {
+      color: $color-accent;
+    }
+  }
+}
