@@ -59,7 +59,10 @@ div.u-mbs.is-bottom
           +e.tags
             ul
               +loop(16)
-                li: +a("").c-combined-search__tag 週3日以内OK
+                li
+                  label
+                    input(type="checkbox", name="", value="").c-combined-search__tag
+                    span 週3日以内OK
           +e.button
             +a("") <i class="fa fa-search" aria-hidden="true"></i>今すぐ求人検索
 // -> 検索結果
@@ -153,6 +156,32 @@ div.u-mbs.is-bottom
               +a("#").js-anchor.c-banner-search__select.u-hidden-lg 都道府県から探す
               +a("#").c-banner-search__pos.u-hidden-lg <i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す
             +a("#").c-banner-search__pos.u-visible-lg <i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す
+// -> バナー検索_小さめ
+div.u-mbs.is-bottom
+  +c.banner-search.is-sm
+    .l-container
+      +e.inner
+        +e.title
+          span SEARCH
+          small 商品を探す
+        +e.content
+          form(name="", action="")
+            +e.select.u-hidden-lg
+              select(name="")
+                option(value="") すべてのジャンル
+                option(value="") ジャンル１
+                option(value="") ジャンル２
+            +e.input
+              +e.select.u-visible-lg
+                select(name="")
+                  option(value="") すべてのジャンル
+                  option(value="") ジャンル１
+                  option(value="") ジャンル２
+              input(type="text", name="", placeholder="商品コードや商品名を入力下さい。")
+              +e.submit.u-visible-lg
+                input(type="submit", value="検 索")
+              +e.submit.u-hidden-lg
+                input(type="submit", value="")
 // -> フォントサイズ変換
 div.u-mbs.is-bottom
     +c.fontsize-changer

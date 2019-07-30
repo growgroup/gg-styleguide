@@ -7,49 +7,54 @@ category: Other
 <div class="c-combined-search">
   <div class="c-combined-search__title">求人検索
   </div>
-  <div class="c-combined-search__inner">
-    <div class="c-combined-search__block  is-sm">
-      <div class="c-combined-search__block-title">勤務地で探す
+  <form name="" action="">
+    <div class="c-combined-search__inner">
+      <div class="c-combined-search__block  is-sm">
+        <div class="c-combined-search__block-title">勤務地で探す
+        </div>
+        <div class="c-combined-search__select">
+          <select name="">
+            <option value="">すべての都道府県</option>
+            <option value="">北海道</option>
+            <option value="">東京都</option>
+          </select>
+        </div>
       </div>
-      <div class="c-combined-search__select">
-        <select name="">
-          <option value="">すべての都道府県</option>
-          <option value="">北海道</option>
-          <option value="">東京都</option>
-        </select>
+      <div class="c-combined-search__block  is-sm">
+        <div class="c-combined-search__block-title">職種で探す
+        </div>
+        <div class="c-combined-search__select">
+          <select name="">
+            <option value="">すべての職種</option>
+            <option value="">エンジニア</option>
+            <option value="">デザイナー</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="c-combined-search__block  is-sm">
-      <div class="c-combined-search__block-title">職種で探す
-      </div>
-      <div class="c-combined-search__select">
-        <select name="">
-          <option value="">すべての職種</option>
-          <option value="">エンジニア</option>
-          <option value="">デザイナー</option>
-        </select>
+      <div class="c-combined-search__block">
+        <div class="c-combined-search__block-title">職種で探す
+        </div>
+        <div class="c-combined-search__input">
+          <input type="text" name="" placeholder="キーワードをご記入ください">
+        </div>
       </div>
     </div>
     <div class="c-combined-search__block">
-      <div class="c-combined-search__block-title">職種で探す
+      <div class="c-combined-search__block-title">特徴で探す
       </div>
-      <div class="c-combined-search__input">
-        <input type="text" name="" placeholder="キーワードをご記入ください">
+      <div class="c-combined-search__tags">
+        <ul>
+          <li>
+            <label>
+              <input class="c-combined-search__tag" type="checkbox" name="" value=""><span>週3日以内OK</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="c-combined-search__button"><a href=""><i class="fa fa-search" aria-hidden="true"></i>今すぐ求人検索</a>
       </div>
     </div>
-  </div>
-  <div class="c-combined-search__block">
-    <div class="c-combined-search__block-title">特徴で探す
-    </div>
-    <div class="c-combined-search__tags">
-      <ul>
-        <li><a class="c-combined-search__tag" href="">週3日以内OK</a>
-        </li>
-      </ul>
-    </div>
-    <div class="c-combined-search__button"><a href=""><i class="fa fa-search" aria-hidden="true"></i>今すぐ求人検索</a>
-    </div>
-  </div>
+  </form>
 </div>
 ```
 */
@@ -155,7 +160,15 @@ category: Other
         min-width: rem-calc(124);
         margin-bottom: rem-calc(8);
         margin-right: rem-calc(10);
-        a {
+        input {
+          display: none;
+          &:checked {
+            + span {
+              box-shadow: inset 0 0 0 2px $font-base-color;
+            }
+          }
+        }
+        span {
           display: inline-block;
           width: 100%;
           padding: rem-calc(2);

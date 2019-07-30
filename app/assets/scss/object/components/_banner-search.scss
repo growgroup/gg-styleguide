@@ -1,3 +1,80 @@
+/*
+---
+name: 検索_バナー
+category: Other
+---
+```types.html
+<div class="c-banner-search">
+  <div class="l-container">
+    <div class="c-banner-search__inner">
+      <div class="c-banner-search__title">お近くの<br class="u-hidden-sm">店舗を探す
+      </div>
+      <div class="c-banner-search__content">
+        <form name="" action="">
+          <div class="c-banner-search__input">
+            <div class="c-banner-search__select  u-visible-lg">
+              <select name="">
+                <option value="">都道府県から探す</option>
+                <option value="">岐阜県</option>
+                <option value="">岐阜県</option>
+              </select>
+            </div>
+            <input type="text" name="" placeholder="駅名や店舗名などをご入力ください。">
+            <div class="c-banner-search__submit">
+              <input type="submit" value="">
+            </div>
+          </div><a class="js-anchor c-banner-search__select u-hidden-lg" href="#">都道府県から探す</a><a class="c-banner-search__pos u-hidden-lg" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
+        </form><a class="c-banner-search__pos u-visible-lg" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: 検索_バナー小さめ
+category: Other
+---
+```types.html
+<div class="c-banner-search  is-sm">
+  <div class="l-container">
+    <div class="c-banner-search__inner">
+      <div class="c-banner-search__title"><span>SEARCH</span><small>商品を探す</small>
+      </div>
+      <div class="c-banner-search__content">
+        <form name="" action="">
+          <div class="c-banner-search__select  u-hidden-lg">
+            <select name="">
+              <option value="">すべてのジャンル</option>
+              <option value="">ジャンル１</option>
+              <option value="">ジャンル２</option>
+            </select>
+          </div>
+          <div class="c-banner-search__input">
+            <div class="c-banner-search__select  u-visible-lg">
+              <select name="">
+                <option value="">すべてのジャンル</option>
+                <option value="">ジャンル１</option>
+                <option value="">ジャンル２</option>
+              </select>
+            </div>
+            <input type="text" name="" placeholder="商品コードや商品名を入力下さい。">
+            <div class="c-banner-search__submit  u-visible-lg">
+              <input type="submit" value="検 索">
+            </div>
+            <div class="c-banner-search__submit  u-hidden-lg">
+              <input type="submit" value="">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
 .c-banner-search {
   box-shadow: 0 2px 2px rgba($color-black, 0.15);
   @include breakpoint(small only) {
@@ -227,7 +304,6 @@
     input[type="submit"] {
       width: 100%;
       height: 100%;
-      padding-left: rem-calc(30);
       border: none;
       outline: none;
       box-shadow: none;
@@ -268,6 +344,124 @@
       @include breakpoint(small only) {
         color: $color-primary;
         margin-right: rem-calc(4);
+      }
+    }
+  }
+}
+
+.c-banner-search.is-sm {
+  box-shadow: none;
+  .c-banner-search__inner {
+    box-shadow: 0 2px 2px rgba($color-black, 0.15);
+    &:after {
+      display: none;
+    }
+  }
+  .c-banner-search__title {
+    color: $font-base-color;
+    background-color: #DAEDD2;
+    padding-left: rem-calc(62);
+    align-items: flex-start;
+    flex-direction: column;
+    @include breakpoint(small only) {
+      padding: rem-calc(10) 0;
+      align-items: center;
+    }
+    &:before,
+    &:after {
+      background-color: #DAEDD2;
+    }
+
+    span {
+      @include webfont-bold();
+      font-size: rem-calc(24);
+      letter-spacing: 0.1em;
+      line-height: 1;
+      &:before {
+        content: '\f002';
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 50%;
+        left: rem-calc(24);
+        transform: translateY(-50%);
+        color: $color-primary;
+        @include breakpoint(small only) {
+          left: 25%;
+          //transform: translate(-50%, -50%);
+        }
+      }
+    }
+    small {
+      font-size: rem-calc(14);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+  }
+  .c-banner-search__content {
+    padding: rem-calc(24) 0;
+    @include breakpoint(small only) {
+      padding: rem-calc(12) 0 rem-calc(20);
+    }
+  }
+  form {
+    padding-right: 0;
+    margin-right: 0;
+    &:after {
+      display: none;
+    }
+  }
+  .c-banner-search__input {
+    border: none;
+    @include breakpoint(small only) {
+      margin-bottom: 0;
+    }
+    input[type="text"] {
+      background-color: #EFEFEF;
+    }
+  }
+  .c-banner-search__select {
+    margin-right: rem-calc(10);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(8);
+      padding-left: 0;
+      &:before {
+        content: '\f0d7';
+        display: block;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        color: $font-base-color;
+        left: auto;
+        right: rem-calc(-14);
+      }
+    }
+    &:after {
+      display: none;
+    }
+    select {
+      background-color: #EFEFEF;
+      color: $font-base-color;
+      @include breakpoint(small only) {
+        background-color: transparent;
+        padding-left: 0;
+      }
+    }
+  }
+  .c-banner-search__submit {
+    margin-left: rem-calc(10);
+    max-width: rem-calc(138);
+    @include breakpoint(small only) {
+      max-width: rem-calc(48);
+      margin-left: 0;
+      &:before {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:before {
+      display: none;
+      @include breakpoint(small only) {
+        display: block;
       }
     }
   }
