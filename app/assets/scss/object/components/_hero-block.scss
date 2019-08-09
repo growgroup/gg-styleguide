@@ -131,6 +131,7 @@ category: SpecialComponents
       .c-hero-block__content {
         margin-left: 0;
       }
+
     }
     //*最後のブロック
     &:last-child {
@@ -181,6 +182,12 @@ category: SpecialComponents
       padding: rem-calc(24);
     }
   }
+
+  &__detail {
+    color: $color-primary;
+    font-weight: 400;
+  }
+
   //*数字
   &__head {
     display: flex;
@@ -292,6 +299,7 @@ category: SpecialComponents
           transform: translateX(-100%);
         }
       }
+
     }
   }
 

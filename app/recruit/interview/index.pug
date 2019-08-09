@@ -18,16 +18,19 @@ block header
       section.l-section.is-xlg
         .l-container
           h2.c-heading.is-md.is-color-primary キャッチコピーが入りますキャッチコピーが入ります<br>キャッチコピーが入ります
-          p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          +c.hero-block-line
-            +loop(3)
-              +e.block
+          p.u-text-center.u-mbs.is-bottom.is-xlg テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        +c.hero-block-line.u-mbs.is-xlg
+          +loop(4)
+            +e.block
+              .l-container
                 +e.image: +img("img-recruit-opening.jpg")
                 +e.content
                   +e.inner
                     +e.label.c-label.is-lg 職種名
-                    h3.c-heading.is-md.is-bottom キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
+                    h3.c-heading.is-md.is-bottom.is-text-left キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
                     +e.detail 氏名氏名 / 2018年入社
+                    +e.link: +a("#") 詳しく見る
+        .l-container
           +c.card-post
             .row
               +loop(6)
@@ -40,7 +43,7 @@ block header
                       +e.title キャッチコピーキャッチコピーキャッチコピーキャッチコピー
                       +e.sup
                         +e.detail 氏名氏名 / 2018年入社
-
+        .l-container
           div.u-mbs.is-top.is-sm
             h3.c-heading.is-sm.is-border-under その他の採用情報
             +c.capsul-nav

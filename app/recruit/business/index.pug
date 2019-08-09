@@ -17,17 +17,18 @@ block header
     main.l-main
       section.l-section.is-xlg
         .l-container
-          h2.c-heading.is-md.is-color-primary キャッチコピーが入りますキャッチコピーが入ります<br>キャッチコピーが入ります
-          p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          +c.hero-block-line
-            +loop(3)
-              +e.block
+          h2.c-heading.is-sm.is-color-primary.u-text-center キャッチコピーが入りますキャッチコピーが入ります<br>キャッチコピーが入ります
+          p.u-text-center.u-mbs.is-bottom.is-xlg テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        +c.hero-block-line.is-wide
+          +loop(4)
+            +e.block
+              .l-container
                 +e.image: +img("img-recruit-opening.jpg")
                 +e.content
                   +e.inner
-                    h3.c-heading.is-md.is-bottom.is-line-under.is-text-left タイトル
-                    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
+                    h3.c-heading.is-sm ボックスタイトル
+                    p ボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックステキストボックス
+        .l-container
           div.u-mbs.is-top.is-lg
             h3.c-heading.is-sm.is-border-under その他の採用情報
             +c.capsul-nav

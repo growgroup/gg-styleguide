@@ -16,15 +16,18 @@ block header
   block body
     main.l-main
       section.l-section.is-xlg
-        .l-container
-          +c.hero-block-line
+        +c.hero-block-line.is-text-back.u-mbs.is-xlg
+          +loop(1)
             +e.block
-              +e.image: +img("img-recruit-opening.jpg")
-              +e.content
-                +e.inner
-                  +e.label.c-label.is-lg 職種名
-                  h3.c-heading.is-md.is-bottom キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
-                  +e.detail 氏名氏名 / 2018年入社
+              .l-container
+                +e.image: +img("img-recruit-opening.jpg")
+                +e.content
+                  +e.inner
+                    +e.label.c-label.is-lg 職種名
+                    h3.c-heading.is-md.is-bottom.is-text-left キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
+                    +e.detail 氏名氏名 / 2018年入社
+                    +e.link: +a("#") 詳しく見る
+        .l-container
           .row
             .large-10.is-push-lg-1.small-12
               +c.block

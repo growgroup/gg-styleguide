@@ -96,11 +96,11 @@ category: Heading
   small {
     display: block;
     @include webfont-bold();
-    font-size: rem-calc(16);
+    font-size: rem-calc(14);
     letter-spacing: 0.1em;
     margin-top: rem-calc(6);
     @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
+      font-size: rem-calc(14)*0.8;
     }
   }
 }

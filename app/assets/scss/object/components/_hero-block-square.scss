@@ -171,4 +171,41 @@ category: SpecialComponents
       margin-bottom: 0;
     }
   }
+
 }
+
+//比率変更
+.c-hero-block-square.is-zigzag {
+
+  .c-hero-block-square__block {
+    margin-bottom: rem-calc(80);
+  }
+
+  .c-hero-block-square__image {
+    width: 718/1400*100%;
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+
+  .c-hero-block-square__content {
+    width: 550/1140*100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: block;
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+
+  .c-hero-block-square__title {
+    margin-top: 0;
+    margin-bottom: rem-calc(24);
+  }
+
+  .c-hero-block-square__question {
+    margin-bottom: rem-calc(24);
+  }
+
+}
+

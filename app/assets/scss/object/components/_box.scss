@@ -186,4 +186,25 @@ category: PostContent
       margin-bottom: rem-calc(16);
     }
   }
+
+  //丸画像
+  &.is-roundimg {
+
+    .c-box__image {
+      width: rem-calc(200);
+      height: rem-calc(200);
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      @include center-block();
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        @include center-both();
+      }
+    }
+
+  }
 }

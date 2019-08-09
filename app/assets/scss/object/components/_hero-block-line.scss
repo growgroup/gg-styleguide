@@ -1,0 +1,275 @@
+.c-hero-block-line {
+  overflow: hidden;
+
+  .l-container {
+    position: relative;
+  }
+
+
+  &__block {
+    margin-bottom: rem-calc(80);
+    position: relative;
+    min-height: rem-calc(480);
+    padding-top: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(48);
+      min-height: inherit;
+      padding-top: 0 !important;
+    }
+    // 偶数番目
+    &:nth-child(even),
+    &.is-reverse {
+      .c-hero-block-line__image {
+        left: auto;
+        right: 0;
+      }
+
+      .c-hero-block-line__content {
+        margin-left: 0;
+        padding-right: 160/1140*100%;
+        padding-left: 62/1140*100%;
+        @include breakpoint(small only) {
+          padding-left: rem-calc(24);
+          padding-right: rem-calc(24);
+        }
+      }
+
+      .c-hero-block-line__link {
+        right: 160/588*100%;
+        @include breakpoint(small only) {
+          right: auto;
+        }
+      }
+
+    }
+
+    //*最後のブロック
+    &:last-child {
+      margin-bottom: rem-calc(8);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: rem-calc(-48);
+    left: 0;
+    height: rem-calc(400);
+    overflow: hidden;
+    width: 588/1140*100%;
+    z-index: 2;
+    @include breakpoint(small only) {
+      position: relative;
+      width: 100%;
+      height: 55vw;
+      top: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: inherit;
+      @include breakpoint(small only) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__content {
+    background-color: $color-white;
+    position: relative;
+    width: 650/1140*100%;
+    min-height: rem-calc(312);
+    margin-left: auto;
+    padding-top: rem-calc(88);
+    padding-right: rem-calc(64);
+    padding-bottom: rem-calc(103);
+    padding-left: 160/1140*100%;
+    border: 1px solid $color-primary;
+    z-index: 0;
+    @include breakpoint(small only) {
+      width: 100%;
+      min-height: inherit;
+      margin-top: rem-calc(-40);
+      padding: rem-calc(88)*0.5 rem-calc(24) rem-calc(103)*0.4 rem-calc(24);
+    }
+  }
+
+  &__detail {
+    color: $color-primary;
+    font-weight: 400;
+  }
+
+  &__link {
+    position: absolute;
+    bottom: rem-calc(52);
+    right: rem-calc(64);
+    @include breakpoint(small only) {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      text-align: right;
+      margin-top: rem-calc(24);
+    }
+
+    a {
+      color: $font-base-color;
+      text-decoration: none;
+      font-size: rem-calc(14);
+      letter-spacing: .1em;
+      line-height: 30/14*100%;
+      font-weight: 700;
+      display: inline-block;
+      padding-right: rem-calc(18);
+      position: relative;
+
+      &:after {
+        content: "\f105";
+        font-family: "FontAwesome";
+        color: $color-primary;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  //*数字
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(24)/2;
+    }
+
+    small {
+      @include webfont-bold();
+      font-size: rem-calc(100);
+      opacity: 0.25;
+      line-height: 1;
+      letter-spacing: 0;
+      cursor: pointer;
+      margin-right: rem-calc(16);
+      @include breakpoint(small only) {
+        font-size: rem-calc(100)/2;
+        margin-right: rem-calc(16)/2;
+      }
+    }
+
+    span {
+      @include webfont-bold();
+      font-size: rem-calc(28);
+      letter-spacing: 0.1em;
+      @include breakpoint(small only) {
+        font-size: rem-calc(28)*0.85;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: rem-calc(32);
+    text-align: right;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(32)/2;
+    }
+  }
+
+
+  // テキストボックス画面端まで
+  &.is-wide {
+    .c-hero-block-line__block {
+      &:nth-child(odd) {
+        .c-hero-block-line__content {
+          border-right: none;
+
+          &:after {
+            content: '';
+            display: block;
+            background: $color-white;
+            border-top: 1px solid $color-primary;
+            border-bottom: 1px solid $color-primary;
+            height: 100%;
+            position: absolute;
+            top: -1px;
+            right: 0;
+            width: 2000px;
+            transform: translateX(100%);
+            z-index: 10;
+          }
+
+          @include breakpoint(small only) {
+            border-left: none;
+            padding-left: 0;
+            padding-right: 0;
+            &:before {
+              content: '';
+              display: block;
+              background: $color-white;
+              border-top: 1px solid $color-primary;
+              border-bottom: 1px solid $color-primary;
+              height: 100%;
+              position: absolute;
+              top: -1px;
+              left: 0;
+              width: 2000px;
+              transform: translateX(-100%);
+              z-index: 10;
+            }
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .c-hero-block-line__content {
+          border-left: none;
+
+          &:after {
+            content: '';
+            display: block;
+            background: $color-white;
+            border-top: 1px solid $color-primary;
+            border-bottom: 1px solid $color-primary;
+            height: 100%;
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 2000px;
+            transform: translateX(-100%);
+            z-index: 10;
+          }
+
+          @include breakpoint(small only) {
+            padding-left: 0;
+            padding-right: 0;
+            border-right: 0;
+
+            &:before {
+              content: '';
+              display: block;
+              background: $color-white;
+              border-top: 1px solid $color-primary;
+              border-bottom: 1px solid $color-primary;
+              height: 100%;
+              position: absolute;
+              top: -1px;
+              right: 0;
+              width: 2000px;
+              transform: translateX(100%);
+              z-index: 10;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
