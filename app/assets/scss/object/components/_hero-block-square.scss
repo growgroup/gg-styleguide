@@ -106,10 +106,10 @@ category: SpecialComponents
       width: auto;
       height: auto;
       min-width: 100%;
-      min-height: 100%;
+      //min-height: 100%;
       max-width: inherit;
       @include breakpoint(small only) {
-        width: 100%;
+        width: auto;
         height: 100%;
       }
     }
@@ -137,7 +137,8 @@ category: SpecialComponents
 }
 
 // 偶数番目
-.c-hero-block-square__block:nth-child(even) {
+.c-hero-block-square__block:nth-child(even),
+.c-hero-block-square__block.is-reverse {
   .c-hero-block-square__image {
     left: auto;
     right: 0;

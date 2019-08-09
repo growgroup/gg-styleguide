@@ -55,4 +55,21 @@ category: Base
       }
     }
   }
+  &.is-th-bgcolor {
+    tbody {
+      th,
+      td {
+        padding: rem-calc(13) rem-calc(24);
+      }
+    }
+    th {
+      color: $font-base-color;
+      width: rem-calc(236);
+      position: relative;
+      background-color: $color-secondary;
+      &:after {
+        display: none;
+      }
+    }
+  }
 }

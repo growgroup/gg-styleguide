@@ -32,10 +32,22 @@ category: Layout
   @include breakpoint(small only) {
     padding: rem-calc(40) 0;
   }
+  // padding大きめ
+  &.is-padding-lg {
+    padding: rem-calc(64) 0;
+  }
   &__items {
     margin-top: rem-calc(48);
     @include breakpoint(small only) {
       margin-top: rem-calc(24);
+    }
+    // ボタン1つ
+    &.is-button-one {
+      margin-top: rem-calc(24);
+      text-align: center;
+      .l-offer__button {
+        max-width: rem-calc(454);
+      }
     }
   }
   &__button {
@@ -45,7 +57,7 @@ category: Layout
     font-size: rem-calc(16);
     letter-spacing: 0.05em;
     text-align: center;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     border: 2px solid $color-white;
@@ -70,6 +82,11 @@ category: Layout
         font-size: rem-calc(18);
       }
     }
+    &.is-bgcolor-primary {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+    //->電話番号はアクセントフォント
     &.is-tel {
       @include webfont-bold();
       font-size: rem-calc(32);

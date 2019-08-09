@@ -32,7 +32,10 @@ category: Layout
   background-color: $color-white;
   width: 100%;
   z-index: 9990;
-  padding: rem-calc(16) rem-calc(0) rem-calc(24) rem-calc(32);
+  padding-left: rem-calc(32);
+  padding-top: rem-calc(16);
+  padding-right: rem-calc(200);
+  height: rem-calc(124);
   @include breakpoint(medium down) {
     // position: fixed;
     // top: 0;
@@ -44,7 +47,7 @@ category: Layout
   &__inner {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: rem-calc(12);
     @include breakpoint(medium down) {
       flex-wrap: wrap;
     }
@@ -80,7 +83,6 @@ category: Layout
       font-size: rem-calc(22) !important;
       letter-spacing: 0;
       line-height: 24/22*1;
-      margin-right: rem-calc(16);
       //アイコン
       &:before {
         content: '';
@@ -104,7 +106,7 @@ category: Layout
   }
   &__heading {
     margin: 0;
-    width: rem-calc(152)/2;
+    width: rem-calc(492)/2;
     flex-shrink: 0;
     @include breakpoint(medium down) {
       width: rem-calc(152)/3;
@@ -129,15 +131,30 @@ category: Layout
       width: 100%;
       li {
         margin-left: rem-calc(12);
-        margin-right: 32px;
+        margin-left: rem-calc(48);
         a {
           display: inline-block;
           text-decoration: none;
           color: $font-base-color;
           font-size: rem-calc(14);
           position: relative;
-          padding-bottom: rem-calc(28);
+          padding-bottom: rem-calc(24);
           transition: all .3s ease;
+          span {
+            display: block;
+            @include webfont-bold();
+            font-size: rem-calc(18);
+            letter-spacing: 0.1em;
+            line-height: 1;
+            margin-top: rem-calc(12);
+          }
+          small {
+            display: block;
+            font-size: rem-calc(10);
+            line-height: 12/10*1;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+          }
           //装飾
           &:after {
             content: "";
@@ -168,7 +185,7 @@ category: Layout
           }
           small {
             text-align: center;
-            font-size: 10px;
+            font-size: rem-calc(10);
             line-height: 12/10*1;
           }
         }
@@ -182,10 +199,11 @@ category: Layout
     justify-content: center;
     flex-direction: column;
     max-width: rem-calc(150)!important;
-    margin-left: rem-calc(24);
-    height: 124px;
+    height: rem-calc(124);
     border-radius: 0;
-
+    position: absolute;
+    top: 0;
+    right: 0;
     @include breakpoint(medium down) {
       display: none;
     }
@@ -194,24 +212,22 @@ category: Layout
     }
     //*アイコン
     i {
-      font-size: rem-calc(16);
-      padding-right: rem-calc(8);
+      font-size: rem-calc(18);
+      margin-bottom: rem-calc(14);
     }
-  }
-  span {
-    display: block;
-    @include webfont-bold();
-    font-size: 18px;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    margin-top: 12px;
-  }
-  small {
-    display: block;
-    font-size: 10px;
-    line-height: 12/10*1;
-    letter-spacing: 0.1em;
-    font-weight: 400;
+    span {
+      display: block;
+      @include webfont-bold();
+      font-size: rem-calc(18);
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+    small {
+      display: block;
+      font-size: rem-calc(10);
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
   }
 }
 

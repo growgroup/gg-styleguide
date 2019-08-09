@@ -19,3 +19,12 @@ mixin l_offer
               .l-offer__box
                 .l-offer__box-text メールでのご相談・ご質問は<br>お問い合わせフォームをご活用ください。
                 +a("#").c-button.is-lg.is-white お問い合わせフォーム
+
+mixin l_offer-recruit
+  .l-offer.is-padding-lg
+    .l-container
+      .l-offer__inner
+        h2.c-heading.is-md.is-bottom エントリー
+        .l-offer__text ●●では、働く環境を考え、一緒に課題に挑める仲間を募集しています。<br>私たちと一緒に働いてみませんか？
+        .l-offer__items.is-button-one
+          +a(href="/recruit/entry/").l-offer__button.is-bgcolor-primary エントリーはこちら

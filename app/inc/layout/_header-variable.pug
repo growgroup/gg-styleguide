@@ -1,19 +1,26 @@
-.l-header-minimal
-  .l-header-minimal__inner
-    .l-header-minimal__text テキストテキストテキストテキストテキスト
-    a(href="tel: 00-0000-0000").l-header-minimal__tel
-      span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
-      small 受付時間 / 平日00：00～00：00
-  .l-header-minimal__content
-    if current.id == 'top'
-      h1.l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
-    else
-      .l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
-    nav.l-header-minimal__nav
+.l-header-variable
+  .l-header-variable__content
+    h1.l-header-variable__heading: +a("/"): +img("logo-recruit.png","株式会社●● 採用サイト")
+    nav.l-header-variable__nav
+      .l-header-variable__inner
+        a(href="tel: 00-0000-0000").l-header-variable__tel
+          span 00-0000-0000
       ul
-        li: +a("/onecolumn/") 1COLUMN
-        li: +a("/twocolumns/") 2COLUMN
-        li: +a("/format/") FORMAT
-        li: +a("/archive-onecolumn/") ARCHIVE1
-        li: +a("/archive-twocolumns/") ARCHIVE2
-    +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+        li: +a("/recruit/")
+          span HOME
+          small ホーム
+        li: +a("/recruit/business/")
+          span BUSINESS
+          small 事業内容
+        li: +a("/recruit/reserch/")
+          span RESEARCH
+          small リサーチ
+        li: +a("/recruit/company/")
+          span COMPANY
+          small 会社案内
+        li: +a("/recruit/policy/")
+          span POLICY
+          small DFVのポリシー
+    +a("/recruit/contact/").l-header-variable__button.c-button.is-sm <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      span CONTACT
+      small お問い合わせ

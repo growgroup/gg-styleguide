@@ -43,10 +43,10 @@
 
   &.is-xlg {
     padding-top: rem-calc(72);
-    padding-bottom: rem-calc(72);
+    padding-bottom: rem-calc(80);
     @include breakpoint(small only) {
       padding-top: rem-calc(72)/2;
-      padding-bottom: rem-calc(72)/2;
+      padding-bottom: rem-calc(80)/2;
     }
   }
 

@@ -56,9 +56,9 @@ category: Components
 */
 .c-block {
   &__block {
-    margin-top: rem-calc(48);
+    margin-bottom: rem-calc(64);
     @include breakpoint(small only) {
-      margin-top: rem-calc(48)/2;
+      margin-bottom: rem-calc(64)/2;
     }
   }
   &__image {

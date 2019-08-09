@@ -122,7 +122,8 @@ category: SpecialComponents
       padding-top: 0 !important;
     }
     // 偶数番目
-    &:nth-child(even) {
+    &:nth-child(even),
+    &.is-reverse {
       .c-hero-block__image {
         left: auto;
         right: 0;

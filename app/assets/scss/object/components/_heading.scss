@@ -168,6 +168,7 @@ category: Heading
   position: relative;
   text-align: center;
   padding-bottom: rem-calc(24);
+  margin-bottom: rem-calc(56);
   @include breakpoint(small only) {
     padding-bottom: rem-calc(24)/2;
   }
@@ -305,6 +306,7 @@ category: Heading
 .c-heading.is-border-under {
   border-bottom: 3px solid #E2E2E2;
   padding-bottom: rem-calc(20);
+  margin-bottom: rem-calc(48);
   position: relative;
   text-align: left;
   @include breakpoint(small only) {
@@ -325,6 +327,10 @@ category: Heading
       width: rem-calc(100)*0.8;
       height: rem-calc(2);
     }
+  }
+  // サイズ別
+  &.is-sm {
+    margin-bottom: rem-calc(24);
   }
 }
 /*
