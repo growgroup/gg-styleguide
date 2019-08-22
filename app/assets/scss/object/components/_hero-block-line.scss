@@ -12,7 +12,7 @@
     min-height: rem-calc(480);
     padding-top: rem-calc(48);
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(48);
+      margin-bottom: rem-calc(32);
       min-height: inherit;
       padding-top: 0 !important;
     }
@@ -50,6 +50,7 @@
   }
 
   &__image {
+    display: block;
     position: absolute;
     top: rem-calc(-48);
     left: 0;
@@ -57,11 +58,30 @@
     overflow: hidden;
     width: 588/1140*100%;
     z-index: 2;
+    opacity: 1!important;
     @include breakpoint(small only) {
       position: relative;
       width: 100%;
       height: 55vw;
       top: 0;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      opacity: 0;
+      transition: all .2s;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 0.3;
+      }
     }
 
     img {
@@ -75,7 +95,6 @@
       min-height: 100%;
       max-width: inherit;
       @include breakpoint(small only) {
-        width: 100%;
         height: 100%;
       }
     }
@@ -94,10 +113,20 @@
     border: 1px solid $color-primary;
     z-index: 0;
     @include breakpoint(small only) {
-      width: 100%;
+      width: calc(100% - 24px);
       min-height: inherit;
-      margin-top: rem-calc(-40);
-      padding: rem-calc(88)*0.5 rem-calc(24) rem-calc(103)*0.4 rem-calc(24);
+      margin-top: rem-calc(-40px);
+      z-index: 99;
+      margin-left: auto!important;
+      margin-right: auto!important;
+      padding: rem-calc(20) rem-calc(24) rem-calc(16);
+    }
+  }
+
+  &__label {
+    margin-bottom: rem-calc(16);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(12);
     }
   }
 
@@ -115,7 +144,7 @@
       bottom: auto;
       right: auto;
       text-align: right;
-      margin-top: rem-calc(24);
+      margin-top: rem-calc(16);
     }
 
     a {

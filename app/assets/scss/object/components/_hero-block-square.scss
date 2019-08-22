@@ -127,6 +127,11 @@ category: SpecialComponents
       min-height: inherit;
       display: block;
     }
+    .c-heading {
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(16)!important;
+      }
+    }
   }
   &__button {
     margin-top: rem-calc(32);

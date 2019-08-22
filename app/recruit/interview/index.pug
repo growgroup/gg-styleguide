@@ -23,20 +23,20 @@ block header
           +loop(4)
             +e.block
               .l-container
-                +e.image: +img("img-recruit-opening.jpg")
+                +a("/recruit/interview/page-a/").c-hero-block-line__image: +img("img-recruit-opening.jpg")
                 +e.content
                   +e.inner
-                    +e.label.c-label.is-lg 職種名
-                    h3.c-heading.is-md.is-bottom.is-text-left キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
+                    +e.label.c-label.is-xlg 職種名
+                    h3.c-heading.is-sm.is-bottom.is-text-left キャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピーキャッチコピー
                     +e.detail 氏名氏名 / 2018年入社
-                    +e.link: +a("#") 詳しく見る
+                    +e.link: +a("/recruit/interview/page-a/") 詳しく見る
         .l-container
           +c.card-post
             .row
               +loop(6)
-                .large-4.small-12
+                .large-4.small-6
                   +e.block
-                    +a("/recruit/interview/page/").c-card-post__image
+                    +a("/recruit/interview/page-a/").c-card-post__image
                       +img("img-recruit-card.jpg")
                       span.c-card-post__label.c-label.is-lg 職種名
                     +e.content

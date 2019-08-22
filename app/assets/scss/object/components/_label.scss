@@ -27,6 +27,16 @@
     font-size: rem-calc(12);
     min-width: rem-calc(88);
   }
+  &.is-xlg {
+    min-width: rem-calc(156);
+    font-size: rem-calc(14);
+    padding: rem-calc(3) rem-calc(8);
+    @include breakpoint(small only) {
+      min-width: rem-calc(120);
+      font-size: rem-calc(12);
+      padding: rem-calc(2) rem-calc(8);
+    }
+  }
   &.is-lg {
     min-width: rem-calc(160);
     font-size: rem-calc(13);

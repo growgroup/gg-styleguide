@@ -40,6 +40,9 @@ category: News
     color: $font-base-color;
     font-weight: 400;
     margin-bottom: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(32);
+    }
     span,
     small {
       display: block;

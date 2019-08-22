@@ -194,6 +194,7 @@ category: Heading
   &.is-xxs,
   &.is-xxxs {
     padding-bottom: rem-calc(16);
+    margin-bottom: rem-calc(32);
     &:after {
       width: rem-calc(72);
       height: rem-calc(2);

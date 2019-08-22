@@ -104,6 +104,7 @@ category: Buttons
     padding: rem-calc(26) rem-calc(32);
     font-size: rem-calc(18);
     @include breakpoint(small only) {
+      max-width: 100%;
       font-size: rem-calc(18)*0.9;
       padding: rem-calc(20) rem-calc(32);
     }
@@ -118,6 +119,9 @@ category: Buttons
   &.is-lg {
     max-width: rem-calc(356);
     padding: rem-calc(16) rem-calc(24);
+    @include breakpoint(small only) {
+      max-width: 100%;
+    }
   }
   // -> 小
   &.is-sm {
