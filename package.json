@@ -20,7 +20,7 @@
     "build": "npm run clean && npm run copy && run-s build:*",
     "develop": "run-s clean copy build:css && run-p copy:images:dev server develop:* build:wp",
     "build:css": "node-sass-chokidar app/assets/scss/style.scss dist/assets/css/style.css --output-style compressed --importer node_modules/node-sass-glob-importer/dist/cli.js --source-map dist/assets/css -- -w && npm run build:autoprefixer",
-    "develop:css": "node-sass-chokidar app/assets/scss -o dist/assets/css --output-style compressed --importer node_modules/node-sass-glob-importer/dist/cli.js --source-map dist/assets/css --watch && npm run build:autoprefixer",
+    "develop:css": "chokidar 'app/assets/**/*.scss' -c 'npm run build:css'",
     "build:webpack": "webpack --config webpack.config.babel.js",
     "develop:webpack": "webpack --config webpack.config.babel.js --watch-stdin --progress --display normal",
     "build:pug": "pug -O build/pug.js app --out dist -s",
