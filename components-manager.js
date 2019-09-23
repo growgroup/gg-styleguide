@@ -21,8 +21,9 @@ markupDownload.stdout.on("data", data => {
 markupDownload.on("close", code => {
   if (code !== 0) {
     console.error(`マークアップファイルのダウンロードに失敗しました : ${code}`)
+  } else {
+    console.log('マークアップデータファイルのダウンロードに成功しました。')
   }
-  console.log('マークアップデータファイルのダウンロードに成功しました。')
 });
 
 const styleDownload = spawn("wget", ["--content-disposition", "-P", "app/assets/scss/object/components", endpoint + "?component_id=" + component_id + "&download=true&key=" + seckey + "&type=style"]);
@@ -36,8 +37,10 @@ styleDownload.stdout.on("data", data => {
 styleDownload.on("close", code => {
   if (code !== 0) {
     console.error(`スタイルマークアップファイルのダウンロードに失敗しました : ${code}`);
+  } else {
+    console.log('スタイルデータファイルのダウンロードに成功しました。')
   }
-  console.log('スタイルデータファイルのダウンロードに成功しました。')
+
 });
 
 const javascriptDownload = spawn("wget", ["--content-disposition", "-P", "app/assets/js", endpoint + "?component_id=" + component_id + "&download=true&key=" + seckey + "&type=javascript"]);
@@ -49,7 +52,9 @@ javascriptDownload.stdout.on("data", data => {
 });
 javascriptDownload.on("close", code => {
   if (code !== 0) {
-    console.error(`JavaScriptマークアップファイルのダウンロードに失敗しました : ${code}`);
+    console.error(`JavaScriptファイルのダウンロードに失敗しました : ${code}`);
+  } else {
+    console.log('JavaScriptファイルのダウンロードに成功しました。')
   }
-  console.log('JavaScriptファイルのダウンロードに成功しました。')
+
 });
