@@ -40,6 +40,7 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+wp-content/plugins/siteguard/really-simple-captcha/tmp/
 /readme.html
 /license.txt
 *.sql
