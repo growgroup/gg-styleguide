@@ -87,7 +87,7 @@
     $(function () {
         var app = new growApp();
         // app.menuHight();
-        app.footerMenu();
+        // app.footerMenu();
     });
 
 })(jQuery);
