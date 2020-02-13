@@ -86,7 +86,6 @@
 
     $(function () {
         var app = new growApp();
-        app.changeViewPort();
         // app.menuHight();
         app.footerMenu();
     });
