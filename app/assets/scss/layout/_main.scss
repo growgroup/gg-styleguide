@@ -12,6 +12,9 @@ $layout-main-width: calc(100% - rem-calc(320)) !default;
 $layout-main-float: left !default;
 
 .l-main {
+  width: 100%;
+  max-width: rem-calc(1920);
+  margin: 0 auto;
   &.is-twocolumns {
     width: calc(100% - 293px - 64px);
     @include breakpoint(medium down) {
