@@ -1,5 +1,5 @@
 // エディタ出力調整
-// 
+//
 // ヴィジュアルエディタ出力調整用css
 //
 
@@ -46,6 +46,10 @@
       font-family: "FontAwesome";
       line-height: 1;
       display: block;
+      top: 5px;
+      @include breakpoint(small only) {
+        top: 1px;
+      }
     }
   }
   h6 {

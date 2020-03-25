@@ -18,6 +18,9 @@ input[type="tel"] {
   width: 100%;
   transition: $forms-transition;
   background-color: $color-white;
+  @include breakpoint(small only) {
+    font-size: 16px;
+  }
   &:focus,
   &:active {
     @include input-active();
@@ -40,6 +43,9 @@ textarea {
   transition: $forms-transition;
   background-color: $color-white;
   min-height: 200px;
+  @include breakpoint(small only) {
+    font-size: 16px;
+  }
   &:focus,
   &:active {
     @include input-active();
