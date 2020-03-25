@@ -24,7 +24,8 @@ category: Navigation
   ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
     li {
       width: rem-calc(155);
       @include breakpoint(small only) {
@@ -40,31 +41,43 @@ category: Navigation
     }
   }
   &__prev {
-    @include breakpoint(small only) {
-      padding-left: rem-calc(20)!important;
-      padding-right: rem-calc(8)!important;
+    margin-right: auto;
+    a {
+      @include breakpoint(small only) {
+        padding-left: rem-calc(20)!important;
+        padding-right: rem-calc(8)!important;
+      }
     }
   }
   &__archive {
-    display: inline-flex;
-    align-items: center;
-    &:after {
-      display: none;
-    }
-    i {
-      margin-right: rem-calc(12);
-      font-size: rem-calc(18);
-      margin-top: rem-calc(2);
-      @include breakpoint(small only) {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    a {
+      display: inline-flex;
+      align-items: center;
+      &:after {
         display: none;
+      }
+      i {
+        margin-right: rem-calc(12);
+        font-size: rem-calc(18);
+        margin-top: rem-calc(2);
+        @include breakpoint(small only) {
+          display: none;
+        }
       }
     }
   }
   &__next {
     margin-left: auto;
-    @include breakpoint(small only) {
-      padding-right: rem-calc(20)!important;
-      padding-left: rem-calc(8)!important;
+    a {
+      margin-left: auto;
+      @include breakpoint(small only) {
+        padding-right: rem-calc(20)!important;
+        padding-left: rem-calc(8)!important;
+      }
     }
   }
 }

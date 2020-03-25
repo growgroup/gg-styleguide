@@ -98,9 +98,9 @@ block body
               hr.c-hr
               +c.post-navs
                 ul
-                  li: +a("#").c-post-navs__prev.c-button.is-sm.is-arrow-left 前の記事へ
-                  li: +a("#").c-post-navs__archive.c-button.is-sm <i class="fa fa-th" aria-hidden="true"></i>記事一覧へ
-                  li: +a("#").c-post-navs__next.c-button.is-sm 次の記事へ
+                  li.c-post-navs__prev: +a("#").c-button.is-sm.is-arrow-left 前の記事へ
+                  li.c-post-navs__archive: +a("#").c-button.is-sm <i class="fa fa-th" aria-hidden="true"></i>記事一覧へ
+                  li.c-post-navs__next: +a("#").c-button.is-sm 次の記事へ
               h3 関連コンテンツ
               +c.news-lg.is-image-display
                 +a("#").c-news-lg__block
