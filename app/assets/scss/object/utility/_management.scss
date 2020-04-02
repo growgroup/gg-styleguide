@@ -11,6 +11,7 @@
   padding-bottom: rem-calc(12);
   font-family: $font-base-family !important;
   overflow: scroll;
+  margin-top: 0 !important;
   @include breakpoint(small only) {
     min-width: inherit !important;
     width: 100%;
