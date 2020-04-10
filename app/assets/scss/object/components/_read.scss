@@ -1,0 +1,15 @@
+// テキスト : 位置
+//
+// .c-read : PCセンター寄せ SP左寄せ
+//
+// markup:
+// <p class="c-read">PCセンター寄せ SP左寄せ</p>
+//
+// Styleguide 4.2.0
+
+.c-read {
+  text-align: center;
+  @include breakpoint(small only) {
+    text-align: left;
+  }
+}

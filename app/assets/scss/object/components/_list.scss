@@ -4,9 +4,10 @@
   }
 }
 
+
 /*
 ---
-name: <ul> 順序なしテキスト
+name: <ul> 順序なしテキストデフォルト
 category: Base
 ---
 ```types.html
@@ -22,29 +23,77 @@ category: Base
           </ul>
 ```
 */
+
 .c-list.is-disc {
+  li {
+    text-indent: -1em;
+    padding-left: 1em;
+
+    &:before {
+      content: "・";
+      color: $font-base-color;
+    }
+  }
+
+  ul {
+    margin-left: rem-calc(24);
+    li {
+      text-indent: -1em;
+      padding-left: 1em;
+
+      &:before {
+        content: "・";
+        color: $font-base-color;
+      }
+    }
+  }
+}
+
+/*
+---
+name: <ul> 順序なしテキスト
+category: Base
+---
+```types.html
+<ul class="c-list is-icon">
+            <li>リスト1</li>
+            <li>リスト2
+              <ul>
+                <li>リスト2の子要素</li>
+                <li>リスト2の子要素</li>
+              </ul>
+            </li>
+            <li>リスト2</li>
+          </ul>
+```
+*/
+.c-list.is-icon {
   li {
     position: relative;
     padding-left: rem-calc(20);
     @include breakpoint(small only) {
       padding-left: rem-calc(18);
     }
+
     &:before {
       content: "\f111";
       font-size: 0.8em;
       font-family: "FontAwesome";
       color: $color-primary;
       position: absolute;
-      top: rem-calc(1);
+      top: rem-calc(4);
       left: 0;
       @include breakpoint(small only) {
-        top: rem-calc(3);
+        top: rem-calc(4);
       }
     }
+
     ul {
       margin-left: rem-calc(24);
+
       li {
         padding-left: rem-calc(18);
+
         &:before {
           content: "・";
           color: $font-base-color;
@@ -73,10 +122,12 @@ category: Base
 ```
 */
 .c-list.is-outline {
-  padding-left: rem-calc(20)!important;
+  padding-left: rem-calc(20) !important;
+
   li {
     position: relative;
     list-style: decimal;
+
     ul {
       li {
         margin-left: rem-calc(38);
