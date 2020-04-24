@@ -1,0 +1,130 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "contact" // ページのID
+  - current.title = "お問い合わせフォーム" // タイトル
+  - current.description = "これはお問い合わせフォームの説明文です" // 説明文
+  - current.bodyClass = "contact" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header("img-page-header-format.jpg","CONTACT","お問い合わせフォーム")
+  +c_breadcrumb()
+
+block body
+  main.l-main
+    section.l-section.is-lg
+      .l-container
+        +c.tabs.js-tabs
+          ul.c-tabs__navs.js-tabs-nav
+            li: +a("/contact/").is-active 企業様のお問合せ
+            li: +a("/entry/") 採用のお問合せ
+        +c.tel-top.u-mbs.is-xxlg
+          +e.title お電話でのお問い合わせは下記からお願いいたします。
+          +a("tel:00-0000-0000") <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
+          +e.text 電話受付時間 / 平日00：00～00：00
+        p.u-text-center.
+          下記受付フォームに必要項目を入力して送信してください。<br>
+          <span style="color: #f00;">＊</span>は入力必須項目です。
+        div.u-mbs.is-md.is-top
+          .row
+            .large-8.is-push-lg-2.small-12
+              +c.forms-normal
+                +e.block
+                  +e.title
+                    | 貴社名
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.input
+                      input(type="text",name="貴社名",placeholder="（例）株式会社カンパニー")
+                +e.block
+                  +e.title
+                    | 部署・役職
+                  +e.content
+                    +e.input
+                      input(type="text",name="部署・役職",placeholder="（例）営業部")
+                +e.block
+                  +e.title
+                    | お問い合わせ種別
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.select
+                      select(name="お問い合わせ種別")
+                        option 選択してください
+                        option お問い合わせ
+                        option お問い合わせ2
+                +e.block
+                  +e.title
+                    | お名前
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.flexbox
+                      +e.input
+                        input(type="text",name="お名前（漢字）",placeholder="お名前（漢字）")
+                      +e.input
+                        input(type="text",name="お名前（カナ）",placeholder="お名前（カナ）")
+                +e.block
+                  +e.title
+                    | メールアドレス
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.input
+                      input(type="text",name="メールアドレス",placeholder="（例）info@grow-group.jp")
+                +e.block
+                  +e.title
+                    | 電話番号
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.input
+                      input(type="text",name="電話番号",placeholder="（例）052-753-6413")
+                +e.block
+                  +e.title
+                    | 興味あるサービス
+                  +e.content
+                    +e.checkbox
+                      span
+                        label
+                          input(type="checkbox",name="興味あるサービス",value="テキスト",checked)
+                          span 選択肢1
+                      span
+                        label
+                          input(type="checkbox",name="興味あるサービス",value="テキストテキスト")
+                          span 選択肢2
+                +e.block
+                  +e.title
+                    | お問い合わせ内容
+                  +e.content
+                    +e.textarea
+                      textarea(name="お問い合わせ内容",placeholder="お問い合わせ内容をご記入ください。")
+                +e.block
+                  +e.title
+                    | ご連絡方法
+                    span.c-forms-normal__label ＊
+                  +e.content
+                    +e.radio
+                      span
+                        label
+                          input(type="radio",name="ご連絡方法",value="電話",checked)
+                          span 電話
+                      span
+                        label
+                          input(type="radio",name="ご連絡方法",value="メール")
+                          span メール
+                      span
+                        label
+                          input(type="radio",name="ご連絡方法",value="いずれでも可")
+                          span いずれでも可
+                +e.privacy
+                  label
+                    input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました",checked)
+                    | 当社の
+                    +a("/privacy-policy/") 個人情報保護方針
+                    | へ同意する
+                +e.submit
+                  button.c-button.is-xlg 確認画面へ
+
+                //+e.submit.is-two-columns
+                  .row
+                    .large-6.small-6
+                      button.c-button.is-lg.is-secondary.is-arrow-left 戻る
+                    .large-6.small-6
+                      button.c-button.is-lg 送信する
