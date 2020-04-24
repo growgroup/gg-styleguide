@@ -3,20 +3,6 @@
 name: カプセルナビ_関連コンテンツ
 category: Navigation
 ---
-```types.html
-<div class="c-capsul-nav">
-            <div class="row">
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg is-current" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-            </div>
-          </div>
-```
 */
 .c-capsul-nav {
   &__block {
@@ -35,20 +21,6 @@ category: Navigation
 name: カプセルナビ_関連コンテンツ_ラウンド
 category: Navigation
 ---
-```types.html
-<div class="c-capsul-nav is-round">
-            <div class="row">
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg is-current" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-              <div class="large-3 small-12"><a class="c-capsul-nav__block c-button is-white is-lg" href="#">テキストテキスト</a>
-              </div>
-            </div>
-          </div>
-```
 */
 .c-capsul-nav {
   &.is-round {

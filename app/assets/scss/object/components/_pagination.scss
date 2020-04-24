@@ -3,25 +3,6 @@
 name: ページネーション_通常
 category: Navigation
 ---
-```types.html
-<div class="c-pagination">
-            <ul>
-              <li><a class="c-pagination__prev" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-
-              <li><span class="is-current">1</span></li>
-              <li><a href="#">2</a>
-              </li>
-              <li><a href="#">3</a>
-              </li>
-              <li><a href="#">4</a>
-              </li>
-              <li><a href="#">5</a>
-              </li>
-              <li><a class="c-pagination__next" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-              </li>
-            </ul>
-          </div>
-```
 */
 .c-pagination {
   margin-top: rem-calc(48);

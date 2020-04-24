@@ -3,18 +3,6 @@
 name: 投稿ナビゲーション_通常
 category: Navigation
 ---
-```types.html
-<div class="c-post-navs">
-            <ul>
-              <li><a class="c-post-navs__prev c-button is-sm is-arrow-left" href="#">前の記事へ</a>
-              </li>
-              <li><a class="c-post-navs__archive c-button is-sm" href="#"><i class="fa fa-th" aria-hidden="true"></i>記事一覧へ</a>
-              </li>
-              <li><a class="c-post-navs__next c-button is-sm" href="#">次の記事へ</a>
-              </li>
-            </ul>
-          </div>
-```
 */
 .c-post-navs {
   margin: rem-calc(64) 0;
@@ -77,6 +65,35 @@ category: Navigation
       @include breakpoint(small only) {
         padding-right: rem-calc(20)!important;
         padding-left: rem-calc(8)!important;
+      }
+    }
+  }
+}
+.c-post-navs{
+  &.is-en{
+    ul{
+      li{
+        a{
+          background: none;
+          color: $color-primary;
+          border: none;
+          text-decoration: none;
+        }
+        &.c-post-navs__prev{
+          i{
+            margin-right: rem-calc(10);
+          }
+        }
+        &.c-post-navs__archive{
+          width: auto;
+          max-width: auto;
+        }
+        &.c-post-navs__next{
+          text-align: right;
+          i{
+            margin-left: rem-calc(10);
+          }
+        }
       }
     }
   }

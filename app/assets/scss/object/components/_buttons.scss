@@ -3,12 +3,6 @@
 name: ボタン_カラー別
 category: Buttons
 ---
-```types.html
-<a class="c-button" href="#">ボタンテキスト</a>
-<a class="c-button is-secondary" href="#">ボタンテキスト</a>
-<a class="c-button is-accent" href="#">ボタンテキスト</a>
-<a class="c-button is-white" href="#">ボタンテキスト</a>
-```
 */
 .c-button {
   outline: none;
@@ -83,18 +77,6 @@ category: Buttons
 name: ボタン_サイズ別
 category: Buttons
 ---
-```types.html
-<a class="c-button is-xlg" href="#">ボタンテキスト</a>
-<a class="c-button is-lg" href="#">ボタンテキスト</a>
-<a class="c-button is-sm" href="#">ボタンテキスト</a>
-<a class="c-button is-xs" href="#">ボタンテキスト</a>
-```
-```types.pug
-+a("#").c-button.is-xlg ボタンテキスト
-+a("#").c-button.is-lg ボタンテキスト
-+a("#").c-button.is-sm ボタンテキスト
-+a("#").c-button.is-xs ボタンテキスト
-```
 */
 .c-button {
   // サイズ設定
@@ -164,35 +146,6 @@ category: Buttons
 name: ボタン_デザイン01
 category: Buttons
 ---
-```types.html
-<a class="c-button is-xlg is-line-right" href="#">ボタンテキスト</a>
-<a class="c-button is-lg is-line-right" href="#">ボタンテキスト</a>
-<a class="c-button is-sm is-line-right" href="#">MORE</a>
-<a class="c-button is-xs is-line-right" href="#">MORE</a>
-```
-*/
-/*
----
-name: ボタン_デザイン02
-category: Buttons
----
-```types.html
-<a class="c-button is-xlg is-arrow-right" href="#">ボタンテキスト</a>
-<a class="c-button is-lg is-arrow-right" href="#">ボタンテキスト</a>
-<a class="c-button is-xs is-arrow-right" href="#">MORE</a>
-```
-*/
-/*
----
-name: ボタン_デザイン03
-category: Buttons
----
-```types.html
-<a class="c-button is-xlg is-icon-right" href="#">ボタンテキスト</a>
-<a class="c-button is-lg is-icon-right" href="#">ボタンテキスト</a>
-<a class="c-button is-sm is-icon-right" href="#">MORE</a>
-<a class="c-button is-xs is-icon-right" href="#">ボタンテキスト</a>
-```
 */
 .c-button {
   // デザイン設定
@@ -340,12 +293,4 @@ category: Buttons
 name: ボタン_2カラム
 category: Buttons
 ---
-```types.html
-<div class="row">
-  <div class="large-4 is-push-lg-2 small-12"><a class="c-button is-xlg" href="#">社員紹介</a>
-  </div>
-  <div class="large-4 small-12"><a class="c-button is-xlg" href="#">募集要項</a>
-  </div>
-</div>
-```
 */

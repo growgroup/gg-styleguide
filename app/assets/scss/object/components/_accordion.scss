@@ -3,38 +3,6 @@
 name: アコーディオン_Q&A
 category: Components
 ---
-```types.html
-<div class="c-accordion">
-            <div class="c-accordion__block  js-accordion">
-              <div class="c-accordion__head" data-accordion-title="accordion-title">
-                <div class="c-accordion__icon">Q
-                </div>
-                <div class="c-accordion__title">見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
-                </div>
-              </div>
-              <div class="c-accordion__content" data-accordion-content="accordion--text">
-                <div class="c-accordion__icon  is-color-accent">A
-                </div>
-                <div class="c-accordion__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                </div>
-              </div>
-            </div>
-            <div class="c-accordion__block  js-accordion">
-              <div class="c-accordion__head" data-accordion-title="accordion-title">
-                <div class="c-accordion__icon">Q
-                </div>
-                <div class="c-accordion__title">見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
-                </div>
-              </div>
-              <div class="c-accordion__content" data-accordion-content="accordion--text">
-                <div class="c-accordion__icon  is-color-accent">A
-                </div>
-                <div class="c-accordion__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                </div>
-              </div>
-            </div>
-          </div>
-```
 */
 
 .c-accordion {

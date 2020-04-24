@@ -3,16 +3,6 @@
 name: オファー_ボタン
 category: Layout
 ---
-```types.html
-<div class="l-offer-button">
-          <div class="l-container">
-            <div class="l-offer-button__inner"><a class="l-offer-button__block" href="#"><i class="fa fa-user-o" aria-hidden="true"></i>
-                <div class="l-offer__text"><span>CONTACT</span><small>お問い合わせはこちら</small></div></a><a class="l-offer-button__block is-color-darken" href="#"><i class="fa fa-external-link" aria-hidden="true"></i>
-                <div class="l-offer__text"><span>ENTRY</span><small>エントリーはこちら</small></div></a>
-            </div>
-          </div>
-        </div>
-```
 */
 .l-offer-button {
   overflow: hidden;

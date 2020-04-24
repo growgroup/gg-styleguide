@@ -1,25 +1,6 @@
 // スライドメニュー
 //
 // スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
-//
-// markup:
-//  <!-- メニュー -->
-// <div class="slidebar-menu js-slidebar-menu">
-//   <ul>
-//    <li class="is-current">
-//        <a href="#">サンプル1</a>
-//   </li>
-//  </ul>
-// </div>
-//  <!-- ボタン -->
-//  <a href="#" class="slidebar-button js-slidebar-button">
-//    <i class="fa fa-bars"></i>
-//  </a>
-//  <!-- 全体を包むラッパー -->
-//  <div class="slidebar-container js-slidebar-container">
-//     hogehoge
-//  </div>
-//
 // Styleguide 4.5
 
 $slidebar-menu-bg: $color-primary !default;

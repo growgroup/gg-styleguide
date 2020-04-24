@@ -3,30 +3,12 @@
 name: ページヘッダー_通常
 category: Layout
 ---
-```types.html
-<div class="l-page-header">
-      <div class="l-page-header__image"><img src="/dist/assets/images/img-page-header-format.jpg" alt="">
-      </div>
-      <div class="l-page-header__inner">
-        <h1 class="l-page-header__title">スタイルガイド</h1>
-        <div class="l-page-header__subtitle">STYLE GUIDE</div>
-      </div>
-    </div>
-```
 */
 /*
 ---
 name: ページヘッダー_単色
 category: Layout
 ---
-```types.html
-<div class="l-page-header is-image-hidden">
-          <div class="l-page-header__inner">
-            <h1 class="c-page-header__title">PAGE TITLE</h1>
-            <div class="l-page-header__subtitle">ページタイトル</div>
-          </div>
-        </div>
-```
 */
 .l-page-header {
   width: 100%;

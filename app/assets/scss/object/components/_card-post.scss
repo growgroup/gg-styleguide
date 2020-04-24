@@ -3,34 +3,6 @@
 name: ポストアイテム_カード（タグあり）
 category: News
 ---
-```types.html
-<div class="c-card-post">
-  <div class="row">
-        <div class="large-4 small-12">
-          <div class="c-card-post__block"><a class="c-card-post__image" href="undefined"><img src="/dist/assets/images/img-card-01.jpg" alt=""><span class="c-card-post__label c-label is-lg">カテゴリ名</span></a>
-                  <div class="c-card-post__content">
-                    <div class="c-card-post__title">タイトルが入ります。タイトルが入ります。
-                    </div>
-                    <div class="c-card-post__sup">
-                      <div class="c-card-post__date">2018.01.01
-                      </div>
-                      <div class="c-card-post__tag">
-                        <ul>
-                          <li><a href="">#タグ</a>
-                          </li>
-                          <li><a href="">#タグ</a>
-                          </li>
-                          <li><a href="">#タグ</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        </div>
-      </div>
-  </div>
-```
 */
 .c-card-post {
   &__block {

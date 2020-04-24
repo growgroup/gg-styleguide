@@ -3,44 +3,6 @@
 name: <table> テーブル_小
 category: Base
 ---
-```types.html
-<table class="c-table-sm">
-                <thead>
-                  <tr>
-                    <th>受付時間</th>
-                    <td>月</td>
-                    <td>火</td>
-                    <td>水</td>
-                    <td>木</td>
-                    <td>金</td>
-                    <td>土</td>
-                    <td>日・祝</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th><span>午前</span>9:00～12:30</th>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td><span>×</span></td>
-                  </tr>
-                  <tr>
-                    <th><span>午後</span>14:30～18:00</th>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td>院長</td>
-                    <td><span>×</span></td>
-                    <td><span>×</span></td>
-                  </tr>
-                </tbody>
-              </table>
-```
 */
 
 .c-table-xlg {

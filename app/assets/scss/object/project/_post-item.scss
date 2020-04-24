@@ -1,33 +1,4 @@
 // 投稿一覧 : 一行
-//
-// markup:
-// <div class="p-post-list">
-//     <div class="p-post-item is-line">
-//         <div class="p-post-item__thumbnail">
-//             <img src="https://placehold.jp/300x200.png">
-//         </div>
-//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
-//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
-//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
-//     </div>
-//     <div class="p-post-item is-line">
-//         <div class="p-post-item__thumbnail">
-//             <img src="https://placehold.jp/300x200.png">
-//         </div>
-//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
-//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
-//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
-//     </div>
-//     <div class="p-post-item is-line">
-//         <div class="p-post-item__thumbnail">
-//             <img src="https://placehold.jp/300x200.png">
-//         </div>
-//         <div class="p-post-item__date c-label is-tertiary"><a href="#">2016.01.11</a></div>
-//         <div class="p-post-item__category c-label"><a href="#">カテゴリ名</a></div>
-//         <h2 class="p-post-item__title"><a href="#">投稿タイトル</a></h2>
-//     </div>
-// </div>
-//
 // Styleguide 3.2.2
 // 1行スタイル
 .p-post-item.is-line {
