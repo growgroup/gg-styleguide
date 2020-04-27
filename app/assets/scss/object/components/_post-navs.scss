@@ -69,32 +69,3 @@ category: Navigation
     }
   }
 }
-.c-post-navs{
-  &.is-en{
-    ul{
-      li{
-        a{
-          background: none;
-          color: $color-primary;
-          border: none;
-          text-decoration: none;
-        }
-        &.c-post-navs__prev{
-          i{
-            margin-right: rem-calc(10);
-          }
-        }
-        &.c-post-navs__archive{
-          width: auto;
-          max-width: auto;
-        }
-        &.c-post-navs__next{
-          text-align: right;
-          i{
-            margin-left: rem-calc(10);
-          }
-        }
-      }
-    }
-  }
-}

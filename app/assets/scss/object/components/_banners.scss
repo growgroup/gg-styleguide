@@ -187,6 +187,14 @@ category: Banners
       &:after {
         display: none;
       }
+      &:hover{
+        .c-banners__button{
+          &::after{
+            transition: .3s;
+            right: 0;
+          }
+        }
+      }
     }
 
     .c-banners__text {
@@ -242,6 +250,7 @@ category: Banners
         width: 30px;
         height: 1px;
         background: $color-white;
+        transition: .3s;
       }
     }
   }
