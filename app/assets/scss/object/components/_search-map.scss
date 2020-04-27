@@ -3,29 +3,6 @@
 name: 検索_マップ
 category: Other
 ---
-```types.html
-<div class="c-search-map">
-  <div class="c-search-map__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6773055.127092922!2d133.96455865812015!3d38.22044839209497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2z5pel5pys!5e0!3m2!1sja!2sjp!4v1564376401917!5m2!1sja!2sjp" frameborder="0" style="border:0"></iframe>
-  </div>
-  <div class="c-search-map__content">
-    <form name="" action="">
-      <div class="c-search-map__input">
-        <div class="c-search-map__select">
-          <select name="">
-            <option value="">都道府県から探す</option>
-            <option value="">岐阜県</option>
-            <option value="">岐阜県</option>
-          </select>
-        </div>
-        <input type="text" name="" placeholder="駅名や店舗名などをご入力ください。">
-        <div class="c-search-map__submit">
-          <input type="submit" value="絞り込み検索">
-        </div>
-      </div>
-    </form><a class="c-search-map__pos" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
-  </div>
-</div>
-```
 */
 
 .c-search-map {

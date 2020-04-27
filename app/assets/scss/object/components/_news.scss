@@ -3,41 +3,6 @@
 name: お知らせ_通常_フロントページ
 category: News
 ---
-```types.html
-<div class="c-news">
-            <div class="row">
-              <div class="large-3 small-12">
-                <div class="c-news__head">
-                  <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
-                  <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
-                  </div>
-                </div>
-              </div>
-              <div class="large-9 small-12">
-                <div class="c-news__content"><a class="c-news__block" href="#">
-                    <div class="c-news__date">2018.10.10
-                    </div>
-                    <div class="c-news__label  c-label is-white">カテゴリ
-                    </div>
-                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-                    </div></a><a class="c-news__block" href="#">
-                    <div class="c-news__date">2018.10.10
-                    </div>
-                    <div class="c-news__label  c-label is-white">カテゴリ
-                    </div>
-                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-                    </div></a><a class="c-news__block" href="#">
-                    <div class="c-news__date">2018.10.10
-                    </div>
-                    <div class="c-news__label  c-label is-white">カテゴリ
-                    </div>
-                    <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-                    </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-```
 */
 .c-news {
   @include breakpoint(small only) {
@@ -112,75 +77,12 @@ category: News
 name: お知らせ_1カラム_フロントページ
 category: News
 ---
-```types.html
-<div class="c-news  is-onecolumn">
-            <div class="row">
-              <div class="large-10 is-push-lg-1 small-12">
-                <h2 class="c-news__title c-heading is-xlg"><span>NEWS</span><small>お知らせ</small></h2>
-                <div class="c-news__content"><a class="c-news__block" href="#">
-                    <div class="c-news__date">2018.10.10
-                    </div>
-                    <div class="c-news__label  c-label is-white">カテゴリ
-                    </div>
-                    <div class="c-news__inner">
-                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-                      </div>
-                    </div></a><a class="c-news__block" href="#">
-                    <div class="c-news__date">2018.10.10
-                    </div>
-                    <div class="c-news__label  c-label is-white">カテゴリ
-                    </div>
-                    <div class="c-news__inner">
-                      <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-                      </div>
-                    </div></a>
-                </div>
-                <div class="c-news__button"><a class="c-button is-sm" href="#">一覧を見る</a>
-                </div>
-              </div>
-            </div>
-          </div>
-```
 */
 /*
 ---
 name: お知らせ_1カラム_アーカイブ01
 category: News
 ---
-```types.html
-<div class="c-news  is-onecolumn">
-  <div class="row">
-    <div class="large-10 is-push-lg-1 small-12">
-      <h2 class="c-news__title c-heading is-md is-line-under is-color-primary">すべて</h2>
-      <div class="c-news__content">
-        <a class="c-news__block" href="/archive-onecolumn/page/">
-            <div class="c-news__date">2018.10.10
-            </div>
-            <div class="c-news__label  c-label is-white">カテゴリ
-            </div>
-            <div class="c-news__inner">
-              <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-              </div>
-              <div class="c-news__excerpt">本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-              </div>
-            </div></a><a class="c-news__block" href="/archive-onecolumn/page/">
-            <div class="c-news__date">2018.10.10
-            </div>
-            <div class="c-news__label  c-label is-white">カテゴリ
-            </div>
-            <div class="c-news__inner">
-              <div class="c-news__text">お知らせの投稿タイトルがここに入ります。
-              </div>
-              <div class="c-news__excerpt">本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-              </div>
-            </div>
-            </a>
-        </div>
-     </div>
-  </div>
-</div>
-
-```
 */
 .c-news {
   &.is-onecolumn {

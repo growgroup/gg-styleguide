@@ -3,38 +3,12 @@
 name: アクセシビリティ
 category: Other
 ---
-```types.html
-<div class="c-fontsize-changer">
-  <div class="c-fontsize-changer__text">文字サイズ
-  </div>
-  <div class="c-fontsize-changer__btns">
-    <div class="c-fontsize-changer__btn" id="small"><span>小</span>
-    </div>
-    <div class="c-fontsize-changer__btn  is-active" id="medium"><span>中</span>
-    </div>
-    <div class="c-fontsize-changer__btn" id="large"><span>大</span>
-    </div>
-  </div>
-</div>
-```
 */
 /*
 ---
 name: アクセシビリティ_省略型
 category: Other
 ---
-```types.html
-<div class="c-fontsize-changer  is-two-btn">
-  <div class="c-fontsize-changer__text">文字サイズ
-  </div>
-  <div class="c-fontsize-changer__btns">
-    <div class="c-fontsize-changer__btn  is-active" id="medium"><span>標準</span>
-    </div>
-    <div class="c-fontsize-changer__btn" id="large"><span>拡大</span>
-    </div>
-  </div>
-</div>
-```
 */
 
 .c-fontsize-changer {

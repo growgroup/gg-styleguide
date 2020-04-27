@@ -1,15 +1,4 @@
 // パンくずナビゲーション
-//
-// markup:
-// <nav class="c-breadcrumb">
-//     <ul>
-//         <li><i class="fa fa-home"></i> <a href="#">ホーム</a></li>
-//         <li><a href="#">下層ページ1</a></li>
-//         <li>下層ページ2</li>
-//         <li>下層ページ3</li>
-//     </ul>
-// </nav>
-//
 // Styleguide 2.3.0
 .c-breadcrumb {
   padding: rem-calc(12) 0;

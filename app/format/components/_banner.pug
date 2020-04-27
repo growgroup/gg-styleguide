@@ -2,14 +2,14 @@
 // -> 通常タブ
 div.u-mbs.is-bottom
   .row
-    .large-5.is-push-lg-1.small-12
+    .large-6.small-12
       +c.banners
         +a("#").c-banners__block
           span.c-banners__image: +img("img-banners-01.jpg")
           span.c-banners__text
             span 会社案内
             small COMPANY
-    .large-5.small-12
+    .large-6.small-12
       +c.banners
         +a("#").c-banners__block
           span.c-banners__image: +img("img-banners-01.jpg")
@@ -17,19 +17,71 @@ div.u-mbs.is-bottom
             span 会社案内
             small COMPANY
 div.u-mbs.is-bottom
+  +c.banners.is-special
+    .row
+      .large-6.small-12
+          +a("#").c-banners__block
+            span.c-banners__image: +img("img-banners-01.jpg")
+            span.c-banners__text
+              span
+                span ABOUT US
+                small 私たちについて
+            span.c-banners__button
+              span READ MORE
+      .large-6.small-12
+        +c.banners.is-special
+          +a("#").c-banners__block
+            span.c-banners__image: +img("img-banners-01.jpg")
+            span.c-banners__text
+              span
+                span COMPANY
+                small 会社案内
+            span.c-banners__button
+              span READ MORE
+div.u-mbs.is-bottom
   +c.banners.is-lg
+    .row
+      .large-6.small-12
+        +a("#").c-banners__block
+          span.c-banners__image: +img("img-banners-01.jpg")
+          +e.content
+            span.c-banners__text
+              span
+                span.is-title COMPANY
+                small 会社案内
+            +e.button MORE
+
+      .large-6.small-12
+        +c.banners
+          +a("#").c-banners__block
+            span.c-banners__image: +img("img-banners-01.jpg")
+            +e.content
+              span.c-banners__text
+                span
+                  span.is-title COMPANY
+                  small 会社案内
+              +e.button MORE
+div.u-mbs.is-bottom
+  +c.banners.is-columns
     +a("#").c-banners__block
       span.c-banners__image: +img("img-banners-lg-01.jpg")
       span.c-banners__text
         span COMPANY
         small 会社案内
+      span.c-banners__button
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
     +a("#").c-banners__block
       span.c-banners__image: +img("img-banners-lg-01.jpg")
       span.c-banners__text
         span COMPANY
         small 会社案内
+      span.c-banners__button
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
     +a("#").c-banners__block
       span.c-banners__image: +img("img-banners-lg-01.jpg")
       span.c-banners__text
         span COMPANY
         small 会社案内
+      span
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+

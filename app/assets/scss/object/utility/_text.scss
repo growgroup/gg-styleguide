@@ -4,10 +4,6 @@
 
 // テキスト - 通常
 //
-// markup:
-// <p>通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。通常テキストです。</p>
-// <span class="text-normal">通常テキスト</span>
-//
 // Styleguide 1.2.1
 
 p,
@@ -16,10 +12,6 @@ p,
 }
 
 // テキスト - 縮小
-//
-// markup:
-// <span class="text-small">テキスト - 縮小</span>
-// <small>テキスト - 縮小</small>
 //
 // Styleguide 1.2.2
 
@@ -30,10 +22,6 @@ small,
 
 // テキスト - 強調
 //
-// markup:
-// <span class="text-strong">テキスト - 強調</span>
-// <strong>テキスト - 強調</strong>
-//
 // Styleguide 1.2.3
 
 strong,
@@ -43,10 +31,6 @@ strong,
 
 // テキスト - 打ち消し線
 //
-// markup:
-// <span class="text-del">テキスト - 打ち消し線</span>
-// <del>テキスト - 打ち消し線</del>
-//
 // Styleguide 1.2.4
 
 del,
@@ -55,13 +39,6 @@ del,
 }
 
 // テキスト - リンク
-//
-// markup:
-// <span class="u-text-link">テキスト - リンク</span>
-// <p><a href="#">テキスト - リンク : 通常</a></p>
-// <p><a href="#" class="u-text-link is-hover">テキスト - リンク : ホバー</a></p>
-// <p><a href="#" class="u-text-link is-active">テキスト - リンク : アクティブ</a></p>
-//
 // Styleguide 1.2.5
 
 a,

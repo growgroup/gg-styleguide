@@ -3,25 +3,6 @@
 name: オファー_通常
 category: Layout
 ---
-```types.html
-<div class="l-offer">
-<div class="l-container">
-<div class="l-offer__inner">
-<h2 class="c-heading is-md is-bottom">オファータイトルオファータイトル</h2>
-<div class="l-offer__text">オファーテキストオファーテキストオファーテキストへのお問い合わせは下記からお願いします。</div>
-<div class="l-offer__items">
-<div class="row">
-<div class="large-5 is-push-lg-1 small-12"><a class="l-offer__button is-tel" href="tel:00-000-0000"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000</a>
-<div class="l-offer__subtext">お電話での受付時間は平日 9:00〜18:00 （土日祝除く）</div>
-</div>
-<div class="large-5 small-12"><a class="l-offer__button" href="#">メールでのお問い合わせはこちら</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-```
 */
 .l-offer {
   background-image: url("../images/bg-offer.jpg");

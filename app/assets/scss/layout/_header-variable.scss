@@ -3,30 +3,6 @@
 name: ヘッダー_可変
 category: Layout
 ---
-```types.html
-<header class="l-header-variable">
-  <div class="l-header-variable__content">
-    <h1 class="l-header-variable__heading"><a href="/"><img src="/dist/assets/images/logo-simple.png" alt="株式会社サンプル"></a>
-    </h1>
-    <div class="l-header-variable__text">株式会社●● 採用サイト</div>
-    <nav class="l-header-variable__nav">
-      <div class="l-header-variable__inner"><a class="l-header-variable__tel" href="tel: 00-0000-0000"><span>00-0000-0000</span></a></div>
-      <ul>
-        <li><a href="#"><span>MENU1</span><small>メニュー1</small></a>
-        </li>
-        <li><a href="#"><span>MENU2</span><small>メニュー2</small></a>
-        </li>
-        <li><a href="#"><span>MENU3</span><small>メニュー3</small></a>
-        </li>
-        <li><a href="#"><span>MENU4</span><small>メニュー4</small></a>
-        </li>
-        <li><a href="#"><span>MENU5</span><small>メニュー5</small></a>
-        </li>
-      </ul>
-    </nav><a class="l-header-variable__button c-button is-sm" href="/contact/"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>CONTACT</span><small>お問い合わせ</small></a>
-  </div>
-</header>
-```
 */
 .l-header-variable {
   background-color: $color-white;

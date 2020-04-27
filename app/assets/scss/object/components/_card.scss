@@ -3,25 +3,6 @@
 name: カード_通常
 category: Components
 ---
-```types.html
-<div class="c-card">
-  <div class="row">
-        <div class="large-4 small-12">
-            <div class="c-card__block">
-              <div class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt="">
-              </div>
-              <div class="c-card__content">
-                <div class="c-card__title">コンセプトタイトル
-                </div>
-                <div class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-```
 */
 .c-card {
   &__block {
@@ -74,27 +55,6 @@ category: Components
 name: カード_数字付き
 category: Components
 ---
-```types.html
-<div class="c-card is-number-left">
-  <div class="row">
-        <div class="large-4 small-12">
-            <div class="c-card__block">
-                  <div class="c-card__number"><small>POINT</small><span>01</span>
-                  </div>
-                  <div class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt="">
-                  </div>
-                  <div class="c-card__content">
-                    <div class="c-card__title">コンセプトタイトル
-                    </div>
-                    <div class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    </div>
-                  </div>
-                </div>
-          </div>
-        </div>
-      </div>
-  </div>
-```
 */
 .c-card {
   &.is-number-left {
@@ -133,32 +93,12 @@ category: Components
 name: カード_リンクあり
 category: Components
 ---
-```types.html
-<div class="c-card is-link">
-  <div class="row">
-        <div class="large-4 small-12">
-            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
-          </div>
-        </div>
-      </div>
-  </div>
-```
 */
 /*
 ---
 name: カード_フィルタ付き
 category: Components
 ---
-```types.html
-<div class="c-card is-overlay">
-  <div class="row">
-        <div class="large-4 small-12">
-            <a class="c-card__block" href="#"><span class="c-card__image"><img src="/dist/assets/images/img-card-01.jpg" alt=""></span><span class="c-card__content"><span class="c-card__title">コンセプトタイトル</span><span class="c-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span></span></a>
-          </div>
-        </div>
-      </div>
-  </div>
-```
 */
 .c-card {
   &.is-link {

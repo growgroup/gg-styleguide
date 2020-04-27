@@ -3,80 +3,12 @@
 name: ヒーローブロック_枡目型
 category: SpecialComponents
 ---
-```types.html
-<div class="c-hero-block-square">
-  <div class="c-hero-block-square__block">
-    <div class="c-hero-block-square__image"><img src="/dist/assets/images/img-hero-block-01.jpg" alt="">
-    </div>
-    <div class="l-container">
-      <div class="c-hero-block-square__content">
-        <div class="c-hero-block-square__inner">
-          <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="c-hero-block-square__block">
-    <div class="c-hero-block-square__image"><img src="/dist/assets/images/img-hero-block-01.jpg" alt="">
-    </div>
-    <div class="l-container">
-      <div class="c-hero-block-square__content">
-        <div class="c-hero-block-square__inner">
-          <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 /*
 ---
 name: ヒーローブロック_枡目型_数字付き
 category: SpecialComponents
 ---
-```types.html
-<div class="c-hero-block-square  is-number">
-  <div class="c-hero-block-square__block">
-    <div class="c-hero-block-square__image"><img src="/dist/assets/images/img-hero-block-01.jpg" alt="">
-    </div>
-    <div class="l-container">
-      <div class="c-hero-block-square__content">
-        <div class="c-hero-block-square__inner">
-          <div class="c-hero-block-square__heading"><span>01</span>
-            <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
-          </div>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="c-hero-block-square__block">
-    <div class="c-hero-block-square__image"><img src="/dist/assets/images/img-hero-block-01.jpg" alt="">
-    </div>
-    <div class="l-container">
-      <div class="c-hero-block-square__content">
-        <div class="c-hero-block-square__inner">
-          <div class="c-hero-block-square__heading"><span>02</span>
-            <h3 class="c-heading is-sm is-bottom">タイトルがここに入ります。</h3>
-          </div>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          <div class="c-hero-block-square__button"><a class="c-button is-sm" href="#">ボタンテキスト</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 .c-hero-block-square {
   &__block {

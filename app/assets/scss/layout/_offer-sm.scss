@@ -3,20 +3,6 @@
 name: オファー_小
 category: Layout
 ---
-```types.html
-<div class="l-offer-sm">
-                <h2 class="c-heading is-sm is-bottom">いつでもお気軽にご相談ください。</h2>
-                <div class="l-offer-sm__items">
-                  <div class="l-offer-sm__block">
-                    <div class="l-offer-sm__subtitle is-border-bottom">お電話でのお問い合わせ</div>
-                    <div class="l-offer-sm__tel"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000<small>診察受付 / 8:30～12:00   月〜土（日祝を除く）</small></div>
-                  </div>
-                  <div class="l-offer-sm__block">
-                    <div class="l-offer__subtitle">メールでのお問い合わせ</div><a class="c-button is-lg is-white" href="#">お問い合わせ</a>
-                  </div>
-                </div>
-              </div>
-```
 */
 .l-offer-sm {
   text-align: center;

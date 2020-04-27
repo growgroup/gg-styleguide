@@ -3,24 +3,6 @@
 name: メインビジュアル_カルーセル_レイヤー
 category: Components
 ---
-```types.html
-<div class="c-main-visual-layer">
-  <div class="c-main-visual-layer__carousel owl-carousel">
-    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
-    </div>
-    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
-    </div>
-    <div class="c-main-visual-layer__image" style="background-image: url(/dist/assets/images/img-main-visual-layer-01.jpg)">
-    </div>
-  </div>
-  <div class="c-main-visual-layer__inner">
-    <div class="c-main-visual-layer__text"><img src="/dist/assets/images/img-main-visual-layer-text.png" alt="キャッチコピーが入ります">
-    </div>
-    <div class="c-main-visual-layer__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-    </div>
-  </div>
-</div>
-```
 */
 
 .c-main-visual-layer {

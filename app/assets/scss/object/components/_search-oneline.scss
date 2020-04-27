@@ -3,76 +3,12 @@
 name: 検索_1行型
 category: Other
 ---
-```types.html
-<div class="c-search-oneline">
-  <div class="l-container">
-    <div class="c-search-oneline__inner">
-      <div class="c-search-oneline__title">お近くの<br class="u-hidden-sm">店舗を探す
-      </div>
-      <div class="c-search-oneline__content">
-        <form name="" action="">
-          <div class="c-search-oneline__input">
-            <div class="c-search-oneline__select  u-visible-lg">
-              <select name="">
-                <option value="">都道府県から探す</option>
-                <option value="">岐阜県</option>
-                <option value="">岐阜県</option>
-              </select>
-            </div>
-            <input type="text" name="" placeholder="駅名や店舗名などをご入力ください。">
-            <div class="c-search-oneline__submit">
-              <input type="submit" value="">
-            </div>
-          </div><a class="js-anchor c-search-oneline__select u-hidden-lg" href="#">都道府県から探す</a><a class="c-search-oneline__pos u-hidden-lg" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
-        </form><a class="c-search-oneline__pos u-visible-lg" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>現在地から探す</a>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 /*
 ---
 name: 検索_1行型_小
 category: Other
 ---
-```types.html
-<div class="c-search-oneline  is-sm">
-  <div class="l-container">
-    <div class="c-search-oneline__inner">
-      <div class="c-search-oneline__title"><span>SEARCH</span><small>商品を探す</small>
-      </div>
-      <div class="c-search-oneline__content">
-        <form name="" action="">
-          <div class="c-search-oneline__select  u-hidden-lg">
-            <select name="">
-              <option value="">すべてのジャンル</option>
-              <option value="">ジャンル１</option>
-              <option value="">ジャンル２</option>
-            </select>
-          </div>
-          <div class="c-search-oneline__input">
-            <div class="c-search-oneline__select  u-visible-lg">
-              <select name="">
-                <option value="">すべてのジャンル</option>
-                <option value="">ジャンル１</option>
-                <option value="">ジャンル２</option>
-              </select>
-            </div>
-            <input type="text" name="" placeholder="商品コードや商品名を入力下さい。">
-            <div class="c-search-oneline__submit  u-visible-lg">
-              <input type="submit" value="検 索">
-            </div>
-            <div class="c-search-oneline__submit  u-hidden-lg">
-              <input type="submit" value="">
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 
 .c-search-oneline {

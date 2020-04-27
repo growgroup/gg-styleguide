@@ -3,41 +3,6 @@
 name: 複合検索_バナー型
 category: Other
 ---
-```types.html
-<div class="c-search-composite">
-  <div class="c-search-composite__inner"><a class="c-search-composite__block" href="#">
-      <div class="c-search-composite__icon" style="background-image: url(/dist/assets/images/icon-area.png)">
-      </div>
-      <div class="c-search-composite__title">エリア検索
-      </div></a><a class="c-search-composite__block" href="#">
-      <div class="c-search-composite__icon" style="background-image: url(/dist/assets/images/icon-route.png)">
-      </div>
-      <div class="c-search-composite__title">路線検索
-      </div></a><a class="c-search-composite__block" href="#">
-      <div class="c-search-composite__icon" style="background-image: url(/dist/assets/images/icon-terms.png)">
-      </div>
-      <div class="c-search-composite__title">条件・こだわり検索
-      </div></a>
-    <div class="c-search-composite__block  is-triangle-hidden">
-      <div class="c-search-composite__buttons"><a class="c-search-composite__button" href="#">カテゴリー名</a><a class="c-search-composite__button" href="#">カテゴリー名</a><a class="c-search-composite__button" href="#">カテゴリー名</a><a class="c-search-composite__button" href="#">カテゴリー名</a><a class="c-search-composite__button" href="#">カテゴリー名</a><a class="c-search-composite__button is-more-button" href="#">MORE</a>
-      </div>
-      <div class="c-search-composite__title">特徴から探す
-      </div>
-    </div>
-  </div>
-  <div class="c-search-composite__input-box">
-    <div class="c-search-composite__input-inner">
-      <div class="c-search-composite__input-title">キーワード検索
-      </div>
-      <div class="c-search-composite__input">
-        <input type="text" name="" placeholder="物件名・駅・市区などのキーワードを入力ください。">
-        <button type="button"><img src="/dist/assets/images/icon-search.png" alt="">
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 
 .c-search-composite {

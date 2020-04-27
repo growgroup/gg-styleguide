@@ -3,114 +3,24 @@
 name: メインビジュアル_通常
 category: Components
 ---
-```types.html
-<div class="c-main-visual">
-          <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-          </div>
-          <div class="c-main-visual__inner">
-            <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります">
-            </div>
-            <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-            </div>
-          </div>
-        </div>
-```
 */
 /*
 ---
 name: メインビジュアル_スライダー
 category: Components
 ---
-```types.html
-<div class="c-main-visual">
-  <div class="c-main-visual__slider  owl-carousel">
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-    </div>
-  </div>
-  <div class="c-main-visual__inner">
-    <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-    </div>
-    <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-    </div>
-  </div>
-</div>
-```
 */
 /*
 ---
 name: メインビジュアル_カルーセル
 category: Components
 ---
-```types.html
-<div class="c-main-visual">
-  <div class="c-main-visual__carousel  owl-carousel">
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 /*
 ---
 name: メインビジュアル_カルーセル_ノーマル
 category: Components
 ---
-```types.html
-<div class="c-main-visual">
-  <div class="c-main-visual__carousel is-normal is-dot-lg owl-carousel">
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-    <div class="c-main-visual__image" style="background-image: url(/dist/assets/images/img-main-visual-01.jpg)">
-      <div class="c-main-visual__inner">
-        <div class="c-main-visual__text"><img src="/dist/assets/images/img-main-visual-text.png" alt="キャッチコピーが入ります"/>
-        </div>
-        <div class="c-main-visual__button"><a class="c-button is-lg" href="/aboutus/">詳細はこちら</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
 */
 
 .c-main-visual {
