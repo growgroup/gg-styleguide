@@ -88,6 +88,15 @@ category: Banners
 .c-banners{
   &.is-special{
     & .c-banners__block{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      color: $color-white;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
       justify-content: stretch;
       height: rem-calc(180);
       @include breakpoint(small only) {
@@ -95,6 +104,33 @@ category: Banners
       }
       &::after{
         display: none;
+      }
+      &:hover {
+        opacity: 1;
+        .c-banners__image {
+          img {
+            transform: translate(-50%, -50%) scale(1.15);
+          }
+        }
+      }
+    }
+    .c-banners__image {
+      display: block;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: inherit;
+        transition: all .25s ease;
+        @include breakpoint(small only) {
+          max-width: 100%;
+          max-height: inherit;
+        }
       }
     }
     .c-banners__text{
@@ -171,7 +207,7 @@ category: Banners
 }
 /*
 ---
-name: バナー_3カラム
+name: バナー_lg
 category: Banners
 ---
 */
@@ -179,6 +215,15 @@ category: Banners
   //-> 大
   &.is-lg {
     .c-banners__block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      color: $color-white;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
       height: rem-calc(332);
       @include breakpoint(small only) {
         height: 40vw;
@@ -186,6 +231,14 @@ category: Banners
 
       &:after {
         display: none;
+      }
+      &:hover {
+        opacity: 1;
+        .c-banners__image {
+          img {
+            transform: translate(-50%, -50%) scale(1.15);
+          }
+        }
       }
       &:hover{
         .c-banners__button{
@@ -196,7 +249,25 @@ category: Banners
         }
       }
     }
-
+    .c-banners__image {
+      display: block;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: inherit;
+        transition: all .25s ease;
+        @include breakpoint(small only) {
+          max-width: 100%;
+          max-height: inherit;
+        }
+      }
+    }
     .c-banners__text {
       span {
         @include webfont();
@@ -264,6 +335,14 @@ category: Banners
       display: block;
     }
     .c-banners__block{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      color: $color-white;
+      text-align: center;
+      overflow: hidden;
       width: calc(100% / 3 - 1px);
       height: rem-calc(260);
       @include breakpoint(small only) {
@@ -271,17 +350,47 @@ category: Banners
         height: rem-calc(200);
       }
       &::after{
+        content: "\f105";
+        font-family: "FontAwesome";
         position: absolute;
         bottom: 0;
         right: 0;
         width: 30px;
         height: 30px;
+        font-weight: 400;
         background: $color-gray-dark;
         color: $color-white;
+        z-index: 99;
         font-size: rem-calc(18);
       }
+      &:hover {
+        opacity: 1;
+        .c-banners__image {
+          img {
+            transform: translate(-50%, -50%) scale(1.15);
+          }
+        }
+      }
     }
-    .c-banners__image{}
+    .c-banners__image {
+      display: block;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: inherit;
+        transition: all .25s ease;
+        @include breakpoint(small only) {
+          max-width: 100%;
+          max-height: inherit;
+        }
+      }
+    }
     .c-banners__text{
       span{
         font-size: 36px;
@@ -296,6 +405,5 @@ category: Banners
         }
       }
     }
-    .c-banners__button{}
   }
 }

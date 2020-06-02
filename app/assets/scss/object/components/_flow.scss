@@ -1,0 +1,88 @@
+.c-flow{
+    &__item{
+        max-width: 196px;
+        height: 180px;
+        background: $color-secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &.is-icon-hidden{
+            &::after{
+                display: none !important;
+            }
+        }
+        @include breakpoint(1150 down) {
+            width: 150px;
+            height: 150px;
+        }
+        @include breakpoint(large down) {
+            width: 125px;
+            height: 125px;
+        }
+        @include breakpoint(small only) {
+            width: 100%;
+            margin: 0 auto rem-calc(20);
+        }
+        &::after{
+            content: "\f105";
+            font-family: FontAwesome;
+            font-weight: normal;
+            position: absolute;
+            top: 0;
+            right: -30px;
+            bottom: 0;
+            margin: auto;
+            width: rem-calc(20);
+            height: rem-calc(20);
+            color: $color-primary;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            @include breakpoint(1100 down) {
+                display: none;
+            }
+            @include breakpoint(small only) {
+            width: 45%;
+            margin: 0 auto;
+            }
+        }   
+        &-inner{}
+        &-number{
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            text-align: center;
+            small{
+                font-size: rem-calc(14);
+                color: $color-primary;
+                line-height: 24/14*1;
+                font-weight: bold;
+                display: block;
+                @include breakpoint(large down) {
+                    font-size: rem-calc(14)*.8;
+                }
+            }
+            span{
+                font-size: rem-calc(32);
+                line-height: 24/32*1;
+                color: $color-primary;
+                @include breakpoint(large down) {
+                    font-size: rem-calc(32)*.8;
+                }
+            }
+        }
+        &-title{
+            margin-top: rem-calc(16);
+            font-size: rem-calc(18);
+            letter-spacing: 0.05em;
+            line-height: 28/18*1;
+            font-weight: bold;
+            text-align: center;
+            @include breakpoint(large down) {
+                font-size: rem-calc(14);
+            }
+        }
+    }
+}
