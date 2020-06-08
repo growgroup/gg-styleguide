@@ -169,7 +169,7 @@ class App {
               autoWidth: false,
               autoHeight: false,
               center: true,
-              navText: ['<img src="..//assets/images/icon-slider-prev.svg" />','<img src="../assets/images/icon-slider-next.svg" />'],
+              navText: ['<img src="../assets/images/icon-slider-prev.svg" />','<img src="../assets/images/icon-slider-next.svg" />'],
             });
           });
           //->カード_カルーセル
