@@ -48,30 +48,28 @@ html(lang="ja")
 
     //- ヘッダーに組み込むスクリプト
     block head_script
-      | <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-      | <script>
-      | window.WebFontConfig = {
-      |   // 以下にフォントを指定する
-      |   google: {
-      |     families: [
-      |       'Noto+Sans+JP:400,700',
-      |       'Roboto:400,700'
-      |     ]
-      |   },
-      |   active: function() {
-      |     sessionStorage.fonts = true;
-      |   }
-      | };
-      |
-      | (function() {
-      |   var wf = document.createElement('script');
-      |   wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-      |   wf.type = 'text/javascript';
-      |   wf.async = 'true';
-      |   var s = document.getElementsByTagName('script')[0];
-      |   s.parentNode.insertBefore(wf, s);
-      | })();
-      | </script>
+      script.
+        window.WebFontConfig = {
+          // 以下にフォントを指定する
+          google: {
+          families: [
+          'Noto+Sans+JP:400,700',
+          'Roboto:400,700'
+          ]
+        },
+          active: function() {
+          sessionStorage.fonts = true;
+        }
+        };
+
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
 
   body(class!=current.bodyClass)
     //- スマホメニュー
