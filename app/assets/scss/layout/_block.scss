@@ -1,0 +1,42 @@
+.l-block {
+  &__margin-normal {
+    margin-top: rem-calc(56);
+    margin-bottom: rem-calc(56);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(56)/2;
+      margin-bottom: rem-calc(56)/2;
+    }
+  }
+
+  &__margin-large {
+    margin-top: rem-calc(64);
+    margin-bottom: rem-calc(64);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(64)/2;
+      margin-bottom: rem-calc(64)/2;
+    }
+  }
+
+  &__margin-medium {
+    margin-top: rem-calc(48);
+    margin-bottom: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(24)/2;
+      margin-bottom: rem-calc(24)/2;
+    }
+  }
+
+  &__margin-small {
+    margin-top: rem-calc(24);
+    margin-bottom: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(24)/2;
+      margin-bottom: rem-calc(24)/2;
+    }
+  }
+
+  &__margin-none {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
