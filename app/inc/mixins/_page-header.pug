@@ -1,7 +1,7 @@
 //- ページヘッダー
 mixin l_page_header(image,title,subtitle)
   .l-page-header
-    .l-page-header__image: +img(image)
+    .l-page-header__image: +bgimg(image).l-page-header__bgimg
     .l-page-header__inner
       h1.l-page-header__title=title
       .l-page-header__subtitle=subtitle
