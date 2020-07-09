@@ -12,12 +12,8 @@ category: Layout
 */
 .l-page-header {
   width: 100%;
-  height: rem-calc(330);
   position: relative;
   overflow: hidden;
-  @include breakpoint(small only) {
-    height: 44vw;
-  }
   &:after {
     content: "";
     display: block;
@@ -29,6 +25,7 @@ category: Layout
     left: 0;
   }
   &__image {
+    height: rem-calc(330);
     img {
       position: absolute;
       top: 50%;
@@ -39,6 +36,13 @@ category: Layout
       min-height: rem-calc(330);
       min-width: rem-calc(1400);
     }
+  }
+  &__bgimg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
   &__inner {
     text-align: center;
