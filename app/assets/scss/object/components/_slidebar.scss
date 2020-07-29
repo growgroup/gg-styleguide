@@ -20,6 +20,10 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 @include breakpoint(medium down) {
   // トリガーとなるボタン
   .c-slidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     position: fixed;
     right: 0px;
     top: 0px;
@@ -27,12 +31,12 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     font-size: rem-calc(12);
     z-index: 9999;
     text-decoration: none;
-    padding: rem-calc(10) rem-calc(4) rem-calc(4);
     background-color: $color-primary;
     line-height: 1;
     color: $color-white;
     width: rem-calc(55);
     height: rem-calc(55);
+    padding-top: rem-calc(6);
     &:active,
     &:hover {
       opacity: 1!important;
@@ -41,16 +45,15 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     &__line {
       > span {
         display: block;
-        height: 4px;
+        width: rem-calc(26);
+        height: rem-calc(2);
         background: $color-white;
-        width: 100%;
-        max-width: 60%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 5px;
         transition: all ease .2s;
         &:last-child {
-          margin-bottom: 3px;
+          margin-bottom: 0;
         }
       }
     }
@@ -60,6 +63,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       font-size: 9px;
       letter-spacing: 0.4px;
       @include webfont();
+      margin-top: rem-calc(6);
+
       &.is-close {
         display: none;
       }
@@ -69,6 +74,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
   // メニュー自体
   .c-slidebar-menu {
     height: calc(100vh - 55px)!important;
+    padding: 0 rem-calc(16) rem-calc(104);
     position: fixed;
     background-color: $color-primary;
     z-index: 9980;
@@ -81,13 +87,11 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     overflow-x: scroll;
     top: 0;
     -webkit-overflow-scrolling: touch;
-    padding-left: rem-calc(24);
     &.is-active {
       height: calc(100% - 65px)!important;
     }
     // 上から下へ
     &.is-top-to-bottom {
-      -webkit-transform: translateX(0%);
       -webkit-transform: translateY(-100%);
       transform: translate3d(0px, -100%, 0px);
       height: auto;
@@ -147,6 +151,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     }
 
     ul {
+      width: calc(100% + 32px);
+      margin-left: -16px;
       background:$color-primary;
       li {
         border-bottom: 1px solid $border-base-color;
@@ -154,7 +160,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         span {
           font-size: rem-calc(15);
           display: block;
-          padding: rem-calc(14) 0;
+          padding: rem-calc(14) rem-calc(16);
           text-decoration: none;
           color: $color-white;
           font-weight: 400;
@@ -164,7 +170,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
     &__button {
       margin-top: rem-calc(32);
-      max-width: calc(100% - 24px);
+      max-width: 100%;
       background-color: $color-white;
       color: $color-primary;
       font-size: rem-calc(16);
@@ -183,7 +189,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     }
 
     &__sns-btns {
-      max-width: calc(100% - 24px);
+      max-width: 100%;
       margin-top: rem-calc(40);
       display: flex;
       justify-content: center;
@@ -229,14 +235,13 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
   .is-slidebar-active {
     cursor: pointer;
     .c-slidebar-button {
-      padding-top: rem-calc(6);
       &__line {
         > span {
           &:nth-child(1){
-            transform: rotate(-45deg) translateY(11px) translateX(-9px);
+            transform: rotate(-45deg) translateY(4px) translateX(-4px);
           }
           &:nth-child(2){
-            transform: rotate(45deg) translateY(3px) translateX(5px);
+            transform: rotate(45deg) translateY(-1px) translateX(-1px);
           }
           &:nth-child(3){
             display: none;
@@ -246,7 +251,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       &__text {
         &.is-close {
           display: block;
-          margin-top: rem-calc(20);
+          margin-top: rem-calc(8);
         }
         &.is-open {
           display: none;

@@ -7,6 +7,13 @@
   }
 }
 
+// タブレットから隠す
+@include breakpoint(medium down) {
+  .u-hidden-md {
+    display: none !important;
+  }
+}
+
 // デスクトップだけ隠す
 @include breakpoint(medium up) {
   .u-hidden-lg {
@@ -23,6 +30,7 @@
   display: none !important;
 }
 
+// スマートフォンだけ表示する
 @include breakpoint(small only) {
   .u-visible-sm {
     display: block !important;
@@ -32,7 +40,17 @@
   }
 }
 
-// デスクトップだけ隠す
+// タブレットから表示する
+@include breakpoint(small only) {
+  .u-visible-md {
+    display: block !important;
+    &.is-inlineblock {
+      display: inline-block !important;
+    }
+  }
+}
+
+// デスクトップだけ表示する
 @include breakpoint(medium up) {
   .u-visible-lg {
     display: block !important;

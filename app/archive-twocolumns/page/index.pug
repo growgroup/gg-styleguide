@@ -1,14 +1,14 @@
 extends /inc/foundation/_base-twocolumn.pug
 block append config
   - current.id = "post-twocolumns" // ページのID
-  - current.title = "ページ_2カラム" // タイトル
-  - current.description = "これはPAGE 2COLUMNの説明文です" // 説明文
+  - current.title = "ポスト_2カラム" // タイトル
+  - current.description = "これはポスト_2カラムの説明文です" // 説明文
   - current.bodyClass = "post-twocolumns" // body に付与するクラス
   - current.depth = 3 // ページの階層
 
 block page_header
   +l_page_header("img-page-header-format.jpg","POST 2COLUMNS","ポスト_2カラム")
-  +c_breadcrumb("ポスト_2カラム","archive-twocolumns")
+  +c_breadcrumb("アーカイブ_2カラム","archive-twocolumns")
 
 block body
   +c.news-header
