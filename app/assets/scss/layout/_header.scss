@@ -17,21 +17,25 @@ category: Layout
     padding: rem-calc(12) 0;
     height: rem-calc(55);
   }
+
   &__inner {
     display: flex;
     align-items: center;
   }
+
   &__heading {
     margin: 0;
     width: rem-calc(418)/2;
     @include breakpoint(medium down) {
       width: rem-calc(418)/3;
     }
+
     a,
     img {
       display: block;
     }
   }
+
   &__content {
     display: flex;
     width: 100%;
@@ -41,11 +45,14 @@ category: Layout
       display: none;
     }
   }
+
   &__submenu {
     display: flex;
     align-items: center;
+
     li {
       margin-left: 12px;
+
       a {
         display: block;
         width: rem-calc(142);
@@ -58,6 +65,7 @@ category: Layout
         font-weight: 400;
         border-radius: 1000px;
         padding: 3px 8px;
+
         i {
           margin-right: 5px;
           color: $color-primary;
@@ -65,6 +73,7 @@ category: Layout
       }
     }
   }
+
   &__tel {
     display: block;
     text-decoration: none;
@@ -83,10 +92,12 @@ category: Layout
       letter-spacing: 0.02em;
       display: block;
     }
+
     //アイコン
     i {
       margin-right: 6px;
     }
+
     //受付時間
     small {
       font-size: 12px;
@@ -94,13 +105,16 @@ category: Layout
       display: block;
     }
   }
+
   &__button {
     //*矢印削除
-    max-width: rem-calc(196)!important;
+    max-width: rem-calc(196) !important;
     margin-left: 24px;
+
     &:after {
       display: none;
     }
+
     //*アイコン
     i {
       font-size: 16px;
