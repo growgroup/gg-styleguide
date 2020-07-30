@@ -124,6 +124,16 @@
   table {
     @extend .c-table;
   }
+
+  ul {
+    @extend .c-list;
+    @extend .c-list.is-disc;
+  }
+
+  ol {
+    @extend .c-list;
+    @extend .c-list.is-outline;
+  }
 }
 
 .l-post-content.is-twocolumns {

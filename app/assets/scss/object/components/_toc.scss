@@ -27,8 +27,12 @@ category: PostContent
     }
   }
   .toc_list li {
+    &:before {
+      display: none;
+    }
     ul {
       padding-left: 24px;
+      margin-left: 0;
     }
     a {
       display: block;
