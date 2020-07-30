@@ -6,29 +6,16 @@ category: Heading
 */
 
 .c-heading {
-  margin-top: 0.5em;
+  margin-top: 0;
   margin-bottom: 0.5em;
   font-weight: 700;
   line-height: 1.5;
+
   small {
     font-size: 0.65em;
   }
 }
 
-/*
----
-name: 見出し_サイズ別
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md">フォントサイズ28PX</div>
-<div class="c-heading is-sm">フォントサイズ24PX</div>
-<div class="c-heading is-xs">フォントサイズ20PX</div>
-<div class="c-heading is-xxs">フォントサイズ18PX</div>
-```
-*/
 .c-heading.is-xlg {
   text-align: center;
   color: $color-primary;
@@ -36,6 +23,7 @@ category: Heading
   @include breakpoint(small only) {
 
   }
+
   span {
     display: block;
     @include webfont-bold();
@@ -45,6 +33,7 @@ category: Heading
       font-size: rem-calc(42)*0.8;
     }
   }
+
   small {
     display: block;
     font-weight: 700;
@@ -55,6 +44,7 @@ category: Heading
     }
   }
 }
+
 .c-heading.is-lg {
   text-align: center;
   color: $color-primary;
@@ -65,6 +55,7 @@ category: Heading
     font-size: rem-calc(32)*0.8;
     margin-bottom: rem-calc(24)/2;
   }
+
   small {
     display: block;
     @include webfont-bold();
@@ -76,6 +67,7 @@ category: Heading
     }
   }
 }
+
 .c-heading.is-md {
   font-size: rem-calc(28);
   text-align: center;
@@ -84,16 +76,6 @@ category: Heading
   @include breakpoint(small only) {
     font-size: rem-calc(28)*0.8;
     margin-bottom: rem-calc(20)/2;
-  }
-  small {
-    display: block;
-    font-size: rem-calc(16);
-    letter-spacing: 0.1em;
-    color: $color-primary;
-    margin-top: rem-calc(6);
-    @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
-    }
   }
 }
 
@@ -114,6 +96,7 @@ category: Heading
     margin-bottom: rem-calc(16)/2;
   }
 }
+
 .c-heading.is-xxs {
   font-size: rem-calc(18);
   letter-spacing: 0.1em;
@@ -122,321 +105,16 @@ category: Heading
     font-size: rem-calc(18)*0.8;
   }
 }
-/*
----
-name: 見出し_アンダーライン
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-line-under"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-line-under">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-line-under">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-line-under">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-line-under">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-line-under">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-line-under {
-  position: relative;
-  text-align: center;
-  padding-bottom: rem-calc(24);
-  margin-bottom: rem-calc(56);
-  @include breakpoint(small only) {
-    padding-bottom: rem-calc(24)/2;
-  }
-  &:after {
-    content: "";
-    display: block;
-    width: rem-calc(84);
-    height: rem-calc(3);
-    background-color: $color-primary;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    @include breakpoint(small only) {
-      width: rem-calc(64);
-      height: rem-calc(2);
-    }
-  }
-  // 各フォントサイズ
-  &.is-md,
-  &.is-sm,
-  &.is-xs,
-  &.is-xxs,
-  &.is-xxxs {
-    padding-bottom: rem-calc(16);
-    margin-bottom: rem-calc(32);
-    &:after {
-      width: rem-calc(72);
-      height: rem-calc(2);
-      @include breakpoint(small only) {
 
-      }
-    }
-  }
-}
-/*
----
-name: 見出し_ライントップ
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-line-top"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-line-top">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-line-top">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-line-top">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-line-top">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-line-top">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-line-top {
-  border-top: 2px solid $color-primary;
-  text-align: left;
-  padding-top: rem-calc(16);
-  @include breakpoint(small only) {
-    padding-top: rem-calc(12);
-  }
-}
-
-.c-heading.is-line-side {
-  span {
-    position: relative;
-    @include breakpoint(small only) {
-      display: block;
-      width: 80%;
-      margin: 0 auto;
-    }
-    &:after,
-    &:before {
-      content: "";
-      display: block;
-      width: rem-calc(56);
-      height: rem-calc(3);
-      border-top: 1px solid $color-primary;
-      border-bottom: 2px solid $color-primary;
-      @include breakpoint(small only) {
-        width: rem-calc(32);
-        height: rem-calc(2);
-      }
-    }
-    &:before {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translate(calc(-100% - 32px),calc(-50% + 1px));
-      @include breakpoint(small only) {
-        transform: translate(calc(-100% - 8px),calc(-50% + 1px));
-      }
-    }
-    &:after {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate(calc(100% + 32px),calc(-50% + 1px));
-      @include breakpoint(small only) {
-        transform: translate(calc(100% + 8px),calc(-50% + 1px));
-      }
-    }
-  }
-}
-/*
----
-name: 見出し_ラインレフト
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-line-left"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-line-left">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-line-left">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-line-left">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-line-left">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-line-left">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-line-left {
-  border-left: 4px solid $color-primary;
-  padding-left: rem-calc(20);
-  text-align: left;
-  @include breakpoint(small only) {
-    border-width: rem-calc(2);
-  }
-}
-/*
----
-name: 見出し_下線
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-border-under"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-border-under">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-border-under">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-border-under">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-border-under">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-border-under">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-border-under {
-  border-bottom: 3px solid #E2E2E2;
-  padding-bottom: rem-calc(20);
-  margin-bottom: rem-calc(48);
-  position: relative;
-  text-align: left;
-  @include breakpoint(small only) {
-    border-width: 2px;
-    padding-bottom: rem-calc(24)/2;
-  }
-  &:after {
-    content: "";
-    display: block;
-    width: rem-calc(100);
-    height: rem-calc(3);
-    background-color: $color-primary;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(100%);
-    @include breakpoint(small only) {
-      width: rem-calc(100)*0.8;
-      height: rem-calc(2);
-    }
-  }
-  // サイズ別
-  &.is-sm {
-    margin-bottom: rem-calc(24);
-  }
-}
-/*
----
-name: 見出し_上下線
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-border-top-under"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-border-top-under">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-border-top-under">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-border-top-under">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-border-top-under">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-border-top-under">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-border-top-under {
-  border-top: 2px solid #E2E2E2;
-  border-bottom: 2px solid #E2E2E2;
-  padding: rem-calc(16) 0;
-  text-align: left;
-  @include breakpoint(small only) {
-    padding: rem-calc(12) 0;
-  }
-}
-
-.c-heading.is-border-primary {
-  border-bottom: 2px solid $color-primary;
-  padding-bottom: rem-calc(16);
-  @include breakpoint(small only) {
-    border-width: 1px;
-    padding-bottom: rem-calc(12);
-  }
-}
-
-/*
----
-name: 見出し_背景色
-category: Heading
----
-```types.html
-<div class="c-heading is-md is-bg-color">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-bg-color">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-bg-color">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-bg-color">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-bg-color {
-  background-color: $color-secondary;
-  padding: rem-calc(16) rem-calc(28);
-  border-left: 4px solid $color-primary;
-  text-align: left;
-  margin-bottom: rem-calc(24);
-  @include breakpoint(small only) {
-    border-width: 2px;
-    padding: rem-calc(8) rem-calc(16);
-    margin-bottom: rem-calc(24)/2;
-  }
-  &.is-xs {
-    padding: rem-calc(10) rem-calc(20);
-    @include breakpoint(small only) {
-      padding: rem-calc(5) rem-calc(16);
-    }
-  }
-}
-/*
----
-name: 見出し_アイコン付き
-category: Heading
----
-```types.html
-<div class="c-heading is-md is-icon">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-icon">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-icon">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-icon">フォントサイズ18PX</div>
-```
-*/
-.c-heading.is-icon {
-  position: relative;
-  text-align: left;
-  padding-left: 1.35em;
-  @include breakpoint(small only) {
-    padding-left: rem-calc(24);
-  }
-  &:before {
-    content: "\f10c";
-    font-family: "FontAwesome";
-    font-size: 1.1em;
-    line-height: 1.4;
-    display: block;
-    color: $color-primary;
-    position: absolute;
-    left: 0;
-    top: 1.5px;
-    font-weight: 400;
-    @include breakpoint(small only) {
-      font-size: rem-calc(24)*0.8;
-      line-height: 1.3;
-    }
-  }
-}
-/*
----
-name: 見出し_プライマリーカラー
-category: Heading
----
-```types.html
-<div class="c-heading is-xlg is-color-primary"><span>FONTSIZE42PX</span><small>フォントサイズ16px</small></div>
-<div class="c-heading is-lg is-color-primary">フォントサイズ32PX<small>TEXTLEVEL1</small></div>
-<div class="c-heading is-md is-color-primary">フォントサイズ28PX</div>
-<div class="c-heading is-sm is-color-primary">フォントサイズ24PX</div>
-<div class="c-heading is-xs is-color-primary">フォントサイズ20PX</div>
-<div class="c-heading is-xxs is-color-primary">フォントサイズ18PX</div>
-```
-*/
 .c-heading.is-color-primary {
   color: $color-primary;
 }
 
 // マージン調整
 .c-heading.is-top {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .c-heading.is-bottom {
-  margin-top: 0!important;
-}
-
-// ステータス
-.c-heading.is-text-left {
-  text-align: left;
-  &:after {
-    left: 0;
-    transform: translateX(0);
-  }
+  margin-top: 0 !important;
 }

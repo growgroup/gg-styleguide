@@ -1,0 +1,64 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "blocks" // ページのID
+  - current.title = "ブロックス" // タイトル
+  - current.description = "これはブロックスページの説明文です" // 説明文
+  - current.bodyClass = "blocks" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block body
+  // メインビジュアル
+  +l_page_header("img-page-header-format.jpg","ブロックス","BLOCKS")
+  +c.breadcrumb
+    .l-container
+      +e.inner
+        span: +a("/") ホーム
+        span >
+        span 私たちについて
+  section.l-section
+
+    .l-block__margin-large
+      // メインビジュアル
+      include /blocks/components/_main-visual.pug
+    .l-block__margin-large
+      // ページヘッダー
+      include /blocks/components/_page-header.pug
+
+    // ヒーローブロック
+    include /blocks/components/_hero-block.pug
+
+    .l-container
+      // テキスト関係
+      include /blocks/components/_text.pug
+
+      // ボタン関係
+      include /blocks/components/_buttons.pug
+
+      // タブ
+      include /blocks/components/_tab.pug
+
+      // バナー
+      include /blocks/components/_banner.pug
+
+      // カードデザイン
+      include /blocks/components/_card.pug
+
+      // ブロックデザイン
+      include /blocks/components/_block.pug
+
+      // ブロックデザイン
+      include /blocks/components/_box.pug
+
+      // ブロックデザイン
+      include /blocks/components/_accordion.pug
+
+      // お知らせ
+      include /blocks/components/_news.pug
+
+      // ナビゲーション
+      include /blocks/components/_navigation.pug
+
+      // フォーム
+      include /blocks/components/_forms.pug
+
+

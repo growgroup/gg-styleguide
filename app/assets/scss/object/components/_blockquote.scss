@@ -12,7 +12,7 @@ category: Base
   border-left: 3px solid $color-primary;
   position: relative;
   padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
-  font-size: 0.8em;
+  font-size: $font-base-size;
   margin: rem-calc(16) 0;
   @include breakpoint(small only) {
     padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);

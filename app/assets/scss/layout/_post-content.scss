@@ -10,45 +10,109 @@
   h2 {
     @extend .c-heading;
     @extend .c-heading.is-md;
-    @extend .c-heading.is-line-under;
     margin-top: 0;
     color: $color-primary;
+    position: relative;
+    text-align: center;
+    padding-bottom: rem-calc(16);
+    margin-bottom: rem-calc(32);
+    @include breakpoint(small only) {
+      padding-bottom: rem-calc(24)/2;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: rem-calc(72);
+      height: rem-calc(2);
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      @include breakpoint(small only) {
+        width: rem-calc(64);
+        height: rem-calc(2);
+      }
+    }
   }
   h3 {
     @extend .c-heading;
     @extend .c-heading.is-sm;
-    @extend .c-heading.is-border-under;
-    margin-bottom: rem-calc(48);
     margin-top: 0;
+    border-bottom: 3px solid #E2E2E2;
+    padding-bottom: rem-calc(20);
+    margin-bottom: rem-calc(24);
+    position: relative;
+    text-align: left;
     @include breakpoint(small only) {
+      border-width: 2px;
+      padding-bottom: rem-calc(24)/2;
       margin-bottom: rem-calc(24);
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: rem-calc(100);
+      height: rem-calc(3);
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      @include breakpoint(small only) {
+        width: rem-calc(100)*0.8;
+        height: rem-calc(2);
+      }
     }
   }
   h4 {
     @extend .c-heading;
     @extend .c-heading.is-xs;
     @extend .c-heading.is-color-primary;
-    @extend .c-heading.is-bg-color;
+    background-color: $color-secondary;
+    padding: rem-calc(16) rem-calc(28);
+    border-left: 4px solid $color-primary;
+    text-align: left;
     margin-top: 0;
     margin-bottom: rem-calc(24);
     @include breakpoint(small only) {
+      border-width: 2px;
+      padding: rem-calc(8) rem-calc(16);
       margin-bottom: rem-calc(16);
+    }
+    &.is-xs {
+      padding: rem-calc(10) rem-calc(20);
+      @include breakpoint(small only) {
+        padding: rem-calc(5) rem-calc(16);
+      }
     }
   }
   h5 {
     @extend .c-heading;
     @extend .c-heading.is-xxs;
     color: $color-primary;
-    @extend .c-heading.is-icon;
     margin-top: 0;
+    position: relative;
+    text-align: left;
+    padding-left: 1.35em;
+    @include breakpoint(small only) {
+      padding-left: rem-calc(24);
+    }
     &:before {
       content: "\f10c";
       font-family: "FontAwesome";
-      line-height: 1;
+      font-size: 1.1em;
+      line-height: 1.4;
       display: block;
-      top: 5px;
+      color: $color-primary;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-weight: 400;
       @include breakpoint(small only) {
-        top: 1px;
+        font-size: rem-calc(24)*0.8;
+        line-height: 1.3;
+        top: 0;
       }
     }
   }
@@ -64,10 +128,14 @@
 
 .l-post-content.is-twocolumns {
   h2 {
-    @extend .c-heading.is-text-left;
+    text-align: left;
     margin-bottom: rem-calc(48);
     @include breakpoint(small only) {
       margin-bottom: rem-calc(24);
+    }
+    &:after {
+      left: 0;
+      transform: translateX(0);
     }
   }
 }
