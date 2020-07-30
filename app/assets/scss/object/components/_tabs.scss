@@ -12,6 +12,7 @@ category: Tabs
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: rem-calc(56);
+
     li {
       width: 50%;
       max-width: rem-calc(276);
@@ -20,6 +21,7 @@ category: Tabs
       @include breakpoint(small only) {
         border-width: 1px;
       }
+
       a {
         background-color: $color-white;
         color: $color-primary;
@@ -32,6 +34,7 @@ category: Tabs
         @include breakpoint(small only) {
           padding: rem-calc(6) rem-calc(24);
         }
+
         &:after {
           content: "\f107";
           font-family: "FontAwesome";
@@ -46,15 +49,18 @@ category: Tabs
             font-size: rem-calc(24)*0.8;
           }
         }
+
         // *hover
         &:hover {
           background-color: lighten($color-primary, 45);
           opacity: 1;
         }
+
         // *選択時
         &.is-active {
           background-color: $color-primary;
           color: $color-white;
+
           &:hover {
             opacity: 1;
           }
@@ -62,14 +68,17 @@ category: Tabs
       }
     }
   }
+
   // コンテンツ
   &__content {
     display: none;
+
     &.is-active {
       display: block;
     }
   }
 }
+
 /*
 ---
 name: タブ_インデックス
@@ -95,9 +104,11 @@ category: Tabs
             border: 1px solid $color-primary;
             margin-bottom: rem-calc(8);
           }
+
           a {
             font-size: rem-calc(14);
             letter-spacing: 0.1em;
+
             &:after {
               display: none;
             }

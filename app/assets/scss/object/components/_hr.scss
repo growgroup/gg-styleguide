@@ -15,9 +15,11 @@ hr,
   @include breakpoint(small only) {
     margin: rem-calc(32) auto;
   }
+
   &.is-border-dotted {
     border-top: 1px dotted $border-base-color;
   }
+
   &.is-line-double {
     border-bottom: 1px solid $border-base-color;
     height: 2px;

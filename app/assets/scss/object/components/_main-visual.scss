@@ -4,49 +4,34 @@ name: メインビジュアル_通常
 category: Components
 ---
 */
-/*
----
-name: メインビジュアル_スライダー
-category: Components
----
-*/
-/*
----
-name: メインビジュアル_カルーセル
-category: Components
----
-*/
-/*
----
-name: メインビジュアル_カルーセル_ノーマル
-category: Components
----
-*/
 
 .c-main-visual {
   width: 100%;
   position: relative;
+
   &__image {
     width: 100%;
     height: rem-calc(620);
     top: 0;
     left: 0;
-   @include bg-option();
+    @include bg-option();
     @include breakpoint(medium down) {
       height: 50vw;
       min-height: 280px;
     }
+
     &:after {
       content: "";
       display: block;
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba($color-black,0.2);
+      background: rgba($color-black, 0.2);
       top: 0;
       left: 0;
     }
   }
+
   &__inner {
     position: absolute;
     width: 100%;
@@ -61,140 +46,31 @@ category: Components
       margin-top: rem-calc(8);
     }
   }
+
   &__text {
     margin-bottom: rem-calc(40);
     @include breakpoint(small only) {
       margin-bottom: 4vw;
     }
+
     img {
       width: 100%;
       max-width: rem-calc(1048)/2;
       height: auto;
-      margin:  0 auto;
+      margin: 0 auto;
       @include breakpoint(medium down) {
         width: 90%;
         max-width: rem-calc(420);
       }
     }
   }
+
   &__button {
     .c-button {
-      max-width: rem-calc(252)!important;
+      max-width: rem-calc(252) !important;
       @include breakpoint(medium down) {
         padding: rem-calc(12) rem-calc(24);
-        max-width: rem-calc(198)!important;
-      }
-    }
-  }
-
-  &__carousel {
-    padding: rem-calc(32) 0 rem-calc(68);
-    background-color: #FCF7E7;
-    @include breakpoint(medium down) {
-      padding: rem-calc(16) 0 rem-calc(48);
-    }
-
-    .c-main-visual__image {
-      max-height: rem-calc(480);
-      @include breakpoint(medium down) {
-        min-height: 200px;
-      }
-    }
-
-    // owl.calousel
-    .owl-dot {
-      background-color: $border-base-color !important;
-    }
-
-    .owl-nav {
-      position: absolute;
-      z-index: 999;
-      bottom: rem-calc(10);
-      left: 50%;
-      transform: translate(-50%, 0);
-      visibility: hidden;
-      @include breakpoint(medium down) {
-        bottom: rem-calc(-6);
-      }
-
-      .c-main-visual__nav {
-        color: $color-primary;
-        font-size: rem-calc(36);
-      }
-
-      button {
-        visibility: visible;
-        position: relative;
-        outline: none;
-        &.owl-prev {
-          right: 60px;
-        }
-        &.owl-next {
-          left: 60px;
-        }
-      }
-    }
-
-    &.is-normal {
-      background-color: transparent;
-      position: relative;
-
-      .owl-nav {
-        width: 100%;
-        position: static;
-        transform: none;
-
-        .c-main-visual__nav {
-          width: 48px;
-          height: 48px;
-          background-color: $color-primary;
-          border-radius: 1000px;
-          color: $color-white !important;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        button {
-          position: absolute;
-          top: calc(50% - 24px);
-          &.owl-prev {
-            right: auto;
-            left: 280px;
-            @media (max-width: 1400px) {
-              left: 124px;
-            }
-            @media (max-width: 950px) {
-              left: 32px;
-            }
-            @include breakpoint(small only)  {
-              left: 0px;
-            }
-          }
-          &.owl-next {
-            left: auto;
-            right: 280px;
-            @media (max-width: 1400px) {
-              right: 124px;
-            }
-            @media (max-width: 950px) {
-              right: 32px;
-            }
-            @include breakpoint(small only)  {
-              right: 0px;
-            }
-          }
-        }
-      }
-      &.is-dot-lg {
-        .owl-dot {
-          margin: 0 rem-calc(6);
-          width: rem-calc(52);
-          height: rem-calc(4);
-          &.active {
-            background-color: $color-primary!important;
-          }
-        }
+        max-width: rem-calc(198) !important;
       }
     }
   }
@@ -212,6 +88,7 @@ category: Components
     @include breakpoint(medium down) {
       bottom: rem-calc(16);
     }
+
     .owl-dot {
       margin: 0 rem-calc(6);
       width: rem-calc(12);
@@ -220,8 +97,9 @@ category: Components
       border-radius: 1000px;
       display: block;
       outline: none;
+
       &.active {
-        background-color: $color-primary!important;
+        background-color: $color-primary !important;
       }
     }
   }

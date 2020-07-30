@@ -11,12 +11,15 @@ category: Base
   @include breakpoint(small only) {
     width: rem-calc(944);
   }
+
   th,
   td {
     border-bottom: 1px solid $border-base-color;
   }
+
   thead {
     background-color: $color-secondary;
+
     th,
     td {
       padding: rem-calc(10) rem-calc(16);
@@ -25,6 +28,7 @@ category: Base
       }
     }
   }
+
   tbody {
     th,
     td {
@@ -34,6 +38,7 @@ category: Base
         padding: rem-calc(12) rem-calc(24);
       }
     }
+
     th {
       background-color: $color-secondary;
       text-align: center;

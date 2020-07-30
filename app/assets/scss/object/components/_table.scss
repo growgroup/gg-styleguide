@@ -7,6 +7,7 @@ category: Base
 .c-table {
   width: 100%;
   border-top: 1px solid $border-base-color;
+
   tbody {
     th,
     td {
@@ -18,6 +19,7 @@ category: Base
         padding: rem-calc(12);
       }
     }
+
     th {
       color: $color-primary;
       width: rem-calc(196);
@@ -27,6 +29,7 @@ category: Base
       }
     }
   }
+
   &.is-th-bgcolor {
     tbody {
       th,
@@ -34,11 +37,13 @@ category: Base
         padding: rem-calc(13) rem-calc(24);
       }
     }
+
     th {
       color: $font-base-color;
       width: rem-calc(236);
       position: relative;
       background-color: $color-secondary;
+
       &:after {
         display: none;
       }

@@ -4,12 +4,6 @@ name: ヒーローブロック_枡目型
 category: SpecialComponents
 ---
 */
-/*
----
-name: ヒーローブロック_枡目型_数字付き
-category: SpecialComponents
----
-*/
 .c-hero-block-square {
   &__block {
     position: relative;
@@ -17,6 +11,7 @@ category: SpecialComponents
       margin-bottom: rem-calc(16);
     }
   }
+
   &__image {
     position: absolute;
     left: 0;
@@ -30,11 +25,12 @@ category: SpecialComponents
       width: 100%;
       min-height: 60vw;
     }
+
     img {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: auto;
       height: auto;
       min-width: 100%;
@@ -46,6 +42,7 @@ category: SpecialComponents
       }
     }
   }
+
   &__content {
     width: 50%;
     margin-left: auto;
@@ -55,16 +52,18 @@ category: SpecialComponents
     align-items: center;
     @include breakpoint(small only) {
       width: 100%;
-      padding: rem-calc(24) 0!important;
+      padding: rem-calc(24) 0 !important;
       min-height: inherit;
       display: block;
     }
+
     .c-heading {
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(16)!important;
+        margin-bottom: rem-calc(16) !important;
       }
     }
   }
+
   &__button {
     margin-top: rem-calc(32);
     @include breakpoint(small only) {
@@ -80,6 +79,7 @@ category: SpecialComponents
     left: auto;
     right: 0;
   }
+
   .c-hero-block-square__content {
     margin-left: 0;
     padding: rem-calc(56) rem-calc(64) rem-calc(56) 0;
@@ -104,6 +104,7 @@ category: SpecialComponents
         font-size: rem-calc(48);
       }
     }
+
     .c-heading {
       margin-bottom: 0;
     }

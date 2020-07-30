@@ -9,6 +9,7 @@ category: PostContent
   @include breakpoint(small only) {
     margin-bottom: rem-calc(16);
   }
+
   &__title {
     font-size: rem-calc(28);
     font-weight: 700;
@@ -21,14 +22,17 @@ category: PostContent
       margin-bottom: rem-calc(16);
     }
   }
+
   &__sup {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
+
   &__label {
 
   }
+
   &__date {
     @include webfont-bold();
     color: $color-primary;
@@ -38,17 +42,21 @@ category: PostContent
       margin: 0 rem-calc(16);
     }
   }
+
   &__tag {
     @include breakpoint(small only) {
       margin-top: rem-calc(8);
       width: 100%;
     }
+
     ul {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+
       li {
         margin-right: rem-calc(16);
+
         a {
           text-decoration: none;
           font-weight: 400;

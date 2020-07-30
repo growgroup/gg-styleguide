@@ -15,19 +15,23 @@ category: News
     @include breakpoint(small only) {
       margin-bottom: rem-calc(32);
     }
+
     span,
     small {
       display: block;
     }
   }
+
   &__image {
     position: relative;
     display: block;
+
     img {
       width: 100%;
       height: auto;
     }
   }
+
   &__label {
     position: absolute;
     bottom: 0;
@@ -35,14 +39,17 @@ category: News
     z-index: 99;
     display: block;
   }
+
   &__content {
     margin-top: rem-calc(12);
   }
+
   &__title {
     font-size: rem-calc(18);
     font-weight: 700;
     line-height: 1.6;
   }
+
   &__text {
     color: rgba($font-base-color, 0.7);
     font-size: rem-calc(13);
@@ -51,29 +58,35 @@ category: News
       margin-top: rem-calc(8);
     }
   }
+
   &__sup {
     margin-top: rem-calc(6);
     display: flex;
     align-items: flex-start;
   }
+
   &__date {
     @include webfont();
     opacity: 0.7;
     letter-spacing: 0.01em;
     margin-right: rem-calc(24);
   }
+
   &__detail {
     color: $color-primary;
     font-size: rem-calc(14);
     letter-spacing: 0.1em;
     opacity: 0.7;
   }
+
   &__tag {
     ul {
       display: flex;
       flex-wrap: wrap;
+
       li {
         margin-right: rem-calc(20);
+
         a {
           color: $color-primary;
           font-weight: 400;
@@ -85,191 +98,30 @@ category: News
     }
   }
 }
-/*
----
-name: ポストアイテム_カード
-category: News
----
-```types.html
-<div class="c-card-post is-tag-hidden">
-  <div class="row">
-        <div class="large-3 small-6">
-          <div class="c-card-post__block"><a class="c-card-post__image" href="undefined"><img src="/dist/assets/images/img-card-01.jpg" alt=""></a>
-                  <div class="c-card-post__content">
-                    <div class="c-card-post__sup"><span class="c-card-post__label c-label">カテゴリ名</span>
-                      <div class="c-card-post__date">2018.01.01
-                      </div>
-                    </div>
-                    <div class="c-card-post__title">タイトルが入ります。タイトルが入ります。
-                    </div>
-                  </div>
-                </div>
-          </div>
-      </div>
-  </div>
-```
-*/
+
 .c-card-post {
   // タグなしver
   &.is-tag-hidden {
     margin-botom: rem-calc(32);
+
     .c-card-post__sup {
       position: relative;
       display: flex;
       align-items: center;
       margin-bottom: rem-calc(8);
     }
+
     .c-card-post__label {
       position: static;
     }
+
     .c-card-post__date {
       margin-right: 0;
       margin-left: rem-calc(18);
     }
+
     .c-card-post__title {
       font-size: rem-calc(16);
-    }
-  }
-}
-
-/*
----
-name: ポストアイテム_カード_カルーセル
-category: News
----
-```types.html
-<div class="c-card-post  is-author">
-  <div class="row js-card-slider owl-carousel">
-    <div class="large-12 small-12">
-      <div class="c-card-post__block"><a class="c-card-post__image" href="undefined"><img src="/dist/assets/images/img-card-01.jpg" alt=""></a>
-        <div class="c-card-post__content">
-          <div class="c-card-post__sup"><span class="c-card-post__label c-label">カテゴリ名</span>
-            <div class="c-card-post__date">2018.01.01
-            </div>
-          </div>
-          <div class="c-card-post__title">タイトルが入ります。タイトルが入ります。
-          </div>
-          <div class="c-card-post__tag">
-            <ul>
-              <li><a href=""># タグ</a>
-              </li>
-              <li><a href=""># タグ</a>
-              </li>
-            </ul>
-          </div>
-          <div class="c-card-post__author">
-            <div class="c-card-post__photo"><img src="/dist/assets/images/img-card-author.png" alt="">
-            </div>
-            <div class="c-card-post__info">
-              <div class="c-card-post__name">山田 太郎
-              </div>
-              <div class="c-card-post__pos">人事・広報
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-```
-*/
-.c-card-post {
-  &.is-author {
-    .c-card-post__block {
-      margin-bottom: 0;
-    }
-    .c-card-post__content {
-      margin-top: 0;
-      padding: rem-calc(20) rem-calc(31) rem-calc(32) rem-calc(28);
-      background-color: $color-white;
-    }
-    .c-card-post__sup {
-      margin-top: 0;
-      margin-bottom: rem-calc(12);
-    }
-    .c-card-post__label {
-      position: static;
-    }
-    .c-card-post__date {
-      margin-right: 0;
-      margin-left: auto;
-    }
-    .c-card-post__title {
-      margin-bottom: rem-calc(20);
-    }
-    .c-card-post__tag {
-      ul {
-        li {
-          margin-right: rem-calc(10);
-          margin-bottom: rem-calc(8);
-
-          a {
-            padding: 0 rem-calc(24);
-            color: $font-base-color;
-            background-color: $color-white;
-            border: 1px solid $font-base-color;
-            border-radius: 1000px;
-            font-size: rem-calc(12);
-            display: block;
-            text-decoration: none;
-            transition: all .2s;
-            &:hover {
-              opacity: 1;
-              background-color: #E2E2E2;
-              border: 1px solid #E2E2E2;
-            }
-          }
-        }
-      }
-    }
-    .c-card-post__author {
-      display: flex;
-      align-items: center;
-      padding-top: rem-calc(12);
-    }
-    .c-card-post__photo {
-      margin-right: rem-calc(12);
-    }
-    .c-card-post__info {
-      font-size: rem-calc(13);
-      line-height: 21/13*1;
-      letter-spacing: 0.1em;
-      color: rgba($font-base-color, 0.7);
-    }
-  }
-
-  .js-card-slider {
-    margin: 0;
-    position: relative;
-    .owl-nav {
-      .owl-prev,
-      .owl-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        outline: none;
-        @include breakpoint(small only) {
-          //display: none;
-        }
-      }
-      .owl-prev {
-        left: -40px;
-        @media (max-width: 1220px) {
-          left: -20px;
-        }
-        @include breakpoint(small only) {
-          left: -16px;
-        }
-      }
-      .owl-next {
-        right: -40px;
-        @media (max-width: 1220px) {
-          right: -20px;
-        }
-        @include breakpoint(small only) {
-          right: -16px;
-        }
-      }
     }
   }
 }

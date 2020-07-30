@@ -37,10 +37,12 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     width: rem-calc(55);
     height: rem-calc(55);
     padding-top: rem-calc(6);
+
     &:active,
     &:hover {
-      opacity: 1!important;
+      opacity: 1 !important;
     }
+
     // ボーダー
     &__line {
       > span {
@@ -52,11 +54,13 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         margin-right: auto;
         margin-bottom: 5px;
         transition: all ease .2s;
+
         &:last-child {
           margin-bottom: 0;
         }
       }
     }
+
     // メニューテキスト
     &__text {
       transition: all ease .2s;
@@ -73,7 +77,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
   // メニュー自体
   .c-slidebar-menu {
-    height: calc(100vh - 55px)!important;
+    height: calc(100vh - 55px) !important;
     padding: 0 rem-calc(16) rem-calc(104);
     position: fixed;
     background-color: $color-primary;
@@ -87,9 +91,11 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     overflow-x: scroll;
     top: 0;
     -webkit-overflow-scrolling: touch;
+
     &.is-active {
-      height: calc(100% - 65px)!important;
+      height: calc(100% - 65px) !important;
     }
+
     // 上から下へ
     &.is-top-to-bottom {
       -webkit-transform: translateY(-100%);
@@ -101,15 +107,18 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
     &__children {
       display: none;
-      background-color: $color-primary-dark!important;
-      padding-left: rem-calc(24)!important;
+      background-color: $color-primary-dark !important;
+      padding-left: rem-calc(24) !important;
+
       li {
         &:last-child {
-          border-bottom: none!important;
+          border-bottom: none !important;
         }
+
         a {
-          color: $color-white!important;
-          padding: rem-calc(16) 0!important;
+          color: $color-white !important;
+          padding: rem-calc(16) 0 !important;
+
           &:before,
           &:after {
             display: none;
@@ -122,6 +131,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       a,
       span {
         position: relative;
+
         &:after,
         &:before {
           content: "";
@@ -134,12 +144,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
           right: rem-calc(24);
           transform: translateY(-50%);
         }
+
         &:after {
           width: rem-calc(18);
           height: rem-calc(2);
           right: rem-calc(16);
         }
       }
+
       &.is-open {
         a,
         span {
@@ -153,9 +165,11 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     ul {
       width: calc(100% + 32px);
       margin-left: -16px;
-      background:$color-primary;
+      background: $color-primary;
+
       li {
         border-bottom: 1px solid $border-base-color;
+
         a,
         span {
           font-size: rem-calc(15);
@@ -215,6 +229,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     height: 100%;
     -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
+
     &:after {
       content: "";
       position: fixed;
@@ -234,33 +249,40 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
   // 有効時
   .is-slidebar-active {
     cursor: pointer;
+
     .c-slidebar-button {
       &__line {
         > span {
-          &:nth-child(1){
+          &:nth-child(1) {
             transform: rotate(-45deg) translateY(4px) translateX(-4px);
           }
-          &:nth-child(2){
+
+          &:nth-child(2) {
             transform: rotate(45deg) translateY(-1px) translateX(-1px);
           }
-          &:nth-child(3){
+
+          &:nth-child(3) {
             display: none;
           }
         }
       }
+
       &__text {
         &.is-close {
           display: block;
           margin-top: rem-calc(8);
         }
+
         &.is-open {
           display: none;
         }
       }
     }
+
     .c-slidebar-container {
       -webkit-transform: translateX(-$slidebar-menu-width);
       transform: translate3d(-$slidebar-menu-width, 0px, 0px);
+
       &:after {
         content: "";
         opacity: 1;
@@ -277,6 +299,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       &.is-top-to-bottom {
         -webkit-transform: translateX(0px);
         transform: translate3d(0px, 0px, 0px);
+
         &:after {
           top: 55px;
         }
@@ -286,6 +309,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     .c-slidebar-menu {
       -webkit-transform: translateX(0);
       transform: translate3d(0, 0, 0);
+
       &.is-top-to-bottom {
         -webkit-transform: translateY(55px);
         transform: translate3d(0, 55px, 0);

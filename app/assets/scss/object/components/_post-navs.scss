@@ -9,45 +9,54 @@ category: Navigation
   @include breakpoint(small only) {
     margin: rem-calc(32) 0;
   }
+
   ul {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+
     li {
       width: rem-calc(155);
       @include breakpoint(small only) {
         width: calc(33% - 8px);
       }
+
       a {
         display: block;
         @include breakpoint(small only) {
-          font-size: rem-calc(12)!important;
-          letter-spacing: 0!important;
+          font-size: rem-calc(12) !important;
+          letter-spacing: 0 !important;
         }
       }
     }
   }
+
   &__prev {
     margin-right: auto;
+
     a {
       @include breakpoint(small only) {
-        padding-left: rem-calc(20)!important;
-        padding-right: rem-calc(8)!important;
+        padding-left: rem-calc(20) !important;
+        padding-right: rem-calc(8) !important;
       }
     }
   }
+
   &__archive {
     position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+
     a {
       display: inline-flex;
       align-items: center;
+
       &:after {
         display: none;
       }
+
       i {
         margin-right: rem-calc(12);
         font-size: rem-calc(18);
@@ -58,13 +67,15 @@ category: Navigation
       }
     }
   }
+
   &__next {
     margin-left: auto;
+
     a {
       margin-left: auto;
       @include breakpoint(small only) {
-        padding-right: rem-calc(20)!important;
-        padding-left: rem-calc(8)!important;
+        padding-right: rem-calc(20) !important;
+        padding-left: rem-calc(8) !important;
       }
     }
   }

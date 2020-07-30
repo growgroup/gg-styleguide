@@ -9,14 +9,17 @@ category: Navigation
   @include breakpoint(small only) {
     margin-top: rem-calc(32);
   }
+
   ul {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   ul li {
     margin-right: rem-calc(6);
   }
+
   ul li span,
   ul li a {
     @include webfont-bold();
@@ -35,6 +38,7 @@ category: Navigation
       width: rem-calc(40);
       height: rem-calc(40);
     }
+
     &:hover {
       opacity: 1;
       background: $color-primary;
@@ -47,6 +51,7 @@ category: Navigation
       color: $color-white;
     }
   }
+
   // 左寄せ
   &.is-align-left {
     ul {
