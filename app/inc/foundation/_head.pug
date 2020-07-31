@@ -53,17 +53,22 @@ html(lang="ja")
         window.WebFontConfig = {
           // 以下にフォントを指定する
           google: {
-          families: [
-          'Noto+Sans+JP:400,700',
-          'Roboto:400,700'
-          ]
-        },
-          active: function() {
-          sessionStorage.fonts = true;
-        }
+            families: [
+              'Roboto:400,700'
+            ]
+          },
+          custom: {
+            families: ['Noto+Sans+JP:400,700'],
+            urls: [
+              "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+            ],
+          },
+          active: function () {
+            sessionStorage.fonts = true;
+          }
         };
 
-        (function() {
+        (function () {
           var wf = document.createElement('script');
           wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
           wf.type = 'text/javascript';
