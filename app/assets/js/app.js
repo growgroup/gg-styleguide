@@ -11,11 +11,37 @@ import CurrentNav from './app/current-nav.js';
 import buildFormat from './app/format.js';
 import OwlCarousel from 'owl.carousel';
 import modaal from 'modaal';
+import {scrollfire} from "./app/scrolltrigger.js";
 
 import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
 import OwlThemeCss from "owl.carousel/dist/assets/owl.theme.default.css";
 import modaalCss from 'modaal/dist/css/modaal.css';
+class ScrollReveal {
+  constructor(options){
+    this.options = options;
+  }
+
+  reveal(el, options, duration){
+    $(el).css({
+      visibility: "visible",
+      opacity: 0,
+    })
+    scrollfire( el, function(){
+      // console.log(el);
+      var args = {
+        targets: el,
+        // opacity: 1,
+        // translateY: -options.distance,
+        // duration: 600
+      }
+      args = Object.assign(options,args);
+      anime(args);
+    }, {
+      offset: window.innerHeight/2
+    })
+  }
+}
 
 class App {
   constructor() {
