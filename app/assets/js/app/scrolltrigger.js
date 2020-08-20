@@ -116,6 +116,10 @@ class ScrollDOM {
   }
 
   inRange() {
+    let y = window.pageYOffset
+    if ( y === 0 ){
+      y = 1;
+    }
     return (window.pageYOffset > ((this.range.top - 0) - (this.options.offset - 0)));
   }
 }
@@ -123,17 +127,24 @@ class ScrollDOM {
 
 export default class ScrollTrigger {
   constructor(element, callback, options) {
+    this.elements = [];
     this.collections = [];
     if (typeof element === 'string') {
       this.elements = document.querySelectorAll(element);
     } else if (typeof element === 'object') {
-      this.elements = element;
+      if ( typeof element.length === "undefined" ){
+        this.elements.push(element);
+      } else {
+        this.elements = element;
+      }
     }
-    if (this.elements.length >= 1) {
-      for (var i = 0; i < this.elements.length; i++) {
-        var _scrolldom = new ScrollDOM(this.elements[i], callback, options);
-        _scrolldom.setInterval(i);
-        this.collections.push(_scrolldom);
+    if ( typeof this.elements !== "undefined" ){
+      if (this.elements.length >= 1) {
+        for (var i = 0; i < this.elements.length; i++) {
+          var _scrolldom = new ScrollDOM(this.elements[i], callback, options);
+          _scrolldom.setInterval(i);
+          this.collections.push(_scrolldom);
+        }
       }
     }
     this.start = this.start.bind(this);
@@ -147,6 +158,6 @@ export default class ScrollTrigger {
 }
 
 export const scrollfire = function(element, callback, options) {
-  var st = new ScrollTrigger(element, callback, options);
+  const st = new ScrollTrigger(element, callback, options);
   st.start();
 }
