@@ -1,0 +1,17 @@
+
+// padding 上下　0 ~ 150
+@for $i from 0 through 150 {
+  .u-pts#{$i}{
+    padding-top:1px * $i;
+    @include breakpoint(small only) {
+      padding-top: 1px * $i / 2;
+    }
+
+  }
+  .u-pbs#{$i}{
+    padding-bottom:1px * $i;
+    @include breakpoint(small only) {
+      padding-bottom: 1px * $i / 2;
+    }
+  }
+}
