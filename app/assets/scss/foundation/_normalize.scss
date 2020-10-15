@@ -24,6 +24,7 @@ html {
  */
 
 body {
+  image-rendering: -webkit-optimize-contrast;
   color: $font-base-color;
   margin: 0;
   line-height: $font-base-line-hight;
