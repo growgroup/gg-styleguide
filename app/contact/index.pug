@@ -34,49 +34,49 @@ block body
                     | 貴社名
                     span.c-forms__label 必須
                   +e.content
-                    input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
+                    +e.input: input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
                 +e.block
                   +e.title 部署・役職
                   +e.content
-                    input(type="text",name="部署・役職",placeholder="（例）営業部")
+                    +e.input: input(type="text",name="部署・役職",placeholder="（例）営業部")
                 +e.block
                   +e.title
                     | お名前
                     span.c-forms__label 必須
                   +e.content.is-column
-                    input(type="text",name="お名前",placeholder="お名前（漢字）")
-                    input(type="text",name="フリガナ",placeholder="お名前（カナ）")
+                    +e.input: input(type="text",name="お名前",placeholder="お名前（漢字）")
+                    +e.input: input(type="text",name="フリガナ",placeholder="お名前（カナ）")
                 +e.block
                   +e.title
                     | お名前
                     span.c-forms__label 必須
                   +e.content
-                    input(type="text",name="お名前",placeholder="山田　太郎")
+                    +e.input: input(type="text",name="お名前",placeholder="山田　太郎")
                 +e.block
                   +e.title
                     | お名前フリガナ
                     span.c-forms__label 必須
                   +e.content
-                    input(type="text",name="お名前フリガナ",placeholder="ヤマダ　タロウ")
+                    +e.input: input(type="text",name="お名前フリガナ",placeholder="ヤマダ　タロウ")
                 +e.block
                   +e.title
                     | メールアドレス
                     span.c-forms__label 必須
                   +e.content
-                    input(type="text",name="メールアドレス",placeholder="（例）info@grow-group.jp")
+                    +e.input: input(type="text",name="メールアドレス",placeholder="（例）info@grow-group.jp")
                 +e.block
                   +e.title
                     | TEL
                     span.c-forms__label 必須
                   +e.content
-                    input(type="text",name="TEL",placeholder="（例）052-753-6413")
+                    +e.input: input(type="text",name="TEL",placeholder="（例）052-753-6413")
                 +e.block
                   +e.title.is-vertical-top 興味あるサービス
                   +e.content
                     +e.checkbox
                       span
                         label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢1",checked)
+                          input(type="checkbox",name="興味あるサービス",value="選択肢1")
                           span テキスト
                       span
                         label
@@ -108,7 +108,7 @@ block body
                     +e.radio
                       span
                         label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢1",checked)
+                          input(type="radio",name="お問い合わせ種別",value="選択肢1")
                           span 選択肢1
                       span
                         label
@@ -116,7 +116,7 @@ block body
                           span 選択肢2
                       span
                         label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢3",checked)
+                          input(type="radio",name="お問い合わせ種別",value="選択肢3")
                           span 選択肢3
                       span
                         label
@@ -125,7 +125,7 @@ block body
                 +e.block
                   +e.title.is-vertical-top お問い合わせ内容
                   +e.content
-                    +e.radio
+                    +e.textarea
                       textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
                 +e.block
                   +e.title.is-vertical-top ご連絡方法
@@ -133,7 +133,7 @@ block body
                     +e.checkbox
                       span
                         label
-                          input(type="checkbox",name="ご連絡方法",value="電話",checked)
+                          input(type="checkbox",name="ご連絡方法",value="電話")
                           span 電話
                       span
                         label
@@ -151,36 +151,36 @@ block body
                     +e.flexbox
                       span 郵便番号
                       +e.flex-al
-                        input(type="text",name="郵便番号",placeholder="（例）464-0850").c-forms__input.is-sm
+                        +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
                         button.c-forms-simple__button#zipauto 住所を自動入力
                     +e.flexbox
                       span 住所
-                      input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+                      +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
                 +e.block
-                  +e.title.is-vertical-top.is-just
+                  +e.title
                     | 郵便番号
                     span.c-forms__label 必須
                   +e.content
-                    +e.flexbox
-                      input(type="text",name="郵便番号",placeholder="（例）464-0850").c-forms__input.is-sm
+                    +e.flex-al
+                      +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
                       button.c-forms-simple__button#zipauto 住所を自動入力
                 +e.block
-                  +e.title.is-vertical-top.is-just
+                  +e.title
                     | 住所
                     span.c-forms__label 必須
                   +e.content
-                      input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+                      +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
                 +e.block
                   +e.title.is-vertical-top お問い合わせ内容
                   +e.content
-                    +e.radio
+                    +e.textarea
                       textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
 
                 +e.privacy
                   label
-                    input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました",checked)
+                    input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました")
                     | 当社の
-                    +a("/privacy-policy/") 個人情報保護方針
+                    +a("/privacy-policy/")(target="_blank") 個人情報保護方針
                     | へ同意する
                 +e.submit
                   button.c-button.is-xlg 確認画面へ

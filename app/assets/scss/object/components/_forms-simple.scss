@@ -22,6 +22,9 @@
       align-items: flex-start;
       &.is-just{
         padding-top: rem-calc(40);
+        @include breakpoint(small only) {
+          padding-top: rem-calc(12);
+        }
       }
       .c-forms__label {
         margin-top: rem-calc(3);
@@ -49,8 +52,14 @@
     &.is-column{
       display: flex;
       justify-content: space-between;
+      .c-forms-simple__input {
+        margin-right: 24px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
       input{
-        width: 48%;
+        width: 100%;
       }
     }
     &.is-vertical-middle {
@@ -58,20 +67,40 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    input{
+  }
+  //インプット
+  &__input {
+    width: 100%;
+    input {
       border-radius: 4px;
       background: #F9F9F9;
-      padding: rem-calc(22) rem-calc(16) rem-calc(22) rem-calc(31);
+      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      @include breakpoint(small only) {
+        padding: rem-calc(12) rem-calc(16);
+      }
       &:focus{
         border-color: $color-primary;
       }
     }
-  }
-  //インプット
-  &__input {
-    //
     &.is-sm {
       width: rem-calc(180);
+      input {
+        padding-top: rem-calc(12);
+        padding-bottom: rem-calc(12);
+      }
+    }
+  }
+  &__textarea {
+    textarea {
+      border-radius: 4px;
+      background: #F9F9F9;
+      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      @include breakpoint(small only) {
+        padding: rem-calc(12) rem-calc(16);
+      }
+      &:focus{
+        border-color: $color-primary;
+      }
     }
   }
   //ラジオボタン,チェックボックス
@@ -102,6 +131,9 @@
   }
   &__privacy {
     text-align: center;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(16);
+    }
     input{
       margin-right: rem-calc(10);
     }
@@ -155,7 +187,7 @@
   // 送信ボタン
   &__submit {
     text-align: center;
-    margin-top: rem-calc(56);
+    margin-top: rem-calc(40);
     @include breakpoint(small only) {
       margin-top: rem-calc(32);
     }
