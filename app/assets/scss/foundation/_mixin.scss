@@ -197,16 +197,6 @@
   margin-right: auto;
 }
 
-
-// トランジション
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
 // クリアフィックス
 @mixin clearfix {
   zoom: 1;
@@ -463,4 +453,9 @@
 // ボックスシャドウ
 @mixin box-shadow($offsetX: 0, $offsetY: 10px, $blur: 20px, $color: rgba($color-black, 0.1)) {
   box-shadow: $offsetX $offsetY $blur $color;
+}
+
+// トランジション
+@mixin transition($duration: 0.3s, $easing: ease) {
+  transition: all $duration 0s $easing;
 }
