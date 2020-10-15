@@ -458,3 +458,6 @@
   @include bg-option();
 }
 
+@mixin gradient-color($angle: 90deg, $colorLeft: $color-primary, $colorRight: $color-secondary) {
+  background-image: linear-gradient($angle, $colorLeft 0%, $colorRight 100%);
+}
