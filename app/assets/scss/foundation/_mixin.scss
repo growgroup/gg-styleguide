@@ -407,11 +407,8 @@
   background-size: cover;
 }
 
+// 行数制限
 @mixin row-limit($font-size-base: $font-base-size, $font-size-base-sp: $font-base-size*0.875, $line-height-computed: 1.7, $lines-to-show: 2) {
-  //$font-size-base: 18px;
-  //$font-size-base-sp: 16px;
-  //$line-height-computed: 1.7;
-  //$lines-to-show: 2;
   overflow: hidden;
   width: 100%;
   span {
@@ -458,6 +455,12 @@
   @include bg-option();
 }
 
+// グラデーション
 @mixin gradient-color($angle: 90deg, $colorLeft: $color-primary, $colorRight: $color-secondary) {
   background-image: linear-gradient($angle, $colorLeft 0%, $colorRight 100%);
+}
+
+// ボックスシャドウ
+@mixin box-shadow($offsetX: 0, $offsetY: 10px, $blur: 20px, $color: rgba($color-black, 0.1)) {
+  box-shadow: $offsetX $offsetY $blur $color;
 }
