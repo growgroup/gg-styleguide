@@ -459,3 +459,10 @@
 @mixin transition($duration: 0.3s, $easing: ease) {
   transition: all $duration 0s $easing;
 }
+
+// 可変背景画像の高さ計算（擬似要素の中にお使いください。）
+@mixin bgimg-pt($height: 200, $width: 356) {
+  content: '';
+  display: block;
+  padding-top: $height/$width*100%;
+}
