@@ -15,7 +15,7 @@ SCSS & Pug を利用しています。
 
 Homebrew、もしくはその他の方法でインストールすること。
 
-* node >=6.3.1
+* node >= 6.3.1
 * git
 * editorconfig (各IDE, テキストエディタのプラグイン/パッケージ)
 
@@ -39,13 +39,7 @@ npm install
 
 #### 開発サーバー (デフォルト：local:3000)
 ```
-npm run develop -s
-```
-
-#### スタイルガイド (デフォルト：local:3100)
-開発サーバーを立ち上げた後、もしくはdistを生成した後に起動してください。
-```
-npm run styleguide
+npm start
 ```
 
 #### 公開時
