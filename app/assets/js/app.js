@@ -40,7 +40,7 @@ class ScrollReveal {
       args = Object.assign(options,args);
       anime(args);
     }, {
-      offset: window.innerHeight/2
+      offset: window.innerHeight
     })
   }
 }
