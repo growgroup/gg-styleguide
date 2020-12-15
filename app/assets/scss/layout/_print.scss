@@ -3,25 +3,44 @@
 // Styleguide 5.6.0
 
 @media print {
-
-  html,body {
-    min-width: $grid-row-width;
+  @page {
+    margin: 8mm;
+    margin: 10mm 8mm 10mm 8mm;
+    margin: 4mm !important;
+    size: landscape; //横向き
+    size: portrait; //縦向き
   }
 
+  * {
+    -webkit-print-color-adjust: exact !important;
+    background-attachment: initial !important;
+    overflow-y: visible !important;
+  }
+
+  main {
+    * {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+
+  html {
+    overflow: visible !important;
+    zoom: 0.7 !important;
+  }
+
+  body {
+    min-width: 1320px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+
   // スライドバー, スマホ時のみ表示要素を非表示に
-  .slidebar-menu,
-  .slidebar-button,
+  .c-slidebar-menu,
+  .c-slidebar-button,
   .u-hidden-lg {
     display: none;
   }
 
-  // グリッドの対応
-  @for $i from 1 through $grid-column-count {
-    .large-#{$i} {
-      width: span($i);
-    }
-    .is-push-lg-#{$i} {
-      width: push($i);
-    }
-  }
 }
