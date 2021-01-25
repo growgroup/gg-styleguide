@@ -14,7 +14,7 @@ html(lang="ja")
         title= (current.title + '｜' + config.site.title)
     //- メタ情報
     block meta
-      -
+      //-
         var desc = false
         if (current.description)
           desc = current.description
@@ -22,7 +22,7 @@ html(lang="ja")
           desc = getPagesValue(current.id, "description")
         else
           desc = config.site.description
-      meta(name='description', content=desc)
+      meta(name='description', content=getPagesValue(id, "description"))
       meta(name="viewport", content=config.site.viewport)
 
     //- OGP
