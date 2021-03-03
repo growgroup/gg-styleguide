@@ -205,12 +205,18 @@ class App {
         type: 'image'
       });
     }
+    
+    // コピーライトの年数自動出力
+    function autoWriteYear() {
+      $('.js-current-year').text(new Date().getFullYear());
+    }
 
     $(function () {
       menuSlide();
       owlCarousel();
       modaal();
       reveal();
+      autoWriteYear();
     });
   }
 }
