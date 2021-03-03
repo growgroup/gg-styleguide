@@ -41,7 +41,7 @@ class ScrollDOM {
     }
   }
 
-  refresh(){
+  refresh() {
     this.setRange();
   }
 
@@ -60,7 +60,7 @@ class ScrollDOM {
   setRange() {
     this.domRect = this.el.getBoundingClientRect();
     this.range = {
-      top: this.domRect.top,
+      top: this.domRect.top + window.pageYOffset,
       bottom: this.domRect.top + this.domRect.height,
       left: this.domRect.left,
       right: this.domRect.right
@@ -95,8 +95,10 @@ class ScrollDOM {
   }
 
   watch() {
-    this.trigger();
+
     if (this.isFired === false) {
+      this.trigger();
+      this.setRange();
       window.requestAnimationFrame(this.watch);
     }
 
@@ -104,9 +106,9 @@ class ScrollDOM {
 
   trigger() {
     if (this.inRange()) {
+      this.isFired = true;
       if (typeof this.callback === 'function') {
         this.callback(this.el, this.getInterval());
-        this.isFired = true;
       }
     }
   }
@@ -117,10 +119,11 @@ class ScrollDOM {
 
   inRange() {
     let y = window.pageYOffset
-    if ( y === 0 ){
+    if (y === 0) {
       y = 1;
     }
-    return (window.pageYOffset > ((this.range.top - 0) - (this.options.offset - 0)));
+
+    return (y > ((this.range.top) - (this.options.offset - 0)));
   }
 }
 
@@ -132,15 +135,16 @@ export default class ScrollTrigger {
     if (typeof element === 'string') {
       this.elements = document.querySelectorAll(element);
     } else if (typeof element === 'object') {
-      if ( typeof element.length === "undefined" ){
+      if (typeof element.length === "undefined") {
         this.elements.push(element);
       } else {
         this.elements = element;
       }
     }
-    if ( typeof this.elements !== "undefined" ){
+    if (typeof this.elements !== "undefined") {
       if (this.elements.length >= 1) {
-        for (var i = 0; i < this.elements.length; i++) {
+        for (let i = 0; i < this.elements.length; i++) {
+
           var _scrolldom = new ScrollDOM(this.elements[i], callback, options);
           _scrolldom.setInterval(i);
           this.collections.push(_scrolldom);
@@ -157,7 +161,7 @@ export default class ScrollTrigger {
   }
 }
 
-export const scrollfire = function(element, callback, options) {
+export const scrollfire = function (element, callback, options) {
   const st = new ScrollTrigger(element, callback, options);
   st.start();
 }
