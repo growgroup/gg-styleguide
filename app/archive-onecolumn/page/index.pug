@@ -29,247 +29,232 @@ block body
             .l-post-content.is-twocolumns
               +img("img-sample.jpg")
               <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle">[<a href="#">非表示</a>]</span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1.</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2.</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
+              h2 見出し弐
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              h3 見出し参
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              h4 見出し四
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              h5 見出し五
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              h6 見出し六
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
-              div.u-mbs.is-top.is-md
-                strong 見出し
+              p
+                strong 強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト
+              p
+                small 小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト
 
-              div.u-mbs.is-top.is-md
-                h1 見出し壱
+              h2 引用 (Blockquote)
+              | 一行の引用:
+              blockquote.c-blockquote 貪欲であれ、愚かであれ
+              h2 引用 (Blockquote)
+              | 引用元の参照のある複数行の引用:
+              blockquote.c-blockquote.
+                | 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
+                cite スティーブ・ジョブズ - 1997年 Apple 世界的開発者会議
 
-              div.u-mbs.is-top.is-md
-                h2 見出し弐
+              h2 テーブル
+              table
+                tbody
+                  tr
+                    th 従業員
+                    th.views 給与
+                    th
+                  tr.odd
+                    td: a(href=".") ジェーン
+                    td $￥1
+                    td スティーブ・ジョブズの必要な給与。
+                  tr.even
+                    td: a(href=".") ジョン
+                    td ￥10万
+                    td ブログのすべて。
+                  tr.odd
+                    td: a(href=".") ジェーン
+                    td ￥1億
+                    td 百聞は一見にしかず。だよね ? なのでトムは1000倍。
+                  tr.even
+                    td: a(href=".") ジェーン
+                    td ￥1000億
+                    td これみたいな髪?! もういいよね…
+              h2 定義リスト
+              dl
+                dt 定義リストタイトル
+                dd これは定義リストです。
+                dt スタートアップ
+                dd スタートアップ会社もしくはスタートアップとは、反復可能でスケーラブルなビジネスモデルを追い求める会社もしくは一時的な組織です。
+                dt #dowork
+                dd ロブ・ダイデクと彼の個人的なボディーガードのクリストファー"ビッグ・ブラック"ボイキンスが作った言い回しで、"仕事しよう" が自己動機付けとして、友達を動機付けるために機能する。
+                dt ライブでやろう
+                dd ビル・オライリーが <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">説明</a> してもらいましょう。
 
-              div.u-mbs.is-top.is-md
-                h3 見出し参
+              h2 非順序リスト（ネスト化）
+              ul
+                li リストアイテム1
+                  ul
+                    li リストアイテム1
+                      ul
+                        li リストアイテム1
+                        li リストアイテム2
+                        li リストアイテム3
+                        li リストアイテム4
+                    li リストアイテム2
+                    li リストアイテム3
+                    li リストアイテム4
+                li リストアイテム2
+                li リストアイテム3
+                li リストアイテム4
 
-              div.u-mbs.is-top.is-md
-                h4 見出し四
+              h2 順序リスト
+              ol
+                li リストアイテム1
+                  ol
+                    li リストアイテム1
+                      ol
+                        li リストアイテム1
+                        li リストアイテム2
+                        li リストアイテム3
+                        li リストアイテム4
+                    li リストアイテム2
+                    li リストアイテム3
+                    li リストアイテム4
+                li リストアイテム2
+                li リストアイテム3
+                li リストアイテム4
+              h2 HTML　要素タグテスト
+              p 他の HTML タグは <a href="http://ja.support.wordpress.com/code/" rel="nofollow" target="_blank">FAQ</a> をご覧ください。
 
-              div.u-mbs.is-top.is-md
-                h5 見出し五
+              p
+                strong 住所タグ<br>
+                | 以下は住所の例です。<br>
+                code &lt;address&gt;
+                | タグを使用しています:
+                address 〒100-0000 東京都千代田区1-1-1 日本
 
-              div.u-mbs.is-top.is-md
-                h6 見出し六
+              p
+                strong anchor タグ (リンク)<br>
+                | これは
+                a(href=".", rel="nofollow")
+                  code &lt;anchor&gt;
 
-              div.u-mbs.is-top.is-md
-                h2 引用 (Blockquote)
-                | 一行の引用:
-                blockquote.c-blockquote 貪欲であれ、愚かであれ
+              p
+                strong abbr タグ<br>
+                | この
+                abbr(title="abbreviation") abbr
+                | は文章の中にある
+                code &lt;abbr&gt;
+                | タグの例です。
 
-              div.u-mbs.is-top.is-md
-                h2 引用 (Blockquote)
-                | 引用元の参照のある複数行の引用:
-                blockquote.c-blockquote.
-                  | 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
-                  cite スティーブ・ジョブズ - 1997年 Apple 世界的開発者会議
+              p
+                strong Acronym タグ (<em>HTML5 では非推奨</em>)<br>
+                | これは <code>&lt;acronym&gt;</code> タグを使用した
+                acronym(title="three-letter acronym") TLA
+                | です。
 
-              div.u-mbs.is-top.is-md
-                h2 テーブル
-                table
-                  tbody
-                    tr
-                      th 従業員
-                      th.views 給与
-                      th
-                    tr.odd
-                      td: a(href="http://example.com/") ジェーン
-                      td $￥1
-                      td スティーブ・ジョブズの必要な給与。
-                    tr.even
-                      td: a(href="http://example.com/") ジョン
-                      td ￥10万
-                      td ブログのすべて。
-                    tr.odd
-                      td: a(href="http://example.com/") ジェーン
-                      td ￥1億
-                      td 百聞は一見にしかず。だよね ? なのでトムは1000倍。
-                    tr.even
-                      td: a(href="http://example.com/") ジェーン
-                      td ￥1000億
-                      td これみたいな髪?! もういいよね…
+              p
+                strong Big タグ(<em>HTML5 では非推奨</em>)
+                | このテストは
+                big 大きな
+                | 文字を表す <code>&lt;big&gt;</code> タグの例ですが、このタグは HTML5 ではサポートされていません。
 
-              div.u-mbs.is-top.is-md
-                h2 定義リスト
-                dl
-                  dt 定義リストタイトル
-                  dd これは定義リストです。
-                  dt スタートアップ
-                  dd スタートアップ会社もしくはスタートアップとは、反復可能でスケーラブルなビジネスモデルを追い求める会社もしくは一時的な組織です。
-                  dt #dowork
-                  dd ロブ・ダイデクと彼の個人的なボディーガードのクリストファー"ビッグ・ブラック"ボイキンスが作った言い回しで、"仕事しよう" が自己動機付けとして、友達を動機付けるために機能する。
-                  dt ライブでやろう
-                  dd ビル・オライリーが <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">説明</a> してもらいましょう。
+              p
+                strong Cite タグ<br>
+                | "Code is poetry." --
+                cite WordPress
 
-              div.u-mbs.is-top
-                h2 非順序リスト（ネスト化）
-                ul.c-list.is-disc
-                  li リストアイテム1
-                    ul
-                      li リストアイテム1
-                        ul
-                          li リストアイテム1
-                          li リストアイテム2
-                          li リストアイテム3
-                          li リストアイテム4
-                      li リストアイテム2
-                      li リストアイテム3
-                      li リストアイテム4
-                  li リストアイテム2
-                  li リストアイテム3
-                  li リストアイテム4
+              p
+                strong Code タグ<br>
+                code &lt;code&gt;
+                |  タグはこのように使います:<br>
+                code word-wrap: break-word;
 
-              div.u-mbs.is-top
-                h2 順序リスト
-                ol.c-list.is-outline
-                  li リストアイテム1
-                    ol
-                      li リストアイテム1
-                        ol
-                          li リストアイテム1
-                          li リストアイテム2
-                          li リストアイテム3
-                          li リストアイテム4
-                      li リストアイテム2
-                      li リストアイテム3
-                      li リストアイテム4
-                  li リストアイテム2
-                  li リストアイテム3
-                  li リストアイテム4
+              p
+                strong Delete タグ<br>
+                code &lt;del&gt;
+                |  タグは
+                del 打ち消し線
+                | などで表現されますが、このタグは HTML5 ではサポートされていません (代わりに <code>&lt;strike&gt;</code> を使ってください)。
 
-              div.u-mbs.is-top.is-md
-                h2 HTML　要素タグテスト
-                | 他の HTML タグは <a href="http://ja.support.wordpress.com/code/" rel="nofollow">FAQ</a> をご覧ください。
+              p
+                strong Emphasize タグ<br>
+                code &lt;em&gt;
+                |  タグは<em>文章の強調</em>に使われます。欧文では斜体になっていることがよくあります。
 
-                div.u-mbs.is-top.is-sm
-                  strong 住所タグ<br>
-                  | 以下は住所の例です。<br>
-                  code &lt;address&gt;
-                  | タグを使用しています:
-                  address 〒100-0000 東京都千代田区1-1-1 日本
+              p
+                strong Insert タグ<br>
+                code &lt;ins&gt;
+                |  タグは
+                ins 挿入されたコンテンツ
+                | を意味します。
 
-                div.u-mbs.is-top.is-sm
-                  strong anchor タグ (リンク)<br>
-                  | これは
-                  a(href="http://example.com/", rel="nofollow")
-                    code &lt;anchor&gt;
+              p
+                strong Keyboard タグ<br>
+                | このあまり知られていない
+                code &lt;kbd&gt;
+                |  タグは
+                kbd Ctrl
+                |  のようにキーボードテキストをエミュレートします。通常、<code>&lt;code&gt;</code> タグと同じようにスタイリングされます。
 
-                div.u-mbs.is-top.is-sm
-                  strong abbr タグ<br>
-                  | この
-                  abbr(title="abbreviation") abbr
-                  | は文章の中にある
-                  code &lt;abbr&gt;
-                  | タグの例です。
+              p
+                strong Preformatted タグ<br>
+                code &lt;pre&gt;
+                |  タグは複数行のコードのスタイリングに使います。
+                pre
+                  | .post-title {
+                  |     margin: 0 0 5px;
+                  |     font-weight: bold;
+                  |     font-size: 38px;
+                  |     line-height: 1.2;
+                  |     and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
+                  | }
 
-                div.u-mbs.is-top.is-sm
-                  strong Acronym タグ (<em>HTML5 では非推奨</em>)<br>
-                  | これは <code>&lt;acronym&gt;</code> タグを使用した
-                  acronym(title="three-letter acronym") TLA
-                  | です。
+              p
+                strong Quote タグ<br>
+                q デベロッパーズ、デベロッパーズ, デベロッパーズ...
+                | --スティーブ・バルマー
 
-                div.u-mbs.is-top.is-sm
-                  strong Big タグ(<em>HTML5 では非推奨</em>)
-                  | このテストは
-                  big 大きな
-                  | 文字を表す <code>&lt;big&gt;</code> タグの例ですが、このタグは HTML5 ではサポートされていません。
+              p
+                strong Strike タグ (<em>HTML5 では非推奨</em>)<br>
+                | このタグは
+                strike 打ち消し線
+                | を表しています。
 
-                div.u-mbs.is-top.is-sm
-                  strong Cite タグ<br>
-                  | "Code is poetry." --
-                  cite WordPress
+              p
+                strong Strong タグ<br>
+                | このタグは
+                strong 太字
+                | テキストを表しています。
 
-                div.u-mbs.is-top.is-sm
-                  strong Code タグ<br>
-                  code &lt;code&gt;
-                  |  タグはこのように使います:<br>
-                  code word-wrap: break-word;
+              p
+                strong Subscript タグ<br>
+                | Subscript タグ
+                code &lt;sub&gt;
+                |  を使うと H
+                sub 2
+                | O のような表示の際に「2」が下付きになります。
 
-                div.u-mbs.is-top.is-sm
-                  strong Delete タグ<br>
-                  code &lt;del&gt;
-                  |  タグは
-                  del 打ち消し線
-                  | などで表現されますが、このタグは HTML5 ではサポートされていません (代わりに <code>&lt;strike&gt;</code> を使ってください)。
+              p
+                strong Superscript タグ<br>
+                |  Superscript タグ
+                code &lt;sup&gt;
+                |  を使うと E = MC
+                sup 2
+                | のような表示の際に「2」が上付きになります。
 
-                div.u-mbs.is-top.is-sm
-                  strong Emphasize タグ<br>
-                  code &lt;em&gt;
-                  |  タグは<em>文章の強調</em>に使われます。欧文では斜体になっていることがよくあります。
+              p
+                strong Teletype タグ (<em>HTML5 では非推奨</em>)<br>
+                code &lt;tt&gt;
+                |  はあまり使われないタグですが、
+                tt テレタイプテキスト
+                |  として通常 <code>&lt;code&gt;</code> タグのようにスタイリングされます。
 
-                div.u-mbs.is-top.is-sm
-                  strong Insert タグ<br>
-                  code &lt;ins&gt;
-                  |  タグは
-                  ins 挿入されたコンテンツ
-                  |　を意味します。
+              p
+                strong Variable タグ<br>
+                code &lt;tt&gt;
+                |  変数や引数を表す
+                var variables
+                |  タグです。
 
-                div.u-mbs.is-top.is-sm
-                  strong Keyboard タグ<br>
-                  | このあまり知られていない
-                  code &lt;kbd&gt;
-                  |  タグは
-                  kbd Ctrl
-                  |  のようにキーボードテキストをエミュレートします。通常、<code>&lt;code&gt;</code> タグと同じようにスタイリングされます。
-
-                div.u-mbs.is-top.is-sm
-                  strong Preformatted タグ<br>
-                  code &lt;pre&gt;
-                  |  タグは複数行のコードのスタイリングに使います。
-                  pre
-                    | .post-title {
-                    |     margin: 0 0 5px;
-                    |     font-weight: bold;
-                    |     font-size: 38px;
-                    |     line-height: 1.2;
-                    |     and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
-                    | }
-
-                div.u-mbs.is-top.is-sm
-                  strong Quote タグ<br>
-                  q デベロッパーズ、デベロッパーズ, デベロッパーズ...
-                  | --スティーブ・バルマー
-
-                div.u-mbs.is-top.is-sm
-                  strong Strike タグ (<em>HTML5 では非推奨</em>)<br>
-                  | このタグは
-                  strike 打ち消し線
-                  | を表しています。
-
-                div.u-mbs.is-top.is-sm
-                  strong Strong タグ<br>
-                  | このタグは
-                  strong 太字
-                  | テキストを表しています。
-
-                div.u-mbs.is-top.is-sm
-                  strong Subscript タグ<br>
-                  | Subscript タグ
-                  code &lt;sub&gt;
-                  |  を使うと H
-                  sub 2
-                  | O のような表示の際に「2」が下付きになります。
-
-                div.u-mbs.is-top.is-sm
-                  strong Superscript タグ<br>
-                  |  Superscript タグ
-                  code &lt;sup&gt;
-                  |  を使うと E = MC
-                  sup 2
-                  | のような表示の際に「2」が上付きになります。
-
-                div.u-mbs.is-top.is-sm
-                  strong Teletype タグ (<em>HTML5 では非推奨</em>)<br>
-                  code &lt;tt&gt;
-                  |  はあまり使われないタグですが、
-                  tt テレタイプテキスト
-                  |  として通常 <code>&lt;code&gt;</code> タグのようにスタイリングされます。
-
-                div.u-mbs.is-top.is-sm
-                  strong Variable タグ<br>
-                  code &lt;tt&gt;
-                  |  変数や引数を表す
-                  var variables
-                  |  タグです。
 
 
               div.u-mbs.is-bottom
