@@ -84,7 +84,7 @@
     max-width: rem-calc(240);
     margin: 0 auto;
     @include bg-option();
-    background-size: contain;
+    background-size: cover;
 
     &:before {
       display: block;
