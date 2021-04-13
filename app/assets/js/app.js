@@ -19,6 +19,10 @@ import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
 import OwlThemeCss from "owl.carousel/dist/assets/owl.theme.default.css";
 import modaalCss from 'modaal/dist/css/modaal.css';
+import slick from "slick-carousel/slick/slick.min.js";
+import slickCss from "slick-carousel/slick/slick.css";
+import slickTheme from "slick-carousel/slick/slick-theme.css";
+
 class ScrollReveal {
   constructor(options){
     this.options = options;
@@ -205,10 +209,88 @@ class App {
         type: 'image'
       });
     }
-    
+
     // コピーライトの年数自動出力
     function autoWriteYear() {
       $('.js-current-year').text(new Date().getFullYear());
+    }
+
+    // modaal
+    function modaal() {
+      // ====================
+      // <HTML>
+      // <a href="path/to/image.jpg" class="js-modal-image" data-modaal-desc="My Description">Show</a>
+      // or
+      // <button data-modaal-content-source="path/to/image.jpg" class="js-modal-image">Show</button>
+      // ====================
+
+      $('.js-modal-image').modaal({
+        type: 'image'
+      });
+    }
+
+    // コピーライトの年数自動出力
+    function autoWriteYear() {
+      $('.js-current-year').text(new Date().getFullYear());
+    }
+
+    // slick
+    function slickSlider() {
+
+      if ($('.js-gallery-slider').length <0 ){
+        return false;
+      }
+
+      if ($('.c-gallery-slider__thumbnail .c-gallery-slider__thumbnail-image').length < 2) {
+        $(".c-gallery-slider__thumbnail").addClass("is-simple-none");
+      }
+
+      // 上段
+      $('.c-gallery-slider__main').slick({
+        infinite: true,
+        arrow: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<div class="slick-prev"><img src="../assets/images/icon-arrow-left.png" /></div>',
+        nextArrow: '<div class="slick-next"><img src="../assets/images/icon-arrow-next.png" /></div>',
+        asNavFor: '.c-gallery-slider__thumbnail',
+        autoplaySpeed: 2500,
+        // centerPadding: '23.28%',
+        centerMode: true,
+        variableWidth: true,
+        dots: false,
+        responsive: [{
+          breakpoint: 750,
+          settings: {
+            variableWidth: false,
+            autoplaySpeed: 2500,
+            slidesToShow: 1
+          }
+        }]
+      });
+
+      // 下段
+      $('.c-gallery-slider__thumbnail').slick({
+        accessibility: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 400,
+        arrows: false,
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.c-gallery-slider__main',
+        focusOnSelect: true,
+        responsive: [{
+          breakpoint: 750,
+          settings: {
+            variableWidth: false,
+            autoplaySpeed: 2500,
+            slidesToShow: 4
+          }
+        }]
+      });
     }
 
     $(function () {
@@ -217,6 +299,7 @@ class App {
       modaal();
       reveal();
       autoWriteYear();
+      slickSlider();
     });
   }
 }
