@@ -95,3 +95,9 @@ category: Components
     }
   }
 }
+
+.c-card{
+  &__list{
+    display: block !important;
+  }
+}

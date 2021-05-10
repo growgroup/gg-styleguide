@@ -16,7 +16,6 @@
    * please insert your code
    *************************/
   growApp.prototype.myCode = function () {
-     
   }
 
   $(function () {

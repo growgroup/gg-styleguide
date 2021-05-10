@@ -1,6 +1,6 @@
 /*
 ---
-name: ヘッダー_通常
+name: ヘッダー
 category: Layout
 ---
 */
@@ -8,26 +8,45 @@ category: Layout
   background-color: $color-white;
   width: 100%;
   z-index: 9990;
-  padding: rem-calc(24) 0;
+  padding: rem-calc(16) rem-calc(32) rem-calc(24);
+  position: relative;
   @include breakpoint(medium down) {
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
     width: 100%;
-    padding: rem-calc(12) 0;
+    padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
     height: rem-calc(55);
   }
 
   &__inner {
     display: flex;
     align-items: center;
+    margin-bottom: 8px;
+    @include breakpoint(medium down) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    font-size: rem-calc(12);
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin: 0;
+    font-weight: 400;
+    @include breakpoint(medium down) {
+      font-size: rem-calc(10);
+      letter-spacing: 0;
+      display: none;
+    }
   }
 
   &__heading {
     margin: 0;
-    width: rem-calc(418)/2;
+    width: rem-calc(175);
+    flex-shrink: 0;
     @include breakpoint(medium down) {
-      width: rem-calc(418)/3;
+      width: rem-calc(148);
     }
 
     a,
@@ -38,78 +57,147 @@ category: Layout
 
   &__content {
     display: flex;
-    width: 100%;
     align-items: center;
-    justify-content: flex-end;
+  }
+
+  &__nav {
+    margin-left: auto;
     @include breakpoint(medium down) {
       display: none;
     }
-  }
 
-  &__submenu {
-    display: flex;
-    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      width: 100%;
 
-    li {
-      margin-left: 12px;
+      li {
+        margin-right: 32px;
+        &:last-of-type {
+          margin-right: 0;
+        }
 
-      a {
-        display: block;
-        width: rem-calc(142);
-        color: $font-base-color;
-        border: 1px solid $color-primary;
-        text-decoration: none;
-        text-align: center;
-        background-color: $color-white;
-        font-size: rem-calc(13);
-        font-weight: 400;
-        border-radius: 1000px;
-        padding: 3px 8px;
+        &:hover {
+          .l-header__submenu {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
 
-        i {
-          margin-right: 5px;
-          color: $color-primary;
+        a {
+          text-decoration: none;
+          color: $font-base-color;
+          font-size: rem-calc(14);
+          position: relative;
+          padding-bottom: rem-calc(36);
+          transition: all .3s ease;
+          //装飾
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: rem-calc(2);
+            background-color: $color-primary;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all .3s ease;
+          }
+
+          //*hover
+          &:hover {
+            opacity: 1;
+            color: $color-primary;
+
+            &:after {
+              width: 100%;
+              opacity: 1;
+            }
+          }
         }
       }
     }
   }
 
-  &__tel {
-    display: block;
-    text-decoration: none;
-    color: $font-base-color;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-left: 20px;
-    @include breakpoint(medium down) {
-      display: none;
+  &__submenu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    z-index: 9999;
+    background-color: rgba(#F4F7F9,0.95);
+    padding-top: rem-calc(64);
+    padding-bottom: rem-calc(40);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    @media (max-width: 1280px) {
+      padding-left: rem-calc(24);
+      padding-right: rem-calc(24);
     }
-    //電話番号
-    span {
-      color: $color-primary;
-      @include webfont();
-      font-size: 24px;
-      letter-spacing: 0.02em;
-      display: block;
+    &__outer {
+      display: flex;
+      width: 100%;
+      max-width: rem-calc(1140);
+      margin: 0 auto;
     }
-
-    //アイコン
-    i {
-      margin-right: 6px;
+    &__title {
+      width: rem-calc(390);
+      padding-top: rem-calc(8);
+      span {
+        @include webfont-bold();
+        font-size: rem-calc(56);
+        letter-spacing: 0.05em;
+        display: block;
+      }
+      small {
+        font-weight: 700;
+        font-size: rem-calc(18);
+        letter-spacing: 0.05em;
+        display: block;
+      }
     }
-
-    //受付時間
-    small {
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      display: block;
+    &__content {
+      width: calc(100% - 390px);
+    }
+    &__block {
+      width: 230/750*100%;
+      padding-bottom: 0 !important;
+      margin-right: 30/750*100%;
+      margin-bottom: rem-calc(24);
+      opacity: 1!important;
+      &:after {
+        display: none!important;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      span {
+        font-size: rem-calc(15);
+        font-weight: 700;
+        margin-top: rem-calc(10);
+        display: block;
+      }
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    &__flex {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 
   &__button {
     //*矢印削除
     max-width: rem-calc(196) !important;
-    margin-left: 24px;
+    margin-left: rem-calc(24);
+    @include breakpoint(medium down) {
+      display: none;
+    }
 
     &:after {
       display: none;
@@ -117,13 +205,20 @@ category: Layout
 
     //*アイコン
     i {
-      font-size: 16px;
-      padding-right: 8px;
+      font-size: rem-calc(16);
+      padding-right: rem-calc(8);
     }
   }
 }
 
-
+// スマホメニューopen時
+.is-slidebar-active {
+  .l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
 
 
 

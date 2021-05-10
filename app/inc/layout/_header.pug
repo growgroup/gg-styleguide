@@ -1,15 +1,10 @@
-header.l-header-minimal
-  .l-header-minimal__inner
-    .l-header-minimal__text テキストテキストテキストテキストテキスト
-    a(href="tel: 00-0000-0000").l-header-minimal__tel
-      span <i class="fa fa-phone" aria-hidden="true"></i>00-0000-0000
-      small 受付時間 / 平日00：00～00：00
-  .l-header-minimal__content
+header.l-header
+  .l-header__content
     if current.id == 'top'
-      h1.l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
+      h1.l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
     else
-      .l-header-minimal__heading: +a("/"): +img("logo.png","株式会社サンプル")
-    nav.l-header-minimal__nav
+      .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+    nav.l-header__nav
       ul
         li: +a("/onecolumn/") 1COLUMN
         li: +a("/twocolumns/") 2COLUMN
@@ -17,18 +12,18 @@ header.l-header-minimal
         li: +a("/archive-twocolumns/") ARCHIVE2
         li
           +a("/format/") FORMAT
-          .l-header-minimal__submenu
-            .l-header-minimal__submenu__outer
-              .l-header-minimal__submenu__title
+          .l-header__submenu
+            .l-header__submenu__outer
+              .l-header__submenu__title
                 span FORMAT
                 small フォーマット
-              .l-header-minimal__submenu__content
-                .l-header-minimal__submenu__flex
-                  +a("/format/").l-header-minimal__submenu__block
-                    .l-header-minimal__submenu__image: +img("img-sample-sm.jpg", "フォーマット")
+              .l-header__submenu__content
+                .l-header__submenu__flex
+                  +a("/format/").l-header__submenu__block
+                    .l-header__submenu__image: +img("img-sample-sm.jpg", "フォーマット")
                     span フォーマット
-                  +a("/blocks/").l-header-minimal__submenu__block
-                    .l-header-minimal__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
+                  +a("/blocks/").l-header__submenu__block
+                    .l-header__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
                     span ブロック編集ページ
         li: +a("/recruit/") RECRUIT
-    +a("/contact/").l-header-minimal__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+    +a("/contact/").l-header__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ

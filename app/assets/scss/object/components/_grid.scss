@@ -63,6 +63,10 @@ $susy: (
     margin-left: -(map_get($grid-column-responsive-gutter,small)/2);
     margin-right: -(map_get($grid-column-responsive-gutter,small)/2);
   }
+
+  &.is-center{
+    justify-content: center;
+  }
 }
 
 // グリッド : スマートフォン

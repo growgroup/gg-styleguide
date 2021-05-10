@@ -119,11 +119,16 @@ class App {
           autoWidth: false,
           autoHeight: false,
           center: true,
+          animateOut: 'fadeOut',
           navText: ['<img src="../assets/images/icon-slider-prev.svg" />', '<img src="../assets/images/icon-slider-next.svg" />'],
         });
       });
       //->カード_カルーセル
       owls.imagesLoaded(function () {
+        if ($('.js-card-slider').find('.c-card__block').length < 3){
+          $('.js-card-slider').toggleClass('owl-carousel');
+          return false;
+        }
         $('.js-card-slider').owlCarousel({
           margin: 0,
           dots: false,
