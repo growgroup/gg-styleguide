@@ -466,3 +466,9 @@
   display: block;
   padding-top: $height/$width*100%;
 }
+
+@mixin flex($justify-content: normal, $align-items: normal){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

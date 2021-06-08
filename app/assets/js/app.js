@@ -4,6 +4,7 @@ import Accordion from './app/accordion.js';
 import Anchor from './app/anchor.js';
 import FixedHeader from './app/fixedheader.js';
 import HeightLine from './app/heightline.js';
+import CopyRight from './app/copyright.js';
 import ResponsiveTable from './app/responsive-table.js';
 import Slidebar from './app/slidebar.js';
 import Tab from './app/tab.js';
@@ -12,8 +13,10 @@ import buildFormat from './app/format.js';
 import myScript from './scripts.js';
 import OwlCarousel from 'owl.carousel';
 import modaal from 'modaal';
+import modal from './app/modal.js';
 import {scrollfire} from "./app/scrolltrigger.js";
 import anime from 'animejs';
+
 
 import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
@@ -22,6 +25,7 @@ import modaalCss from 'modaal/dist/css/modaal.css';
 import slick from "slick-carousel/slick/slick.min.js";
 import slickCss from "slick-carousel/slick/slick.css";
 import slickTheme from "slick-carousel/slick/slick-theme.css";
+
 
 class ScrollReveal {
   constructor(options){
@@ -55,6 +59,8 @@ class App {
     this.Accordion = new Accordion();
     this.Anchor = new Anchor();
     this.FixedHeader = new FixedHeader();
+    this.modal = new modal();
+    this.CopyRight = new CopyRight();
     this.HeightLine = new HeightLine();
     this.ResponsiveTable = new ResponsiveTable();
     this.Slidebar = new Slidebar();
@@ -98,6 +104,7 @@ class App {
         $(this).children(".l-footer__menulist.is-sub").slideToggle();
       })
     }
+
 
     //owlcarousel
     function owlCarousel() {
@@ -201,43 +208,7 @@ class App {
       });
     }
 
-    // modaal
-    function modaal() {
-      // ====================
-      // <HTML>
-      // <a href="path/to/image.jpg" class="js-modal-image" data-modaal-desc="My Description">Show</a>
-      // or
-      // <button data-modaal-content-source="path/to/image.jpg" class="js-modal-image">Show</button>
-      // ====================
 
-      $('.js-modal-image').modaal({
-        type: 'image'
-      });
-    }
-
-    // コピーライトの年数自動出力
-    function autoWriteYear() {
-      $('.js-current-year').text(new Date().getFullYear());
-    }
-
-    // modaal
-    function modaal() {
-      // ====================
-      // <HTML>
-      // <a href="path/to/image.jpg" class="js-modal-image" data-modaal-desc="My Description">Show</a>
-      // or
-      // <button data-modaal-content-source="path/to/image.jpg" class="js-modal-image">Show</button>
-      // ====================
-
-      $('.js-modal-image').modaal({
-        type: 'image'
-      });
-    }
-
-    // コピーライトの年数自動出力
-    function autoWriteYear() {
-      $('.js-current-year').text(new Date().getFullYear());
-    }
 
     // slick
     function slickSlider() {
@@ -301,9 +272,7 @@ class App {
     $(function () {
       menuSlide();
       owlCarousel();
-      modaal();
       reveal();
-      autoWriteYear();
       slickSlider();
     });
   }
