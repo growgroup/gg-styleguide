@@ -472,3 +472,10 @@
   justify-content: $justify-content;
   align-items: $align-items;
 }
+
+@mixin font-format($size : $font-base-size,$letter: $font-base-letter-spacing,$height: 24,$weight: $font-base-weight){
+  font-size: rem-calc($size);
+  letter-spacing: $letter + em;
+  line-height: $height / $size * 1;
+  font-weight: $weight;
+}
