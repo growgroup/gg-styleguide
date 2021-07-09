@@ -25,7 +25,8 @@ block body
               +e.item
                 +e.item-number 3
                 +e.item-text 送信完了
-        +c.forms
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+        +c("form").forms
           .row
             .large-10.is-push-lg-1.small-12
               +e.text 下記のフォームに必須項目を入力して送信してください。
@@ -147,7 +148,7 @@ block body
                     span 郵便番号
                     +e.flex-al
                       +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                      button.c-forms-simple__button#zipauto 住所を自動入力
+                      button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');return false;").c-forms-simple__button#zipauto 住所を自動入力
                   +e.flexbox
                     span 住所
                     +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
@@ -158,7 +159,7 @@ block body
                 +e.content
                   +e.flex-al
                     +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                    button.c-forms-simple__button#zipauto 住所を自動入力
+                    button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');return false;").c-forms-simple__button#zipauto 住所を自動入力
               +e.block
                 +e.title
                   | 住所
