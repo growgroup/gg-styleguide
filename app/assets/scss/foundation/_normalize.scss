@@ -501,3 +501,11 @@ li {
   list-style: none;
   margin: 0;
 }
+
+
+a{
+  @include transition();
+  &:hover{
+    @include transition()
+  }
+}
