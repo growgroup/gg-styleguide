@@ -1,14 +1,14 @@
 extends /inc/foundation/_base.pug
 block append config
-  - current.id = "post-onecolumn" // ページのID
-  - current.title = "ポスト_1カラム" // タイトル
-  - current.description = "これはポスト_1カラムの説明文です" // 説明文
-  - current.bodyClass = "post-onecolumn" // body に付与するクラス
+  - current.id = "news" // ページのID
+  - current.title = "お知らせ" // タイトル
+  - current.description = "これはお知らせの説明文です" // 説明文
+  - current.bodyClass = "news" // body に付与するクラス
   - current.depth = 3 // ページの階層
 
 block page_header
-  +l_page_header("img-page-header-format.jpg","POST 1COLUMN","ポスト_1カラム")
-  +c_breadcrumb("アーカイブ_1カラム","archive-onecolumn")
+  +l_page_header("img-page-header-format.jpg","NEWS","お知らせ")
+  +c_breadcrumb("お知らせ","news")
 
 block body
   main.l-main

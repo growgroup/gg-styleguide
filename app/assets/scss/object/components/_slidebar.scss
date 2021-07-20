@@ -248,7 +248,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
   // 有効時
   .is-slidebar-active {
-    cursor: pointer;
+    //cursor: pointer;
 
     .c-slidebar-button {
       &__line {
