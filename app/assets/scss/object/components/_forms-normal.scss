@@ -75,6 +75,14 @@
       margin-right: rem-calc(8);
       margin-top: rem-calc(2);
     }
+
+    span {
+      &:last-child {
+        label {
+          margin-right: 0;
+        }
+      }
+    }
   }
   &__checkbox {
     input {
