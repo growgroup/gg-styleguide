@@ -17,8 +17,11 @@ category: Navigation
   }
 
   ul li {
-    margin-right: rem-calc(6);
     list-style: none !important;
+
+    &:not(:last-child) {
+      margin-right: rem-calc(6);
+    }
   }
 
   ul li span,
