@@ -27,7 +27,7 @@ category: Navigation
   ul li span,
   ul li a {
     @include webfont-bold();
-    font-size: rem-calc(16);
+    @include font-format(16,0.05,13,700);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,13 @@ category: Navigation
       background: $color-primary;
       border-color: $color-primary;
       color: $color-white;
+    }
+
+    &.is-dot {
+      font-family: $font-base-family;
+      background: transparent;
+      border-color: transparent;
+      color: $color-primary;
     }
   }
 
