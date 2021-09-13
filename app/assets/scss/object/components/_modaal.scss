@@ -1,0 +1,12 @@
+.modaal{
+  &-wrapper{
+    z-index: 999999 !important;
+  }
+  &-outer-wrapper{}
+
+  &-inner-wrapper{}
+
+  &-overlay{
+    z-index: 99999 !important;
+  }
+}

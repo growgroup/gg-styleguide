@@ -2,12 +2,13 @@
 mixin c_slidebar
   //-> スマホメニューのボタン
   a(href="#").c-slidebar-button.js-slidebar-button
-    span.c-slidebar-button__line
-      span
-      span
-      span
-    span.c-slidebar-button__text.is-open MENU
-    span.c-slidebar-button__text.is-close CLOSE
+    .c-slidebar-button__inner
+      span.c-slidebar-button__line
+        span
+        span
+        span
+      span.c-slidebar-button__text.is-open MENU
+      span.c-slidebar-button__text.is-close CLOSE
   .c-slidebar-menu.js-slidebar-menu.is-top-to-bottom
     ul
       li: +a("#") メニュー1
