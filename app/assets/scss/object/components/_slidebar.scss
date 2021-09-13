@@ -43,8 +43,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       opacity: 1 !important;
     }
 
+    &__inner{
+
+    }
+
     // ボーダー
     &__line {
+      height: rem-calc(16) !important;
+      display: block;
       > span {
         display: block;
         width: rem-calc(26);
@@ -67,7 +73,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       font-size: 9px;
       letter-spacing: 0.4px;
       @include webfont();
-      margin-top: rem-calc(6);
+      margin-top: rem-calc(8);
+      display: block;
 
       &.is-close {
         display: none;
