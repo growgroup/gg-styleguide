@@ -52,7 +52,7 @@ $grid-column-responsive-gutter: (// カラムとカラムの間隔
 
 // # 3. font
 $font-base-size: 16px !default; // body のフォントサイズ
-$font-base-line-hight: 1.75 !default; // body のフォントサイズ
+$font-base-line-height: 1.75 !default; // body のフォントサイズ
 $font-base-letter-spacing: 0.1em !default; // body のフォントサイズ
 $font-base-color: #333 !default; // body のフォントカラー
 $font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
@@ -127,3 +127,6 @@ $layout-sidebar-float: left;
 
 $layout-main-width: calc(100% - rem-calc(320));
 $layout-main-float: left;
+
+// # 8. background
+$color-background: #ccc;

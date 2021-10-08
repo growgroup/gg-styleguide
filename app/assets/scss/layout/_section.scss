@@ -95,4 +95,8 @@
   &.is-bottom {
     padding-top: 0 !important;
   }
+
+  &.is-bg-color{
+    background: $color-background;
+  }
 }
