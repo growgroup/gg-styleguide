@@ -45,6 +45,7 @@ wp-content/plugins/siteguard/really-simple-captcha/tmp/
 /license.txt
 *.sql
 *.zip
+*.mp4
 
 ### Node ###
 

@@ -1,10 +1,9 @@
-if current.id === 'contact'
+if current.id === 'contact' || current.id === 'entry'
   header.l-header
     .l-header__content
-      if current.id == 'top'
-        h1.l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
-      else
-        .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+      .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+
+
 else
   header.l-header
     .l-header__content

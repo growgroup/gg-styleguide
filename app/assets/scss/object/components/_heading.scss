@@ -17,7 +17,6 @@ category: Heading
 }
 
 .c-heading.is-xlg {
-  text-align: center;
   color: $color-primary;
   margin-bottom: rem-calc(24);
   @include breakpoint(small only) {
@@ -46,7 +45,6 @@ category: Heading
 }
 
 .c-heading.is-lg {
-  text-align: center;
   color: $color-primary;
   font-size: rem-calc(32);
   letter-spacing: 0.1em;
@@ -70,7 +68,6 @@ category: Heading
 
 .c-heading.is-md {
   font-size: rem-calc(28);
-  text-align: center;
   letter-spacing: 0.1em;
   margin-bottom: rem-calc(20);
   @include breakpoint(small only) {
@@ -117,4 +114,8 @@ category: Heading
 
 .c-heading.is-bottom {
   margin-top: 0 !important;
+}
+
+.c-heading.is-center{
+  text-align: center;
 }
