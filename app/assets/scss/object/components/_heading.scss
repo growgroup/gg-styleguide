@@ -7,7 +7,7 @@ category: Heading
 
 .c-heading {
   margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0;
   font-weight: 700;
   line-height: 1.5;
 
@@ -16,6 +16,8 @@ category: Heading
   }
 }
 
+
+// h1
 .c-heading.is-xlg {
   color: $color-primary;
   margin-bottom: rem-calc(24);
@@ -44,6 +46,7 @@ category: Heading
   }
 }
 
+// h2
 .c-heading.is-lg {
   color: $color-primary;
   font-size: rem-calc(32);
@@ -66,6 +69,7 @@ category: Heading
   }
 }
 
+// h3
 .c-heading.is-md {
   font-size: rem-calc(28);
   letter-spacing: 0.1em;
@@ -76,6 +80,7 @@ category: Heading
   }
 }
 
+// h4
 .c-heading.is-sm {
   font-size: rem-calc(24);
   letter-spacing: 0.1em;
@@ -84,6 +89,7 @@ category: Heading
   }
 }
 
+// h5
 .c-heading.is-xs {
   font-size: rem-calc(20);
   letter-spacing: 0.1em;
@@ -94,6 +100,7 @@ category: Heading
   }
 }
 
+// h6
 .c-heading.is-xxs {
   font-size: rem-calc(18);
   letter-spacing: 0.1em;
