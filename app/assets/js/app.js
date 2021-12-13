@@ -17,7 +17,6 @@ import modal from './app/modal.js';
 import {scrollfire} from "./app/scrolltrigger.js";
 import anime from 'animejs';
 
-
 import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
 import OwlThemeCss from "owl.carousel/dist/assets/owl.theme.default.css";
@@ -25,6 +24,7 @@ import modaalCss from 'modaal/dist/css/modaal.css';
 import slick from "slick-carousel/slick/slick.min.js";
 import slickCss from "slick-carousel/slick/slick.css";
 import slickTheme from "slick-carousel/slick/slick-theme.css";
+
 
 
 class ScrollReveal {

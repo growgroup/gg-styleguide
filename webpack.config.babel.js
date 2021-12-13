@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import globImporter from 'node-sass-glob-importer';
 import path from 'path'
 
 const BASE_DIR = "../../"
@@ -9,6 +10,7 @@ export default {
   context: __dirname + '/app/',
   entry: {
     app: __dirname + '/app/assets/js/app.js',
+    style: __dirname + '/app/assets/js/style.js',
   },
   output: {
     path: path.join(__dirname, 'dist/'),
@@ -28,7 +30,7 @@ export default {
         exclude: /node_modules/,
         enforce: 'pre',
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['@babel/preset-env']
         }
       },
@@ -43,6 +45,11 @@ export default {
           },
           {
             loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                importer: globImporter()
+              }
+            }
           }
         ],
       },
