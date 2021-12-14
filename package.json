@@ -33,9 +33,9 @@
   "author": "GrowGroup",
   "devDependencies": {
     "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/register": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/register": "^7.16.5",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
