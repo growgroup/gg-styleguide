@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .c-tel-top {
   padding: rem-calc(48);
   background-color: #F9F9F9;
@@ -9,11 +11,11 @@
   &__text {
     margin-top: rem-calc(6);
     font-size: rem-calc(16);
-    line-height: 24/16*1;
+    line-height: math.div(24, 16)*1;
     letter-spacing: 0.05em;
     @include breakpoint(small only) {
       font-size: rem-calc(12);
-      line-height: 20/12*1;
+      line-height: math.div(20, 12)*1;
     }
   }
 
@@ -22,7 +24,7 @@
     font-size: rem-calc(18);
     font-weight: 700;
     letter-spacing: 0.05em;
-    line-height: 28/18*1;
+    line-height: math.div(28, 18)*1;
     margin-bottom: rem-calc(14);
     @include breakpoint(small only) {
       font-size: rem-calc(16);

@@ -4,6 +4,8 @@ name: ヒーローブロック_枡目型
 category: SpecialComponents
 ---
 */
+@use "sass:math";
+
 .c-hero-block-square {
   &__block {
     position: relative;
@@ -96,7 +98,7 @@ category: SpecialComponents
     span {
       @include webfont-bold();
       font-size: 60px;
-      line-height: 71/60*1;
+      line-height: math.div(71, 60)*1;
       letter-spacing: 0;
       color: $color-primary;
       margin-right: rem-calc(16);
@@ -120,14 +122,14 @@ category: SpecialComponents
   }
 
   .c-hero-block-square__image {
-    width: 718/1400*100%;
+    width: math.div(718, 1400)*100%;
     @include breakpoint(small only) {
       width: 100%;
     }
   }
 
   .c-hero-block-square__content {
-    width: 550/1140*100%;
+    width: math.div(550, 1140)*100%;
     padding-top: 0;
     padding-bottom: 0;
     display: block;

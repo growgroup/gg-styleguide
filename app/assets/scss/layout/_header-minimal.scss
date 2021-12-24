@@ -4,6 +4,8 @@ name: ヘッダー_ミニマル
 category: Layout
 ---
 */
+@use "sass:math";
+
 .l-header-minimal {
   background-color: $color-white;
   width: 100%;
@@ -196,9 +198,9 @@ category: Layout
       width: calc(100% - 390px);
     }
     &__block {
-      width: 230/750*100%;
+      width: math.div(230, 750)*100%;
       padding-bottom: 0 !important;
-      margin-right: 30/750*100%;
+      margin-right: math.div(30, 750)*100%;
       margin-bottom: rem-calc(24);
       opacity: 1!important;
       &:after {

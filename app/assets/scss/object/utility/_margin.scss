@@ -17,16 +17,16 @@
   margin-top: rem-calc(56);
   margin-bottom: rem-calc(56);
   @include breakpoint(small only) {
-    margin-top: rem-calc(56)/2;
-    margin-bottom: rem-calc(56)/2;
+    margin-top: rem-calc(56)*0.5;
+    margin-bottom: rem-calc(56)*0.5;
   }
 
   &.is-xxxxlg {
     margin-top: rem-calc(120);
     margin-bottom: rem-calc(120);
     @include breakpoint(small only) {
-      margin-top: rem-calc(120)/2;
-      margin-bottom: rem-calc(120)/2;
+      margin-top: rem-calc(120)*0.5;
+      margin-bottom: rem-calc(120)*0.5;
     }
   }
 
@@ -34,8 +34,8 @@
     margin-top: rem-calc(96);
     margin-bottom: rem-calc(96);
     @include breakpoint(small only) {
-      margin-top: rem-calc(96)/2;
-      margin-bottom: rem-calc(96)/2;
+      margin-top: rem-calc(96)*0.5;
+      margin-bottom: rem-calc(96)*0.5;
     }
   }
 
@@ -43,8 +43,8 @@
     margin-top: rem-calc(80);
     margin-bottom: rem-calc(80);
     @include breakpoint(small only) {
-      margin-top: rem-calc(80)/2;
-      margin-bottom: rem-calc(80)/2;
+      margin-top: rem-calc(80)*0.5;
+      margin-bottom: rem-calc(80)*0.5;
     }
   }
 
@@ -52,8 +52,8 @@
     margin-top: rem-calc(72);
     margin-bottom: rem-calc(72);
     @include breakpoint(small only) {
-      margin-top: rem-calc(72)/2;
-      margin-bottom: rem-calc(72)/2;
+      margin-top: rem-calc(72)*0.5;
+      margin-bottom: rem-calc(72)*0.5;
     }
   }
 
@@ -61,40 +61,40 @@
     margin-top: rem-calc(64);
     margin-bottom: rem-calc(64);
     @include breakpoint(small only) {
-      margin-top: rem-calc(64)/2;
-      margin-bottom: rem-calc(64)/2;
+      margin-top: rem-calc(64)*0.5;
+      margin-bottom: rem-calc(64)*0.5;
     }
   }
   &.is-sm {
     margin-top: rem-calc(48);
     margin-bottom: rem-calc(48);
     @include breakpoint(small only) {
-      margin-top: rem-calc(24)/2;
-      margin-bottom: rem-calc(24)/2;
+      margin-top: rem-calc(24)*0.5;
+      margin-bottom: rem-calc(24)*0.5;
     }
   }
   &.is-xs {
     margin-top: rem-calc(32);
     margin-bottom: rem-calc(32);
     @include breakpoint(small only) {
-      margin-top: rem-calc(32)/2;
-      margin-bottom: rem-calc(32)/2;
+      margin-top: rem-calc(32)*0.5;
+      margin-bottom: rem-calc(32)*0.5;
     }
   }
   &.is-xxs {
     margin-top: rem-calc(24);
     margin-bottom: rem-calc(24);
     @include breakpoint(small only) {
-      margin-top: rem-calc(24)/2;
-      margin-bottom: rem-calc(24)/2;
+      margin-top: rem-calc(24)*0.5;
+      margin-bottom: rem-calc(24)*0.5;
     }
   }
   &.is-xxs {
     margin-top: rem-calc(16);
     margin-bottom: rem-calc(16);
     @include breakpoint(small only) {
-      margin-top: rem-calc(16)/2;
-      margin-bottom: rem-calc(16)/2;
+      margin-top: rem-calc(16)*0.5;
+      margin-bottom: rem-calc(16)*0.5;
     }
   }
 

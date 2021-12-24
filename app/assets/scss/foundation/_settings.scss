@@ -3,6 +3,8 @@
 // プロジェクトのCSSで利用する変数を定義
 
 // # 1. Color
+@use "sass:math";
+
 $color-white: #fff !default; // 白
 $color-black: #000 !default; // 黒
 
@@ -105,8 +107,8 @@ $border-radius: 3px !default;
 $border-radius-xlg: $border-radius*4 !default;
 $border-radius-lg: $border-radius*3 !default;
 $border-radius-md: $border-radius*2 !default;
-$border-radius-sm: $border-radius/2 !default;
-$border-radius-xs: $border-radius/3 !default;
+$border-radius-sm: $border-radius*0.5 !default;
+$border-radius-xs: math.div($border-radius, 3) !default;
 
 // # 6. breakpoint
 

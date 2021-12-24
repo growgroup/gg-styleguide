@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .c-forms-normal {
   &__block {
     margin-bottom: rem-calc(48);
@@ -29,7 +31,7 @@
       border-radius: 4px;
       font-size: rem-calc(16);
       letter-spacing: 0.05em;
-      line-height: 28/16*1;
+      line-height: math.div(28, 16)*1;
       &:focus {
         outline: none;
         border-color: $color-primary;

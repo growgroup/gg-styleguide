@@ -16,6 +16,7 @@ import modaal from 'modaal';
 import modal from './app/modal.js';
 import {scrollfire} from "./app/scrolltrigger.js";
 import anime from 'animejs';
+import ScrollReveal from "./app/scrollreveal";
 
 import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
@@ -25,33 +26,6 @@ import slick from "slick-carousel/slick/slick.min.js";
 import slickCss from "slick-carousel/slick/slick.css";
 import slickTheme from "slick-carousel/slick/slick-theme.css";
 
-
-
-class ScrollReveal {
-  constructor(options){
-    this.options = options;
-  }
-
-  reveal(el, options, duration){
-    $(el).css({
-      visibility: "visible",
-      opacity: 0,
-    })
-    scrollfire( el, function(){
-      // console.log(el);
-      var args = {
-        targets: el,
-        // opacity: 1,
-        // translateY: -options.distance,
-        // duration: 600
-      }
-      args = Object.assign(options,args);
-      anime(args);
-    }, {
-      offset: window.innerHeight
-    })
-  }
-}
 
 class App {
   constructor() {
@@ -77,8 +51,6 @@ class App {
       var $smpHeaderHeight = $('.l-header').height();
       var windowHeight = window.innerHeight;
       var winH = windowHeight - $smpHeaderHeight;
-
-      console.log($smpHeaderHeight);
 
       //動かすターゲットを取得
       var targetSlidebarWrap = $('.c-slidebar-menu'),

@@ -5,6 +5,8 @@ category: Layout
 ---
 */
 
+@use "sass:math";
+
 .l-footer-simple {
   background-color: $color-primary;
   color: $color-white;
@@ -41,7 +43,7 @@ category: Layout
     small {
       color: rgba($color-white, 0.5);
       font-size: rem-calc(12);
-      line-height: 18/12*1;
+      line-height: math.div(18, 12)*1;
     }
   }
 }

@@ -4,6 +4,8 @@ name: ヘッダー_可変
 category: Layout
 ---
 */
+@use "sass:math";
+
 .l-header-variable {
   background-color: $color-white;
   width: 100%;
@@ -58,7 +60,7 @@ category: Layout
       @include webfont-bold();
       font-size: rem-calc(22) !important;
       letter-spacing: 0;
-      line-height: 24/22*1;
+      line-height: math.div(24, 22)*1;
       //アイコン
       &:before {
         content: '';
@@ -82,10 +84,10 @@ category: Layout
   }
   &__heading {
     margin: 0;
-    width: rem-calc(492)/2;
+    width: rem-calc(492)*0.5;
     flex-shrink: 0;
     @include breakpoint(medium down) {
-      width: rem-calc(152)/3;
+      width: math.div(rem-calc(152), 3);
     }
     a,
     img {
@@ -127,7 +129,7 @@ category: Layout
           small {
             display: block;
             font-size: rem-calc(10);
-            line-height: 12/10*1;
+            line-height: 12*0.1*1;
             letter-spacing: 0.1em;
             font-weight: 400;
           }
@@ -162,7 +164,7 @@ category: Layout
           small {
             text-align: center;
             font-size: rem-calc(10);
-            line-height: 12/10*1;
+            line-height: 12*0.1*1;
           }
         }
       }

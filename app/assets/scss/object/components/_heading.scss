@@ -54,7 +54,7 @@ category: Heading
   margin-bottom: rem-calc(24);
   @include breakpoint(small only) {
     font-size: rem-calc(32)*0.8;
-    margin-bottom: rem-calc(24)/2;
+    margin-bottom: rem-calc(24)*0.5;
   }
 
   small {
@@ -76,7 +76,7 @@ category: Heading
   margin-bottom: rem-calc(20);
   @include breakpoint(small only) {
     font-size: rem-calc(28)*0.8;
-    margin-bottom: rem-calc(20)/2;
+    margin-bottom: rem-calc(20)*0.5;
   }
 }
 
@@ -96,7 +96,7 @@ category: Heading
   margin-bottom: rem-calc(16);
   @include breakpoint(small only) {
     font-size: rem-calc(20)*0.8;
-    margin-bottom: rem-calc(16)/2;
+    margin-bottom: rem-calc(16)*0.5;
   }
 }
 

@@ -5,6 +5,8 @@ category: SpecialComponents
 ---
 */
 
+@use "sass:math";
+
 .c-hero-block {
   overflow: hidden;
 
@@ -42,7 +44,7 @@ category: SpecialComponents
     position: absolute;
     top: 0;
     left: 0;
-    width: 880/1600*100%;
+    width: math.div(880, 1600)*100%;
     height: rem-calc(480);
     overflow: hidden;
     @include breakpoint(small only) {
@@ -72,7 +74,7 @@ category: SpecialComponents
     background-color: $color-white;
     position: relative;
     z-index: 99;
-    width: 588/1140*100%;
+    width: math.div(588, 1140)*100%;
     min-height: rem-calc(312);
     margin-left: auto;
     padding: rem-calc(64);
@@ -96,7 +98,7 @@ category: SpecialComponents
     align-items: center;
     margin-bottom: rem-calc(24);
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(24)/2;
+      margin-bottom: rem-calc(24)*0.5;
     }
 
     small {
@@ -108,8 +110,8 @@ category: SpecialComponents
       cursor: pointer;
       margin-right: rem-calc(16);
       @include breakpoint(small only) {
-        font-size: rem-calc(100)/2;
-        margin-right: rem-calc(16)/2;
+        font-size: rem-calc(100)*0.5;
+        margin-right: rem-calc(16)*0.5;
       }
     }
 
@@ -127,7 +129,7 @@ category: SpecialComponents
     margin-top: rem-calc(32);
     text-align: right;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32)/2;
+      margin-top: rem-calc(32)*0.5;
     }
   }
 }

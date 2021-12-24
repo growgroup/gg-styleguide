@@ -3,9 +3,11 @@
 // テンプレート内で利用できる mixin と function を定義
 //
 
+@use "sass:math";
+
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, $number * 0 + 1);
   }
 
   @return $number;
@@ -19,7 +21,7 @@
   }
 
   @if unit($value) != 'rem' {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
   @if $value == 0rem {
@@ -38,7 +40,7 @@
   }
 
   @if unit($base) == '%' {
-    $base: ($base / 100%) * 16px;
+    $base: math.div($base, 100%) * 16px;
   }
 
   @if $count == 1 {
@@ -105,7 +107,7 @@
 
   $bp: to-em($bp);
   @if $bp-max {
-    $bp-max: to-em($bp-max) - (1/16);
+    $bp-max: to-em($bp-max) - math.div(1, 16);
   }
 
   @if $bp > 0em or $dir == 'only' or $dir == 'down' {
@@ -464,7 +466,7 @@
 @mixin bgimg-pt($height: 200, $width: 356) {
   content: '';
   display: block;
-  padding-top: $height/$width*100%;
+  padding-top: math.div($height, $width)*100%;
 }
 
 @mixin flex($justify-content: normal, $align-items: normal){
@@ -476,6 +478,6 @@
 @mixin font-format($size : $font-base-size,$letter: $font-base-letter-spacing,$height: 24,$weight: $font-base-weight){
   font-size: rem-calc($size);
   letter-spacing: $letter + em;
-  line-height: $height / $size * 1;
+  line-height: math.div($height, $size) * 1;
   font-weight: $weight;
 }

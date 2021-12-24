@@ -4,6 +4,8 @@ name: バナー_2カラム
 category: Banners
 ---
 */
+@use "sass:math";
+
 .c-banners {
   &__block {
     display: flex;
@@ -134,7 +136,7 @@ category: Banners
           position: relative;
           font-weight: bold;
           font-size: rem-calc(32);
-          line-height: 40/32*1;
+          line-height: math.div(40, 32)*1;
           padding-bottom: rem-calc(13);
 
           &::after {

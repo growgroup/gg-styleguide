@@ -1,9 +1,9 @@
 {
   "name": "grow-template",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Grow Template - Using  Pug && Sass.",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=17.0.0"
   },
   "scripts": {
     "start": "npm run develop -s",
@@ -11,7 +11,7 @@
     "styleguide-w": "stylemark -i ./app/assets/scss/ -o ./styleguide/ -c ./config/stylemark.yml -w -b 3100",
     "init": "npm install",
     "server": "node ./server.js",
-    "clean": "rimraf ./dist",
+    "clean": "",
     "copy:images": "cpx 'app/**/*.{png,jpg,gif,jpeg,svg,ico,pdf}' ./dist",
     "copy:images:dev": "chokidar 'app/assets/**/*.{png,jpg,gif,jpeg,svg,ico,pdf}' -c 'npm run copy:images'",
     "copy:js": "cpx 'app/**/*.{js}' ./dist && cpx 'app/assets/js/scripts.js' ./dist/assets/js && cpx './node_modules/jquery/dist/jquery.min.js' ./dist/assets/js",
@@ -19,8 +19,8 @@
     "copy": "npm run copy:images && npm run copy:fonts && npm run copy:js",
     "build": "npm run clean && npm run copy && run-s build:*",
     "develop": "run-s clean copy && run-p copy:images:dev server develop:* build:wp",
-    "build:css": "node-sass-chokidar app/assets/scss/style.scss dist/assets/css/style.css --output-style compressed --importer node_modules/node-sass-glob-importer/dist/cli.js --source-map dist/assets/css -- -w && npm run build:autoprefixer",
-    "develop:css": "chokidar 'app/assets/**/*.scss' -c 'npm run build:webpack'",
+    "build:css": "webpack --config webpack.style.config.babel.js",
+    "develop:css": "webpack --config webpack.style.config.babel.js --watch --watch-options-stdin --progress",
     "build:webpack": "webpack --config webpack.config.babel.js",
     "develop:webpack": "webpack --config webpack.config.babel.js --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
@@ -40,9 +40,10 @@
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "chokidar-cli": "^3.0.0",
-    "core-js": "^3.19.3",
+    "core-js": "^3.20.1",
     "cpx": "^1.5.0",
     "css-loader": "^6.5.1",
+    "fast-sass-loader": "^2.0.1",
     "fibers": "^5.0.0",
     "file-loader": "^6.2.0",
     "imagemin-cli": "^7.0.0",
@@ -57,7 +58,7 @@
     "pug": "^3.0.2",
     "pug-cli": "git+https://github.com/pugjs/pug-cli.git",
     "rimraf": "^3.0.2",
-    "sass": "^1.45.0",
+    "sass": "^1.45.1",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "watch": "^1.0.2",
