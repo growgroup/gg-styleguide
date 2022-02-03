@@ -25,8 +25,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
     text-align: center;
     font-size: rem-calc(12);
     z-index: 9999;
@@ -37,6 +37,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     width: rem-calc(55);
     height: rem-calc(55);
     padding-top: rem-calc(6);
+    border: none;
 
     &:active,
     &:hover {
@@ -44,7 +45,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     }
 
     &__inner{
-
+      display: block;
     }
 
     // ボーダー

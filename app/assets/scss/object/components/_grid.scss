@@ -92,6 +92,24 @@ $susy: (
   }
 }
 
+// グリッド : デスクトップ
+//
+// デスクトップ時のグリッドアイテム
+// Styleguide 2.2.4
+
+@include breakpoint(medium up) {
+  @for $i from 1 through $grid-column-count {
+    .large-#{$i} {
+      width: span($i);
+      padding-left: (map_get($grid-column-responsive-gutter,medium)/2);
+      padding-right: (map_get($grid-column-responsive-gutter,medium)/2);
+    }
+    .is-push-lg-#{$i} {
+      margin-left: span($i);
+    }
+  }
+}
+
 // グリッド : タブレット
 //
 // タブレット時のグリッドアイテム
@@ -106,24 +124,6 @@ $susy: (
       padding-right: (map_get($grid-column-responsive-gutter,medium)/2);
     }
     .is-push-md-#{$i} {
-      margin-left: span($i);
-    }
-  }
-}
-
-// グリッド : デスクトップ
-//
-// デスクトップ時のグリッドアイテム
-// Styleguide 2.2.4
-
-@include breakpoint(medium up) {
-  @for $i from 1 through $grid-column-count {
-    .large-#{$i} {
-      width: span($i);
-      padding-left: (map_get($grid-column-responsive-gutter,medium)/2);
-      padding-right: (map_get($grid-column-responsive-gutter,medium)/2);
-    }
-    .is-push-lg-#{$i} {
       margin-left: span($i);
     }
   }
