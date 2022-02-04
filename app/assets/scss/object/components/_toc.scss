@@ -29,12 +29,16 @@ category: PostContent
     }
   }
 
+  .toc_list{
+    list-style: none;
+  }
   .toc_list li {
     &:before {
       display: none;
     }
 
     ul {
+      list-style: none;
       padding-left: 24px;
       margin-left: 0;
     }

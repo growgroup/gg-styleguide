@@ -143,20 +143,20 @@
     }
   }
 
-  ul {
-    padding-left: rem-calc(24px);
-
-    li {
-      list-style: disc;
+  ol,ul{
+    li{
+      list-style: inherit;
     }
   }
-
+  ul {
+    padding-left: rem-calc(24px);
+    list-style: disc;
+    //@extend .c-list.is-icon;
+  }
   ol {
     padding-left: rem-calc(24px);
-
-    li {
-      list-style: decimal;
-    }
+    list-style: decimal;
+    //@extend .c-list.is-outline;
   }
 
   iframe {
