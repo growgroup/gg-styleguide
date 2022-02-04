@@ -1,5 +1,7 @@
 .c-list {
+  list-style: none;
   li {
+    list-style: inherit;
   }
 }
 
@@ -13,9 +15,9 @@ category: Base
 */
 
 .c-list.is-disc {
+  padding-left: 1em;
   li {
     text-indent: -1em;
-    padding-left: 1em;
 
     &:before {
       content: "・";
@@ -24,16 +26,23 @@ category: Base
   }
 
   ul {
+    list-style: none;
     margin-left: rem-calc(24);
+    padding-left: 1em;
     li {
       text-indent: -1em;
-      padding-left: 1em;
+      list-style: none;
 
       &:before {
         content: "・";
         color: $font-base-color;
       }
     }
+  }
+
+  // is-outline の中に入れた場合にmaker削除
+  >li{
+    list-style: none!important;
   }
 }
 
@@ -45,12 +54,13 @@ category: Base
 
 */
 .c-list.is-icon {
+  padding-left: rem-calc(20);
+
+  @include breakpoint(small only) {
+    padding-left: rem-calc(18);
+  }
   li {
     position: relative;
-    padding-left: rem-calc(20);
-    @include breakpoint(small only) {
-      padding-left: rem-calc(18);
-    }
 
     &:before {
       content: "\f111";
@@ -59,17 +69,18 @@ category: Base
       color: $color-primary;
       position: absolute;
       top: rem-calc(4);
-      left: 0;
+      left: -1.5em;
       @include breakpoint(small only) {
         top: rem-calc(4);
       }
     }
 
     ul {
+      list-style: none;
       margin-left: rem-calc(24);
+      padding-left: rem-calc(18);
 
       li {
-        padding-left: rem-calc(18);
 
         &:before {
           content: "・";
@@ -77,6 +88,11 @@ category: Base
         }
       }
     }
+  }
+
+  // is-outline の中に入れた場合にmaker削除
+  >li{
+    list-style: none!important;
   }
 }
 
@@ -88,16 +104,26 @@ category: Base
 
 */
 .c-list.is-outline {
-  padding-left: rem-calc(20) !important;
-
+  padding-left: 0;
+  list-style: decimal inside;
   li {
     position: relative;
-    list-style: decimal;
-
-    ul {
-      li {
-        margin-left: rem-calc(38);
-      }
+    li {
+      margin-left: rem-calc(38);
     }
+  }
+  ol{
+    padding-left: 0;
+  }
+
+
+  // is-disc等の中に入れた場合にbefore削除用
+  >li::before{
+    content: none;
+  }
+  // 中に is-disc等入れた場合の調整用
+  ul{
+    padding-left: 0;
+    margin-left: 1em;
   }
 }
