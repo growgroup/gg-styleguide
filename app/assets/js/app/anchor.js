@@ -23,7 +23,8 @@ var defaultOptions = {
   selector: '.js-anchor',
   dataSelector: 'anchor-target',
   scrollSpeed: 300,
-  easing: 'linear'
+  easing: 'linear',
+  headerElement:'' // ヘッダーの高さ分ずらしたいとき '.l-header' のように
 };
 export default class Anchor {
   constructor(options) {
@@ -40,6 +41,7 @@ export default class Anchor {
   init() {
     this.target = $(this.options.selector);
     this.onClick();
+    this.run();
   }
 
   /**
@@ -74,6 +76,13 @@ export default class Anchor {
       }
       var top = anchorTarget.offset().top;
 
+      //headerElementの指定があればheaderの高さを測って top の値をずらす
+      var headerHeight;
+      if (self.options.headerElement) {
+        headerHeight = $(self.options.headerElement).outerHeight();
+        top = top - headerHeight
+      }
+
       // スクロールさせる
       $('body,html').animate({
         scrollTop: top
@@ -82,6 +91,30 @@ export default class Anchor {
         easing: self.options.easing
       });
     });
+  }
+
+
+  /**
+   * ページロード時に実行
+   */
+  run() {
+    var self = this;
+    //headerElementの指定があればheaderの高さを測って表示位置をずらす
+    var headerHeight;
+    var url = $(location).attr('href');
+    if (url.indexOf("#") !== -1) {
+      if (self.options.headerElement) {
+        window.onload = function() {
+          headerHeight = $(self.options.headerElement).outerHeight();
+          var id = url.split("#");
+          var $target = $('#' + id[id.length - 1]);
+          if ($target.length) {
+            var pos = $target.offset().top - headerHeight;
+            $("html, body").animate({scrollTop: pos}, 10);
+          }
+        };
+      }
+    }
   }
 }
 
