@@ -445,6 +445,12 @@
   @include bg-option();
 }
 
+@mixin card-block(){
+  display: block;
+  text-decoration: none;
+  color: $font-base-color;
+}
+
 // グラデーション
 @mixin gradient-color($angle: 90deg, $colorLeft: $color-primary, $colorRight: $color-secondary) {
   background-image: linear-gradient($angle, $colorLeft 0%, $colorRight 100%);

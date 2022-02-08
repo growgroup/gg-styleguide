@@ -26,7 +26,7 @@ block body
                 +e.item-number 3
                 +e.item-text 送信完了
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-        +c("form").forms
+        +c("form").forms(action="/contact/confirm/")
           .row
             .large-10.is-push-lg-1.small-12
               +e.text 下記のフォームに必須項目を入力して送信してください。
@@ -148,10 +148,10 @@ block body
                     span 郵便番号
                     +e.flex-al
                       +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                      button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');return false;").c-forms-simple__button#zipauto 住所を自動入力
+                      button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');return false;").c-forms__button#zipauto 住所を自動入力
                   +e.flexbox
-                    span 住所
-                    +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+                    span ご住所
+                    +e.input: input(type="text",name="ご住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
               +e.block
                 +e.title
                   | 郵便番号
@@ -159,7 +159,7 @@ block body
                 +e.content
                   +e.flex-al
                     +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                    button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');return false;").c-forms-simple__button#zipauto 住所を自動入力
+                    button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');return false;").c-forms__button#zipauto 住所を自動入力
               +e.block
                 +e.title
                   | 住所
@@ -180,10 +180,3 @@ block body
                   | へ同意する
               +e.submit
                 button.c-button.is-xlg 確認画面へ
-
-              +e.submit.is-two-columns
-                .row
-                  .large-3.is-push-lg-3.small-6
-                    button.c-button.is-lg.is-secondary.is-arrow-left 戻る
-                  .large-3.small-6
-                    button.c-button.is-lg 送信する

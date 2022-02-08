@@ -186,6 +186,7 @@
   }
   // 住所自動入力ボタン
   &__button {
+    flex: none;
     max-width: rem-calc(150);
     border: 1px solid $font-base-color;
     outline: none;
