@@ -209,6 +209,32 @@ category: Layout
       padding-right: rem-calc(8);
     }
   }
+
+
+  &__other {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include font-format(12,0,18,400);
+  }
+
+  &__tel {
+    margin-left: rem-calc(38);
+    @include webfont-bold();
+    @include font-format(24,0,28,700);
+
+    i {
+      font-size: rem-calc(22);
+      margin-right: rem-calc(8);
+    }
+  }
 }
 
 // スマホメニューopen時
