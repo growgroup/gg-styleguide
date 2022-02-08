@@ -1,8 +1,10 @@
-if current.id === 'contact' || current.id === 'entry'
+if current.id === 'contact' || current.id === 'entry' || current.id === 'confirm'
   header.l-header
     .l-header__content
       .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
-
+      .l-header__other
+        .l-header__text お電話でのお問い合わせは右記からお願いたします。
+        .l-header__tel <i class="fa fa-phone" aria-hidden="true"></i>0120-341-890
 
 else
   header.l-header
