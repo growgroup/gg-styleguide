@@ -10,10 +10,10 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
 @include breakpoint(large up) {
   .c-slidebar-button {
-    display: none !important;
+    display: none;
   }
   .c-slidebar-menu {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -41,7 +41,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
     &:active,
     &:hover {
-      opacity: 1 !important;
+      opacity: 1;
     }
 
     &__inner{
@@ -50,7 +50,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
     // ボーダー
     &__line {
-      height: rem-calc(16) !important;
+      height: rem-calc(16);
       display: block;
       > span {
         display: block;
@@ -85,13 +85,12 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
   // メニュー自体
   .c-slidebar-menu {
-    height: calc(100vh - 55px) !important;
-    padding: 0 rem-calc(16) rem-calc(104);
+    height: calc(100vh - 55px);
+    padding: 0 0 rem-calc(104);
     position: fixed;
     background-color: $color-primary;
     z-index: 9980;
     width: $slidebar-menu-width;
-    -webkit-transform: translateX(100%);
     transform: translate3d(100%, 0px, 0px);
     right: 0;
     -webkit-transition: $slidebar-menu-eaasing;
@@ -101,33 +100,50 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     -webkit-overflow-scrolling: touch;
 
     &.is-active {
-      height: calc(100% - 65px) !important;
+      height: calc(100% - 65px);
     }
 
     // 上から下へ
     &.is-top-to-bottom {
-      -webkit-transform: translateY(-100%);
       transform: translate3d(0px, -100%, 0px);
-      height: auto;
       width: 100%;
       opacity: 0;
     }
 
+
+    // メニュー要素（通常）
+    &__list{
+      width: 100%;
+      background: $color-primary;
+      li {
+        border-bottom: 1px solid $border-base-color;
+      }
+      a,
+      span {
+        font-size: rem-calc(15);
+        display: block;
+        padding: rem-calc(14) rem-calc(16);
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 400;
+      }
+    }
+
+    // メニュー要素（子）
     &__children {
       width: 100%;
       padding: 0 rem-calc(16);
       display: none;
-      background-color: $color-primary-dark !important;
+      background-color: $color-primary-dark;
 
       li {
         &:last-child {
-          border-bottom: none !important;
+          border-bottom: none;
         }
 
         a {
-          color: $color-white !important;
-          padding: rem-calc(16) 0 !important;
-
+          color: $color-white;
+          padding: rem-calc(16) 0;
           &:before,
           &:after {
             display: none;
@@ -136,6 +152,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       }
     }
 
+    // メニュー要素（親）
     &__parent {
       a,
       span {
@@ -171,24 +188,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       }
     }
 
-    ul {
-      width: 100%;
-      background: $color-primary;
 
-      li {
-        border-bottom: 1px solid $border-base-color;
-
-        a,
-        span {
-          font-size: rem-calc(15);
-          display: block;
-          padding: rem-calc(14) rem-calc(16);
-          text-decoration: none;
-          color: $color-white;
-          font-weight: 400;
-        }
-      }
-    }
 
     &__button {
       margin-top: rem-calc(32);
