@@ -12,7 +12,7 @@ export default class GsapAnimation {
    */
   constructor(options) {
     this.options = $.extend(options);
-    // this.animate = this.animate;
+    //this._animate = this.animate;
     this.init();
   }
 
@@ -28,7 +28,7 @@ export default class GsapAnimation {
    * インスタンス化直後に呼ばれる関数
    */
   run() {
-
+    if(document.querySelector(".c-main-visual")) {
     gsap
       .timeline({
         defaults: {},
@@ -44,7 +44,7 @@ export default class GsapAnimation {
           duration: 1,
         }
       )
-
+    }
   }
 
 
@@ -53,7 +53,7 @@ export default class GsapAnimation {
    * 例) app.js　から　this.gsap.animate　を呼び出す
    */
   get animate() {
-
+    if(document.querySelector(".c-card.is-top")) {
     gsap
       .timeline({
         defaults: {},
@@ -74,5 +74,6 @@ export default class GsapAnimation {
           }
         }
       )
+    }
   }
 }
