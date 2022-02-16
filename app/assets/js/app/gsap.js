@@ -50,7 +50,7 @@ export default class GsapAnimation {
 
   /**
    * インスタンス化後に呼び出せる関数
-   * 例) app.js　から　this.gsap.animate　を呼び出す
+   * 例) app.js　から　this.gsap._animate　を呼び出す
    */
   get animate() {
     if(document.querySelector(".c-card.is-top")) {
