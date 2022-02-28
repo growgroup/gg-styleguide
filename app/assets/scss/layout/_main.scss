@@ -8,18 +8,33 @@
 // Styleguide 5.6.0
 
 // メインカラム
-$layout-main-width: calc(100% - rem-calc(320)) !default;
-$layout-main-float: left !default;
+
 
 .l-main {
   width: 100%;
   max-width: rem-calc(1920);
   margin: 0 auto;
-  &.is-twocolumns {
-    width: calc(100% - 293px - 64px);
+}
+
+.l-main.is-two-column {
+  padding: rem-calc(80) 0;
+  @include breakpoint(medium down) {
+    padding: rem-calc(40) 0;
+  }
+}
+.l-main.is-two-column .l-container {
+  display: flex;
+  align-items: stretch;
+  @include breakpoint(medium down) {
+    display: block;
+  }
+  & .l-wrapper {
+    max-width: $mainContainer;
+    margin-right: rem-calc($asideMargin);
+    width: 100%;
     @include breakpoint(medium down) {
-      width: 100%;
-      padding-bottom: rem-calc(48);
+      margin:auto;
+      max-width: inherit;
     }
   }
 }

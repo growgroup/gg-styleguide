@@ -8,13 +8,12 @@ block append config
 
 block body
   // メインビジュアル
-  +l_page_header("img-page-header-format.jpg","スタイルガイド","STYLE GUIDE")
-  +c.breadcrumb
-    .l-container
-      +e.inner
-        span: +a("/") ホーム
-        span >
-        span 私たちについて
+  +l_page_header({
+      image: "img-page-header-format.jpg",
+      title: "量産ページ",
+      subtitle: "parent"
+  })
+  +c_breadcrumb()
   section.l-section
     .l-container
       // テキスト関係

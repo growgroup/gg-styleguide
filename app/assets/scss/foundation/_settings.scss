@@ -130,3 +130,8 @@ $layout-main-float: left;
 
 // # 8. background
 $color-background: #ccc;
+
+// # 9. two-column
+$asideContainer: 320;
+$mainContainer:  calc( 100% - #{$asideContainer}px );
+$asideMargin: 70;
