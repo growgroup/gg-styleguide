@@ -55,12 +55,12 @@ category: Layout
     }
     // カラー設定
     &.is-color-darken {
-      background-color: $color-primary-dark;
+      background-color: $color-primary;
       &:after {
         left: auto;
         right: 0;
         transform: translateX(100%);
-        background-color: $color-primary-dark;
+        background-color: $color-primary;
       }
     }
   }
