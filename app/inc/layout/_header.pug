@@ -1,7 +1,7 @@
 if current.id === 'contact' || current.id === 'entry' || current.id === 'confirm'
   header.l-header
     .l-header__content
-      .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+      .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
       .l-header__other
         .l-header__text お電話でのお問い合わせは右記からお願いたします。
         .l-header__tel <i class="fa fa-phone" aria-hidden="true"></i>0120-341-890
@@ -10,9 +10,9 @@ else
   header.l-header
     .l-header__content
       if current.id == 'top'
-        h1.l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+        h1.l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
       else
-        .l-header__heading: +a("/"): +img("logo.png","株式会社サンプル")
+        .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
       nav.l-header__nav
         ul
           li: +a("/onecolumn/") 1COLUMN
