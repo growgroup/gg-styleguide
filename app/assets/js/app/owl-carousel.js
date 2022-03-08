@@ -46,6 +46,8 @@ export default class OwlCarousel {
 
     //->スライダー
     this.targetAll.imagesLoaded(function () {
+
+
       $('.c-main-visual__slider').owlCarousel({
         items: 1,
         margin: 0,
@@ -70,6 +72,16 @@ export default class OwlCarousel {
 
     //->カード_カルーセル
     this.targetAll.imagesLoaded(function () {
+
+      if ($('.js-card-slider.owl-carousel').length <= 0) {
+        return;
+      }
+
+      if ($('.js-card-slide').length <= 2) {
+        $('.js-card-slider').removeClass("owl-carousel");
+        return;
+      }
+
       $('.js-card-slider').owlCarousel({
         margin: 0,
         dots: false,
@@ -81,6 +93,7 @@ export default class OwlCarousel {
         autoWidth: false,
         autoHeight: false,
         center: true,
+        speed: 400,
         navText: ['<img src="../assets/images/icon-slider-prev.svg" />', '<img src="../assets/images/icon-slider-next.svg" />'],
         responsive: {
           // breakpoint from 0 up

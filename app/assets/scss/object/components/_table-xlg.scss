@@ -40,7 +40,7 @@ category: Base
     }
 
     th {
-      background-color: $color-secondary;
+      background-color: rgba($color-secondary, .9);
       text-align: center;
       vertical-align: middle;
       width: 294/1140*100%;
@@ -50,7 +50,21 @@ category: Base
 
 //スマホ時
 .js-responsive-table {
+
   @include breakpoint(small only) {
-    overflow: scroll;
+    width: 100%;
+    overflow: auto;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) 0 0/20px 100%, linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) right/20px 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    border-right: 1px solid #CCC;
+
+    table {
+      background: linear-gradient(to left, hsla(0, 0%, 100%, 0), white 15px) 0 0 / 50px 100%, linear-gradient(to right, hsla(0, 0%, 100%, 0), white 15px) right / 50px 100%;
+      background-repeat: no-repeat;
+      background-attachment: local;
+      border-bottom: 1px solid #CCC;
+      border-collapse: collapse;
+    }
   }
 }

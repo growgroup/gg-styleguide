@@ -39,6 +39,7 @@ class App {
       gsap: this.gsap,
       utils: this.Utils
     }
+    // 上記のオプション以外で必要な要素は追加する。
     new OwlCarousel({...this.defaultOptions});
     new SlickSlider({...this.defaultOptions});
     new CustomFunctions({...this.defaultOptions});

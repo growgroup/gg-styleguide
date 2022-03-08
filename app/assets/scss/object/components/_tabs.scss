@@ -71,10 +71,18 @@ category: Tabs
 
   // コンテンツ
   &__content {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s;
+    width: 0;
 
     &.is-active {
-      display: block;
+      position: static;
+      visibility: visible;
+      opacity: 1;
+      width: auto;
     }
   }
 }
