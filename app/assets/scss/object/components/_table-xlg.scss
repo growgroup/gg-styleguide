@@ -51,20 +51,63 @@ category: Base
 //スマホ時
 .js-responsive-table {
 
-  @include breakpoint(small only) {
-    width: 100%;
-    overflow: auto;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) 0 0/20px 100%, linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) right/20px 100%;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    border-right: 1px solid #CCC;
+  position: relative;
 
-    table {
-      background: linear-gradient(to left, hsla(0, 0%, 100%, 0), white 15px) 0 0 / 50px 100%, linear-gradient(to right, hsla(0, 0%, 100%, 0), white 15px) right / 50px 100%;
+  &:before{
+    @include transition(.2);
+    @include breakpoint(small only) {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20px;
       background-repeat: no-repeat;
-      background-attachment: local;
-      border-bottom: 1px solid #CCC;
-      border-collapse: collapse;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+      background-attachment: scroll;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
     }
+  }
+
+  &:after{
+    @include transition(.2);
+    @include breakpoint(small only) {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 20px;
+      background-repeat: no-repeat;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+      background-attachment: scroll;
+      pointer-events: none;
+    }
+  }
+
+  &.is-scrollable {
+    &:before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &.is-unscrollable {
+    &:after {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &-wrapper {
+    @include breakpoint(small only) {
+      width: 100%;
+      overflow: auto;
+    }
+  }
+
+  @include breakpoint(small only) {
   }
 }
