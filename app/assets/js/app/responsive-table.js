@@ -53,10 +53,39 @@ export default class ResponsiveTable {
 
         for (var i = 0; i < this.tables.length; i++) {
             var wrapper = $('<div class="js-responsive-table"></div>');
+            var wrapperSecond = $('<div class="js-responsive-table-wrapper"></div>');
             var table = this.tables[i];
-            wrapper.append($(table).clone());
+
+            wrapperSecond.append($(table).clone());
+            wrapper.append(wrapperSecond);
             $(table).after(wrapper);
             $(table).remove();
         }
+
+        i < 9 ? "0" + (i + 1) : i + 1
+
+        var tables = document.querySelectorAll(".js-responsive-table");
+
+
+        for (var i = 0; i < tables.length; i++) {
+          var tableWrapper = tables[i].querySelector(".js-responsive-table-wrapper");
+          const table = tables[i];
+          tableWrapper.addEventListener("scroll", function (e) {
+            var scrollWidth = e.target.scrollLeft;
+            if (scrollWidth > 20) {
+              table.classList.add("is-scrollable");
+            }
+            if (scrollWidth === 0) {
+              table.classList.remove("is-scrollable");
+            }
+            if (scrollWidth >= (e.target.scrollWidth - e.target.offsetWidth - 20)) {
+              table.classList.add("is-unscrollable");
+            }
+            if (scrollWidth <= (e.target.scrollWidth - e.target.offsetWidth - 20)) {
+              table.classList.remove("is-unscrollable");
+            }
+          })
+        }
+
     }
 }
