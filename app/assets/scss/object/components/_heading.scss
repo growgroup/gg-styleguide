@@ -28,8 +28,7 @@ category: Heading
   span {
     display: block;
     @include webfont-bold();
-    font-size: rem-calc(42);
-    letter-spacing: 0.1em;
+    @include font-format(42, 0.1, 52, 700);
     @include breakpoint(small only) {
       font-size: rem-calc(42)*0.8;
     }
@@ -37,9 +36,7 @@ category: Heading
 
   small {
     display: block;
-    font-weight: 700;
-    font-size: rem-calc(16);
-    letter-spacing: 0.1em;
+    @include font-format(16, .1, 26, 700);
     @include breakpoint(small only) {
       font-size: rem-calc(16)*0.8;
     }
@@ -49,8 +46,7 @@ category: Heading
 // h2
 .c-heading.is-lg {
   color: $color-primary;
-  font-size: rem-calc(32);
-  letter-spacing: 0.1em;
+  @include font-format(32, .1, 40, bold);
   margin-bottom: rem-calc(24);
   @include breakpoint(small only) {
     font-size: rem-calc(32)*0.8;
@@ -60,8 +56,7 @@ category: Heading
   small {
     display: block;
     @include webfont-bold();
-    font-size: rem-calc(14);
-    letter-spacing: 0.1em;
+    @include font-format(14, .1, 20, normal);
     margin-top: rem-calc(6);
     @include breakpoint(small only) {
       font-size: rem-calc(14)*0.8;
@@ -71,8 +66,7 @@ category: Heading
 
 // h3
 .c-heading.is-md {
-  font-size: rem-calc(28);
-  letter-spacing: 0.1em;
+  @include font-format(28, .1, 38, 700);
   margin-bottom: rem-calc(20);
   @include breakpoint(small only) {
     font-size: rem-calc(28)*0.8;
@@ -82,8 +76,7 @@ category: Heading
 
 // h4
 .c-heading.is-sm {
-  font-size: rem-calc(24);
-  letter-spacing: 0.1em;
+  @include font-format(24, .1, 34, 700);
   @include breakpoint(small only) {
     font-size: rem-calc(24)*0.8;
   }
@@ -91,8 +84,7 @@ category: Heading
 
 // h5
 .c-heading.is-xs {
-  font-size: rem-calc(20);
-  letter-spacing: 0.1em;
+  @include font-format(20, .1, 30, 700);
   margin-bottom: rem-calc(16);
   @include breakpoint(small only) {
     font-size: rem-calc(20)*0.8;
@@ -102,8 +94,7 @@ category: Heading
 
 // h6
 .c-heading.is-xxs {
-  font-size: rem-calc(18);
-  letter-spacing: 0.1em;
+  @include font-format(18, .1, 28, 700);
   margin-bottom: rem-calc(6);
   @include breakpoint(small only) {
     font-size: rem-calc(18)*0.8;
