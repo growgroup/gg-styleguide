@@ -1,28 +1,72 @@
 .c-forms{
   margin-top: rem-calc(42);
-  padding: rem-calc(42) rem-calc(14);
+  padding: rem-calc(42) rem-calc(32);
   background: $color-white;
+
+  @include breakpoint(medium down) {
+    padding: rem-calc(42) 0;
+  }
+
+  @include breakpoint(medium down) {
+    padding: rem-calc(36) rem-calc(16);
+  }
+
   &__text{
     text-align: center;
-    margin-bottom: rem-calc(32);
+    margin-bottom: rem-calc(48);
+
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(24);
+    }
   }
+
+  &__blocks {
+    margin-bottom: rem-calc(32);
+
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(24);
+    }
+  }
+
   &__block {
     display: flex;
+    &:not(:last-child) {
+      margin-bottom: rem-calc(32);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(24);
+      }
+    }
     @include breakpoint(small only) {
       display: block;
     }
+
+    &.is-vertical {
+      display: block;
+
+      .c-forms__title {
+        max-width: rem-calc(210);
+        margin-bottom: rem-calc(16);
+
+        @include breakpoint(small only) {
+          max-width: 100%;
+          margin-bottom: rem-calc(12);
+        }
+      }
+    }
   }
   &__title {
-    min-width: rem-calc(258);
-    padding: rem-calc(16) rem-calc(32);
+    min-width: rem-calc(210);
+    //padding: rem-calc(16) rem-calc(32);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex: none;
+    margin-right: rem-calc(60);
     letter-spacing: 0;
     @include breakpoint(small only) {
       width: 100%;
       background-color: transparent;
-      padding: rem-calc(12) 0 0;
+      margin-bottom: rem-calc(12);
       font-weight: 700;
     }
     &.is-vertical-top {
@@ -52,9 +96,9 @@
   }
   &__content {
     width: 100%;
-    padding: rem-calc(16) rem-calc(32);
+    //padding: rem-calc(16) rem-calc(32);
     @include breakpoint(small only) {
-      padding: rem-calc(12) 0;
+      //padding: rem-calc(12) 0;
     }
     &.is-column{
       display: flex;
@@ -138,7 +182,31 @@
       }
     }
   }
+
+  &__radio {
+    &.is-vertical {
+      display: block;
+
+      span {
+        display: block;
+        &:not(:last-child) {
+          margin-bottom: rem-calc(6);
+        }
+      }
+    }
+  }
   &__checkbox {
+
+    &.is-vertical {
+      display: block;
+
+      span {
+        display: block;
+        &:not(:last-child) {
+          margin-bottom: rem-calc(6);
+        }
+      }
+    }
     input {
       margin-right: rem-calc(6);
       margin-top: rem-calc(4);

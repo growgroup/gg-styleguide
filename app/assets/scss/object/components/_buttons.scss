@@ -5,6 +5,7 @@ category: Buttons
 ---
 */
 .c-button {
+  position: relative;
   outline: none;
   display: inline-block;
   width: 100%;
@@ -12,14 +13,9 @@ category: Buttons
   text-align: center;
   background-color: $color-primary;
   color: $color-white;
-  border: 1px solid $color-primary;
   text-decoration: none;
-  border-radius: 4px;
   padding: rem-calc(13) rem-calc(24);
-  position: relative;
   transition: all .3s;
-  font-weight: 700;
-  transform: perspective(1px) translateZ(0);
   // *アイコン
   &:after {
     content: "\f105";
@@ -52,28 +48,6 @@ category: Buttons
     }
   }
 
-  // -> アクセントカラー
-  &.is-accent {
-    background-color: $color-accent;
-    border-color: $color-accent;
-
-    &:hover {
-      background-color: $color-white;
-      color: $color-accent;
-    }
-  }
-
-  // -> ホワイトカラー
-  &.is-white {
-    background-color: $color-white;
-    color: $color-primary;
-    border: 1px solid $color-primary;
-
-    &:hover {
-      background-color: $color-primary;
-      color: $color-white;
-    }
-  }
 }
 
 /*
@@ -154,14 +128,3 @@ category: Buttons
 }
 
 
-.c-button {
-  // デザイン設定
-  // ->矢印左
-  &.is-arrow-left {
-    &:after {
-      content: "\f104";
-      right: auto;
-      left: rem-calc(10);
-    }
-  }
-}
