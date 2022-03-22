@@ -20,17 +20,6 @@ mixin loop(count)
     block
     - n++
 
-//- ページネーション
-mixin c_pagination()
-  +c.pagination
-    ul
-      li: +a("#").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-      li: span.is-current 1
-      li: +a("#") 2
-      li: +a("#") 3
-      li: span.is-dot …
-      li: +a("#") 10
-      li: +a("#").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
 
 
 //- 投稿ページナビゲーション
