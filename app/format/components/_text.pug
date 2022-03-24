@@ -1,148 +1,145 @@
 // 日本語ベースフォント
 div.u-mbs.is-bottom
-    p 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
+  p 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
 
 // 見出し
 // -> h1見出し
 div.u-mbs.is-bottom
-    div.c-heading.is-xlg
-        span TEXTLEVEL1
-        small 見出しレベル1
+  +heading-xlg("TEXTLEVEL1", "見出しレベル1")
 
 div.u-mbs.is-bottom
-    div.c-heading.is-lg
-        | 見出しレベル1見出しレベル1
-        small TEXTLEVEL1
+  +heading-lg("見出しレベル2")
+
 
 // -> h2見出し
 div.u-mbs.is-bottom
-    div.c-heading.is-md 見出しレベル2見出しレベル2見出しレベル2
+  div.c-heading.is-md 見出しレベル2見出しレベル2見出しレベル2
 
 // -> h3見出し
 div.u-mbs.is-bottom
-    div.c-heading.is-sm 見出しレベル3見出しレベル3見出しレベル3見出しレベ
+  div.c-heading.is-sm 見出しレベル3見出しレベル3見出しレベル3見出しレベ
 
 
 // -> h4見出し
 div.u-mbs.is-bottom
-    div.c-heading.is-xs 見出しレベル4見出しレベル4見出しレベル4見出しレベ
+  div.c-heading.is-xs 見出しレベル4見出しレベル4見出しレベル4見出しレベ
 
 // -> h5見出し
 div.u-mbs.is-bottom
-    div.c-heading.is-xxs 見出しレベル5見出しレベル5見出しレベル5見出しレベ
+  div.c-heading.is-xxs 見出しレベル5見出しレベル5見出しレベル5見出しレベ
 
 
 // 基本テキストのスタイル
 div.u-mbs.is-bottom
-    +a("#") リンクテキスト
+  +a("#") リンクテキスト
 
 div.u-mbs.is-bottom
-    strong 強調テキスト
+  strong 強調テキスト
 
 div.u-mbs.is-bottom
-    small 縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト
+  small 縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト縮小テキスト
 
 // 引用テキスト
 div.u-mbs.is-bottom
-    blockquote.c-blockquote これは引用テキストです。これは引用テキストです。これは引用テキストです。<br>これは引用テキストです。これは引用テキストです。これは引用テキストです。
+  blockquote.c-blockquote これは引用テキストです。これは引用テキストです。これは引用テキストです。<br>これは引用テキストです。これは引用テキストです。これは引用テキストです。
 
 // リスト
 div.u-mbs.is-bottom
-    ul.c-list.is-disc
-        li リスト1
-        li リスト2
-            ul
-                li リスト2の子要素
-                li リスト2の子要素
-        li リスト2
+  ul.c-list.is-disc
+    li リスト1
+    li リスト2
+      ul
+        li リスト2の子要素
+        li リスト2の子要素
+    li リスト2
 
 // アイコン
 div.u-mbs.is-bottom
-    ul.c-list.is-icon
-        li リスト1
-        li リスト2
-            ul
-                li リスト2の子要素
-                li リスト2の子要素
-        li リスト2
+  ul.c-list.is-icon
+    li リスト1
+    li リスト2
+      ul
+        li リスト2の子要素
+        li リスト2の子要素
+    li リスト2
 
 div.u-mbs.is-bottom
-    ol.c-list.is-outline
-        li リスト1
-        li リスト2
-            ol
-                li リスト2の子要素
-                li リスト2の子要素
-        li リスト2
+  ol.c-list.is-outline
+    li リスト1
+    li リスト2
+      ol
+        li リスト2の子要素
+        li リスト2の子要素
+    li リスト2
 
 // 区切り線
 div.u-mbs.is-bottom
-    hr.c-hr
+  hr.c-hr
 
 div.u-mbs.is-bottom
-    hr.c-hr.is-border-dotted
+  hr.c-hr.is-border-dotted
 
 // テーブル
 div.u-mbs.is-bottom
-    table.c-table
-        tbody
-            tr
-                th thテキスト
-                td tdテキストテキストテキストテキストテキスト
-            tr
-                th thテキスト
-                td tdテキストテキストテキストテキストテキスト
-            tr
-                th thテキスト
-                td tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+  table.c-table
+    tbody
+      tr
+        th thテキスト
+        td tdテキストテキストテキストテキストテキスト
+      tr
+        th thテキスト
+        td tdテキストテキストテキストテキストテキスト
+      tr
+        th thテキスト
+        td tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
 div.u-mbs.is-bottom
-    table.c-table-xlg.js-table
+  table.c-table-xlg.js-table
+    thead
+      tr
+        th タイトル
+        th タイトル
+        th タイトル
+    tbody
+      tr
+        th タイトル
+        td テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        td テキストテキストテキストテキストテキスト
+      tr
+        th タイトル
+        td テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        td テキストテキストテキストテキストテキスト
+
+div.u-mbs.is-bottom
+  .row
+    .large-7.small-12
+      table.c-table-sm
         thead
-            tr
-                th タイトル
-                th タイトル
-                th タイトル
+          tr
+            th 受付時間
+            td 月
+            td 火
+            td 水
+            td 木
+            td 金
+            td 土
+            td 日・祝
         tbody
-            tr
-                th タイトル
-                td テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                td テキストテキストテキストテキストテキスト
-            tr
-                th タイトル
-                td テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                td テキストテキストテキストテキストテキスト
-
-div.u-mbs.is-bottom
-    .row
-        .large-7.small-12
-            table.c-table-sm
-                thead
-                    tr
-                        th 受付時間
-                        td 月
-                        td 火
-                        td 水
-                        td 木
-                        td 金
-                        td 土
-                        td 日・祝
-                tbody
-                    tr
-                        th <span>午前</span>9:00～12:30
-                        td 院長
-                        td 院長
-                        td 院長
-                        td 院長
-                        td 院長
-                        td 院長
-                        td <span>×</span>
-                    tr
-                        th <span>午後</span>14:30～18:00
-                        td 院長
-                        td 院長
-                        td 院長
-                        td 院長
-                        td 院長
-                        td <span>×</span>
-                        td <span>×</span>
+          tr
+            th <span>午前</span>9:00～12:30
+            td 院長
+            td 院長
+            td 院長
+            td 院長
+            td 院長
+            td 院長
+            td <span>×</span>
+          tr
+            th <span>午後</span>14:30～18:00
+            td 院長
+            td 院長
+            td 院長
+            td 院長
+            td 院長
+            td <span>×</span>
+            td <span>×</span>
