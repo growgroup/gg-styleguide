@@ -19,8 +19,8 @@
   }
 
   growApp.prototype.enterAnimation = function () {
-    let $mainVisual = $('.c-main-visual');
-    if (!$mainVisual.length === 0) {
+    let $loader = $('.c-loader');
+    if (!$loader.length === 0) {
       return false;
     }
 
@@ -35,9 +35,13 @@
 
     var loaderFunction = function () {
       // ここから実行
-      if ($mainVisual) {
-        changeClass($mainVisual, "is-active", 1000).then(function () {
+      if ($loader) {
+        changeClass($loader, "is-active", 1000).then(function () {
+          changeClass($loader, "is-close", 2000).then(function () {
+            changeClass($loader, "is-hidden", 1000).then(function () {
 
+            });
+          });
         });
       }
     };
@@ -47,7 +51,9 @@
       sessionStorage.setItem('loading', true);
       loaderFunction();
     } else {
-      $mainVisual.addClass('is-already');
+      // テストはこちらをコメントアウト外す
+      // loaderFunction();
+      $loader.addClass('is-already');
     }
   };
 
