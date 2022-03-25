@@ -11,7 +11,7 @@ category: Heading
   font-weight: 700;
   line-height: 1.5;
 
-  small {
+  span {
     font-size: 0.65em;
   }
 }
@@ -25,7 +25,7 @@ category: Heading
 
   }
 
-  span {
+  b {
     display: block;
     @include webfont-bold();
     @include font-format(42, 0.1, 52, 700);
@@ -34,7 +34,7 @@ category: Heading
     }
   }
 
-  small {
+  span {
     display: block;
     @include font-format(16, .1, 26, 700);
     @include breakpoint(small only) {
@@ -53,7 +53,7 @@ category: Heading
     margin-bottom: rem-calc(24)/2;
   }
 
-  small {
+  span {
     display: block;
     @include webfont-bold();
     @include font-format(14, .1, 20, normal);
@@ -116,4 +116,9 @@ category: Heading
 
 .c-heading.is-center{
   text-align: center;
+}
+
+.c-heading.is-mg-none {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
