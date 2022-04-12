@@ -49,7 +49,7 @@ category: Navigation
       align-items: center;
       margin: auto;
 
-      &:after {
+      &::after {
         display: none;
       }
 

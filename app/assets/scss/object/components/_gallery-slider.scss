@@ -157,7 +157,7 @@
       background-position: center center;
       background-repeat: no-repeat;
 
-      &:before {
+      &::before {
         content: '';
         display: block;
         padding-top: 500/748*100%;
@@ -186,7 +186,7 @@
       transition: all .3s;
       cursor: pointer;
 
-      &:after {
+      &::after {
         content: "";
         display: block;
         width: 100%;
@@ -208,7 +208,7 @@
       width: 100%;
       @include bg-option();
 
-      &:before {
+      &::before {
         content: '';
         display: block;
         padding-top: 92/138*100%;
@@ -243,7 +243,7 @@
   //slick
   .slick-current {
     &.c-gallery-slider__thumbnail-image {
-      &:after {
+      &::after {
         opacity: 1;
       }
     }
@@ -342,7 +342,7 @@
           height: rem-calc(6);
         }
 
-        &:before {
+        &::before {
           content: '';
           opacity: 1;
           width: rem-calc(8);
@@ -358,7 +358,7 @@
 
       &.slick-active {
         button {
-          &:before {
+          &::before {
             opacity: 1;
             background-color: #464646;
           }

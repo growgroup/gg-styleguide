@@ -1,39 +1,31 @@
-if current.id === 'contact' || current.id === 'entry' || current.id === 'confirm'
-  header.l-header
-    .l-header__content
-      .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
-      .l-header__other
-        .l-header__text お電話でのお問い合わせは右記からお願いたします。
-        .l-header__tel <i class="fa fa-phone" aria-hidden="true"></i>0120-341-890
 
-else
-  header.l-header
-    .l-header__content
-      if current.id == 'top'
-        h1.l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
-      else
-        .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
-      nav.l-header__nav
-        ul
-          li: +a("/onecolumn/") 1COLUMN
-          li: +a("/twocolumns/") 2COLUMN
-          li: +a("/news/") NEWS
-          li: +a("/archive-twocolumns/") ARCHIVE2
-          li
-            +a("/format/") FORMAT
-            .l-header__submenu
-              .l-header__submenu__outer
-                .l-header__submenu__title
-                  span FORMAT
-                  small フォーマット
-                .l-header__submenu__content
-                  .l-header__submenu__flex
-                    +a("/format/").l-header__submenu__block
-                      .l-header__submenu__image: +img("img-sample-sm.jpg", "フォーマット")
-                      span フォーマット
-                    +a("/blocks/").l-header__submenu__block
-                      .l-header__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
-                      span ブロック編集ページ
-      +a("/contact/").l-header__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
+header.l-header
+  .l-header__content
+    if current.id == 'top'
+      h1.l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
+    else
+      .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
+    nav.l-header__nav
+      ul
+        li: +a("/onecolumn/") 1COLUMN
+        li: +a("/twocolumns/") 2COLUMN
+        li: +a("/news/") NEWS
+        li: +a("/archive-twocolumns/") ARCHIVE2
+        li
+          +a("/format/") FORMAT
+          .l-header__submenu
+            .l-header__submenu__outer
+              .l-header__submenu__title
+                span FORMAT
+                small フォーマット
+              .l-header__submenu__content
+                .l-header__submenu__flex
+                  +a("/format/").l-header__submenu__block
+                    .l-header__submenu__image: +img("img-sample-sm.jpg", "フォーマット")
+                    span フォーマット
+                  +a("/blocks/").l-header__submenu__block
+                    .l-header__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
+                    span ブロック編集ページ
+    +a("/contact/").l-header__button.c-button.is-sm <i class="fa fa-envelope" aria-hidden="true"></i>お問い合わせ
 
 

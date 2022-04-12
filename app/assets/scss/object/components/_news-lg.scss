@@ -38,7 +38,7 @@ category: News
     @include webfont();
     font-size: rem-calc(14);
 
-    &:before {
+    &::before {
       content: "\f017";
       font-family: "FontAwesome";
       margin-right: rem-calc(4);

@@ -144,8 +144,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         a {
           color: $color-white;
           padding: rem-calc(16) 0;
-          &:before,
-          &:after {
+          &::before,
+          &::after {
             display: none;
           }
         }
@@ -158,8 +158,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       span {
         position: relative;
 
-        &:after,
-        &:before {
+        &::after,
+        &::before {
           content: "";
           display: block;
           width: rem-calc(2);
@@ -171,7 +171,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
           transform: translateY(-50%);
         }
 
-        &:after {
+        &::after {
           width: rem-calc(18);
           height: rem-calc(2);
           right: rem-calc(16);
@@ -181,7 +181,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       &.is-open {
         a,
         span {
-          &:before {
+          &::before {
             display: none;
           }
         }
@@ -197,7 +197,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       color: $color-primary;
       font-size: rem-calc(16);
 
-      &:before {
+      &::before {
         content: "\f0e0";
         font-family: "FontAwesome";
         color: $color-primary;
@@ -205,7 +205,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         margin-right: rem-calc(12);
       }
 
-      &:after {
+      &::after {
         content: none;
       }
     }
@@ -238,7 +238,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
 
-    &:after {
+    &::after {
       content: "";
       position: fixed;
       width: 100%;
@@ -291,7 +291,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       -webkit-transform: translateX(-$slidebar-menu-width);
       transform: translate3d(-$slidebar-menu-width, 0px, 0px);
 
-      &:after {
+      &::after {
         content: "";
         opacity: 1;
         position: fixed;
@@ -308,7 +308,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         -webkit-transform: translateX(0px);
         transform: translate3d(0px, 0px, 0px);
 
-        &:after {
+        &::after {
           top: 55px;
         }
       }

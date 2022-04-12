@@ -50,7 +50,7 @@ category: Layout
       font-size: rem-calc(15);
       min-height: rem-calc(64);
     }
-    &:after {
+    &::after {
       content: "\f105";
       font-family: "FontAwesome";
       position: absolute;

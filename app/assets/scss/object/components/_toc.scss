@@ -33,7 +33,7 @@ category: PostContent
     list-style: none;
   }
   .toc_list li {
-    &:before {
+    &::before {
       display: none;
     }
 

@@ -35,7 +35,7 @@ category: Tabs
           padding: rem-calc(6) rem-calc(24);
         }
 
-        &:after {
+        &::after {
           content: "\f107";
           font-family: "FontAwesome";
           position: absolute;
@@ -117,7 +117,7 @@ category: Tabs
             font-size: rem-calc(14);
             letter-spacing: 0.1em;
 
-            &:after {
+            &::after {
               display: none;
             }
           }

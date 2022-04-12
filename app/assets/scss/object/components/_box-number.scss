@@ -12,7 +12,7 @@ category: Components
     @include breakpoint(small only) {
       margin-bottom: rem-calc(32);
     }
-    &:after {
+    &::after {
       content: "";
       display: block;
       width: 0;
@@ -28,7 +28,7 @@ category: Components
     //*最後は矢印なし
     &:last-child {
       margin-bottom: 0;
-      &:after {
+      &::after {
         display: none;
       }
     }

@@ -14,7 +14,7 @@ category: Layout
   width: 100%;
   position: relative;
   overflow: hidden;
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -67,7 +67,7 @@ category: Layout
   &.is-image-hidden {
     height: rem-calc(200);
     background-color: $color-secondary;
-    &:after {
+    &::after {
       display: none;
     }
     .l-page-header__inner {

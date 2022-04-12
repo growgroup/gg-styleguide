@@ -8,7 +8,7 @@
     position: relative;
     -ms-touch-action: pan-Y;
     -moz-backface-visibility: hidden;
-    &:after {
+    &::after {
       content: ".";
       display: block;
       clear: both;

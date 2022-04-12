@@ -89,7 +89,7 @@ category: Layout
           padding-bottom: rem-calc(36);
           transition: all .3s ease;
           //装飾
-          &:after {
+          &::after {
             content: "";
             display: block;
             width: 0;
@@ -108,7 +108,7 @@ category: Layout
             opacity: 1;
             color: $color-primary;
 
-            &:after {
+            &::after {
               width: 100%;
               opacity: 1;
             }
@@ -166,7 +166,7 @@ category: Layout
       margin-right: 30/750*100%;
       margin-bottom: rem-calc(24);
       opacity: 1!important;
-      &:after {
+      &::after {
         display: none!important;
       }
       &:nth-child(3n) {
@@ -196,7 +196,7 @@ category: Layout
       display: none;
     }
 
-    &:after {
+    &::after {
       display: none;
     }
 

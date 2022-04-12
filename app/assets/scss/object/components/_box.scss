@@ -18,7 +18,7 @@ category: Components
     //*最後は矢印なし
     &:last-child {
       margin-bottom: 0;
-      &:after {
+      &::after {
         display: none !important;
       }
     }
@@ -26,7 +26,7 @@ category: Components
   &.is-number-left {
     .c-box__block {
       position: relative;
-      &:after {
+      &::after {
         content: "";
         display: block;
         width: 0;

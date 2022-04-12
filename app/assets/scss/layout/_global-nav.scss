@@ -10,7 +10,7 @@
       width: 100%;
       text-align: center;
       position: relative;
-      &:after {
+      &::after {
         content: "";
         display: block;
         width: 1px;
@@ -22,7 +22,7 @@
         background-color: #E2E2E2;
       }
       &:first-child {
-        &:before {
+        &::before {
           content: "";
           display: block;
           width: 1px;
@@ -43,7 +43,7 @@
         padding: 12px 12px;
         position: relative;
         //装飾
-        &:after {
+        &::after {
           content: "";
           display: block;
           width: 0;
@@ -59,7 +59,7 @@
         //*hover
         &:hover {
           opacity: 1;
-          &:after {
+          &::after {
             width: 100%;
             opacity: 1;
           }

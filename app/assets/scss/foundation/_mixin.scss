@@ -200,11 +200,11 @@
 // クリアフィックス
 @mixin clearfix {
   zoom: 1;
-  &:before, &:after {
+  &::before, &::after {
     content: " ";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -229,12 +229,12 @@
 // クリアフィックス
 %clearfix {
   zoom: 1;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: " ";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -411,12 +411,12 @@
       font-size: $font-size-base-sp;
       height: $font-size-base-sp * $line-height-computed * $lines-to-show;
     }
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background: $color-white;
       position: absolute;
     }
-    &:before {
+    &::before {
       content: "...";
       top: $font-size-base * $line-height-computed * ($lines-to-show - 1);
       right: 0;
@@ -425,7 +425,7 @@
         top: $font-size-base-sp * $line-height-computed * ($lines-to-show - 1);
       }
     }
-    &:after {
+    &::after {
       content: "";
       height: 100%;
       width: 100%;

@@ -20,7 +20,7 @@ category: Banners
       height: 38vw;
     }
     // *アイコン
-    &:after {
+    &::after {
       content: "\f105";
       font-family: "FontAwesome";
       font-size: rem-calc(36);
@@ -108,7 +108,7 @@ category: Banners
         height: 40vw;
       }
 
-      &:after {
+      &::after {
         display: none;
       }
 

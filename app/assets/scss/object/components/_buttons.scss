@@ -17,7 +17,7 @@ category: Buttons
   padding: rem-calc(13) rem-calc(24);
   transition: all .3s;
   // *アイコン
-  &:after {
+  &::after {
     content: "\f105";
     display: block;
     font-family: "FontAwesome";
@@ -69,7 +69,7 @@ category: Buttons
       padding: rem-calc(20) rem-calc(32);
     }
 
-    &:after {
+    &::after {
       font-size: rem-calc(24);
       @include breakpoint(small only) {
         font-size: rem-calc(24)*0.9;
@@ -96,7 +96,7 @@ category: Buttons
       font-size: rem-calc(14)*0.9;
     }
 
-    &:after {
+    &::after {
       right: rem-calc(10);
     }
   }
@@ -115,7 +115,7 @@ category: Buttons
       font-size: rem-calc(14)*0.9;
     }
 
-    &:after {
+    &::after {
       color: $color-primary;
       right: 0;
     }

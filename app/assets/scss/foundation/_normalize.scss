@@ -511,3 +511,13 @@ a{
   }
 }
 
+*.is-indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+*.u-first-line-leader {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -20,7 +20,7 @@ category: Components
       min-height: 280px;
     }
 
-    &:after {
+    &::after {
       @include img-curtain($color-black, .2);
     }
   }

@@ -19,7 +19,7 @@ category: Base
   li {
     text-indent: -1em;
 
-    &:before {
+    &::before {
       content: "・";
       color: $font-base-color;
     }
@@ -33,7 +33,7 @@ category: Base
       text-indent: -1em;
       list-style: none;
 
-      &:before {
+      &::before {
         content: "・";
         color: $font-base-color;
       }
@@ -62,7 +62,7 @@ category: Base
   li {
     position: relative;
 
-    &:before {
+    &::before {
       content: "\f111";
       font-size: 0.8em;
       font-family: "FontAwesome";
@@ -82,7 +82,7 @@ category: Base
 
       li {
 
-        &:before {
+        &::before {
           content: "・";
           color: $font-base-color;
         }

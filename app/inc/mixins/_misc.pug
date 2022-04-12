@@ -1,10 +1,10 @@
 //- img タグ
-mixin img(file,alt)
+mixin img(file,alt,width,height)
   -
     if ( typeof alt === "undefined" ){
     var alt = ""
     }
-  img(src=config.rootpath + "/assets/images/" + file, alt!=alt)&attributes(attributes)
+  img(src=config.rootpath + "/assets/images/" + file, alt!=alt, width!=width, height!=height)&attributes(attributes)
 
 //- 背景画像
 mixin bgimg(file)

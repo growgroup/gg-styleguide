@@ -44,7 +44,7 @@ category: Base
       position: relative;
       background-color: $color-secondary;
 
-      &:after {
+      &::after {
         display: none;
       }
     }

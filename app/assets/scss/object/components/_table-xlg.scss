@@ -53,7 +53,7 @@ category: Base
 
   position: relative;
 
-  &:before{
+  &::before{
     @include transition(.2);
     @include breakpoint(small only) {
       content: "";
@@ -71,7 +71,7 @@ category: Base
     }
   }
 
-  &:after{
+  &::after{
     @include transition(.2);
     @include breakpoint(small only) {
       content: "";
@@ -88,14 +88,14 @@ category: Base
   }
 
   &.is-scrollable {
-    &:before {
+    &::before {
       visibility: visible;
       opacity: 1;
     }
   }
 
   &.is-unscrollable {
-    &:after {
+    &::after {
       visibility: hidden;
       opacity: 0;
     }

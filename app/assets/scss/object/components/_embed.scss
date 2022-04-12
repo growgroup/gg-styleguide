@@ -86,7 +86,7 @@
     @include bg-option();
     background-size: cover;
 
-    &:before {
+    &::before {
       display: block;
       content: "";
       width: 100%;
@@ -116,7 +116,7 @@
   .wp-embed-more {
     text-align: right;
 
-    &:after {
+    &::after {
       content: " > ";
     }
   }

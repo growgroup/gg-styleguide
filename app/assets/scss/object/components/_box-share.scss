@@ -18,7 +18,7 @@ category: PostContent
     margin: rem-calc(24) 0;
     min-height: rem-calc(200);
   }
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
