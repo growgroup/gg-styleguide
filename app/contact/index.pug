@@ -26,7 +26,8 @@ block body
                 +e.item-number 3
                 +e.item-text 送信完了
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-        +c("form").forms(action="/contact/confirm/")
+        +c.forms
+          form(action="/contact/confirm/")
           .row
             .large-10.is-push-lg-1.small-12
               +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。
