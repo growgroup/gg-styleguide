@@ -27,7 +27,7 @@ category: Heading
 
   b {
     display: block;
-    @include webfont-bold();
+    @include webfont();
     @include font-format(42, 0.1, 52, 700);
     @include breakpoint(small only) {
       font-size: rem-calc(42)*0.8;
@@ -55,7 +55,7 @@ category: Heading
 
   span {
     display: block;
-    @include webfont-bold();
+    @include webfont();
     @include font-format(14, .1, 20, normal);
     margin-top: rem-calc(6);
     @include breakpoint(small only) {

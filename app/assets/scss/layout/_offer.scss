@@ -69,7 +69,7 @@ category: Layout
     }
     //->電話番号はアクセントフォント
     &.is-tel {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(32);
       line-height: 1;
       @include breakpoint(small only) {
@@ -163,7 +163,7 @@ category: Layout
       }
     }
     .l-offer__box-tel {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(32);
       line-height: 1;
       i {

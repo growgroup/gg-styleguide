@@ -59,7 +59,7 @@ category: News
   }
 
   &__date {
-    @include webfont-bold();
+    @include webfont();
     color: $color-primary;
     letter-spacing: 0;
   }

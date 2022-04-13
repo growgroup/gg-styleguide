@@ -145,7 +145,7 @@ category: Layout
       width: rem-calc(390);
       padding-top: rem-calc(8);
       span {
-        @include webfont-bold();
+        @include webfont();
         font-size: rem-calc(56);
         letter-spacing: 0.05em;
         display: block;
@@ -224,7 +224,7 @@ category: Layout
 
   &__tel {
     margin-left: rem-calc(38);
-    @include webfont-bold();
+    @include webfont();
     @include font-format(24,0,28,700);
 
     i {

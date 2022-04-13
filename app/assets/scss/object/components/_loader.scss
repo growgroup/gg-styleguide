@@ -19,7 +19,7 @@
 
   &__title {
     @include font-format(40,.1,50,bold);
-    @include webfont-bold;
+    @include webfont;
     opacity: 0;
     transition: 1s;
   }

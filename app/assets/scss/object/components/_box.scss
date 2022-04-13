@@ -49,7 +49,7 @@ category: Components
       width: rem-calc(86);
       height: rem-calc(86);
       text-align: center;
-      @include webfont-bold();
+      @include webfont();
       position: absolute;
       top: 0;
       line-height: 1;
@@ -61,7 +61,7 @@ category: Components
         padding-top: rem-calc(10);
       }
       small {
-        @include webfont-bold();
+        @include webfont();
         font-size: rem-calc(18);
         letter-spacing: 0.1em;
         display: block;

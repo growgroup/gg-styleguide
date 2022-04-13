@@ -69,14 +69,14 @@ category: Components
     .c-card__number {
       text-align: center;
       color: $color-primary;
-      @include webfont-bold();
+      @include webfont();
       line-height: 1;
       position: absolute;
       top: 0;
       left: 8px;
 
       small {
-        @include webfont-bold();
+        @include webfont();
         font-size: rem-calc(18);
         letter-spacing: 0.1em;
       }

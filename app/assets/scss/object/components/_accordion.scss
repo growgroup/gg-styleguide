@@ -59,7 +59,7 @@ category: Components
   }
   &__icon {
     color: $color-white;
-    @include webfont-bold();
+    @include webfont();
     font-size: rem-calc(22);
     background-color: $color-primary;
     width: rem-calc(40);

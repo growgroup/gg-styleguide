@@ -49,7 +49,7 @@ category: Layout
     }
   }
   &__title {
-    @include webfont-bold();
+    @include webfont();
     font-size: rem-calc(42);
     line-height: 1.2;
     letter-spacing: 0.06em;

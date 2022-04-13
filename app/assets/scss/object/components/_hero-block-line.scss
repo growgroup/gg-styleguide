@@ -181,7 +181,7 @@
     }
 
     small {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(100);
       opacity: 0.25;
       line-height: 1;
@@ -195,7 +195,7 @@
     }
 
     span {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(28);
       letter-spacing: 0.1em;
       @include breakpoint(small only) {

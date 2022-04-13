@@ -34,7 +34,7 @@ category: PostContent
   }
 
   &__date {
-    @include webfont-bold();
+    @include webfont();
     color: $color-primary;
     margin: 0 rem-calc(24);
     letter-spacing: 0;
