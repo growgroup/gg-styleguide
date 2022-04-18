@@ -6,17 +6,13 @@ var pugconfig = {
   escapePre: true,
   basedir: "app/",
   locals: {
-    addComponentFile: function (componentName) {
+    addComponentFile: async function (componentName) {
       var componentPath = __dirname + '/../app/assets/scss/object/components/_' + componentName + '.scss';
       try {
         fs.statSync(componentPath);
         return true;
       } catch (err) {
-        fs.writeFile(componentPath, '', (err) => {
-          if (err) {
-            throw err;
-          }
-        });
+        await fs.writeFileSync(componentPath, '.c-' + componentName + ' {\n\n}', {flag: "a"});
         return false;
       }
     }
