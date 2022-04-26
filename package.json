@@ -75,7 +75,6 @@
     "owl.carousel": "^2.3.4",
     "slick-carousel": "^1.8.1",
     "stylemark": "^3.1.7",
-    "susy": "^3.0.7",
     "url": "^0.11.0"
   },
   "skipInheritances": [
