@@ -76,7 +76,7 @@
 @function gridWidth($value) {
   $base: 100;
   $grid: math.div($grid-column-count, $value);
-  @return math.percentage(math.div(100, $grid) * 0.01);
+  @return math.percentage(math.div($base, $grid) * 0.01);
 }
 
 // グリッド : スマートフォン
