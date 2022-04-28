@@ -202,11 +202,11 @@
 // クリアフィックス
 @mixin clearfix {
   zoom: 1;
-  &:before, &:after {
+  &::before, &::after {
     content: " ";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -231,12 +231,12 @@
 // クリアフィックス
 %clearfix {
   zoom: 1;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: " ";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -413,12 +413,12 @@
       font-size: $font-size-base-sp;
       height: $font-size-base-sp * $line-height-computed * $lines-to-show;
     }
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background: $color-white;
       position: absolute;
     }
-    &:before {
+    &::before {
       content: "...";
       top: $font-size-base * $line-height-computed * ($lines-to-show - 1);
       right: 0;
@@ -427,7 +427,7 @@
         top: $font-size-base-sp * $line-height-computed * ($lines-to-show - 1);
       }
     }
-    &:after {
+    &::after {
       content: "";
       height: 100%;
       width: 100%;
@@ -445,6 +445,12 @@
   width: 100%;
   height: 100%;
   @include bg-option();
+}
+
+@mixin card-block(){
+  display: block;
+  text-decoration: none;
+  color: $font-base-color;
 }
 
 // グラデーション
@@ -481,3 +487,28 @@
   line-height: math.div($height, $size) * 1;
   font-weight: $weight;
 }
+
+@mixin flex-wrapper() {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@mixin flex-wrapper-item($num, $margin) {
+  width: calc((100% / #{$num}) - (#{$margin}px * (#{$num} - 1) / #{$num}));
+  &:not(:nth-child(#{$num}n + 1)) {
+    margin-left: #{$margin}px;
+  }
+}
+
+@mixin img-curtain($color, $opacity: .5) {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba($color, $opacity);
+  top: 0;
+  left: 0;
+}
+

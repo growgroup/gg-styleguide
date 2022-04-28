@@ -17,13 +17,14 @@ category: Components
     // オープン時
     &.is-open {
       .c-accordion__head {
-        &:after {
+        &::after {
           content: "\f106";
         }
       }
     }
   }
   &__head {
+    cursor: pointer;
     display: flex;
     align-items: flex-start;
     padding: rem-calc(16) rem-calc(24) rem-calc(16) 0;
@@ -33,7 +34,7 @@ category: Components
       padding: rem-calc(16) rem-calc(24) rem-calc(12) 0;
     }
     //*矢印
-    &:after {
+    &::after {
       content: "\f107";
       font-family: "FontAwesome";
       color: $color-primary;
@@ -58,7 +59,7 @@ category: Components
   }
   &__icon {
     color: $color-white;
-    @include webfont-bold();
+    @include webfont();
     font-size: rem-calc(22);
     background-color: $color-primary;
     width: rem-calc(40);

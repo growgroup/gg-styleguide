@@ -44,11 +44,12 @@
       top: rem-calc(15);
       left: 0;
       margin:auto;
-      width: rem-calc(50);
+      width: rem-calc(35);
       height: rem-calc(1);
+      transform: translateX(50%);
       background: $color-primary;
       @include breakpoint(medium down) {
-        width: rem-calc(20);
+        width: rem-calc(15);
       }
     }
     &-number{

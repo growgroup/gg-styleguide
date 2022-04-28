@@ -16,7 +16,7 @@ category: Layout
   width: 100%;
   position: relative;
   overflow: hidden;
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -51,7 +51,7 @@ category: Layout
     }
   }
   &__title {
-    @include webfont-bold();
+    @include webfont();
     font-size: rem-calc(42);
     line-height: 1.2;
     letter-spacing: 0.06em;
@@ -69,7 +69,7 @@ category: Layout
   &.is-image-hidden {
     height: rem-calc(200);
     background-color: $color-secondary;
-    &:after {
+    &::after {
       display: none;
     }
     .l-page-header__inner {

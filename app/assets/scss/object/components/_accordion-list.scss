@@ -13,6 +13,7 @@ category: Components
     }
   }
   &__head {
+    cursor: pointer;
     font-size: rem-calc(20);
     font-weight: 700;
     letter-spacing: 0.1em;

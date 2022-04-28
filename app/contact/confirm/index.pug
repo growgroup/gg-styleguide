@@ -1,0 +1,82 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "confirm" // ページのID
+  - current.title = "お問い合わせ - 確認ページ" // タイトル
+  - current.description = "これはお問い合わせ - 確認ページの説明文です" // 説明文
+  - current.bodyClass = "confirm" // body に付与するクラス
+  - current.depth = 3 // ページの階層
+
+block page_header
+
+block body
+  main.l-main
+    section.l-section.is-lg.is-bg-color
+      .l-container
+        +c.form-head
+          +e.block
+            +e.title お問い合わせ
+            +e.list
+              +e.item
+                +e.item-number 1
+                +e.item-text お客様情報入力
+              +e.item.is-current
+                +e.item-number 2
+                +e.item-text 入力内容の確認
+              +e.item
+                +e.item-number 3
+                +e.item-text 送信完了
+        +c.forms
+          form(action="/contact/complete/")
+          +e.inner
+            .row
+              .large-10.is-push-lg-1.small-12
+                +e.heading.c-heading.is-md.is-normal.u-text-center.is-bottom 入力内容確認
+                +e.text.
+                  ご入力いただいた内容は下記の通りです。<br>
+                  お間違いがなければ送信を、入力内容を変更する場合はお手数ですが、再入力をお願い致します。
+                +e.block
+                  +e.title
+                    | 貴社名
+                  +e.content
+                    +e.input 株式会社サンプル
+                +e.block
+                  +e.title
+                    | 部署
+                  +e.content
+                    +e.input 総務課
+                +e.block
+                  +e.title
+                    | ご担当者氏名
+                    span.c-forms__label 必須
+                  +e.content
+                    +e.input 山田 太郎
+                +e.block
+                  +e.title
+                    | フリガナ
+                    span.c-forms__label 必須
+                  +e.content
+                    +e.input ヤマダ タロウ
+                +e.block
+                  +e.title
+                    | TEL
+                    span.c-forms__label 必須
+                  +e.content
+                    +e.input 123-456-789
+                +e.block
+                  +e.title
+                    | メールアドレス
+                    span.c-forms__label 必須
+                  +e.content
+                    +e.input info@mail.com
+                +e.block
+                  +e.title
+                    | ファイル添付
+                  +e.content
+                    +e.input text.png
+                +e.block
+                  +e.title.is-vertical-top お問い合わせ内容
+                  +e.content
+                    +e.textarea サービスについてご不明点のある方はこちらにご記載ください。
+          +e.submit
+            button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
+            button.c-button.c-forms__submit__submit.is-lg 送信する

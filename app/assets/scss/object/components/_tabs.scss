@@ -35,7 +35,7 @@ category: Tabs
           padding: rem-calc(6) rem-calc(24);
         }
 
-        &:after {
+        &::after {
           content: "\f107";
           font-family: "FontAwesome";
           position: absolute;
@@ -71,10 +71,18 @@ category: Tabs
 
   // コンテンツ
   &__content {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s;
+    width: 0;
 
     &.is-active {
-      display: block;
+      position: static;
+      visibility: visible;
+      opacity: 1;
+      width: auto;
     }
   }
 }
@@ -109,7 +117,7 @@ category: Tabs
             font-size: rem-calc(14);
             letter-spacing: 0.1em;
 
-            &:after {
+            &::after {
               display: none;
             }
           }

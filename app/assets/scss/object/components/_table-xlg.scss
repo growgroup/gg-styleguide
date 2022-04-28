@@ -42,7 +42,7 @@ category: Base
     }
 
     th {
-      background-color: $color-secondary;
+      background-color: rgba($color-secondary, .9);
       text-align: center;
       vertical-align: middle;
       width: math.div(294, 1140)*100%;
@@ -52,7 +52,64 @@ category: Base
 
 //スマホ時
 .js-responsive-table {
+
+  position: relative;
+
+  &::before{
+    @include transition(.2);
+    @include breakpoint(small only) {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20px;
+      background-repeat: no-repeat;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+      background-attachment: scroll;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &::after{
+    @include transition(.2);
+    @include breakpoint(small only) {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 20px;
+      background-repeat: no-repeat;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+      background-attachment: scroll;
+      pointer-events: none;
+    }
+  }
+
+  &.is-scrollable {
+    &::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &.is-unscrollable {
+    &::after {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &-wrapper {
+    @include breakpoint(small only) {
+      width: 100%;
+      overflow: auto;
+    }
+  }
+
   @include breakpoint(small only) {
-    overflow: scroll;
   }
 }

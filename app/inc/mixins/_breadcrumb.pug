@@ -4,26 +4,34 @@ mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
     +c.breadcrumb
       .l-container
         +e.inner
-          span: +a("/") ホーム
-          span >
-          span: +a('/' + parentURL + '/')=parent
-          span >
-          span: +a('/' + parentURL +'/' + parentURL2 + '/')=parent2
-          span >
-          span=current.title
+          span
+            span
+              +a("/") ホーム
+              span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
+              span
+                +a('/'+parentURL+'/')=parent
+                span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
+                span
+                  +a('/' + parentURL +'/' + parentURL2 + '/')=parent2
+                  span !{current.title}
   else if parent
     +c.breadcrumb
       .l-container
         +e.inner
-          span: +a("/") ホーム
-          span >
-          span: +a('/'+parentURL+'/')=parent
-          span >
-          span=current.title
+          span
+            span
+              +a("/") ホーム
+              span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
+              span
+                +a('/'+parentURL+'/')=parent
+                span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
+                span !{current.title}
   else
     +c.breadcrumb
       .l-container
         +e.inner
-          span: +a("/") ホーム
-          span >
-          span=current.title
+          span
+            span
+              +a("/") ホーム
+              span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
+              span !{current.title}

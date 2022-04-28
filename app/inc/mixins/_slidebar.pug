@@ -1,8 +1,8 @@
 //- スマホメニュー
 mixin c_slidebar
   //-> スマホメニューのボタン
-  a(href="#").c-slidebar-button.js-slidebar-button
-    .c-slidebar-button__inner
+  button(type="button").c-slidebar-button.js-slidebar-button
+    span.c-slidebar-button__inner
       span.c-slidebar-button__line
         span
         span
@@ -10,7 +10,7 @@ mixin c_slidebar
       span.c-slidebar-button__text.is-open MENU
       span.c-slidebar-button__text.is-close CLOSE
   .c-slidebar-menu.js-slidebar-menu.is-top-to-bottom
-    ul
+    ul.c-slidebar-menu__list
       li: +a("#") メニュー1
       li: +a("#") メニュー2
       li.c-slidebar-menu__parent.js-accordion
@@ -22,7 +22,8 @@ mixin c_slidebar
       li: +a("#") メニュー4
       li: +a("#") メニュー5
       li: +a("#") メニュー6
-    +a("#").c-slidebar-menu__button.c-button.is-contact お問い合わせ
-    .c-slidebar-menu__sns-btns
-      +a("#").c-slidebar-menu__sns-btn <i class="fa fa-twitter" aria-hidden="true"></i>
-      +a("#").c-slidebar-menu__sns-btn <i class="fa fa-facebook" aria-hidden="true"></i>
+    .l-container
+      +a("#").c-slidebar-menu__button.c-button.is-contact お問い合わせ
+      .c-slidebar-menu__sns-btns
+        +a("#").c-slidebar-menu__sns-btn <i class="fa fa-twitter" aria-hidden="true"></i>
+        +a("#").c-slidebar-menu__sns-btn <i class="fa fa-facebook" aria-hidden="true"></i>

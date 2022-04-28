@@ -68,7 +68,7 @@
       top: 0;
     }
 
-    &:after {
+    &::after {
       content: "";
       display: block;
       position: absolute;
@@ -82,7 +82,7 @@
     }
 
     &:hover {
-      &:after {
+      &::after {
         opacity: 0.3;
       }
     }
@@ -161,7 +161,7 @@
       padding-right: rem-calc(18);
       position: relative;
 
-      &:after {
+      &::after {
         content: "\f105";
         font-family: "FontAwesome";
         color: $color-primary;
@@ -183,7 +183,7 @@
     }
 
     small {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(100);
       opacity: 0.25;
       line-height: 1;
@@ -197,7 +197,7 @@
     }
 
     span {
-      @include webfont-bold();
+      @include webfont();
       font-size: rem-calc(28);
       letter-spacing: 0.1em;
       @include breakpoint(small only) {
@@ -222,7 +222,7 @@
         .c-hero-block-line__content {
           border-right: none;
 
-          &:after {
+          &::after {
             content: '';
             display: block;
             background: $color-white;
@@ -241,7 +241,7 @@
             border-left: none;
             padding-left: 0;
             padding-right: 0;
-            &:before {
+            &::before {
               content: '';
               display: block;
               background: $color-white;
@@ -263,7 +263,7 @@
         .c-hero-block-line__content {
           border-left: none;
 
-          &:after {
+          &::after {
             content: '';
             display: block;
             background: $color-white;
@@ -283,7 +283,7 @@
             padding-right: 0;
             border-right: 0;
 
-            &:before {
+            &::before {
               content: '';
               display: block;
               background: $color-white;

@@ -31,7 +31,7 @@ category: Navigation
       margin-bottom: rem-calc(8);
       border-width: 1px;
     }
-    &:after {
+    &::after {
       content: "\f0dd";
       font-family: "FontAwesome";
       font-size: rem-calc(12);
@@ -40,7 +40,7 @@ category: Navigation
       right: rem-calc(8);
       transform: translateY(-50%);
     }
-    &:before {
+    &::before {
       content: "";
       display: block;
       width: 0;
@@ -55,7 +55,7 @@ category: Navigation
     }
     &:hover {
       opacity: 1;
-      &:before {
+      &::before {
         width: 100%;
         opacity: 1;
       }

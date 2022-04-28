@@ -96,7 +96,7 @@ category: SpecialComponents
     margin-bottom: rem-calc(8);
 
     span {
-      @include webfont-bold();
+      @include webfont();
       font-size: 60px;
       line-height: math.div(71, 60)*1;
       letter-spacing: 0;

@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "gsap": "^3.9.1",
     "imagesloaded": "^4.1.4",
     "infiniteslidev2": "^2.0.1-1",
     "jquery": "^3.6.0",

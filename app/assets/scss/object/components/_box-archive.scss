@@ -37,7 +37,7 @@ category: Navigation
         margin-right: rem-calc(24);
         margin-bottom: rem-calc(8);
       }
-      &:before {
+      &::before {
         content: "\f105";
         font-family: "FontAwesome";
         color: $color-primary;

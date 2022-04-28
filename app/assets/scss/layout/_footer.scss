@@ -43,14 +43,14 @@ category: Layout
       padding: rem-calc(12) rem-calc(24);
       margin: 0;
       background-color: $font-base-color;
-      &:before {
+      &::before {
         content: "\f107";
         font-family: "FontAwesome";
         color: $color-primary;
         padding-right: rem-calc(12);
       }
       &.is-open {
-        &:before {
+        &::before {
           content: "\f106";
         }
       }

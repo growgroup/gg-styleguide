@@ -105,6 +105,7 @@ template {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -234,6 +235,7 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: top;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /**
@@ -507,4 +509,15 @@ a{
   &:hover{
     @include transition()
   }
+}
+
+*.is-indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+*.u-first-line-leader {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

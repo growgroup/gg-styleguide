@@ -26,7 +26,7 @@ category: Navigation
         position: relative;
         transition: all .2s;
 
-        &:before {
+        &::before {
           content: "\f105";
           font-family: "FontAwesome";
           color: $color-primary;
@@ -35,7 +35,7 @@ category: Navigation
           left: rem-calc(16);
         }
 
-        &:after {
+        &::after {
           content: "";
           display: block;
           position: absolute;
@@ -54,7 +54,7 @@ category: Navigation
           opacity: 1;
           color: $color-primary;
 
-          &:after {
+          &::after {
             width: 100%;
             opacity: 1;
           }
@@ -73,12 +73,12 @@ category: Navigation
             font-weight: 400;
             padding: rem-calc(5) rem-calc(24) rem-calc(5) rem-calc(48);
 
-            &:before {
+            &::before {
               left: rem-calc(32);
               top: rem-calc(4);
             }
 
-            &:after {
+            &::after {
               display: none;
             }
           }
@@ -103,7 +103,7 @@ category: Navigation
     padding: rem-calc(8) rem-calc(32) rem-calc(8) rem-calc(16);
     position: relative;
 
-    &:after {
+    &::after {
       content: "\f107";
       font-family: "FontAwesome";
       position: absolute;
@@ -130,12 +130,12 @@ category: Navigation
         font-size: rem-calc(14) !important;
         padding: rem-calc(20) rem-calc(16) rem-calc(20) rem-calc(20) !important;
 
-        &:before {
+        &::before {
           left: 0 !important;
           top: rem-calc(20) !important;
         }
 
-        &:after {
+        &::after {
           display: none;
         }
       }

@@ -5,6 +5,7 @@ category: Buttons
 ---
 */
 .c-button {
+  position: relative;
   outline: none;
   display: inline-block;
   width: 100%;
@@ -12,16 +13,11 @@ category: Buttons
   text-align: center;
   background-color: $color-primary;
   color: $color-white;
-  border: 1px solid $color-primary;
   text-decoration: none;
-  border-radius: 4px;
   padding: rem-calc(13) rem-calc(24);
-  position: relative;
   transition: all .3s;
-  font-weight: 700;
-  transform: perspective(1px) translateZ(0);
   // *アイコン
-  &:after {
+  &::after {
     content: "\f105";
     display: block;
     font-family: "FontAwesome";
@@ -52,28 +48,6 @@ category: Buttons
     }
   }
 
-  // -> アクセントカラー
-  &.is-accent {
-    background-color: $color-accent;
-    border-color: $color-accent;
-
-    &:hover {
-      background-color: $color-white;
-      color: $color-accent;
-    }
-  }
-
-  // -> ホワイトカラー
-  &.is-white {
-    background-color: $color-white;
-    color: $color-primary;
-    border: 1px solid $color-primary;
-
-    &:hover {
-      background-color: $color-primary;
-      color: $color-white;
-    }
-  }
 }
 
 /*
@@ -95,7 +69,7 @@ category: Buttons
       padding: rem-calc(20) rem-calc(32);
     }
 
-    &:after {
+    &::after {
       font-size: rem-calc(24);
       @include breakpoint(small only) {
         font-size: rem-calc(24)*0.9;
@@ -122,7 +96,7 @@ category: Buttons
       font-size: rem-calc(14)*0.9;
     }
 
-    &:after {
+    &::after {
       right: rem-calc(10);
     }
   }
@@ -141,7 +115,7 @@ category: Buttons
       font-size: rem-calc(14)*0.9;
     }
 
-    &:after {
+    &::after {
       color: $color-primary;
       right: 0;
     }
@@ -154,14 +128,3 @@ category: Buttons
 }
 
 
-.c-button {
-  // デザイン設定
-  // ->矢印左
-  &.is-arrow-left {
-    &:after {
-      content: "\f104";
-      right: auto;
-      left: rem-calc(10);
-    }
-  }
-}

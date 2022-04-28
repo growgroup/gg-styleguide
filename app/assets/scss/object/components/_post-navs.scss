@@ -18,6 +18,7 @@ category: Navigation
 
     li {
       width: rem-calc(155);
+      max-width: 33%;
       @include breakpoint(small only) {
         width: calc(33% - 8px);
       }
@@ -44,16 +45,11 @@ category: Navigation
   }
 
   &__archive {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-
     a {
-      display: inline-flex;
       align-items: center;
+      margin: auto;
 
-      &:after {
+      &::after {
         display: none;
       }
 

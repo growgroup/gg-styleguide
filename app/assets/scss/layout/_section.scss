@@ -6,74 +6,58 @@
 // <div class="l-section [is-lg | is-md | is-sm | is-bottom | is-top]"></div>
 //
 // Styleguide 5.3.0
+
+$xlg: 120;
+$lg: 100;
+$md: 80;
+$sm: 64;
+$xs: 32;
+
 .l-section {
   // サイズ設定
-  &.is-xxxxlg {
-    padding-top: rem-calc(120);
-    padding-bottom: rem-calc(120);
-    @include breakpoint(small only) {
-      padding-top: rem-calc(120)*0.5;
-      padding-bottom: rem-calc(120)*0.5;
-    }
-  }
 
-  &.is-xxxlg {
-    padding-top: rem-calc(96);
-    padding-bottom: rem-calc(96);
-    @include breakpoint(small only) {
-      padding-top: rem-calc(96)*0.5;
-      padding-bottom: rem-calc(96)*0.5;
-    }
-  }
-
-  &.is-xxlg {
-    padding-top: rem-calc(80);
-    padding-bottom: rem-calc(80);
-    @include breakpoint(small only) {
-      padding-top: rem-calc(80)*0.5;
-      padding-bottom: rem-calc(80)*0.5;
-    }
-  }
 
   &.is-xlg {
-    padding-top: rem-calc(72);
-    padding-bottom: rem-calc(80);
+    padding-top: rem-calc($xlg);
+    padding-bottom: rem-calc($xlg);
     @include breakpoint(small only) {
-      padding-top: rem-calc(72)*0.5;
-      padding-bottom: rem-calc(80)*0.5;
+      padding-top: rem-calc($xlg)/2;
+      padding-bottom: rem-calc($xlg)/2;
     }
   }
 
   &.is-lg {
-    padding-top: rem-calc(64);
-    padding-bottom: rem-calc(64);
+    padding-top: rem-calc($lg);
+    padding-bottom: rem-calc($lg);
     @include breakpoint(small only) {
-      padding-top: rem-calc(64)*0.5;
-      padding-bottom: rem-calc(64)*0.5;
+      padding-top: rem-calc($lg)/2;
+      padding-bottom: rem-calc($lg)/2;
     }
   }
-  &.is-sm {
-    padding-top: rem-calc(48);
-    padding-bottom: rem-calc(48);
+
+  &.is-md {
+    padding-top: rem-calc($md);
+    padding-bottom: rem-calc($md);
     @include breakpoint(small only) {
-      padding-top: rem-calc(24)*0.5;
-      padding-bottom: rem-calc(24)*0.5;
+      padding-top: rem-calc($md)/2;
+      padding-bottom: rem-calc($md)/2;
+    }
+  }
+
+  &.is-sm {
+    padding-top: rem-calc($sm);
+    padding-bottom: rem-calc($sm);
+    @include breakpoint(small only) {
+      padding-top: rem-calc($sm)/2;
+      padding-bottom: rem-calc($sm)/2;
     }
   }
   &.is-xs {
-    padding-top: rem-calc(32);
-    padding-bottom: rem-calc(32);
+    padding-top: rem-calc($xs);
+    padding-bottom: rem-calc($xs);
     @include breakpoint(small only) {
-      padding-top: rem-calc(32)*0.5;
-      padding-bottom: rem-calc(32)*0.5;
-    }
-  }
-  &.is-xxs {
-    padding-top: rem-calc(24);
-    padding-bottom: rem-calc(24);
-    @include breakpoint(small only) {
-      padding-top: rem-calc(24)*0.5;
-      padding-bottom: rem-calc(24)*0.5;
+      padding-top: rem-calc($xs)/2;
+      padding-bottom: rem-calc($xs)/2;
     }
   }
 

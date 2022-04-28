@@ -17,7 +17,7 @@ category: Base
   @include breakpoint(small only) {
     padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
   }
-  &:before {
+  &::before {
     content: "\f10d";
     display: block;
     font-family: "FontAwesome";

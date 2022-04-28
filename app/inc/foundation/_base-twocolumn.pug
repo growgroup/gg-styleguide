@@ -6,21 +6,18 @@ block layout
     include /inc/layout/_header.pug
 
   //- スマホメニュー用のコンテナ
-  .c-slidebar-container.js-slidebar-container.is-top-to-bottom
 
-    // ページヘッダー
-    block page_header
+  // ページヘッダー
+  block page_header
+  main.l-main.is-two-column
     .l-container
       .l-wrapper
-        main.l-main.is-twocolumns
-          .l-post-content.is-twocolumns
-            //- メインコンテンツ
-            block body
+        block body
 
-        aside.l-aside
-          block aside
+      aside.l-aside
+        block aside
 
-    +l_offer
-    //- フッター
-    block footer
-      include /inc/layout/_footer.pug
+  +l_offer
+  //- フッター
+  block footer
+    include /inc/layout/_footer.pug

@@ -66,7 +66,7 @@
     margin-top: rem-calc(16);
     margin-bottom: rem-calc(16);
 
-    &:before {
+    &::before {
       float: left;
       margin-right: 0.3rem;
       font-family: 'FontAwesome';
@@ -145,20 +145,20 @@
     }
   }
 
-  ul {
-    padding-left: rem-calc(24px);
-
-    li {
-      list-style: disc;
+  ol,ul{
+    li{
+      list-style: inherit;
     }
   }
-
+  ul {
+    padding-left: rem-calc(24px);
+    list-style: disc;
+    //@extend .c-list.is-icon;
+  }
   ol {
     padding-left: rem-calc(24px);
-
-    li {
-      list-style: decimal;
-    }
+    list-style: decimal;
+    //@extend .c-list.is-outline;
   }
 
   iframe {

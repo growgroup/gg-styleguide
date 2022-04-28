@@ -10,10 +10,10 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
 @include breakpoint(large up) {
   .c-slidebar-button {
-    display: none !important;
+    display: none;
   }
   .c-slidebar-menu {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -25,8 +25,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
     text-align: center;
     font-size: rem-calc(12);
     z-index: 9999;
@@ -37,19 +37,20 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     width: rem-calc(55);
     height: rem-calc(55);
     padding-top: rem-calc(6);
+    border: none;
 
     &:active,
     &:hover {
-      opacity: 1 !important;
+      opacity: 1;
     }
 
     &__inner{
-
+      display: block;
     }
 
     // ボーダー
     &__line {
-      height: rem-calc(16) !important;
+      height: rem-calc(16);
       display: block;
       > span {
         display: block;
@@ -84,13 +85,12 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
   // メニュー自体
   .c-slidebar-menu {
-    height: calc(100vh - 55px) !important;
-    padding: 0 rem-calc(16) rem-calc(104);
+    height: calc(100vh - 55px);
+    padding: 0 0 rem-calc(104);
     position: fixed;
     background-color: $color-primary;
     z-index: 9980;
     width: $slidebar-menu-width;
-    -webkit-transform: translateX(100%);
     transform: translate3d(100%, 0px, 0px);
     right: 0;
     -webkit-transition: $slidebar-menu-eaasing;
@@ -100,48 +100,66 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     -webkit-overflow-scrolling: touch;
 
     &.is-active {
-      height: calc(100% - 65px) !important;
+      height: calc(100% - 65px);
     }
 
     // 上から下へ
     &.is-top-to-bottom {
-      -webkit-transform: translateY(-100%);
       transform: translate3d(0px, -100%, 0px);
-      height: auto;
       width: 100%;
       opacity: 0;
     }
 
+
+    // メニュー要素（通常）
+    &__list{
+      width: 100%;
+      background: $color-primary;
+      li {
+        border-bottom: 1px solid $border-base-color;
+      }
+      a,
+      span {
+        font-size: rem-calc(15);
+        display: block;
+        padding: rem-calc(14) rem-calc(16);
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 400;
+      }
+    }
+
+    // メニュー要素（子）
     &__children {
       width: 100%;
       padding: 0 rem-calc(16);
       display: none;
-      background-color: $color-primary-dark !important;
+      background-color: $color-primary;
 
       li {
         &:last-child {
-          border-bottom: none !important;
+          border-bottom: none;
         }
 
         a {
-          color: $color-white !important;
-          padding: rem-calc(16) 0 !important;
-
-          &:before,
-          &:after {
+          color: $color-white;
+          padding: rem-calc(16) 0;
+          &::before,
+          &::after {
             display: none;
           }
         }
       }
     }
 
+    // メニュー要素（親）
     &__parent {
       a,
       span {
         position: relative;
 
-        &:after,
-        &:before {
+        &::after,
+        &::before {
           content: "";
           display: block;
           width: rem-calc(2);
@@ -153,7 +171,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
           transform: translateY(-50%);
         }
 
-        &:after {
+        &::after {
           width: rem-calc(18);
           height: rem-calc(2);
           right: rem-calc(16);
@@ -163,31 +181,14 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       &.is-open {
         a,
         span {
-          &:before {
+          &::before {
             display: none;
           }
         }
       }
     }
 
-    ul {
-      width: 100%;
-      background: $color-primary;
 
-      li {
-        border-bottom: 1px solid $border-base-color;
-
-        a,
-        span {
-          font-size: rem-calc(15);
-          display: block;
-          padding: rem-calc(14) rem-calc(16);
-          text-decoration: none;
-          color: $color-white;
-          font-weight: 400;
-        }
-      }
-    }
 
     &__button {
       margin-top: rem-calc(32);
@@ -196,7 +197,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       color: $color-primary;
       font-size: rem-calc(16);
 
-      &:before {
+      &::before {
         content: "\f0e0";
         font-family: "FontAwesome";
         color: $color-primary;
@@ -204,7 +205,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         margin-right: rem-calc(12);
       }
 
-      &:after {
+      &::after {
         content: none;
       }
     }
@@ -237,7 +238,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
 
-    &:after {
+    &::after {
       content: "";
       position: fixed;
       width: 100%;
@@ -290,7 +291,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       -webkit-transform: translateX(-$slidebar-menu-width);
       transform: translate3d(-$slidebar-menu-width, 0px, 0px);
 
-      &:after {
+      &::after {
         content: "";
         opacity: 1;
         position: fixed;
@@ -307,7 +308,7 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
         -webkit-transform: translateX(0px);
         transform: translate3d(0px, 0px, 0px);
 
-        &:after {
+        &::after {
           top: 55px;
         }
       }
