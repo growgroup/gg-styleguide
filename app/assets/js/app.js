@@ -18,7 +18,6 @@ import {scrollfire} from "./app/scrolltrigger.js";
 import anime from 'animejs';
 import ScrollReveal from "./app/scrollreveal";
 
-import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
 import OwlThemeCss from "owl.carousel/dist/assets/owl.theme.default.css";
 import modaalCss from 'modaal/dist/css/modaal.css';

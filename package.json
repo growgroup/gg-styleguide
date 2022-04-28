@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Grow Template - Using  Pug && Sass.",
   "engines": {
-    "node": ">=17.0.0"
+    "node": ">=16.14.0"
   },
   "scripts": {
     "start": "npm run develop -s",
@@ -67,7 +67,6 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
-    "font-awesome": "^4.7.0",
     "imagesloaded": "^4.1.4",
     "infiniteslidev2": "^2.0.1-1",
     "jquery": "^3.6.0",
