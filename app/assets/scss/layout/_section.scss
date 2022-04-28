@@ -21,8 +21,8 @@ $xs: 32;
     padding-top: rem-calc($xlg);
     padding-bottom: rem-calc($xlg);
     @include breakpoint(small only) {
-      padding-top: rem-calc($xlg)/2;
-      padding-bottom: rem-calc($xlg)/2;
+      padding-top: rem-calc($xlg) * 0.5;
+      padding-bottom: rem-calc($xlg) * 0.5;
     }
   }
 
@@ -30,8 +30,8 @@ $xs: 32;
     padding-top: rem-calc($lg);
     padding-bottom: rem-calc($lg);
     @include breakpoint(small only) {
-      padding-top: rem-calc($lg)/2;
-      padding-bottom: rem-calc($lg)/2;
+      padding-top: rem-calc($lg) * 0.5;
+      padding-bottom: rem-calc($lg) * 0.5;
     }
   }
 
@@ -39,8 +39,8 @@ $xs: 32;
     padding-top: rem-calc($md);
     padding-bottom: rem-calc($md);
     @include breakpoint(small only) {
-      padding-top: rem-calc($md)/2;
-      padding-bottom: rem-calc($md)/2;
+      padding-top: rem-calc($md) * 0.5;
+      padding-bottom: rem-calc($md) * 0.5;
     }
   }
 
@@ -48,16 +48,16 @@ $xs: 32;
     padding-top: rem-calc($sm);
     padding-bottom: rem-calc($sm);
     @include breakpoint(small only) {
-      padding-top: rem-calc($sm)/2;
-      padding-bottom: rem-calc($sm)/2;
+      padding-top: rem-calc($sm) * 0.5;
+      padding-bottom: rem-calc($sm) * 0.5;
     }
   }
   &.is-xs {
     padding-top: rem-calc($xs);
     padding-bottom: rem-calc($xs);
     @include breakpoint(small only) {
-      padding-top: rem-calc($xs)/2;
-      padding-bottom: rem-calc($xs)/2;
+      padding-top: rem-calc($xs) * 0.5;
+      padding-bottom: rem-calc($xs) * 0.5;
     }
   }
 

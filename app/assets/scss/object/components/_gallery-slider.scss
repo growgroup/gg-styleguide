@@ -58,7 +58,7 @@
       padding-left: rem-calc(35);
       font-size: rem-calc(20);
       letter-spacing: .1em;
-      line-height: 26/20*1;
+      line-height: math.div(26,20);
 
       @include breakpoint(small only) {
         font-size: rem-calc(16);
@@ -111,7 +111,7 @@
     &-title {
       font-size: rem-calc(16);
       letter-spacing: .05em;
-      line-height: 24/16*1;
+      line-height: math.div(24,16);
       font-weight: bold;
       margin-bottom: rem-calc(4);
 
@@ -123,7 +123,7 @@
     &-text {
       font-size: rem-calc(12);
       letter-spacing: .05em;
-      line-height: 20/12*1;
+      line-height: math.div(20,12);
 
       @include breakpoint(small only) {
         font-size: rem-calc(11);
@@ -160,7 +160,7 @@
       &::before {
         content: '';
         display: block;
-        padding-top: 500/748*100%;
+        padding-top: math.div(500,748) * 100%;
       }
     }
   }
@@ -181,7 +181,7 @@
     }
 
     &-image {
-      width: 138/1038*100%;
+      width: math.div(138,1038) * 100%;
       position: relative;
       transition: all .3s;
       cursor: pointer;
@@ -211,10 +211,10 @@
       &::before {
         content: '';
         display: block;
-        padding-top: 92/138*100%;
+        padding-top: math.div(92,138)*100%;
 
         @include breakpoint(small only) {
-          padding-top: 80/138*100%;
+          padding-top: math.div(80,138)*100%;
         }
       }
     }

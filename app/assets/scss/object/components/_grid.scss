@@ -8,8 +8,6 @@
 //
 // Styleguide 2.2.0
 
-@use "sass:math";
-
 // $susy: (
 //   flow: ltr,
 //   math: fluid,
@@ -18,7 +16,7 @@
 //   container: $grid-row-width,
 //   container-position: center,
 //   columns: susy-repeat($grid-column-count),
-//   gutters: math.div(map_get($grid-column-responsive-gutter,medium), 60px),
+//   gutters: math.div(map.get($grid-column-responsive-gutter,medium), 60px),
 //   column-width: 60px,
 //   global-box-sizing: b order-box,
 //   last-flow: to,
@@ -54,16 +52,16 @@
 }
 
 .row {
-  margin-left: -(map_get($grid-column-responsive-gutter, medium) * 0.5);
-  margin-right: -(map_get($grid-column-responsive-gutter, medium) * 0.5);
+  margin-left: -(map.get($grid-column-responsive-gutter, medium) * 0.5);
+  margin-right: -(map.get($grid-column-responsive-gutter, medium) * 0.5);
   // @include susy-clearfix();
   display: flex;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   @include breakpoint(small only) {
-    margin-left: -(map_get($grid-column-responsive-gutter, small) * 0.5);
-    margin-right: -(map_get($grid-column-responsive-gutter, small) * 0.5);
+    margin-left: -(map.get($grid-column-responsive-gutter, small) * 0.5);
+    margin-right: -(map.get($grid-column-responsive-gutter, small) * 0.5);
   }
 
   &.is-center {
@@ -92,13 +90,13 @@
 @for $i from 1 through $grid-column-count {
   .small-#{$i} {
     width: gridWidth($i);
-    padding-left: (map_get($grid-column-responsive-gutter, small) * 0.5);
-    padding-right: (map_get($grid-column-responsive-gutter, small) * 0.5);
+    padding-left: (map.get($grid-column-responsive-gutter, small) * 0.5);
+    padding-right: (map.get($grid-column-responsive-gutter, small) * 0.5);
   }
   .is-push-sm-#{$i} {
     margin-left: gridWidth($i);
-    padding-left: (map_get($grid-column-responsive-gutter, small) * 0.5);
-    padding-right: (map_get($grid-column-responsive-gutter, small) * 0.5);
+    padding-left: (map.get($grid-column-responsive-gutter, small) * 0.5);
+    padding-right: (map.get($grid-column-responsive-gutter, small) * 0.5);
   }
 }
 
@@ -112,8 +110,8 @@
   @for $i from 1 through $grid-column-count {
     .medium-#{$i} {
       width: gridWidth($i);
-      padding-left: (map_get($grid-column-responsive-gutter, medium) * 0.5);
-      padding-right: (map_get($grid-column-responsive-gutter, medium) * 0.5);
+      padding-left: (map.get($grid-column-responsive-gutter, medium) * 0.5);
+      padding-right: (map.get($grid-column-responsive-gutter, medium) * 0.5);
     }
     .is-push-md-#{$i} {
       margin-left: gridWidth($i);
@@ -130,8 +128,8 @@
   @for $i from 1 through $grid-column-count {
     .large-#{$i} {
       width: gridWidth($i);
-      padding-left: (map_get($grid-column-responsive-gutter, medium) * 0.5);
-      padding-right: (map_get($grid-column-responsive-gutter, medium) * 0.5);
+      padding-left: (map.get($grid-column-responsive-gutter, medium) * 0.5);
+      padding-right: (map.get($grid-column-responsive-gutter, medium) * 0.5);
     }
     .is-push-lg-#{$i} {
       margin-left: gridWidth($i);

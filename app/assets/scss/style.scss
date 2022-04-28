@@ -15,6 +15,9 @@
 //  limitations under the License
 //
 
+@use "sass:math";
+@use "sass:map";
+
 @import "foundation/_webfont";
 @import "foundation/_settings";
 @import "foundation/_mixin";
