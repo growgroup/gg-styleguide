@@ -48,7 +48,7 @@ category: Components
 
     img {
       width: 100%;
-      max-width: rem-calc(1048)/2;
+      max-width: rem-calc(1048)*0.5;
       height: auto;
       margin: 0 auto;
       @include breakpoint(medium down) {

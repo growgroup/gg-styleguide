@@ -1,5 +1,6 @@
 // Pug の設定ファイル
 var fs = require("fs")
+
 var pugconfig = {
   pretty: true,
   cache: false,

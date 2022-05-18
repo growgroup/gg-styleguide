@@ -12,48 +12,48 @@ $xs: 24;
   margin-top: rem-calc($default);
   margin-bottom: rem-calc($default);
   @include breakpoint(small only) {
-    margin-top: rem-calc($default)/2;
-    margin-bottom: rem-calc($default)/2;
+    margin-top: rem-calc($default) * 0.5;
+    margin-bottom: rem-calc($default) * 0.5;
   }
 
   &.is-xlg {
     margin-top: rem-calc($xlg);
     margin-bottom: rem-calc($xlg);
     @include breakpoint(small only) {
-      margin-top: rem-calc($xlg)/2;
-      margin-bottom: rem-calc($xlg)/2;
+      margin-top: rem-calc($xlg) * 0.5;
+      margin-bottom: rem-calc($xlg) * 0.5;
     }
   }
   &.is-lg {
     margin-top: rem-calc($lg);
     margin-bottom: rem-calc($lg);
     @include breakpoint(small only) {
-      margin-top: rem-calc($lg)/2;
-      margin-bottom: rem-calc($lg)/2;
+      margin-top: rem-calc($lg) * 0.5;
+      margin-bottom: rem-calc($lg) * 0.5;
     }
   }
   &.is-md {
     margin-top: rem-calc($md);
     margin-bottom: rem-calc($md);
     @include breakpoint(small only) {
-      margin-top: rem-calc($md)/2;
-      margin-bottom: rem-calc($md)/2;
+      margin-top: rem-calc($md) * 0.5;
+      margin-bottom: rem-calc($md) * 0.5;
     }
   }
   &.is-sm {
     margin-top: rem-calc($sm);
     margin-bottom: rem-calc($sm);
     @include breakpoint(small only) {
-      margin-top: rem-calc($sm)/2;
-      margin-bottom: rem-calc($sm)/2;
+      margin-top: rem-calc($sm) * 0.5;
+      margin-bottom: rem-calc($sm) * 0.5;
     }
   }
   &.is-xs {
     margin-top: rem-calc($xs);
     margin-bottom: rem-calc($xs);
     @include breakpoint(small only) {
-      margin-top: rem-calc($xs)/2;
-      margin-bottom: rem-calc($xs)/2;
+      margin-top: rem-calc($xs) * 0.5;
+      margin-bottom: rem-calc($xs) * 0.5;
     }
   }
 

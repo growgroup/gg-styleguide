@@ -4,14 +4,14 @@
   .u-pts#{$i}{
     padding-top:1px * $i;
     @include breakpoint(small only) {
-      padding-top: 1px * $i / 2;
+      padding-top: 1px * $i * 0.5;
     }
 
   }
   .u-pbs#{$i}{
     padding-bottom:1px * $i;
     @include breakpoint(small only) {
-      padding-bottom: 1px * $i / 2;
+      padding-bottom: 1px * $i * 0.5;
     }
   }
 }

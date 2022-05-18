@@ -13,7 +13,7 @@ category: Navigation
 .c-anchor-nav {
   margin-bottom: rem-calc(64);
   @include breakpoint(small only) {
-    margin-bottom: rem-calc(64)/2;
+    margin-bottom: rem-calc(64)*0.5;
   }
   .c-button {
     max-width: 100%!important;

@@ -278,24 +278,24 @@
     &__back{
       width: calc(25% - 28px);
       // -2px はタグの改行によって発生するホワイトスペースの距離
-      margin-right:(map_get($grid-column-responsive-gutter,medium)/2) - 2px;
+      margin-right:(map_get($grid-column-responsive-gutter,medium) * 0.5) - 2px;
       @include breakpoint(medium down) {
         width: calc(33.33333% - 28px);
       }
       @include breakpoint(small only) {
         width: calc(50% - 10px);
-        margin-right: map_get($grid-column-responsive-gutter,small)/2 - 2px;
+        margin-right: map_get($grid-column-responsive-gutter,small) * 0.5 - 2px;
       }
     }
     &__submit{
       width: calc(25% - 28px);
-      margin-left: map_get($grid-column-responsive-gutter,medium)/2 - 2px;
+      margin-left: map_get($grid-column-responsive-gutter,medium) * 0.5 - 2px;
       @include breakpoint(medium down) {
         width: calc(33.33333% - 28px);
       }
       @include breakpoint(small only) {
         width: calc(50% - 10px);
-        margin-left: map_get($grid-column-responsive-gutter,small)/2 - 2px;
+        margin-left: map_get($grid-column-responsive-gutter,small) * 0.5 - 2px;
       }
     }
   }

@@ -18,7 +18,6 @@ import CustomFunctions from "./app/custom";
 import modal from './app/modal.js';
 import GsapAnimation from "./app/gsap";
 import anime from 'animejs';
-import fontAwesome from "font-awesome/scss/font-awesome.scss";
 import modaalCss from 'modaal/dist/css/modaal.css';
 
 class App {

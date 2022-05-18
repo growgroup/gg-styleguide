@@ -3,6 +3,8 @@
 // ヴィジュアルエディタ出力調整用css
 //
 
+@use "sass:math";
+
 .l-post-content {
   // clearfix
   &::after {
@@ -18,13 +20,13 @@
   h1 {
     // 基本的に利用されることはないはず
     font-size: rem-calc(32);
-    line-height: 52/32*1;
+    line-height: math.div(52, 32)*1;
     letter-spacing: 0.05em;
   }
 
   h2 {
     font-size: rem-calc(25);
-    line-height: 42/25*1;
+    line-height: math.div(42, 25)*1;
     letter-spacing: 0.05em;
     margin-top: rem-calc(80);
     margin-bottom: rem-calc(32);
@@ -39,7 +41,7 @@
 
   h3 {
     font-size: rem-calc(20);
-    line-height: 35/20*1;
+    line-height: 35*0.05*1;
     letter-spacing: 0.05em;
     margin-top: rem-calc(54);
     margin-bottom: rem-calc(24);
@@ -59,7 +61,7 @@
 
   h4 {
     font-size: rem-calc(17);
-    line-height: 32/17*1;
+    line-height: math.div(32, 17)*1;
     letter-spacing: 0.05em;
     margin-top: rem-calc(16);
     margin-bottom: rem-calc(16);

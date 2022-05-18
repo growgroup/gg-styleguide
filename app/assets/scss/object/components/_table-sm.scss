@@ -4,6 +4,8 @@ name: <table> テーブル_大
 category: Base
 ---
 */
+@use "sass:math";
+
 .c-table-sm {
   width: 100%;
   border-top: 1px solid $border-base-color;
@@ -58,7 +60,7 @@ category: Base
     th {
       background-color: rgba($color-primary, 0.1);
       vertical-align: middle;
-      width: 162/650*100%;
+      width: math.div(162, 650)*100%;
 
       span {
         font-weight: 700;
@@ -66,7 +68,7 @@ category: Base
     }
 
     td {
-      width: 70/650*100%;
+      width: math.div(70, 650)*100%;
 
       span {
         color: $color-primary;

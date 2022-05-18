@@ -10,6 +10,8 @@ name: ページヘッダー_単色
 category: Layout
 ---
 */
+@use "sass:math";
+
 .l-page-header {
   width: 100%;
   position: relative;
@@ -55,7 +57,7 @@ category: Layout
     letter-spacing: 0.06em;
     margin: 0;
     @include breakpoint(small only) {
-      font-size: rem-calc(42)/1.5;
+      font-size: math.div(rem-calc(42), 1.5);
     }
   }
   &__subtitle {

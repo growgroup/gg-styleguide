@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .c-form-head{
   &__block{
     display: flex;
@@ -10,7 +12,7 @@
   &__title{
     font-size: rem-calc(24);
     letter-spacing: 0.1em;
-    line-height: 42/24*1;
+    line-height: math.div(42, 24)*1;
     @include breakpoint(medium down) {
       font-size: rem-calc(18);
     }
@@ -70,7 +72,7 @@
     &-text{
       font-size: rem-calc(14);
       letter-spacing: 0.1em;
-      line-height: 24/14*1;
+      line-height: math.div(24, 14)*1;
       margin-top: rem-calc(10);
       @include breakpoint(medium down) {
         font-size: rem-calc(12);

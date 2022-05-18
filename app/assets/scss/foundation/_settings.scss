@@ -4,6 +4,8 @@
 
 
 // # 1. Color
+@use "sass:math";
+
 $color-white: #fff !default; // 白
 $color-black: #000 !default; // 黒
 
