@@ -57,6 +57,14 @@
     }
   };
 
+  growApp.prototype.backCache = function () {
+    window.onpageshow = function(event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    }
+  }
+
   $(function () {
     var app = new growApp();
     app.myCode();
