@@ -1,3 +1,34 @@
+-
+  utils = {
+    inheritClassName: function (attributes) {
+      var temp_element = ""
+      var temp_component = false
+      var before_component_name = false
+      var target_component_class_key = 0
+      if (typeof attributes.class !== "undefined") {
+        var classlist = attributes.class.split(" ")
+        if (isUpperCase(classlist[0])) {
+          delete classlist[0]
+          target_component_class_key = 1
+        }
+        temp_element = classlist[target_component_class_key]
+        delete classlist[target_component_class_key]
+        attributes.class = classlist.join(" ")
+        cssrules.element = temp_element
+      }
+
+      if (!temp_component) {
+        temp_component = cssrules.currentComponent
+      }
+
+      if (typeof before_component_name !== "undefined" && before_component_name) {
+        cssrules.addComponent(before_component_name)
+      }
+
+      return "c-" + temp_component + "__" + temp_element;
+    }
+  }
+
 //- コンポーネント
 mixin c(el)
   -
@@ -71,3 +102,96 @@ mixin e(el,component_name,history)
     if ( typeof before_component_name !== "undefined" && before_component_name ){
       cssrules.addComponent(before_component_name)
     }
+
+
+//- 汎用タグ
+mixin p
+  -
+    className = utils.inheritClassName(attributes)
+  p(class=className)&attributes(attributes)
+    block
+
+mixin span
+  -
+    className = utils.inheritClassName(attributes)
+  span(class=className)&attributes(attributes)
+    block
+
+mixin b
+  -
+    className = utils.inheritClassName(attributes)
+  b(class=className)&attributes(attributes)
+    block
+
+mixin button
+  -
+    className = utils.inheritClassName(attributes)
+  button(class=className)&attributes(attributes)
+    block
+
+mixin ul
+  -
+    className = utils.inheritClassName(attributes)
+  ul(class=className)&attributes(attributes)
+    block
+
+mixin ol
+  -
+    className = utils.inheritClassName(attributes)
+  ol(class=className)&attributes(attributes)
+    block
+
+mixin li
+  -
+    className = utils.inheritClassName(attributes)
+  li(class=className)&attributes(attributes)
+    block
+
+mixin ae(href)
+  -
+    className = utils.inheritClassName(attributes)
+  a(href!= config.rootpath + href, class = className)&attributes(attributes)
+    block
+
+mixin aex(href)
+  -
+    className = utils.inheritClassName(attributes)
+  a(href!= config.rootpath + href, class = className, target="_blank")&attributes(attributes)
+    block
+
+//- 見出しタグ
+mixin h1
+  -
+    className = utils.inheritClassName(attributes)
+  h1(class=className)&attributes(attributes)
+    block
+
+mixin h2
+  -
+    className = utils.inheritClassName(attributes)
+  h2(class=className)&attributes(attributes)
+    block
+
+mixin h3
+  -
+    className = utils.inheritClassName(attributes)
+  h3(class=className)&attributes(attributes)
+    block
+
+mixin h4
+  -
+    className = utils.inheritClassName(attributes)
+  h4(class=className)&attributes(attributes)
+    block
+
+mixin h5
+  -
+    className = utils.inheritClassName(attributes)
+  h5(class=className)&attributes(attributes)
+    block
+
+mixin h6
+  -
+    className = utils.inheritClassName(attributes)
+  h6(class=className)&attributes(attributes)
+    block
