@@ -16,6 +16,9 @@ export default {
         path: path.join(__dirname, 'dist/'),
         filename: 'assets/js/[name].js',
         publicPath: BASE_DIR,
+        environment: {
+            arrowFunction: false
+        }
     },
     watch: false,
     module: {
