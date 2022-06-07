@@ -1,6 +1,4 @@
 // コピーライトの年数自動出力
-import $ from "./jquery-shim";
-
 
 let defaultOptions = {
   selector: ".js-current-year",

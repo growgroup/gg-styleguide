@@ -1,4 +1,3 @@
-import $ from './jquery-shim.js';
 
 const buildFormat = function() {
   var $toc = $('<div />', {id: 'toc_container'});

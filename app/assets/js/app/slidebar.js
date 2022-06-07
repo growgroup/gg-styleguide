@@ -24,8 +24,6 @@
  *
  */
 
-import $ from "./jquery-shim.js"
-
 
 /**
  * デフォルトオプション

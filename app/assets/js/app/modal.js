@@ -4,7 +4,6 @@
 // 動画の場合 → js-video
 // iframeの場合 → js-iframe
 
-import $ from "./jquery-shim";
 
 
 let defaultOptions = {

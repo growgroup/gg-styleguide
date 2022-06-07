@@ -1,4 +1,3 @@
-import $ from "./jquery-shim.js";
 import url from "url";
 
 var defaultOptions = {
