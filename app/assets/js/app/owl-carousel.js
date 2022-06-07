@@ -1,4 +1,3 @@
-import $ from './jquery-shim.js';
 import 'owl.carousel';
 import OwlCss from "owl.carousel/dist/assets/owl.carousel.css";
 import OwlThemeCss from "owl.carousel/dist/assets/owl.theme.default.css";

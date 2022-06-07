@@ -1,4 +1,3 @@
-import $ from "./jquery-shim";
 import {scrollfire} from "./scrolltrigger";
 import anime from "animejs";
 

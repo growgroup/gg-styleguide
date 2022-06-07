@@ -22,8 +22,6 @@
  *
  */
 
-import  $ from "./jquery-shim.js"
-
 
 var defaultOptions = {
     selector: ".js-table,.tablepress"

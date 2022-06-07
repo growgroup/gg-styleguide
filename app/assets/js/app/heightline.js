@@ -21,7 +21,6 @@
  * <div class="c-example" data-heightline-group="example2"></div>
  *
  */
-import $ from "./jquery-shim.js"
 import Utils from "./utils.js"
 import imagesLoaded from "imagesloaded"
 

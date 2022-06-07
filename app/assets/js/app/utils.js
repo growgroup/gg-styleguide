@@ -7,7 +7,6 @@
  * ====================================================================
  */
 
-import  $ from "./jquery-shim.js"
 
 const toString = Object.prototype.toString;
 const nativeIsArray = Array.isArray;

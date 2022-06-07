@@ -6,7 +6,6 @@
  * @license  MIT Licence
  * ====================================================================
  */
-import $ from './jquery-shim.js';
 
 
 var defaultOptions = {

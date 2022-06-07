@@ -1,4 +1,3 @@
-import $ from './jquery-shim.js';
 
 export default class CustomFunctions {
   /**

@@ -130,5 +130,8 @@ export default {
             'window.jQuery': 'jquery'
         })
     ],
+    externals: {
+        jquery: 'jQuery'
+    },
     devtool: 'cheap-module-source-map',
 }

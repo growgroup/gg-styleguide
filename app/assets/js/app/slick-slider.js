@@ -1,4 +1,3 @@
-import $ from './jquery-shim.js';
 import slick from "slick-carousel/slick/slick.min.js";
 import slickCss from "slick-carousel/slick/slick.css";
 import slickTheme from "slick-carousel/slick/slick-theme.css";
