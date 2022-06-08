@@ -13,6 +13,7 @@
     font-size: rem-calc(24);
     letter-spacing: 0.1em;
     line-height: math.div(42, 24)*1;
+    margin-top: 0;
     @include breakpoint(medium down) {
       font-size: rem-calc(18);
     }

@@ -8,13 +8,16 @@ block append config
 
 block page_header
 
+  //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+  //- /confirm/ と /complete/ もCSS調整必須！
+  //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 block body
   main.l-main
     section.l-section.is-lg.is-color-secondary
       .l-container
         +c.form-head
           +e.block
-            +e.title お問い合わせ
+            +h1.title お問い合わせ
             +e.list
               +e.item.is-current
                 +e.item-number 1
@@ -27,7 +30,6 @@ block body
                 +e.item-text 送信完了
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         +c.forms
-          form(action="/contact/confirm/")
           .row
             .large-10.is-push-lg-1.small-12
               +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。

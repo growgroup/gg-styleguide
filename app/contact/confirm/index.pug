@@ -10,11 +10,11 @@ block page_header
 
 block body
   main.l-main
-    section.l-section.is-lg.is-bg-color
+    section.l-section.is-lg.is-color-secondary
       .l-container
         +c.form-head
           +e.block
-            +e.title お問い合わせ
+            +h1.title お問い合わせ
             +e.list
               +e.item
                 +e.item-number 1
@@ -26,7 +26,6 @@ block body
                 +e.item-number 3
                 +e.item-text 送信完了
         +c.forms
-          form(action="/contact/complete/")
           +e.inner
             .row
               .large-10.is-push-lg-1.small-12
