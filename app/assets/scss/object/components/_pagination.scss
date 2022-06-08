@@ -12,12 +12,14 @@ category: Navigation
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
 
   ul li {
     list-style: none !important;
+    margin-bottom: rem-calc(6);
 
     &:not(:last-child) {
       margin-right: rem-calc(6);

@@ -30,15 +30,7 @@ block body
                     +e.inner
                       +e.text お知らせの投稿タイトルがここに入ります。
                       +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-              +c.pagination
-                ul
-                  li: +a("/news/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                  li: span.is-current 1
-                  li: +a("/news/page/") 2
-                  li: +a("/news/page/") 3
-                  li: +a("/news/page/") 4
-                  li: +a("/news/page/") 5
-                  li: +a("/news/page/").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+              +c_pagination()
               div.u-mbs.is-top.is-lg
                 +c.box-archive
                   +e.block
@@ -91,14 +83,6 @@ block body
                         span.c-card-post__label.c-label カテゴリ名
                         +e.date 2018.01.01
                       +e.title タイトルが入ります。タイトルが入ります。
-          +c.pagination
-            ul
-              li: +a("/news/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-              li: span.is-current 1
-              li: +a("/news/page/") 2
-              li: +a("/news/page/") 3
-              li: +a("/news/page/") 4
-              li: +a("/news/page/") 5
-              li: +a("/news/page/").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+          +c_pagination()
   +l_offer
 
