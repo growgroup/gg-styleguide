@@ -48,6 +48,35 @@ a,
   text-decoration: underline;
   cursor: pointer;
 }
+a{
+  &.is-pdf {
+
+    &:after {
+      content: "\f1c1";
+      font-family: "FontAwesome";
+      margin-left: rem-calc(4);
+      color: $color-accent;
+    }
+  }
+
+  &.is-map {
+    //下線が気になるようであれば下記を使用
+    //text-underline-offset: 3px;
+
+    &:before {
+      content: "\f041";
+      font-family: "FontAwesome";
+    }
+  }
+
+  &.is-outlink {
+
+    &:after {
+      content: "\f08e";
+      font-family: "FontAwesome";
+    }
+  }
+}
 
 a:hover,
 .u-text-link:hover,
