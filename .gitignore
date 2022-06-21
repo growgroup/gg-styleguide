@@ -46,6 +46,7 @@ wp-content/plugins/siteguard/really-simple-captcha/tmp/
 *.sql
 *.zip
 *.mp4
+*.wpress
 
 ### Node ###
 
@@ -75,3 +76,17 @@ styleguide/
 base/
 tests/results/
 
+### basic ###
+.htpasswd
+
+### Server Settings ###
+cgi-bin/
+stats/
+*.ini
+*.config
+
+### Adminer ###
+
+adminer-4.8.1.php
+adminer.php
+ad.php
