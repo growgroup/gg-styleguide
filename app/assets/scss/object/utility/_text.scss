@@ -51,7 +51,7 @@ a,
 a{
   &.is-pdf {
 
-    &:after {
+    &::after {
       content: "\f1c1";
       font-family: "FontAwesome";
       margin-left: rem-calc(4);
@@ -63,7 +63,7 @@ a{
     //下線が気になるようであれば下記を使用
     //text-underline-offset: 3px;
 
-    &:before {
+    &::before {
       content: "\f041";
       font-family: "FontAwesome";
     }
@@ -71,7 +71,7 @@ a{
 
   &.is-outlink {
 
-    &:after {
+    &::after {
       content: "\f08e";
       font-family: "FontAwesome";
     }
