@@ -26,7 +26,6 @@
     "build:pug": "pug -O build/pug.js app --out dist -s",
     "develop:pug": "pug -O build/pug.js app --out dist -w -s",
     "build:wp": "node build/wp.js",
-    "build:images": "imagemin dist/assets/images/* --out-dir=dist/assets/images",
     "build:autoprefixer": "postcss -o dist/assets/css/style.css dist/assets/css/style.css",
     "ggdsm": " node components-manager.js "
   },
@@ -46,7 +45,6 @@
     "fast-sass-loader": "^2.0.1",
     "fibers": "^5.0.0",
     "file-loader": "^6.2.0",
-    "imagemin-cli": "^7.0.0",
     "import-glob-loader": "^1.1.0",
     "mini-css-extract-plugin": "^2.4.5",
     "node-notifier": "^10.0.0",
