@@ -6,6 +6,7 @@ category: Layout
 */
 
 .l-footer {
+  position: relative;
   background-color: $font-base-color;
   color: $color-white;
   &__menu {

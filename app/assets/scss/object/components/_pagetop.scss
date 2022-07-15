@@ -1,15 +1,49 @@
 .c-pagetop {
-  &__button {
-    display: block;
-    text-decoration: none;
+  position: fixed;
+  right: rem-calc(24);
+  bottom: rem-calc(24);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  @include transition();
+
+  @include breakpoint(small only) {
+    right: rem-calc(14);
+    bottom: rem-calc(14);
+  }
+
+  &.is-fixed {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-absolute {
+    position: absolute;
+    opacity: 1;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem-calc(50);
+    height: rem-calc(50);
     color: $color-white;
-    font-size: 44px;
-    line-height: 0.7;
-    font-weight: 600;
-    padding-top: 0px;
-    padding-bottom: 6px;
-    background-color: $color-primary;
-    text-align: center;
-    transition: all .3s;
+    background: $font-base-color;
+    box-shadow: 0 0 10px rgba($color-black, .1);
+    text-decoration: none;
+    @include transition();
+    font-size: rem-calc(25);
+    line-height: 1;
+
+    &:after {
+      content: "\f106";
+      font-family: FontAwesome;
+    }
+
+    &:hover {
+      color: $font-base-color;
+      background: $color-white;
+    }
   }
 }
