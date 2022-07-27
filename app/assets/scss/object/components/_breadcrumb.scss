@@ -32,6 +32,13 @@
   }
 
   &__inner {
+
+    @include breakpoint(small only) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     span {
       @include font-format(12,.05,19);
       &.is-arrow {
