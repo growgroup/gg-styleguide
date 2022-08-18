@@ -1,5 +1,19 @@
+-
+  var className = ""
 
-header.l-header
+  if (current.id === "contact" || current.id === "confirm" || current.id === "complete") {
+    className = "l-header is-simple"
+  }
+
+  else if (current.id === "top") {
+    className = "l-header js-fixedheader"
+  }
+
+  else {
+    className = "l-header js-fixedheader is-normal"
+  }
+
+header(class=className)
   .l-header__content
     if current.id == 'top'
       h1.l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
