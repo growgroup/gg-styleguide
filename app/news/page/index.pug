@@ -30,9 +30,10 @@ block body
                     li: +a("#") #タグ
                     li: +a("#") #タグ
                     li: +a("#") #タグ
-            .l-post-content.is-twocolumns
+            .l-post-content
               +img("img-sample.jpg")
-              <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle">[<a href="#">非表示</a>]</span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1.</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2.</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
+              <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle">[<a href="#">非表示</a>]</span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
+
               h2 見出し弐
               p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
               h3 見出し参
@@ -51,10 +52,10 @@ block body
 
               h2 引用 (Blockquote)
               | 一行の引用:
-              blockquote.c-blockquote 貪欲であれ、愚かであれ
+              blockquote 貪欲であれ、愚かであれ
               h2 引用 (Blockquote)
               | 引用元の参照のある複数行の引用:
-              blockquote.c-blockquote.
+              blockquote
                 | 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
                 cite スティーブ・ジョブズ - 1997年 Apple 世界的開発者会議
 
@@ -63,21 +64,21 @@ block body
                 tbody
                   tr
                     th 従業員
-                    th.views 給与
+                    th 給与
                     th
-                  tr.odd
+                  tr
                     td: a(href=".") ジェーン
                     td $￥1
                     td スティーブ・ジョブズの必要な給与。
-                  tr.even
+                  tr
                     td: a(href=".") ジョン
                     td ￥10万
                     td ブログのすべて。
-                  tr.odd
+                  tr
                     td: a(href=".") ジェーン
                     td ￥1億
                     td 百聞は一見にしかず。だよね ? なのでトムは1000倍。
-                  tr.even
+                  tr
                     td: a(href=".") ジェーン
                     td ￥1000億
                     td これみたいな髪?! もういいよね…
@@ -283,11 +284,7 @@ block body
                     div.u-text-right.u-mbs.is-top.is-xxs
                       +a("").c-button.is-xs この執筆者の記事一覧
             hr.c-hr
-            +c.post-navs
-              ul
-                li.c-post-navs__prev: +a("#").c-button.is-sm.is-arrow-left 前の記事へ
-                li.c-post-navs__archive: +a("#").c-button.is-sm <i class="fa fa-th" aria-hidden="true"></i>記事一覧へ
-                li.c-post-navs__next: +a("#").c-button.is-sm 次の記事へ
+            +c_post_nav()
             h3 関連コンテンツ
             +c.news-lg.is-image-display
               +a("#").c-news-lg__block
