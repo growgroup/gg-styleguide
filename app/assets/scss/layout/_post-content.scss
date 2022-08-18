@@ -6,6 +6,8 @@
 @use "sass:math";
 
 .l-post-content {
+  word-break: break-all;
+
   // clearfix
   &::after {
     content: "";
