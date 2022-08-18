@@ -35,6 +35,10 @@ body {
   @include breakpoint(small only) {
     font-size:  $font-base-size*0.875;
   }
+
+  @media all and (-ms-high-contrast:none){
+    font-feature-settings: 'liga';
+  }
 }
 /* chrome opera /
 /! autoprefixer: ignore next */

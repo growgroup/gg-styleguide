@@ -59,6 +59,18 @@ a{
     }
   }
 
+  &.is-pdf-mt {
+
+    &:after {
+      display: inline-block;
+      content: "picture_as_pdf";
+      font-family: 'Material Icons Round';
+      line-height: 1;
+      margin-left: rem-calc(4);
+      vertical-align: middle;
+    }
+  }
+
   &.is-map {
     //下線が気になるようであれば下記を使用
     //text-underline-offset: 3px;
