@@ -7,6 +7,7 @@ import CopyRight from './app/copyright.js';
 import ResponsiveTable from './app/responsive-table.js';
 import Slidebar from './app/slidebar.js';
 import Tab from './app/tab.js';
+import ScrollSpy from './app/scroll-spy.js';
 import CurrentNav from './app/current-nav.js';
 import buildFormat from './app/format.js';
 import myScript from './scripts.js';
@@ -30,6 +31,7 @@ class App {
     this.HeightLine = new HeightLine();
     this.ResponsiveTable = new ResponsiveTable();
     this.Slidebar = new Slidebar();
+    this.ScrollSpy = new ScrollSpy();
     this.CurrentNav = new CurrentNav();
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();
