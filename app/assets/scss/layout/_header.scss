@@ -10,13 +10,7 @@ category: Layout
   background-color: $color-white;
   width: 100%;
   z-index: 9990;
-  padding: rem-calc(16) rem-calc(32) rem-calc(24);
   position: relative;
-  @include breakpoint(medium down) {
-    width: 100%;
-    padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
-    height: rem-calc(55);
-  }
 
   &__inner {
     display: flex;
@@ -42,10 +36,10 @@ category: Layout
 
   &__logo {
     margin: 0;
-    width: rem-calc(175);
+    width: 175px;
     flex-shrink: 0;
     @include breakpoint(medium down) {
-      width: rem-calc(148);
+      width: 148px;
     }
 
     a,
@@ -57,6 +51,13 @@ category: Layout
   &__content {
     display: flex;
     align-items: center;
+    padding: rem-calc(16) rem-calc(32) rem-calc(24);
+    height: rem-calc(80);
+
+    @include breakpoint(medium down) {
+      padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
+      height: rem-calc(55);
+    }
   }
 
   &__nav {
@@ -71,9 +72,9 @@ category: Layout
       width: 100%;
 
       li {
-        margin-right: 32px;
-        &:last-of-type {
-          margin-right: 0;
+
+        &:not(:last-of-type) {
+          margin-right: 32px;
         }
 
         &:hover {

@@ -20,7 +20,7 @@
     "build": "npm run clean && npm run copy && run-s build:*",
     "develop": "run-s clean copy && run-p copy:images:dev server develop:* build:wp",
     "build:css": "webpack --config webpack.style.config.babel.js",
-    "develop:css": "chokidar 'app/assets/**/*.scss' -c 'webpack --config webpack.style.config.babel.js --watch --watch-options-stdin --progress'",
+    "develop:css": "webpack --config webpack.style.config.babel.js --watch --watch-options-stdin --progress",
     "build:webpack": "webpack --config webpack.config.babel.js",
     "develop:webpack": "webpack --config webpack.config.babel.js --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
