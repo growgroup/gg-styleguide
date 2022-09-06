@@ -26,7 +26,7 @@ export default class ScrollSpy {
             root: null, // 今回はビューポートをルート要素とする
             rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
             threshold: 0, // 閾値は0
-            paneSelector: ".js-scrollspy-pane",
+            paneSelector: ".js-scrollspy-section",
             navWrapSelector: ".js-scrollspy-nav",
             navScollWrapSelector: ".js-scrollspy-nav-wrap",
             navActiveClassName: "is-active",
