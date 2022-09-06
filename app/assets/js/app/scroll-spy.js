@@ -23,24 +23,23 @@ export default class ScrollSpy {
         this.currentScrollTop = 0;
 
         this.options = {
-            root: null, // ビューポートをルート要素とする
+            root: null, // 今回はビューポートをルート要素とする
             rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
             threshold: 0, // 閾値は0
-            sectionSelector: ".js-scrollspy-section", // 基準となるセクションのセレクター
+            paneSelector: ".js-scrollspy-pane",
             navWrapSelector: ".js-scrollspy-nav",
+            navScollWrapSelector: ".js-scrollspy-nav-wrap",
             navActiveClassName: "is-active",
         };
-
-        const targets = document.querySelectorAll(this.getOption("sectionSelector"));
-
-        if (targets.length <= 0) return;
+        const targets = document.querySelectorAll(this.options.paneSelector);
 
         this.doWhenIntersect = this.doWhenIntersect.bind(this);
         this.getOption = this.getOption.bind(this);
+        if (targets.length <= 0) return;
 
 
         const observer = new IntersectionObserver(this.doWhenIntersect, this.options);
-        // それぞれのセクションを監視する
+        // それぞれのboxを監視する
         for (let i = 0; i < targets.length; i++) {
             observer.observe(targets[i]);
         }
@@ -70,22 +69,25 @@ export default class ScrollSpy {
      */
     activateIndex(element) {
         const navSelector = this.getOption("navWrapSelector");
-        const currentActiveIndex = document.querySelector(`${navSelector} a.is-active`);
+        const navScollWrapSelector = this.getOption("navScollWrapSelector");
+        const currentActiveIndex = document.querySelector(`${navSelector} li a.is-active`);
         if (currentActiveIndex !== null) {
             currentActiveIndex.classList.remove("is-active");
             this.currentScrollTop = window.pageYOffset + document.querySelector(navSelector).getBoundingClientRect().top;
             if (this.currentScrollTop > this.lastScrollTop) {
                 this.lastScrollTop = this.currentScrollTop;
                 const prevEleWidth = currentActiveIndex.offsetWidth;
-                document.querySelector(navSelector).scrollLeft += prevEleWidth;
+                document.querySelector(`${navSelector} ${navScollWrapSelector}`).scrollLeft += prevEleWidth;
             } else {
                 this.lastScrollTop = this.currentScrollTop;
                 const currentNode = document.querySelector(`${navSelector} a[href='#${element.id}']`);
-                if (currentNode.parentElement.previousElementSibling) {
+                if (currentNode && currentNode.parentElement.previousElementSibling) {
                     let prevSibling = currentNode.parentElement.previousElementSibling.offsetWidth;
-                    document.querySelector(navSelector).scrollLeft -= prevSibling;
+                    document.querySelector(`${navSelector} ${navScollWrapSelector}`).scrollLeft -= prevSibling;
                 } else {
-                    document.querySelector(navSelector).scrollLeft = 0;
+                    if (currentNode) {
+                        document.querySelector(`${navSelector} ${navScollWrapSelector}`).scrollLeft = 0;
+                    }
                 }
             }
         }
@@ -97,4 +99,5 @@ export default class ScrollSpy {
         }
     }
 
+}
 }
