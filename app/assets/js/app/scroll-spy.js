@@ -31,7 +31,7 @@ export default class ScrollSpy {
             navActiveClassName: "is-active",
         };
 
-        const targets = document.querySelectorAll(this.getOption("sectionSelector");
+        const targets = document.querySelectorAll(this.getOption("sectionSelector"));
 
         if (targets.length <= 0) return;
 
