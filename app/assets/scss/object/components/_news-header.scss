@@ -34,10 +34,9 @@ category: PostContent
   }
 
   &__date {
-    @include webfont();
-    color: $color-primary;
+    @include news-date();
     margin: 0 rem-calc(24);
-    letter-spacing: 0;
+
     @include breakpoint(small only) {
       margin: 0 rem-calc(16);
     }

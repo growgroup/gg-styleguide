@@ -34,9 +34,8 @@ category: News
   }
 
   &__date {
+    @include news-date();
     margin-left: rem-calc(12);
-    @include webfont();
-    font-size: rem-calc(14);
 
     &::before {
       content: "\f017";
