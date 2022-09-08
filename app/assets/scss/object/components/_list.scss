@@ -2,6 +2,10 @@
   list-style: none;
   li {
     list-style: inherit;
+
+    &:not(:first-child) {
+      margin-top: rem-calc(6);
+    }
   }
 }
 
@@ -64,14 +68,15 @@ category: Base
 
     &::before {
       content: "\f111";
-      font-size: 0.8em;
+      font-size: rem-calc(10);
       font-family: "FontAwesome";
       color: $color-primary;
       position: absolute;
-      top: rem-calc(4);
+      top: rem-calc(6);
       left: -1.5em;
+
       @include breakpoint(small only) {
-        top: rem-calc(4);
+        top: rem-calc(3);
       }
     }
 
@@ -104,13 +109,11 @@ category: Base
 
 */
 .c-list.is-outline {
-  padding-left: 0;
+  padding-left: 1.1em;
   list-style: decimal inside;
   li {
+    text-indent: -1.1em;
     position: relative;
-    li {
-      margin-left: rem-calc(38);
-    }
   }
   ol{
     padding-left: 0;
