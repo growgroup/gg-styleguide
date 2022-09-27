@@ -26,19 +26,25 @@ category: Heading
   }
 
   b {
-    display: block;
-    @include webfont();
-    @include font-format(42, 0.1, 52, 700);
-    @include breakpoint(small only) {
-      font-size: rem-calc(42)*0.8;
+
+    &.is-eng {
+      display: block;
+      @include webfont();
+      @include font-format(42, 0.1, 52, 700);
+      @include breakpoint(small only) {
+        font-size: rem-calc(42)*0.8;
+      }
     }
   }
 
   span {
-    display: block;
-    @include font-format(16, .1, 26, 700);
-    @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
+
+    &.is-ja {
+      display: block;
+      @include font-format(16, .1, 26, 700);
+      @include breakpoint(small only) {
+        font-size: rem-calc(16)*0.8;
+      }
     }
   }
 }
@@ -53,13 +59,23 @@ category: Heading
     margin-bottom: rem-calc(24)*0.5;
   }
 
+  b {
+
+    &.is-eng {
+
+    }
+  }
+
   span {
-    display: block;
-    @include webfont();
-    @include font-format(14, .1, 20, normal);
-    margin-top: rem-calc(6);
-    @include breakpoint(small only) {
-      font-size: rem-calc(14)*0.8;
+
+    &.is-ja {
+      display: block;
+      @include webfont();
+      @include font-format(14, .1, 20, normal);
+      margin-top: rem-calc(6);
+      @include breakpoint(small only) {
+        font-size: rem-calc(14)*0.8;
+      }
     }
   }
 }

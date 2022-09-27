@@ -3,8 +3,8 @@ mixin heading-xlg(lg, sm)
     if !sm
       | !{lg}
     else
-      span !{sm}
-      b !{lg}
+      span.is-eng !{sm}
+      b.is-ja !{lg}
 
 
 mixin heading-lg(lg, sm)
@@ -12,13 +12,13 @@ mixin heading-lg(lg, sm)
     if !sm
       | !{lg}
     else
-      span !{sm}
-      b !{lg}
+      span.is-eng !{sm}
+      b.is-ja !{lg}
 
 mixin heading-md(lg, sm)
   .c-heading.is-md&attributes(attributes)
     if !sm
       | !{lg}
     else
-      span !{sm}
-      b !{lg}
+      span.is-eng !{sm}
+      b.is-ja !{lg}
