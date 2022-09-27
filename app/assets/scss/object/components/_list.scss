@@ -31,7 +31,6 @@ category: Base
 
   ul {
     list-style: none;
-    margin-left: rem-calc(24);
     padding-left: 1em;
     li {
       text-indent: -1em;
@@ -82,7 +81,6 @@ category: Base
 
     ul {
       list-style: none;
-      margin-left: rem-calc(24);
       padding-left: rem-calc(18);
 
       li {
@@ -109,14 +107,10 @@ category: Base
 
 */
 .c-list.is-outline {
-  padding-left: 1.1em;
-  list-style: decimal inside;
+  padding-left: 1.5em;
+  list-style: decimal outside;
   li {
-    text-indent: -1.1em;
     position: relative;
-  }
-  ol{
-    padding-left: 0;
   }
 
 
