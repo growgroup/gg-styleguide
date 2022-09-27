@@ -141,6 +141,22 @@
       }
     }
   }
+  &__select {
+    width: 100%;
+    select {
+      outline: none;
+      border-radius: 4px !important;
+      background: #F9F9F9;
+
+      &:focus{
+        border-color: $color-primary;
+      }
+    }
+    &.is-sm {
+      width: rem-calc(180);
+    }
+  }
+
   &__textarea {
     textarea {
       border-radius: 4px;

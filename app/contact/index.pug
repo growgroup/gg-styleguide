@@ -120,11 +120,12 @@ block body
                     | お問い合わせ種別
                     span.c-forms__label 必須
                   +e.content
-                    select(name="お問い合わせ種別")
-                      option(disabled,selected) 選択してください
-                      option(value="選択肢A") 選択肢A
-                      option(value="選択肢B") 選択肢B
-                      option(value="選択肢C") 選択肢C
+                    +e.select
+                      select(name="お問い合わせ種別")
+                        option(disabled,selected) 選択してください
+                        option(value="選択肢A") 選択肢A
+                        option(value="選択肢B") 選択肢B
+                        option(value="選択肢C") 選択肢C
                 +e.block
                   +e.title.is-vertical-top
                     | お問い合わせ種別
