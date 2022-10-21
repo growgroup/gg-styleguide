@@ -13,6 +13,7 @@ mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
                 span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
                 span
                   +a('/' + parentURL +'/' + parentURL2 + '/')=parent2
+                  span.is-arrow <i class="fa fa-angle-right" aria-hidden="true"></i>
                   span !{current.title}
   else if parent
     +c.breadcrumb
