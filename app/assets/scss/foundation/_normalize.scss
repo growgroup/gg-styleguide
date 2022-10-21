@@ -29,15 +29,13 @@ body {
   line-height: $font-base-line-height;
   letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
+  font-feature-settings: 'liga';
+
   &.is-slidebar-active {
     overflow: hidden;
   }
   @include breakpoint(small only) {
     font-size:  $font-base-size*0.875;
-  }
-
-  @media all and (-ms-high-contrast:none){
-    font-feature-settings: 'liga';
   }
 }
 /* chrome opera /
