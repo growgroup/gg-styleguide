@@ -13,12 +13,12 @@ module.exports = (env, argv) => {
     const configs = {
         mode: argv.mode,
         context: __dirname + '/app/',
-        cache: {
-            type: 'filesystem',
-            buildDependencies: {
-                config: [__filename]
-            }
-        },
+        // cache: {
+        //     type: 'filesystem',
+        //     buildDependencies: {
+        //         config: [__filename]
+        //     }
+        // },
         entry: {
             style: __dirname + '/app/assets/js/style.js',
         },
