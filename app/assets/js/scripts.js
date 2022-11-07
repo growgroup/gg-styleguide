@@ -16,6 +16,7 @@
    * please insert your code
    *************************/
   growApp.prototype.myCode = function () {
+    $('.js-modal-content').modaal();
   }
 
   growApp.prototype.enterAnimation = function () {
