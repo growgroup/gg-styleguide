@@ -43,6 +43,7 @@
 
     //paddingに関してはmodaal-content-containerとうまく調整してください
     @include breakpoint(medium down) {
+      max-height: calc(80vh - 120px);
       padding: 0;
     }
   }
