@@ -18,8 +18,6 @@ html(lang="ja")
         var desc = false
         if (current.description)
           desc = current.description
-        else if ( getPagesValue(current.id, "description") )
-          desc = getPagesValue(current.id, "description")
         else
           desc = config.site.description
       meta(name='description', content=desc)
