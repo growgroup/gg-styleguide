@@ -110,10 +110,10 @@ module.exports = (env, argv) => {
                         from: path.resolve(__dirname, 'app/assets/images'),
                         to: path.resolve(__dirname, 'dist/assets/images'),
                     },
-                    {
-                        from: path.resolve(__dirname, 'app/assets/js/scripts.js'),
-                        to: path.resolve(__dirname, 'dist/assets/js'),
-                    },
+                    // {
+                    //     from: path.resolve(__dirname, 'app/assets/js/scripts.js'),
+                    //     to: path.resolve(__dirname, 'dist/assets/js'),
+                    // },
                     // {
                     //     context: path.resolve(__dirname, "app/assets"),
                     //     from: path.resolve(__dirname, 'app/assets/**/*.pdf'),
