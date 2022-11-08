@@ -14,15 +14,13 @@ html(lang="ja")
         title= (current.title + '｜' + config.site.title)
     //- メタ情報
     block meta
-      //-
+      -
         var desc = false
         if (current.description)
           desc = current.description
-        else if ( getPagesValue(current.id, "description") )
-          desc = getPagesValue(current.id, "description")
         else
           desc = config.site.description
-      meta(name='description', content=getPagesValue(id, "description"))
+      meta(name='description', content=desc)
       meta(name="viewport", content=config.site.viewport)
       meta(name="format-detection" , content="telephone=no")
 
@@ -30,11 +28,15 @@ html(lang="ja")
     block meta_ogp
       meta(property="og:locale", content=config.site.ogp.locale)
       meta(property="og:type",content=config.site.ogp.type)
-      meta(property="og:title", content=getPagesValue(current.id, "title"))
-      meta(property="og:description", content=getPagesValue(id, "description") )
-      meta(property="og:url", content=config.site.ogp.url + "/" + current.id + "/")
-      meta(property="og:site_name", content=config.site.ogp.site_name)
-      meta(property="og:image", content=config.site.ogp.image)
+      if current.id == "top"
+        meta(property="og:title", content=config.site.title)
+        meta(property="og:site_name", content=config.site.ogp.site_name)
+      else
+        meta(property="og:title", content=(current.title + '｜' + config.site.title))
+        meta(property="og:site_name", content=current.title + '｜' + config.site.ogp.site_name)
+      meta(property="og:description", content= desc)
+      meta(property="og:url", content=config.site.ogp.url + current.path)
+      meta(property="og:image", content=config.site.ogp.url + config.site.ogp.image)
 
     //- リンクファイル
     block link
@@ -44,8 +46,8 @@ html(lang="ja")
 
     //- スタイルシート
     block stylesheet
-      +link("/assets/css/style.css")(rel="stylesheet")
       +link("/assets/css/app.css")(rel="stylesheet")
+      +link("/assets/css/style.css")(rel="stylesheet")
 
     //- ヘッダーに組み込むスクリプト
     block head_script

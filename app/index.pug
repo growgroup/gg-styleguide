@@ -7,6 +7,7 @@ block append config
   - current.title = "トップページ" // タイトルあ
   - current.description = "これはトップページの説明文です" // 説明文
   - current.bodyClass = "top" // body に付与するクラス
+  - current.path = "/" // ページのpath
   - current.depth = 1 // ページの階層
 
 block body
@@ -15,7 +16,7 @@ block body
   main.l-main
     section.l-section.is-lg.is-color-secondary
       .l-container
-        +heading-xlg("私たちについて", "ABOUT").is-bottom.js-modal-image(data-modaal-content-source="assets/images/img-sample.jpg")
+        +heading-xlg("私たちについて", "ABOUT").is-bottom
         p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
         +c.card.u-mbs.is-top.is-lg
           .row.slide

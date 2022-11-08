@@ -7,7 +7,7 @@
     padding: rem-calc(42) 0;
   }
 
-  @include breakpoint(medium down) {
+  @include breakpoint(small only) {
     padding: rem-calc(36) rem-calc(16);
   }
 
@@ -103,7 +103,7 @@
     &.is-column{
       display: flex;
       justify-content: space-between;
-      .c-forms-simple__input {
+      .c-forms__input {
         margin-right: 24px;
         &:last-of-type {
           margin-right: 0;
