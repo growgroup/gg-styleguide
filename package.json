@@ -13,7 +13,6 @@
     "develop": "run-p server develop:*",
     "build:css": "webpack --config webpack.style.config.babel.js --mode production",
     "develop:css": "webpack --config webpack.style.config.babel.js --mode development --watch --watch-options-stdin --progress",
-    "develop:css-chokidar": "chokidar 'app/assets/**/*.scss' -c \"if [ '{event}' = 'add' ];then npm run develop:css; fi;\"",
     "build:webpack": "webpack --config webpack.config.babel.js --mode production",
     "develop:webpack": "webpack --config webpack.config.babel.js --mode development  --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
