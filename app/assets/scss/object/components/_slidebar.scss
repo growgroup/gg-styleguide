@@ -198,9 +198,12 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       font-size: rem-calc(16);
 
       &::before {
-        content: "\f0e0";
-        font-family: "FontAwesome";
+        content: "mail";
+        font-family: 'Material Icons Round';
+        line-height: 1;
+        letter-spacing: 0;
         color: $color-primary;
+        vertical-align: sub;
         font-size: rem-calc(18);
         margin-right: rem-calc(12);
       }

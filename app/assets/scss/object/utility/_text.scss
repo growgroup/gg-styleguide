@@ -49,25 +49,14 @@ a,
   cursor: pointer;
 }
 a{
+
   &.is-pdf {
 
-    &::after {
-      content: "\f1c1";
-      font-family: "FontAwesome";
-      margin-left: rem-calc(4);
-      color: $color-accent;
-    }
-  }
-
-  &.is-pdf-mt {
-
     &:after {
-      display: inline-block;
       content: "picture_as_pdf";
       font-family: 'Material Icons Round';
       line-height: 1;
-      margin-left: rem-calc(4);
-      vertical-align: middle;
+      letter-spacing: 0;
     }
   }
 
@@ -76,16 +65,20 @@ a{
     //text-underline-offset: 3px;
 
     &::before {
-      content: "\f041";
-      font-family: "FontAwesome";
+      content: "location_on";
+      font-family: 'Material Icons Round';
+      line-height: 1;
+      letter-spacing: 0;
     }
   }
 
   &.is-outlink {
 
     &::after {
-      content: "\f08e";
-      font-family: "FontAwesome";
+      content: "open_in_new";
+      font-family: 'Material Icons Round';
+      line-height: 1;
+      letter-spacing: 0;
     }
   }
 }

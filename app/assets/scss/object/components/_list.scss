@@ -66,9 +66,9 @@ category: Base
     position: relative;
 
     &::before {
-      content: "\f111";
+      content: "circle";
+      font-family: 'Material Icons Round';
       font-size: rem-calc(10);
-      font-family: "FontAwesome";
       color: $color-primary;
       position: absolute;
       top: rem-calc(6);

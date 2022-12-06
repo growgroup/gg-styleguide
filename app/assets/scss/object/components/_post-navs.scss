@@ -54,9 +54,9 @@ category: Navigation
       }
 
       i {
+        font-size: rem-calc(16);
         margin-right: rem-calc(12);
-        font-size: rem-calc(18);
-        margin-top: rem-calc(2);
+
         @include breakpoint(small only) {
           display: none;
         }

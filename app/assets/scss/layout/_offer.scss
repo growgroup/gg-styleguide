@@ -51,8 +51,8 @@ category: Layout
       min-height: rem-calc(64);
     }
     &::after {
-      content: "\f105";
-      font-family: "FontAwesome";
+      content: "chevron_right";
+      font-family: 'Material Icons Round';
       position: absolute;
       font-size: rem-calc(20);
       top: 50%;

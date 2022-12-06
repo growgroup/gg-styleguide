@@ -36,8 +36,8 @@ category: Tabs
         }
 
         &::after {
-          content: "\f107";
-          font-family: "FontAwesome";
+          content: "expand_more";
+          font-family: 'Material Icons Round';
           position: absolute;
           font-size: rem-calc(24);
           font-weight: 400;

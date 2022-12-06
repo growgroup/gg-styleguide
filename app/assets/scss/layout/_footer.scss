@@ -45,8 +45,10 @@ category: Layout
       margin: 0;
       background-color: $font-base-color;
       &::before {
-        content: "\f107";
-        font-family: "FontAwesome";
+        content: "chevron_right";
+        font-family: 'Material Icons Round';
+        line-height: 1;
+        letter-spacing: 0;
         color: $color-primary;
         padding-right: rem-calc(12);
       }

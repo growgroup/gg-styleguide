@@ -69,10 +69,12 @@
     margin-bottom: rem-calc(16);
 
     &::before {
+      content: "check";
+      font-family: 'Material Icons Round';
+      line-height: 1;
+      letter-spacing: 0;
       float: left;
       margin-right: 0.3rem;
-      font-family: 'FontAwesome';
-      content: "\f10c";
       color: $color-primary;
     }
 

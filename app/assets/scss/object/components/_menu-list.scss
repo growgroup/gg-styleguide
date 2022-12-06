@@ -27,12 +27,15 @@ category: Navigation
         transition: all .2s;
 
         &::before {
-          content: "\f105";
-          font-family: "FontAwesome";
+          content: "chevron_right";
+          font-family: 'Material Icons Round';
+          line-height: 1;
+          letter-spacing: 0;
           color: $color-primary;
           position: absolute;
-          top: rem-calc(14);
+          top: 50%;
           left: rem-calc(16);
+          transform: translateY(-50%);
         }
 
         &::after {
@@ -104,8 +107,8 @@ category: Navigation
     position: relative;
 
     &::after {
-      content: "\f107";
-      font-family: "FontAwesome";
+      content: "chevron_right";
+      font-family: 'Material Icons Round';
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

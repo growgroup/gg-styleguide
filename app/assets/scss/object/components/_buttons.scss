@@ -18,9 +18,10 @@ category: Buttons
   transition: all .3s;
   // *アイコン
   &::after {
-    content: "\f105";
-    display: block;
-    font-family: "FontAwesome";
+    content: "chevron_right";
+    font-family: 'Material Icons Round';
+    line-height: 1;
+    letter-spacing: 0;
     position: absolute;
     top: 50%;
     right: rem-calc(16);
@@ -151,7 +152,7 @@ category: Buttons
     }
 
     &:after {
-      content: "\f107";
+      content: "expand_more";
       right: rem-calc(16);
       transform: translateY(-50%);
       font-size: rem-calc(18);
@@ -172,7 +173,7 @@ category: Buttons
   &.is-arrow-left {
 
     &:after {
-      content: "\f104";
+      content: "chevron_left";
       right: auto;
       left: rem-calc(10);
     }

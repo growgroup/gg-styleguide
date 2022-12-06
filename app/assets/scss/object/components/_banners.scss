@@ -23,8 +23,10 @@ category: Banners
     }
     // *アイコン
     &::after {
-      content: "\f105";
-      font-family: "FontAwesome";
+      content: "chevron_right";
+      font-family: 'Material Icons Round';
+      line-height: 1;
+      letter-spacing: 0;
       font-size: rem-calc(36);
       font-weight: 400;
       position: relative;

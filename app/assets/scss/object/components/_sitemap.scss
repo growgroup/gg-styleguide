@@ -27,16 +27,16 @@
       }
 
 
-      &.is-external {
+      &.is-outlink {
+
         &:after {
-          display: inline-block;
-          content: "\f2d2";
-          font-family: FontAwesome;
           color: $color-primary;
           margin-left: rem-calc(14);
+          vertical-align: middle;
         }
       }
     }
+
     &.is-parent {
       margin-bottom: rem-calc(40);
 

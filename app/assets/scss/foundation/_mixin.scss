@@ -403,6 +403,7 @@
   @include webfont();
   color: $color-primary;
   letter-spacing: 0;
+  line-height: 1;
 }
 
 // 行数制限

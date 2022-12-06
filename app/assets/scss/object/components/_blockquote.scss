@@ -18,9 +18,10 @@ category: Base
     padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
   }
   &::before {
-    content: "\f10d";
-    display: block;
-    font-family: "FontAwesome";
+    content: "format_quote";
+    font-family: 'Material Icons Round';
+    line-height: 1;
+    letter-spacing: 0;
     font-size: rem-calc(20);
     color: $color-primary;
     position: absolute;

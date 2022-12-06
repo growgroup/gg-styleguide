@@ -1,31 +1,6 @@
 // パンくずナビゲーション
 // Styleguide 2.3.0
 .c-breadcrumb {
-  //padding: rem-calc(12) 0;
-  //@include breakpoint(small only) {
-  //  padding: rem-calc(8) 0;
-  //}
-  //&__inner {
-  //  display: flex;
-  //  align-items: center;
-  //}
-  //span {
-  //  font-size: rem-calc(13);
-  //  margin-right: rem-calc(8);
-  //  @include breakpoint(small only) {
-  //    font-size: rem-calc(12);
-  //    margin-right: rem-calc(4);
-  //  }
-  //  a {
-  //    color: $color-primary;
-  //    font-weight: 400;
-  //    text-decoration: none;
-  //    &:hover {
-  //      text-decoration: underline;
-  //    }
-  //  }
-  //}
-
   padding: rem-calc(12) 0;
   @include breakpoint(medium down) {
 
@@ -41,10 +16,17 @@
 
     span {
       @include font-format(12,.05,19);
+
       &.is-arrow {
         margin:0 rem-calc(8);
         align-items: center;
+
+        i {
+          font-size: rem-calc(12);
+          vertical-align: middle;
+        }
       }
+
       a {
         @include font-format(12,.05,19);
       }

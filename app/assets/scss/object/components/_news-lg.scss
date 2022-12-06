@@ -38,9 +38,11 @@ category: News
     margin-left: rem-calc(12);
 
     &::before {
-      content: "\f017";
-      font-family: "FontAwesome";
+      content: "schedule";
+      font-family: 'Material Icons Round';
+      letter-spacing: 0;
       margin-right: rem-calc(4);
+      vertical-align: top;
     }
   }
 
