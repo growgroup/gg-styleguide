@@ -1,0 +1,71 @@
+{
+  "rules": {
+    "attr-duplication": true,
+    "deprecated-attr": false,
+    "deprecated-element": true,
+    "disallowed-element": true,
+    "doctype": true,
+    "id-duplication": true,
+    "ineffective-attr": false,
+    "invalid-attr": true,
+    "landmark-roles": false,
+    "no-hard-code-id": false,
+    "no-refer-to-non-existent-id": false,
+    "no-use-event-handler-attr": false,
+    "permitted-contents": true,
+    "required-attr": true,
+    "required-element": true,
+    "required-h1": true,
+    "use-list": false,
+    "wai-aria": false
+  },
+  "nodeRules": [
+    {
+      "selector": "meta[property]",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {
+                "type": "Any"
+              },
+              "content": {
+                "type": "Any"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "tagName": "meta",
+      "rules": {
+        "required-attr": false
+      }
+    },
+      {
+        "tagName": "iframe",
+        "rules": {
+          "invalid-attr": false,
+          "required-attr": false
+        }
+      },
+      {
+        "selector": ".fb-like",
+        "rules": {
+          "invalid-attr": false,
+          "required-attr": false
+        }
+      }
+  ],
+    "childNodeRules": [
+      {
+        "selector": "svg",
+        "inheritance": true,
+        "rules": {
+          "invalid-attr": false,
+          "required-attr": false
+        }
+      },
+    ]
+}
