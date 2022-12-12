@@ -19,6 +19,7 @@
     "develop:pug": "pug -O build/pug.js app --out dist -w -s",
     "build:wp": "node build/wp.js",
     "build:autoprefixer": "postcss -o dist/assets/css/style.css dist/assets/css/style.css",
+    "lint:html": "markuplint \"./dist/**/*.html\"",
     "styleguide": "stylemark -i ./app/assets/scss/ -o ./styleguide/ -c ./config/stylemark.yml -b 3100",
     "styleguide-w": "stylemark -i ./app/assets/scss/ -o ./styleguide/ -c ./config/stylemark.yml -w -b 3100",
     "ggdsm": " node components-manager.js "
@@ -40,6 +41,7 @@
     "fibers": "^5.0.0",
     "file-loader": "^6.2.0",
     "import-glob-loader": "^1.1.0",
+    "markuplint": "^2.11.4",
     "mini-css-extract-plugin": "^2.4.5",
     "node-notifier": "^10.0.0",
     "node-sass-glob-importer": "^5.3.2",
