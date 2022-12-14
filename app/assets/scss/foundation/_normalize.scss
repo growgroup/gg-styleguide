@@ -347,7 +347,7 @@ select {
  */
 
 button,
-html input[type="button"], /* 1 */
+input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button; /* 2 */
@@ -359,7 +359,7 @@ input[type="submit"] {
  */
 
 button[disabled],
-html input[disabled] {
+input[disabled] {
   cursor: default;
 }
 
