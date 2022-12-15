@@ -81,6 +81,7 @@ category: Layout
           .l-header__submenu {
             visibility: visible;
             opacity: 1;
+            transition: all .3s;
           }
         }
 
@@ -133,7 +134,7 @@ category: Layout
     padding-bottom: rem-calc(40);
     visibility: hidden;
     opacity: 0;
-    transition: all .3s;
+    transition: all .05s;
     @media (max-width: 1280px) {
       padding-left: rem-calc(24);
       padding-right: rem-calc(24);
