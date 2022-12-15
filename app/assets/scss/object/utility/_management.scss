@@ -1,5 +1,5 @@
 // 管理画面 TinyMce用css
-// 
+//
 // ヴィジュアルエディタ画面調整用css
 //
 
@@ -41,5 +41,27 @@
     .c-faq__text {
       display: block !important;
     }
+  }
+}
+
+//
+// ブロックエディタ画面調整用css
+//
+
+#growp-editor-wrapper {
+  font-family: $font-base-family !important;
+  @include breakpoint(small only) {
+  }
+
+  //投稿画面
+  &.post-type-post {
+    //max-width: rem-calc(736);
+    @extend .l-post-content;
+  }
+
+  //固定ページ
+  &.post-type-page {
+    //max-width: rem-calc(1080);
+    //@extend .l-post-content;
   }
 }
