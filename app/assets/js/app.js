@@ -1,3 +1,6 @@
+import "@fontsource/material-icons";
+import "@fontsource/material-icons-rounded";
+import "@fontsource/material-icons-outlined";
 import Utils from './app/utils.js';
 import Accordion from './app/accordion.js';
 import Anchor from './app/anchor.js';
