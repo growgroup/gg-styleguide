@@ -43,6 +43,13 @@
       margin-top: rem-calc(36);
     }
 
+    &:nth-child(n + 3) {
+
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(36);
+      }
+    }
+
     &:not(:first-child) {
 
       @include breakpoint(small only) {
