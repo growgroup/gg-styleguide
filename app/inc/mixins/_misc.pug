@@ -23,11 +23,11 @@ mixin loop(count)
 
 
 //- 投稿ページナビゲーション
-mixin c_post_nav()
+mixin c_post_nav(URL)
   nav.c-post-navs
     ul
       li.c-post-navs__prev: +a("#").c-button.is-sm.is-arrow-left 前の記事へ
-      li.c-post-navs__archive: +a("#").c-button.is-sm <i class="material-icons-outlined">list</i>記事一覧へ
+      li.c-post-navs__archive: +a('/'+URL+'/').c-button.is-sm <i class="material-icons-outlined">list</i>記事一覧へ
       li.c-post-navs__next: +a("#").c-button.is-sm 次の記事へ
 
 //- table row
