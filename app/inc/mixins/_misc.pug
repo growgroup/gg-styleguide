@@ -23,12 +23,17 @@ mixin loop(count)
 
 
 //- 投稿ページナビゲーション
-mixin c_post_nav(URL)
+mixin c_post_nav(listID)
+  -
+    if (typeof listID === "undefined") {
+      var listID = "news"
+    }
+    var path = config.rootpath + "/" + listID + "/";
   nav.c-post-navs
     ul
-      li.c-post-navs__prev: +a("#").c-button.is-sm.is-arrow-left 前の記事へ
-      li.c-post-navs__archive: +a('/'+URL+'/').c-button.is-sm <span class="material-icons-outlined">list</span>記事一覧へ
-      li.c-post-navs__next: +a("#").c-button.is-sm 次の記事へ
+      li.c-post-navs__prev: +a(path +"page/").c-button.is-sm.is-arrow-left 前の記事へ
+      li.c-post-navs__archive: +a(path).c-button.is-sm <span class="material-icons-outlined">list</span>記事一覧へ
+      li.c-post-navs__next: +a(path+"page/").c-button.is-sm 次の記事へ
 
 //- table row
 mixin tr(th, td)
