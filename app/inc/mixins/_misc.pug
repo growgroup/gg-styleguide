@@ -44,13 +44,12 @@ mixin tr(th, td)
 mixin c_relation()
   +c.relation
     .l-container
-      +e.title 関連するコンテンツ
-      +e.button
-        ul
-          li: +a("/aboutus/") 私たちについて
-          li: +a("/company/greeting/") 代表あいさつ
-          li: +a("/company/profile/") 会社概要
-          li: +a("/company/history/") 沿革
+      +e.title.c-heading.is-sm.is-center 関連するコンテンツ
+      +e.buttons
+        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
+        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
+        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
+        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
 
 mixin select-prefectures()
   select(name="都道府県")
