@@ -7,13 +7,13 @@ mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
           span
             span
               +a("/") ホーム
-              span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+              span.is-arrow <span class="material-icons-outlined">chevron_right</span>
               span
                 +a('/'+parentURL+'/')=parent
-                span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+                span.is-arrow <span class="material-icons-outlined">chevron_right</span>
                 span
                   +a('/' + parentURL +'/' + parentURL2 + '/')=parent2
-                  span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+                  span.is-arrow <span class="material-icons-outlined">chevron_right</span>
                   span !{current.title}
   else if parent
     +c.breadcrumb
@@ -22,10 +22,10 @@ mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
           span
             span
               +a("/") ホーム
-              span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+              span.is-arrow <span class="material-icons-outlined">chevron_right</span>
               span
                 +a('/'+parentURL+'/')=parent
-                span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+                span.is-arrow <span class="material-icons-outlined">chevron_right</span>
                 span !{current.title}
   else
     +c.breadcrumb
@@ -34,5 +34,5 @@ mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
           span
             span
               +a("/") ホーム
-              span.is-arrow <i class="material-icons-outlined">chevron_right</i>
+              span.is-arrow <span class="material-icons-outlined">chevron_right</span>
               span !{current.title}
