@@ -10,3 +10,13 @@
     z-index: 99999 !important;
   }
 }
+
+.modaal-close {
+
+  &:hover {
+
+    &:before, &:after {
+      background: $color-primary;
+    }
+  }
+}
