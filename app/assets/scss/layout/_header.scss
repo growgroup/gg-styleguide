@@ -21,17 +21,57 @@ category: Layout
     }
   }
 
-  &__text {
-    font-size: rem-calc(12);
+  &__search {
+    //border: 1px solid $border-base-color;
+    //color: $font-base-color;
+    position: relative;
+    display: block;
+    margin-left: 1.7857142857rem;
+    max-width: 11.4285714286rem;
+    width: 100%;
+    border: 1px solid $font-base-color;
+    color: $font-base-color;
+    background: none;
+    border-radius: 16px;
+    font-size: 0.7142857143rem;
     letter-spacing: 0.1em;
-    opacity: 0.7;
-    margin: 0;
+    line-height: 1.5;
     font-weight: 400;
-    @include breakpoint(medium down) {
-      font-size: rem-calc(10);
-      letter-spacing: 0;
-      display: none;
+    padding: 0.5rem 1.2857142857rem 0.5rem 2.7142857143rem;
+    transition: all 0.2s ease-out;
+
+    &:before {
+      position: absolute;
+      left: rem-calc(18);
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      font-family: "Material Icons Outlined";
+      content: "search";
+      font-feature-settings: "liga";
+      font-size: rem-calc(18);
     }
+
+    &:hover, &.is-active {
+      background: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+
+      &:before {
+      }
+    }
+  }
+
+  &__search-icon {
+    background: none;
+    border: none;
+    border-radius: 0;
+    line-height: 1;
+    font-size: rem-calc(20);
+    margin-left: auto;
   }
 
   &__logo {
