@@ -46,6 +46,7 @@ html(lang="ja")
 
     //- スタイルシート
     block stylesheet
+      |<link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">d
       +link("/assets/css/app.css")(rel="stylesheet")
       +link("/assets/css/style.css")(rel="stylesheet")
 
@@ -83,4 +84,5 @@ html(lang="ja")
 
     //- フッターに組み込むスクリプト
     block footer_scripts
+      | <script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
       +script('/assets/js/app.js')
