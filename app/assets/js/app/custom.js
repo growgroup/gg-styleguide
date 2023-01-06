@@ -13,12 +13,34 @@ export default class CustomFunctions {
    * 実行する
    */
   init() {
-    this.infiniteSlider();
+    this.formModal();
   }
 
   /**
    * カスタム関数
    */
+
+  // headerのフォーム
+  formModal() {
+    const triggerbtn = $(".js-header-form");
+    const closebtn = $(".c-block-modal-form__close");
+
+    triggerbtn.click(function (e) {
+      $("body").toggleClass("is-search-modal-open");
+      $(triggerbtn).toggleClass("is-active");
+    })
+
+    closebtn.click(function (e) {
+      $("body").toggleClass("is-search-modal-open");
+      $(triggerbtn).toggleClass("is-active");
+    })
+
+
+    $(".c-block-modal-form__bg").click(function (e) {
+      $("body").toggleClass("is-search-modal-open");
+      $(triggerbtn).toggleClass("is-active");
+    })
+  }
 
   // ループスライダー
   infiniteSlider() {
