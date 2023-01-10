@@ -406,6 +406,13 @@
   line-height: 1;
 }
 
+@mixin line-clamp($clamp:1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+}
+
 // 行数制限
 @mixin row-limit($font-size-base: $font-base-size, $font-size-base-sp: $font-base-size*0.875, $line-height-computed: 1.7, $lines-to-show: 2) {
   overflow: hidden;

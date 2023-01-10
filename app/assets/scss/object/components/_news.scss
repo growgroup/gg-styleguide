@@ -74,6 +74,8 @@ category: News
 
   &__text {
     font-weight: 700;
+    @include line-clamp(1);
+
     @include breakpoint(small only) {
       width:100%;
       margin-top: rem-calc(8);
