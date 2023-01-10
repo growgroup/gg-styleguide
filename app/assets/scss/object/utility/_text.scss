@@ -54,7 +54,7 @@ a{
 
     &:after {
       content: "picture_as_pdf";
-      font-family: 'Material Icons Round';
+      font-family: 'Material Icons Outlined';
       line-height: 1;
       letter-spacing: 0;
     }
@@ -66,7 +66,7 @@ a{
 
     &::before {
       content: "location_on";
-      font-family: 'Material Icons Round';
+      font-family: 'Material Icons Outlined';
       line-height: 1;
       letter-spacing: 0;
     }
@@ -76,7 +76,7 @@ a{
 
     &::after {
       content: "open_in_new";
-      font-family: 'Material Icons Round';
+      font-family: 'Material Icons Outlined';
       line-height: 1;
       letter-spacing: 0;
     }
