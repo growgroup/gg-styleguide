@@ -1,9 +1,9 @@
 extends /inc/foundation/_base.pug
 block append config
-  - current.id = "news" // ページのID
+  - current.id = "post" // ページのID
   - current.title = "お知らせ" // タイトル
   - current.description = "これはお知らせの説明文です" // 説明文
-  - current.bodyClass = "news" // body に付与するクラス
+  - current.bodyClass = "single-" + current.id // body に付与するクラス
   - current.path = "/news/page/" // ページのpath
   - current.depth = 3 // ページの階層
 
