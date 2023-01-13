@@ -28,21 +28,25 @@ export default class modal {
    * 実行
    */
   run() {
-    if (this.targetEle.hasClass('js-video')){
-      this.targetEle.modaal({
-        type: 'video'
+    for (var i = 0; i < this.targetEle.length; i++) {
+      var target = $(this.targetEle[i]);
+
+      if (target.hasClass('js-video')){
+        target.modaal({
+          type: 'video'
+        });
+      }
+
+      if (target.hasClass('js-iframe')){
+        target.modaal({
+          type: 'iframe'
+        });
+      }
+
+      target.modaal({
+        type: 'image'
       });
     }
-
-    if (this.targetEle.hasClass('js-iframe')){
-      this.targetEle.modaal({
-        type: 'iframe'
-      });
-    }
-
-    this.targetEle.modaal({
-      type: 'image'
-    });
   }
 }
 
