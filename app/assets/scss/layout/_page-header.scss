@@ -16,17 +16,7 @@ category: Layout
   width: 100%;
   position: relative;
   overflow: hidden;
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba($color-black,0.2);
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+
   &__image {
     position: absolute;
     top: 0;
@@ -34,17 +24,20 @@ category: Layout
     bottom: 0;
     left: 0;
     margin:auto;
-    z-index: -1;
+
+    &::after {
+      @include img-curtain($color-black,0.2);
+    }
   }
   &__bgimg {
-    @include bg-option;
+    @include bg-option();
     width: 100%;
     height: 100%;
   }
   &__inner {
+    position: relative;
     text-align: center;
     color: $color-white;
-    z-index: 99;
     padding: rem-calc(64) rem-calc(16);
     @include breakpoint(small only) {
       padding: rem-calc(46) rem-calc(8);
