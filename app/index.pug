@@ -79,9 +79,7 @@ block body
             .large-9.small-12
               +e.content
                 +loop(3)
-                  +a("/news/page/").c-news__block
-                    +e.date 2018.10.10
-                    +e.label.c-label.is-white カテゴリ
-                    +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+                  +c_news__block("top")
+
   // オファーブロック
   +l_offer

@@ -26,8 +26,8 @@ category: Navigation
     }
   }
 
-  ul li span,
-  ul li a {
+  ul li > span,
+  ul li > a {
     @include webfont();
     @include font-format(16,0.05,13,700);
     display: flex;

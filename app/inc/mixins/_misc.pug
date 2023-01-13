@@ -51,6 +51,31 @@ mixin c_relation()
         +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
         +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
 
+mixin c_news__block(data)
+  if data == "top"
+    +a("/news/category/page/").c-news__block
+      +e.date 2018.10.10
+      +e.label.c-label.is-white カテゴリ
+      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+  else if data == "is-news"
+    +ae("/news/category/page/").block
+      +e.date 2022.01.01
+      +e.label.c-label.is-white カテゴリ
+      +e.inner
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+  else if data == "is-result"
+    +ae("/news/category/page/").block
+      +e.label.c-label お知らせ
+      +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    +ae("/contact/").block
+      +e.label.c-label お問い合わせ
+      +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    +loop(8)
+      +ae("#").block
+        +e.label.c-label ページ
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+
 mixin select-prefectures()
   select(name="都道府県")
     option(disabled,selected) 選択してください

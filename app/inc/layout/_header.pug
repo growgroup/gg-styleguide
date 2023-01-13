@@ -50,7 +50,7 @@ header(class=className)
     +e.bg
     +e.inner
       +e("button").close
-      +e("form").form
+      +e("form").form(action="/result/", method="get")
         span.is-icon <span class="material-icons-outlined">search</span>
         input(type="text", placeholder="キーワードから検索")
         button 検索する

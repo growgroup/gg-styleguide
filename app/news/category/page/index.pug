@@ -1,19 +1,19 @@
 extends /inc/foundation/_base.pug
 block append config
   - current.id = "post" // ページのID
-  - current.title = "お知らせ" // タイトル
-  - current.description = "これはお知らせの説明文です" // 説明文
+  - current.title = "ここに記事のタイトルが入ります。" // タイトル
+  - current.description = "ここに記事のタイトルが入ります。" // 説明文
   - current.bodyClass = "single-" + current.id // body に付与するクラス
-  - current.path = "/news/page/" // ページのpath
-  - current.depth = 3 // ページの階層
+  - current.path = "/news/category/page/" // ページのpath
+  - current.depth = 4 // ページの階層
 
 block page_header
   +l_page_header({
       image: "img-page-header-format.jpg",
-      title: "量産ページ",
-      subtitle: "parent"
+      title: "お知らせ",
+      subtitle: "news"
     })
-  +c_breadcrumb("お知らせ","news")
+  +c_breadcrumb("お知らせ","news","カテゴリ","category")
 
 block body
   main.l-main

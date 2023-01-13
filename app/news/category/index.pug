@@ -1,0 +1,31 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "category" // ページのID
+  - current.title = "カテゴリ" // タイトル
+  - current.description = "これはカテゴリの説明文です" // 説明文
+  - current.bodyClass = "category" // body に付与するクラス
+  - current.path = "/news/category/" // ページのpath
+  - current.depth = 3 // ページの階層
+
+block page_header
+  +l_page_header({
+      image: "img-page-header-format.jpg",
+      title: "カテゴリ",
+      subtitle: "news"
+    })
+  +c_breadcrumb("お知らせ","news")
+
+block body
+  main.l-main
+    section.l-section.is-lg
+      .l-container
+        .row
+          .large-10.is-push-lg-1.small-12
+            +c.news.is-onecolumn
+              h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
+              +e.content
+                +loop(10)
+                  +c_news__block("is-news")
+            +c_pagination()
+  +l_offer
+

@@ -1,6 +1,6 @@
 //- ページネーション
-mixin c_pagination()
-  +c.pagination
+mixin c_pagination(data)
+  +c.pagination(class=data)
     ul
       li: +a("#").c-pagination__prev <span class="material-icons-outlined">chevron_left</span>
       li: span.is-current 1
