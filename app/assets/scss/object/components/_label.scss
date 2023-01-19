@@ -5,12 +5,12 @@
   display: inline-block;
   text-align: center;
   min-width: rem-calc(116);
-  font-size: rem-calc(13);
   padding: rem-calc(1) rem-calc(8);
   border: 1px solid $color-primary;
-  font-weight: 700;
+  @include font-format(14,0.05,20,700);
+
   @include breakpoint(small only) {
-    font-size: rem-calc(12);
+    font-size: rem-calc(13);
     min-width: rem-calc(88);
   }
 
@@ -42,5 +42,9 @@
   &.is-secondary {
     background: $color-secondary;
     color: $font-base-color;
+  }
+
+  &.is-radius {
+    border-radius: 100px;
   }
 }
