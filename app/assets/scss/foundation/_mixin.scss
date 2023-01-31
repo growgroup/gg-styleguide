@@ -502,6 +502,11 @@
   font-weight: $weight;
 }
 
+@mixin font-format-light($size : $font-base-size,$height: 24){
+  font-size: rem-calc($size);
+  line-height: math.div($height, $size) * 1;
+}
+
 @mixin flex-wrapper() {
   display: flex;
   flex-wrap: wrap;
