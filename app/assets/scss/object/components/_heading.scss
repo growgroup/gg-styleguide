@@ -121,6 +121,10 @@ category: Heading
   color: $color-primary;
 }
 
+.c-heading.is-color-white {
+  color: $color-white;
+}
+
 // マージン調整
 .c-heading.is-top {
   margin-bottom: 0 !important;
