@@ -30,6 +30,7 @@ body {
   letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
   font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 
   &.is-slidebar-active {
     overflow: hidden;
