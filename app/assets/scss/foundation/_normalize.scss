@@ -38,6 +38,27 @@ body {
   @include breakpoint(small only) {
     font-size:  $font-base-size*0.875;
   }
+
+  &.en {
+    font-family: 'Roboto', sans-serif;
+    line-height: $font-base-line-height-en;
+    letter-spacing: $font-base-letter-spacing-en;
+    font-size: $font-base-size-en;
+
+    @include breakpoint(small only) {
+      font-size: rem-calc(13);
+    }
+
+    small,
+    .u-text-small {
+      font-size: rem-calc(13);
+      line-height: 22.75/13*1;
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+      }
+    }
+  }
 }
 /* chrome opera /
 /! autoprefixer: ignore next */

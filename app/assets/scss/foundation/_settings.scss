@@ -50,6 +50,11 @@ $font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミ
 $font-base-weight: normal !default; // フォント幅
 $font-base-style: normal !default; // フォントスタイル
 
+//en
+$font-base-size-en: 15px !default; // body.en のフォントサイズ
+$font-base-line-height-en: 28/15*1 !default; // body.en のフォントサイズ
+$font-base-letter-spacing-en: 0 !default; // body.en のフォントサイズ
+
 $font-heading-sizes: (// 見出しのフォントサイズ
   small: (
     'h1': 24px,
