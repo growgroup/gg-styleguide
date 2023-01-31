@@ -63,6 +63,7 @@ input[type="checkbox"] {
   width: 18px;
   height: 18px;
   vertical-align: middle;
+  accent-color: $color-primary;
 }
 
 // ラジオボックス
@@ -76,6 +77,7 @@ input[type="radio"] {
   width: 18px;
   height: 18px;
   vertical-align: middle;
+  accent-color: $color-primary;
 }
 
 // セレクトボックス
