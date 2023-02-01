@@ -1,6 +1,5 @@
 // regular400
-@mixin webfont($weight:400) {
+@mixin webfont() {
   font-family: 'Roboto', sans-serif;
-  font-weight: $weight;
 }
 
