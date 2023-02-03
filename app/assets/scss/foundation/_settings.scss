@@ -107,8 +107,8 @@ $color-background: #ccc;
 
 // # 8. two-column
 $asideContainer: 320;
-$mainContainer: calc(100% - #{$asideContainer}px);
 $asideMargin: 70;
+$mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 
 // # SNS color
 $color-sns-line: #00B900;
