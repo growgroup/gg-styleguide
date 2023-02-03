@@ -6,6 +6,16 @@
  *    without disabling user zoom.
  */
 
+// # CSS 変数の定義
+:root{
+  --letter-spacing:#{$font-base-letter-spacing};
+
+  //スマホのとき値を変更したい場合は以下に
+  @include breakpoint(small down){
+  }
+}
+
+
 html {
   font-size: $font-base-size;
   font-family: $font-base-family;
@@ -17,6 +27,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  letter-spacing: var(--letter-spacing);//全要素へ基準のletter-spacingを当てる
 }
 
 /**
@@ -27,7 +38,7 @@ body {
   color: $font-base-color;
   margin: 0;
   line-height: $font-base-line-height;
-  letter-spacing: $font-base-letter-spacing;
+  //letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
   font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;

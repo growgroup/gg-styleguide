@@ -15,7 +15,7 @@
     }
 
     span {
-      @include font-format(12,.05,19);
+      @include font-format-light(12,19);
 
       &.is-arrow {
         margin:0 rem-calc(8);
@@ -28,7 +28,7 @@
       }
 
       a {
-        @include font-format(12,.05,19);
+        @include font-format-light(12,19);
       }
     }
   }
