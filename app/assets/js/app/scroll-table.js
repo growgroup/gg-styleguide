@@ -1,3 +1,6 @@
+import ScrollHint from 'scroll-hint';
+import ScrollHintCss from 'scroll-hint/css/scroll-hint.css';
+
 //  table.c-table-xlg.js-scrollable
 //     thead
 //       tr
@@ -15,6 +18,7 @@
 //         td テキストテキストテキストテキストテキスト
 
 export default class ScrollTable {
+
   constructor() {
     this.targetSelector = ".js-scrollable";
     this.iconWidth = 125;
@@ -25,7 +29,10 @@ export default class ScrollTable {
   init() {
     const elements = $(this.targetSelector);
     if (elements.length === 0) return;
+    this.run();
+  }
 
+  run() {
     new ScrollHint(this.targetSelector, {
       suggestiveShadow:true,//シャドウを追加
       applyToParents: true,//親要素に適用

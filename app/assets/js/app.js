@@ -41,7 +41,7 @@ class App {
     this.CurrentNav = new CurrentNav();
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();
-    new ScrollTable();
+    this.ScrollTable = new ScrollTable();
     this.defaultOptions = {
       gsap: this.gsap,
       utils: this.Utils
