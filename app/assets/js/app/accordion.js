@@ -7,7 +7,7 @@
  * ====================================================================
  *
  * # example:
- * <div class="c-panel js-accordion">
+ * <div class="c-panel js-accordion" accordion-responsive="950">
  *     <div class="c-panel__title" data-accordion-title>
  *         Title
  *     </div>
@@ -23,8 +23,9 @@ var defaultOptions = {
   selector: '.js-accordion',
   titleTargetAttr: 'data-accordion-title',
   contentTargetAttr: 'data-accordion-content',
+  responsive: 0,
   speed: 300,
-  defaultOpen: false
+  defaultOpen: false,
 };
 
 export default class Accordion {
@@ -49,6 +50,7 @@ export default class Accordion {
     if (!this.targetAll.length) {
       return false;
     }
+
     // 実行する
     this.run();
   }
@@ -57,8 +59,16 @@ export default class Accordion {
    * 実行する
    */
   run() {
+    let win = $(window).innerWidth();
+
     for (var i = 0; i < this.targetAll.length; i++) {
       var target = $(this.targetAll[i]);
+
+      target.responsive = target.data("accordion-responsive");
+      if (win >= target.responsive) {
+        return false;
+      }
+
       target.title = target.find('*[' + this.options.titleTargetAttr + ']');
       target.content = target.find('*[' + this.options.contentTargetAttr + ']');
       this.accordion(target);
