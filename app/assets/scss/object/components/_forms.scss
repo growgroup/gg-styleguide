@@ -176,24 +176,163 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     label {
       display: flex;
       align-items: center;
-      margin-right: rem-calc(64);
-      @include breakpoint(small only) {
-        margin-right: rem-calc(48);
-        margin-bottom: rem-calc(8);
+      cursor: pointer;
+
+      & > span {
+        margin-left: rem-calc(10);
       }
     }
-    input {
-      margin-right: rem-calc(8);
-      margin-top: rem-calc(2);
+
+    & > span {
+      margin: rem-calc(5) 0;
+
+      @include breakpoint(small only) {
+        margin: rem-calc(3) 0;
+      }
     }
 
     span {
+
+      &:not(:last-child) {
+        margin-right: rem-calc(24);
+
+        @include breakpoint(small only) {
+          margin-right: rem-calc(16);
+        }
+      }
+
       &:last-of-type {
         label {
           margin-right: 0;
+        }
+      }
+
+      &.is-fullwidth {
+        width: 100%;
+      }
+    }
+
+    &.is-design {
+
+      input {
+        cursor: pointer;
+        border-color: $border-base-color;
+
+        &[type='radio'],&[type='checkbox'] {
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          position: relative;
+
+          @include breakpoint(small only) {
+            width: rem-calc(20);
+            height: rem-calc(20);
+          }
+        }
+
+        &[type='radio']:after,&[type='checkbox']:after {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          top: 50%;
+          left: -1px;
+          transform: translateY(-50%);
+          position: relative;
+          background-color: $color-white;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 1px solid $border-base-color;
+
+          @include breakpoint(small only) {
+            width: rem-calc(20);
+            height: rem-calc(20);
+          }
+        }
+
+        &[type='radio']:before {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 4px;
+          transform: translateY(-50%);
+          background-color: $color-primary;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 1px solid $color-primary;
+          z-index: 10;
+          opacity: 0;
+          visibility: hidden;
+
+          @include breakpoint(small only) {
+            width: rem-calc(12);
+            height: rem-calc(12);
+            left: 3px;
+          }
+        }
+
+        &[type='radio']:checked:after,&[type='checkbox']:checked:after {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          top: 50%;
+          left: -1px;
+          transform: translateY(-50%);
+          position: relative;
+          background-color: $color-white;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 1px solid $color-primary;
+
+          @include breakpoint(small only) {
+            width: rem-calc(20);
+            height: rem-calc(20);
+          }
+        }
+
+        &[type='radio']:checked:before,&[type='checkbox']:checked:before {
+          visibility: visible;
+          opacity: 1;
+        }
+
+
+        &[type='checkbox']:after {
+          border-radius: 0;
+        }
+
+        &[type='checkbox']:checked:after {
+          content: "check";
+          font-family: "Material Icons Outlined";
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0;
+          background: $color-primary;
+          color: $color-white;
+          font-size: rem-calc(20);
+          line-height: 1;
+          letter-spacing: 0;
+        }
+      }
+    }
+
+    &.is-border {
+
+      label {
+        padding: rem-calc(12) rem-calc(16);
+        border: 1px solid $border-base-color;
+        border-radius: $border-radius;
+
+        @include breakpoint(small only) {
+          padding: rem-calc(8) rem-calc(12);
         }
       }
     }
@@ -224,8 +363,7 @@
       }
     }
     input {
-      margin-right: rem-calc(6);
-      margin-top: rem-calc(4);
+      margin-top: rem-calc(2);
     }
   }
   &__privacy {
