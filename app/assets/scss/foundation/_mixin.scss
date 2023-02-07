@@ -495,11 +495,15 @@
   align-items: $align-items;
 }
 
-@mixin font-format($size : $font-base-size,$letter: $font-base-letter-spacing,$height: 24,$weight: $font-base-weight){
+@mixin font-format($size : $font-base-size,$letter:null,$height: 24,$weight:null){
   font-size: rem-calc($size);
-  letter-spacing: $letter + em;
   line-height: math.div($height, $size) * 1;
-  font-weight: $weight;
+  @if ($letter){//line-heightはnullにするとCSS出力をスキップします
+    letter-spacing: $letter + em;
+  }
+  @if ($weight){//font-weightはnullもしくは記載しないとCSS出力をスキップします
+    font-weight: $weight;
+  }
 }
 
 @mixin font-format-light($size : $font-base-size,$height: 24){
