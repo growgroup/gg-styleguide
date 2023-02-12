@@ -23,20 +23,16 @@
 
     $('.c-block-modal__copy button').on('click', function(){
 
+      // 対象のinputタグ
+      let $target = $('.c-block-modal__copy input');
       // コピーする文章の取得
-      let $url = $('.c-block-modal__copy input').val();
-      // テキストエリアの作成
-      let $textarea = $('<textarea></textarea>');
-      // テキストエリアに文章を挿入
-      $textarea.text($url);
-      //　テキストエリアを選択
-      $textarea.select();
+      let $text = $target.val();
+      // inputエリアを選択
+      $target.select();
       // コピー
       document.execCommand('copy');
-      // テキストエリアの削除
-      $textarea.remove();
       // アラート文の表示
-      alert('「' + $url + '」をコピーしました。');
+      alert('「' + $text + '」をコピーしました。');
     });
   }
 
