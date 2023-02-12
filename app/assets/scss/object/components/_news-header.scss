@@ -23,6 +23,16 @@ category: PostContent
     }
   }
 
+  &__infomation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(small only) {
+      align-items: flex-end;
+    }
+  }
+
   &__sup {
     display: flex;
     align-items: center;
@@ -62,6 +72,36 @@ category: PostContent
           font-size: rem-calc(14);
           display: block;
         }
+      }
+    }
+  }
+
+  &__share {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem-calc(40);
+    height: rem-calc(40);
+    color: $color-primary;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1px solid $color-primary;
+    background: transparent;
+    margin-left: rem-calc(12);
+    @include transition();
+
+    @include breakpoint(small only) {
+      width: rem-calc(32);
+      height: rem-calc(32);
+      margin-left: rem-calc(6);
+    }
+
+    span {
+      font-size: rem-calc(20);
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(16);
       }
     }
   }

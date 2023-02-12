@@ -51,7 +51,6 @@
   &__head {
 
     &.c-heading.is-lg {
-      text-align: center;
       margin-top: 0;
     }
   }
@@ -75,6 +74,47 @@
       @include breakpoint(small only) {
         margin-bottom: rem-calc(24);
       }
+    }
+  }
+
+  &__copy {
+    display: flex;
+    align-items: center;
+
+    input {
+      border-right: none;
+      font-size: rem-calc(16);
+    }
+
+    button {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: rem-calc(46.8);
+      color: $color-white;
+      background: $color-primary;
+      padding: rem-calc(8) rem-calc(12);
+      border: 1px solid $color-primary;
+      @include font-format(16,0.05,24,700);
+      @include transition();
+
+      @include breakpoint(small only) {
+        padding: rem-calc(8) rem-calc(6);
+      }
+
+      &:hover {
+        color: $color-primary;
+        background: $color-white;
+      }
+    }
+  }
+
+  &__sns {
+    margin-top: rem-calc(24);
+
+    @include breakpoint(small only) {
+      margin-top: rem-calc(16);
     }
   }
 }
