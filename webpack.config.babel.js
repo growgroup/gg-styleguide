@@ -111,9 +111,14 @@ module.exports = (env, argv) => {
                         to: path.resolve(__dirname, 'dist/assets/images'),
                     },
                     {
+                        from: path.resolve(__dirname, 'app/assets/files'),
+                        to: path.resolve(__dirname, 'dist/assets/files'),
+                    },
+                    {
                         from: path.resolve(__dirname, 'app/assets/fonts'),
                         to: path.resolve(__dirname, 'dist/assets/fonts'),
                     },
+                    //その他設定追加したい場合は以下を参考に
                     // {
                     //     from: path.resolve(__dirname, 'app/assets/js/scripts.js'),
                     //     to: path.resolve(__dirname, 'dist/assets/js'),
