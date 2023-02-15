@@ -28,7 +28,6 @@ category: Components
     display: flex;
     align-items: flex-start;
     padding: rem-calc(16) rem-calc(24) rem-calc(16) 0;
-    cursor: pointer;
     position: relative;
     @include breakpoint(small only) {
       padding: rem-calc(16) rem-calc(24) rem-calc(12) 0;
