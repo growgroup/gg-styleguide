@@ -64,6 +64,7 @@
         "inheritance": true,
         "rules": {
           "invalid-attr": false,
+          "id-duplication": false,
           "required-attr": false
         }
       },
