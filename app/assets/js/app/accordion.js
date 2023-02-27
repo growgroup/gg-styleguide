@@ -69,8 +69,8 @@ export default class Accordion {
         return false;
       }
 
-      target.title = target.find('*[' + this.options.titleTargetAttr + ']');
-      target.content = target.find('*[' + this.options.contentTargetAttr + ']');
+      target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
+      target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
       this.accordion(target);
       if (this.options.defaultOpen) {
         target.content.slideDown();
