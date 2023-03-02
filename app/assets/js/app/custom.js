@@ -13,7 +13,7 @@ export default class CustomFunctions {
    * 実行する
    */
   init() {
-    this.formModal();
+    this.searchFormModal();
   }
 
   /**
@@ -21,25 +21,35 @@ export default class CustomFunctions {
    */
 
   // headerのフォーム
-  formModal() {
-    const triggerbtn = $(".js-header-form");
-    const closebtn = $(".c-block-modal-form__close");
+  searchFormModal() {
+    const triggerbtnName = ".js-header-searchform-open";
+    const contentName = ".js-header-searchform-content";
+    // const closebtnName = ".js-header-searchform-close";
+    const $triggerbtn = $(triggerbtnName);
+    const $content = $(contentName);
+    // const $closebtn = $(closebtnName);
 
-    triggerbtn.click(function (e) {
-      $("body").toggleClass("is-search-modal-open");
-      $(triggerbtn).toggleClass("is-active");
-    })
-
-    closebtn.click(function (e) {
-      $("body").toggleClass("is-search-modal-open");
-      $(triggerbtn).toggleClass("is-active");
-    })
-
-
-    $(".c-block-modal-form__bg").click(function (e) {
-      $("body").toggleClass("is-search-modal-open");
-      $(triggerbtn).toggleClass("is-active");
-    })
+    $triggerbtn.click(function (e) {
+      //トリガーボタンを押したときの動作
+      if($("body").hasClass('is-search-modal-open')){
+        $("body").removeClass("is-search-modal-open");
+        $triggerbtn.removeClass("is-active");
+      }else{
+        $("body").addClass("is-search-modal-open");
+        $triggerbtn.addClass("is-active");
+      }
+    });
+    $(document).on('click', function(e) {
+      //bodyに.is-search-modal-openがついているときに、
+      //検索フォーム本体でもトリガーボタンでも無い要素が押されたら
+      if(!$(e.target).closest(contentName).length && !$(e.target).closest(triggerbtnName).length){
+        if($("body").hasClass('is-search-modal-open')){
+          //bodyの.is-search-modal-openと、トリガーボタンの.is-activeを外す
+          $("body").removeClass("is-search-modal-open");
+          $triggerbtn.removeClass("is-active");
+        }
+      }
+    });
   }
 
   // ループスライダー

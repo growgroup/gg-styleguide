@@ -4,9 +4,10 @@
 // Styleguide 4.5
 
 $slidebar-menu-bg: $color-primary !default;
-$slidebar-menu-width: 75% !default;
+$slidebar-menu-width: 100% !default;
 $slidebar-menu-eaasing: all ease-in-out .2s !default;
 $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
+$slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
 
 @include breakpoint(large up) {
   .c-slidebar-button {
@@ -34,8 +35,8 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     background-color: $color-primary;
     line-height: 1;
     color: $color-white;
-    width: rem-calc(55);
-    height: rem-calc(55);
+    width: rem-calc($slidebar-header-height);
+    height: rem-calc($slidebar-header-height);
     padding-top: rem-calc(6);
     border: none;
 
@@ -83,162 +84,208 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
     }
   }
 
+
+  //***********************************************
   // メニュー自体
+  //***********************************************
   .c-slidebar-menu {
-    height: calc(100vh - 55px);
+    height: calc(100vh - #{$slidebar-header-height}px);
     padding: 0 0 rem-calc(104);
     position: fixed;
-    background-color: $color-primary;
+    background-color: $slidebar-menu-bg;
     z-index: 9980;
     width: $slidebar-menu-width;
     transform: translate3d(100%, 0px, 0px);
     right: 0;
-    -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
     overflow-x: scroll;
     top: 0;
     -webkit-overflow-scrolling: touch;
 
     &.is-active {
-      height: calc(100% - 65px);
+      height: calc(100% - 60px);
     }
 
     // 上から下へ
     &.is-top-to-bottom {
       transform: translate3d(0px, -100%, 0px);
+      //transform: translate3d(0, 0, 0); // 表示デバッグ時
       width: 100%;
-      opacity: 0;
+      opacity: 0; // 表示デバッグ時は1
     }
 
-
-    // メニュー要素（通常）
-    &__list{
+    // メニュー要素（一番外・全体で共通する設定）
+    &__list {
       width: 100%;
       background: $color-primary;
-      li {
-        border-bottom: 1px solid $border-base-color;
-      }
-      a,
-      span {
-        font-size: rem-calc(15);
+      font-size: rem-calc(14);
+      font-weight: 700;
+
+      a, span {
         display: block;
-        padding: rem-calc(14) rem-calc(16);
+        color: inherit;
+        font-weight: inherit;
         text-decoration: none;
-        color: $color-white;
-        font-weight: 400;
-      }
-    }
-
-    // メニュー要素（子）
-    &__children {
-      width: 100%;
-      padding: 0 rem-calc(16);
-      display: none;
-      background-color: $color-primary;
-
-      li {
-        &:last-child {
-          border-bottom: none;
-        }
-
-        a {
-          color: $color-white;
-          padding: rem-calc(16) 0;
-          &::before,
-          &::after {
-            display: none;
-          }
-        }
-      }
-    }
-
-    // メニュー要素（親）
-    &__parent {
-      a,
-      span {
         position: relative;
+      }
 
+      [data-accordion-title] {
         &::after,
         &::before {
           content: "";
           display: block;
-          width: rem-calc(2);
-          height: rem-calc(18);
-          background-color: $color-white;
+          width: rem-calc(1);
+          height: rem-calc(13);
+          background-color: currentColor;
           position: absolute;
           top: 50%;
-          right: rem-calc(24);
+          right: rem-calc(26);
           transform: translateY(-50%);
         }
 
         &::after {
-          width: rem-calc(18);
-          height: rem-calc(2);
-          right: rem-calc(16);
+          width: rem-calc(13);
+          height: rem-calc(1);
+          right: rem-calc(20);
         }
       }
+    }
 
-      &.is-open {
-        a,
-        span {
-          &::before {
-            display: none;
+    &__parent { //親li
+      color: $color-white;
+      border-bottom: solid 1px rgba(255,255,255,0.4);
+      &.is-open{
+        //background: $color-white;
+        //color: $color-primary;
+        & > [data-accordion-title]{
+          &::before{
+            content: none;
           }
         }
       }
     }
 
+    &__parent-link { //親a, span
+      cursor: pointer;
+      padding:rem-calc(18) rem-calc(46) rem-calc(18) rem-calc(20);
+    }
 
+    // メニュー要素（子）
+    &__children {
+      font-size: rem-calc(13);
+      width: 100%;
+      padding-left: rem-calc(20);
+      padding-bottom: rem-calc(20);
+      display: none;
+    }
 
-    &__button {
-      margin-top: rem-calc(32);
-      max-width: 100%;
-      background-color: $color-white;
-      color: $color-primary;
-      font-size: rem-calc(16);
+    &__child { //子li
+      //color: $color-white;
+      background: rgba(0,0,0,0.2);
+      margin-bottom: rem-calc(4);
 
-      &::before {
-        content: "mail";
-        font-family: 'Material Icons Outlined';
-        line-height: 1;
-        letter-spacing: 0;
-        color: $color-primary;
-        vertical-align: sub;
-        font-size: rem-calc(18);
-        margin-right: rem-calc(12);
+      &.is-open{
+        //color: $color-primary;
+        & > [data-accordion-title]{
+          &::before{
+            content: none;
+          }
+        }
       }
+
+      >[data-accordion-title] {
+        &::before {
+          height: rem-calc(10);
+          right: rem-calc(24.5);
+        }
+        &::after {
+          width: rem-calc(10);
+        }
+      }
+    }
+
+    &__child-link { //子a, span
+      padding:rem-calc(13) rem-calc(48) rem-calc(13) rem-calc(20);
+    }
+
+    // メニュー要素（孫）
+    &__grandchildren {
+      font-size: rem-calc(12);
+      font-weight: 400;
+      width: 100%;
+      display: none;
+      border-top: solid 1px $border-base-color;
+      padding-left: rem-calc(26);
+    }
+
+    &__grandchild { //孫li
+      //color: $color-white;
+      border-top: solid 1px $border-base-color;
+      &:first-child{
+        border-top: 0;
+      }
+    }
+
+    &__grandchild-link { //孫a, span
+      padding:rem-calc(12) rem-calc(40) rem-calc(12) rem-calc(0);
+    }
+
+    //大きいボタン（お問い合わせなど）
+    &__buttons{
+      margin-top: rem-calc(20);
+      padding:0 rem-calc(20);
+    }
+    &__button + &__button{
+      margin-top: rem-calc(8);
+    }
+    &__button {
+      max-width: 100%;
+      font-weight: bold;
+      font-size: rem-calc(18);
+      color: $color-primary;
+      background-color: $color-white;
+      padding:rem-calc(24);
+      text-align: center;
 
       &::after {
         content: none;
       }
+      &__icon {
+        display: inline;
+        vertical-align: rem-calc(-6);
+        line-height: 1;
+        font-size: rem-calc(24);
+        margin-right: rem-calc(8);
+      }
     }
 
+    //SNSボタンなど小さいボタン
     &__sns-btns {
       max-width: 100%;
-      margin-top: rem-calc(40);
+      margin-top: rem-calc(24);
       display: flex;
       justify-content: center;
+      line-height: 1;
     }
 
     &__sns-btn {
+      background: $color-white;
+      color: $color-primary;
+      text-decoration: none;
+      //font-size: rem-calc(24);
+      margin: 0 rem-calc(8);
+      width: rem-calc(44);
+      height: rem-calc(44);
+      border-radius: rem-calc(44);
       display: flex;
       align-items: center;
       justify-content: center;
-      width: rem-calc(44);
-      height: rem-calc(44);
-      background-color: $color-white;
-      border-radius: 1000px;
-      font-size: rem-calc(20);
-      margin: 0 rem-calc(10);
-      text-decoration: none;
     }
   }
 
   // メニュー以外をラップする要素
-  // メニュー以外をラップする要素
   .c-slidebar-container {
     height: 100%;
-    -webkit-transition: $slidebar-menu-eaasing;
     transition: $slidebar-menu-eaasing;
 
     &::after {
@@ -250,7 +297,6 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
       top: 0;
       left: 0;
       opacity: 0;
-      -webkit-transition: $slidebar-menu-eaasing;
       transition: $slidebar-menu-eaasing;
       display: none;
       z-index: 999;
@@ -277,21 +323,9 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
           }
         }
       }
-
-      &__text {
-        &.is-close {
-          display: block;
-          margin-top: rem-calc(8);
-        }
-
-        &.is-open {
-          display: none;
-        }
-      }
     }
 
     .c-slidebar-container {
-      -webkit-transform: translateX(-$slidebar-menu-width);
       transform: translate3d(-$slidebar-menu-width, 0px, 0px);
 
       &::after {
@@ -308,24 +342,68 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 
       // 上から下の場合
       &.is-top-to-bottom {
-        -webkit-transform: translateX(0px);
         transform: translate3d(0px, 0px, 0px);
 
         &::after {
-          top: 55px;
+          top: #{$slidebar-header-height}px;
         }
       }
     }
 
     .c-slidebar-menu {
-      -webkit-transform: translateX(0);
       transform: translate3d(0, 0, 0);
 
       &.is-top-to-bottom {
-        -webkit-transform: translateY(55px);
-        transform: translate3d(0, 55px, 0);
+        transform: translate3d(0, #{$slidebar-header-height}px, 0);
         opacity: 1;
       }
     }
   }
+
+  .c-slidebar-menu {
+    &__search {
+      //border: 1px solid $border-base-color;
+      //color: $font-base-color;
+      position: relative;
+      display: block;
+      margin-bottom: rem-calc(22);
+      max-width: 100%;
+      width: 100%;
+      border: 1px solid $color-primary;
+      color: $color-gray;
+      background: $color-white;
+      border-radius: rem-calc(23);
+      font-size: rem-calc(16);
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      font-weight: 400;
+      height: rem-calc(46);
+      transition: all 0.2s ease-out;
+
+      &:before {
+        position: absolute;
+        left: rem-calc(18);
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        font-family: "Material Icons Outlined";
+        content: "search";
+        font-feature-settings: "liga";
+        font-size: rem-calc(18);
+        color: $color-primary;
+      }
+
+      &:hover,
+      &.is-active {
+      }
+    }
+
+    &__search-icon {
+      display: none;
+    }
+  }
+
 }

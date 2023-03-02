@@ -40,17 +40,8 @@ header(class=className)
                   +a("/blocks/").l-header__submenu__block
                     .l-header__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
                     span ブロック編集ページ
-    button.l-header__search.js-header-form.u-hidden-md キーワードから検索
-    button.l-header__search-icon.js-header-form.u-visible-md <span class="material-icons-outlined">search</span>
+    button.l-header__search.js-header-searchform-open.u-hidden-md キーワードから検索
+    button.l-header__search-icon.js-header-searchform-open.u-visible-md <span class="material-icons-outlined">search</span>
     +a("/contact/").l-header__button.c-button.is-sm <span class="material-icons-outlined">mail</span>お問い合わせ
 
-
-+c.block-modal-form
-  .l-container
-    +e.bg
-    +e.inner
-      +e("button").close
-      +e("form").form(action="/result/", method="get")
-        span.is-icon <span class="material-icons-outlined">search</span>
-        input(type="text", placeholder="キーワードから検索")
-        button 検索する
++l_searchform
