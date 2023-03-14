@@ -8,7 +8,7 @@ html(lang="ja")
     meta(charset='UTF-8')
     //- サイトのタイトル
     block title
-      if current.id == "top"
+      if current.id == "home"
         title= config.site.title
       else
         title= (current.title + '｜' + config.site.title)
@@ -28,7 +28,7 @@ html(lang="ja")
     block meta_ogp
       meta(property="og:locale", content=config.site.ogp.locale)
       meta(property="og:type",content=config.site.ogp.type)
-      if current.id == "top"
+      if current.id == "home"
         meta(property="og:title", content=config.site.title)
         meta(property="og:site_name", content=config.site.ogp.site_name)
       else
