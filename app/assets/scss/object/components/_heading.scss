@@ -131,7 +131,7 @@ category: Heading
   text-align: center;
 }
 
-.c-heading.is-mg-lebel-1 {
+.c-heading.is-mg-level-1 {
   margin-bottom: rem-calc(64);
 
   @include breakpoint(small only) {
@@ -139,7 +139,7 @@ category: Heading
   }
 }
 
-.c-heading.is-mg-lebel-2 {
+.c-heading.is-mg-level-2 {
   margin-bottom: rem-calc(40);
 
   @include breakpoint(small only) {
@@ -147,7 +147,7 @@ category: Heading
   }
 }
 
-.c-heading.is-mg-lebel-3 {
+.c-heading.is-mg-level-3 {
   margin-bottom: rem-calc(32);
 
   @include breakpoint(small only) {
@@ -155,7 +155,7 @@ category: Heading
   }
 }
 
-.c-heading.is-mg-lebel-4 {
+.c-heading.is-mg-level-4 {
   margin-bottom: rem-calc(24);
 
   @include breakpoint(small only) {
@@ -163,7 +163,7 @@ category: Heading
   }
 }
 
-.c-heading.is-mg-lebel-5 {
+.c-heading.is-mg-level-5 {
   margin-bottom: rem-calc(20);
 
   @include breakpoint(small only) {
@@ -171,7 +171,7 @@ category: Heading
   }
 }
 
-.c-heading.is-mg-lebel-6 {
+.c-heading.is-mg-level-6 {
   margin-bottom: rem-calc(16);
 }
 
