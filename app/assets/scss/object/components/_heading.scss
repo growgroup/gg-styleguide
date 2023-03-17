@@ -20,10 +20,6 @@ category: Heading
 // h1
 .c-heading.is-xlg {
   color: $color-primary;
-  margin-bottom: rem-calc(24);
-  @include breakpoint(small only) {
-
-  }
 
   b {
 
@@ -53,10 +49,9 @@ category: Heading
 .c-heading.is-lg {
   color: $color-primary;
   @include font-format-light(32,40);
-  margin-bottom: rem-calc(24);
+
   @include breakpoint(small only) {
     font-size: rem-calc(32)*0.8;
-    margin-bottom: rem-calc(24)*0.5;
   }
 
   b {
@@ -83,10 +78,9 @@ category: Heading
 // h3
 .c-heading.is-md {
   @include font-format-light(28,38);
-  margin-bottom: rem-calc(20);
+
   @include breakpoint(small only) {
     font-size: rem-calc(28)*0.8;
-    margin-bottom: rem-calc(20)*0.5;
   }
 }
 
@@ -101,17 +95,16 @@ category: Heading
 // h5
 .c-heading.is-xs {
   @include font-format-light(20,30);
-  margin-bottom: rem-calc(16);
+
   @include breakpoint(small only) {
     font-size: rem-calc(20)*0.8;
-    margin-bottom: rem-calc(16)*0.5;
   }
 }
 
 // h6
 .c-heading.is-xxs {
   @include font-format-light(18, 28);
-  margin-bottom: rem-calc(6);
+
   @include breakpoint(small only) {
     font-size: rem-calc(18)*0.8;
   }
@@ -136,6 +129,50 @@ category: Heading
 
 .c-heading.is-center{
   text-align: center;
+}
+
+.c-heading.is-mg-lebel-1 {
+  margin-bottom: rem-calc(64);
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(40);
+  }
+}
+
+.c-heading.is-mg-lebel-2 {
+  margin-bottom: rem-calc(40);
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(32);
+  }
+}
+
+.c-heading.is-mg-lebel-3 {
+  margin-bottom: rem-calc(32);
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.c-heading.is-mg-lebel-4 {
+  margin-bottom: rem-calc(24);
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(20);
+  }
+}
+
+.c-heading.is-mg-lebel-5 {
+  margin-bottom: rem-calc(20);
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+.c-heading.is-mg-lebel-6 {
+  margin-bottom: rem-calc(16);
 }
 
 .c-heading.is-mg-none {
