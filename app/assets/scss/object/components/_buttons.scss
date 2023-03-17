@@ -7,13 +7,15 @@ category: Buttons
 .c-button {
   position: relative;
   outline: none;
-  display: inline-block;
-  width: 100%;
-  max-width: rem-calc(203);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: $color-primary;
   color: $color-white;
   text-decoration: none;
+  width: 100%;
+  max-width: rem-calc(203);
+  background-color: $color-primary;
   padding: rem-calc(13) rem-calc(24);
   transition: all .3s;
   // *アイコン
