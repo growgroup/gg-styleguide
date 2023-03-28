@@ -122,31 +122,26 @@ $slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
       font-weight: 700;
 
       a, span {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         color: inherit;
         font-weight: inherit;
         text-decoration: none;
         position: relative;
+
+        &::after {
+          content: "navigate_next";
+          font-family: "Material Icons Outlined";
+          line-height: 1;
+          letter-spacing: 0;
+        }
       }
 
       [data-accordion-title] {
-        &::after,
-        &::before {
-          content: "";
-          display: block;
-          width: rem-calc(1);
-          height: rem-calc(13);
-          background-color: currentColor;
-          position: absolute;
-          top: 50%;
-          right: rem-calc(26);
-          transform: translateY(-50%);
-        }
 
         &::after {
-          width: rem-calc(13);
-          height: rem-calc(1);
-          right: rem-calc(20);
+          content: "add";
         }
       }
     }
@@ -158,8 +153,9 @@ $slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
         //background: $color-white;
         //color: $color-primary;
         & > [data-accordion-title]{
-          &::before{
-            content: none;
+
+          &::after {
+            content: "remove";
           }
         }
       }
@@ -187,19 +183,10 @@ $slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
       &.is-open{
         //color: $color-primary;
         & > [data-accordion-title]{
-          &::before{
-            content: none;
-          }
-        }
-      }
 
-      >[data-accordion-title] {
-        &::before {
-          height: rem-calc(10);
-          right: rem-calc(24.5);
-        }
-        &::after {
-          width: rem-calc(10);
+          &::after {
+            content: "remove";
+          }
         }
       }
     }

@@ -21,62 +21,42 @@ mixin c_slidebar
             span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
             //孫ページ
             ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
           li.c-slidebar-menu__child.js-accordion
             span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
             //孫ページ
             ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
         //子ページ
         ul.c-slidebar-menu__children(data-accordion-content='menu-content')
-          li.c-slidebar-menu__child.js-accordion
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
       li.c-slidebar-menu__parent.js-accordion
         span.c-slidebar-menu__parent-link(data-accordion-title='menu-title') メニュー レベル1
         ul.c-slidebar-menu__children(data-accordion-content='menu-content')
           li.c-slidebar-menu__child.js-accordion
             span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
             ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
         ul.c-slidebar-menu__children(data-accordion-content='menu-content')
           li.c-slidebar-menu__child.js-accordion
             span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
             ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild
-                +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child
-            +a("#").c-slidebar-menu__child-link メニュー レベル2
-      li.c-slidebar-menu__parent
-        +a("#").c-slidebar-menu__parent-link メニュー レベル1
-      li.c-slidebar-menu__parent
-        +a("#").c-slidebar-menu__parent-link メニュー レベル1
-      li.c-slidebar-menu__parent
-        +a("#").c-slidebar-menu__parent-link メニュー レベル1
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
+      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
+      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
 
     .l-container
       .c-slidebar-menu__buttons
