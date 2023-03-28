@@ -7,11 +7,10 @@
   }
 
   &__inner {
+    //三点リーダーの色を変更したい場合はここにcolorを入れる
 
     @include breakpoint(small only) {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @include line-clamp(1);
     }
 
     span {
