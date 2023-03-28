@@ -66,9 +66,38 @@
     }
   }
 
+  growApp.prototype.showCookie = function () {
+    const cookie = $("#cookie");
+    const btn = $("#wt-cli-accept-all-btn");
+
+    if (!cookie.length || !btn.length) return;
+
+    const isCookiePermitted = sessionStorage.getItem('session-cookie-permission');
+
+    if (isCookiePermitted) {
+      cookie.addClass("is-hidden");
+      return;
+    }
+
+    btn.click(function (e) {
+      e.preventDefault();
+      sessionStorage.setItem('session-cookie-permission', true);
+      cookie.addClass("is-hidden");
+    });
+
+    window.onscroll = function (e) {
+      if (window.pageYOffset > 100) {
+        cookie.addClass("is-fixed");
+      } else {
+        cookie.removeClass("is-fixed");
+      }
+    }
+  }
+
   $(function () {
     var app = new growApp();
     app.myCode();
     app.enterAnimation();
+    app.showCookie();
   });
 })(jQuery);

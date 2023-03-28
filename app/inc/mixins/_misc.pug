@@ -231,6 +231,16 @@ mixin select-ages()
     <option value="98">98</option>
     <option value="99">99</option>
   |　歳
+
+mixin c_cookie
+  +c.block-cookie#cookie
+    .l-container
+      +e.inner
+        +e("p").text
+          | 本ウェブサイトでは、お客様の利便性の向上及びサービスの品質維持・向上を目的として、Cookieを使用しています。<br />
+          | 本ウェブサイトの閲覧を続行した場合は、Cookieの使用に同意したものとします。
+        +e.button: +a("#")#wt-cli-accept-all-btn 同意する
+
 mixin link(href)
   link(href=config.rootpath + href)&attributes(attributes)
 
