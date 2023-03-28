@@ -68,7 +68,7 @@ export default class CurrentNav {
       if (path === "/") {
         return false;
       }
-      if (this.currentPathname.match(path) || this.currentPathname === path) {
+      if (this.currentPathname.match(path + '/') || this.currentPathname === path + '/') {
         return true;
       }
     }
