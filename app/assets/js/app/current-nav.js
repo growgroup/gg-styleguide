@@ -3,7 +3,7 @@ import url from "url";
 var defaultOptions = {
   targetSelector: '.js-current-nav', // 実行するセレクタ
   activeClass: "is-current", // 付与するクラス
-  include_children: true
+  // include_children: true
 }
 
 export default class CurrentNav {
@@ -64,14 +64,6 @@ export default class CurrentNav {
       return true;
     }
 
-    if (this.options.include_children === true) {
-      if (path === "/") {
-        return false;
-      }
-      if (this.currentPathname.match(path + '/') || this.currentPathname === path + '/') {
-        return true;
-      }
-    }
     return false;
   }
 
