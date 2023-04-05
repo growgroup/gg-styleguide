@@ -24,7 +24,6 @@ category: Navigation
       }
 
       a {
-        display: block;
         @include breakpoint(small only) {
           font-size: rem-calc(12) !important;
           letter-spacing: 0 !important;
@@ -48,6 +47,11 @@ category: Navigation
     a {
       align-items: center;
       margin: auto;
+
+      @include breakpoint(small only) {
+        padding-left: rem-calc(8) !important;
+        padding-right: rem-calc(8) !important;
+      }
 
       &::after {
         display: none;
