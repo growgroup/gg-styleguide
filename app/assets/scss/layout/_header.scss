@@ -12,6 +12,10 @@ category: Layout
   z-index: 9990;
   position: relative;
 
+  @media print {
+    position: relative;
+  }
+
   &__inner {
     display: flex;
     align-items: center;

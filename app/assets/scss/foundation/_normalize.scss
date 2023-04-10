@@ -46,6 +46,11 @@ body {
   &.is-slidebar-active {
     overflow: hidden;
   }
+
+  @media print {
+    margin: 0;
+  }
+
   @include breakpoint(small only) {
     font-size:  $font-base-size*0.875;
   }
