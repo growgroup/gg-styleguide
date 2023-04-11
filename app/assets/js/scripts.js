@@ -67,29 +67,31 @@
   }
 
   growApp.prototype.showCookie = function () {
-    const cookie = $("#cookie");
+    const cookie = $(".js-cookie");
+    const cookieId = $("#cookie");
     const btn = $("#wt-cli-accept-all-btn");
 
-    if (!cookie.length || !btn.length) return;
+    if (cookie.length || btn.length) {
 
-    const isCookiePermitted = sessionStorage.getItem('session-cookie-permission');
+      const isCookiePermitted = sessionStorage.getItem('session-cookie-permission');
 
-    if (isCookiePermitted) {
-      cookie.addClass("is-hidden");
-      return;
+      if (isCookiePermitted) {
+        cookie.addClass("is-hidden");
+        return;
+      }
+
+      btn.click(function (e) {
+        e.preventDefault();
+        sessionStorage.setItem('session-cookie-permission', true);
+        cookie.addClass("is-hidden");
+      });
     }
-
-    btn.click(function (e) {
-      e.preventDefault();
-      sessionStorage.setItem('session-cookie-permission', true);
-      cookie.addClass("is-hidden");
-    });
 
     window.onscroll = function (e) {
       if (window.pageYOffset > 100) {
-        cookie.addClass("is-fixed");
+        cookieId.addClass("is-fixed");
       } else {
-        cookie.removeClass("is-fixed");
+        cookieId.removeClass("is-fixed");
       }
     }
   }
