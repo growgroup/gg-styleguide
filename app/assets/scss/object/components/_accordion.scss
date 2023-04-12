@@ -9,11 +9,19 @@ category: Components
   &__block {
     border: 1px solid $border-base-color;
     padding: 0 rem-calc(32);
-    margin-bottom: rem-calc(16);
+
     @include breakpoint(small only) {
       padding: 0 rem-calc(16);
-      margin-bottom: rem-calc(8);
     }
+
+    &:not(:last-child) {
+      margin-bottom: rem-calc(16);
+
+      @include breakpoint(small down) {
+        margin-bottom: rem-calc(12);
+      }
+    }
+
     // オープン時
     &.is-open {
       .c-accordion__head {
