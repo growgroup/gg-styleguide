@@ -32,8 +32,9 @@ export default class Tab {
     this.$tabs = $(this.options.selector);
     for (var i = 0; i < this.$tabs.length; i++) {
       var $tab = $(this.$tabs[i]);
-      var $navs = $tab.find('*[' + this.options.navTargetAttr + ']');
-      var $panes = $tab.find('*[' + this.options.paneNameAttr + ']');
+      var $navs = $tab.find(this.options.navsClass).eq(0).find('*[' + this.options.navTargetAttr + ']');
+      var $firstPane = $tab.find('*[' + this.options.paneNameAttr + ']:first-of-type');
+      var $panes = $firstPane.parent().children('*[' + this.options.paneNameAttr + ']');
       if (!$navs.eq(0).hasClass(this.options.activeClass)) {
         $navs.eq(0).addClass(this.options.activeClass);
       }
