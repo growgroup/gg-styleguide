@@ -141,6 +141,20 @@
       }
     }
   }
+  &__file {
+    width: 100%;
+
+    input {
+
+      &::file-selector-button{
+        background: #F9F9F9;
+        border: solid 1px $border-base-color;
+        border-radius: 4px;
+        padding: rem-calc(8) rem-calc(16);
+        margin-right: rem-calc(16);
+      }
+    }
+  }
   &__select {
     width: 100%;
     select {
