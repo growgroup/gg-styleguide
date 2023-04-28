@@ -103,8 +103,8 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
-            //画像とscripts.jsは、そのままコピーする
             new CopyPlugin({
+                //画像とscripts.jsは、そのままコピーする
                 patterns: [
                     {
                         from: path.resolve(__dirname, 'app/assets/images'),
@@ -117,6 +117,11 @@ module.exports = (env, argv) => {
                     {
                         from: path.resolve(__dirname, 'app/assets/fonts'),
                         to: path.resolve(__dirname, 'dist/assets/fonts'),
+                    },
+                    //robots.txtは、そのままコピーする
+                    {
+                        from: path.resolve(__dirname, 'app/robots.txt'),
+                        to: path.resolve(__dirname, 'dist/'),
                     },
                     //その他設定追加したい場合は以下を参考に
                     // {
