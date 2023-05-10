@@ -1,4 +1,4 @@
-# GG StyleGuide [![Build Status](https://travis-ci.org/growgroup/grow-template.svg?branch=master)](https://travis-ci.org/growgroup/grow-template)
+# GG StyleGuide
 
 GrowGroupデザインシステムに基づいて作成したスタイルガイドです。
 
