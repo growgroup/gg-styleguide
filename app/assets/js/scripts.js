@@ -19,6 +19,23 @@
     $('.js-modal-content').modaal();
   }
 
+  growApp.prototype.urlCopy = function () {
+
+    $('.c-block-modal__copy button').on('click', function(){
+
+      // 対象のinputタグ
+      let $target = $('.c-block-modal__copy input');
+      // コピーする文章の取得
+      let $text = $target.val();
+      // inputエリアを選択
+      $target.select();
+      // コピー
+      document.execCommand('copy');
+      // アラート文の表示
+      alert('「' + $text + '」をコピーしました。');
+    });
+  }
+
   growApp.prototype.enterAnimation = function () {
     let $loader = $('.c-loader');
     if (!$loader.length === 0) {
@@ -99,6 +116,7 @@
   $(function () {
     var app = new growApp();
     app.myCode();
+    app.urlCopy();
     app.enterAnimation();
     app.showCookie();
   });
