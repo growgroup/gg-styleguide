@@ -499,7 +499,7 @@
   font-size: rem-calc($size);
   line-height: math.div($height, $size) * 1;
   @if ($letter){//line-heightはnullにするとCSS出力をスキップします
-    letter-spacing: $letter + em;
+    --letter-spacing: #{$letter + em};
   }
   @if ($weight){//font-weightはnullもしくは記載しないとCSS出力をスキップします
     font-weight: $weight;
