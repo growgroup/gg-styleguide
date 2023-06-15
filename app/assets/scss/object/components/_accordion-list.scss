@@ -6,7 +6,6 @@ category: Components
 */
 
 .c-accordion-list {
-  backdrop-filter: blur(10px);
   &__block {
     margin-bottom: rem-calc(20);
     @include breakpoint(small only) {
