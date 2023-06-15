@@ -188,7 +188,6 @@
 // フォームの有効化時のスタイル
 @mixin input-active(){
   outline: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -213,8 +212,6 @@
 
 // box sizing
 @mixin box-sizing($type) {
-  -webkit-box-sizing:$type;
-  -moz-box-sizing:$type;
   box-sizing:$type;
 }
 
@@ -223,8 +220,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 

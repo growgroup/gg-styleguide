@@ -89,6 +89,12 @@
     "node_modules"
   ],
   "main": "postcss.config.js",
+  "browserslist": [
+    "last 3 versions",
+    "not dead",
+    "iOS >= 14",
+    "Safari >= 14"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/growgroup/gg-styleguide.git"

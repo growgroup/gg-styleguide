@@ -57,8 +57,6 @@
   margin-right: -(map.get($grid-column-responsive-gutter, medium) * 0.5);
   // @include susy-clearfix();
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   @include breakpoint(small only) {
     margin-left: -(map.get($grid-column-responsive-gutter, small) * 0.5);
