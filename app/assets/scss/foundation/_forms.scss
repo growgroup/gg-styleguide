@@ -105,10 +105,7 @@ select {
   color: rgba($font-base-color,1);
   border: 1px solid $border-base-color;
   border-radius: 0!important;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   @include breakpoint(small only) {
     width: 100%;
@@ -116,26 +113,6 @@ select {
 }
 
 /*  プレイスホルダーの色変更 */
-:placeholder-shown {
+::placeholder{
   color: rgba($font-base-color,0.3);
-}
-
-/* Google Chrome, Safari, Opera 15+, Android, iOS */
-::-webkit-input-placeholder {
-  color: rgba($font-base-color,0.3);
-}
-
-/* Firefox 18- */
-:-moz-placeholder {
-  color: rgba($font-base-color,0.3);
-}
-
-/* Firefox 19+ */
-::-moz-placeholder {
-  color: rgba($font-base-color,0.3);
-}
-
-/* IE 10+ */
-:-ms-input-placeholder {
-  color: #9FA0A0;
 }
