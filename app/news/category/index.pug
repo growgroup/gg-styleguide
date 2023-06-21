@@ -9,23 +9,21 @@ block append config
 
 block page_header
   +l_page_header({
-      image: "img-page-header-format.jpg",
-      title: "カテゴリ",
-      subtitle: "news"
-    })
+    image: "img-page-header-format.jpg",
+    title: "カテゴリ",
+    subtitle: "news"
+  })
   +c_breadcrumb("お知らせ","news")
 
 block body
   main.l-main
     section.l-section.is-lg
-      .l-container
-        .row
-          .large-10.is-push-lg-1.small-12
-            +c.news.is-onecolumn
-              h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
-              +e.content
-                +loop(10)
-                  +c_news__block("is-news")
-            +c_pagination()
+      .l-container.is-sm
+        +c.news.is-onecolumn
+          h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
+          +e.content
+            +loop(10)
+              +c_news__block("is-news")
+        +c_pagination()
   +l_offer
 
