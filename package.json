@@ -71,6 +71,7 @@
     "@fontsource/material-icons-two-tone": "^4.5.4",
     "@fontsource/noto-sans-jp": "^4.5.12",
     "@fontsource/roboto": "^4.5.8",
+    "@splidejs/splide": "^4.1.4",
     "animejs": "^3.2.1",
     "copy-webpack-plugin": "^11.0.0",
     "gsap": "^3.9.1",

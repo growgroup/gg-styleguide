@@ -25,6 +25,7 @@ import myScript from './scripts.js';
 // import OwlCarousel from "./app/owl-carousel.js";
 // import SlickSlider from "./app/slick-slider";
 import SwiperSlider from "./app/swiper.js";
+import SplideSlider from './app/splide.js';
 import modaal from 'modaal';
 import CustomFunctions from "./app/custom";
 import modal from './app/modal.js';
@@ -56,6 +57,7 @@ class App {
     // 上記のオプション以外で必要な要素は追加する。
     // new OwlCarousel({...this.defaultOptions});
     // new SlickSlider({...this.defaultOptions});
+    // new SplideSlider({...this.defaultOptions});
     new SwiperSlider({...this.defaultOptions});
     new CustomFunctions({...this.defaultOptions});
   }
