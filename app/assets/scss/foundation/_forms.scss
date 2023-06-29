@@ -107,6 +107,12 @@ select {
   border-radius: 0!important;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center;
+  background-size: 9px 5px;
+
   @include breakpoint(small only) {
     width: 100%;
   }

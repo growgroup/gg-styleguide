@@ -124,7 +124,7 @@
     width: 100%;
     input {
       border-radius: 4px;
-      background: #F9F9F9;
+      background-color: #F9F9F9;
       padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
       @include breakpoint(small only) {
         padding: rem-calc(12) rem-calc(16);
@@ -147,7 +147,7 @@
     input {
 
       &::file-selector-button{
-        background: #F9F9F9;
+        background-color: #F9F9F9;
         border: solid 1px $border-base-color;
         border-radius: 4px;
         padding: rem-calc(8) rem-calc(16);
@@ -160,7 +160,7 @@
     select {
       outline: none;
       border-radius: 4px !important;
-      background: #F9F9F9;
+      background-color: #F9F9F9;
 
       &:focus{
         border-color: $color-primary;
@@ -174,7 +174,7 @@
   &__textarea {
     textarea {
       border-radius: 4px;
-      background: #F9F9F9;
+      background-color: #F9F9F9;
       padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
       @include breakpoint(small only) {
         padding: rem-calc(12) rem-calc(16);
