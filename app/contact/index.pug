@@ -31,216 +31,215 @@ block body
                 +e.item-text 送信完了
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         +c.forms
-          .row
-            .large-10.is-push-lg-1.small-12
-              +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。
-              +e.blocks
-                +e.block.is-vertical
-                  +e.title
-                    | 貴社名
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
-                +e.block
-                  +e.title
-                    | 貴社名
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
-                +e.block
-                  +e.title 部署・役職
-                  +e.content
-                    +e.input: input(type="text",name="部署・役職",placeholder="（例）営業部")
+          +e.inner
+            +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。
+            +e.blocks
+              +e.block.is-vertical
+                +e.title
+                  | 貴社名
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
+              +e.block
+                +e.title
+                  | 貴社名
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="貴社名",placeholder="（例）株式会社サンプル")
+              +e.block
+                +e.title 部署・役職
+                +e.content
+                  +e.input: input(type="text",name="部署・役職",placeholder="（例）営業部")
 
-                +e.block
-                  +e.title
-                    | お名前
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="お名前",placeholder="山田　太郎")
-                +e.block
-                  +e.title
-                    | お名前フリガナ
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="お名前フリガナ",placeholder="ヤマダ　タロウ")
-                +e.block
-                  +e.title
-                    | メールアドレス
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="メールアドレス",placeholder="（例）info@mail.jp")
-                +e.block
-                  +e.title
-                    | TEL
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="TEL",placeholder="（例）000-0000-0000")
-                +e.block
-                  +e.title
-                    | 履歴書（PDF）
-                  +e.content
-                    +e.file: input(type="file",name="履歴書（PDF）")
-                +e.block
-                  +e.title
-                    | 職務経歴書（PDF）
-                  +e.content
-                    +e.file: input(type="file",name="職務経歴書（PDF）")
-                +e.block
-                  +e.title.is-vertical-top 興味あるサービス
-                  +e.content
-                    +e.checkbox.is-vertical
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢1")
-                          span テキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢2")
-                          span テキストテキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢3")
-                          span テキストテキストテキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢4")
-                          span テキスト
-                +e.block
-                  +e.title.is-vertical-top 興味あるサービス
-                  +e.content
-                    +e.checkbox.is-design
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢1")
-                          span テキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢2")
-                          span テキストテキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢3")
-                          span テキストテキストテキスト
-                      span
-                        label
-                          input(type="checkbox",name="興味あるサービス",value="選択肢4")
-                          span テキスト
-                +e.block
-                  +e.title
-                    | お問い合わせ種別
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.select
-                      select(name="お問い合わせ種別")
-                        option(disabled,selected) 選択してください
-                        option(value="選択肢A") 選択肢A
-                        option(value="選択肢B") 選択肢B
-                        option(value="選択肢C") 選択肢C
-                +e.block
-                  +e.title.is-vertical-top
-                    | お問い合わせ種別
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.radio.is-vertical
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢1")
-                          span 選択肢1
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢2")
-                          span 選択肢2
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢3")
-                          span 選択肢3
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢4")
-                          span 選択肢4
-                +e.block
-                  +e.title
-                    | お問い合わせ種別
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.radio.is-design.is-border
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢1")
-                          span 選択肢1
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢2")
-                          span 選択肢2
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢3")
-                          span 選択肢3
-                      span
-                        label
-                          input(type="radio",name="お問い合わせ種別",value="選択肢4")
-                          span 選択肢4
-                +e.block
-                  +e.title.is-vertical-top お問い合わせ内容
-                  +e.content
-                    +e.textarea
-                      textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
-                +e.block
-                  +e.title.is-vertical-top ご連絡方法
-                  +e.content
-                    +e.checkbox
-                      span
-                        label
-                          input(type="checkbox",name="ご連絡方法",value="電話")
-                          span 電話
-                      span
-                        label
-                          input(type="checkbox",name="ご連絡方法",value="メール")
-                          span メール
-                      span
-                        label
-                          input(type="checkbox",name="ご連絡方法",value="いずれでも可")
-                          span いずれでも可
-                +e.block
-                  +e.title.is-vertical-top.is-just
-                    | 住所
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.flexbox
-                      span 郵便番号
-                      +e.flex-al
-                        +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                        button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');",type="button").c-forms__button#zipauto 住所を自動入力
-                    +e.flexbox
-                      span ご住所
-                      +e.input: input(type="text",name="ご住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
-                +e.block
-                  +e.title
-                    | 郵便番号
-                    span.c-forms__label 必須
-                  +e.content
+              +e.block
+                +e.title
+                  | お名前
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="お名前",placeholder="山田　太郎")
+              +e.block
+                +e.title
+                  | お名前フリガナ
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="お名前フリガナ",placeholder="ヤマダ　タロウ")
+              +e.block
+                +e.title
+                  | メールアドレス
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="メールアドレス",placeholder="（例）info@mail.jp")
+              +e.block
+                +e.title
+                  | TEL
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="TEL",placeholder="（例）000-0000-0000")
+              +e.block
+                +e.title
+                  | 履歴書（PDF）
+                +e.content
+                  +e.file: input(type="file",name="履歴書（PDF）")
+              +e.block
+                +e.title
+                  | 職務経歴書（PDF）
+                +e.content
+                  +e.file: input(type="file",name="職務経歴書（PDF）")
+              +e.block
+                +e.title.is-vertical-top 興味あるサービス
+                +e.content
+                  +e.checkbox.is-vertical
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢1")
+                        span テキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢2")
+                        span テキストテキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢3")
+                        span テキストテキストテキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢4")
+                        span テキスト
+              +e.block
+                +e.title.is-vertical-top 興味あるサービス
+                +e.content
+                  +e.checkbox.is-design
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢1")
+                        span テキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢2")
+                        span テキストテキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢3")
+                        span テキストテキストテキスト
+                    span
+                      label
+                        input(type="checkbox",name="興味あるサービス",value="選択肢4")
+                        span テキスト
+              +e.block
+                +e.title
+                  | お問い合わせ種別
+                  span.c-forms__label 必須
+                +e.content
+                  +e.select
+                    select(name="お問い合わせ種別")
+                      option(disabled,selected) 選択してください
+                      option(value="選択肢A") 選択肢A
+                      option(value="選択肢B") 選択肢B
+                      option(value="選択肢C") 選択肢C
+              +e.block
+                +e.title.is-vertical-top
+                  | お問い合わせ種別
+                  span.c-forms__label 必須
+                +e.content
+                  +e.radio.is-vertical
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢2")
+                        span 選択肢2
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢3")
+                        span 選択肢3
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢4")
+                        span 選択肢4
+              +e.block
+                +e.title
+                  | お問い合わせ種別
+                  span.c-forms__label 必須
+                +e.content
+                  +e.radio.is-design.is-border
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢2")
+                        span 選択肢2
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢3")
+                        span 選択肢3
+                    span
+                      label
+                        input(type="radio",name="お問い合わせ種別",value="選択肢4")
+                        span 選択肢4
+              +e.block
+                +e.title.is-vertical-top お問い合わせ内容
+                +e.content
+                  +e.textarea
+                    textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
+              +e.block
+                +e.title.is-vertical-top ご連絡方法
+                +e.content
+                  +e.checkbox
+                    span
+                      label
+                        input(type="checkbox",name="ご連絡方法",value="電話")
+                        span 電話
+                    span
+                      label
+                        input(type="checkbox",name="ご連絡方法",value="メール")
+                        span メール
+                    span
+                      label
+                        input(type="checkbox",name="ご連絡方法",value="いずれでも可")
+                        span いずれでも可
+              +e.block
+                +e.title.is-vertical-top.is-just
+                  | 住所
+                  span.c-forms__label 必須
+                +e.content
+                  +e.flexbox
+                    span 郵便番号
                     +e.flex-al
                       +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
-                      button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');",type="button").c-forms__button#zipauto 住所を自動入力
-                +e.block
-                  +e.title
-                    | 住所
-                    span.c-forms__label 必須
-                  +e.content
-                    +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
-                +e.block
-                  +e.title.is-vertical-top お問い合わせ内容
-                  +e.content
-                    +e.textarea
-                      textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
+                      button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');",type="button").c-forms__button#zipauto 住所を自動入力
+                  +e.flexbox
+                    span ご住所
+                    +e.input: input(type="text",name="ご住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+              +e.block
+                +e.title
+                  | 郵便番号
+                  span.c-forms__label 必須
+                +e.content
+                  +e.flex-al
+                    +e.input.is-sm: input(type="text",name="郵便番号",placeholder="（例）464-0850")
+                    button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');",type="button").c-forms__button#zipauto 住所を自動入力
+              +e.block
+                +e.title
+                  | 住所
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text",name="住所",placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+              +e.block
+                +e.title.is-vertical-top お問い合わせ内容
+                +e.content
+                  +e.textarea
+                    textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
 
-              +e.privacy
-                label
-                  input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました")
-                  +a("/privacy-policy/")(target="_blank") 個人情報保護方針
-                  | の内容に同意する
-              +e.submit
-                button.c-button.is-xlg 確認画面へ
-                //button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
-                //button.c-button.c-forms__submit__submit.is-lg 送信する
+            +e.privacy
+              label
+                input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました")
+                +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+                | の内容に同意する
+            +e.submit
+              button.c-button.is-xlg 確認画面へ
+              //button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
+              //button.c-button.c-forms__submit__submit.is-lg 送信する

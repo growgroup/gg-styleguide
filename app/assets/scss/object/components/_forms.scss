@@ -11,6 +11,17 @@
     padding: rem-calc(36) rem-calc(16);
   }
 
+  &__inner {
+    width: 100%;
+    max-width: rem-calc(1024);
+    margin: auto;
+    padding: 0 rem-calc(40);
+
+    @include breakpoint(small only) {
+      padding: 0;
+    }
+  }
+
   &__text{
     text-align: center;
     margin-bottom: rem-calc(48);
