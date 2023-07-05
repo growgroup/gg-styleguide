@@ -490,20 +490,28 @@
   align-items: $align-items;
 }
 
-@mixin font-format($size : $font-base-size,$letter:null,$height: 24,$weight:null){
+@mixin font-format($size : $font-base-size,$letter:null,$height: 24,$weight:null) {
+  //letter と weight が "" で送られてきてもnull扱いにする
+  @if ($letter == "") {
+    $letter: null;
+  }
+  @if ($weight == "") {
+    $weight: null;
+  }
+
   font-size: rem-calc($size);
-  line-height: math.div($height, $size) * 1;
-  @if ($letter){//line-heightはnullにするとCSS出力をスキップします
+  line-height: calc($height / $size);
+  @if ($letter) { //nullにするとCSS出力をスキップします
     --letter-spacing: #{$letter + em};
   }
-  @if ($weight){//font-weightはnullもしくは記載しないとCSS出力をスキップします
+  @if ($weight) { //nullもしくは記載しないとCSS出力をスキップします
     font-weight: $weight;
   }
 }
 
-@mixin font-format-light($size : $font-base-size,$height: 24){
+@mixin font-format-light($size : $font-base-size,$height: 24) {
   font-size: rem-calc($size);
-  line-height: math.div($height, $size) * 1;
+  line-height: calc($height / $size);
 }
 
 @mixin flex-wrapper() {
