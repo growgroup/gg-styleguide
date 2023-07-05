@@ -2,9 +2,9 @@ extends /inc/foundation/_base.pug
 block append config
   - current.id = "format" // ページのID
   - current.title = "量産ページ" // タイトル
-  - current.description = "これは量産ページについての説明文です" // 説明文
-  - current.bodyClass = "format" // body に付与するクラス
-  - current.path = "/format/" // ページのpath
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
   - current.depth = 2 // ページの階層
 
 block page_header

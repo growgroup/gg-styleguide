@@ -2,9 +2,9 @@ extends /inc/foundation/_base-twocolumn.pug
 block append config
   - current.id = "post-twocolumns" // ページのID
   - current.title = "ポスト_2カラム" // タイトル
-  - current.description = "これはポスト_2カラムの説明文です" // 説明文
-  - current.bodyClass = "post-twocolumns" // body に付与するクラス
-  - current.path = "/post-twocolumns/" // ページのpath
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = "/archive-twocolumns/page/" // ページのpath
   - current.depth = 3 // ページの階層
 
 block page_header
