@@ -2,9 +2,9 @@ extends /inc/foundation/_base.pug
 block append config
   - current.id = "contact" // ページのID
   - current.title = "お問い合わせフォーム" // タイトル
-  - current.description = "これはお問い合わせフォームの説明文です" // 説明文
-  - current.bodyClass = "contact" // body に付与するクラス
-  - current.path = "/contact/" // ページのpath
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
   - current.depth = 2 // ページの階層
 
 block page_header
