@@ -29,7 +29,7 @@ category: Navigation
   ul li > span,
   ul li > a {
     @include webfont();
-    @include font-format(16,null,13,bold);
+    @include font-format(16, "", 13, bold);
     display: flex;
     justify-content: center;
     align-items: center;
