@@ -1,9 +1,19 @@
 module.exports = (ctx) => ({
   plugins: {
-    "autoprefixer":{},
-    "prepend-selector-postcss":ctx.file.basename === 'admin-style.css' ? {
-      selector: '#growp-editor-wrapper ',
-      appendTo:['html','body'],
+    "autoprefixer": {},
+    "postcss-prefix-selector": ctx.file.basename === 'admin-style.css' ? {
+      prefix: '#growp-editor-wrapper ',
+      exclude: [':root'],
+      transform: function (prefix, selector, prefixedSelector) {
+        if (selector.includes('body')) {
+          return prefix;
+        } else if (selector.includes('html')) {
+          return prefix;
+        } else {
+          return prefixedSelector;
+        }
+      }
     } : false,
+
   },
 })
