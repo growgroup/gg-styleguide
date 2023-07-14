@@ -181,5 +181,26 @@ export default class SwiperSlider {
         },
       });
     });
+
+    this.targetAll.imagesLoaded(function () {
+
+      if ($('.c-block-document__slider.swiper').length <= 0) {
+        return;
+      }
+
+      let delayTime = 3500;
+
+      const downloadSwiper = new Swiper(".c-block-document__slider.swiper", {
+        loop: true,
+        speed: 500,
+        autoplay: {
+          delay: delayTime,
+        },
+        navigation: {
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        },
+      });
+    });
   }
 }

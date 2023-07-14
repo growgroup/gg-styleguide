@@ -101,6 +101,7 @@ select {
   padding: 8px 12px;
   font-size: 16px;
   line-height: 1.42857143;
+  outline: none;
   background-color: $color-white;
   color: rgba($font-base-color,1);
   border: 1px solid $border-base-color;
@@ -115,6 +116,11 @@ select {
 
   @include breakpoint(small only) {
     width: 100%;
+  }
+
+  &:focus,
+  &:active {
+    @include input-active();
   }
 }
 

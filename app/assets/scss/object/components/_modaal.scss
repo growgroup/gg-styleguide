@@ -28,3 +28,29 @@
 .modaal-video-wrap {
   margin: auto;
 }
+
+.js-modal-image {
+  position: relative;
+  cursor: pointer;
+  @include transition();
+
+  &:after {
+    content: "search";
+    font-family: "Material Icons Outlined";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem-calc(20);
+    height: rem-calc(20);
+    background: $color-primary;
+    color: $color-white;
+    @include font-format(14,0,14,400);
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
