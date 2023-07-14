@@ -17,6 +17,7 @@ category: Buttons
   max-width: rem-calc(203);
   background-color: $color-primary;
   padding: rem-calc(13) rem-calc(24);
+  border: 1px solid $color-primary;
   transition: all .3s;
   // *アイコン
   &::after {

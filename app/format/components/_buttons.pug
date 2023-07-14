@@ -16,11 +16,19 @@ div.u-mbs.is-bottom
 div.u-mbs.is-bottom
   +a("#").c-button.is-xs ボタンテキスト
 
-+c.anchor-nav.u-mbs.is-bottom
-  +e.buttons
-    +loop(5)
-      +e.button
-        +a("#").c-button.is-nav.js-anchor テキスト
++c_anchor-nav("u-mbs is-bottom",{
+  link: "#section01",
+  title: "テキストテキスト",
+},{
+  link: "#section02",
+  title: "テキストテキスト",
+},{
+  link: "#section03",
+  title: "テキストテキスト",
+},{
+  link: "#section04",
+  title: "テキストテキスト",
+})
 
 
 //modaal系
