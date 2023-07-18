@@ -25,7 +25,11 @@
         cssrules.addComponent(before_component_name)
       }
 
-      return "c-" + temp_component + "__" + temp_element;
+      if (cssrules.layer === "undefined") {
+        cssrules.layer = "c"
+      }
+
+      return `${cssrules.layer}-` + temp_component + "__" + temp_element;
     }
   }
 
@@ -49,6 +53,7 @@ mixin c(el)
       delete classlist[target_component_class_key]
       attributes.class =  classlist.join(" ")
       cssrules.addComponent(temp_class)
+      cssrules.layer = "c"
       locals.locals.addComponentFile(temp_class)
     }
   #{el}(class!="c-" + temp_class )&attributes(attributes)
@@ -96,13 +101,44 @@ mixin e(el,component_name,history)
     if ( ! temp_component ){
       temp_component = cssrules.currentComponent
     }
-  #{el}(class!="c-" + temp_component + "__" + temp_element)&attributes(attributes)
+
+    if (cssrules.layer === "undefined") {
+      cssrules.layer = "c"
+    }
+
+  #{el}(class!=`${cssrules.layer}-` + temp_component + "__" + temp_element)&attributes(attributes)
     block
   -
     if ( typeof before_component_name !== "undefined" && before_component_name ){
       cssrules.addComponent(before_component_name)
     }
 
+
+//- レイアウト
+mixin l(el)
+  -
+    var temp_class = ""
+    var target_component_class_key = 0
+    if (typeof el === "undefined") {
+      var el = "div"
+    }
+    if ( typeof attributes.class !== "undefined" ){
+
+      var classlist = attributes.class.split(" ")
+      if ( isUpperCase(classlist[0]) ){
+        var el = classlist[0].toLowerCase()
+        delete classlist[0]
+        target_component_class_key = 1
+      }
+      temp_class = classlist[target_component_class_key]
+      delete classlist[target_component_class_key]
+      attributes.class =  classlist.join(" ")
+      cssrules.addComponent(temp_class)
+      cssrules.layer = "l"
+      locals.locals.addComponentFile(temp_class)
+    }
+  #{el}(class!="l-" + temp_class )&attributes(attributes)
+    block
 
 //- 汎用タグ
 mixin p
@@ -127,6 +163,12 @@ mixin button
   -
     className = utils.inheritClassName(attributes)
   button(class=className)&attributes(attributes)
+    block
+
+mixin nav
+  -
+    className = utils.inheritClassName(attributes)
+  nav(class=className)&attributes(attributes)
     block
 
 mixin ul
