@@ -41,15 +41,19 @@ mixin tr(th, td)
     th!= th
     td!= td
 
-mixin c_relation()
+mixin c_relation(title,...data)
   +c.relation
     .l-container
-      +e.title.c-heading.is-sm.is-center 関連するコンテンツ
+      +e.title.c-heading.is-sm.is-center !{title}
       +e.buttons
-        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
-        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
-        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
-        +e.button: +a("#").c-button.is-xlg.is-primary.js-current-nav テキストテキスト
+        each itemData in data
+          +e.button: +a(itemData.link).c-button.is-xlg.is-primary.js-current-nav !{itemData.title}
+
+mixin c_anchor-nav(style,...data)
+  +c.anchor-nav(class=style)
+    +e.buttons
+      each itemData in data
+        +e.button: +a(itemData.link).c-button.is-nav.js-anchor !{itemData.title}
 
 mixin c_news__block(data)
   if data == "home"

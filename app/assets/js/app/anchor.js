@@ -23,7 +23,7 @@ var defaultOptions = {
   dataSelector: 'anchor-target',
   scrollSpeed: 300,
   easing: 'linear',
-  headerElement:'' // ヘッダーの高さ分ずらしたいとき '.l-header' のように
+  headerElement:'.l-header' // ヘッダーの高さ分ずらしたいとき '.l-header' のように
 };
 export default class Anchor {
   constructor(options) {

@@ -29,4 +29,16 @@ block body
     // タブ
     include /format/components/_other.pug
   section.l-section.is-sm
-    +c_relation()
+    +c_relation("関連するコンテンツ",{
+      link: "/format/",
+      title: "テキストテキスト",
+    },{
+      link: "#",
+      title: "テキストテキスト",
+    },{
+      link: "#",
+      title: "テキストテキスト",
+    },{
+      link: "#",
+      title: "テキストテキスト",
+    })

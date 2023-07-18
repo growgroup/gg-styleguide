@@ -1,0 +1,53 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "download" // ページのID
+  - current.title = "資料ダウンロード" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  //+l_page_header({
+  //  image: "img-page-header-format.jpg",
+  //  title: "量産ページ",
+  //  subtitle: "parent"
+  //})
+  //+c_breadcrumb()
+
+block body
+  main.l-main
+    section.l-section.is-lg.is-bg-color
+      .l-container
+        +c_anchor-nav("u-mbs is-bottom",{
+          link: "#block01",
+          title: "タイトル1",
+        },{
+          link: "#block02",
+          title: "タイトル2",
+        })
+        +c.card-download.u-mbs.is-top#block01
+          +e.head.c-heading.is-sm.is-mg-level-4: b.is-main タイトル1
+          +e.blocks
+            +loop(3)
+              +ae("/download/page/").block
+                +e.image
+                  +bgimg("img-card-01.jpg").bg-img
+                  +e.label.c-label テキスト
+                +e.content
+                  +e.title.c-heading.is-xxs テキストテキスト
+                  +e.button: .c-button テキストテキスト
+        +c.card-download.is-three-col.u-mbs.is-lg.is-top#block02
+          +e.head.c-heading.is-sm.is-mg-level-4: b.is-main タイトル2
+          +e.blocks
+            +loop(6)
+              +ae("/download/page/").block
+                +e.image
+                  .is-no NO IMAGE
+                  +e.label.c-label テキスト
+                +e.content
+                  +e.title.c-heading.is-xxxs テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  +e.button: .c-button テキストテキスト
+
+  +l_offer
+

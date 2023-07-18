@@ -59,6 +59,14 @@
 
     .c-button {
       max-width: 100%;
+
+
+      &.is-current {
+        pointer-events: none;
+        background: $color-white;
+        color: $color-primary;
+        border-color: $color-primary;
+      }
     }
   }
 }

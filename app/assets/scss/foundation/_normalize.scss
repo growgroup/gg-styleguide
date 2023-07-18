@@ -36,7 +36,7 @@ html {
 
 body {
   color: $font-base-color;
-  margin: 0;
+  margin: rem-calc(80) 0 0;
   line-height: $font-base-line-height;
   //letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
@@ -51,9 +51,17 @@ body {
     margin: 0;
   }
 
+  @include breakpoint(medium down) {
+    margin-top: rem-calc(55);
+  }
+
   @include breakpoint(small only) {
     font-size:  $font-base-size*0.875;
   }
+
+  //&.home {
+  //  margin-top: 0;
+  //}
 
   &.en {
     font-family: 'Roboto', sans-serif;
