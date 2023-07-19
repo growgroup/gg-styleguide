@@ -65,24 +65,6 @@ category: Components
     @include breakpoint(small only) {
       padding-top: rem-calc(0);
     }
-
-    button {
-      background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-      display: block;
-      width: 100%;
-      text-align: left;
-
-      &:focus {
-        background: $color-primary;
-        color: $color-white;
-      }
-    }
   }
   &__icon {
     color: $color-white;
