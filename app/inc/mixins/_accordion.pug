@@ -1,10 +1,14 @@
 //- アコーディオン
 //- Use Case
-//- +accordion("danger","これがタイトルです。","これがコンテンツです")
-mixin accordion(type,title,text)
-  .c-accordion.js-accordion(class!="is-" + type)&attributes(attributes)
-    if block
-      block
-    else
-      .c-accordion__title(data-accordion-title="true")= title
-      .c-accordion__content(data-accordion-content="true")= text
+//- +accordion({id: String, className: String | null, title: String, text: String})
+mixin accordion(props)
+  .c-accordion.js-accordion(class=props.className ? props.className : "")&attributes(attributes)
+    h2.c-accordion__title(data-accordion-title="true")
+      button(aria-controls=props.id aria-expanded="false")=props.title
+    .c-accordion__content(data-accordion-content="true" id=props.id)=props.text
+
+// - テンプレート
+//  .c-accordion.js-accordion
+//   h2.c-accordion__title(data-accordion-title="true")
+//     button(aria-controls="accordion-panel-1" aria-expanded="false") title
+//   .c-accordion__content(data-accordion-content="true")#accordion-panel-1 text
