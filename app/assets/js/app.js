@@ -32,6 +32,7 @@ import GsapAnimation from "./app/gsap";
 import anime from 'animejs';
 import modaalCss from 'modaal/dist/css/modaal.css';
 import ScrollTable from "./app/scroll-table";
+import Parallax from "./app/parallax";
 
 class App {
   constructor() {
@@ -49,6 +50,7 @@ class App {
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();
     this.ScrollTable = new ScrollTable();
+    this.parallax = new Parallax();
     this.defaultOptions = {
       gsap: this.gsap,
       utils: this.Utils
