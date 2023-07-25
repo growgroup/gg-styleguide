@@ -78,4 +78,35 @@ category: Navigation
     }
   }
 
+  &__steps {
+    &-item {
+      display: flex;
+      border-bottom: 1px solid $border-base-color;
+      padding: rem-calc(16) 0;
+      &:first-child {
+        //padding-top: rem-calc(0);
+      }
+    }
+    &-image {
+      max-width: rem-calc(68);
+      width: 100%;
+      height: rem-calc(68);
+      position: relative;
+      margin-right: rem-calc(16);
+      .bg-img {
+        @include bg-img;
+      }
+    }
+
+    &-content {}
+    &-text {
+      @include font-format(14, .05, 24);
+    }
+    &-date {
+      margin-top: rem-calc(24);
+      text-align: right;
+      @include font-format(12, .05, 12);
+    }
+  }
+
 }

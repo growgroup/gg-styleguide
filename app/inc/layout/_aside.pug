@@ -24,9 +24,25 @@ mixin l-aside(data)
             +e.item-unit: +ae("").item-link リンクテキスト
 
     +e.block
+      +e.head ボタン等
       +e.button: +a("").c-button ボタン
 
     +e.block
+      +e.head バナー等
       +e.banners
-        +e.banners-image: +img("img-default-thumbnail.jpg")
+        +e.banners-image: +img("img-default-thumbnail.png")
+
+    +e.block
+      +e.head ランキング等
+      +e.steps
+        +e.steps-item
+          +e.steps-image: +bgimg("img-default-thumbnail.png").bg-img
+          +e.steps-content
+            +e.steps-text テキストテキストテキストテキストテキストテキスト
+            +e.steps-date 2020/01/01
+        +e.steps-item
+          +e.steps-image: +bgimg("img-default-thumbnail.png").bg-img
+          +e.steps-content
+            +e.steps-text テキストテキストテキストテキストテキストテキスト
+            +e.steps-date 2020/01/01
 
