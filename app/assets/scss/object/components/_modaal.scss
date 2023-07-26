@@ -1,4 +1,14 @@
 .modaal{
+  &-wrapper.is-full-view {
+    overflow: hidden;
+    & .modaal-container {
+      max-width: calc(100vw - 40px);
+    }
+    & .modaal-content-container {
+      overflow: scroll;
+      max-height: calc(100vh - 100px);
+    }
+  }
   &-wrapper{
     z-index: 999999 !important;
   }

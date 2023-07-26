@@ -74,7 +74,6 @@ export default class CustomFunctions {
 
   // 複製して作業
   mycode() {
-
   }
 
 

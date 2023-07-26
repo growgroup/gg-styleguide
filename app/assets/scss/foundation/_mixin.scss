@@ -500,7 +500,7 @@
   }
 
   font-size: rem-calc($size);
-  line-height: calc($height / $size);
+  line-height: calc( #{$height} / #{$size} );
   @if ($letter) { //nullにするとCSS出力をスキップします
     --letter-spacing: #{$letter + em};
   }
@@ -511,7 +511,7 @@
 
 @mixin font-format-light($size : $font-base-size,$height: 24) {
   font-size: rem-calc($size);
-  line-height: calc($height / $size);
+  line-height: calc( #{$height} / #{$size} );
 }
 
 @mixin flex-wrapper() {

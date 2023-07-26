@@ -3,13 +3,13 @@
 // <div data-modaal-content-source="assets/image/image.jpg" class="js-modal-image">Show</div>
 // 動画の場合 → js-video
 // iframeの場合 → js-iframe
-
+// 見やすくしたい場合 -> .js-clone(data-modaal-content-source="inline")
 
 
 let defaultOptions = {
-  selector: ".js-modal-image",
+  selector: ".js-modal-image,.js-modal",
+  mobile: true // モバイル時にどう動作するか
 }
-
 export default class modal {
 
   constructor(options) {
@@ -21,7 +21,9 @@ export default class modal {
    */
   init() {
     this.targetEle = $(this.options.selector);
-    this.run();
+    if ( (screen.width > 768)  || this.options.mobile === true) {
+      this.run();
+    }
   }
 
   /**
@@ -29,6 +31,7 @@ export default class modal {
    */
   run() {
     for (var i = 0; i < this.targetEle.length; i++) {
+
       var target = $(this.targetEle[i]);
 
       if (target.hasClass('js-video')){
@@ -42,6 +45,23 @@ export default class modal {
           type: 'iframe'
         });
       }
+
+      if (target.hasClass('js-clone')){
+        let $emptyHtml = $('<div></div>')
+        let $clonedTable = target.clone();
+        let $id = target.data('modaal-content-source') ;
+        $emptyHtml.attr('id', $id);
+        $emptyHtml.css('display', 'none');
+        $emptyHtml.append($clonedTable);
+        target.after($emptyHtml);
+
+        target.modaal({
+          type: 'inline',
+          content_source: '#' + $id,
+          custom_class: 'is-full-view'
+        });
+      }
+
 
       target.modaal({
         type: 'image'
