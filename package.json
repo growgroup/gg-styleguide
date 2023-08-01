@@ -40,6 +40,7 @@
     "core-js": "^3.21.1",
     "cpx": "^1.5.0",
     "css-loader": "^6.5.1",
+    "css-mqpacker-webpack-plugin": "^0.12.9",
     "fast-sass-loader": "^2.0.1",
     "fibers": "^5.0.0",
     "file-loader": "^6.2.0",
