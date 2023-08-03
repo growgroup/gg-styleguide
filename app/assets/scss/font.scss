@@ -1,0 +1,10 @@
+//@use "@fontsource/material-icons/scss/mixins" as material-icons;
+//@use "@fontsource/material-icons-round/scss/mixins" as material-icons;
+@use "@fontsource/material-icons-outlined/scss/mixins" as material-icons;
+//@use "@fontsource/material-icons-sharp/scss/mixins" as material-icons;
+//@use "@fontsource/material-icons-two-tone/scss/mixins" as material-icons;
+
+//font-displayの値を変更
+@include material-icons.faces(
+  $display: block,
+);

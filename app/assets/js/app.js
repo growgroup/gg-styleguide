@@ -1,8 +1,5 @@
-//import "@fontsource/material-icons";
-// import "@fontsource/material-icons-round";
-import "@fontsource/material-icons-outlined";
-//import "@fontsource/material-icons-sharp";
-//import "@fontsource/material-icons-two-tone";
+//Material Icons
+import "../scss/font.scss";
 // 英語版作成時に本文書体で利用するためrobotoの400と700はコメントアウトしないでください
 import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/700.css"
