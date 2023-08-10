@@ -5,9 +5,9 @@ module.exports = (ctx) => ({
       prefix: '#growp-editor-wrapper ',
       exclude: [':root'],
       transform: function (prefix, selector, prefixedSelector) {
-        if (selector.includes('body')) {
+        if (selector === 'body') {
           return prefix;
-        } else if (selector.includes('html')) {
+        } else if (selector === 'html') {
           return prefix;
         } else {
           return prefixedSelector;
