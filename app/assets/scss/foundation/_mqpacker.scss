@@ -9,6 +9,10 @@
   /**/
 }
 
+@media (max-width: 1200px) {
+  /**/
+}
+
 @include breakpoint(xlarge up) {
   /**/
 }
@@ -21,6 +25,9 @@
   /**/
 }
 
+@media (max-width: 900px) {
+  /**/
+}
 @include breakpoint(medium down) {
   /**/
 }
