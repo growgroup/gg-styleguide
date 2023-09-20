@@ -53,7 +53,7 @@
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
-    "prepend-selector-postcss": "^0.4.7",
+    "postcss-prefix-selector": "^1.16.0",
     "pug": "^3.0.2",
     "pug-cli": "git+https://github.com/pugjs/pug-cli.git",
     "rimraf": "^3.0.2",
