@@ -54,7 +54,8 @@ module.exports = (env, argv) => {
                 {
                     test: /\.(scss|css|sass)$/,
                     include: [
-                        path.resolve(__dirname, 'node_modules'),
+                      path.resolve(__dirname, 'app/assets/scss/font.scss'),
+                      path.resolve(__dirname, 'node_modules'),
                     ],
                     use: [
                         {
