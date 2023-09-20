@@ -89,6 +89,23 @@ export default class Anchor {
         duration: self.options.scrollSpeed,
         easing: self.options.easing
       });
+
+      // フォーカスを移動する
+      if (document.activeElement !== anchorTarget) {
+        let anchorTabindex = anchorTarget.attr('tabindex');
+        if (typeof anchorTabindex === 'undefined') {
+          anchorTarget.attr('tabindex', '-1');
+          anchorTarget.css('outline', 'none');
+        }
+        anchorTarget.focus().promise().done(function () {
+          // フォーカスが完了した後に tabindex と スタイルを削除
+          if (typeof anchorTabindex === 'undefined') {
+            $(this).removeAttr('tabindex');
+            $(this).css('outline', '');
+          }
+        });
+      }
+
     });
   }
 
