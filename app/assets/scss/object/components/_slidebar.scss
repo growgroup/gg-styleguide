@@ -95,23 +95,22 @@ $slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
     background-color: $slidebar-menu-bg;
     z-index: 9980;
     width: $slidebar-menu-width;
-    transform: translate3d(100%, 0px, 0px);
+    //transform: translate3d(100%, 0px, 0px);
+    opacity: 0;
+    visibility: hidden;
     right: 0;
     transition: $slidebar-menu-eaasing;
     overflow-x: scroll;
-    top: 0;
+    top: rem-calc($slidebar-header-height);
     -webkit-overflow-scrolling: touch;
-
-    &.is-active {
-      height: calc(100% - 60px);
-    }
 
     // 上から下へ
     &.is-top-to-bottom {
-      transform: translate3d(0px, -100%, 0px);
-      //transform: translate3d(0, 0, 0); // 表示デバッグ時
+      transform: translate3d(0px, -150px, 0px);
       width: 100%;
       opacity: 0; // 表示デバッグ時は1
+      visibility: hidden;
+      transition: none;
     }
 
     // メニュー要素（一番外・全体で共通する設定）
@@ -313,37 +312,42 @@ $slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
     }
 
     .c-slidebar-container {
-      transform: translate3d(-$slidebar-menu-width, 0px, 0px);
-
-      &::after {
-        content: "";
-        opacity: 1;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: $slidebar-container-bg;
-        display: block;
-        top: 0;
-        left: 0;
-      }
-
-      // 上から下の場合
-      &.is-top-to-bottom {
-        transform: translate3d(0px, 0px, 0px);
-
-        &::after {
-          top: #{$slidebar-header-height}px;
-        }
-      }
+      //transform: translate3d(-$slidebar-menu-width, 0px, 0px);
+      //
+      //&::after {
+      //  content: "";
+      //  opacity: 1;
+      //  position: fixed;
+      //  width: 100%;
+      //  height: 100%;
+      //  background: $slidebar-container-bg;
+      //  display: block;
+      //  top: 0;
+      //  left: 0;
+      //}
+      //
+      //// 上から下の場合
+      //&.is-top-to-bottom {
+      //  transform: translate3d(0px, 0px, 0px);
+      //
+      //  &::after {
+      //    top: #{$slidebar-header-height}px;
+      //  }
+      //}
     }
 
     .c-slidebar-menu {
-      transform: translate3d(0, 0, 0);
-
+      opacity: 1;
+      visibility: visible;
+      //transform: translate3d(0, 0, 0);
+      //
       &.is-top-to-bottom {
-        transform: translate3d(0, #{$slidebar-header-height}px, 0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
+        visibility: visible;
+        transition: .4s cubic-bezier(.4,.4,0,1);
       }
+
     }
   }
 
