@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import globImporter from 'node-sass-glob-importer';
-import path from 'path'
+import path from 'path';
 const CssMqpackerPlugin = require('css-mqpacker-webpack-plugin');
 
 const BASE_DIR = "../../"
@@ -77,10 +77,13 @@ module.exports = (env, argv) => {
           new CssMqpackerPlugin(),
         ],
       },
+      
     }
     if (IS_DEVELOPMENT) {
       // development であれば、devtool を追加
       configs.devtool = 'cheap-module-source-map';
     }
+
+
     return configs;
 }
