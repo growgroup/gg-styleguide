@@ -98,10 +98,9 @@ export default class Anchor {
           anchorTarget.css('outline', 'none');
         }
         anchorTarget.focus().promise().done(function () {
-          // フォーカスが完了した後に tabindex と スタイルを削除
+          // フォーカスが完了した後に tabindex を削除
           if (typeof anchorTabindex === 'undefined') {
             $(this).removeAttr('tabindex');
-            $(this).css('outline', '');
           }
         });
       }
