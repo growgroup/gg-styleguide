@@ -16,6 +16,9 @@
    * please insert your code
    *************************/
   growApp.prototype.myCode = function () {
+  }
+
+  growApp.prototype.modalContents = function () {
     $('.js-modal-content').modaal();
   }
 
@@ -99,6 +102,7 @@
   $(function () {
     var app = new growApp();
     app.myCode();
+    app.modalContents();
     app.enterAnimation();
     app.showCookie();
   });
