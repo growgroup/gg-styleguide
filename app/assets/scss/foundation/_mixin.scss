@@ -500,7 +500,7 @@
   }
 
   font-size: rem-calc($size);
-  line-height: calc($height / $size);
+  line-height: math.div($height , $size);
   @if ($letter) { //nullにするとCSS出力をスキップします
     --letter-spacing: #{$letter + em};
   }
@@ -511,7 +511,7 @@
 
 @mixin font-format-light($size : $font-base-size,$height: 24) {
   font-size: rem-calc($size);
-  line-height: calc($height / $size);
+  line-height: math.div($height , $size);
 }
 
 @mixin flex-wrapper() {
@@ -536,5 +536,13 @@
   background: rgba($color, $opacity);
   top: 0;
   left: 0;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
 }
 
