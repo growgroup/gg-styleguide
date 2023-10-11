@@ -97,11 +97,49 @@ export default class Slidebar {
   open() {
     $("body").addClass('is-slidebar-active');
     this.isActive = true;
+    this.menu.removeAttr("inert");
+
+    this.focusToMenu();
   }
 
   close() {
     $("body").removeClass('is-slidebar-active');
     this.isActive = false;
+    this.menu.attr("inert", "true");
+
+    this.focusToOuterMenu();
+  }
+
+  focusToMenu() {
+    // フォーカスを移動する
+    if (document.activeElement !== this.menu) {
+      let anchorTabindex = this.menu.attr('tabindex');
+      if (typeof anchorTabindex === 'undefined') {
+        this.menu.attr('tabindex', '-1');
+        this.menu.css('outline', 'none');
+      }
+      this.menu.focus().promise().done(function () {
+        // フォーカスが完了した後に tabIndex を削除
+        if (typeof anchorTabindex === 'undefined') {
+          $(this).removeAttr('tabindex');
+        }
+      });
+    }
+  }
+
+  focusToOuterMenu() {
+    // フォーカスを移動する
+    let anchorTabindex = $("body").attr('tabindex');
+    if (typeof anchorTabindex === 'undefined') {
+      $("body").attr('tabindex', '-1');
+      $("body").css('outline', 'none');
+    }
+    $("body").focus().promise().done(function () {
+      // フォーカスが完了した後に tabIndex を削除
+      if (typeof anchorTabindex === 'undefined') {
+        $(this).removeAttr('tabindex');
+      }
+    });
   }
 
 }
