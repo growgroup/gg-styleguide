@@ -32,7 +32,7 @@
 // サイトで複数回利用する可能性のある粒度の細かい要素をモジュールを定義しています。
 //
 // Styleguide 2.0.0
-
+@import "layout/*";
 @import "object/components/*";
 
 // ブロック
@@ -41,7 +41,7 @@
 //
 // Styleguide 3.0.0
 @import "object/project/*";
-@import "layout/*";
+
 
 // ユーティリティ
 //
