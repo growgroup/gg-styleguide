@@ -1,8 +1,12 @@
-
-
-// <div data-modaal-content-source="assets/image/image.jpg" class="js-modal-image">Show</div>
-// 動画の場合 → js-video
-// iframeの場合 → js-iframe
+// - 使い方
+//   aタグ推奨
+//   <a href="assets/image/image.jpg" class="js-modal-image">Show</a>
+//   buttonタグの場合
+//   <button data-modaal-content-source="assets/image/image.jpg" class="js-modal-image">Show</button>
+//
+// - オプション
+//   動画の場合 → js-video
+//   iframeの場合 → js-iframe
 
 
 
