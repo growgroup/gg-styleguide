@@ -16,7 +16,17 @@ var pugconfig = {
         await fs.writeFileSync(componentPath, '.c-' + componentName + ' {\n\n}', {flag: "a"});
         return false;
       }
-    }
+    },
+    addLayoutFile: async function (componentName) {
+      var componentPath = __dirname + '/../app/assets/scss/layout/_' + componentName + '.scss';
+      try {
+        fs.statSync(componentPath);
+        return true;
+      } catch (err) {
+        await fs.writeFileSync(componentPath, '.l-' + componentName + ' {\n\n}', {flag: "a"});
+        return false;
+      }
+    },
   },
   filters: {
     // 改行をbrに置換
