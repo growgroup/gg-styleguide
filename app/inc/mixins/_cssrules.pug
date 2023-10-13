@@ -135,7 +135,7 @@ mixin l(el)
       attributes.class =  classlist.join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "l"
-      locals.locals.addComponentFile(temp_class)
+      locals.locals.addLayoutFile(temp_class)
     }
   #{el}(class!="l-" + temp_class )&attributes(attributes)
     block
