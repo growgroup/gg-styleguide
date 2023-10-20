@@ -55,7 +55,6 @@ module.exports = (env, argv) => {
                 options: {
                   postcssOptions: {
                     plugins: [
-                      ["autoprefixer", { grid: true }],
                       [
                         'postcss-sort-media-queries',
                         {
