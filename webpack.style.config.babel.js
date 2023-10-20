@@ -51,6 +51,22 @@ module.exports = (env, argv) => {
                 }
               },
               {
+                loader: "postcss-loader",
+                options: {
+                  postcssOptions: {
+                    plugins: [
+                      ["autoprefixer", { grid: true }],
+                      [
+                        'postcss-sort-media-queries',
+                        {
+                          sort: 'desktop-first'
+                        }
+                      ],
+                    ],
+                  },
+                },
+              },
+              {
                 loader: 'sass-loader',
                 options: {
                   sassOptions: {
