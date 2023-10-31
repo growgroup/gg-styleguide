@@ -1,10 +1,9 @@
-
+// オプション公式
+// https://github.com/humaan/Modaal
 
 // <div data-modaal-content-source="assets/image/image.jpg" class="js-modal-image">Show</div>
 // 動画の場合 → js-video
 // iframeの場合 → js-iframe
-
-
 
 let defaultOptions = {
   selector: ".js-modal-image",
@@ -30,6 +29,17 @@ export default class modal {
   run() {
     for (var i = 0; i < this.targetEle.length; i++) {
       var target = $(this.targetEle[i]);
+
+      if (target.hasClass('js-open')){
+
+        if (!sessionStorage.getItem('loading')) {
+          sessionStorage.setItem('loading', true);
+
+          target.modaal({
+            start_open:true, // ページロード時に表示するか
+          });
+        }
+      }
 
       if (target.hasClass('js-video')){
         target.modaal({
