@@ -22,6 +22,7 @@
     @include webfont;
     opacity: 0;
     transition: 1s;
+    color: $color-primary;
   }
 
   &.is-active {
@@ -31,7 +32,6 @@
     }
   }
   &.is-close {
-    height: 0;
     transition: 1s;
     opacity: 0;
   }

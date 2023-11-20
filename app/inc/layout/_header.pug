@@ -16,12 +16,12 @@
 header(class=className)
   .l-header__content
     if current.id == 'home'
-      h1.l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
+      h1.l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル")
     else
-      .l-header__logo: +a("/"): +img("logo.png","株式会社サンプル")
+      .l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル")
     nav.l-header__nav
       ul
-        li: +a("/onecolumn/") 1COLUMN
+        li: +a("/page/") 1COLUMN
         li: +a("/twocolumns/") 2COLUMN
         li: +a("/news/") NEWS
         li: +a("/archive-twocolumns/") ARCHIVE2

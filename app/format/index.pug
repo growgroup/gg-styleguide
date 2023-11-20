@@ -15,30 +15,25 @@ block body
       subtitle: "parent"
   })
   +c_breadcrumb()
-  section.l-section
+  section.l-section.is-lg
     .l-container
-      // テキスト関係
-      include /format/components/_text.pug
 
-      // ボタン関係
-      include /format/components/_buttons.pug
+      .c-tabs.js-tabs
+        ul.c-tabs__navs.js-tabs-nav
+          li: +a("#").is-active(data-tab-target="0") テキスト
+          li: +a("#")(data-tab-target="1") ボタン
+          li: +a("#")(data-tab-target="2") その他
+          li: +a("#")(data-tab-target="3") タブ
 
-      // タブ
-      include /format/components/_tab.pug
+        .c-tabs__content.is-active.js-tabs-content(data-tab-name="0")
+          include /format/components/_text.pug
+        .c-tabs__content.js-tabs-content(data-tab-name="1")
+          include /format/components/_buttons.pug
+        .c-tabs__content.js-tabs-content(data-tab-name="2")
+          include /format/components/_other.pug
+        .c-tabs__content.js-tabs-content(data-tab-name="3")
+          include /format/components/_tab.pug
 
-    // タブ
-    include /format/components/_other.pug
-  section.l-section.is-sm
-    +c_relation("関連するコンテンツ",{
-      link: "/format/",
-      title: "テキストテキスト",
-    },{
-      link: "#",
-      title: "テキストテキスト",
-    },{
-      link: "#",
-      title: "テキストテキスト",
-    },{
-      link: "#",
-      title: "テキストテキスト",
-    })
+
+
+
