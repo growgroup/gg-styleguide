@@ -45,6 +45,7 @@ export default class Slidebar {
     this.isActive = false;
 
     this.init();
+    this.setupResizeObserver(); // ResizeObserverをセットアップ
   }
 
   /**
@@ -72,6 +73,11 @@ export default class Slidebar {
       e.preventDefault();
       self.toggle();
     });
+
+    // ページ内リンク時の挙動
+    // $(".c-slidebar-menu a[href*=\"#\"]").on('click', function (e) {
+    //   self.close();
+    // });
   }
 
   /**
@@ -140,6 +146,21 @@ export default class Slidebar {
         $(this).removeAttr('tabindex');
       }
     });
+  }
+
+  setupResizeObserver() {
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        if (entry.contentRect.width >= 9g50) {
+          document.body.classList.remove("is-slidebar-active");
+          this.isActive = false;
+          this.menu.attr("inert", "true");
+        }
+      }
+    });
+
+    // 監視対象となる要素を設定
+    resizeObserver.observe(document.body);
   }
 
 }

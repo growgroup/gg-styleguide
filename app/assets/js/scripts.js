@@ -61,6 +61,7 @@
     }
   };
 
+  //　キャッシュ対策
   growApp.prototype.backCache = function () {
     window.onpageshow = function(event) {
       if (event.persisted) {
@@ -69,6 +70,7 @@
     }
   }
 
+  // Cookie
   growApp.prototype.showCookie = function () {
     const cookie = $(".js-cookie");
     const cookieId = $("#cookie");
@@ -99,11 +101,13 @@
     }
   }
 
+
   $(function () {
     var app = new growApp();
     app.myCode();
     app.modalContents();
     app.enterAnimation();
     app.showCookie();
+    app.backCache();
   });
 })(jQuery);
