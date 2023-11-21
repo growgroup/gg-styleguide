@@ -151,7 +151,7 @@ export default class Slidebar {
   setupResizeObserver() {
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
-        if (entry.contentRect.width >= 750) {
+        if (entry.contentRect.width >= 9g50) {
           document.body.classList.remove("is-slidebar-active");
           this.isActive = false;
           this.menu.attr("inert", "true");
