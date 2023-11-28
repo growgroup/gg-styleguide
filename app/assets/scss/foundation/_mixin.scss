@@ -408,41 +408,6 @@
   -webkit-line-clamp: $clamp;
 }
 
-// 行数制限
-@mixin row-limit($font-size-base: $font-base-size, $font-size-base-sp: $font-base-size*0.875, $line-height-computed: 1.7, $lines-to-show: 2) {
-  overflow: hidden;
-  width: 100%;
-  span {
-    display: block;
-    font-size: $font-size-base;
-    height: $font-size-base * $line-height-computed * $lines-to-show;
-    line-height: $line-height-computed;
-    position: relative;
-    @include breakpoint(small only) {
-      font-size: $font-size-base-sp;
-      height: $font-size-base-sp * $line-height-computed * $lines-to-show;
-    }
-    &::before,
-    &::after {
-      background: $color-white;
-      position: absolute;
-    }
-    &::before {
-      content: "...";
-      top: $font-size-base * $line-height-computed * ($lines-to-show - 1);
-      right: 0;
-      bottom: 0;
-      @include breakpoint(small only) {
-        top: $font-size-base-sp * $line-height-computed * ($lines-to-show - 1);
-      }
-    }
-    &::after {
-      content: "";
-      height: 100%;
-      width: 100%;
-    }
-  }
-}
 
 @mixin bg-img(){
   position: absolute;
