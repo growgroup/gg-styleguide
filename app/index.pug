@@ -10,76 +10,80 @@ block append config
   - current.path = "/" // ページのpath
   - current.depth = 1 // ページの階層
 
-block body
+
+block before_main
   +c_loader
   +c_main-visual()
-  main.l-main
-    section.l-section.is-lg.is-color-secondary
-      .l-container
-        +heading-xlg("私たちについて", "ABOUT").is-bottom
-        p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +c.card.u-mbs.is-top.is-lg
-          .row.slide
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-            .large-4.small-12
-              +e.block
-                +e.image: +img("img-card-01.jpg")
-                +e.content
-                  h3.c-card__title コンセプトタイトル
-                  p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-    section.l-section.is-lg.is-top
-      .l-container
-        +heading-xlg("事業内容", "SERVICE").is-bottom
-      +c.hero-block-square
-        +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-        +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-        +e.block
-          +e.image: +img("img-hero-block-01.jpg")
-          .l-container
-            +e.content
-              +e.inner
-                h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-                p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                +e.button: +a("#").c-button.is-sm ボタンテキスト
-    section.l-section.is-lg
-      .l-container
-        +c.news
-          .row
-            .large-3.small-12
-              +e.head
-                h2.c-news__title.c-heading.is-xlg
-                  span NEWS
-                  small お知らせ
-                +e.button: +a("/news/").c-button.is-sm 一覧を見る
-            .large-9.small-12
+
+block body
+  section.l-section.is-lg.is-color-secondary
+    .l-container
+      +heading-xlg("私たちについて", "ABOUT").is-bottom
+      p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      +c.card.u-mbs.is-top.is-lg
+        .row.slide
+          .large-4.small-12
+            +e.block
+              +e.image: +img("img-card-01.jpg")
               +e.content
-                +loop(3)
-                  +c_news__block("home")
+                h3.c-card__title コンセプトタイトル
+                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          .large-4.small-12
+            +e.block
+              +e.image: +img("img-card-01.jpg")
+              +e.content
+                h3.c-card__title コンセプトタイトル
+                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          .large-4.small-12
+            +e.block
+              +e.image: +img("img-card-01.jpg")
+              +e.content
+                h3.c-card__title コンセプトタイトル
+                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+  section.l-section.is-lg.is-top
+    .l-container
+      +heading-xlg("事業内容", "SERVICE").is-bottom
+    +c.hero-block-square
+      +e.block
+        +e.image: +img("img-hero-block-01.jpg")
+        .l-container
+          +e.content
+            +e.inner
+              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              +e.button: +a("#").c-button.is-sm ボタンテキスト
+      +e.block
+        +e.image: +img("img-hero-block-01.jpg")
+        .l-container
+          +e.content
+            +e.inner
+              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              +e.button: +a("#").c-button.is-sm ボタンテキスト
+      +e.block
+        +e.image: +img("img-hero-block-01.jpg")
+        .l-container
+          +e.content
+            +e.inner
+              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              +e.button: +a("#").c-button.is-sm ボタンテキスト
+  section.l-section.is-lg
+    .l-container
+      +c.news
+        .row
+          .large-3.small-12
+            +e.head
+              h2.c-news__title.c-heading.is-xlg
+                span NEWS
+                small お知らせ
+              +e.button: +a("/news/").c-button.is-sm 一覧を見る
+          .large-9.small-12
+            +e.content
+              +loop(3)
+                +c_news__block("home")
+
+block before_footer
   +c_cookie
   // オファーブロック
   +l_offer

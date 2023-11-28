@@ -16,14 +16,15 @@ block page_header
   +c_breadcrumb("お知らせ","news")
 
 block body
-  main.l-main
-    section.l-section.is-lg
-      .l-container.is-sm
-        +c.news.is-onecolumn
-          h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
-          +e.content
-            +loop(10)
-              +c_news__block("is-news")
-        +c_pagination()
+  section.l-section.is-lg
+    .l-container.is-sm
+      +c.news.is-onecolumn
+        h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
+        +e.content
+          +loop(10)
+            +c_news__block("is-news")
+      +c_pagination()
+
+block before_footer
   +l_offer
 

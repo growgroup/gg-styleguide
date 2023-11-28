@@ -16,77 +16,79 @@ block page_header
   +c_breadcrumb()
 
 block body
-  main.l-main
-    section.l-section.is-md
-      .l-container.is-sm
-        +c.sitemap
-          +e.inner
-            +e.list
-              +e.item: +a("/") ホーム
-              +e.item.is-parent
-                +a("/features/") 特長
-                +e.sublist
+  section.l-section.is-md
+    .l-container.is-sm
+      +c.sitemap
+        +e.inner
+          +e.list
+            +e.item: +a("/") ホーム
+            +e.item.is-parent
+              +a("/features/") 特長
+              +e.sublist
+                +e.subitem
+                  +a("/features/quality/") こだわりの高品質
+                  ul
+                    li: +a("/features/quality/establishment/") 高度な業務フローの確立
+                    li: +a("/features/quality/grasp/") 適正数量の把握
+                    li: +a("/features/quality/pursuit/") 作業空間の追求
+                    li: +a("/features/quality/kpi/") 納期遵守のKPI管理
+                    li: +a("/features/quality/effort/") その他高品質への取り組み
+                +e.subitem
+                  +a("/features/achievement/") 豊富なスキャン実績
+                +e.subitem
+                  +a("/features/security/") 安心のセキュリティ体制
+                +e.subitem
+                  +a("/features/staff/") プロフェッショナルなスタッフ
+            +e.item.is-parent
+              +a("/service/") スキャンサービス
+              +e.flex
+                +e.sublist.is-three-col
                   +e.subitem
-                    +a("/features/quality/") こだわりの高品質
-                    ul
-                      li: +a("/features/quality/establishment/") 高度な業務フローの確立
-                      li: +a("/features/quality/grasp/") 適正数量の把握
-                      li: +a("/features/quality/pursuit/") 作業空間の追求
-                      li: +a("/features/quality/kpi/") 納期遵守のKPI管理
-                      li: +a("/features/quality/effort/") その他高品質への取り組み
+                    +a("/service/scan01/") 契約書
                   +e.subitem
-                    +a("/features/achievement/") 豊富なスキャン実績
+                    +a("/service/scan07/") レシート・領収書
                   +e.subitem
-                    +a("/features/security/") 安心のセキュリティ体制
+                    +a("/service/scan11/") 図面・製図（大判）
                   +e.subitem
-                    +a("/features/staff/") プロフェッショナルなスタッフ
-              +e.item.is-parent
-                +a("/service/") スキャンサービス
-                +e.flex
-                  +e.sublist.is-three-col
-                    +e.subitem
-                      +a("/service/scan01/") 契約書
-                    +e.subitem
-                      +a("/service/scan07/") レシート・領収書
-                    +e.subitem
-                      +a("/service/scan11/") 図面・製図（大判）
-                    +e.subitem
-                      +a("/service/scan05/") 申込書・同意書
-                    +e.subitem
-                      +a("/service/scan10/") 名刺
-                    +e.subitem
-                      +a("/service/scan15/") 新聞
-                    +e.subitem
-                      +a("/service/scan09/") 一般書類
-                    +e.subitem
-                      +a("/service/scan14/") 調査票・アンケート
-                    +e.subitem
-                      +a("/service/scan04/") 履歴書・職務経歴書
-                    +e.subitem
-                      +a("/service/scan13/") 写真
-                    +e.subitem
-                      +a("/service/scan03/") マニュアル・手引書
-                    +e.subitem
-                      +a("/service/scan08/") カタログ
-                    +e.subitem
-                      +a("/service/scan02/") 見積書・納品書・請求書
-                    +e.subitem
-                      +a("/service/scan06/") 社内広報誌
-                    +e.subitem
-                      +a("/service/scan12/") ポスター（大判）
-                    +e.subitem
-                      +a("/service/scan16/") その他
-              +e.item: +a("/case/") 活用事例
-              +e.item: +a("/charge/") 料金
-              +e.item: +a("/flow/") ご利用の流れ
-              +e.item: +a("/faq/") よくあるご質問
-              +e.item: +a("/news/") お知らせ
-              +e.item: +a("/column/") お役立ちコラム
-              +e.item: +a("/contact/") お問い合わせ・お見積り
-              +e.item: +a("/document/") 資料請求
-              +e.item: +a("/estimate/") 料金シミュレーション
-              +e.item: +a("https://www.uluru-bpo.jp/company")(target="_blank").is-outlink 運営会社
-              +e.item: +a("https://www.uluru-bpo.jp/privacypolicy")(target="_blank").is-outlink プライバシーポリシー
+                    +a("/service/scan05/") 申込書・同意書
+                  +e.subitem
+                    +a("/service/scan10/") 名刺
+                  +e.subitem
+                    +a("/service/scan15/") 新聞
+                  +e.subitem
+                    +a("/service/scan09/") 一般書類
+                  +e.subitem
+                    +a("/service/scan14/") 調査票・アンケート
+                  +e.subitem
+                    +a("/service/scan04/") 履歴書・職務経歴書
+                  +e.subitem
+                    +a("/service/scan13/") 写真
+                  +e.subitem
+                    +a("/service/scan03/") マニュアル・手引書
+                  +e.subitem
+                    +a("/service/scan08/") カタログ
+                  +e.subitem
+                    +a("/service/scan02/") 見積書・納品書・請求書
+                  +e.subitem
+                    +a("/service/scan06/") 社内広報誌
+                  +e.subitem
+                    +a("/service/scan12/") ポスター（大判）
+                  +e.subitem
+                    +a("/service/scan16/") その他
+            +e.item: +a("/case/") 活用事例
+            +e.item: +a("/charge/") 料金
+            +e.item: +a("/flow/") ご利用の流れ
+            +e.item: +a("/faq/") よくあるご質問
+            +e.item: +a("/news/") お知らせ
+            +e.item: +a("/column/") お役立ちコラム
+            +e.item: +a("/contact/") お問い合わせ・お見積り
+            +e.item: +a("/document/") 資料請求
+            +e.item: +a("/estimate/") 料金シミュレーション
+            +e.item: +a("https://www.uluru-bpo.jp/company")(target="_blank").is-outlink 運営会社
+            +e.item: +a("https://www.uluru-bpo.jp/privacypolicy")(target="_blank").is-outlink プライバシーポリシー
 
-  +l_offer
+
+block before_footer
+  +l_offer()
+
 

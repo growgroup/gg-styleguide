@@ -16,13 +16,13 @@ block page_header
   +c_breadcrumb()
 
 block body
-  main.l-main
-    section.l-section.is-lg
-      .l-container
-        +c.news.u-maxwidth944
-          +e.content
-            +c_news__block("is-result")
-        +c_pagination()
-
+  section.l-section.is-lg
+    .l-container
+      +c.news.u-maxwidth944
+        +e.content
+          +c_news__block("is-result")
+      +c_pagination()
+      
+block before_footer
   +l_offer
 

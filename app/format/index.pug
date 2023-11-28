@@ -7,14 +7,16 @@ block append config
   - current.path = `/${current.id}/` // ページのpath
   - current.depth = 2 // ページの階層
 
-block body
+block page_header
   // メインビジュアル
   +l_page_header({
-      image: "img-page-header-format.jpg",
-      title: "量産ページ",
-      subtitle: "parent"
+    image: "img-page-header-format.jpg",
+    title: "量産ページ",
+    subtitle: "parent"
   })
   +c_breadcrumb()
+
+block body
   section.l-section.is-lg
     .l-container
 
@@ -35,5 +37,7 @@ block body
           include /format/components/_tab.pug
 
 
+block before_footer
+  +l_offer()
 
 
