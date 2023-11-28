@@ -42,9 +42,11 @@ $grid-column-responsive-gutter: (// カラムとカラムの間隔
 );
 
 // # 3. font
-$font-base-size: 16px !default; // body のフォントサイズ
-$font-base-line-height: 1.75 !default; // body のフォントサイズ
-$font-base-letter-spacing: 0.1em !default; // body のフォントサイズ
+$font-html-size: 16px !default; // （変更しない）html のフォントサイズ
+
+$font-base-size: 15px !default; // body のフォントサイズ（本文のフォントサイズ）
+$font-base-line-height: 1.75 !default; // body の行間（本文の行間）
+$font-base-letter-spacing: 0.05em !default; // 基本の文字間隔
 $font-base-color: #333 !default; // body のフォントカラー
 $font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
 $font-base-weight: normal !default; // フォント幅

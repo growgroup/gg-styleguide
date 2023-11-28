@@ -36,7 +36,7 @@
   $count: length($values);
 
   @if $base == null {
-    $base: $font-base-size;
+    $base: $font-html-size;
   }
 
   @if unit($base) == '%' {
