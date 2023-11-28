@@ -10,76 +10,75 @@ block append config
 block page_header
 
 block body
-  main.l-main
-    section.l-section.is-lg.is-bg-color
-      .l-container
-        +c.form-head
-          +e.block
-            +h1.title.c-heading.is-md.is-mg-level-1.is-bottom: b.is-main 資料ダウンロードサンプル詳細
-        +c.block-document
-          +e.inner
-            +e.detail
-              +e.head.c-heading.is-sm.is-mg-level-3.is-bottom: b.is-main こんな方にオススメ
-              +ul.list.c-list.is-disc
-                li リストテキスト1
-                li リストテキスト2
-                li リストテキスト3
-                li リストテキスト4
-              +e.images
-                +e.image: .is-no NO IMAGE
-                +loop(5)
-                  +e.image.js-modal-image(data-modaal-content-source="/assets/images/img-card-01.jpg"): +bgimg("img-card-01.jpg").bg-img
-              +e.slider.swiper
-                .swiper-wrapper
-                  +e.image.swiper-slide: .is-no NO IMAGE
-                  +loop(3)
-                    +e.image.swiper-slide: +bgimg("img-card-01.jpg").bg-img
-                .swiper-nav
-                  .swiper-button-prev
-                  .swiper-button-next
-            +e("form").form
-              +e.subhead.c-heading.is-xs.is-mg-level-4 ダウンロードフォーム
-              +e.blocks
-                +e.block
-                  +e.title
-                    span.c-block-document__label 必須
-                    | 会社名
-                  +e.content
-                    +e.input: input(type="text",name="会社名",placeholder="例 : 株式会社カンパニー")
-                +e.block
-                  +e.title
-                    span.c-block-document__label 必須
-                    | ご担当者様名
-                  +e.content
-                    +e.input: input(type="text",name="ご担当者様名",placeholder="山田 太郎")
-                +e.block
-                  +e.title
-                    span.c-block-document__label 必須
-                    | メールアドレス
-                  +e.content
-                    +e.input: input(type="text",name="メールアドレス",placeholder="info@mail.com")
-                +e.block
-                  +e.title.is-vertical-top
-                    span.c-block-document__label 必須
-                    | 制作の開始時期について
-                  +e.content
-                    +e.select
-                      select(name="制作の開始時期について")
-                        option(value="" disabled selected) 選択してください
-                        option(value="1") 2023年
-                        option(value="2") 2022年
-                        option(value="3") 2021年
-                +e.block
-                  +e.title.is-vertical-top
-                    span.c-block-document__label 必須
-                    | 制作の開始時期について
-                  +e.textarea
-                    textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
+  section.l-section.is-lg.is-bg-color
+    .l-container
+      +c.form-head
+        +e.block
+          +h1.title.c-heading.is-md.is-mg-level-1.is-bottom: b.is-main 資料ダウンロードサンプル詳細
+      +c.block-document
+        +e.inner
+          +e.detail
+            +e.head.c-heading.is-sm.is-mg-level-3.is-bottom: b.is-main こんな方にオススメ
+            +ul.list.c-list.is-disc
+              li リストテキスト1
+              li リストテキスト2
+              li リストテキスト3
+              li リストテキスト4
+            +e.images
+              +e.image: .is-no NO IMAGE
+              +loop(5)
+                +e.image.js-modal-image(data-modaal-content-source="/assets/images/img-card-01.jpg"): +bgimg("img-card-01.jpg").bg-img
+            +e.slider.swiper
+              .swiper-wrapper
+                +e.image.swiper-slide: .is-no NO IMAGE
+                +loop(3)
+                  +e.image.swiper-slide: +bgimg("img-card-01.jpg").bg-img
+              .swiper-nav
+                .swiper-button-prev
+                .swiper-button-next
+          +e("form").form
+            +e.subhead.c-heading.is-xs.is-mg-level-4 ダウンロードフォーム
+            +e.blocks
+              +e.block
+                +e.title
+                  span.c-block-document__label 必須
+                  | 会社名
+                +e.content
+                  +e.input: input(type="text",name="会社名",placeholder="例 : 株式会社カンパニー")
+              +e.block
+                +e.title
+                  span.c-block-document__label 必須
+                  | ご担当者様名
+                +e.content
+                  +e.input: input(type="text",name="ご担当者様名",placeholder="山田 太郎")
+              +e.block
+                +e.title
+                  span.c-block-document__label 必須
+                  | メールアドレス
+                +e.content
+                  +e.input: input(type="text",name="メールアドレス",placeholder="info@mail.com")
+              +e.block
+                +e.title.is-vertical-top
+                  span.c-block-document__label 必須
+                  | 制作の開始時期について
+                +e.content
+                  +e.select
+                    select(name="制作の開始時期について")
+                      option(value="" disabled selected) 選択してください
+                      option(value="1") 2023年
+                      option(value="2") 2022年
+                      option(value="3") 2021年
+              +e.block
+                +e.title.is-vertical-top
+                  span.c-block-document__label 必須
+                  | 制作の開始時期について
+                +e.textarea
+                  textarea(name="テキストエリア",placeholder="お問い合わせ内容をご記入ください。")
 
-              +e.privacy
-                label
-                  input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました")
-                  +a-ex("https://www.kyoritsugroup.co.jp/privacy/") 個人情報保護方針
-                  | の内容に同意する
-              +e.submit
-                button.c-button 資料ダウンロード
+            +e.privacy
+              label
+                input(type="checkbox",name="「個人情報保護の取り扱いに関するご確認」を確認する",value="確認しました")
+                +a-ex("https://www.kyoritsugroup.co.jp/privacy/") 個人情報保護方針
+                | の内容に同意する
+            +e.submit
+              button.c-button 資料ダウンロード

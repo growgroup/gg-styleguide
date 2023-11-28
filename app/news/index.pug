@@ -16,8 +16,7 @@ block page_header
   +c_breadcrumb()
 
 block body
-  main.l-main
-    section.l-section.is-lg
+  section.l-section.is-lg
       .l-container.is-sm
         +c.news.is-onecolumn
           h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
@@ -67,5 +66,7 @@ block body
                       +e.date 2018.01.01
                     +e.title タイトルが入ります。タイトルが入ります。
         +c_pagination()
+        
+block before_footer
   +l_offer
 
