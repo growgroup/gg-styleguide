@@ -164,6 +164,13 @@
     //@extend .c-list.is-outline;
   }
 
+  //.has-small-font-size {
+  //  font-size: rem-calc(14);
+  //  @include breakpoint(small only) {
+  //    font-size: rem-calc(12);
+  //  }
+  //}
+
   iframe {
     max-width: 100%;
     width: 100%;
