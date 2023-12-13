@@ -32,7 +32,7 @@ category: Buttons
   }
 
   // *hover
-  &:hover {
+  @include hover {
     opacity: 1;
     background-color: $color-white;
     color: $color-primary;
@@ -44,7 +44,7 @@ category: Buttons
     background-color: $color-white;
     color: $color-primary;
 
-    &:hover {
+    @include hover {
       background-color: $color-primary;
       color: $color-white;
     }
@@ -56,7 +56,7 @@ category: Buttons
     color: $color-primary;
     border-color: lighten($color-primary, 40);
 
-    &:hover {
+    @include hover {
       background-color: $color-white;
       border-color: $color-primary;
     }
@@ -135,7 +135,7 @@ category: Buttons
     }
 
     // *hover
-    &:hover {
+    @include hover {
       opacity: 0.6;
     }
   }
@@ -165,7 +165,7 @@ category: Buttons
       }
     }
 
-    &:hover {
+    @include hover {
       color: $color-gray;
       border-color: $color-gray;
       transform: translateY(6px);
