@@ -1,14 +1,14 @@
 //- スマホメニュー
 mixin c_slidebar
   //-> スマホメニューのボタン
-  button(type="button").c-slidebar-button.js-slidebar-button
-    span.c-slidebar-button__inner
-      span.c-slidebar-button__line
+  +c("button").slidebar-button.js-slidebar-button(type="button")
+    +e("span").inner
+      +e("span").line
         span
         span
         span
-      span.c-slidebar-button__text.is-open MENU
-      span.c-slidebar-button__text.is-close CLOSE
+      +e("span").text.is-open MENU
+      +e("span").text.is-close CLOSE
 
   +c.slidebar-menu.js-slidebar-menu.is-top-to-bottom(inert="true")
     +ul.list
