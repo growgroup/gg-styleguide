@@ -16,98 +16,49 @@ category: Heading
   }
 }
 
-
-// h1
-.c-heading.is-xlg {
-  color: $color-primary;
-
-  b {
-
-    &.is-eng {
-      display: block;
-      @include webfont();
-      @include font-format(42, 0.1, 52);
-      @include breakpoint(small only) {
-        font-size: rem-calc(42)*0.8;
-      }
-    }
-  }
-
-  span {
-
-    &.is-ja {
-      display: block;
-      @include font-format-light(16, 26);
-      @include breakpoint(small only) {
-        font-size: rem-calc(16)*0.8;
-      }
-    }
-  }
-}
-
+// l-post-content内にも適用
 // h2
-.c-heading.is-lg {
-  color: $color-primary;
-  @include font-format-light(32,40);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(32)*0.8;
-  }
-
-  b {
-
-    &.is-eng {
-
-    }
-  }
-
-  span {
-
-    &.is-ja {
-      display: block;
-      @include webfont();
-      @include font-format(14, "", 20, normal); //2番目を""にするとletter-spacingのCSS出力をスキップします
-      margin-top: rem-calc(6);
-      @include breakpoint(small only) {
-        font-size: rem-calc(14)*0.8;
-      }
-    }
-  }
+.c-heading-xlg {
+  @include font-format(32, .05, 48,bold);
 }
-
 // h3
-.c-heading.is-md {
-  @include font-format-light(28,38);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(28)*0.8;
-  }
+.c-heading-lg {
+  @include font-format(28, .05, 38,bold);
 }
-
 // h4
-.c-heading.is-sm {
-  @include font-format-light(24, 34);
-  @include breakpoint(small only) {
-    font-size: rem-calc(24)*0.8;
-  }
+.c-heading-md {
+  @include font-format(24, .05, 32,bold);
 }
-
 // h5
-.c-heading.is-xs {
-  @include font-format-light(20,30);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(20)*0.8;
-  }
+.c-heading-sm {
+  @include font-format(20, .05, 30,bold);
+}
+// h6
+.c-heading-xs {
+  @include font-format(18, .05, 28,bold);
 }
 
-// h6
-.c-heading.is-xxs {
-  @include font-format-light(18, 28);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(18)*0.8;
+// span や b があるタイプを派生
+.c-heading.is-xlg {
+  @extend .c-heading-xlg;
+  span {
+    display: block;
   }
+  b {
+    display: block;
+  }
+}
+.c-heading.is-lg {
+  @extend .c-heading-lg;
+}
+.c-heading.is-md {
+  @extend .c-heading-md;
+}
+.c-heading.is-sm {
+  @extend .c-heading-sm;
+}
+.c-heading.is-xs {
+  @extend .c-heading-xs;
 }
 
 .c-heading.is-color-primary {

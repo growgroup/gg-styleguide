@@ -26,81 +26,26 @@
     letter-spacing: 0.05em;
   }
 
+  //　デザインフォーマット内を参照
   h2 {
-    font-size: rem-calc(25);
-    line-height: math.div(42, 25)*1;
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(80);
-    margin-bottom: rem-calc(32);
-    border-bottom: 2px solid $color-primary;
-    padding-bottom: rem-calc(14);
-    @include breakpoint(small only) {
-      margin-top: rem-calc(40);
-      font-size: rem-calc(18);
-    }
-
+    @extend .c-heading-xlg;
   }
 
   h3 {
-    font-size: rem-calc(20);
-    line-height: 35*0.05*1;
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(54);
-    margin-bottom: rem-calc(24);
-
-    padding-top: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-bottom: 0.5rem;
-    background-color: #e7e7e7;
-    @include breakpoint(small only) {
-      margin-top: rem-calc(32);
-      font-size: rem-calc(16);
-    }
-
+    @extend .c-heading-lg;
   }
 
 
   h4 {
-    font-size: rem-calc(17);
-    line-height: math.div(32, 17)*1;
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
-
-    &::before {
-      content: "check";
-      font-family: 'Material Icons Outlined';
-      letter-spacing: 0;
-      float: left;
-      margin-right: 0.3rem;
-      color: $color-primary;
-    }
-
-    @include breakpoint(small only) {
-      font-size: rem-calc(15);
-    }
-
+    @extend .c-heading-md;
   }
 
   h5 {
-    font-size: rem-calc(16);
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
-    @include breakpoint(small only) {
-      font-size: rem-calc(14);
-    }
+    @extend .c-heading-sm;
   }
 
   h6 {
-    font-size: rem-calc(16);
-    letter-spacing: 0.05em;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
-    @include breakpoint(small only) {
-      font-size: rem-calc(14);
-    }
+    @extend .c-heading-xs;
   }
 
   dl {
