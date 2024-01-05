@@ -19,6 +19,7 @@ html {
   font-family: $font-base-family;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  text-autospace: no-autospace; /* スクリプト間スペースの自動挿入防止 */
 }
 
 * {
