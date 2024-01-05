@@ -3,28 +3,38 @@
 // プロジェクトのCSSで利用する変数を定義
 
 
+// ==============================
 // # 1. Color
-@use "sass:math";
+// ==============================
 
-$color-white: #fff !default; // 白
-$color-black: #000 !default; // 黒
+// # 基本の白黒
+$color-white: #fff !default;
+$color-black: #000 !default;
 
-// # プライマリ
-$color-primary: #65A04D !default; // プライマリカラー
+// # プライマリー
+$color-primary: #65a04d !default;
+//$color-primary-light: #99bd8a !default;
 
 // # セカンダリー
-$color-secondary: #F9F7F0 !default; // セカンダリカラー
+$color-secondary: #f9f7f0 !default;
 
-// # グレイスケールカラー
-$color-tertiary: #CCCCCC !default; // ターシャリカラー
+// # ターシャリー
+$color-tertiary: #cccccc !default;
 
 // # アクセント
-$color-accent: #E04B3A !default; // ターシャリカラー
-$color-accent-green: #65AC29 !default; // ターシャリカラー
-$color-accent-orange: #E6A54D !default; // ターシャリカラー
+$color-accent: #e04b3a !default;
+//$color-accent-green: #65AC29 !default;
+//$color-accent-orange: #E6A54D !default;
 
-// # 灰色
-$color-gray: #cccccc !default; // 灰色
+// # 灰色（主にテキストで使用）
+$color-gray: #cccccc !default;
+
+// # 背景色
+$color-background: #ccc !default;
+
+// # ボーダー（線）色
+$color-border: #ccc !default;
+
 
 // # 役割別
 $color-state-danger: #cc2919 !default; // 危険
@@ -32,22 +42,22 @@ $color-state-warning: #cc9e12 !default; // 警告
 $color-state-info: #378da3 !default; // お知らせ
 $color-state-success: #13a83a !default; // 成功
 
-// # 2. Grid
+// # SNS color
+$color-sns-line: #00B900;
+$color-sns-facebook: #1877f2;
+$color-sns-twitter: #1DA1F2;
+$color-sns-youtube: #DA1725;
 
-$grid-row-width: 1140px !default; // グリッドの幅
-$grid-column-count: 12 !default; // グリッド数
-$grid-column-responsive-gutter: (// カラムとカラムの間隔
-  small: 16px, // モバイル
-  medium: 36px, // タブレット以上
-);
 
-// # 3. font
+// ==============================
+// # 2. font
+// ==============================
 $font-html-size: 16px !default; // （変更しない）html のフォントサイズ
 
 $font-base-size: 15px !default; // body のフォントサイズ（本文のフォントサイズ）
 $font-base-line-height: 1.75 !default; // body の行間（本文の行間）
 $font-base-letter-spacing: 0.05em !default; // 基本の文字間隔
-$font-base-color: #333 !default; // body のフォントカラー
+$font-base-color: $color-black !default; // body のフォントカラー
 $font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
 $font-base-weight: normal !default; // フォント幅
 $font-base-style: normal !default; // フォントスタイル
@@ -57,42 +67,20 @@ $font-base-size-en: 15px !default; // body.en のフォントサイズ
 $font-base-line-height-en: 1.8 !default; // body.en のフォントサイズ
 $font-base-letter-spacing-en: 0 !default; // body.en のフォントサイズ
 
-$font-heading-sizes: (// 見出しのフォントサイズ
-  small: (
-    'h1': 24px,
-    'h2': 20px,
-    'h3': 19px,
-    'h4': 18px,
-    'h5': 17px,
-    'h6': 16px,
-  ),
-  medium: (
-    'h1': 48px,
-    'h2': 40px,
-    'h3': 31px,
-    'h4': 25px,
-    'h5': 20px,
-    'h6': 16px,
-  ),
-);
 
-// # 4. Margin
+// ==============================
+// # 3. border
+// ==============================
 
-$margin-base: 8px !default;
-//$margin-xlg: $margin-base*12.5 !default;
-$margin-lg: $margin-base*8 !default;
-$margin-md: $margin-base*4 !default;
-$margin-sm: $margin-base*2 !default;
-$margin-xs: $margin-base !default;
-
-// # 5. border
-
-$border-base-color: #CCC;
+$border-base-color: $color-border;
 $border-base-width: 1px !default;
 $border-radius: 3px !default;
 $border: $border-base-width solid $border-base-color;
 
-// # 6. breakpoint
+
+// ==============================
+// # 4. breakpoint
+// ==============================
 
 $breakpoints: (
   small: 0,
@@ -102,18 +90,28 @@ $breakpoints: (
   xxlarge: 1440px,
 ) !default;
 
-$breakpoint-classes: (small medium large) !default;
 
-// # 7. background
-$color-background: #ccc;
+// ==============================
+// # 5. Layout
+// ==============================
 
-// # 8. two-column
+// # Grid
+$grid-row-width: 1140px !default; // グリッドの幅
+$grid-column-count: 12 !default; // グリッド数
+$grid-column-responsive-gutter: (// カラムとカラムの間隔
+  small: 16px, // モバイル
+  medium: 36px, // タブレット以上
+);
+
+// # Two columns
 $asideContainer: 320;
 $asideMargin: 70;
 $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 
-// # SNS color
-$color-sns-line: #00B900;
-$color-sns-facebook: #1877f2;
-$color-sns-twitter: #1DA1F2;
-$color-sns-youtube: #DA1725;
+// # Margins
+$margin-base: 8px !default;
+//$margin-xlg: $margin-base*12.5 !default;
+$margin-lg: $margin-base*8 !default;
+$margin-md: $margin-base*4 !default;
+$margin-sm: $margin-base*2 !default;
+$margin-xs: $margin-base !default;
