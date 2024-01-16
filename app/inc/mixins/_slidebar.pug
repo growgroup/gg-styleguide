@@ -1,71 +1,68 @@
 //- スマホメニュー
 mixin c_slidebar
   //-> スマホメニューのボタン
-  button(type="button").c-slidebar-button.js-slidebar-button
-    span.c-slidebar-button__inner
-      span.c-slidebar-button__line
+  +c("button").slidebar-button.js-slidebar-button(type="button")
+    +e("span").inner
+      +e("span").line
         span
         span
         span
-      span.c-slidebar-button__text.is-open MENU
-      span.c-slidebar-button__text.is-close CLOSE
+      +e("span").text.is-open MENU
+      +e("span").text.is-close CLOSE
 
-
-  .c-slidebar-menu.js-slidebar-menu.is-top-to-bottom(inert="true")
-    ul.c-slidebar-menu__list
-      li.c-slidebar-menu__parent.js-accordion
-        span.c-slidebar-menu__parent-link(data-accordion-title='menu-title') メニュー レベル1
+  +c.slidebar-menu.js-slidebar-menu.is-top-to-bottom(inert="true")
+    +ul.list
+      +li.parent.js-accordion
+        +span.parent-link(data-accordion-title='menu-title') メニュー レベル1
         //子ページ
-        ul.c-slidebar-menu__children(data-accordion-content='menu-content')
-          li.c-slidebar-menu__child.js-accordion
-            span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
+        +ul.children(data-accordion-content='menu-content')
+          +li.child.js-accordion
+            +span.child-link(data-accordion-title='menu-title') メニュー レベル2
             //孫ページ
-            ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child.js-accordion
-            span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
+            +ul.grandchildren(data-accordion-content='menu-content')
+              +loop(2)
+                +li.grandchild: +ae("#").grandchild-link メニュー レベル3
+          +li.child.js-accordion
+            +span.child-link(data-accordion-title='menu-title') メニュー レベル2
             //孫ページ
-            ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
+            +ul.grandchildren(data-accordion-content='menu-content')
+              +loop(2)
+                +li.grandchild: +ae("#").grandchild-link メニュー レベル3
+          +li.child: +ae("#").child-link メニュー レベル2
+          +li.child: +ae("#").child-link メニュー レベル2
         //子ページ
-        ul.c-slidebar-menu__children(data-accordion-content='menu-content')
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-      li.c-slidebar-menu__parent.js-accordion
-        span.c-slidebar-menu__parent-link(data-accordion-title='menu-title') メニュー レベル1
-        ul.c-slidebar-menu__children(data-accordion-content='menu-content')
-          li.c-slidebar-menu__child.js-accordion
-            span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
-            ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-        ul.c-slidebar-menu__children(data-accordion-content='menu-content')
-          li.c-slidebar-menu__child.js-accordion
-            span.c-slidebar-menu__child-link(data-accordion-title='menu-title') メニュー レベル2
-            ul.c-slidebar-menu__grandchildren(data-accordion-content='menu-content')
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-              li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-          li.c-slidebar-menu__child: +a("#").c-slidebar-menu__child-link メニュー レベル2
-      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
-      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
-      li.c-slidebar-menu__parent: +a("#").c-slidebar-menu__parent-link メニュー レベル1
+        +ul.children(data-accordion-content='menu-content')
+          +loop(2)
+            +li.child: +ae("#").child-link メニュー レベル2
+      +li.parent.js-accordion
+        +span.parent-link(data-accordion-title='menu-title') メニュー レベル1
+        +ul.children(data-accordion-content='menu-content')
+          +li.child.js-accordion
+            +span.child-link(data-accordion-title='menu-title') メニュー レベル2
+            +ul.grandchildren(data-accordion-content='menu-content')
+              +loop(2)
+                li.c-slidebar-menu__grandchild: +a("#").c-slidebar-menu__grandchild-link メニュー レベル3
+          +loop(2)
+            +li.child: +ae("#").child-link メニュー レベル2
+        +ul.children(data-accordion-content='menu-content')
+          +li.child.js-accordion
+            +span.child-link(data-accordion-title='menu-title') メニュー レベル2
+            +ul.grandchildren(data-accordion-content='menu-content')
+              +loop(2)
+                +li.grandchild: +ae("#").grandchild-link メニュー レベル3
+          +loop(2)
+            +li.child: +a("#").child-link メニュー レベル2
+      +loop(3)
+        +li.parent: +ae("#").parent-link メニュー レベル1
 
     .l-container
-      .c-slidebar-menu__buttons
-        +a("#").c-slidebar-menu__button.c-button
-          span.material-icons-outlined.c-slidebar-menu__button__icon(aria-hidden="true") mail_outline
+      +e.buttons
+        +ae("#").button.c-button
+          +span.button__icon.material-icons-outlined(aria-hidden="true") mail_outline
           |お問い合わせ
-      .c-slidebar-menu__sns-btns
+      +e.sns-btns
         //テンプレでは便宜上svgコードですが、実際にはimgタグ等での配置でOK
-        +a("#").c-slidebar-menu__sns-btn
+        +ae("#").sns-btn
           |<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#65A04D" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M245.7,77.7l-30.2,30.1C209.5,177.7,150.5,232,80,232c-14.5,0-26.5-2.3-35.6-6.8-7.3-3.7-10.3-7.6-11.1-8.8a8,8,0,0,1,3.9-11.9c.2-.1,23.8-9.1,39.1-26.4a108.6,108.6,0,0,1-24.7-24.4c-13.7-18.6-28.2-50.9-19.5-99.1a8.1,8.1,0,0,1,5.5-6.2,8,8,0,0,1,8.1,1.9c.3.4,33.6,33.2,74.3,43.8V88a48.3,48.3,0,0,1,48.6-48,48.2,48.2,0,0,1,41,24H240a8,8,0,0,1,7.4,4.9A8.4,8.4,0,0,1,245.7,77.7Z"></path></svg>
-        +a("#").c-slidebar-menu__sns-btn
+        +ae("#").sns-btn
           |<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#65A04D" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="32"></circle><path d="M172,28H84A56,56,0,0,0,28,84v88a56,56,0,0,0,56,56h88a56,56,0,0,0,56-56V84A56,56,0,0,0,172,28ZM128,176a48,48,0,1,1,48-48A48,48,0,0,1,128,176Zm52-88a12,12,0,1,1,12-12A12,12,0,0,1,180,88Z"></path></svg>
