@@ -55,10 +55,6 @@
   }
 }
 
-.bounce {
-  animation-name: bounce;
-  transform-origin: center bottom;
-}
 
 
 @keyframes fadeIn {
@@ -69,10 +65,6 @@
   to {
     opacity: 1;
   }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
 }
 
 
@@ -89,10 +81,6 @@
   }
 }
 
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-}
 
 
 @keyframes fadeInUp {
@@ -107,10 +95,6 @@
   }
 }
 
-.fadeInUp {
-  animation-name: fadeInUp;
-}
-
 
 @keyframes fadeOut {
   from {
@@ -122,9 +106,6 @@
   }
 }
 
-.fadeOut {
-  animation-name: fadeOut;
-}
 
 @keyframes zoomOut {
   0% {

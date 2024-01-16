@@ -10,10 +10,6 @@ category: Heading
   margin-bottom: 0;
   font-weight: 700;
   line-height: 1.5;
-
-  span {
-    font-size: 0.65em;
-  }
 }
 
 
@@ -21,26 +17,20 @@ category: Heading
 .c-heading.is-xlg {
   color: $color-primary;
 
-  b {
-
-    &.is-eng {
-      display: block;
-      @include webfont();
-      @include font-format(42, 0.1, 52);
-      @include breakpoint(small only) {
-        font-size: rem-calc(42)*0.8;
-      }
+  .is-eng {
+    display: block;
+    @include webfont();
+    @include font-format-light(42, 52);
+    @include breakpoint(small only) {
+      font-size: rem-calc(42)*0.8;
     }
   }
 
-  span {
-
-    &.is-ja {
-      display: block;
-      @include font-format-light(16, 26);
-      @include breakpoint(small only) {
-        font-size: rem-calc(16)*0.8;
-      }
+  .is-ja {
+    display: block;
+    @include font-format-light(16, 26);
+    @include breakpoint(small only) {
+      font-size: rem-calc(16)*0.8;
     }
   }
 }
@@ -54,23 +44,17 @@ category: Heading
     font-size: rem-calc(32)*0.8;
   }
 
-  b {
-
-    &.is-eng {
-
-    }
+  .is-eng {
+    display: block;
+    @include webfont();
   }
 
-  span {
-
-    &.is-ja {
-      display: block;
-      @include webfont();
-      @include font-format(14, "", 20, normal); //2番目を""にするとletter-spacingのCSS出力をスキップします
-      margin-top: rem-calc(6);
-      @include breakpoint(small only) {
-        font-size: rem-calc(14)*0.8;
-      }
+  .is-ja {
+    display: block;
+    @include font-format-light(14, 20);
+    margin-top: rem-calc(6);
+    @include breakpoint(small only) {
+      font-size: rem-calc(14)*0.8;
     }
   }
 }
