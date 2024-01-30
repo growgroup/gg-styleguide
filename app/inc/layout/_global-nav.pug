@@ -1,0 +1,9 @@
+nav.l-global-nav
+  ul
+    each item in nav("global_nav")
+      li
+        +a(item.url)!= item.text
+        if item.children
+          ul
+          each child_item in item.children
+            li: +a(child_item.url)!= child_item.text

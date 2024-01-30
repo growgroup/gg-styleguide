@@ -1,0 +1,206 @@
+.c-forms-simple {
+  &__block {
+    display: flex;
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+  &__title {
+    min-width: rem-calc(258);
+    padding: rem-calc(16) rem-calc(32);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0;
+    @include breakpoint(small only) {
+      width: 100%;
+      background-color: transparent;
+      padding: rem-calc(12) 0 0;
+      font-weight: 700;
+    }
+    &.is-vertical-top {
+      align-items: flex-start;
+      &.is-just{
+        padding-top: rem-calc(40);
+        @include breakpoint(small only) {
+          padding-top: rem-calc(12);
+        }
+      }
+      .c-forms__label {
+        margin-top: rem-calc(3);
+      }
+    }
+  }
+  //ラベル
+  &__label {
+    display: block;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: rem-calc(12);
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: rem-calc(1) rem-calc(10);
+    margin-left: rem-calc(16);
+    min-width: rem-calc(48);
+  }
+  &__content {
+    width: 100%;
+    padding: rem-calc(16) rem-calc(32);
+    @include breakpoint(small only) {
+      padding: rem-calc(12) 0;
+    }
+    &.is-column{
+      display: flex;
+      justify-content: space-between;
+      .c-forms-simple__input {
+        margin-right: 24px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      input{
+        width: 100%;
+      }
+    }
+    &.is-vertical-middle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  //インプット
+  &__input {
+    width: 100%;
+    input {
+      border-radius: 4px;
+      background: #F9F9F9;
+      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      @include breakpoint(small only) {
+        padding: rem-calc(12) rem-calc(16);
+      }
+      &:focus{
+        border-color: $color-primary;
+      }
+    }
+    &.is-sm {
+      width: rem-calc(180);
+      input {
+        padding-top: rem-calc(12);
+        padding-bottom: rem-calc(12);
+      }
+    }
+  }
+  &__textarea {
+    textarea {
+      border-radius: 4px;
+      background: #F9F9F9;
+      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      @include breakpoint(small only) {
+        padding: rem-calc(12) rem-calc(16);
+      }
+      &:focus{
+        border-color: $color-primary;
+      }
+    }
+  }
+  //ラジオボタン,チェックボックス
+  &__radio,
+  &__checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    label {
+      display: flex;
+      align-items: center;
+      margin-right: rem-calc(64);
+      @include breakpoint(small only) {
+        margin-right: rem-calc(48);
+        margin-bottom: rem-calc(8);
+      }
+    }
+    input {
+      margin-right: rem-calc(8);
+      margin-top: rem-calc(2);
+    }
+
+    span {
+      &:last-child {
+        label {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__checkbox {
+    input {
+      margin-right: rem-calc(6);
+      margin-top: rem-calc(4);
+    }
+  }
+  &__privacy {
+    text-align: center;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(16);
+    }
+    input{
+      margin-right: rem-calc(10);
+    }
+    a {
+      font-weight: 400;
+      text-decoration: underline;
+      color: $font-base-color;
+    }
+  }
+  &__flex-al{
+    display: flex;
+    align-items: center;
+  }
+  &__flexbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(16);
+    @include breakpoint(small only) {
+      display: block;
+    }
+    input{
+      width: 100%;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      min-width: rem-calc(120);
+      display: block;
+      @include breakpoint(small only) {
+        min-width: 100%;
+        margin-bottom: rem-calc(8);
+      }
+    }
+  }
+  // 住所自動入力ボタン
+  &__button {
+    max-width: rem-calc(150);
+    border: 1px solid $font-base-color;
+    outline: none;
+    background-color: $color-white;
+    padding: rem-calc(3) rem-calc(12);
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: rem-calc(16);
+    @include breakpoint(small only) {
+      padding: rem-calc(9) rem-calc(12);
+    }
+  }
+  // 送信ボタン
+  &__submit {
+    text-align: center;
+    margin-top: rem-calc(40);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(32);
+    }
+    //横並び
+    &.is-two-columns {
+    }
+  }
+}

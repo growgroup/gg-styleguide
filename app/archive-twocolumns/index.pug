@@ -1,0 +1,59 @@
+extends /inc/foundation/_base-twocolumn.pug
+block append config
+  - current.id = "archive-twocolumns" // ページのID
+  - current.title = "アーカイブ_2カラム" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header({
+        image: "img-page-header-format.jpg",
+        title: "量産ページ",
+        subtitle: "parent"
+      })
+  +c_breadcrumb()
+
+block body
+  div.u-mbs.is-bottom.is-lg
+    +c.news-lg.is-image-display
+      +loop(4)
+        +a("/archive-twocolumns/page/").c-news-lg__block
+          +e.image: +img("img-thumbnail-01.jpg")
+          +e.content
+            +e.sup
+              +e.label.c-label.is-sm お知らせ
+              +e.date 2018.06.01
+            +e.title お知らせの投稿タイトルがここに入ります。
+            +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
+    +c.pagination.is-align-left
+      ul
+        li: +a("/archive-twocolumns/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        li: span.is-current 1
+        li: +a("/archive-twocolumns/page/") 2
+        li: +a("/archive-twocolumns/page/") 3
+        li: +a("/archive-twocolumns/page/") 4
+        li: +a("/archive-twocolumns/page/") 5
+        li: +a("/archive-twocolumns/page/").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+  div.u-mbs.is-bottom.is-lg
+    +c.news.is-onecolumn
+      +e.content
+        +loop(4)
+          +a("/archive-twocolumns/page/").c-news__block
+            +e.date 2018.10.10
+            +e.label.c-label.is-white カテゴリ
+            +e.inner
+              +e.text お知らせの投稿タイトルがここに入ります。
+    +c.pagination.is-align-left
+      ul
+        li: +a("/archive-twocolumns/page/").c-pagination__prev <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        li: span.is-current 1
+        li: +a("/archive-twocolumns/page/") 2
+        li: +a("/archive-twocolumns/page/") 3
+        li: +a("/archive-twocolumns/page/") 4
+        li: +a("/archive-twocolumns/page/") 5
+        li: +a("/archive-twocolumns/page/").c-pagination__next <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+block aside
+  +l-aside(news)

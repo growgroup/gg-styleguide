@@ -1,0 +1,56 @@
+.modaal{
+  &-wrapper{
+    z-index: 999999 !important;
+  }
+  &-outer-wrapper{}
+
+  &-inner-wrapper{}
+
+  &-overlay{
+    z-index: 99999 !important;
+  }
+}
+
+.modaal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+
+  &:hover {
+
+    &:before, &:after {
+      background: $color-primary;
+    }
+  }
+}
+
+.modaal-video-wrap {
+  margin: auto;
+}
+
+.js-modal-image {
+  position: relative;
+  cursor: pointer;
+  @include transition();
+
+  &:after {
+    content: "search";
+    font-family: "Material Icons Outlined";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem-calc(20);
+    height: rem-calc(20);
+    background: $color-primary;
+    color: $color-white;
+    @include font-format(14,0,14,400);
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

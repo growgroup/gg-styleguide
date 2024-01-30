@@ -1,0 +1,72 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "news" // ページのID
+  - current.title = "お知らせ" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "お知らせ",
+    subtitle: "news"
+  })
+  +c_breadcrumb()
+
+block body
+  section.l-section.is-lg
+      .l-container.is-sm
+        +c.news.is-onecolumn
+          h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
+          +e.content
+            +loop(3)
+              +c_news__block("is-news")
+        +c_pagination()
+        +c.box-archive.u-mbs.is-top.is-lg
+          +e.block
+            +e.title カテゴリ
+            ul
+              li: +a("/news/") すべて
+              li: +a("/news/category/") お知らせ
+              li: +a("/news/category/") ブログ
+          +e.block
+            +e.title 年月アーカイブ
+            ul
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+              li: +a("/news/category/") 2019年01月
+        +c.news-lg.u-mbs.is-top.is-lg
+          +loop(5)
+            +a("/news/category/page/").c-news-lg__block
+              +e.sup
+                +e.label.c-label.is-sm お知らせ
+                +e.date 2018.06.01
+              +e.title お知らせの投稿タイトルがここに入ります。
+              +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+        +c_pagination("is-align-left")
+
+        +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg
+          .row
+            +loop(4)
+              .large-3.small-6
+                +e.block
+                  +a.c-card-post__image
+                    +img("img-card-01.jpg")
+                  +e.content
+                    +e.sup
+                      span.c-card-post__label.c-label カテゴリ名
+                      +e.date 2018.01.01
+                    +e.title タイトルが入ります。タイトルが入ります。
+        +c_pagination()
+        
+block before_footer
+  +l_offer
+

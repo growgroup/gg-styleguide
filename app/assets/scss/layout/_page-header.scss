@@ -1,0 +1,72 @@
+/*
+---
+name: ページヘッダー_通常
+category: Layout
+---
+*/
+/*
+---
+name: ページヘッダー_単色
+category: Layout
+---
+*/
+@use "sass:math";
+
+.l-page-header {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto;
+
+    &::after {
+      @include img-curtain($color-black,0.2);
+    }
+  }
+  &__bgimg {
+    @include bg-option();
+    width: 100%;
+    height: 100%;
+  }
+  &__inner {
+    position: relative;
+    text-align: center;
+    color: $color-white;
+    padding: rem-calc(64) rem-calc(16);
+    @include breakpoint(small only) {
+      padding: rem-calc(46) rem-calc(8);
+    }
+  }
+  &__title {
+    @include webfont();
+    font-size: rem-calc(42);
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    margin: 0;
+    @include breakpoint(small only) {
+      font-size: math.div(rem-calc(42), 1.5);
+    }
+  }
+  &__subtitle {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  // 画像なし単色
+  &.is-image-hidden {
+    height: rem-calc(200);
+    background-color: $color-secondary;
+    &::after {
+      display: none;
+    }
+    .l-page-header__inner {
+      color: $color-primary;
+    }
+  }
+}

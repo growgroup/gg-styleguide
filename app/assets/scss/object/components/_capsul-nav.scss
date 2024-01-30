@@ -1,0 +1,8 @@
+.c-capsul-nav {
+  &__block {
+    margin-right: rem-calc(36) !important;
+    &:last-of-type {
+      margin-right: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+/*
+---
+name: メニューリスト_通常
+category: Navigation
+---
+*/
+.c-menu-list {
+  &__head {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 700;
+    padding: rem-calc(12) rem-calc(16);
+  }
+
+  ul {
+    li {
+      border-bottom: 1px solid $border-base-color;
+
+      a {
+        text-decoration: none;
+        color: $font-base-color;
+        font-weight: 700;
+        display: block;
+        padding: rem-calc(14) rem-calc(16) rem-calc(14) rem-calc(36);
+        position: relative;
+        transition: all .2s;
+
+        &::before {
+          content: "chevron_right";
+          font-family: 'Material Icons Outlined';
+          line-height: 1;
+          letter-spacing: 0;
+          color: $color-primary;
+          position: absolute;
+          top: 50%;
+          left: rem-calc(16);
+          transform: translateY(-50%);
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background-color: $color-primary;
+          bottom: 0;
+          left: 0;
+          transform: translateY(1px);
+          transition: all .4s ease;
+          opacity: 0;
+        }
+
+        //*hover
+        &:hover {
+          opacity: 1;
+          color: $color-primary;
+
+          &::after {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+
+      //*サブメニュー
+      ul {
+        border-top: 1px solid $border-base-color;
+        padding: rem-calc(8) 0;
+
+        li {
+          border-bottom: none;
+
+          a {
+            font-weight: 400;
+            padding: rem-calc(5) rem-calc(24) rem-calc(5) rem-calc(48);
+
+            &::before {
+              left: rem-calc(32);
+              top: rem-calc(4);
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //*バナー
+  &__banners {
+    margin-top: rem-calc(8);
+  }
+
+  &__block {
+    display: flex;
+    text-decoration: none;
+    color: $color-primary;
+    background-color: rgba($color-primary, 0.2);
+    font-size: rem-calc(14);
+    min-height: rem-calc(64);
+    align-items: center;
+    padding: rem-calc(8) rem-calc(32) rem-calc(8) rem-calc(16);
+    position: relative;
+
+    &::after {
+      content: "chevron_right";
+      font-family: 'Material Icons Outlined';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem-calc(16);
+      font-size: rem-calc(16);
+    }
+  }
+
+  //*サブメニュー
+  &__submenu {
+    padding-left: rem-calc(24);
+    border-bottom: 1px solid $border-base-color;
+    display: none;
+
+    li {
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        font-weight: 400 !important;
+        font-size: rem-calc(14) !important;
+        padding: rem-calc(20) rem-calc(16) rem-calc(20) rem-calc(20) !important;
+
+        &::before {
+          left: 0 !important;
+          top: rem-calc(20) !important;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

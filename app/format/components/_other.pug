@@ -1,0 +1,54 @@
+//アコーディオン
+div.u-mbs.is-bottom
+  .l-container
+    +c.accordion
+      +e.block.js-accordion.is-open
+        +e.head(data-accordion-title="accordion-title")
+          +e.icon Q
+          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
+        +e.content(data-accordion-content="accordion--text", style="display: block;")
+          +e.icon.is-color-accent A
+          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+      +e.block.js-accordion
+        +e.head(data-accordion-title="accordion-title")
+          +e.icon Q
+          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
+        +e.content(data-accordion-content="accordion--text")
+          +e.icon.is-color-accent A
+          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+div.u-mbs.is-bottom
+  +c.gallery-text.js-float-swiper.swiper
+    ul.swiper-wrapper
+      +loop(2)
+        li.swiper-slide: span TEXTGALLERY
+
+div.u-mbs.is-bottom
+  +c.gallery-logo
+    .l-container
+      +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
+    +loop(2)
+      +e.slider.swiper
+        +e.images.swiper-wrapper
+          +loop(10)
+            +e.image.swiper-slide: +bgimg("logo.png").bg-img
+
+div.u-mbs.is-bottom
+  +c.gallery-card.swiper
+    .l-container
+      +h2.head.c-heading.is-md.is-center.is-mg-level-2 会社紹介ギャラリー
+    +e.cards.swiper-wrapper
+      +e.card.swiper-slide
+        +e.image: +bgimg("img-sample.jpg").bg-img
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      +e.card.swiper-slide
+        +e.image: +bgimg("img-sample.jpg").bg-img
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      +e.card.swiper-slide
+        +e.image: +bgimg("img-sample.jpg").bg-img
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    .l-container
+      .swiper-content
+        .swiper-scrollbar
+        .swiper-nav
+          .swiper-button-prev
+          .swiper-button-next

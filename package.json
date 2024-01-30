@@ -14,7 +14,7 @@
     "build:css": "run-s webpack-css-production make-admin-style prepend-selector-admin-style",
     "webpack-css-production": "webpack --config webpack.style.config.babel.js --mode production",
     "develop:css": "webpack --config webpack.style.config.babel.js --mode development --watch --watch-options-stdin --progress",
-    "build:webpack": "webpack --config webpack.config.babel.js --mode development",
+    "build:webpack": "webpack --config webpack.config.babel.js --mode production",
     "develop:webpack": "webpack --config webpack.config.babel.js --mode development  --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
     "develop:pug": "pug -O build/pug.js app --out dist -w -s",

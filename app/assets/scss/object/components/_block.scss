@@ -1,0 +1,30 @@
+/*
+---
+name: ブロック_通常
+category: Components
+---
+*/
+.c-block {
+  &__block {
+    margin-bottom: rem-calc(64);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(64)*0.5;
+    }
+  }
+  &__content {
+    p {
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(16);
+      }
+    }
+  }
+  &__image {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

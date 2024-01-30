@@ -1,0 +1,136 @@
+/*
+---
+name: お知らせ_通常_フロントページ
+category: News
+---
+*/
+.c-news {
+  @include breakpoint(small only) {
+    position: relative;
+    padding-bottom: rem-calc(72);
+  }
+
+  &__head {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(16);
+    }
+  }
+
+  &__title {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  &__button {
+    margin-top: rem-calc(56);
+    @include breakpoint(small only) {
+      margin-top: 0;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      .c-button {
+        max-width: rem-calc(224);
+      }
+    }
+  }
+
+  &__block {
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    border-bottom: 1px solid $border-base-color;
+    display: flex;
+    align-items: center;
+    padding: rem-calc(24) 0 rem-calc(16);
+    @include breakpoint(small only) {
+      flex-wrap: wrap;
+      padding: rem-calc(16) 0 rem-calc(12) !important;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__inner {
+
+  }
+
+  &__date {
+    @include news-date();
+  }
+
+  &__label {
+    margin-left: rem-calc(24);
+    margin-right: rem-calc(24);
+    @include breakpoint(small only) {
+      margin-left: rem-calc(16);
+      margin-right: 0;
+
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    @include line-clamp(1);
+
+    @include breakpoint(small only) {
+      width:100%;
+      margin-top: rem-calc(8);
+    }
+  }
+}
+
+
+.c-news {
+  &.is-onecolumn {
+    padding-bottom: 0;
+
+    .c-news__block {
+      padding: rem-calc(24) 0;
+      align-items: flex-start;
+      @include breakpoint(small only) {
+        align-items: center;
+        padding: rem-calc(12) 0 !important;
+      }
+    }
+
+    .c-news__date {
+      margin-top: rem-calc(6);
+      @include breakpoint(small only) {
+        margin-top: 0;
+      }
+    }
+
+    .c-news__title {
+      text-align: center !important;
+      margin-bottom: rem-calc(40) !important;
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(24) !important;
+      }
+    }
+
+    .c-news__label {
+      margin-top: rem-calc(2);
+    }
+
+    .c-news__excerpt {
+      font-size: rem-calc(14);
+      margin-top: rem-calc(8);
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+        margin-top: rem-calc(4);
+      }
+    }
+
+    .c-news__button {
+      text-align: center;
+
+      .c-button {
+        max-width: rem-calc(224);
+      }
+    }
+  }
+}

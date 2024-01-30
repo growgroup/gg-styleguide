@@ -1,0 +1,51 @@
+
+.c-label {
+  background-color: $color-primary;
+  color: $color-white;
+  display: inline-block;
+  text-align: center;
+  min-width: rem-calc(116);
+  padding: rem-calc(1) rem-calc(8);
+  border: 1px solid $color-primary;
+  @include font-format-light(14,20);
+  font-weight: 700;
+
+  @include breakpoint(small only) {
+    font-size: rem-calc(13);
+    min-width: rem-calc(88);
+  }
+
+  &.is-xlg {
+    min-width: rem-calc(156);
+    font-size: rem-calc(14);
+    padding: rem-calc(3) rem-calc(8);
+    @include breakpoint(small only) {
+      min-width: rem-calc(120);
+      font-size: rem-calc(12);
+      padding: rem-calc(2) rem-calc(8);
+    }
+  }
+  &.is-lg {
+    min-width: rem-calc(160);
+    font-size: rem-calc(13);
+  }
+  &.is-sm {
+    min-width: rem-calc(80);
+    font-size: rem-calc(12);
+    padding: 0 rem-calc(8);
+  }
+
+  // カラー
+  &.is-white {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+  &.is-secondary {
+    background: $color-secondary;
+    color: $font-base-color;
+  }
+
+  &.is-radius {
+    border-radius: 100px;
+  }
+}

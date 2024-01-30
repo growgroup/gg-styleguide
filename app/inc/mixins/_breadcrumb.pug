@@ -1,0 +1,26 @@
+//- パンくずリスト
+mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
+  +c.breadcrumb
+    .l-container
+      +e.inner
+        span
+          span
+            +a("/") TOP
+            span.is-arrow <span class="material-icons-outlined">chevron_right</span>
+            if !parent
+              //- parent設定がないとき
+              span !{current.title}
+            else
+              //- parent設定があるとき
+              span
+                +a('/' + parentURL + '/')=parent
+                span.is-arrow <span class="material-icons-outlined">chevron_right</span>
+                if !parent2
+                  //- parent2設定がないとき
+                  span !{current.title}
+                else
+                  //- parent2設定があるとき
+                  span
+                    +a('/' + parentURL + '/' + parentURL2 + '/')=parent2
+                    span.is-arrow <span class="material-icons-outlined">chevron_right</span>
+                    span !{current.title}

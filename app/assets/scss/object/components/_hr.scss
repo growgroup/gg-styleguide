@@ -1,0 +1,27 @@
+/*
+---
+name: <hr>区切り線
+category: Base
+---
+*/
+hr,
+.c-hr {
+  border-top: 1px solid $border-base-color;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  box-shadow: none;
+  margin: rem-calc(48) auto;
+  @include breakpoint(small only) {
+    margin: rem-calc(32) auto;
+  }
+
+  &.is-border-dotted {
+    border-top: 1px dotted $border-base-color;
+  }
+
+  &.is-line-double {
+    border-bottom: 1px solid $border-base-color;
+    height: 2px;
+  }
+}

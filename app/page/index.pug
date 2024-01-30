@@ -1,0 +1,23 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "format" // ページのID
+  - current.title = "量産ページ" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "量産ページ",
+    subtitle: "parent"
+  })
+  +c_breadcrumb()
+
+block body
+  section.l-section
+
+block before_footer
+  +l_offer
+

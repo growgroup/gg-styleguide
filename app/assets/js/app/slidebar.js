@@ -32,7 +32,7 @@
 var defaultOptions = {
   containerSelector: '.js-slidebar-container',
   buttonSelector: '.js-slidebar-button',
-  menuSelector: '.js-slidebar-container',
+  menuSelector: '.js-slidebar-menu',
   slideSpeed: 500
 }
 
@@ -151,11 +151,11 @@ export default class Slidebar {
   setupResizeObserver() {
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
-        // if (entry.contentRect.width >= 950) {
-        //   document.body.classList.remove("is-slidebar-active");
-        //   this.isActive = false;
-        //   this.menu.attr("inert", "true");
-        // }
+        if (entry.contentRect.width >= 950) {
+          document.body.classList.remove("is-slidebar-active");
+          this.isActive = false;
+          this.menu.attr("inert", "true");
+        }
       }
     });
 

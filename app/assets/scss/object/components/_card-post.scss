@@ -1,0 +1,124 @@
+/*
+---
+name: ポストアイテム_カード（タグあり）
+category: News
+---
+*/
+.c-card-post {
+  &__block {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+    margin-bottom: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(32);
+    }
+
+    span,
+    small {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    display: block;
+  }
+
+  &__content {
+    margin-top: rem-calc(12);
+  }
+
+  &__title {
+    font-size: rem-calc(18);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__text {
+    color: rgba($font-base-color, 0.7);
+    font-size: rem-calc(13);
+    margin-top: rem-calc(12);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(8);
+    }
+  }
+
+  &__sup {
+    margin-top: rem-calc(6);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__date {
+    @include news-date();
+  }
+
+  &__detail {
+    color: $color-primary;
+    font-size: rem-calc(14);
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  &__tag {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin-right: rem-calc(20);
+
+        a {
+          color: $color-primary;
+          font-weight: 400;
+          font-size: rem-calc(14);
+          display: block;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.c-card-post {
+  // タグなしver
+  &.is-tag-hidden {
+    margin-botom: rem-calc(32);
+
+    .c-card-post__sup {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: rem-calc(8);
+    }
+
+    .c-card-post__label {
+      position: static;
+    }
+
+    .c-card-post__date {
+      margin-right: 0;
+      margin-left: rem-calc(18);
+    }
+
+    .c-card-post__title {
+      font-size: rem-calc(16);
+    }
+  }
+}

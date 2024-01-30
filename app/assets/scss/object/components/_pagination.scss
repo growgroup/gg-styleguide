@@ -1,0 +1,74 @@
+/*
+---
+name: ページネーション_通常
+category: Navigation
+---
+*/
+.c-pagination {
+  margin-top: rem-calc(48);
+  @include breakpoint(small only) {
+    margin-top: rem-calc(32);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul li {
+    list-style: none !important;
+    margin-bottom: rem-calc(6);
+
+    &:not(:last-child) {
+      margin-right: rem-calc(6);
+    }
+  }
+
+  ul li > span,
+  ul li > a {
+    @include webfont();
+    @include font-format(16, "", 13, bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem-calc(48);
+    height: rem-calc(48);
+    text-decoration: none;
+    border-radius: 4px;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: $color-white;
+    @include breakpoint(small only) {
+      width: rem-calc(40);
+      height: rem-calc(40);
+    }
+
+    &:hover {
+      opacity: 1;
+      background: $color-primary;
+      color: $color-white;
+    }
+
+    &.is-current {
+      background: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
+    }
+
+    &.is-dot {
+      font-family: $font-base-family;
+      background: transparent;
+      border-color: transparent;
+      color: $color-primary;
+    }
+  }
+
+  // 左寄せ
+  &.is-align-left {
+    ul {
+      justify-content: flex-start;
+    }
+  }
+}

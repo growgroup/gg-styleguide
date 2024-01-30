@@ -1,0 +1,81 @@
+/*
+---
+name: お知らせ_1カラム_アーカイブ02
+category: News
+---
+*/
+.c-news-lg {
+  &__block {
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    color: $font-base-color;
+    padding: rem-calc(24) 0;
+    @include breakpoint(small only) {
+      padding: rem-calc(16) 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__sup {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(16);
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(8);
+    }
+  }
+
+  &__label {
+
+  }
+
+  &__date {
+    @include news-date();
+    margin-left: rem-calc(12);
+
+    &::before {
+      content: "schedule";
+      font-family: 'Material Icons Outlined';
+      letter-spacing: 0;
+      margin-right: rem-calc(4);
+      vertical-align: top;
+    }
+  }
+
+  &__title {
+    font-size: rem-calc(24);
+    margin-bottom: rem-calc(8);
+    line-height: 1.5;
+    @include breakpoint(small only) {
+      font-size: rem-calc(18);
+      margin-bottom: rem-calc(4);
+    }
+  }
+
+  &__excerpt {
+    font-size: rem-calc(12);
+  }
+
+  // サムネイル有り
+  &.is-image-display {
+    .c-news-lg__block {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid $border-base-color;
+    }
+
+    .c-news-lg__image {
+      width: rem-calc(136);
+      flex-shrink: 0;
+      margin-right: rem-calc(24);
+      @include breakpoint(small only) {
+        width: rem-calc(100);
+        margin-right: rem-calc(24);
+      }
+    }
+  }
+}

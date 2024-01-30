@@ -5,142 +5,176 @@ category: Layout
 ---
 */
 .l-offer {
-  display: block;
-  background: #F4F8F9;
-  &__container {
-    display: flex;
-    margin: 0 rem-calc(-18);
-    padding: rem-calc(80) 0;
-    @include breakpoint(medium down) {
-      display: block;
-      margin: 0;
-      padding: rem-calc(36) 0;
+  background-image: url("../images/bg-offer.jpg");
+  @include bg-option();
+  text-align: center;
+  color: $color-white;
+  padding: rem-calc(48) 0;
+  @include breakpoint(small only) {
+    padding: rem-calc(40) 0;
+  }
+  // padding大きめ
+  &.is-padding-lg {
+    padding: rem-calc(64) 0;
+  }
+  &__items {
+    margin-top: rem-calc(48);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(24);
+    }
+    // ボタン1つ
+    &.is-button-one {
+      margin-top: rem-calc(24);
+      text-align: center;
+      .l-offer__button {
+        max-width: rem-calc(454);
+      }
     }
   }
-
-  &__item {
-    width: 50%;
-    padding: 0 rem-calc(18);
-    @include breakpoint(medium down) {
-      width: 100%;
-      margin-top: rem-calc(16);
-      padding: 0 rem-calc(16);
+  &__button {
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: rem-calc(16);
+    letter-spacing: 0.05em;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $color-white;
+    padding: rem-calc(24) rem-calc(32);
+    position: relative;
+    width: 100%;
+    min-height: rem-calc(88);
+    @include breakpoint(small only) {
+      font-size: rem-calc(15);
+      min-height: rem-calc(64);
     }
-    &:first-child {
-      margin-top: rem-calc(0);
+    &::after {
+      content: "chevron_right";
+      font-family: 'Material Icons Outlined';
+      position: absolute;
+      font-size: rem-calc(20);
+      top: 50%;
+      right: rem-calc(24);
+      transform: translateY(-50%);
+      font-weight: 400;
+      @include breakpoint(small only) {
+        font-size: rem-calc(18);
+      }
     }
-    &-inner {
-      background: $color-white;
-      padding: rem-calc(32) rem-calc(62) rem-calc(56);
+    &.is-bgcolor-primary {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+    //->電話番号はアクセントフォント
+    &.is-tel {
+      @include webfont();
+      font-size: rem-calc(32);
+      line-height: 1;
+      @include breakpoint(small only) {
+        font-size: rem-calc(28);
+      }
+      i {
+        margin-right: rem-calc(8);
+      }
+    }
+  }
+  &__subtext {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(6);
+      font-size: rem-calc(12);
+      font-weight: 400;
+      margin-bottom: rem-calc(24);
+    }
+  }
+}
+/*
+---
+name: オファー_その他
+category: Layout
+---
+```types.html
+<div class="l-offer is-color-primary">
+          <div class="l-container">
+            <div class="l-offer__inner">
+              <h2 class="c-heading is-xlg is-white is-bottom"><span>CONTACT</span><small>お問い合わせ</small></h2>
+              <div class="l-offer__text">弊社のサービスへ興味をお持ちの方は、<br>下記の電話番号、もしくはお問い合わせフォームよりお気軽に問い合わせください。</div>
+              <div class="l-offer__items">
+                <div class="row">
+                  <div class="large-5 is-push-lg-1 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">お電話の際は「ホームページを見て」と<br>お伝えください。</div>
+                      <div class="l-offer__box-tel"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000<small>電話受付時間 / 平日00：00～00：00</small></div>
+                    </div>
+                  </div>
+                  <div class="large-5 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">メールでのご相談・ご質問は<br>お問い合わせフォームをご活用ください。</div><a class="c-button is-lg is-white" href="#">お問い合わせフォーム</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+```
+*/
+.l-offer {
+  // primary
+  &.is-color-primary {
+    background-image: none;
+    background-color: $color-primary;
+    padding: rem-calc(64) 0;
+    @include breakpoint(small only) {
+      padding: rem-calc(48) 0;
+    }
+    .c-heading {
+      color: $color-white;
+      margin-bottom: rem-calc(32);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(24);
+      }
+    }
+    .l-offer__items {
+      margin-top: rem-calc(32);
+    }
+    .l-offer__box {
+      border: 1px solid $color-white;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-direction: column;
-      border-radius: 4px;
-      @include breakpoint(medium down) {
-        padding: rem-calc(32) rem-calc(24);
-        display: block;
+      text-align: center;
+      padding: rem-calc(32) rem-calc(48);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(8);
+        height: inherit;
+        padding: rem-calc(24);
       }
     }
-    &-title {
-      @include font-format(32, .04, 48,600);
-      text-align: center;
-      font-family: "Noto Serif JP";
-      color: $font-base-color;
-      @include breakpoint(medium down) {
-        @include font-format(24, .04, 36,600);
+    .l-offer__box-text {
+      font-size: rem-calc(14);
+      letter-spacing: 0.1em;
+      margin-bottom: rem-calc(20);
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(12);
       }
-      b {
-        display: inline-block;
-        color: $color-primary;
-        @include font-format(20, .04, 34,bold);
-        margin-bottom: rem-calc(25);
-        padding-bottom: rem-calc(5);
-        border-bottom: 2px solid $color-primary;
-        position: relative;
-        @include breakpoint(medium down) {
-          @include font-format(16, .04, 27,bold);
-        }
-        small {
-          display: inline-block;
-          @include font-format(15, .04, 25.5,bold);
-          @include breakpoint(medium down) {
-            @include font-format(13, .04, 22.1,bold);
-          }
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: rem-calc(-10);
-          left: 0;
-          margin: auto;
-          height: calc(20px / 2);
-          width: 20px;
-          clip-path: polygon(0 0, 100% 0, 50% 100%);
-          background: $color-primary;
-        }
-      }
-      span {
-        display: inline-block;
-        color: $color-primary;
+    }
+    .l-offer__box-tel {
+      @include webfont();
+      font-size: rem-calc(32);
+      line-height: 1;
+      i {
+        margin-right: rem-calc(8);
       }
       small {
-        display: inline-block;
-        @include font-format(24, .04, 36,600);
-        @include breakpoint(medium down) {
-          @include font-format(18, .04, 36,600);
-        }
-      }
-    }
-    &-text {
-      margin-top: rem-calc(18);
-      text-align: center;
-      @include font-format(18, .04, 32);
-      @include breakpoint(medium down) {
-        margin-top: rem-calc(10);
-        @include font-format(15, .04, 26);
-      }
-    }
-    &-button {
-      margin: rem-calc(24) auto 0;
-      max-width: rem-calc(303);
-      @include breakpoint(medium down) {
-        margin-top: rem-calc(20);
-        max-width: rem-calc(255);
-      }
-      a {
         display: block;
-        text-decoration: none;
-        @include font-format(18, .04, 29,bold);
-        color: $color-white;
-        padding: rem-calc(16) rem-calc(56);
-        background: $color-primary;
-        border-radius: 10px;
-        position: relative;
-        @include breakpoint(medium down) {
-          padding: rem-calc(16) rem-calc(36);
-          @include font-format(16, .04, 25,bold);
-        }
-        &::after {
-          content: "\e5cc";
-          font-family: "Material Icons Outlined";
-          position: absolute;
-          top: 0;
-          right: rem-calc(20);
-          bottom: 0;
-          margin: auto;
-          width: rem-calc(12);
-          height: rem-calc(18);
-          color: $color-white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        @include hover {
-          opacity: .5;
-        }
+        font-size: rem-calc(13);
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        margin-top: rem-calc(8);
       }
     }
   }

@@ -1,0 +1,82 @@
+/*
+---
+name: 投稿ナビゲーション_通常
+category: Navigation
+---
+*/
+.c-post-navs {
+  margin: rem-calc(64) 0;
+  @include breakpoint(small only) {
+    margin: rem-calc(32) 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    li {
+      width: rem-calc(155);
+      max-width: 33%;
+      @include breakpoint(small only) {
+        width: calc(33% - 8px);
+      }
+
+      a {
+        @include breakpoint(small only) {
+          font-size: rem-calc(12) !important;
+          letter-spacing: 0 !important;
+        }
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: auto;
+
+    a {
+      @include breakpoint(small only) {
+        padding-left: rem-calc(20) !important;
+        padding-right: rem-calc(8) !important;
+      }
+    }
+  }
+
+  &__archive {
+    a {
+      align-items: center;
+      margin: auto;
+
+      @include breakpoint(small only) {
+        padding-left: rem-calc(8) !important;
+        padding-right: rem-calc(8) !important;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      span {
+        font-size: rem-calc(16);
+        margin-right: rem-calc(12);
+
+        @include breakpoint(small only) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__next {
+    margin-left: auto;
+
+    a {
+      margin-left: auto;
+      @include breakpoint(small only) {
+        padding-right: rem-calc(20) !important;
+        padding-left: rem-calc(8) !important;
+      }
+    }
+  }
+}

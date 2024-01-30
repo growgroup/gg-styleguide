@@ -1,0 +1,12 @@
+
+
+.l-aside {
+  width: 100%;
+  max-width: rem-calc($asideContainer);
+  margin-left: auto;
+  @include breakpoint(medium down) {
+    width: 100%;
+    max-width: 100%;
+    margin: rem-calc(50) 0;
+  }
+}

@@ -1,0 +1,9 @@
+// テキスト : 位置
+// Styleguide 4.2.0
+
+.c-lead {
+  text-align: center;
+  @include breakpoint(small only) {
+    text-align: left;
+  }
+}

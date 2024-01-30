@@ -1,0 +1,49 @@
+.c-pagetop {
+  position: fixed;
+  right: rem-calc(24);
+  bottom: rem-calc(24);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  @include transition();
+
+  @include breakpoint(small only) {
+    right: rem-calc(14);
+    bottom: rem-calc(14);
+  }
+
+  &.is-fixed {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-absolute {
+    position: absolute;
+    opacity: 1;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem-calc(50);
+    height: rem-calc(50);
+    color: $color-white;
+    background: $font-base-color;
+    box-shadow: 0 0 10px rgba($color-black, .1);
+    text-decoration: none;
+    @include transition();
+    font-size: rem-calc(25);
+    line-height: 1;
+
+    &:after {
+      content: "expand_less";
+      font-family: 'Material Icons Outlined';
+    }
+
+    &:hover {
+      color: $font-base-color;
+      background: $color-white;
+    }
+  }
+}

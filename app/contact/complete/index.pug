@@ -1,0 +1,41 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "complete" // ページのID
+  - current.title = "お問い合わせ - 送信完了ページ" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/contact/${current.id}/` // ページのpath
+  - current.depth = 3 // ページの階層
+
+block page_header
+
+block body
+  section.l-section.is-lg.is-color-secondary
+    .l-container
+      +c.form-head
+        +e.block
+          +h1.title お問い合わせ
+          +e.list
+            +e.item
+              +e.item-number 1
+              +e.item-text お客様情報入力
+            +e.item
+              +e.item-number 2
+              +e.item-text 入力内容の確認
+            +e.item.is-current
+              +e.item-number 3
+              +e.item-text 送信完了
+      +c.forms
+        +e.inner
+          +e.heading.c-heading.is-md.is-normal.u-text-center.is-bottom お問い合わせ<br class="u-hidden-lg">ありがとうございました。
+          +e.text.
+            この度はお問い合わせいただき、誠にありがとうございます。<br>
+            いただいた内容を確認後、担当者より再度ご連絡いたします。<br>
+            大変恐縮ですが、今しばらくお待ちくださいませ。<br><br>
+
+            ※尚、ご入力いただいたメールアドレス宛に<br class="u-hidden-sm">お問い合わせ内容を記載した自動返信メールが配信されております。<br>
+            そちらも併せてご確認くださいませ。<br>
+
+        +e.pagetop.u-text-center
+          +a("/").c-button.is-xlg トップページに戻る
+

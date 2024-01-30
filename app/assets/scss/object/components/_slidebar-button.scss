@@ -1,76 +1,98 @@
-.c-slidebar-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  right: 0;
-  top: 0;
-  text-align: center;
-  z-index: 9999;
-  text-decoration: none;
-  background-color: $color-white;
-  line-height: 1;
-  color: $color-white;
-  width: rem-calc($slidebar-header-height);
-  height: rem-calc($slidebar-header-height);
-  border: none;
-  @include breakpoint(medium down) {
-    width: rem-calc(60);
-    height: rem-calc(60);
-  }
+// スライドメニュー
+//
+// スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
+// Styleguide 4.5
 
-  &:active,
-  &:hover {
-    opacity: 1;
+@include breakpoint(large up) {
+  .c-slidebar-button {
+    display: none;
   }
+}
 
-  &__inner{
-    display: block;
-  }
+@include breakpoint(medium down) {
+  // トリガーとなるボタン
+  .c-slidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    text-align: center;
+    font-size: rem-calc(12);
+    z-index: 9999;
+    text-decoration: none;
+    background-color: $color-primary;
+    line-height: 1;
+    color: $color-white;
+    width: rem-calc($slidebar-header-height);
+    height: rem-calc($slidebar-header-height);
+    padding-top: rem-calc(6);
+    border: none;
 
-  // ボーダー
-  &__line {
-    height: rem-calc(16);
-    display: block;
-    > span {
+    &:active,
+    &:hover {
+      opacity: 1;
+    }
+
+    &__inner{
       display: block;
-      width: rem-calc(26);
-      height: rem-calc(2);
-      background: $font-base-color;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 5px;
-      transition: all .3s;
+    }
 
-      &:last-child {
-        margin-bottom: 0;
+    // ボーダー
+    &__line {
+      height: rem-calc(16);
+      display: block;
+      > span {
+        display: block;
+        width: rem-calc(26);
+        height: rem-calc(2);
+        background: $color-white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        transition: all ease .2s;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    // メニューテキスト
+    &__text {
+      transition: all ease .2s;
+      font-size: 9px;
+      letter-spacing: 0.4px;
+      @include webfont();
+      margin-top: rem-calc(8);
+      display: block;
+
+      &.is-close {
+        display: none;
       }
     }
   }
 
-}
+  // 有効時
+  .is-slidebar-active {
+    //cursor: pointer;
 
-// 有効時
-.is-slidebar-active {
-  //cursor: pointer;
+    .c-slidebar-button {
+      &__line {
+        > span {
+          &:nth-child(1) {
+            transform: rotate(-45deg) translateY(4px) translateX(-4px);
+          }
 
-  .c-slidebar-button {
-    background: $color-primary-light;
-    transition: all .3s;
-    &__line {
-      > span {
-        background: $color-white;
-        &:nth-child(1) {
-          transform: rotate(-45deg) translateY(4px) translateX(-4px);
-        }
+          &:nth-child(2) {
+            transform: rotate(45deg) translateY(-1px) translateX(-1px);
+          }
 
-        &:nth-child(2) {
-          transform: rotate(45deg) translateY(-1px) translateX(-1px);
-        }
-
-        &:nth-child(3) {
-          display: none;
+          &:nth-child(3) {
+            display: none;
+          }
         }
       }
     }

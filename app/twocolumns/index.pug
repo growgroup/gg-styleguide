@@ -1,0 +1,91 @@
+extends /inc/foundation/_base-twocolumn.pug
+block append config
+  - current.id = "twocolumns" // ページのID
+  - current.title = "ページ_2カラム" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header({
+      image: "img-page-header-format.jpg",
+      title: "量産ページ",
+      subtitle: "parent"
+    })
+  +c_breadcrumb()
+
+block body
+  h2 見出しレベル2
+  +c.anchor-nav
+    .row
+      .large-3.small-6
+        +a("#").c-button.is-sm ページ内リンク
+      .large-3.small-6
+        +a("#").c-button.is-sm ページ内リンク
+      .large-3.small-6
+        +a("#").c-button.is-sm ページ内リンク
+      .large-3.small-6
+        +a("#").c-button.is-sm ページ内リンク
+  div.u-mbs.is-top.is-lg
+    p 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
+  div.u-mbs.is-top.is-lg
+    h3 見出しレベル3見出しレベル3見出しレベル3見出しレベ
+    +c.block
+      +e.block
+        .row
+          .large-5.small-12
+            +e.image: +img("img-block-01.jpg")
+          .large-7.small-12
+            +e.content
+              h4 見出しレベル4見出しレベル4
+              p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
+      +e.block
+        h4 見出しレベル4見出しレベル4
+        .row
+          .large-7.small-12
+            +e.content
+              p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
+          .large-5.small-12
+            +e.image: +img("img-block-01.jpg")
+
+  div.u-mbs.is-top.is-lg
+    +c.box
+      +e.block
+        +e.content
+          h5 <i class="fa fa-circle-o" aria-hidden="true"></i>見出しレベル5
+          p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
+
+  div.u-mbs.is-top.is-lg
+    table.c-table
+      tbody
+        tr
+          th thテキスト
+          td tdテキストテキストテキストテキストテキスト
+        tr
+          th thテキスト
+          td tdテキストテキストテキストテキストテキスト
+        tr
+          th thテキスト
+          td tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+  div.u-mbs.is-top.is-lg
+    +img("img-sample-lg.jpg")
+
+  div.u-mbs.is-top.is-lg
+    .row
+      .large-6.small-12
+        +img("img-sample-lg.jpg")
+      .large-6.small-12
+        +img("img-sample-lg.jpg")
+
+  div.u-mbs.is-top.is-lg
+    .row
+      .large-4.small-12
+        +img("img-sample-sm.jpg")
+      .large-4.small-12
+        +img("img-sample-sm.jpg")
+      .large-4.small-12
+        +img("img-sample-sm.jpg")
+
+block aside
+  +l-aside()
