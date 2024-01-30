@@ -1,0 +1,274 @@
+.c-block-introduction {
+
+  background: #F4F8F9;
+  padding: rem-calc(36) 0 rem-calc(100);
+
+  @include breakpoint(medium down) {
+    padding: rem-calc(40) 0 rem-calc(64);
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: rem-calc(10);
+    @include font-format(18, .04, 32);
+    @include breakpoint(medium down) {
+      @include font-format(16, .01, 28);
+      text-align: justify;
+    }
+  }
+
+  &__block {
+    margin-top: rem-calc(40);
+    &-title {
+      margin: 0 0 rem-calc(20);
+      @include font-format(24, .01, 36, 600);
+      font-family: "Noto Serif JP";
+      text-align: center;
+      @include breakpoint(medium down) {
+        @include font-format(20, .01, 30,600);
+      }
+    }
+  }
+
+  &__box {
+    background: $color-white;
+    position: relative;
+    padding-bottom: rem-calc(92);
+    @include breakpoint(medium down) {
+      padding-bottom: rem-calc(56);
+    }
+
+    &-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: rem-calc(289);
+    }
+    &-title {
+      margin: 0;
+      @include font-format(24, .01, 40,600);
+      color: $color-white;
+      padding: rem-calc(8) rem-calc(16);
+      background: $color-primary;
+      text-align: center;
+      position: relative;
+      z-index: 9;
+      @include breakpoint(medium down) {
+        @include font-format(18, .01, 29,600);
+      }
+    }
+    &-content {
+      padding: rem-calc(48) rem-calc(42) rem-calc(0);
+      position: relative;
+      z-index: 1;
+      @include breakpoint(medium down) {
+        padding: rem-calc(20) rem-calc(14) 0;
+      }
+
+    }
+    &-text {
+      @include font-format(18, .05, 28,bold);
+      text-align: center;
+      @include breakpoint(medium down) {
+        @include font-format(16, .04, 26,bold);
+      }
+
+    }
+    &-list {
+      margin-top: rem-calc(32);
+      display: grid;
+      gap: rem-calc(8);
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(16);
+        gap: rem-calc(4);
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      @include font-format(16, .05, 28,bold);
+      padding: rem-calc(14) rem-calc(8);
+      border-radius: rem-calc(8);
+      border: 1px solid rgba(13, 158, 190, 0.30);
+      background: rgba(13, 158, 190, 0.10);
+      @include breakpoint(medium down) {
+        @include font-format(13, .04, 16,bold);
+        padding: rem-calc(8) rem-calc(6);
+      }
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: rem-calc(24);
+        width: rem-calc(24);
+        height: rem-calc(24);
+        background: $color-primary;
+        color: $color-white;
+        border-radius: 50%;
+        @include font-format(12, 0, 12,bold);
+        margin-right: rem-calc(6);
+        @include breakpoint(medium down) {
+          min-width: rem-calc(22);
+          width: rem-calc(22);
+          height: rem-calc(22);
+          margin-right: rem-calc(6);
+        }
+      }
+    }
+    &-caption {
+      @include font-format(16, .04, 28);
+      position: absolute;
+      left: rem-calc(16);
+      bottom: rem-calc(6);
+      @include breakpoint(medium down) {
+        @include font-format(14, .04, 14);
+        left: rem-calc(12);
+      }
+
+    }
+  }
+
+  &__boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem-calc(36);
+    @include breakpoint(medium down) {
+      display: block;
+    }
+    &-item {
+      background: $color-white;
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(16);
+      }
+      &:first-child {
+        margin-top: rem-calc(0);
+      }
+    }
+    &-inner {}
+    &-title {
+      margin: 0;
+      display: flex;
+      padding: rem-calc(13);
+      background: #E8AE17;
+      @include breakpoint(medium down) {
+        padding: rem-calc(8);
+      }
+      span {
+        display: flex;
+        align-items: center;
+        @include font-format(13, .04, 13,bold);
+        padding: rem-calc(6) rem-calc(30);
+        background: $color-white;
+        border-radius: 4px;
+        white-space: nowrap;
+        @include breakpoint(medium down) {
+          padding: rem-calc(5) rem-calc(16);
+        }
+      }
+      b {
+        display: block;
+        @include font-format(20, .04, 32,bold);
+        color: $color-white;
+        padding-left: rem-calc(13);
+        text-align: center;
+        width: 100%;
+        @include breakpoint(medium down) {
+          padding-left: rem-calc(8);
+          @include font-format(18, .04, 29,bold);
+        }
+      }
+    }
+    &-content {
+      display: flex;
+      align-items: flex-start;
+      padding: rem-calc(32);
+      @include breakpoint(medium down) {
+        padding: rem-calc(20) rem-calc(12) rem-calc(20) rem-calc(16);
+      }
+    }
+    &-icon {
+      min-width: rem-calc(116);
+      width: rem-calc(116);
+      height: rem-calc(116);
+      border-radius: 50%;
+      background: #F4F8F9;
+      margin-right: rem-calc(24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint(medium down) {
+        min-width: rem-calc(104);
+        width: rem-calc(104);
+        height: rem-calc(104);
+        margin-right: rem-calc(23);
+      }
+    }
+    &-unit {}
+    &-subtitle {
+      @include font-format(20, .05, 32,600);
+      margin: 0;
+      @include breakpoint(medium down) {
+        @include font-format(16, .04, 26,600);
+      }
+      span {
+        display: inline-block;
+        color: #E8AE17;
+
+      }
+    }
+    &-text {
+      margin-top: rem-calc(8);
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(4);
+        @include font-format(15, .04, 26);
+      }
+    }
+  }
+
+  &__button {
+    margin: rem-calc(56) auto 0;
+    width: 100%;
+    max-width: rem-calc(541);
+    @include breakpoint(medium down) {
+      margin-top: rem-calc(40);
+      padding: 0 rem-calc(20);
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      background: #FFEC41;
+      width: 100%;
+      border-radius: 10px;
+      @include font-format(24, .04, 40,bold);
+      position: relative;
+      text-decoration: none;
+      color: #5A5A5A;
+      padding: rem-calc(32) rem-calc(36);
+      @include breakpoint(medium down) {
+        padding: rem-calc(20) rem-calc(54) rem-calc(20) rem-calc(24);
+        @include font-format(18, .04, 25,bold);
+      }
+      &::after {
+        content: "\e5cf";
+        font-family: "Material Icons Outlined";
+        position: absolute;
+        top: 0;
+        right: rem-calc(24);
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      span {
+        display: inline-block;
+        margin-right: rem-calc(20);
+        font-size: rem-calc(36);
+      }
+    }
+  }
+}

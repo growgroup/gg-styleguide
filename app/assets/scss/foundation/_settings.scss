@@ -9,20 +9,20 @@
 
 // # 基本の白黒
 $color-white: #fff !default;
-$color-black: #000 !default;
+$color-black: #313131 !default;
 
 // # プライマリー
-$color-primary: #65a04d !default;
-//$color-primary-light: #99bd8a !default;
+$color-primary: #0D9EBE !default;
+$color-primary-light: #34B8D5 !default;
 
 // # セカンダリー
-$color-secondary: #f9f7f0 !default;
+$color-secondary: #FFEC41 !default;
 
 // # ターシャリー
 $color-tertiary: #cccccc !default;
 
 // # アクセント
-$color-accent: #e04b3a !default;
+$color-accent: #204C75 !default;
 //$color-accent-green: #65AC29 !default;
 //$color-accent-orange: #E6A54D !default;
 
@@ -96,11 +96,11 @@ $breakpoints: (
 // ==============================
 
 // スライドバー（スマホメニュー）
-$slidebar-menu-bg: $color-primary !default;
-$slidebar-menu-width: 100% !default;
+$slidebar-menu-bg: $color-white !default;
+$slidebar-menu-width: 290 !default;
 $slidebar-menu-eaasing: all ease-in-out .2s !default;
-$slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
-$slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
+$slidebar-container-bg: $color-secondary !default;
+$slidebar-header-height: 80 !default; // スマホ時のヘッダーの高さ
 
 // # Grid
 $grid-row-width: 1140px !default; // グリッドの幅

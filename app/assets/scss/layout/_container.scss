@@ -14,13 +14,16 @@
 //
 // Styleguide 5.5.0
 
+
 .l-container {
-  @extend .container;
+  max-width: $grid-row-width;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: content-box;
   padding-inline: 32px;
 
   @include breakpoint(small down) {
-    padding-inline: 16px;
+    padding-inline: 20px;
   }
   &.is-two-columns {
     display: flex;

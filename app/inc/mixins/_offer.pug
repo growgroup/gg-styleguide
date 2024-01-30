@@ -1,30 +1,23 @@
 //- メインビジュアル
 mixin l_offer
-  .l-offer.is-color-primary
+  +l.offer
     .l-container
-      .l-offer__inner
-        h2.c-heading.is-xlg.is-white.is-bottom
-          span CONTACT
-          small お問い合わせ
-        .l-offer__text 弊社のサービスへ興味をお持ちの方は、<br>下記の電話番号、もしくはお問い合わせフォームよりお気軽に問い合わせください。
-        .l-offer__items
-          .row
-            .large-5.is-push-lg-1.small-12
-              .l-offer__box
-                .l-offer__box-text お電話の際は「ホームページを見て」と<br>お伝えください。
-                .l-offer__box-tel
-                  | <span class="material-icons-outlined">call</span>00-000-0000
-                  small 電話受付時間 / 平日00：00～00：00
-            .large-5.small-12
-              .l-offer__box
-                .l-offer__box-text メールでのご相談・ご質問は<br>お問い合わせフォームをご活用ください。
-                +a("#").c-button.is-lg.is-white お問い合わせフォーム
+      +e.container
+        +e.item
+          +e.item-inner
+            +e.item-title.
+              N-NOSEの導入<small>を</small><br>ご検討<small>の</small><br><span>医療機関様</span><small>は</small>こちら
+            +e.item-text.
+              健康診断・人間ドックの<br>オプションもご相談ください。
+            +e.item-button: +a("") お問い合わせフォーム
 
-mixin l_offer-recruit
-  .l-offer.is-padding-lg
-    .l-container
-      .l-offer__inner
-        h2.c-heading.is-md.is-bottom エントリー
-        .l-offer__text ●●では、働く環境を考え、一緒に課題に挑める仲間を募集しています。<br>私たちと一緒に働いてみませんか？
-        .l-offer__items.is-button-one
-          +a(href="/recruit/entry/").l-offer__button.is-bgcolor-primary エントリーはこちら
+        +e.item
+          +e.item-inner
+            +e.item-title.
+              <b>法人、団体のご担当者<small>様へ</small></b>
+              <span>法人向けN-NOSE</span><small>の</small><br>
+              導入<small>を</small>ご検討の方<small>は</small><br class="u-visible-md">こちら
+            +e.item-text.
+              従業員のがんの<br>早期発⾒をサポートします。
+            +e.item-button: +a("") お問い合わせフォーム
+

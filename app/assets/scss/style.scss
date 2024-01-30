@@ -24,22 +24,21 @@
 @import "foundation/_settings";
 @import "foundation/_mixin";
 @import "foundation/_normalize";
-@import "foundation/_forms";
 
 // モジュール
 //
 // サイトで複数回利用する可能性のある粒度の細かい要素をモジュールを定義しています。
 //
 // Styleguide 2.0.0
-@import "layout/*";
-@import "object/components/*";
+@import "layout/_header";
+@import "layout/_footer";
+@import "layout/_offer";
+@import "layout/_container";
+@import "layout/_main";
+@import "layout/_section";
 
-// ブロック
-//
-// ベース・モジュールを利用した、サイトで利用するブロックを定義しています。
-//
-// Styleguide 3.0.0
-@import "object/project/*";
+
+@import "object/components/*";
 
 
 // ユーティリティ
@@ -48,4 +47,7 @@
 //
 // Styleguide 4.0.0
 
-@import "object/utility/*";
+@import "object/utility/_display.scss";
+@import "object/utility/_margin.scss";
+@import "object/utility/_position.scss";
+@import "object/utility/_text.scss";

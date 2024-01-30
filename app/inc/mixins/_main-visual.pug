@@ -1,17 +1,5 @@
 //- メインビジュアル
 mixin c_main-visual
   +c.main-visual
-    +e.wrapper.swiper
-      +e.slider.swiper-wrapper
-        +loop(3)
-          +e.image.swiper-slide: +bgimg("img-main-visual-01.jpg").bg-img
-          +e.image.swiper-slide: +bgimg("img-sample.jpg").bg-img
-      +e.animation
-        +e.bar: span
-        +e.pagination
-      +e.inner
-        .l-container
-          +e.title: +img("img-main-visual-text.png","キャッチコピーが入ります")
-          +e.text テキストテキストテキスト。テキストテキストテキスト。<br>テキストテキストテキスト。
-
-
+    +e.wrapper
+      +e.image: +img("")

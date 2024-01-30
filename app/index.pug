@@ -12,78 +12,286 @@ block append config
 
 
 block before_main
-  +c_loader
   +c_main-visual()
 
 block body
-  section.l-section.is-lg.is-color-secondary
-    .l-container
-      +heading-xlg("私たちについて", "ABOUT").is-bottom
-      p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-      +c.card.u-mbs.is-top.is-lg
-        .row.slide
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg")
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg")
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg")
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-  section.l-section.is-lg.is-top
-    .l-container
-      +heading-xlg("事業内容", "SERVICE").is-bottom
-    +c.hero-block-square
-      +e.block
-        +e.image: +img("img-hero-block-01.jpg")
-        .l-container
-          +e.content
-            +e.inner
-              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              +e.button: +a("#").c-button.is-sm ボタンテキスト
-      +e.block
-        +e.image: +img("img-hero-block-01.jpg")
-        .l-container
-          +e.content
-            +e.inner
-              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              +e.button: +a("#").c-button.is-sm ボタンテキスト
-      +e.block
-        +e.image: +img("img-hero-block-01.jpg")
-        .l-container
-          +e.content
-            +e.inner
-              h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
-              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              +e.button: +a("#").c-button.is-sm ボタンテキスト
-  section.l-section.is-lg
-    .l-container
-      +c.news
-        .row
-          .large-3.small-12
-            +e.head
-              h2.c-news__title.c-heading.is-xlg
-                span NEWS
-                small お知らせ
-              +e.button: +a("/news/").c-button.is-sm 一覧を見る
-          .large-9.small-12
-            +e.content
-              +loop(3)
-                +c_news__block("home")
 
-block before_footer
-  +c_cookie
-  // オファーブロック
+  section.l-section
+    +c.block-merit
+      .l-container
+        +e.H2.title.c-heading.is-lg.is-center
+          span 医療機関<small>で</small>
+          b N-NOSE<small>を受ける</small><div class="is-color">メリット</div>
+        +e.list
+          +e.item
+            +e.item-inner
+              +e.H3.item-title 健康診断・人間ドック<small>と</small><br>併用<small>で</small>、高精度な診断<small>へ</small>
+              +e.item-image: +bgimg("img-block-merit-01.png").bg-img
+              +e.P.item-text 複数の検査を組み合わせることで、がん早期発見につなげられる可能性が高くなります。健康診断・人間ドックのオプションとして受けられる施設もあります。
+          +e.item
+            +e.item-inner
+              +e.H3.item-title 採尿するだけ<br>簡単、手間なし
+              +e.item-image: +bgimg("img-block-merit-02.png").bg-img
+              +e.P.item-text インターネットからのお申込や手続きが不要です。医療機関でお申込、採尿するだけです。身体への負担もありません。
+          +e.item
+            +e.item-inner
+              +e.H3.item-title 提携医療機関<small>に</small><br>相談できて安心
+              +e.item-image: +bgimg("img-block-merit-03.png").bg-img
+              +e.P.item-text.
+                がんのリスクが気になる場合、提携医療機関のN-NOSEをよく理解している医師に相談できます。
+                <small>※ 一部の医療機関は有料または相談対応不可となります。</small>
+  section.l-section
+    +c.block-introduction
+      .l-container.is-sm
+        +e.H2.title.c-heading.is-lg.is-center
+          span 医療機関<small>で</small>
+          b <small>受けられる</small><div class="is-color">N-NOSE</div><small>を紹介</small>
+        +e.P.text.
+          全身のがんリスクを調べられるN-NOSEのほか、<br class="u-hidden-md">
+          すい臓がんのリスクや肝臓がんリスク判定に特化したN-NOSEも医療機関で受けられます。
+
+        +e.block
+          +e.H3.block-title 全身がんリスク検査
+
+          +e.box
+            +e.box-image: +img("img-block-introduction-bg.png")
+            +e.H4.box-title N-NOSE
+            +e.box-content
+              +e.box-text 1回の検査で、15種類のがんリスクを<br>全身網羅的に調べられるサービスです。
+              +e.box-list
+                +e.box-item: <span>1</span> 口腔・咽頭がん
+                +e.box-item: <span>2</span> 食道がん
+                +e.box-item: <span>3</span> 肺がん
+                +e.box-item: <span>4</span> 乳がん
+                +e.box-item: <span>5</span> 胃がん
+                +e.box-item: <span>6</span> 肝臓がん
+                +e.box-item: <span>7</span> すい臓がん
+                +e.box-item: <span>8</span> 胆のうがん
+                +e.box-item: <span>9</span> 卵巣がん
+                +e.box-item: <span>10</span> 大腸がん
+                +e.box-item: <span>11</span> 腎臓がん
+                +e.box-item: <span>12</span> 膀胱がん
+                +e.box-item: <span>13</span> 卵巣がん
+                +e.box-item: <span>14</span> 子宮がん
+                +e.box-item: <span>15</span> 前立腺がん
+            +e.box-caption ※がん種の特定はできません。
+
+
+        +e.block
+          +e.H3.block-title がん種別リスク検査
+          +e.boxes
+            +e.boxes-item
+              +e.boxes-inner
+                +e.H4.boxes-title
+                  span 医療機関限定
+                  b N-NOSE plus すい臓
+                +e.boxes-content
+                  +e.boxes-icon: +img("icon-block-introduction-01.svg")
+                  +e.boxes-unit
+                    +e.H5.boxes-subtitle <span>すい臓がん</span>のリスク判定
+                    +e.P.boxes-text.
+                      早期発見が難しい、すい臓がんリスクを判定。「早期すい臓がん」にも反応します
+            +e.boxes-item
+              +e.boxes-inner
+                +e.H4.boxes-title
+                  span 医療機関限定
+                  b N-NOSE plus 肝臓
+                +e.boxes-content
+                  +e.boxes-icon: +img("icon-block-introduction-02.svg")
+                  +e.boxes-unit
+                    +e.H5.boxes-subtitle <span>肝臓がん</span>のリスク判定
+                    +e.P.boxes-text.
+                      初期症状が出にくい、肝臓がんリスクを判定。「早期肝臓がん」にも反応します
+        +e.button: +a("") <span class="material-icons-outlined">&#xe8b6</span>N-NOSE®取り扱い医療機関を探す
+  section.l-section
+    +c.block-comment
+      .l-container
+        +e.H2.title.c-heading.is-lg.is-center
+          b 医療機関<small>の</small><div class="is-color">コメント</div>
+
+        +e.label
+          +e.label-title 八王子クリニック新町
+          +e.P.label-text
+            span 住所｜東京都八王子市新町 7-10　<br class="u-visible-md">人間ドックコールセンター｜<br class="u-visible-md"><a href="tel:042−660−8846">042−660−8846</a>
+            span ホームページURL｜<a href="hachicli.or.jp" target="_blank">hachicli.or.jp</a>
+        +e.list
+          +e.item
+            +e.item-inner
+              +e.item-image: +bgimg("img-comment-01.jpg").bg-img
+              +e.item-content
+                +e.SPAN.item-post 院長
+                +e.P.item-text 院長の井藤です。今やがんは日本人の2人に1人がかかる身近な病気です。早期発見できれば治癒可能な時代となりました。線虫がん検査はがんを超早期に検知できる画期的な検査です。全身の人間ドックと合わせることでより有効な検査が可能と考えています。ぜひご利用ください。
+          +e.item
+            +e.item-inner
+              +e.item-image: +bgimg("img-comment-02.jpg").bg-img
+              +e.item-content
+                +e.SPAN.item-post お客様担当
+                +e.P.item-text お客様担当の湊です。尿の採取だけでがんのリスクが調べられますので、いつもの人間ドックと一緒にご利用いただけます。また体への負担は一切なくストレスフリーなのも魅力です。検査内容をワンランクUPできる良い機会ですのでぜひご受診ください。
+  section.l-section
+    +c.block-receive
+      .l-container
+        +e.H2.title.c-heading.is-lg.is-center
+          span 医療機関<small>で</small>
+          b N-NOSE<small>の</small><div class="is-color">受け方</div>
+
+        +e.list
+          +e.item
+            +e.item-inner
+              +e.item-label
+                span STEP
+                b 01
+              +e.item-content
+                +e.item-icon: +img("icon-receive-01.svg")
+                +e.item-unit
+                  +e.item-title お申し込み
+                  +e.item-text 提携医療機関の窓口にて<br class="u-hidden-md">N-NOSE受検の申込*1をします。
+
+          +e.item
+            +e.item-inner
+              +e.item-label
+                span STEP
+                b 02
+              +e.item-content
+                +e.item-icon: +img("icon-receive-02.svg")
+                +e.item-unit
+                  +e.item-title 採尿
+                  +e.item-text 医療機関スタッフの指示に従い<br class="u-hidden-md">採尿をします。
+
+          +e.item
+            +e.item-inner
+              +e.item-label
+                span STEP
+                b 03
+              +e.item-content
+                +e.item-icon: +img("icon-receive-03.svg")
+                +e.item-unit
+                  +e.item-title 検査結果の報告
+                  +e.item-text 検査結果報告書は約4~6週間*2で<br class="u-hidden-md">ご自宅に郵送されます。
+        +e.captions
+          span ※1 ｜ 一部医療機関では健康診断・人間ドックのオプションとして受けられます。また、 事前予約が必要な施設もあります。
+          span ※2 ｜ N-NOSE plus すい臓、肝臓の場合は8週間かかる場合があります。
+  section.l-section
+    +c.block-search
+      .l-container
+        +e.H2.title.c-heading.is-lg
+          b.
+            N-NOSE®取り扱い
+            <div class="is-color">施設</div><small>を</small>探す
+        +e.P.text 都道府県を選択するとN-NOSEを受けられる施設が表示されます。
+
+        +e.wrapper.js-tabs
+          +e.UL.navs.js-tabs-nav
+            +e.LI.navs-item
+              +e.navs-title 北海道・東北
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor.is-active(data-tab-target="0") 北海道
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="1") 青森県
+            +e.LI.navs-item
+              +e.navs-title 中部
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="2") 石川県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="3") 静岡県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="4") 愛知県
+            +e.LI.navs-item
+              +e.navs-title 関東
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="5") 栃木県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="6") 群馬県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="7") 埼玉県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="8") 千葉県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="9") 東京都
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="10") 神奈川県
+            +e.LI.navs-item
+              +e.navs-title 近畿
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="11") 滋賀県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="12") 大阪府
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="13") 兵庫県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="14") 和歌山県
+            +e.LI.navs-item
+              +e.navs-title 中国・四国
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="15") 岡山県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="16") 広島県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="17") 徳島県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="18") 香川県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="19") 高知県
+            +e.LI.navs-item
+              +e.navs-title 九州・沖縄
+              +e.navs-links
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="20") 福岡県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="21") 大分県
+                +ae("#itemContent").navs-link.js-anchor(data-tab-target="22") 宮崎県
+
+          .c-block-search__container#itemContent
+            .c-block-search__content.is-active.js-tabs-content(data-tab-name="0")
+              +c_block-hospital({title:"北海道", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="1")
+              +c_block-hospital({title:"青森県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="2")
+              +c_block-hospital({title:"石川県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="3")
+              +c_block-hospital({title:"静岡県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="4")
+              +c_block-hospital({title:"愛知県", number:"4"})
+            .c-block-search__content.js-tabs-content(data-tab-name="5")
+              +c_block-hospital({title:"栃木県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="6")
+              +c_block-hospital({title:"群馬県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="7")
+              +c_block-hospital({title:"埼玉県", number:"2"})
+            .c-block-search__content.js-tabs-content(data-tab-name="8")
+              +c_block-hospital({title:"千葉県", number:"5"})
+            .c-block-search__content.js-tabs-content(data-tab-name="9")
+              +c_block-hospital({title:"東京都", number:"18"})
+            .c-block-search__content.js-tabs-content(data-tab-name="10")
+              +c_block-hospital({title:"神奈川県", number:"7"})
+            .c-block-search__content.js-tabs-content(data-tab-name="11")
+              +c_block-hospital({title:"滋賀県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="12")
+              +c_block-hospital({title:"大阪府", number:"8"})
+            .c-block-search__content.js-tabs-content(data-tab-name="13")
+              +c_block-hospital({title:"兵庫県", number:"4"})
+            .c-block-search__content.js-tabs-content(data-tab-name="14")
+              +c_block-hospital({title:"和歌山県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="15")
+              +c_block-hospital({title:"岡山県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="16")
+              +c_block-hospital({title:"広島県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="17")
+              +c_block-hospital({title:"徳島県", number:"3"})
+            .c-block-search__content.js-tabs-content(data-tab-name="18")
+              +c_block-hospital({title:"香川県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="19")
+              +c_block-hospital({title:"高知県", number:"1"})
+            .c-block-search__content.js-tabs-content(data-tab-name="20")
+              +c_block-hospital({title:"福岡県", number:"10"})
+            .c-block-search__content.js-tabs-content(data-tab-name="21")
+              +c_block-hospital({title:"大分県", number:"2"})
+            .c-block-search__content.js-tabs-content(data-tab-name="22")
+              +c_block-hospital({title:"宮崎県", number:"1"})
+        .c-block-search__label
+          .c-block-search__label-title 医療機関でN-NOSEの受検<br class="u-visible-md">を希望する方へ
+          .c-block-search__label-text.
+            上記の取り扱い施設に直接お問い合わせください。<br>
+            ※このページで、検査のお申し込みは行えません。
+        .c-block-search__button: +aex(""): +img("img-block-search-01.png")
+  section.l-section
+    +c.block-cv
+      .l-container
+        +e.container
+          +e.item
+            +e.item-inner
+              +e.H2.item-title.
+                N-NOSE®についての<br>お問い合わせ
+              +e.P.item-text.
+                ※お電話でのお申し込みは承っておりません。<br>※通話は有料となります。
+          +e.item
+            +e.item-inner
+              +e.P.item-text.is-bold お客様相談窓口
+              +e.item-button: +a("") <span class="material-icons-outlined">&#xe0cd</span>0570-011-162
+              +e.P.item-text.is-middle 営業時間：9:00～ 18:00（年末年始休み）
+              +e.item-link: +a("") よくあるご質問はこちら
+
+
   +l_offer

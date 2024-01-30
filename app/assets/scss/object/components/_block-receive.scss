@@ -1,0 +1,152 @@
+.c-block-receive {
+
+  padding: rem-calc(40) 0 rem-calc(80);
+  background: #F4F8F9;
+
+
+  &__list {
+    margin-top: rem-calc(48);
+    display: grid;
+    gap: rem-calc(65);
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 4px;
+    @include breakpoint(medium down) {
+      display: block;
+      margin-top: rem-calc(24);
+
+    }
+  }
+
+  &__item {
+    background: $color-white;
+    position: relative;
+    @include breakpoint(medium down) {
+      margin-top: rem-calc(54);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: rem-calc(-50);
+      bottom: 0;
+      margin: auto;
+      width: rem-calc(25);
+      height: rem-calc(43);
+      background: url(../images/icon-receive-triangle.svg)no-repeat center center / cover;
+      @include breakpoint(medium down) {
+        top: inherit;
+        right: 0;
+        bottom: rem-calc(-30);
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+        width: rem-calc(15);
+        height: rem-calc(26);
+      }
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    &-inner {
+      position: relative;
+      padding: rem-calc(40) rem-calc(32);
+      @include breakpoint(medium down) {
+        padding: rem-calc(32) rem-calc(20) rem-calc(32);
+      }
+    }
+    &-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: $color-white;
+      padding: rem-calc(9) rem-calc(12);
+      width: 56%;
+      margin: auto;
+      position: absolute;
+      top: rem-calc(-25);
+      right: 0;
+      left: 0;
+      @include breakpoint(medium down) {
+        width: rem-calc(120);
+        padding: rem-calc(6);
+      }
+      span {
+        display: block;
+        @include font-format(18, .01, 18,500);
+        color: $color-primary;
+        margin-right: rem-calc(10);
+        font-family: "Barlow Condensed Medium";
+        @include breakpoint(medium down) {
+          @include font-format(14, .01, 14,500);
+          margin-right: rem-calc(8);
+        }
+      }
+      b {
+        display: block;
+        @include font-format(32, .01, 32,500);
+        font-family: "Barlow Condensed Medium";
+        color: $color-primary;
+        @include breakpoint(medium down) {
+          @include font-format(24, 0, 24,500);
+        }
+      }
+    }
+    &-content {
+      @include breakpoint(medium down) {
+        display: flex;
+      }
+    }
+    &-title {
+      @include font-format(24, .01, 36,600);
+      text-align: center;
+      color: $color-primary;
+      font-family: "Noto Serif JP";
+      @include breakpoint(medium down) {
+        @include font-format(20, .01, 30,600);
+        text-align: left;
+      }
+    }
+    &-icon {
+      position: absolute;
+      top: rem-calc(80);
+      right: 0;
+      left: 0;
+      margin: auto;
+      padding-top: rem-calc(10);
+      text-align: center;
+      @include breakpoint(medium down) {
+        position: relative;
+        top: inherit;
+        right: inherit;
+        left: inherit;
+        padding: rem-calc(12) 0;
+        margin-right: rem-calc(8);
+        min-width: rem-calc(100);
+      }
+    }
+    &-text {
+      margin-top: rem-calc(112);
+      @include font-format(16, .01, 28);
+      text-align: center;
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(8);
+        text-align: left;
+      }
+
+    }
+  }
+
+  &__captions {
+    margin-top: rem-calc(24);
+    span {
+      display: block;
+      @include font-format(16, .01, 28);
+      padding-left: 1em;
+      text-indent: -1em;
+    }
+  }
+}

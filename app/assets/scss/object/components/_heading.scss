@@ -1,165 +1,70 @@
-/*
----
-name: 見出し_テンプレート
-category: Heading
----
-*/
 
 .c-heading {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 700;
-  line-height: 1.5;
-}
+  margin: 0;
+  font-weight: bold;
+  &.is-center {
+    text-align: center;
+    justify-content: center;
+  }
 
+  &.is-lg {
 
-// h1
-.c-heading.is-xlg {
-  color: $color-primary;
+    span {
+      display: inline-block;
+      color: $color-primary;
+      @include font-format(24, .04, 40,bold);
+      padding:0 rem-calc(56) rem-calc(4);
+      border-bottom: 2px solid $color-primary;
+      position: relative;
+      @include breakpoint(medium down) {
+        padding: 0 rem-calc(32) rem-calc(5);
+        @include font-format(16, .04, 27,bold);
+      }
+      small {
+        display: inline-block;
+        @include font-format(20, .04, 34,bold);
+        @include breakpoint(medium down) {
+          @include font-format(13, .04, 22.1,bold);
+        }
+      }
 
-  .is-eng {
-    display: block;
-    @include webfont();
-    @include font-format-light(42, 52);
-    @include breakpoint(small only) {
-      font-size: rem-calc(42)*0.8;
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: rem-calc(-10);
+        left: 0;
+        margin: auto;
+        height: calc(20px / 2);
+        width: 20px;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background: $color-primary;
+      }
+    }
+
+    b {
+      display: flex;
+      justify-content: center;
+      @include font-format(40, .04, 68,600);
+      font-family: "Noto Serif JP";
+      color: #5A5A5A;
+      @include breakpoint(medium down) {
+        @include font-format(26, .04, 44,600);
+      }
+      small {
+        display:inline-block;
+        @include font-format(32, .04,75,600);
+        @include breakpoint(medium down) {
+          @include font-format(20, .04, 50,600);
+        }
+      }
+      & .is-color {
+        color: $color-primary;
+        @include font-format(42, .04, 71,600);
+        @include breakpoint(medium down) {
+          @include font-format(28, .04, 47,600);
+        }
+      }
     }
   }
-
-  .is-ja {
-    display: block;
-    @include font-format-light(16, 26);
-    @include breakpoint(small only) {
-      font-size: rem-calc(16)*0.8;
-    }
-  }
-}
-
-// h2
-.c-heading.is-lg {
-  color: $color-primary;
-  @include font-format-light(32,40);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(32)*0.8;
-  }
-
-  .is-eng {
-    display: block;
-    @include webfont();
-  }
-
-  .is-ja {
-    display: block;
-    @include font-format-light(14, 20);
-    margin-top: rem-calc(6);
-    @include breakpoint(small only) {
-      font-size: rem-calc(14)*0.8;
-    }
-  }
-}
-
-// h3
-.c-heading.is-md {
-  @include font-format-light(28,38);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(28)*0.8;
-  }
-}
-
-// h4
-.c-heading.is-sm {
-  @include font-format-light(24, 34);
-  @include breakpoint(small only) {
-    font-size: rem-calc(24)*0.8;
-  }
-}
-
-// h5
-.c-heading.is-xs {
-  @include font-format-light(20,30);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(20)*0.8;
-  }
-}
-
-// h6
-.c-heading.is-xxs {
-  @include font-format-light(18, 28);
-
-  @include breakpoint(small only) {
-    font-size: rem-calc(18)*0.8;
-  }
-}
-
-.c-heading.is-color-primary {
-  color: $color-primary;
-}
-
-.c-heading.is-color-white {
-  color: $color-white;
-}
-
-// マージン調整
-.c-heading.is-top {
-  margin-bottom: 0 !important;
-}
-
-.c-heading.is-bottom {
-  margin-top: 0 !important;
-}
-
-.c-heading.is-center{
-  text-align: center;
-}
-
-.c-heading.is-mg-level-1 {
-  margin-bottom: rem-calc(64);
-
-  @include breakpoint(small only) {
-    margin-bottom: rem-calc(40);
-  }
-}
-
-.c-heading.is-mg-level-2 {
-  margin-bottom: rem-calc(40);
-
-  @include breakpoint(small only) {
-    margin-bottom: rem-calc(32);
-  }
-}
-
-.c-heading.is-mg-level-3 {
-  margin-bottom: rem-calc(32);
-
-  @include breakpoint(small only) {
-    margin-bottom: rem-calc(24);
-  }
-}
-
-.c-heading.is-mg-level-4 {
-  margin-bottom: rem-calc(24);
-
-  @include breakpoint(small only) {
-    margin-bottom: rem-calc(20);
-  }
-}
-
-.c-heading.is-mg-level-5 {
-  margin-bottom: rem-calc(20);
-
-  @include breakpoint(small only) {
-    margin-bottom: rem-calc(16);
-  }
-}
-
-.c-heading.is-mg-level-6 {
-  margin-bottom: rem-calc(16);
-}
-
-.c-heading.is-mg-none {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
 }

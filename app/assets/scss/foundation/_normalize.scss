@@ -427,7 +427,8 @@ a {
   @include transition();
 
   &:hover {
-    @include transition()
+    @include transition();
+    opacity: .5;
   }
 }
 
