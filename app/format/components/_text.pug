@@ -7,26 +7,28 @@ div.u-mbs.is-bottom
 div.u-mbs.is-bottom
   +heading-xlg("TEXTLEVEL1", "見出しレベル1")
 
+
+// -> h2見出し
 div.u-mbs.is-bottom
   +heading-lg("見出しレベル2")
 
 
-// -> h2見出し
-div.u-mbs.is-bottom
-  div.c-heading.is-md 見出しレベル2見出しレベル2見出しレベル2
-
 // -> h3見出し
 div.u-mbs.is-bottom
-  div.c-heading.is-sm 見出しレベル3見出しレベル3見出しレベル3見出しレベ
-
+  div.c-heading.is-md 見出しレベル3見出しレベル3見出しレベル3
 
 // -> h4見出し
 div.u-mbs.is-bottom
-  div.c-heading.is-xs 見出しレベル4見出しレベル4見出しレベル4見出しレベ
+  div.c-heading.is-sm 見出しレベル4見出しレベル4見出しレベル4見出しレベ
+
 
 // -> h5見出し
 div.u-mbs.is-bottom
-  div.c-heading.is-xxs 見出しレベル5見出しレベル5見出しレベル5見出しレベ
+  div.c-heading.is-xs 見出しレベル5見出しレベル5見出しレベル5見出しレベ
+
+// -> h6見出し
+div.u-mbs.is-bottom
+  div.c-heading.is-xxs 見出しレベル6見出しレベル6見出しレベル6見出しレベ
 
 
 // 基本テキストのスタイル
@@ -73,7 +75,7 @@ div.u-mbs.is-bottom
   ol.c-list.is-outline
     li リスト1
     li リスト2
-      ol.c-list.is-outline
+      ol
         li リスト2の子要素
         li リスト2の子要素
     li リスト2
@@ -117,35 +119,34 @@ div.u-mbs.is-bottom
         td テキストテキストテキストテキストテキスト
 
 div.u-mbs.is-bottom
-  .row
-    .large-7.small-12
-      table.c-table-sm
-        thead
-          tr
-            th 受付時間
-            td 月
-            td 火
-            td 水
-            td 木
-            td 金
-            td 土
-            td 日・祝
-        tbody
-          tr
-            th <span>午前</span>9:00～12:30
-            td 院長
-            td 院長
-            td 院長
-            td 院長
-            td 院長
-            td 院長
-            td <span>×</span>
-          tr
-            th <span>午後</span>14:30～18:00
-            td 院長
-            td 院長
-            td 院長
-            td 院長
-            td 院長
-            td <span>×</span>
-            td <span>×</span>
+  .l-container.is-sm
+    table.c-table-sm
+      thead
+        tr
+          th 受付時間
+          td 月
+          td 火
+          td 水
+          td 木
+          td 金
+          td 土
+          td 日・祝
+      tbody
+        tr
+          th <span>午前</span>9:00～12:30
+          td 院長
+          td 院長
+          td 院長
+          td 院長
+          td 院長
+          td 院長
+          td <span>×</span>
+        tr
+          th <span>午後</span>14:30～18:00
+          td 院長
+          td 院長
+          td 院長
+          td 院長
+          td 院長
+          td <span>×</span>
+          td <span>×</span>

@@ -1,11 +1,12 @@
 extends /inc/foundation/_base-twocolumn.pug
 block append config
-  - current.id = "archive-twocolumns" // ページのID
-  - current.title = "アーカイブ_2カラム" // タイトル
+  - current.id = "category" // ページのID
+  - current.title = "カテゴリ" // タイトル
   - current.description = `これは${current.title}についての説明文です` // 説明文
   - current.bodyClass = `${current.id}` // body に付与するクラス
-  - current.path = `/${current.id}/` // ページのpath
-  - current.depth = 2 // ページの階層
+  - current.path = `/archive-twocolumns/${current.id}/` // ページのpath
+  - current.depth = 3 // ページの階層
+
 
 block page_header
   +l_page_header({
@@ -26,24 +27,24 @@ block body
     +e.block
       +e.title カテゴリ
       ul
-        li: +a("/news/") すべて
-        li: +a("/news/category/") お知らせ
-        li: +a("/news/category/") ブログ
+        li: +a("/archive-twocolumns/category/") すべて
+        li: +a("/archive-twocolumns/category/") お知らせ
+        li: +a("/archive-twocolumns/category/") ブログ
     +e.block
       +e.title 年月アーカイブ
       ul
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
+        li: +a("/archive-twocolumns/category/") 2019年01月
   +c.news-lg.u-mbs.is-top.is-lg
     +loop(5)
-      +a("/news/category/page/").c-news-lg__block
+      +a("/archive-twocolumns/category/page/").c-news-lg__block
         +e.sup
           +e.label.c-label.is-sm お知らせ
           +e.date 2018.06.01
