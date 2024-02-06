@@ -28,6 +28,7 @@
       }
 
       a {
+        display: inline-flex; //iOS17でパンくずがクリックできない問題の対応
         @include font-format-light(12,19);
       }
     }
