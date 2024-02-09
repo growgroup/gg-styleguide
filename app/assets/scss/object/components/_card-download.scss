@@ -51,7 +51,7 @@
     &:hover {
       opacity: 1;
 
-      .bg-img {
+      .u-bg-cover {
         transform: scale(1.1);
       }
 
@@ -68,18 +68,7 @@
     padding-top: calc(311/504*100%);
     background: $color-background;
 
-    .bg-img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin:auto;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
+    .u-bg-contain {
       @include transition();
     }
 
