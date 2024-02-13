@@ -2,17 +2,36 @@
 mixin img(file,alt,width,height)
   -
     if ( typeof alt === "undefined" ){
-    var alt = ""
+      var alt = ""
     }
-  img(src=config.rootpath + "/assets/images/" + file, alt!=alt, width!=width, height!=height)&attributes(attributes)
+    if (file.startsWith("http")) {
+      url = file
+    } else {
+      url = config.rootpath + "/assets/images/" + file
+    }
+  img(src=url, alt!=alt, width!=width, height!=height)&attributes(attributes)
 
 //- video タグ
 mixin video(file)
-  video(src=config.rootpath + "/assets/files/" + file)&attributes(attributes)
+  -
+    var url = ""
+    if (file.startsWith("http")) {
+      url = file
+    } else {
+      url = config.rootpath + "/assets/images/" + file
+    }
+  video(src=url)&attributes(attributes)
 
 //- 背景画像
 mixin bgimg(file)
-  div(style="background-image: url(" + config.rootpath + "/assets/images/" + file + ")")&attributes(attributes)
+  -
+    var url = ""
+    if (file.startsWith("http")) {
+      url = file
+    } else {
+      url = config.rootpath + "/assets/images/" + file
+    }
+  div(style="background-image: url(" + url + ")")&attributes(attributes)
     block
 
 //- ループ

@@ -27,12 +27,12 @@ block body
             +e.images
               +e.image: .is-no NO IMAGE
               +loop(5)
-                +e.image.js-modal-image(data-modaal-content-source="/assets/images/img-card-01.jpg"): +bgimg("img-card-01.jpg").bg-img
+                +e.image.js-modal-image(data-modaal-content-source="/assets/images/img-card-01.jpg"): +bgimg("img-card-01.jpg").u-bg-cover
             +e.slider.swiper
               .swiper-wrapper
                 +e.image.swiper-slide: .is-no NO IMAGE
                 +loop(3)
-                  +e.image.swiper-slide: +bgimg("img-card-01.jpg").bg-img
+                  +e.image.swiper-slide: +bgimg("img-card-01.jpg").u-bg-cover
               .swiper-nav
                 .swiper-button-prev
                 .swiper-button-next

@@ -388,10 +388,10 @@
 //
 // Styleguide 6.5.0
 
-@mixin bg-option(){
+@mixin bg-option($size:cover){
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: $size;
 }
 
 @mixin news-date() {
@@ -409,7 +409,7 @@
 }
 
 
-@mixin bg-img(){
+@mixin bg-img($size:cover){
   position: absolute;
   top: 0;
   right: 0;
@@ -418,7 +418,7 @@
   margin:auto;
   width: 100%;
   height: 100%;
-  @include bg-option();
+  @include bg-option($size);
 }
 
 @mixin card-block(){

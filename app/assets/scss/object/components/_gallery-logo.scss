@@ -26,8 +26,7 @@
       padding-top: calc(64/160*100%);
     }
 
-    .bg-img {
-      @include bg-img();
+    .u-bg-cover {
       background-size: contain;
     }
   }

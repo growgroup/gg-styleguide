@@ -19,7 +19,7 @@
       padding-top: calc(320/500*100%);
     }
 
-    .bg-img {
+    .u-bg-cover {
       @include bg-img();
     }
   }

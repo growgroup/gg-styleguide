@@ -19,8 +19,7 @@ category: Components
       min-height: 280px;
     }
 
-    .bg-img {
-      @include bg-img();
+    .u-bg-cover {
 
       &:after {
         @include img-curtain($font-base-color,0.15);
@@ -98,7 +97,7 @@ category: Components
 
     .swiper-slide-active {
 
-      .bg-img {
+      .u-bg-cover {
         //animation: zoomOut 6s forwards;
       }
     }
