@@ -19,6 +19,7 @@ module.exports = (env, argv) => {
         context: __dirname + '/app/',
         entry: {
             app: __dirname + '/app/assets/js/app.js',
+          fonts: __dirname + '/app/assets/js/fonts.js',
         },
         output: {
             path: path.join(__dirname, 'dist/'),

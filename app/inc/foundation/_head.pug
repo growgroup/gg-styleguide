@@ -46,7 +46,8 @@ html(lang="ja")
 
     //- スタイルシート
     block stylesheet
-      +link("/assets/css/app.css")(rel="stylesheet")
+      +link("/assets/css/app.css")(rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'")
+      +link("/assets/css/fonts.css")(rel="stylesheet" media="print" onload="this.media='all'")
       +link("/assets/css/style.css")(rel="stylesheet")
 
     //- ヘッダーに組み込むスクリプト
