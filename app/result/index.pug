@@ -17,12 +17,12 @@ block page_header
 
 block body
   section.l-section.is-lg
-    .l-container
-      +c.news.u-maxwidth944
+    .l-container.is-sm
+      +c.news
         +e.content
-          +c_news__block("is-result")
+          +c_news__block("result")
       +c_pagination()
-      
+
 block before_footer
   +l_offer
 

@@ -16,76 +16,36 @@ block page_header
   +c_breadcrumb()
 
 block body
-  h2 見出しレベル2
-  +c.anchor-nav
-    .row
-      .large-3.small-6
-        +a("#").c-button.is-sm ページ内リンク
-      .large-3.small-6
-        +a("#").c-button.is-sm ページ内リンク
-      .large-3.small-6
-        +a("#").c-button.is-sm ページ内リンク
-      .large-3.small-6
-        +a("#").c-button.is-sm ページ内リンク
-  div.u-mbs.is-top.is-lg
-    p 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
-  div.u-mbs.is-top.is-lg
-    h3 見出しレベル3見出しレベル3見出しレベル3見出しレベ
-    +c.block
-      +e.block
-        .row
-          .large-5.small-12
-            +e.image: +img("img-block-01.jpg")
-          .large-7.small-12
-            +e.content
-              h4 見出しレベル4見出しレベル4
-              p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
-      +e.block
-        h4 見出しレベル4見出しレベル4
-        .row
-          .large-7.small-12
-            +e.content
-              p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
-          .large-5.small-12
-            +e.image: +img("img-block-01.jpg")
-
-  div.u-mbs.is-top.is-lg
+  section.l-section.is-lg.is-bottom
+    h2.c-heading.is-lg.is-mg-level-6 セクションタイトル
+    +c_anchor-nav("u-mbs is-bottom",{
+      link: "#section01",
+      title: "テキストテキスト",
+    },{
+      link: "#section02",
+      title: "テキストテキスト",
+    },{
+      link: "#section03",
+      title: "テキストテキスト",
+    },{
+      link: "#section04",
+      title: "テキストテキスト",
+    })
+    .u-mbs.is-sm
+      p
+        | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
     +c.box
       +e.block
         +e.content
-          h5 <i class="fa fa-circle-o" aria-hidden="true"></i>見出しレベル5
-          p ブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキストブロックテキスト
+          h3.c-heading.is-md サブタイトル
+          p テキストテキストテキストテキストテキストテキストテキストテキスト
+          +img("img-sample.jpg")
+          +a("/").c-button.is-sm ボタンテキスト
 
-  div.u-mbs.is-top.is-lg
-    table.c-table
-      tbody
-        tr
-          th thテキスト
-          td tdテキストテキストテキストテキストテキスト
-        tr
-          th thテキスト
-          td tdテキストテキストテキストテキストテキスト
-        tr
-          th thテキスト
-          td tdテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-  div.u-mbs.is-top.is-lg
-    +img("img-sample-lg.jpg")
-
-  div.u-mbs.is-top.is-lg
-    .row
-      .large-6.small-12
-        +img("img-sample-lg.jpg")
-      .large-6.small-12
-        +img("img-sample-lg.jpg")
-
-  div.u-mbs.is-top.is-lg
-    .row
-      .large-4.small-12
-        +img("img-sample-sm.jpg")
-      .large-4.small-12
-        +img("img-sample-sm.jpg")
-      .large-4.small-12
-        +img("img-sample-sm.jpg")
+  section.l-section.is-lg.is-bottom
+    h2.c-heading.is-lg セクションタイトル
+    p
+      | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
 
 block aside
   +l-aside()

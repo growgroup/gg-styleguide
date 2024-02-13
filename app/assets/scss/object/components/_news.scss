@@ -10,10 +10,22 @@ category: News
     padding-bottom: rem-calc(72);
   }
 
-  &__head {
+  //============================
+  //  TOPページ
+  //============================
+
+  &__columns {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: rem-calc(36);
+
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(16);
+      grid-template-columns: 1fr;
+      gap: rem-calc(16);
     }
+  }
+
+  &__head {
   }
 
   &__title {
@@ -36,6 +48,9 @@ category: News
     }
   }
 
+  //============================
+  //  共通
+  //============================
   &__block {
     text-decoration: none;
     color: $font-base-color;

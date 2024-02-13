@@ -65,14 +65,21 @@ mixin c_news__block(data)
       +e.date 2018.10.10
       +e.label.c-label.is-white カテゴリ
       +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
-  else if data == "is-news"
+  else if data == "news"
     +ae("/news/category/page/").block
       +e.date 2022.01.01
       +e.label.c-label.is-white カテゴリ
       +e.inner
         +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
         +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-  else if data == "is-result"
+  else if data == "twocolumns"
+    +ae("/archive-twocolumns/category/page/").block
+      +e.date 2022.01.01
+      +e.label.c-label.is-white カテゴリ
+      +e.inner
+        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+  else if data == "result"
     +ae("/news/category/page/").block
       +e.label.c-label お知らせ
       +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト

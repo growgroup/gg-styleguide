@@ -18,8 +18,14 @@ category: Layout
     padding: rem-calc(64) 0;
   }
   &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem-calc(36);
+
     margin-top: rem-calc(48);
     @include breakpoint(small only) {
+      grid-template-columns: 1fr;
+      gap: rem-calc(16);
       margin-top: rem-calc(24);
     }
     // ボタン1つ
