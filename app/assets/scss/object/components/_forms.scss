@@ -1,3 +1,16 @@
+//============================
+//  mixins
+//============================
+
+// メールフォーム専用の input,textarea,select 共通スタイル
+@mixin forms-input-common-style {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+//============================
+// styles
+//============================
 .c-forms{
   margin-top: rem-calc(42);
   padding: rem-calc(42) rem-calc(32);
@@ -31,6 +44,9 @@
     }
   }
 
+  //============================
+  // フォーム項目の構造
+  //============================
   &__blocks {
     margin-bottom: rem-calc(32);
 
@@ -67,7 +83,6 @@
   }
   &__title {
     min-width: rem-calc(210);
-    //padding: rem-calc(16) rem-calc(32);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,10 +122,6 @@
   }
   &__content {
     width: 100%;
-    //padding: rem-calc(16) rem-calc(32);
-    @include breakpoint(small only) {
-      //padding: rem-calc(12) 0;
-    }
     &.is-column{
       display: flex;
       justify-content: space-between;
@@ -130,52 +141,34 @@
       align-items: center;
     }
   }
+
+  //============================
+  // フォームコントロール
+  //============================
+
   //インプット
   &__input {
     width: 100%;
     input {
-      border-radius: 4px;
-      background-color: #F9F9F9;
-      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
-      @include breakpoint(small only) {
-        padding: rem-calc(12) rem-calc(16);
-      }
-      &:focus{
-        border-color: $color-primary;
-      }
+      @include forms-input-common-style;
     }
     &.is-sm {
       width: rem-calc(180);
       input {
-        padding-top: rem-calc(12);
-        padding-bottom: rem-calc(12);
       }
     }
   }
   &__file {
     width: 100%;
-
     input {
-
       &::file-selector-button{
-        background-color: #F9F9F9;
-        border: solid 1px $border-base-color;
-        border-radius: 4px;
-        padding: rem-calc(8) rem-calc(16);
-        margin-right: rem-calc(16);
       }
     }
   }
   &__select {
     width: 100%;
     select {
-      outline: none;
-      border-radius: 4px !important;
-      background-color: #F9F9F9;
-
-      &:focus{
-        border-color: $color-primary;
-      }
+      @include forms-input-common-style;
     }
     &.is-sm {
       width: rem-calc(180);
@@ -184,15 +177,7 @@
 
   &__textarea {
     textarea {
-      border-radius: 4px;
-      background-color: #F9F9F9;
-      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
-      @include breakpoint(small only) {
-        padding: rem-calc(12) rem-calc(16);
-      }
-      &:focus{
-        border-color: $color-primary;
-      }
+      @include forms-input-common-style;
     }
   }
   //ラジオボタン,チェックボックス
@@ -238,6 +223,18 @@
 
       &.is-fullwidth {
         width: 100%;
+      }
+    }
+
+    &.is-border {
+      label {
+        padding: rem-calc(12) rem-calc(16);
+        border: 1px solid $border-base-color;
+        border-radius: $border-radius;
+
+        @include breakpoint(small only) {
+          padding: rem-calc(8) rem-calc(12);
+        }
       }
     }
 
@@ -349,18 +346,9 @@
       }
     }
 
-    &.is-border {
-
-      label {
-        padding: rem-calc(12) rem-calc(16);
-        border: 1px solid $border-base-color;
-        border-radius: $border-radius;
-
-        @include breakpoint(small only) {
-          padding: rem-calc(8) rem-calc(12);
-        }
-      }
-    }
+    //&.is-border {
+    //
+    //}
   }
 
   &__radio {
