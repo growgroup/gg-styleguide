@@ -155,8 +155,9 @@ select {
 ::placeholder {
   color: rgba($font-base-color, 0.3);
 
-  @include breakpoint(small down) {
-    font-size: rem-calc(14);
-  }
+  //スマホだけ文字サイズを変更したいとき
+  //@include breakpoint(small down) {
+  //  font-size: rem-calc(14);
+  //}
 }
 

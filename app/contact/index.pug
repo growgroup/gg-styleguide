@@ -13,7 +13,7 @@ block page_header
   //- /confirm/ と /complete/ もCSS調整必須！
   //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 block body
-  section.l-section.is-lg.is-color-secondary
+  section.l-section.is-xlg.is-bg-color
     .l-container
       +c.form-head
         +e.block
@@ -34,7 +34,7 @@ block body
           +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。
           +e.blocks
             +e.block
-              +e.title ラジオボタン
+              +e.title チェックボックス
               +e.content
                 +e.checkbox.is-design.is-border
                   span
@@ -55,7 +55,7 @@ block body
                       span 選択肢4
 
             +e.block
-              +e.title チェックボックス
+              +e.title ラジオボタン
               +e.content
                 +e.checkbox.is-design.is-border
                   span

@@ -12,23 +12,19 @@
 // styles
 //============================
 .c-forms {
-  margin-top: rem-calc(42);
-  padding: rem-calc(42) rem-calc(32);
+  max-width: rem-calc(800);
+  margin: auto;
+  padding: rem-calc(60) rem-calc(32) rem-calc(54);
   background: $color-white;
 
-  @include breakpoint(medium down) {
-    padding: rem-calc(42) 0;
-  }
-
   @include breakpoint(small only) {
-    padding: rem-calc(36) rem-calc(16);
+    padding: rem-calc(32) rem-calc(16);
   }
 
   &__inner {
     width: 100%;
-    max-width: rem-calc(1024);
+    max-width: rem-calc(500);
     margin: auto;
-    padding: 0 rem-calc(40);
 
     @include breakpoint(small only) {
       padding: 0;
