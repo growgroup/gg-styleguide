@@ -4,7 +4,7 @@
 
 // メールフォーム専用の input,textarea,select 共通スタイル
 @mixin forms-input-common-style {
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: #f5f5f5;
 }
 
@@ -48,84 +48,64 @@
   // フォーム項目の構造
   //============================
   &__blocks {
-    margin-bottom: rem-calc(32);
-
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(24);
     }
   }
 
   &__block {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: rem-calc(4);
 
     &:not(:last-child) {
-      margin-bottom: rem-calc(32);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
+      margin-bottom: rem-calc(18);
+    }
+
+    //項目名と項目の横並び
+    &.is-horizontal {
+      grid-template-columns: minmax(auto, min-content) 1fr;
+      column-gap: rem-calc(60);
+
+      @include breakpoint(small down) {
+        grid-template-columns: 1fr;
       }
-    }
-
-    @include breakpoint(small only) {
-      display: block;
-    }
-
-    &.is-vertical {
-      display: block;
 
       .c-forms__title {
-        max-width: rem-calc(210);
-        margin-bottom: rem-calc(16);
-
-        @include breakpoint(small only) {
-          max-width: 100%;
-          margin-bottom: rem-calc(12);
-        }
+        min-width: rem-calc(220);
+        justify-content: space-between;
       }
     }
   }
 
   &__title {
-    min-width: rem-calc(210);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: none;
-    margin-right: rem-calc(60);
-    letter-spacing: 0;
+    gap: rem-calc(8);
+    align-items: baseline;
+    align-self: center;
+    font-size: rem-calc(14);
+    --letter-spacing: 0;
+
     @include breakpoint(small only) {
-      width: 100%;
-      background-color: transparent;
-      margin-bottom: rem-calc(12);
       font-weight: 700;
     }
 
     &.is-vertical-top {
-      align-items: flex-start;
-
-      &.is-just {
-        padding-top: rem-calc(40);
-        @include breakpoint(small only) {
-          padding-top: rem-calc(12);
-        }
-      }
-
-      .c-forms__label {
-        margin-top: rem-calc(3);
-      }
+      align-self: start;
     }
   }
 
   //ラベル
   &__label {
     display: block;
-    background-color: $color-accent;
+    min-width: rem-calc(32);
+    padding: rem-calc(3);
+    border-radius: 5px;
+    background-color: $color-accent; //#F44336
+    text-align: center;
     color: $color-white;
     font-size: rem-calc(12);
-    letter-spacing: 0.1em;
-    text-align: center;
-    padding: rem-calc(1) rem-calc(10);
-    margin-left: rem-calc(16);
-    min-width: rem-calc(48);
+    line-height: 1;
+    --letter-spacing: 0em;
   }
 
   &__content {
@@ -178,7 +158,10 @@
   &__file {
     width: 100%;
 
+
     input {
+      @include forms-input-common-style;
+      width: 100%;
       &::file-selector-button {
       }
     }
@@ -208,6 +191,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: rem-calc(10);
+
+    & > span {
+      width: calc(50% - #{rem-calc(5)});
+    }
 
     label {
       display: flex;
@@ -219,37 +207,17 @@
       }
     }
 
-    & > span {
-      margin: rem-calc(5) 0;
+    &.is-vertical {
+      flex-direction: column;
 
-      @include breakpoint(small only) {
-        margin: rem-calc(3) 0;
-      }
-    }
-
-    span {
-
-      &:not(:last-child) {
-        margin-right: rem-calc(24);
-
-        @include breakpoint(small only) {
-          margin-right: rem-calc(16);
-        }
-      }
-
-      &:last-of-type {
-        label {
-          margin-right: 0;
-        }
-      }
-
-      &.is-fullwidth {
+      & > span {
         width: 100%;
       }
     }
 
     &.is-border {
       label {
+        @include forms-input-common-style;
         padding: rem-calc(12) rem-calc(16);
         border: 1px solid $border-base-color;
         border-radius: $border-radius;
@@ -261,156 +229,85 @@
     }
 
     &.is-design {
-
       input {
         cursor: pointer;
         border-color: $border-base-color;
+        flex-shrink: 0;
 
         &[type='radio'], &[type='checkbox'] {
           appearance: none;
-          width: 25px;
-          height: 25px;
-          position: relative;
-
-          @include breakpoint(small only) {
-            width: rem-calc(20);
-            height: rem-calc(20);
-          }
-        }
-
-        &[type='radio']:after, &[type='checkbox']:after {
-          width: 25px;
-          height: 25px;
-          border-radius: 50%;
-          top: 50%;
-          left: -1px;
-          transform: translateY(-50%);
-          position: relative;
-          background-color: $color-white;
-          content: '';
-          display: inline-block;
-          visibility: visible;
+          background: $color-white;
           border: 1px solid $border-base-color;
-
-          @include breakpoint(small only) {
-            width: rem-calc(20);
-            height: rem-calc(20);
-          }
-        }
-
-        &[type='radio']:before {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
-          position: absolute;
-          top: 50%;
-          left: 4px;
-          transform: translateY(-50%);
-          background-color: $color-primary;
-          content: '';
-          display: inline-block;
-          visibility: visible;
-          border: 1px solid $color-primary;
-          z-index: 10;
-          opacity: 0;
-          visibility: hidden;
-
-          @include breakpoint(small only) {
-            width: rem-calc(12);
-            height: rem-calc(12);
-            left: 3px;
-          }
-        }
-
-        &[type='radio']:checked:after, &[type='checkbox']:checked:after {
-          width: 25px;
-          height: 25px;
-          border-radius: 50%;
-          top: 50%;
-          left: -1px;
-          transform: translateY(-50%);
+          width: rem-calc(20);
+          height: rem-calc(20);
           position: relative;
-          background-color: $color-white;
-          content: '';
-          display: inline-block;
-          visibility: visible;
-          border: 1px solid $color-primary;
 
-          @include breakpoint(small only) {
-            width: rem-calc(20);
-            height: rem-calc(20);
+          &:checked {
+            &::after {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              top: 50%;
+              left: -1px;
+              transform: translateY(-50%);
+              background-color: $color-white;
+              content: '';
+              display: inline-block;
+              visibility: visible;
+              border: 1px solid $color-primary;
+
+              @include breakpoint(small only) {
+                width: rem-calc(20);
+                height: rem-calc(20);
+              }
+            }
           }
         }
 
-        &[type='radio']:checked:before, &[type='checkbox']:checked:before {
-          visibility: visible;
-          opacity: 1;
+        &[type='radio'] {
+          &::after {
+            border-radius: 50%;
+          }
+
+          &:checked::after {
+            content: '';
+            background: radial-gradient($color-primary 48%, $color-white 50%);
+          }
         }
 
-
-        &[type='checkbox']:after {
-          border-radius: 0;
-        }
-
-        &[type='checkbox']:checked:after {
-          content: "check";
-          font-family: "Material Icons Outlined";
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 0;
-          background: $color-primary;
-          color: $color-white;
-          font-size: rem-calc(20);
-          line-height: 1;
-          letter-spacing: 0;
-        }
-      }
-    }
-
-    //&.is-border {
-    //
-    //}
-  }
-
-  &__radio {
-    &.is-vertical {
-      display: block;
-
-      span {
-        display: block;
-
-        &:not(:last-child) {
-          margin-bottom: rem-calc(6);
+        &[type='checkbox'] {
+          &:checked {
+            &::after {
+              content: "check";
+              font-family: "Material Icons Outlined";
+              display: grid;
+              place-content: center;
+              background: $color-primary;
+              color: $color-white;
+              font-size: rem-calc(20);
+              line-height: 1;
+              letter-spacing: 0;
+            }
+          }
         }
       }
     }
   }
 
-  &__checkbox {
+  &__note {
+    margin-top: rem-calc(4);
+    opacity: 0.6;
+    font-size: rem-calc(12);
 
-    &.is-vertical {
-      display: block;
-
-      span {
-        display: block;
-
-        &:not(:last-child) {
-          margin-bottom: rem-calc(6);
-        }
-      }
-    }
-
-    input {
-      margin-top: rem-calc(2);
+    small {
+      font-size: inherit;
     }
   }
+
 
   &__privacy {
+    margin-top: rem-calc(24);
     text-align: center;
-    @include breakpoint(small only) {
-      margin-top: rem-calc(16);
-    }
 
     input {
       margin-right: rem-calc(10);
@@ -457,15 +354,16 @@
   // 住所自動入力ボタン
   &__button {
     flex: none;
-    max-width: rem-calc(150);
+    max-width: rem-calc(132);
     border: 1px solid $font-base-color;
     outline: none;
     background-color: $color-white;
-    padding: rem-calc(3) rem-calc(12);
+    padding: rem-calc(4) rem-calc(12);
     display: block;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 2px;
     margin-left: rem-calc(16);
+    font-size: rem-calc(14);
     @include breakpoint(small only) {
       padding: rem-calc(9) rem-calc(12);
     }
