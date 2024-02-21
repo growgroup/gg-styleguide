@@ -11,7 +11,7 @@
 //============================
 // styles
 //============================
-.c-forms{
+.c-forms {
   margin-top: rem-calc(42);
   padding: rem-calc(42) rem-calc(32);
   background: $color-white;
@@ -35,7 +35,7 @@
     }
   }
 
-  &__text{
+  &__text {
     text-align: center;
     margin-bottom: rem-calc(48);
 
@@ -57,12 +57,14 @@
 
   &__block {
     display: flex;
+
     &:not(:last-child) {
       margin-bottom: rem-calc(32);
       @include breakpoint(small only) {
         margin-bottom: rem-calc(24);
       }
     }
+
     @include breakpoint(small only) {
       display: block;
     }
@@ -81,6 +83,7 @@
       }
     }
   }
+
   &__title {
     min-width: rem-calc(210);
     display: flex;
@@ -95,19 +98,23 @@
       margin-bottom: rem-calc(12);
       font-weight: 700;
     }
+
     &.is-vertical-top {
       align-items: flex-start;
-      &.is-just{
+
+      &.is-just {
         padding-top: rem-calc(40);
         @include breakpoint(small only) {
           padding-top: rem-calc(12);
         }
       }
+
       .c-forms__label {
         margin-top: rem-calc(3);
       }
     }
   }
+
   //ラベル
   &__label {
     display: block;
@@ -120,21 +127,27 @@
     margin-left: rem-calc(16);
     min-width: rem-calc(48);
   }
+
   &__content {
     width: 100%;
-    &.is-column{
+
+    &.is-column {
       display: flex;
       justify-content: space-between;
+
       .c-forms__input {
         margin-right: 24px;
+
         &:last-of-type {
           margin-right: 0;
         }
       }
-      input{
+
+      input {
         width: 100%;
       }
     }
+
     &.is-vertical-middle {
       display: flex;
       flex-wrap: wrap;
@@ -149,27 +162,35 @@
   //インプット
   &__input {
     width: 100%;
+
     input {
       @include forms-input-common-style;
     }
+
     &.is-sm {
       width: rem-calc(180);
+
       input {
       }
     }
   }
+
   &__file {
     width: 100%;
+
     input {
-      &::file-selector-button{
+      &::file-selector-button {
       }
     }
   }
+
   &__select {
     width: 100%;
+
     select {
       @include forms-input-common-style;
     }
+
     &.is-sm {
       width: rem-calc(180);
     }
@@ -180,6 +201,7 @@
       @include forms-input-common-style;
     }
   }
+
   //ラジオボタン,チェックボックス
   &__radio,
   &__checkbox {
@@ -244,7 +266,7 @@
         cursor: pointer;
         border-color: $border-base-color;
 
-        &[type='radio'],&[type='checkbox'] {
+        &[type='radio'], &[type='checkbox'] {
           appearance: none;
           width: 25px;
           height: 25px;
@@ -256,7 +278,7 @@
           }
         }
 
-        &[type='radio']:after,&[type='checkbox']:after {
+        &[type='radio']:after, &[type='checkbox']:after {
           width: 25px;
           height: 25px;
           border-radius: 50%;
@@ -300,7 +322,7 @@
           }
         }
 
-        &[type='radio']:checked:after,&[type='checkbox']:checked:after {
+        &[type='radio']:checked:after, &[type='checkbox']:checked:after {
           width: 25px;
           height: 25px;
           border-radius: 50%;
@@ -320,7 +342,7 @@
           }
         }
 
-        &[type='radio']:checked:before,&[type='checkbox']:checked:before {
+        &[type='radio']:checked:before, &[type='checkbox']:checked:before {
           visibility: visible;
           opacity: 1;
         }
@@ -357,12 +379,14 @@
 
       span {
         display: block;
+
         &:not(:last-child) {
           margin-bottom: rem-calc(6);
         }
       }
     }
   }
+
   &__checkbox {
 
     &.is-vertical {
@@ -370,33 +394,40 @@
 
       span {
         display: block;
+
         &:not(:last-child) {
           margin-bottom: rem-calc(6);
         }
       }
     }
+
     input {
       margin-top: rem-calc(2);
     }
   }
+
   &__privacy {
     text-align: center;
     @include breakpoint(small only) {
       margin-top: rem-calc(16);
     }
-    input{
+
+    input {
       margin-right: rem-calc(10);
     }
+
     a {
       font-weight: 400;
       text-decoration: underline;
       color: $font-base-color;
     }
   }
-  &__flex-al{
+
+  &__flex-al {
     display: flex;
     align-items: center;
   }
+
   &__flexbox {
     display: flex;
     align-items: center;
@@ -404,12 +435,15 @@
     @include breakpoint(small only) {
       display: block;
     }
-    input{
+
+    input {
       width: 100%;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
+
     span {
       min-width: rem-calc(120);
       display: block;
@@ -419,6 +453,7 @@
       }
     }
   }
+
   // 住所自動入力ボタン
   &__button {
     flex: none;
@@ -435,6 +470,7 @@
       padding: rem-calc(9) rem-calc(12);
     }
   }
+
   // 送信ボタン
   &__submit {
     text-align: center;
@@ -442,10 +478,11 @@
     @include breakpoint(small only) {
       margin-top: rem-calc(32);
     }
-    &__back{
+
+    &__back {
       width: calc(25% - 28px);
       // -2px はタグの改行によって発生するホワイトスペースの距離
-      margin-right:(map_get($grid-column-responsive-gutter,medium) * 0.5) - 2px;
+      margin-right: (map_get($grid-column-responsive-gutter,medium) * 0.5) - 2px;
       @include breakpoint(medium down) {
         width: calc(33.33333% - 28px);
       }
@@ -454,7 +491,8 @@
         margin-right: map_get($grid-column-responsive-gutter,small) * 0.5 - 2px;
       }
     }
-    &__submit{
+
+    &__submit {
       width: calc(25% - 28px);
       margin-left: map_get($grid-column-responsive-gutter,medium) * 0.5 - 2px;
       @include breakpoint(medium down) {
