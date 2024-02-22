@@ -5,7 +5,7 @@
 // メールフォーム専用の input,textarea,select 共通スタイル
 @mixin forms-input-common-style {
   border-radius: 2px;
-  background-color: #f5f5f5;
+  background-color: #F9F8F7;
 }
 
 //============================
@@ -14,7 +14,7 @@
 .c-forms {
   max-width: rem-calc(800);
   margin: auto;
-  padding: rem-calc(60) rem-calc(32) rem-calc(54);
+  padding: rem-calc(54) rem-calc(32) rem-calc(58);
   background: $color-white;
 
   @include breakpoint(small only) {
@@ -31,9 +31,19 @@
     }
   }
 
+  &__head {
+    font-weight: bold;
+    font-size: rem-calc(30);
+    margin: 0 0 rem-calc(24);
+
+    @include breakpoint(small only) {
+      font-size: rem-calc(24);
+    }
+  }
+
   &__text {
-    text-align: center;
-    margin-bottom: rem-calc(48);
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(40);
 
     @include breakpoint(small only) {
       margin-bottom: rem-calc(24);
@@ -54,7 +64,7 @@
     row-gap: rem-calc(4);
 
     &:not(:last-child) {
-      margin-bottom: rem-calc(18);
+      margin-bottom: rem-calc(20);
     }
 
     //項目名と項目の横並び
@@ -62,7 +72,7 @@
       grid-template-columns: minmax(auto, min-content) 1fr;
       column-gap: rem-calc(60);
 
-      @include breakpoint(small down) {
+      @include breakpoint(small only) {
         grid-template-columns: 1fr;
       }
 
@@ -93,7 +103,7 @@
   //ラベル
   &__label {
     display: block;
-    min-width: rem-calc(32);
+    min-width: rem-calc(34);
     padding: rem-calc(3);
     border-radius: 5px;
     background-color: $color-accent; //#F44336
@@ -188,6 +198,15 @@
     flex-wrap: wrap;
     align-items: center;
     gap: rem-calc(10);
+    line-height: 1.2;
+
+    @include breakpoint(small only) {
+      flex-direction: column;
+
+      & > span {
+        width: 100%;
+      }
+    }
 
     & > span {
       width: calc(50% - #{rem-calc(5)});
@@ -211,16 +230,13 @@
       }
     }
 
+
     &.is-border {
       label {
         @include forms-input-common-style;
-        padding: rem-calc(12) rem-calc(16);
+        padding: rem-calc(11) rem-calc(8);
         border: 1px solid $border-base-color;
         border-radius: $border-radius;
-
-        @include breakpoint(small only) {
-          padding: rem-calc(8) rem-calc(12);
-        }
       }
     }
 
@@ -251,11 +267,6 @@
               display: inline-block;
               visibility: visible;
               border: 1px solid $color-primary;
-
-              @include breakpoint(small only) {
-                width: rem-calc(20);
-                height: rem-calc(20);
-              }
             }
           }
         }
@@ -361,7 +372,7 @@
     margin-left: rem-calc(16);
     font-size: rem-calc(14);
     @include breakpoint(small only) {
-      padding: rem-calc(9) rem-calc(12);
+      padding: rem-calc(6) rem-calc(12);
     }
   }
 

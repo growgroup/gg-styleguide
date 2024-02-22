@@ -6,13 +6,14 @@
 $form-controls-transition: all ease-in-out .2s !default;
 $form-controls-font-size: 15px;
 $form-controls-border-color: #D8D8D8;
-$form-controls-active-border-color: $color-primary;
+$form-controls-active-border-color: #0097D8;
 
 //input, textarea, selectの共通スタイル
 @mixin form-controls-common-style {
   font-size: $form-controls-font-size;
-  color: $font-base-color;
+  --letter-spacing: 0;
   line-height: 1.46666;
+  color: $font-base-color;
   border: 1px solid $form-controls-border-color;
   transition: $form-controls-transition;
   background-color: $color-white;
@@ -87,7 +88,7 @@ input[type="file"] {
 textarea {
   @include form-controls-input-style;
 
-  min-height: 200px;
+  min-height: rem-calc(140);
   display: block;
 }
 
@@ -99,10 +100,11 @@ textarea {
 // Styleguide 1.6.3
 
 input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
   accent-color: $color-primary;
+  flex-shrink: 0;
 }
 
 // ラジオボックス
@@ -114,10 +116,11 @@ input[type="checkbox"] {
 
 input[type="radio"] {
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
   accent-color: $color-primary;
+  flex-shrink: 0;
 }
 
 // セレクトボックス
@@ -143,7 +146,7 @@ select {
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
   background-repeat: no-repeat;
-  background-position: calc(100% - 15px) center;
+  background-position: calc(100% - 16px) center;
   background-size: 9px 5px;
 
   @include breakpoint(small down) {

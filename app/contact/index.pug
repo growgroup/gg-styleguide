@@ -13,9 +13,9 @@ block page_header
   //- /confirm/ と /complete/ もCSS調整必須！
   //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 block body
-  section.l-section.is-xlg.is-bg-color
+  section.l-section.is-xlg.is-bottom.is-bg-color
     .l-container
-      +c.form-head
+      //+c.form-head
         +e.block
           +h1.title お問い合わせ
           +e.list
@@ -31,12 +31,13 @@ block body
       <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
       +c.forms
         +e.inner
-          +e.text 下記のフォームに必須項目を入力して<br class="u-visible-sm">送信してください。
+          +h1.head お問い合わせ
+          +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
           +e.blocks
             +e.block
               +e.title チェックボックス
               +e.content
-                +e.checkbox.is-design.is-border
+                +e.checkbox.is-border
                   span
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢1")
@@ -57,7 +58,7 @@ block body
             +e.block
               +e.title ラジオボタン
               +e.content
-                +e.checkbox.is-design.is-border
+                +e.radio.is-border
                   span
                     label
                       input(type="radio", name="ご希望のサービス", value="選択肢1")
@@ -78,7 +79,7 @@ block body
             +e.block
               +e.title ご希望のサービス（テキストが長い場合）
               +e.content
-                +e.checkbox.is-design.is-border.is-vertical
+                +e.checkbox.is-border.is-vertical
                   span
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢1")
@@ -86,15 +87,41 @@ block body
                   span
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
+                      span 選択肢2 長いテキスト長いテキスト長いテキスト
                   span
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
+                      span 選択肢3 長いテキスト
                   span
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
+                      span 選択肢4 長いテキスト
+
+            +e.block
+              +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
+              +e.content
+                +e.radio.is-design.is-border
+                  span
+                    label
+                      input(type="radio", name="ご希望のサービス", value="選択肢1")
+                      span 選択肢1
+                  span
+                    label
+                      input(type="radio", name="ご希望のサービス", value="選択肢2")
+                      span 選択肢2
+
+            +e.block
+              +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
+              +e.content
+                +e.checkbox.is-design.is-border
+                  span
+                    label
+                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
+                      span 選択肢1
+                  span
+                    label
+                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
+                      span 選択肢2
 
 
             +e.block
@@ -133,14 +160,14 @@ block body
               +e.content
                 +e.flex-al
                   +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
-                  button(onclick="AjaxZip3.zip2addr('郵便番号','','住所','住所');", type="button").c-forms__button#zipauto 住所を自動入力
+                  button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
 
             +e.block
               +e.title
-                | 住所
+                | ご住所
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="住所", placeholder="ご住所を入力してください")
+                +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
 
             +e.block
               +e.title
@@ -178,7 +205,8 @@ block body
               +e.content
                 +e.file: input(type="file", name="ファイルアップロード")
 
-
+          +e.head --横並びパターン保存用--
+          +e.blocks
             +e.block.is-horizontal
               +e.title
                 | 横並びパターン
