@@ -1,7 +1,13 @@
 //- filename: footer.jade
 //- description: フッター
+-
+  var className = "l-footer"
 
-footer.l-footer
+  if (current.id === "contact" || current.id === "confirm" || current.id === "complete") {
+    className = "l-footer is-simple"
+  }
+
+footer(class=className)
   +c.pagetop.js-fixedheader
     +a("#top")(data-anchor-target="html", aria-label="ページ上部に戻る").js-anchor
   .l-container

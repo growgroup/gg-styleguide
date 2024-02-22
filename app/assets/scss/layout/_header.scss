@@ -289,6 +289,12 @@ category: Layout
   }
 }
 
+.l-header.is-simple {
+  .l-header__nav, .l-header__search, .l-header__button {
+    display: none;
+  }
+}
+
 // スマホメニューopen時
 .is-slidebar-active {
   .l-header {
