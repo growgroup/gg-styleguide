@@ -6,6 +6,12 @@
 @mixin forms-input-common-style {
   border-radius: 2px;
   background-color: #F9F8F7;
+
+
+  &:focus,
+  &:active {
+    border-color: $form-controls-active-border-color;
+  }
 }
 
 //============================

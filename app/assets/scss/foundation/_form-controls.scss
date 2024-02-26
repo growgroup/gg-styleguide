@@ -26,7 +26,6 @@ $form-controls-active-border-color: #0097D8;
 
   &:focus,
   &:active {
-    border-color: $form-controls-active-border-color;
     outline: none;
     box-shadow: none;
   }
