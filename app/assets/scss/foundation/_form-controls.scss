@@ -70,10 +70,11 @@ input[type="file"] {
     background-color: #F9F9F9;
     background: linear-gradient(135deg, #FFF 0%, #FFF 80%, #EFEFEF 100%);
     border-radius: 4px;
-    line-height: 1.46666;
     border: 1px solid #bababa;
     padding: rem-calc(2) rem-calc(16) rem-calc(4);
     margin-right: rem-calc(16);
+    color: $color-black;
+    line-height: 1.46666;
 
     appearance: none;
   }

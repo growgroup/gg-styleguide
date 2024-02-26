@@ -79,6 +79,10 @@
       .c-forms__title {
         min-width: rem-calc(220);
         justify-content: space-between;
+
+        @include breakpoint(small only) {
+          justify-content: flex-start;
+        }
       }
     }
   }
@@ -91,9 +95,6 @@
     font-size: rem-calc(14);
     --letter-spacing: 0;
 
-    @include breakpoint(small only) {
-      font-weight: 700;
-    }
 
     &.is-vertical-top {
       align-self: start;
