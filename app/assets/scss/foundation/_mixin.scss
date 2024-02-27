@@ -185,12 +185,6 @@
   }
 }
 
-// フォームの有効化時のスタイル
-@mixin input-active(){
-  outline: none;
-  box-shadow: none;
-}
-
 
 // センタリング
 @mixin center-block() {

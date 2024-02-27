@@ -10,24 +10,25 @@ block append config
 block page_header
 
 block body
-  section.l-section.is-lg.is-color-secondary
+  section.l-section.is-xlg.is-bottom.is-bg-color
     .l-container
-      +c.form-head
-        +e.block
-          +h1.title お問い合わせ
-          +e.list
-            +e.item
-              +e.item-number 1
-              +e.item-text お客様情報入力
-            +e.item.is-current
-              +e.item-number 2
-              +e.item-text 入力内容の確認
-            +e.item
-              +e.item-number 3
-              +e.item-text 送信完了
+      //
+        +c.form-head
+          +e.block
+            +h1.title お問い合わせ
+            +e.list
+              +e.item
+                +e.item-number 1
+                +e.item-text お客様情報入力
+              +e.item.is-current
+                +e.item-number 2
+                +e.item-text 入力内容の確認
+              +e.item
+                +e.item-number 3
+                +e.item-text 送信完了
       +c.forms
         +e.inner
-          +e.heading.c-heading.is-md.is-normal.u-text-center.is-bottom 入力内容確認
+          +h1.head お問い合わせ：入力内容確認
           +e.text.
             ご入力いただいた内容は下記の通りです。<br>
             お間違いがなければ送信を、入力内容を変更する場合はお手数ですが、再入力をお願い致します。

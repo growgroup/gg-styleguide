@@ -138,3 +138,9 @@ category: Layout
     }
   }
 }
+
+.l-footer.is-simple {
+  .l-footer__menu {
+    display: none;
+  }
+}

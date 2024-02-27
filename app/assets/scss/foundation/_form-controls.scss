@@ -1,0 +1,166 @@
+// サイト内共通のフォームコントロール用スタイル
+
+//============================
+// variables / mixins
+//============================
+$form-controls-transition: all ease-in-out .2s !default;
+$form-controls-font-size: 15px;
+$form-controls-border-color: #D8D8D8;
+$form-controls-active-border-color: #0097D8;
+
+//input, textarea, selectの共通スタイル
+@mixin form-controls-common-style {
+  font-size: $form-controls-font-size;
+  --letter-spacing: 0;
+  line-height: 1.46666;
+  color: $font-base-color;
+  border: 1px solid $form-controls-border-color;
+  transition: $form-controls-transition;
+  background-color: $color-white;
+  width: 100%;
+  box-shadow: none;
+
+  @include breakpoint(small down) {
+    font-size: 16px; //16px以下にするのはNG
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+//input, textareaの共通スタイル
+@mixin form-controls-input-style {
+  @include form-controls-common-style;
+  padding: rem-calc(10) rem-calc(16);
+
+  @include breakpoint(small down) {
+    padding: rem-calc(9) rem-calc(12);
+  }
+}
+
+
+//============================
+// style
+//============================
+input[type="text"],
+input[type="url"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+  @include form-controls-input-style;
+}
+
+// ファイル選択
+input[type="file"] {
+  @include form-controls-input-style;
+  font-size: rem-calc(12);
+
+  &::file-selector-button {
+    background-color: #F9F9F9;
+    background: linear-gradient(135deg, #FFF 0%, #FFF 80%, #EFEFEF 100%);
+    border-radius: 4px;
+    border: 1px solid #bababa;
+    padding: rem-calc(2) rem-calc(16) rem-calc(4);
+    margin-right: rem-calc(16);
+    color: $color-black;
+    line-height: 1.46666;
+
+    appearance: none;
+  }
+}
+
+// テキストエリア
+//
+// markup:
+// <textarea row="100" col="50" name="" placeholder="テキストエリア"></textarea>
+//
+// Styleguide 1.6.2
+textarea {
+  @include form-controls-input-style;
+
+  min-height: rem-calc(140);
+  display: block;
+}
+
+// チェックボックス
+//
+// markup:
+// <label for="checkbox"><input id="checkbox" type="checkbox" value="1"> チェックボックス</label>
+//
+// Styleguide 1.6.3
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  accent-color: $color-primary;
+  flex-shrink: 0;
+}
+
+// ラジオボックス
+//
+// markup:
+// <label for="radio"><input id="radio" type="radio" value="1"> ラジオボックス</label>
+//
+// Styleguide 1.6.4
+
+input[type="radio"] {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  accent-color: $color-primary;
+  flex-shrink: 0;
+}
+
+// セレクトボックス
+//
+// markup:
+// <label for="select">
+//    <select id="select" name="select">
+//        <option>選択してください</option>
+//        <option value="1">サンプルオプション1</option>
+//        <option value="2">サンプルオプション2</option>
+//        <option value="3">サンプルオプション3</option>
+//    </select>
+// </label>
+//
+// Styleguide 1.6.5
+select {
+  @include form-controls-common-style();
+  display: block;
+  height: rem-calc(44);
+  padding: rem-calc(10) rem-calc(16);
+  text-transform: none;
+
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) center;
+  background-size: 9px 5px;
+
+  @include breakpoint(small down) {
+    padding: rem-calc(9) rem-calc(12);
+  }
+}
+
+/*  プレイスホルダーの色変更 */
+::placeholder {
+  color: rgba($font-base-color, 0.3);
+
+  //スマホだけ文字サイズを変更したいとき
+  //@include breakpoint(small down) {
+  //  font-size: rem-calc(14);
+  //}
+}
+

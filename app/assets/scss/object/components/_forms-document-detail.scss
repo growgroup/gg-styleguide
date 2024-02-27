@@ -1,0 +1,101 @@
+.c-forms-document-detail {
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem-calc(24);
+    margin-top: rem-calc(24);
+
+    @include breakpoint(small down) {
+      grid-template-columns: 1fr;
+      gap: rem-calc(20);
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    padding-top: calc(141/251*100%);
+    background: $color-background;
+
+    &.swiper-slide {
+      cursor: pointer;
+    }
+
+    .bg-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin:auto;
+      width: 100%;
+      height: 100%;
+      max-height: calc(100% - 30px);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      @include transition();
+    }
+
+    .is-no {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      @include font-format(17,0.05,25,400);
+      color: rgba($font-base-color,0.5);
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(14);
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: rem-calc(24);
+
+    @include breakpoint(small down) {
+      margin-top: rem-calc(20);
+    }
+
+    .swiper-nav {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+
+      .swiper-button-prev ,.swiper-button-next {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        @include transition();
+
+        &:after {
+          content: "chevron_right";
+          font-family: "Material Icons Outlined";
+          color: $color-primary;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .swiper-button-prev {
+
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 -
-  var className = ""
+  var className = "l-header js-fixedheader is-normal"
 
   if (current.id === "contact" || current.id === "confirm" || current.id === "complete") {
     className = "l-header is-simple"
@@ -9,9 +9,6 @@
     className = "l-header js-fixedheader"
   }
 
-  else {
-    className = "l-header js-fixedheader is-normal"
-  }
 
 header(class=className)
   .l-header__content
