@@ -15,7 +15,9 @@
 // Styleguide 5.5.0
 
 .l-container {
-  @extend .container;
+  max-width: $grid-row-width;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: content-box;
   padding-inline: 32px;
 
