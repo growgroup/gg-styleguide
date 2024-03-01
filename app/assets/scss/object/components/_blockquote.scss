@@ -19,8 +19,7 @@ category: Base
   }
   &::before {
     content: "format_quote";
-    font-family: $font-icon-family;
-    @include icon-font-style();
+    @include iconfont();
     font-size: rem-calc(20);
     color: $color-primary;
     position: absolute;

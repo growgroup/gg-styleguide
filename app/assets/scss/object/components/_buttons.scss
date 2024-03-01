@@ -21,8 +21,7 @@ category: Buttons
   // *アイコン
   &::after {
     content: "chevron_right";
-    font-family: $font-icon-family;
-    @include icon-font-style();
+    @include iconfont();
     position: absolute;
     top: 50%;
     right: rem-calc(16);

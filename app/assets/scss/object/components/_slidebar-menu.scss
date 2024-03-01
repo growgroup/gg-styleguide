@@ -50,8 +50,7 @@
 
         &::after {
           content: "navigate_next";
-          font-family: $font-icon-family;
-          @include icon-font-style();
+          @include iconfont();
         }
       }
 
@@ -214,9 +213,8 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        font-family: $font-icon-family;
+        @include iconfont();
         content: "search";
-        @include icon-font-style();
         font-size: rem-calc(18);
         color: $color-primary;
       }

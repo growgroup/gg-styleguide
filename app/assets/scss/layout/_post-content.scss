@@ -70,8 +70,7 @@
 
     &::before {
       content: "check";
-      font-family: $font-icon-family;
-      @include icon-font-style();
+      @include iconfont();
       float: left;
       margin-right: 0.3rem;
       color: $color-primary;

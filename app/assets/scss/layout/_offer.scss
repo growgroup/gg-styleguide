@@ -58,8 +58,7 @@ category: Layout
     }
     &::after {
       content: "chevron_right";
-      font-family: $font-icon-family;
-      @include icon-font-style();
+      @include iconfont();
       position: absolute;
       font-size: rem-calc(20);
       top: 50%;

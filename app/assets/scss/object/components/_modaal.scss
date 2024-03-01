@@ -36,8 +36,7 @@
 
   &:after {
     content: "search";
-    font-family: $font-icon-family;
-    @include icon-font-style();
+    @include iconfont();
     position: absolute;
     right: 0;
     bottom: 0;

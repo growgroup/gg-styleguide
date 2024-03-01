@@ -39,8 +39,7 @@ category: Navigation
       }
       &::before {
         content: "chevron_right";
-        font-family: $font-icon-family;
-        @include icon-font-style();
+        @include iconfont();
         color: $color-primary;
         padding-right: rem-calc(8);
       }

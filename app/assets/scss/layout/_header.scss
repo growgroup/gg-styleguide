@@ -58,9 +58,8 @@ category: Layout
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      font-family: $font-icon-family;
+      @include iconfont();
       content: "search";
-      @include icon-font-style();
       font-size: rem-calc(18);
     }
 
