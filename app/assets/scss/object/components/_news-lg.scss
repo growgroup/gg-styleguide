@@ -40,7 +40,7 @@ category: News
     &::before {
       content: "schedule";
       font-family: $font-icon-family;
-      letter-spacing: 0;
+      @include icon-font-style();
       margin-right: rem-calc(4);
       vertical-align: top;
     }

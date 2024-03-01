@@ -71,7 +71,7 @@
     &::before {
       content: "check";
       font-family: $font-icon-family;
-      letter-spacing: 0;
+      @include icon-font-style();
       float: left;
       margin-right: 0.3rem;
       color: $color-primary;

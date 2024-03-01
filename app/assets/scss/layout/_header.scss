@@ -55,13 +55,12 @@ category: Layout
       left: rem-calc(18);
       top: 50%;
       transform: translateY(-50%);
-      line-height: 1;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
       font-family: $font-icon-family;
       content: "search";
-      font-feature-settings: "liga";
+      @include icon-font-style();
       font-size: rem-calc(18);
     }
 

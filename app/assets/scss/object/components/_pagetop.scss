@@ -39,6 +39,7 @@
     &:after {
       content: "expand_less";
       font-family: $font-icon-family;
+      @include icon-font-style();
     }
 
     &:hover {

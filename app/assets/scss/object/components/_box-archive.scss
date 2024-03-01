@@ -40,8 +40,7 @@ category: Navigation
       &::before {
         content: "chevron_right";
         font-family: $font-icon-family;
-        line-height: 1;
-        letter-spacing: 0;
+        @include icon-font-style();
         color: $color-primary;
         padding-right: rem-calc(8);
       }

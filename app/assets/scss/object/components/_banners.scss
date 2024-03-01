@@ -25,11 +25,8 @@ category: Banners
     &::after {
       content: "chevron_right";
       font-family: $font-icon-family;
-      line-height: 1;
-      letter-spacing: 0;
+      @include icon-font-style();
       font-size: rem-calc(36);
-      font-weight: 400;
-      position: relative;
       z-index: 99;
       position: absolute;
       right: rem-calc(24);

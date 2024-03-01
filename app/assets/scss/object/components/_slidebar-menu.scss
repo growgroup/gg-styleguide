@@ -51,8 +51,7 @@
         &::after {
           content: "navigate_next";
           font-family: $font-icon-family;
-          line-height: 1;
-          letter-spacing: 0;
+          @include icon-font-style();
         }
       }
 
@@ -217,7 +216,7 @@
         background-size: cover;
         font-family: $font-icon-family;
         content: "search";
-        font-feature-settings: "liga";
+        @include icon-font-style();
         font-size: rem-calc(18);
         color: $color-primary;
       }

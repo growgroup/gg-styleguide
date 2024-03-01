@@ -82,6 +82,7 @@
         &:after {
           content: "chevron_right";
           font-family: $font-icon-family;
+          @include icon-font-style();
           color: $color-primary;
         }
 

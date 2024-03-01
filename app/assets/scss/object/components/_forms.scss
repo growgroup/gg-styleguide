@@ -294,13 +294,12 @@
             &::after {
               content: "check";
               font-family: $font-icon-family;
+              @include icon-font-style();
               display: grid;
               place-content: center;
               background: $color-primary;
               color: $color-white;
               font-size: rem-calc(20);
-              line-height: 1;
-              letter-spacing: 0;
             }
           }
         }

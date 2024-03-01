@@ -29,8 +29,7 @@ category: Navigation
         &::before {
           content: "chevron_right";
           font-family: $font-icon-family;
-          line-height: 1;
-          letter-spacing: 0;
+          @include icon-font-style();
           color: $color-primary;
           position: absolute;
           top: 50%;
@@ -109,6 +108,7 @@ category: Navigation
     &::after {
       content: "chevron_right";
       font-family: $font-icon-family;
+      @include icon-font-style();
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
