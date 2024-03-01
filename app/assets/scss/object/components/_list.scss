@@ -67,7 +67,7 @@ category: Base
 
     &::before {
       content: "circle";
-      font-family: 'Material Icons Outlined';
+      font-family: $font-icon-family;
       font-size: rem-calc(10);
       color: $color-primary;
       position: absolute;

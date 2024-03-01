@@ -39,7 +39,7 @@ category: Navigation
       }
       &::before {
         content: "chevron_right";
-        font-family: 'Material Icons Outlined';
+        font-family: $font-icon-family;
         line-height: 1;
         letter-spacing: 0;
         color: $color-primary;

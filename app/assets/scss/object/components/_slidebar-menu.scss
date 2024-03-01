@@ -50,7 +50,7 @@
 
         &::after {
           content: "navigate_next";
-          font-family: "Material Icons Outlined";
+          font-family: $font-icon-family;
           line-height: 1;
           letter-spacing: 0;
         }
@@ -215,7 +215,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        font-family: "Material Icons Outlined";
+        font-family: $font-icon-family;
         content: "search";
         font-feature-settings: "liga";
         font-size: rem-calc(18);

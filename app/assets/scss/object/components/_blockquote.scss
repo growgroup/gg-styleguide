@@ -19,7 +19,7 @@ category: Base
   }
   &::before {
     content: "format_quote";
-    font-family: 'Material Icons Outlined';
+    font-family: $font-icon-family;
     line-height: 1;
     letter-spacing: 0;
     font-size: rem-calc(20);

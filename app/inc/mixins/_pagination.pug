@@ -2,10 +2,10 @@
 mixin c_pagination(data)
   +c.pagination(class=data)
     ul
-      li: +a("#").c-pagination__prev <span class="material-icons-outlined">chevron_left</span>
+      li: +a("#").c-pagination__prev <span class="gg-icon">chevron_left</span>
       li: span.is-current 1
       li: +a("#") 2
       li: +a("#") 3
       li: span.is-dot …
       li: +a("#") 10
-      li: +a("#").c-pagination__next <span class="material-icons-outlined">chevron_right</span>
+      li: +a("#").c-pagination__next <span class="gg-icon">chevron_right</span>

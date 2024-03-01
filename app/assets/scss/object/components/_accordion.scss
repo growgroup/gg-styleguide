@@ -43,7 +43,7 @@ category: Components
     //*矢印
     &::after {
       content: "expand_less";
-      font-family: 'Material Icons Outlined';
+      font-family: $font-icon-family;
       color: $color-primary;
       position: absolute;
       line-height: 1;
