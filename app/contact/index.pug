@@ -299,16 +299,14 @@ block body
           //-
           //- 個別バリデーション
 
-          // 住所自動入力対応
+          // 住所自動入力(ajaxzip3)対応
           const zipButton = document.getElementById("zipauto");
           const input = document.getElementById("input-address");
-          zipButton.addEventListener('click', function() {
-            setTimeout(() => {
-              if(input.value) {
-                self.address(input.value);
-                input.dispatchEvent(new Event('input'));
-              }
-            }, 200);
+          zipButton.addEventListener('click', () => {
+            AjaxZip3.onSuccess = () => {
+              self.address(input.value);
+              input.dispatchEvent(new Event('input'));
+            };
           });
 
           //- 電話番号
