@@ -303,17 +303,13 @@ block body
           // 住所自動入力対応
           const zipButton = document.getElementById("zipauto");
           const input = document.getElementById("input-address");
-          const validationGroup = ko.validation.group(self.address);
-
           zipButton.addEventListener('click', function() {
             setTimeout(() => {
-              if(input.value) { // self.address()では取得できない
-                validationGroup.showAllMessages(false);
-                self.address = input.value;
+              if(input.value) {
+                self.address(input.value);
               }
-            }, 150);
+            }, 200);
           });
-
 
           //- 電話番号
           self.tel = ko.observable().extend({
