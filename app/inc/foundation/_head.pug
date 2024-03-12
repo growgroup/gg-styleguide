@@ -57,7 +57,8 @@ html(lang="ja")
   body(class!=current.bodyClass)
     //- スマホメニュー
     +c_slidebar
-    block layout
+    .l-root-container
+      block layout
 
     //- フッターに組み込むスクリプト
     block footer_scripts
