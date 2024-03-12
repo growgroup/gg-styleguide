@@ -259,7 +259,7 @@ block body
             +e.error(data-bind="validationMessage: privacy")
 
           +e.submit(data-bind="click: submit")
-            button.c-button.is-xlg 確認画面へ
+            button(id="submit").c-button.is-xlg 確認画面へ
             //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
             //- button.c-button.c-forms__submit__submit.is-lg 送信する
 
@@ -272,7 +272,6 @@ block body
           const self = this;
           //- 共通項目をまとめて記載
           const commonValidation = {
-            //- 必須項目
             required: {
               message: 'この必須項目を入力してください。',
             },
@@ -294,7 +293,7 @@ block body
           ];
           // 上記のそれぞれの要素にバリデーションを追加
           for (const key of fieldKeys) {
-            self[key] = ko.observable().extend({...commonValidation});
+            self[key] = ko.observable("").extend({...commonValidation});
           }
 
           //-
@@ -307,6 +306,7 @@ block body
             setTimeout(() => {
               if(input.value) {
                 self.address(input.value);
+                input.dispatchEvent(new Event('input'));
               }
             }, 200);
           });
@@ -384,6 +384,6 @@ block body
           insertMessages: false,
           errorElementClass: 'is-error'
         });
-        const viewModel = ko.validatedObservable(new knockoutValidate());
+        const viewModel = new knockoutValidate();
         ko.applyBindings(viewModel);
 
