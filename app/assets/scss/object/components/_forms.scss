@@ -293,14 +293,12 @@
           &:checked {
             &::after {
               content: "check";
-              font-family: "Material Icons Outlined";
+              @include icon-font();
               display: grid;
               place-content: center;
               background: $color-primary;
               color: $color-white;
               font-size: rem-calc(20);
-              line-height: 1;
-              letter-spacing: 0;
             }
           }
         }

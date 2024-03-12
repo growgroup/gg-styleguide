@@ -77,7 +77,7 @@
 
       &:after {
         content: "chevron_right";
-        font-family: "Material Icons Outlined";
+        @include icon-font();
         color: $color-primary;
       }
 

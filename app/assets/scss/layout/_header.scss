@@ -30,7 +30,7 @@ category: Layout
     align-items: center;
     padding: rem-calc(16) rem-calc(32) rem-calc(24);
     height: rem-calc(80);
-
+    
     @include breakpoint(medium down) {
       padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
       height: rem-calc(55);
@@ -254,13 +254,11 @@ category: Layout
       left: rem-calc(18);
       top: 50%;
       transform: translateY(-50%);
-      line-height: 1;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      font-family: "Material Icons Outlined";
+      @include icon-font();
       content: "search";
-      font-feature-settings: "liga";
       font-size: rem-calc(18);
     }
 

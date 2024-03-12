@@ -38,7 +38,7 @@
 
     &:after {
       content: "expand_less";
-      font-family: 'Material Icons Outlined';
+      @include icon-font();
     }
 
     &:hover {

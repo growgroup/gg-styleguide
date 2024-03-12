@@ -70,8 +70,7 @@
 
     &::before {
       content: "check";
-      font-family: 'Material Icons Outlined';
-      letter-spacing: 0;
+      @include icon-font();
       float: left;
       margin-right: 0.3rem;
       color: $color-primary;

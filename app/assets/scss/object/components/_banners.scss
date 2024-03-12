@@ -24,12 +24,8 @@ category: Banners
     // *アイコン
     &::after {
       content: "chevron_right";
-      font-family: 'Material Icons Outlined';
-      line-height: 1;
-      letter-spacing: 0;
+      @include icon-font();
       font-size: rem-calc(36);
-      font-weight: 400;
-      position: relative;
       z-index: 99;
       position: absolute;
       right: rem-calc(24);

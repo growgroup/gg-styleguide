@@ -60,9 +60,7 @@ a{
 
     &:after {
       content: "picture_as_pdf";
-      font-family: 'Material Icons Outlined';
-      line-height: 1;
-      letter-spacing: 0;
+      @include icon-font();
     }
   }
 
@@ -72,9 +70,7 @@ a{
 
     &::before {
       content: "location_on";
-      font-family: 'Material Icons Outlined';
-      line-height: 1;
-      letter-spacing: 0;
+      @include icon-font();
     }
   }
 
@@ -82,9 +78,7 @@ a{
 
     &::after {
       content: "open_in_new";
-      font-family: 'Material Icons Outlined';
-      line-height: 1;
-      letter-spacing: 0;
+      @include icon-font();
     }
   }
 }

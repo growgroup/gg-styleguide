@@ -28,9 +28,7 @@ category: Navigation
 
         &::before {
           content: "chevron_right";
-          font-family: 'Material Icons Outlined';
-          line-height: 1;
-          letter-spacing: 0;
+          @include icon-font();
           color: $color-primary;
           position: absolute;
           top: 50%;
@@ -108,7 +106,7 @@ category: Navigation
 
     &::after {
       content: "chevron_right";
-      font-family: 'Material Icons Outlined';
+      @include icon-font();
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

@@ -1,0 +1,11 @@
+// ex.
+// span.c-icon-font close
+
+.c-icon-font {
+  @include icon-font();
+
+  //アイコンを複数混在させる必要がある場合
+  //&.is-outlined{
+  //font-family: 'Material Icons Outlined';
+  //}
+}

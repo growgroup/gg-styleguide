@@ -63,7 +63,7 @@ export default class OwlCarousel {
         autoHeight: false,
         center: true,
         animateOut: 'fadeOut',
-        navText: ['<i class="material-icons-outlined">arrow_back_ios</i>', '<i class="material-icons-outlined">arrow_forward_ios</i>'],
+        navText: ['<i class="c-icon-font">arrow_back_ios</i>', '<i class="c-icon-font">arrow_forward_ios</i>'],
       });
 
     });
@@ -93,7 +93,7 @@ export default class OwlCarousel {
         autoHeight: false,
         center: true,
         speed: 400,
-        navText: ['<i class="material-icons-outlined">arrow_back_ios</i>', '<i class="material-icons-outlined">arrow_forward_ios</i>'],
+        navText: ['<i class="c-icon-font">arrow_back_ios</i>', '<i class="c-icon-font">arrow_forward_ios</i>'],
         responsive: {
           // breakpoint from 0 up
           0: {

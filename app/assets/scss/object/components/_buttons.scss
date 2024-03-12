@@ -21,14 +21,11 @@ category: Buttons
   // *アイコン
   &::after {
     content: "chevron_right";
-    font-family: 'Material Icons Outlined';
-    line-height: 1;
-    letter-spacing: 0;
+    @include icon-font();
     position: absolute;
     top: 50%;
     right: rem-calc(16);
     transform: translateY(-50%);
-    font-weight: 400;
   }
 
   // *hover

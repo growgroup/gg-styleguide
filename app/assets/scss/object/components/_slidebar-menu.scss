@@ -50,9 +50,7 @@
 
         &::after {
           content: "navigate_next";
-          font-family: "Material Icons Outlined";
-          line-height: 1;
-          letter-spacing: 0;
+          @include icon-font();
         }
       }
 
@@ -215,9 +213,8 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        font-family: "Material Icons Outlined";
+        @include icon-font();
         content: "search";
-        font-feature-settings: "liga";
         font-size: rem-calc(18);
         color: $color-primary;
       }

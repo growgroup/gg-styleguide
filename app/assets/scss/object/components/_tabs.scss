@@ -37,7 +37,7 @@ category: Tabs
 
         &::after {
           content: "expand_more";
-          font-family: 'Material Icons Outlined';
+          @include icon-font();
           position: absolute;
           font-size: rem-calc(24);
           font-weight: 400;
