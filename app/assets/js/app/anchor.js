@@ -119,7 +119,7 @@ export default class Anchor {
     var url = $(location).attr('href');
     if (url.indexOf("#") !== -1) {
       if (self.options.headerElement) {
-        document.addEventListener("DOMContentLoaded", function(event) {
+        window.addEventListener("load", function () {
           headerHeight = $(self.options.headerElement).outerHeight();
           var id = url.split("#");
           var $target = $('#' + id[id.length - 1]);
