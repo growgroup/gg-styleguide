@@ -70,17 +70,14 @@
     }
 
     &__icon {
+      @include icon-font();
+      font-size: rem-calc(24);
       color: $font-base-color;
-      line-height: 1;
-      letter-spacing: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: rem-calc(20);
-
-      span{
-        font-size: rem-calc(30);
-      }
+      box-sizing: content-box;
 
       @include breakpoint(small only) {
         padding: rem-calc(10);
