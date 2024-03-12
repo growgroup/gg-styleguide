@@ -296,9 +296,7 @@ block body
             self[key] = ko.observable("").extend({...commonValidation});
           }
 
-          //-
-          //- 個別バリデーション
-
+          /***  個別バリデーション  ***/
           // 住所自動入力(ajaxzip3)対応
           const zipButton = document.getElementById("zipauto");
           const input = document.getElementById("input-address");
