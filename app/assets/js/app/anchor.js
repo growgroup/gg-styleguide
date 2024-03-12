@@ -119,7 +119,7 @@ export default class Anchor {
     var url = $(location).attr('href');
     if (url.indexOf("#") !== -1) {
       if (self.options.headerElement) {
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", function(event) {
           headerHeight = $(self.options.headerElement).outerHeight();
           var id = url.split("#");
           var $target = $('#' + id[id.length - 1]);
@@ -127,7 +127,7 @@ export default class Anchor {
             var pos = $target.offset().top - headerHeight;
             $("html, body").animate({scrollTop: pos}, 10);
           }
-        };
+        });
       }
     }
   }
