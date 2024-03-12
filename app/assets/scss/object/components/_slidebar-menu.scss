@@ -50,7 +50,7 @@
 
         &::after {
           content: "navigate_next";
-          @include iconfont();
+          @include icon-font();
         }
       }
 
@@ -213,7 +213,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        @include iconfont();
+        @include icon-font();
         content: "search";
         font-size: rem-calc(18);
         color: $color-primary;

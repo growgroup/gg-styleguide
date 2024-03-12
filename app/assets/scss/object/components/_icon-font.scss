@@ -2,7 +2,7 @@
 // span.c-icon-font close
 
 .c-icon-font {
-  @include iconfont();
+  @include icon-font();
 
   //アイコンを複数混在させる必要がある場合
   //&.is-outlined{

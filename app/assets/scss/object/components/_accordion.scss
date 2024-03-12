@@ -43,7 +43,7 @@ category: Components
     //*矢印
     &::after {
       content: "expand_less";
-      @include iconfont();
+      @include icon-font();
       color: $color-primary;
       position: absolute;
       top: 50%;

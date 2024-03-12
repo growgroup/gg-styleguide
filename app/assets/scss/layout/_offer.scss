@@ -58,7 +58,7 @@ category: Layout
     }
     &::after {
       content: "chevron_right";
-      @include iconfont();
+      @include icon-font();
       position: absolute;
       font-size: rem-calc(20);
       top: 50%;

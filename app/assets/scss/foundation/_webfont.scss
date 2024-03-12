@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-@mixin iconfont() {
+@mixin icon-font() {
   font-family: $font-icon-family;
   @include icon-font-style();
 }

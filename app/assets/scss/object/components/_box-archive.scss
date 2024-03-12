@@ -39,7 +39,7 @@ category: Navigation
       }
       &::before {
         content: "chevron_right";
-        @include iconfont();
+        @include icon-font();
         color: $color-primary;
         padding-right: rem-calc(8);
       }

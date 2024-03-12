@@ -58,7 +58,7 @@ category: Layout
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      @include iconfont();
+      @include icon-font();
       content: "search";
       font-size: rem-calc(18);
     }

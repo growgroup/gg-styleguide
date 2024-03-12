@@ -22,7 +22,7 @@
   }
   &::before {
     content: "chevron_right";
-    @include iconfont();
+    @include icon-font();
     color: $color-primary;
     position: absolute;
     top: 50%;

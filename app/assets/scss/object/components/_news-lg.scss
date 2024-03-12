@@ -39,7 +39,7 @@ category: News
 
     &::before {
       content: "schedule";
-      @include iconfont();
+      @include icon-font();
       margin-right: rem-calc(4);
       vertical-align: top;
     }

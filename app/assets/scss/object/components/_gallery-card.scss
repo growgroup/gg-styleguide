@@ -77,7 +77,7 @@
 
       &:after {
         content: "chevron_right";
-        @include iconfont();
+        @include icon-font();
         color: $color-primary;
       }
 

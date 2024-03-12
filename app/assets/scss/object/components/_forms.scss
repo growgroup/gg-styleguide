@@ -293,7 +293,7 @@
           &:checked {
             &::after {
               content: "check";
-              @include iconfont();
+              @include icon-font();
               display: grid;
               place-content: center;
               background: $color-primary;

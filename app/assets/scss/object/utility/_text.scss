@@ -60,7 +60,7 @@ a{
 
     &:after {
       content: "picture_as_pdf";
-      @include iconfont();
+      @include icon-font();
     }
   }
 
@@ -70,7 +70,7 @@ a{
 
     &::before {
       content: "location_on";
-      @include iconfont();
+      @include icon-font();
     }
   }
 
@@ -78,7 +78,7 @@ a{
 
     &::after {
       content: "open_in_new";
-      @include iconfont();
+      @include icon-font();
     }
   }
 }

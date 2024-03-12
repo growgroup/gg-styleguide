@@ -28,7 +28,7 @@ category: Navigation
 
         &::before {
           content: "chevron_right";
-          @include iconfont();
+          @include icon-font();
           color: $color-primary;
           position: absolute;
           top: 50%;
@@ -106,7 +106,7 @@ category: Navigation
 
     &::after {
       content: "chevron_right";
-      @include iconfont();
+      @include icon-font();
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
