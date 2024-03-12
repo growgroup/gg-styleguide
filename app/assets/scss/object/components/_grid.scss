@@ -45,12 +45,9 @@
 // Styleguide 2.2.1
 @use "sass:math";
 @use "sass:map";
-.container {
-  // @include container($susy);
-  max-width: $grid-row-width;
-  margin-left: auto;
-  margin-right: auto;
-}
+//.container {
+//  // @include container($susy);
+//}
 
 .row {
   margin-left: -(map.get($grid-column-responsive-gutter, medium) * 0.5);

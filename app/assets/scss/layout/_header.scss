@@ -22,64 +22,19 @@ category: Layout
     position: fixed;
   }
 
-  &__inner {
+
+  &__content {
+    max-width: rem-calc(2560);
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    padding: rem-calc(16) rem-calc(32) rem-calc(24);
+    height: rem-calc(80);
+    
     @include breakpoint(medium down) {
-      flex-wrap: wrap;
+      padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
+      height: rem-calc(55);
     }
-  }
-
-  &__search {
-    //border: 1px solid $border-base-color;
-    //color: $font-base-color;
-    position: relative;
-    display: block;
-    margin-left: 1.7857142857rem;
-    max-width: 11.4285714286rem;
-    width: 100%;
-    border: 1px solid $font-base-color;
-    color: $font-base-color;
-    background: none;
-    border-radius: 16px;
-    font-size: 0.7142857143rem;
-    letter-spacing: 0.1em;
-    line-height: 1.5;
-    font-weight: 400;
-    padding: 0.5rem 1.2857142857rem 0.5rem 2.7142857143rem;
-    transition: all 0.2s ease-out;
-
-    &:before {
-      position: absolute;
-      left: rem-calc(18);
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      @include icon-font();
-      content: "search";
-      font-size: rem-calc(18);
-    }
-
-    &:hover, &.is-active {
-      background: $color-primary;
-      color: $color-white;
-      border-color: $color-primary;
-
-      &:before {
-      }
-    }
-  }
-
-  &__search-icon {
-    background: none;
-    border: none;
-    border-radius: 0;
-    line-height: 1;
-    font-size: rem-calc(20);
-    margin-left: auto;
   }
 
   &__logo {
@@ -93,18 +48,6 @@ category: Layout
     a,
     img {
       display: block;
-    }
-  }
-
-  &__content {
-    display: flex;
-    align-items: center;
-    padding: rem-calc(16) rem-calc(32) rem-calc(24);
-    height: rem-calc(80);
-
-    @include breakpoint(medium down) {
-      padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
-      height: rem-calc(55);
     }
   }
 
@@ -284,6 +227,58 @@ category: Layout
       font-size: rem-calc(22);
       margin-right: rem-calc(8);
     }
+  }
+
+
+  &__search {
+    //border: 1px solid $border-base-color;
+    //color: $font-base-color;
+    position: relative;
+    display: block;
+    margin-left: 1.7857142857rem;
+    max-width: 11.4285714286rem;
+    width: 100%;
+    border: 1px solid $font-base-color;
+    color: $font-base-color;
+    background: none;
+    border-radius: 16px;
+    font-size: 0.7142857143rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: 0.5rem 1.2857142857rem 0.5rem 2.7142857143rem;
+    transition: all 0.2s ease-out;
+
+    &:before {
+      position: absolute;
+      left: rem-calc(18);
+      top: 50%;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      @include icon-font();
+      content: "search";
+      font-size: rem-calc(18);
+    }
+
+    &:hover, &.is-active {
+      background: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+
+      &:before {
+      }
+    }
+  }
+
+  &__search-icon {
+    background: none;
+    border: none;
+    border-radius: 0;
+    line-height: 1;
+    font-size: rem-calc(20);
+    margin-left: auto;
   }
 }
 
