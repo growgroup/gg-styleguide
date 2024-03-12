@@ -176,7 +176,7 @@ block body
                 | ご住所
                 span.c-forms__label 必須
               +e.content(data-bind="validationElement: address")
-                +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください" data-bind="textinput: address")
+                +e.input: input(id="input-address", type="text", name="ご住所", placeholder="ご住所を入力してください" data-bind="textinput: address")
                 +e.error(data-bind="validationMessage: address")
 
             +e.block
@@ -299,6 +299,21 @@ block body
 
           //-
           //- 個別バリデーション
+
+          // 住所自動入力対応
+          const zipButton = document.getElementById("zipauto");
+          const input = document.getElementById("input-address");
+          const validationGroup = ko.validation.group(self.address);
+
+          zipButton.addEventListener('click', function() {
+            setTimeout(() => {
+              if(input.value) { // self.address()では取得できない
+                validationGroup.showAllMessages(false);
+                self.address = input.value;
+              }
+            }, 150);
+          });
+
 
           //- 電話番号
           self.tel = ko.observable().extend({
