@@ -277,7 +277,15 @@ block body
             },
           };
 
-          //- 必須項目：該当する要素の数だけ以下に追加する
+          //- chackboxがあるだけ以下に追加　（命名ルール：checkbox【親】【子番号（連番）】）
+          const checkboxGroups = {
+            // 親：createCheckboxGroup(子のlength),
+            A: createCheckboxGroup(4),
+            B: createCheckboxGroup(4),
+            C: createCheckboxGroup(2)
+          };
+
+          //- 必須項目：該当する要素の数だけ以下に追加
           const fieldKeys = [
             'radioA',
             'radioB',
@@ -291,13 +299,14 @@ block body
             'file',
             'other'
           ];
+
           // 上記のそれぞれの要素にバリデーションを追加
           for (const key of fieldKeys) {
             self[key] = ko.observable("").extend({...commonValidation});
           }
 
           /***  個別バリデーション  ***/
-          // 住所自動入力(ajaxzip3)対応
+          //- 住所自動入力(ajaxzip3)対応
           const zipButton = document.getElementById("zipauto");
           const input = document.getElementById("input-address");
           zipButton.addEventListener('click', () => {
@@ -334,15 +343,7 @@ block body
             }
           });
 
-          //- チェックボックス
-          //- chackboxがあるだけ以下に追加する　（命名ルール：checkbox【親】【子番号（連番）】）
-          const checkboxGroups = {
-            // 親：createCheckboxGroup(子のlength),
-            A: createCheckboxGroup(4),
-            B: createCheckboxGroup(4),
-            C: createCheckboxGroup(2)
-          };
-
+          //- チェックボックス処理
           function createCheckboxGroup(size) {
             const checkboxes = Array.from({ length: size }, (_, index) => {
               return ko.observable(false).extend({...commonValidation});
@@ -357,7 +358,6 @@ block body
             });
             return { checkboxes, isValid };
           }
-
           Object.keys(checkboxGroups).forEach(key => {
             const checkboxes = checkboxGroups[key].checkboxes;
             const isValid = checkboxGroups[key].isValid;
