@@ -35,48 +35,48 @@ block body
           +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
           +e.blocks
             +e.block
-              +e.title チェックボックス
+              +e.title チェックボックスA
               +e.content(data-bind="validationElement: checkboxA")
                 +e.checkbox.is-border
                   span
                     label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1" data-bind="checked: checkboxA1")
+                      input(type="checkbox", name="checkboxA", value="選択肢1", data-bind="checked: checkboxA1")
                       span 選択肢1
                   span
                     label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2" data-bind="checked: checkboxA2")
+                      input(type="checkbox", name="checkboxA", value="選択肢2", data-bind="checked: checkboxA2")
                       span 選択肢2
                   span
                     label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢3" data-bind="checked: checkboxA3")
+                      input(type="checkbox", name="checkboxA", value="選択肢3", data-bind="checked: checkboxA3")
                       span 選択肢3
                   span
                     label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢4" data-bind="checked: checkboxA4")
+                      input(type="checkbox", name="checkboxA", value="選択肢4", data-bind="checked: checkboxA4")
                       span 選択肢4
                 +e.error(data-bind="validationMessage: checkboxA")
 
             +e.block
-              +e.title ラジオボタン
-              +e.content(data-bind="validationElement: radioA")
+              +e.title ラジオボタンA
+              +e.content(data-bind="validationElement: ラジオボタンA", data-key="ラジオボタンA", class="is-validate")
                 +e.radio.is-border
                   span
                     label
-                      input(type="radio", name="ご希望のサービスA", value="選択肢1" data-bind="checked: radioA")
+                      input(type="radio", name="ご希望のサービスA", value="選択肢1" data-bind="checked: ラジオボタンA")
                       span 選択肢1
                   span
                     label
-                      input(type="radio", name="ご希望のサービスA", value="選択肢2" data-bind="checked: radioA")
+                      input(type="radio", name="ご希望のサービスA", value="選択肢2" data-bind="checked: ラジオボタンA")
                       span 選択肢2
                   span
                     label
-                      input(type="radio", name="ご希望のサービスA", value="選択肢3" data-bind="checked: radioA")
+                      input(type="radio", name="ご希望のサービスA", value="選択肢3" data-bind="checked: ラジオボタンA")
                       span 選択肢3
                   span
                     label
-                      input(type="radio", name="ご希望のサービスA", value="選択肢4" data-bind="checked: radioA")
+                      input(type="radio", name="ご希望のサービスA", value="選択肢4" data-bind="checked: ラジオボタンA")
                       span 選択肢4
-                +e.error(data-bind="validationMessage: radioA")
+                +e.error(data-bind="validationMessage: ラジオボタンA")
 
             +e.block
               +e.title ご希望のサービス（テキストが長い場合）
@@ -101,18 +101,18 @@ block body
                 +e.error(data-bind="validationMessage: checkboxB")
 
             +e.block
-              +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
-              +e.content(data-bind="validationElement: radioB")
+              +e.title ラジオボタンB（ブラウザのデフォルトから変更したいとき）
+              +e.content(data-bind="validationElement: ラジオボタンB", data-key="ラジオボタンB", class="is-validate")
                 +e.radio.is-design.is-border
                   span
                     label
-                      input(type="radio", name="ご希望のサービスB", value="選択肢1" data-bind="checked: radioB")
+                      input(type="radio", name="ご希望のサービスB", value="選択肢1" data-bind="checked: ラジオボタンB")
                       span 選択肢1
                   span
                     label
-                      input(type="radio", name="ご希望のサービスB", value="選択肢2" data-bind="checked: radioB")
+                      input(type="radio", name="ご希望のサービスB", value="選択肢2" data-bind="checked: ラジオボタンB")
                       span 選択肢2
-                +e.error(data-bind="validationMessage: radioB")
+                +e.error(data-bind="validationMessage: ラジオボタンB")
 
             +e.block
               +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
@@ -132,92 +132,93 @@ block body
               +e.title
                 | お名前
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: name")
-                +e.input: input(type="text", name="お名前", placeholder="山田　太郎" data-bind="textinput: name")
-                +e.error(data-bind="validationMessage: name")
+              +e.content(data-bind="validationElement: お名前", data-key="お名前", class="is-validate")
+                +e.input
+                  input(type="text", name="お名前", placeholder="山田　太郎" data-bind="textInput: お名前")
+                +e.error(data-bind="validationMessage: お名前")
 
             +e.block
               +e.title
                 | 会社名
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: company")
-                +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社" data-bind="textinput: company")
+              +e.content(data-bind="validationElement: 会社名", data-key="会社名", class="is-validate")
+                +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社" data-bind="textinput: 会社名")
                 +p.note: small ※個人の方は、「個人」とご入力ください
-                +e.error(data-bind="validationMessage: company")
+                +e.error(data-bind="validationMessage: 会社名")
 
             +e.block
               +e.title
                 | メールアドレス
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: email")
-                +e.input: input(type="text", name="メールアドレス", placeholder="info@mail.jp" data-bind="textInput: email")
-                +e.error(data-bind="validationMessage: email")
+              +e.content(data-bind="validationElement: メールアドレス", data-key="メールアドレス", class="is-validate")
+                +e.input: input(type="text", name="メールアドレス", placeholder="info@mail.jp" data-bind="textInput: メールアドレス")
+                +e.error(data-bind="validationMessage: メールアドレス")
 
             +e.block
               +e.title
                 | 電話番号
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: tel")
-                +e.input: input(type="text", name="TEL", placeholder="123-456-7890" data-bind="textInput: tel")
-                +e.error(data-bind="validationMessage: tel")
+              +e.content(data-bind="validationElement: 電話番号", data-key="電話番号", class="is-validate")
+                +e.input: input(type="text", name="TEL", placeholder="123-456-7890" data-bind="textInput: 電話番号")
+                +e.error(data-bind="validationMessage: 電話番号")
 
             +e.block
               +e.title
                 | 郵便番号
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: postalCode")
+              +e.content(data-bind="validationElement: 郵便番号", data-key="郵便番号", class="is-validate")
                 +e.flex-al
-                  +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234" data-bind="textInput: postalCode")
+                  +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234" data-bind="textInput: 郵便番号")
                   button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
-                +e.error(data-bind="validationMessage: postalCode")
+                +e.error(data-bind="validationMessage: 郵便番号")
 
             +e.block
               +e.title
                 | ご住所
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: address")
-                +e.input: input(id="input-address", type="text", name="ご住所", placeholder="ご住所を入力してください" data-bind="textinput: address")
+              +e.content(data-bind="validationElement: address", data-key="address", class="is-validate")
+                +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください" data-bind="textinput: address")#input-address
                 +e.error(data-bind="validationMessage: address")
 
             +e.block
               +e.title
                 | 部署名
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: selectA")
+              +e.content(data-bind="validationElement: 部署名", data-key="部署名", class="is-validate")
                 +e.select
-                  select(name="部署名" data-bind="textinput: selectA")
+                  select(name="部署名" data-bind="options: 部署名")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
-                +e.error(data-bind="validationMessage: selectA")
+                +e.error(data-bind="validationMessage: 部署名")
 
             +e.block
               +e.title
                 | 役職
                 span.c-forms__label 必須
-              +e.content(data-bind="validationElement: selectB")
+              +e.content(data-bind="validationElement: 役職", data-key="役職", class="is-validate")
                 +e.select
-                  select(name="役職" data-bind="textinput: selectB")
+                  select(name="役職" data-bind="options: 役職")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
-                +e.error(data-bind="validationMessage: selectB")
+                +e.error(data-bind="validationMessage: 役職")
 
             +e.block
               +e.title その他質問等
-              +e.content(data-bind="validationElement: other")
+              +e.content(data-bind="validationElement: その他質問等", data-key="その他質問等", class="is-validate")
                 +e.textarea
-                  textarea(name="その他質問等", placeholder="" data-bind="textInput: other")
-                +e.error(data-bind="validationMessage: other")
+                  textarea(name="その他質問等", placeholder="" data-bind="textInput: その他質問等")
+                +e.error(data-bind="validationMessage: その他質問等")
 
             +e.block
               +e.title
                 | ファイルアップロード
-              +e.content(data-bind="validationElement: file")
-                +e.file: input(type="file", name="ファイルアップロード" data-bind="textInput: file")
-                +e.error(data-bind="validationMessage: file")
+              +e.content(data-bind="validationElement: ファイルアップロード", data-key="ファイルアップロード", class="is-validate")
+                +e.file: input(type="file", name="ファイルアップロード" data-bind="textInput: ファイルアップロード")
+                +e.error(data-bind="validationMessage: ファイルアップロード")
 
           +e.head --横並びパターン保存用--
           +e.blocks
@@ -251,7 +252,7 @@ block body
                   +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
 
-          +e.privacy(data-bind="validationElement: privacy")
+          +e.privacy(data-bind="validationElement: privacy", data-key="privacy", class="is-validate")
             label
               input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました" data-bind="checked: privacy")
               +a("/privacy-policy/")(target="_blank") 個人情報保護方針
@@ -270,42 +271,62 @@ block body
       script.
         function knockoutValidate() {
           const self = this;
-          //- 共通項目をまとめて記載
+
+          // 共通バリデーション定義
           const commonValidation = {
             required: {
               message: 'この必須項目を入力してください。',
             },
           };
 
+          const validationClass = document.querySelectorAll('.is-validate');
+          validationClass.forEach(element => {
+            const key = element.getAttribute('data-key');
+            self[key] = ko.observable().extend({ ...commonValidation });
+
+            //- // focusout時のバリデーションチェック
+            //- element.addEventListener("focusout", (event) => {
+            //-   if(self[key]()) {
+
+            //-   }
+            //- });
+          });
+
           //- chackboxがあるだけ以下に追加　（命名ルール：checkbox【親】【子番号（連番）】）
           const checkboxGroups = {
-            // 親：createCheckboxGroup(子のlength),
             A: createCheckboxGroup(4),
             B: createCheckboxGroup(4),
             C: createCheckboxGroup(2)
           };
 
-          //- 必須項目：該当する要素の数だけ以下に追加
-          const fieldKeys = [
-            'radioA',
-            'radioB',
-            'name',
-            'company',
-            'address',
-            'selectA',
-            'selectB',
-            'postalCode',
-            'date',
-            'file',
-            'other'
-          ];
 
-          // 上記のそれぞれの要素にバリデーションを追加
-          for (const key of fieldKeys) {
-            self[key] = ko.observable("").extend({...commonValidation});
-          }
+          //- 電話番号のバリデーション
+          self.電話番号 = ko.observable().extend({
+            ...commonValidation,
+            pattern: {
+              message: '半角数字と + - ( ) のみ利用できます。',
+              params: /^[0-9()+-]+$/
+            }
+          });
 
-          /***  個別バリデーション  ***/
+          //- メールアドレスのバリデーション
+          self.メールアドレス = ko.observable().extend({
+            ...commonValidation,
+            email: {
+              message: 'メールアドレスの形式が正しくありません'
+            }
+          });
+
+          //- プライバシーポリシーのバリデーション
+          self.privacy = ko.observable().extend({
+            validation: {
+              validator: function (val) {
+                return val;
+              },
+              message: commonValidation.required.message
+            }
+          });
+
           //- 住所自動入力(ajaxzip3)対応
           const zipButton = document.getElementById("zipauto");
           const input = document.getElementById("input-address");
@@ -316,32 +337,13 @@ block body
             };
           });
 
-          //- 電話番号
-          self.tel = ko.observable().extend({
-            ...commonValidation,
-            pattern: {
-              message: '半角数字と + - ( ) のみ利用できます。',
-              params: /^[0-9()+-]+$/
+          //- submit（入力事項に問題がないか一括チェック）
+          self.submit = function() {
+            if(!ko.validatedObservable(self).isValid()) {
+              ko.validatedObservable(self).errors.showAllMessages();
             }
-          });
+          };
 
-          //- メールアドレス
-          self.email = ko.observable().extend({
-            ...commonValidation,
-            email: {
-              message: 'メールアドレスの形式が正しくありません'
-            }
-          });
-
-          //- プライバシーポリシー
-          self.privacy = ko.observable().extend({
-            validation: {
-              validator: function (val) {
-                return val;
-              },
-              message: commonValidation.required.message
-            }
-          });
 
           //- チェックボックス処理
           function createCheckboxGroup(size) {
@@ -367,19 +369,13 @@ block body
             self[`checkbox${key}`] = isValid;
           });
 
-          //- submit（入力事項に問題がないか一括チェック）
-          self.submit = function() {
-            if(!ko.validatedObservable(self).isValid()) {
-              ko.validatedObservable(self).errors.showAllMessages();
-            }
-          };
+
         }
 
-        //- エラーが発生している項目にclassを追加
         ko.validation.init({
           insertMessages: false,
           errorElementClass: 'is-error'
         });
+
         const viewModel = new knockoutValidate();
         ko.applyBindings(viewModel);
-
