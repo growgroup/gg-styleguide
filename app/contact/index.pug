@@ -15,7 +15,7 @@ block page_header
 block body
   section.l-section.is-xlg.is-bottom.is-bg-color
     .l-container
-      //+c.form-head
+      //- +c.form-head
         +e.block
           +h1.title お問い合わせ
           +e.list
@@ -36,7 +36,7 @@ block body
           +e.blocks
             +e.block
               +e.title チェックボックス
-              +e.content
+              +e.content.is-validate.is-required
                 +e.checkbox.is-border
                   span
                     label
@@ -54,10 +54,11 @@ block body
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢4")
                       span 選択肢4
+                +e.error
 
             +e.block
               +e.title ラジオボタン
-              +e.content
+              +e.content.is-validate.is-required
                 +e.radio.is-border
                   span
                     label
@@ -75,10 +76,11 @@ block body
                     label
                       input(type="radio", name="ご希望のサービス", value="選択肢4")
                       span 選択肢4
+                +e.error
 
             +e.block
               +e.title ご希望のサービス（テキストが長い場合）
-              +e.content
+              +e.content.is-validate.is-required
                 +e.checkbox.is-border.is-vertical
                   span
                     label
@@ -96,10 +98,11 @@ block body
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢4")
                       span 選択肢4 長いテキスト
+                +e.error
 
             +e.block
               +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
-              +e.content
+              +e.content.is-validate.is-required
                 +e.radio.is-design.is-border
                   span
                     label
@@ -109,10 +112,11 @@ block body
                     label
                       input(type="radio", name="ご希望のサービス", value="選択肢2")
                       span 選択肢2
+                +e.error
 
             +e.block
               +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
-              +e.content
+              +e.content.is-validate.is-required
                 +e.checkbox.is-design.is-border
                   span
                     label
@@ -122,88 +126,99 @@ block body
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢2")
                       span 選択肢2
+                +e.error
 
 
             +e.block
               +e.title
                 | お名前
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required
                 +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
+                +e.error
 
             +e.block
               +e.title
                 | 会社名
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required
                 +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
                 +p.note: small ※個人の方は、「個人」とご入力ください
+                +e.error
 
             +e.block
               +e.title
                 | メールアドレス
                 span.c-forms__label 必須
-              +e.content
-                +e.input: input(type="text", name="メールアドレス", placeholder="info@mail.jp")
+              +e.content.is-validate.is-required.is-email
+                +e.input: input(type="email", name="メールアドレス", placeholder="info@mail.jp")
+                +e.error
 
             +e.block
               +e.title
                 | 電話番号
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required.is-telephone
                 +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
+                +e.error
 
             +e.block
               +e.title
                 | 郵便番号
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required
                 +e.flex-al
                   +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
                   button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
+                +e.error
 
             +e.block
               +e.title
                 | ご住所
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required#auto-input-address
                 +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
+                +e.error
 
             +e.block
               +e.title
                 | 部署名
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required
                 +e.select
                   select(name="部署名")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
+                +e.error
 
             +e.block
               +e.title
                 | 役職
                 span.c-forms__label 必須
-              +e.content
+              +e.content.is-validate.is-required
                 +e.select
                   select(name="役職")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
+                +e.error
 
             +e.block
               +e.title その他質問等
-              +e.content
+              +e.content.is-validate.is-required
                 +e.textarea
                   textarea(name="その他質問等", placeholder="")
+                +e.error
 
             +e.block
               +e.title
                 | ファイルアップロード
-              +e.content
+              +e.content.is-validate.is-required
                 +e.file: input(type="file", name="ファイルアップロード")
+                +e.error
 
           +e.head --横並びパターン保存用--
           +e.blocks
@@ -244,5 +259,187 @@ block body
               | の内容に同意する
           +e.submit
             button.c-button.is-xlg 確認画面へ
-            //button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
-            //button.c-button.c-forms__submit__submit.is-lg 送信する
+            //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
+            //- button.c-button.c-forms__submit__submit.is-lg 送信する
+
+      script.
+        (function() {
+          const errorMessage = {
+            required: 'この必須項目を入力してください。',
+            email: 'メールアドレスの形式が正しくありません',
+            telephone: '半角数字と + - ( ) のみ利用できます。',
+          }
+
+          const flagClass = 'is-flag';
+          const errorClass = 'is-error';
+          const errorMsgElem = '.c-forms__error';
+          const groups = document.querySelectorAll('.is-validate');
+
+          groups.forEach(group => {
+            group.classList.add(flagClass); // flagとして利用
+            const inputAreas = group.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), select, textarea');
+            const buttonAreas = group.querySelectorAll('.c-forms__radio, .c-forms__checkbox');
+
+            // checkbox,radio
+            buttonAreas.forEach(buttonArea => {
+
+              // checkbox
+              if(buttonArea.classList.contains('c-forms__checkbox')) {
+                const checkboxes = buttonArea.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                  checkbox.addEventListener('change', () => {
+                    let isChecked = false;
+                    validCancell(group);
+
+                    // 選択チェック
+                    checkboxes.forEach(checkbox => {
+                      if (checkbox.checked) {
+                        isChecked = true;
+                        return;
+                      }
+                    });
+                    if (!isChecked) {
+                      requiredError(group);
+                    }
+                  });
+                });
+              }
+
+              // radio
+              if(buttonArea.classList.contains('c-forms__radio')) {
+                const radioButtons = buttonArea.querySelectorAll('input[type="radio"]');
+                radioButtons.forEach(radioButton => {
+                  radioButton.addEventListener('change', () => {
+                    validCancell(group);
+
+                    // 選択チェック
+                    if (radioButtons.length === 0) {
+                      requiredError(errorMsgElem);
+                    }
+                  });
+                });
+              }
+            });
+
+
+            inputAreas.forEach(inputArea => {
+
+              // text, textarea
+              if(inputArea.type === "text" || inputArea.tagName === "TEXTAREA") {
+                ['keyup', 'focusout'].forEach((event) => {
+                  inputArea.addEventListener(event, (e) => {
+                    validCancell(group);
+
+                    //文字入力・空白チェック
+                    if(!e.target.value.trim() || e.target.value.trim() === "") {
+                      requiredError(group);
+                    }
+                  });
+                });
+              }
+
+              // tel
+              if(group.classList.contains('is-telephone')) {
+                ['keyup', 'focusout'].forEach((event) => {
+                  inputArea.addEventListener(event, (e) => {
+                    validCancell(group);
+
+                    //文字入力・空白チェック
+                    if(!e.target.value.trim() || e.target.value.trim() === "") {
+                      requiredError(group);
+
+                    //電話番号形式チェック
+                    } else if(!/^[0-9+\-()]*$/.test(e.target.value)) {
+                      telFormatError(group);
+                    }
+                  });
+                });
+              }
+
+              // email
+              if(inputArea.type === "email") {
+                ['keyup', 'focusout'].forEach((event) => {
+                  inputArea.addEventListener(event, (e) => {
+                    validCancell(group);
+
+                    //文字入力・空白チェック
+                    if(!e.target.value.trim()) {
+                      requiredError(group);
+
+                    //メール形式チェック
+                    } else if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
+                      mailFormatError(group);
+                    }
+                  });
+                });
+              }
+
+              // file
+              if(inputArea.type === "file") {
+                inputArea.addEventListener('change', (e) => {
+                  validCancell(group);
+
+                  //ファイルアップロードチェック
+                  if(!e.target.files || !e.target.files.length > 0) {
+                    requiredError(group);
+                  }
+                });
+              }
+
+              // select
+              if(inputArea.tagName === "SELECT") {
+                const option =  inputArea.options[inputArea.index];
+                inputArea.addEventListener('change', () => {
+                  validCancell(group);
+
+                  //選択チェック
+                  if(option && !option.disabled) {
+                    requiredError(group);
+                  }
+                });
+              }
+            });
+          });
+
+          //- 住所自動入力(ajaxzip3)対応
+          const zipButton = document.getElementById("zipauto");
+          const group = document.getElementById("auto-input-address");
+          zipButton.addEventListener('click', () => {
+            // AjaxZip3のデータ取得コールバック
+            AjaxZip3.onSuccess = () => {
+              validCancell(group);
+            };
+          });
+
+          // submit時のバリデーション一斉チェック
+          const submit = document.querySelector('.c-forms__submit button');
+          submit.addEventListener('click', (e) => {
+            const errorElems = document.querySelectorAll(`.is-validate.${flagClass}`);
+            if(errorElems.length !== 0) {
+              errorElems.forEach(errorElem => {
+                errorElem.classList.add(errorClass);
+                errorElem.querySelector(errorMsgElem).textContent = errorMessage.required;
+              });
+              e.preventDefault();
+            }
+          });
+
+          // バリデーションに関する関数
+          function validCancell(group) {
+            group.querySelector(errorMsgElem).textContent =''
+            group.classList.remove(errorClass);
+          }
+          function requiredError(group) {
+            group.querySelector(errorMsgElem).textContent = errorMessage.required;
+            group.classList.add(errorClass);
+          }
+          function mailFormatError(group) {
+            group.querySelector(errorMsgElem).textContent = errorMessage.email;
+            group.classList.add(errorClass);
+          }
+          function telFormatError(group) {
+            group.querySelector(errorMsgElem).textContent = errorMessage.telephone;
+            group.classList.add(errorClass);
+          }
+
+        })();
