@@ -272,11 +272,17 @@ block body
 
           const flagClass = 'is-flag';
           const errorClass = 'is-error';
+          const typeRequired = 'is-required';
+          const typeTelphone = 'is-telephone';
+          const typeEmail = 'is-email';
+          const typeKana =  'is-kana';
+          const typeGana =  'is-Gana';
           const errorMsgElem = '.c-forms__error';
           const groups = document.querySelectorAll('.is-validate');
 
           groups.forEach(group => {
             group.classList.add(flagClass); // flagとして利用
+            const validTypes = group.className.split(' '); //必要なバリデーション種を取得
             const inputAreas = group.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), select, textarea');
             const buttonAreas = group.querySelectorAll('.c-forms__radio, .c-forms__checkbox');
 
@@ -288,18 +294,29 @@ block body
                 const checkboxes = buttonArea.querySelectorAll('input[type="checkbox"]');
                 checkboxes.forEach(checkbox => {
                   checkbox.addEventListener('change', () => {
-                    let isChecked = false;
+                    let errorType;
+                    let validActive = false;
                     validCancell(group);
 
-                    // 選択チェック
-                    checkboxes.forEach(checkbox => {
-                      if (checkbox.checked) {
-                        isChecked = true;
-                        return;
+                    // バリデーションチェック（required）
+                    if(validTypes.includes(typeRequired)) {
+                      let isChecked = true;
+
+                      checkboxes.forEach(checkbox => {
+                        if (checkbox.checked) {
+                          isChecked = false;
+                          return;
+                        }
+                      });
+                      if (!isChecked) {
+                        errorType = 'required';
+                        validActive = true;
                       }
-                    });
-                    if (!isChecked) {
-                      requiredError(group);
+                    }
+
+                    // バリデーション発火確認
+                    if(validActive) {
+                      activeError(group, errorType);
                     }
                   });
                 });
@@ -310,11 +327,23 @@ block body
                 const radioButtons = buttonArea.querySelectorAll('input[type="radio"]');
                 radioButtons.forEach(radioButton => {
                   radioButton.addEventListener('change', () => {
+                    let errorType;
+                    let validActive = false;
                     validCancell(group);
 
-                    // 選択チェック
-                    if (radioButtons.length === 0) {
-                      requiredError(errorMsgElem);
+                    // バリデーションチェック（required）
+                    if(validTypes.includes(typeRequired)) {
+
+                      // 選択チェック
+                      if (radioButtons.length === 0) {
+                        errorType = 'required';
+                        validActive = true;
+                      }
+                    }
+
+                    // バリデーション発火確認
+                    if(validActive) {
+                      activeError(group, errorType);
                     }
                   });
                 });
@@ -325,50 +354,63 @@ block body
             inputAreas.forEach(inputArea => {
 
               // text, textarea
-              if(inputArea.type === "text" || inputArea.tagName === "TEXTAREA") {
+              if(inputArea.type === "text" || inputArea.type === "email" || inputArea.type === "password" || inputArea.tagName === "TEXTAREA") {
                 ['keyup', 'focusout'].forEach((event) => {
                   inputArea.addEventListener(event, (e) => {
+                    let errorType;
+                    let validActive = false;
                     validCancell(group);
 
                     //文字入力・空白チェック
-                    if(!e.target.value.trim() || e.target.value.trim() === "") {
-                      requiredError(group);
+                    if(validTypes.includes(typeRequired)) {
+
+                      if(!e.target.value.trim() || e.target.value.trim() === "") {
+                        errorType = 'required';
+                        validActive = true;
+                      }
                     }
-                  });
-                });
-              }
 
-              // tel
-              if(group.classList.contains('is-telephone')) {
-                ['keyup', 'focusout'].forEach((event) => {
-                  inputArea.addEventListener(event, (e) => {
-                    validCancell(group);
-
-                    //文字入力・空白チェック
-                    if(!e.target.value.trim() || e.target.value.trim() === "") {
-                      requiredError(group);
-
-                    //電話番号形式チェック
-                    } else if(!/^[0-9+\-()]*$/.test(e.target.value)) {
-                      telFormatError(group);
+                    //　ひらがなチェック
+                    if(validTypes.includes(typeGana)) {
+                      const hiraganaRegex =/^[ぁ-ゞー]+$/; // 正規表現：ひらがな
+                      if(hiraganaRegex.test(inputString)) {
+                        errorType = 'hiragana';
+                        validActive = true;
+                      }
                     }
-                  });
-                });
-              }
 
-              // email
-              if(inputArea.type === "email") {
-                ['keyup', 'focusout'].forEach((event) => {
-                  inputArea.addEventListener(event, (e) => {
-                    validCancell(group);
+                    // カタカナチェック
+                    if(validTypes.includes(typeKana)) {
+                      const halfWidthKatakanaRegex = /^[｡-ﾟ]+$/; // 正規表現：半角カタカナ
+                      const fullWidthKatakanaRegex = /^[ァ-ンー]+$/; // 正規表現：全角カタカナ
 
-                    //文字入力・空白チェック
-                    if(!e.target.value.trim()) {
-                      requiredError(group);
+                      if(halfWidthKatakanaRegex.test(inputString) || fullWidthKatakanaRegex.test(inputString)) {
+                        errorType = 'katakana';
+                        validActive = true;
+                      }
+                    }
 
-                    //メール形式チェック
-                    } else if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
-                      mailFormatError(group);
+                    // 電話番号形式チェック
+                    if(validTypes.includes(typeTelphone)) {
+
+                      if(!/^[0-9+\-()]*$/.test(e.target.value)) {
+                        errorType = 'telephone';
+                        validActive = true;
+                      }
+                    }
+
+                    // メール形式チェック
+                    if(validTypes.includes(typeEmail)) {
+
+                      if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
+                        errorType = 'email';
+                        validActive = true;
+                      }
+                    }
+
+                    // バリデーション発火確認
+                    if(validActive) {
+                      activeError(group, errorType);
                     }
                   });
                 });
@@ -381,7 +423,7 @@ block body
 
                   //ファイルアップロードチェック
                   if(!e.target.files || !e.target.files.length > 0) {
-                    requiredError(group);
+                    activeError(group);
                   }
                 });
               }
@@ -394,7 +436,7 @@ block body
 
                   //選択チェック
                   if(option && !option.disabled) {
-                    requiredError(group);
+                    activeError(group);
                   }
                 });
               }
@@ -426,20 +468,14 @@ block body
 
           // バリデーションに関する関数
           function validCancell(group) {
-            group.querySelector(errorMsgElem).textContent =''
+            group.querySelector(errorMsgElem).textContent = '';
             group.classList.remove(errorClass);
+            group.querySelector(errorMsgElem).dataset.validateType = '';
           }
-          function requiredError(group) {
-            group.querySelector(errorMsgElem).textContent = errorMessage.required;
+          function activeError(group, errorType) {
+            group.querySelector(errorMsgElem).textContent = errorType;
             group.classList.add(errorClass);
-          }
-          function mailFormatError(group) {
-            group.querySelector(errorMsgElem).textContent = errorMessage.email;
-            group.classList.add(errorClass);
-          }
-          function telFormatError(group) {
-            group.querySelector(errorMsgElem).textContent = errorMessage.telephone;
-            group.classList.add(errorClass);
+            group.querySelector(errorMsgElem).dataset.validateType = errorType;
           }
 
         })();
