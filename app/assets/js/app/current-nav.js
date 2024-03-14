@@ -2,7 +2,6 @@ import url from "url";
 
 var defaultOptions = {
   targetSelector: '.js-current-nav', // 実行するセレクタ
-  childrenClass: "js-current-children",
   childrenData: "data-parent-nav",
   activeClass: "is-current", // 付与するクラス
 }
