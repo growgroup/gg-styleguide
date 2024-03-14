@@ -3,6 +3,7 @@ import url from "url";
 var defaultOptions = {
   targetSelector: '.js-current-nav', // 実行するセレクタ
   childrenClass: "js-current-children",
+  childrenData: "data-parent-nav",
   activeClass: "is-current", // 付与するクラス
 }
 
@@ -54,7 +55,7 @@ export default class CurrentNav {
       href = this.isHttp(href);
       href = this.isIndexPage(href);
 
-      if ($element.hasClass(defaultOptions.childrenClass) && this.currentPathname.includes(href)) {
+      if ($element.attr(defaultOptions.childrenData) === "true" && this.currentPathname.includes(href)) {
         $(this.target[i]).addClass(this.activeClass);
         // 1個だけにする場合はbreakを有効にする
         // break;
