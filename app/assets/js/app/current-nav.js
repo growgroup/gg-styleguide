@@ -54,22 +54,19 @@ export default class CurrentNav {
       href = this.isHttp(href);
       href = this.isIndexPage(href);
 
-      if ($element.attr(defaultOptions.childrenData) === "true" && this.currentPathname.includes(href)) {
-        $(this.target[i]).addClass(this.activeClass);
-        // 1個だけにする場合はbreakを有効にする
-        // break;
-      } else if (this.isMatch(href)) {
+      //ここでelementを渡す
+      if (this.isMatch(href, $element)) {
         $(this.target[i]).addClass(this.activeClass);
       }
     }
   }
 
-  isMatch(path) {
+  // ここでelementを受け取る
+  isMatch(path, $element) {
     path = path.replace(/^(.*(?:\.\.?))/,'')
-    if (this.currentPathname === path) {
+    if (this.currentPathname === path || $element.attr(defaultOptions.childrenData) === "true" && this.currentPathname.includes(path)) {
       return true;
     }
-
     return false;
   }
 
