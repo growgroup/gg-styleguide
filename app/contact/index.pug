@@ -30,518 +30,573 @@ block body
               +e.item-text 送信完了
       <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
       +c.forms
-        +e.inner
-          +h1.head お問い合わせ
-          +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
-          +e.blocks
-            +e.block
-              +e.title チェックボックス
-              +e.content.is-validate.is-required
-                +e.checkbox.is-border
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4
-                +e.error
+        .GG-form-validate
+          +e.inner
+            +h1.head お問い合わせ
+            +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
+            +e.blocks
+              +e.block
+                +e.title チェックボックス
+                +e.content.is-validate.is-required
+                  +e.checkbox.is-border
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢3")
+                        span 選択肢3
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢4")
+                        span 選択肢4
 
-            +e.block
-              +e.title ラジオボタン
-              +e.content.is-validate.is-required
-                +e.radio.is-border
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4
-                +e.error
+              +e.block
+                +e.title ラジオボタン
+                +e.content.is-validate.is-required
+                  +e.radio.is-border
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢3")
+                        span 選択肢3
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢4")
+                        span 選択肢4
 
-            +e.block
-              +e.title ご希望のサービス（テキストが長い場合）
-              +e.content.is-validate.is-required
-                +e.checkbox.is-border.is-vertical
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2 長いテキスト長いテキスト長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3 長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4 長いテキスト
-                +e.error
+              +e.block
+                +e.title ご希望のサービス（テキストが長い場合）
+                +e.content.is-validate.is-required
+                  +e.checkbox.is-border.is-vertical
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2 長いテキスト長いテキスト長いテキスト
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢3")
+                        span 選択肢3 長いテキスト
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢4")
+                        span 選択肢4 長いテキスト
 
-            +e.block
-              +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
-              +e.content.is-validate.is-required
-                +e.radio.is-design.is-border
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                +e.error
+              +e.block
+                +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
+                +e.content.is-validate.is-required
+                  +e.radio.is-design.is-border
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2
 
-            +e.block
-              +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
-              +e.content.is-validate.is-required
-                +e.checkbox.is-design.is-border
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                +e.error
+              +e.block
+                +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
+                +e.content.is-validate.is-required
+                  +e.checkbox.is-design.is-border
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="checkbox", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2
 
 
-            +e.block
-              +e.title
-                | お名前
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required
-                +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
-                +e.error
+              +e.block
+                +e.title
+                  | お名前
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required
+                  +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
 
-            +e.block
-              +e.title
-                | 会社名
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required
-                +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
-                +p.note: small ※個人の方は、「個人」とご入力ください
-                +e.error
+              +e.block
+                +e.title
+                  | 会社名
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required
+                  +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
+                  +p.note: small ※個人の方は、「個人」とご入力ください
 
-            +e.block
-              +e.title
-                | メールアドレス
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required.is-email
-                +e.input: input(type="email", name="メールアドレス", placeholder="info@mail.jp")
-                +e.error
+              +e.block
+                +e.title
+                  | メールアドレス
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required.is-email
+                  +e.input: input(type="email", name="メールアドレス", placeholder="info@mail.jp")
 
-            +e.block
-              +e.title
-                | 電話番号
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required.is-telephone
-                +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
-                +e.error
+              +e.block
+                +e.title
+                  | 電話番号
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required.is-telephone
+                  +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
 
-            +e.block
-              +e.title
-                | 郵便番号
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required
-                +e.flex-al
-                  +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
-                  button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
-                +e.error
-
-            +e.block
-              +e.title
-                | ご住所
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required#auto-input-address
-                +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
-                +e.error
-
-            +e.block
-              +e.title
-                | 部署名
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required
-                +e.select
-                  select(name="部署名")
-                    option(disabled, selected) ー以下から選択してくださいー
-                    option(value="選択肢A") 選択肢A
-                    option(value="選択肢B") 選択肢B
-                    option(value="選択肢C") 選択肢C
-                +e.error
-
-            +e.block
-              +e.title
-                | 役職
-                span.c-forms__label 必須
-              +e.content.is-validate.is-required
-                +e.select
-                  select(name="役職")
-                    option(disabled, selected) ー以下から選択してくださいー
-                    option(value="選択肢A") 選択肢A
-                    option(value="選択肢B") 選択肢B
-                    option(value="選択肢C") 選択肢C
-                +e.error
-
-            +e.block
-              +e.title その他質問等
-              +e.content.is-validate.is-required
-                +e.textarea
-                  textarea(name="その他質問等", placeholder="")
-                +e.error
-
-            +e.block
-              +e.title
-                | ファイルアップロード
-              +e.content.is-validate.is-required
-                +e.file: input(type="file", name="ファイルアップロード")
-                +e.error
-
-          +e.head --横並びパターン保存用--
-          +e.blocks
-            +e.block.is-horizontal
-              +e.title
-                | 横並びパターン
-                span.c-forms__label 必須
-              +e.content
-                +e.input: input(type="text", name="横並びパターン", placeholder="〇〇株式会社")
-
-            +e.block.is-horizontal
-              +e.title.is-vertical-top
-                | 横並び（タイトル上寄せ）
-                span.c-forms__label 必須
-              +e.content
-                +e.input: input(type="text", name="横並び（タイトル上寄せ）", placeholder="〇〇株式会社")
-                +p.note: small 補足のテキスト
-
-            +e.block.is-horizontal
-              +e.title.is-vertical-top
-                | 住所
-                span.c-forms__label 必須
-              +e.content
-                +e.flexbox
-                  span 郵便番号
+              +e.block
+                +e.title
+                  | 郵便番号
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required
                   +e.flex-al
-                    +e.input.is-sm: input(type="text", name="郵便番号", placeholder="（例）464-0850")
+                    +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
                     button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
-                +e.flexbox
-                  span ご住所
-                  +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+
+              +e.block
+                +e.title
+                  | ご住所
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required#auto-input-address
+                  +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
+
+              +e.block
+                +e.title
+                  | テスト
+                  span.c-forms__label 必須じゃない
+                +e.content.is-validate.is-hiragana
+                  +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
+
+              +e.block
+                +e.title
+                  | 部署名
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required
+                  +e.select
+                    select(name="部署名")
+                      option(disabled, selected) ー以下から選択してくださいー
+                      option(value="選択肢A") 選択肢A
+                      option(value="選択肢B") 選択肢B
+                      option(value="選択肢C") 選択肢C
+
+              +e.block
+                +e.title
+                  | 役職
+                  span.c-forms__label 必須
+                +e.content.is-validate.is-required
+                  +e.select
+                    select(name="役職")
+                      option(disabled, selected) ー以下から選択してくださいー
+                      option(value="選択肢A") 選択肢A
+                      option(value="選択肢B") 選択肢B
+                      option(value="選択肢C") 選択肢C
+
+              +e.block
+                +e.title その他質問等
+                +e.content.is-validate.is-required
+                  +e.textarea
+                    textarea(name="その他質問等", placeholder="")
+
+              +e.block
+                +e.title
+                  | ファイルアップロード
+                +e.content.is-validate.is-required
+                  +e.file: input(type="file", name="ファイルアップロード")
+
+            +e.head --横並びパターン保存用--
+            +e.blocks
+              +e.block.is-horizontal
+                +e.title
+                  | 横並びパターン
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text", name="横並びパターン", placeholder="〇〇株式会社")
+
+              +e.block.is-horizontal
+                +e.title.is-vertical-top
+                  | 横並び（タイトル上寄せ）
+                  span.c-forms__label 必須
+                +e.content
+                  +e.input: input(type="text", name="横並び（タイトル上寄せ）", placeholder="〇〇株式会社")
+                  +p.note: small 補足のテキスト
+
+              +e.block.is-horizontal
+                +e.title.is-vertical-top
+                  | 住所
+                  span.c-forms__label 必須
+                +e.content
+                  +e.flexbox
+                    span 郵便番号
+                    +e.flex-al
+                      +e.input.is-sm: input(type="text", name="郵便番号", placeholder="（例）464-0850")
+                      button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
+                  +e.flexbox
+                    span ご住所
+                    +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
 
-          +e.privacy.is-validate.is-required
-            +e.privacybox
-              label
-                input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
-                +a("/privacy-policy/")(target="_blank") 個人情報保護方針
-                | の内容に同意する
-            +e.error
+            +e.privacy.is-validate.is-required
+              +e.privacybox
+                label
+                  input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
+                  +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+                  | の内容に同意する
 
-          +e.submit
-            button.c-button.is-xlg 確認画面へ
-            //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
-            //- button.c-button.c-forms__submit__submit.is-lg 送信する
+            +e.submit
+              button.c-button.is-xlg 確認画面へ
+              //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
+              //- button.c-button.c-forms__submit__submit.is-lg 送信する
 
       script.
-        (function() {
-          const validateType = {
-            typeRequired: 'is-required', //必須項目
-            typeTelephone: 'is-telephone', //電話番号形式
-            typeEmail: 'is-email', //メール形式
-            typeKatakana: 'is-katakana', //カタカナのみ許容
-            typeHiragana: 'is-hiragana', //ひらがなのみ許容
-            typeKana: 'is-kana', //かな入力のみ許容
-          }
-
-          const validateMessage = {
-            'is-required': 'この必須項目を入力してください。',
-            'is-telephone': '半角数字と + - ( ) のみ利用できます。',
-            'is-email': 'メールアドレスの形式が正しくありません',
-            'is-katakana': 'カタカナで入力してください。',
-            'is-hiragana': 'ひらがなで入力してください。',
-            'is-kana': 'ひらがなもしくはカタカナで入力してください。'
-          }
-
-          const flagClass = 'is-flag';
-          const errorClass = 'is-error';
-          const errorMsgElem = '.c-forms__error';
-          const dataName = 'data-validate-type';
-
-          const groups = document.querySelectorAll('.is-validate');
-          const submit = document.querySelector('.c-forms__submit button');
-
-          groups.forEach(group => {
-            const hasValidTypes = group.className.split(' '); //必要なバリデーション種を取得
-            const inputAreas = group.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), select, textarea');
-            const buttonAreas = group.querySelectorAll('.c-forms__radio, .c-forms__checkbox, .c-forms__privacybox');
-
-            // 必須項目は先行してerrorのflagを付与
-            if (group.classList.contains(validateType.typeRequired)) {
-              group.classList.add(flagClass);
+        class FormValidator {
+          constructor() {
+            const trrigerClass = document.querySelector('.GG-form-validate');
+            if(!trrigerClass) {
+              return;
             }
-
-            // checkbox,radio
-            buttonAreas.forEach(buttonArea => {
-              let checkValidateType;
-
-              // checkbox
-              if(buttonArea.classList.contains('c-forms__checkbox') || buttonArea.classList.contains('c-forms__privacybox')) {
-                const checkboxes = buttonArea.querySelectorAll('input[type="checkbox"]');
-
-                checkboxes.forEach(checkbox => {
-                  checkbox.addEventListener('change', (e) => {
-                    let validActive = false; //バリデーション発火フラグ
-
-                    // 必須項目チェック（required）
-                    if(hasValidTypes.includes(validateType.typeRequired)) {
-                      let isChecked = false;
-
-                      checkboxes.forEach(checkbox => {
-                        if (checkbox.checked) {
-                          isChecked = true;
-                          return;
-                        }
-                      });
-                      if (!isChecked) {
-                        checkValidateType = validateType.typeRequired;
-                        validActive = true;
-                      }
-                    }
-
-                    // バリデーション発火確認
-                    if(validActive) {
-                      activeError(group, checkValidateType);
-                      return;
-                    }
-
-                    // 問題なければバリデーション解除
-                    validCancell(group);
-                  });
-                });
+            this.validateRules = {
+              typeRequired: {
+                type: 'is-required',
+                message: 'この必須項目を入力してください.'
+              },
+              typeTelephone: {
+                type: 'is-telephone',
+                message: '半角数字と + - ( ) のみ利用できます.'
+              },
+              typeEmail: {
+                type: 'is-email',
+                message: 'メールアドレスの形式が正しくありません.'
+              },
+              typeKatakana: {
+                type: 'is-katakana',
+                message: 'カタカナで入力してください.'
+              },
+              typeHiragana: {
+                type: 'is-hiragana',
+                message: 'ひらがなで入力してください.'
+              },
+              typeKana: {
+                type: 'is-kana',
+                message: 'ひらがなもしくはカタカナで入力してください.'
               }
-
-              // radio
-              if(buttonArea.classList.contains('c-forms__radio')) {
-                const radioButtons = buttonArea.querySelectorAll('input[type="radio"]');
-                radioButtons.forEach(radioButton => {
-                  radioButton.addEventListener('change', () => {
-                    let validActive = false; //バリデーション発火フラグ
-
-                    // 必須項目チェック（required）
-                    if(hasValidTypes.includes(validateType.typeRequired)) {
-
-                      // 選択チェック
-                      if (radioButtons.length === 0) {
-                        checkValidateType = validateType.typeRequired;
-                        validActive = true;
-                      }
-                    }
-
-                    // バリデーション発火確認
-                    if(validActive) {
-                      activeError(group, checkValidateType);
-                      return;
-                    }
-
-                    // 問題なければバリデーション解除
-                    validCancell(group);
-                  });
-                });
-              }
-            });
-
-
-            inputAreas.forEach(inputArea => {
-              let checkValidateType;
-
-              // text, textarea
-              if(inputArea.type === "text" || inputArea.type === "email" || inputArea.type === "password" || inputArea.tagName === "TEXTAREA") {
-                ['keyup', 'focusout'].forEach((event) => {
-                  inputArea.addEventListener(event, (e) => {
-                    let validActive = false; //バリデーション発火フラグ
-
-                    // 必須項目チェック（required）、文字入力・空白チェック
-                    if(hasValidTypes.includes(validateType.typeRequired)) {
-
-                      if(!e.target.value.trim() || e.target.value.trim() === "") {
-                        checkValidateType = validateType.typeRequired;
-                        validActive = true;
-                      }
-                    }
-
-                    //　ひらがなチェック
-                    if(hasValidTypes.includes(validateType.typeHiragana)) {
-                      const hiraganaRegex =/^[ぁ-ゞー\s]+$/; // 正規表現：ひらがな
-
-                      if(e.target.value.trim() !== '' && !hiraganaRegex.test(e.target.value)) {
-                        checkValidateType = validateType.typeHiragana;
-                        validActive = true;
-                      }
-                    }
-
-                    // カタカナチェック
-                    if(hasValidTypes.includes(validateType.typeKatakana)) {
-                      const katakanaRegex = /^[\u30a1-\u30f6｡-ﾟ\s]+$/;; // 正規表現：全角半角カタカナ
-
-                      if (e.target.value.trim() !== '' && !katakanaRegex.test(e.target.value) ) {
-                        checkValidateType = validateType.typeKatakana;
-                        validActive = true;
-                      }
-                    }
-
-                    //　ひらがなorカタカナチェック
-                    if(hasValidTypes.includes(validateType.typeKana)) {
-                      const kanaRegex = /^[ぁ-ゖァ-ヶーｦ-ﾟ]+$/; // 正規表現：全角半角カタカナひらがな
-
-                      if(e.target.value !== '' && !kanaRegex.test(e.target.value)) {
-                        checkValidateType = validateType.typeKana;
-                        validActive = true;
-                      }
-                    }
-
-                    // 電話番号形式チェック
-                    if(hasValidTypes.includes(validateType.typeTelephone)) {
-
-                      if(!/^[0-9+\-()]*$/.test(e.target.value)) {
-                        checkValidateType = validateType.typeTelephone;
-                        validActive = true;
-                      }
-                    }
-
-                    // メール形式チェック
-                    if(hasValidTypes.includes(validateType.typeEmail)) {
-
-                      if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
-                        checkValidateType = validateType.typeEmail;
-                        validActive = true;
-                      }
-                    }
-
-                    // バリデーション発火確認
-                    if(validActive) {
-                      activeError(group, checkValidateType);
-                      return;
-                    }
-
-                    // 問題なければバリデーション解除
-                    validCancell(group);
-                  });
-                });
-              }
-
-              // file
-              if(inputArea.type === "file") {
-                inputArea.addEventListener('change', (e) => {
-                  let validActive = false; //バリデーション発火フラグ
-
-                  // 必須項目チェック（required）、ファイルアップロードチェック
-                  if(hasValidTypes.includes(validateType.typeRequired)) {
-
-                    if(!e.target.files || !e.target.files.length > 0) {
-                      checkValidateType = validateType.typeRequired;
-                      validActive = true;
-                    }
-                  }
-
-                  // バリデーション発火確認
-                  if(validActive) {
-                    activeError(group, checkValidateType);
-                    return;
-                  }
-
-                  // 問題なければバリデーション解除
-                  validCancell(group);
-                });
-              }
-
-              // select
-              if(inputArea.tagName === "SELECT") {
-                const option =  inputArea.options[inputArea.index];
-                inputArea.addEventListener('change', () => {
-                  let validActive = false; //バリデーション発火フラグ
-
-                  // 必須項目チェック（required）
-                  if(hasValidTypes.includes(validateType.typeRequired)) {
-
-                    if(option && !option.disabled) {
-                      checkValidateType = validateType.typeRequired;
-                      validActive = true;
-                    }
-                  }
-
-                  // バリデーション発火確認
-                  if(validActive) {
-                    activeError(group, checkValidateType);
-                    return;
-                  }
-
-                  // 問題なければバリデーション解除
-                  validCancell(group);
-                });
-              }
-            });
-          });
-
-          //- 住所自動入力(ajaxzip3)対応
-          const zipButton = document.getElementById("zipauto");
-          const group = document.getElementById("auto-input-address");
-          zipButton.addEventListener('click', () => {
-            // AjaxZip3のデータ取得コールバック
-            AjaxZip3.onSuccess = () => {
-              validCancell(group);
             };
-          });
 
-          // submit時のバリデーション一斉チェック
-          submit.addEventListener('click', (event) => {
-            const errorGroups = document.querySelectorAll(`.${flagClass}`);
+            this.flagClass = 'is-flag';
+            this.errorClass = 'is-error';
+            this.errorMsgElemClass = 'c-forms__error';
+            this.dataName = 'data-validate-type';
 
-            if(errorGroups.length !== 0) {
-              errorGroups.forEach(errorGroup => {
-                errorGroup.classList.add(errorClass);
-                const errorElem = errorGroup.querySelector(errorMsgElem);
-                if(!errorElem.getAttribute(dataName)) {
-                  errorElem.textContent = validateMessage[validateType.typeRequired];
+            this.inputElement = 'input[type="text"], input[type="email"], input[type="password"], textarea';
+            this.fileElement = 'input[type="file"]';
+            this.checkboxElement = 'input[type="checkbox"]';
+            this.radioElement = 'input[type="radio"]';
+            this.selectElement = 'select';
+
+            this.validateClass = 'is-validate';
+            this.validateElements = document.querySelectorAll(`.${this.validateClass}`);
+            this.submit = document.querySelector('.c-forms__submit button');
+
+            this.validateElements.forEach(element => {
+              const newErrorElement = document.createElement('div');
+              newErrorElement.className = this.errorMsgElemClass;
+              element.appendChild(newErrorElement);
+
+              //バリデーション発火フラグ
+              let validActive = false;
+
+              // 必須項目は先行してerrorのflagを付与
+              if (element.classList.contains(this.validateRules.typeRequired.type)) {
+                element.classList.add(this.flagClass);
+              }
+
+              // typeに応じて処理を分岐
+              if (element.querySelector(this.inputElement)) {
+                this.validateTextareaElement(element);
+              }
+              if (element.querySelector(this.checkboxElement)) {
+                this.validateCheckboxElement(element);
+              }
+              if (element.querySelector(this.radioElement)) {
+                this.validateRadioElement(element);
+              }
+              if (element.querySelector(this.selectElement)) {
+                this.validateSelectElement(element);
+              }
+              if (element.querySelector(this.fileElement)) {
+                this.validateFileElement(element);
+              }
+            });
+
+            //- 住所自動入力(ajaxzip3)対応
+            this.zipButton = document.getElementById("zipauto");
+            this.address = document.getElementById("auto-input-address");
+            this.zipButton.addEventListener('click', () => {
+              // AjaxZip3のデータ取得コールバック
+              AjaxZip3.onSuccess = () => {
+                this.validCancell(this.address);
+              };
+            });
+
+            // submit時のバリデーション一斉チェック
+            this.submit.addEventListener('click', (event) => {
+              const errorGroups = document.querySelectorAll(`.${this.validateClass}.${this.flagClass}`);
+
+              if(errorGroups.length !== 0) {
+                errorGroups.forEach(errorGroup => {
+                  errorGroup.classList.add(this.errorClass);
+                  const errorElem = errorGroup.querySelector(`.${this.errorMsgElemClass}`);
+                  if(!errorElem.getAttribute(this.dataName)) {
+                    errorElem.textContent = this.validateRules.typeRequired.message;
+                  }
+                });
+                event.preventDefault();
+              }
+            });
+          }
+
+          // 入力形
+          validateTextareaElement(parentElement) {
+            //必要なバリデーションタイプを取得
+            const hasValidTypes = parentElement.className.split(' ');
+
+            ['keyup', 'focusout'].forEach((event) => {
+              parentElement.querySelector(this.inputElement).addEventListener(event, (e) => {
+                let validActive = false;  // バリデーション発火フラグ
+                let checkValidateType;    // バリデーション対象物の確認
+
+                // 必須項目チェック（required）、文字入力・空白チェック
+                if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+
+                  if(!e.target.value.trim() || e.target.value.trim() === "") {
+                    checkValidateType = this.validateRules.typeRequired;
+                    validActive = true;
+                  }
                 }
+
+                //　ひらがなチェック
+                if(hasValidTypes.includes(this.validateRules.typeHiragana.type)) {
+                  const hiraganaRegex =/^[ぁ-ゞー\s]+$/; // 正規表現：ひらがな
+
+                  if(e.target.value.trim() !== '' && !hiraganaRegex.test(e.target.value)) {
+                    checkValidateType = this.validateRules.typeHiragana;
+                    validActive = true;
+                  }
+                }
+
+                // カタカナチェック
+                if(hasValidTypes.includes(this.validateRules.typeKatakana.type)) {
+                  const katakanaRegex = /^[\u30a1-\u30f6｡-ﾟ\s]+$/;; // 正規表現：全角半角カタカナ
+
+                  if (e.target.value.trim() !== '' && !katakanaRegex.test(e.target.value) ) {
+                    checkValidateType = this.validateRules.typeKatakana;
+                    validActive = true;
+                  }
+                }
+
+                //　ひらがなorカタカナチェック
+                if(hasValidTypes.includes(this.validateRules.typeKana.type)) {
+                  const kanaRegex = /^[ぁ-ゖァ-ヶーｦ-ﾟ]+$/; // 正規表現：全角半角カタカナひらがな
+
+                  if(e.target.value !== '' && !kanaRegex.test(e.target.value)) {
+                    checkValidateType = this.validateRules.typeKana;
+                    validActive = true;
+                  }
+                }
+
+                // 電話番号形式チェック
+                if(hasValidTypes.includes(this.validateRules.typeTelephone.type)) {
+
+                  if(!/^[0-9+\-()]*$/.test(e.target.value)) {
+                    checkValidateType = this.validateRules.typeTelephone;
+                    validActive = true;
+                  }
+                }
+
+                // メール形式チェック
+                if(hasValidTypes.includes(this.validateRules.typeEmail.type)) {
+
+                  if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
+                    checkValidateType = this.validateRules.typeEmail;
+                    validActive = true;
+                  }
+                }
+
+                // バリデーション発火確認
+                if(validActive) {
+                  this.activeError(parentElement, checkValidateType);
+                  return;
+                }
+
+                // 問題なければバリデーション解除
+                this.validCancell(parentElement);
               });
-              event.preventDefault();
-            }
-          });
-
-
-          // バリデーションに関する関数
-          function validCancell(group) {
-            group.querySelector(errorMsgElem).textContent = '';
-            group.classList.remove(flagClass, errorClass);
-            group.querySelector(errorMsgElem).dataset.validateType = '';
+            });
           }
-          function activeError(group, validateType) {
-            group.classList.add(flagClass, errorClass);
-            group.querySelector(errorMsgElem).dataset.validateType = validateType;
-            group.querySelector(errorMsgElem).textContent = validateMessage[validateType];
-          }
-        })();
 
+          // checkbox
+          validateCheckboxElement(parentElement) {
+            //必要なバリデーションタイプを取得
+            const hasValidTypes = parentElement.className.split(' ');
+
+            parentElement.querySelectorAll(this.checkboxElement).forEach(checkbox => {
+              checkbox.addEventListener('change', (e) => {
+
+                let validActive = false;  // バリデーション発火フラグ
+                let checkValidateType;    // バリデーション対象物の確認
+
+                // 必須項目チェック（required）
+                if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+                  let isChecked = false;
+
+                  parentElement.querySelectorAll(this.checkboxElement).forEach(checkbox => {
+                    if (checkbox.checked) {
+                      isChecked = true;
+                      return;
+                    }
+                  });
+
+                  if (!isChecked) {
+                    checkValidateType = this.validateRules.typeRequired;
+                    validActive = true;
+                  }
+                }
+
+                // バリデーション発火確認
+                if(validActive) {
+                  this.activeError(parentElement, checkValidateType);
+                  return;
+                }
+
+                // 問題なければバリデーション解除
+                this.validCancell(parentElement);
+              });
+            });
+          }
+
+          // radio
+          validateRadioElement(parentElement) {
+            //必要なバリデーションタイプを取得
+            const hasValidTypes = parentElement.className.split(' ');
+
+            parentElement.querySelectorAll(this.radioElement).forEach(radioButton => {
+              radioButton.addEventListener('change', (e) => {
+
+                let validActive = false;  // バリデーション発火フラグ
+                let checkValidateType;    // バリデーション対象物の確認
+
+                // 必須項目チェック（required）
+                if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+                  let isChecked = false;
+
+                  // 選択チェック
+                  let checked = false;
+                  parentElement.querySelectorAll(this.radioElement).forEach(radioButton => {
+                    if (radioButton.checked) {
+                      checked = true;
+                    }
+                  });
+
+                  if (!checked) {
+                    checkValidateType = this.validateRules.typeRequired;
+                    validActive = true;
+                  }
+                }
+
+                // バリデーション発火確認
+                if(validActive) {
+                  this.activeError(parentElement, checkValidateType);
+                  return;
+                }
+
+                // 問題なければバリデーション解除
+                this.validCancell(parentElement);
+              });
+
+            });
+          }
+
+          // select
+          validateSelectElement(parentElement) {
+            //必要なバリデーションタイプを取得
+            const hasValidTypes = parentElement.className.split(' ');
+
+            parentElement.querySelector(this.selectElement).addEventListener('change', (e) => {
+              let validActive = false;  // バリデーション発火フラグ
+              let checkValidateType;    // バリデーション対象物の確認
+
+              const option = e.target.options[e.target.selectedIndex];
+
+              // 必須項目チェック（required）
+              if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+
+                if(!option || option.disabled) {
+                  checkValidateType = this.validateRules.typeRequired;
+                  validActive = true;
+                }
+              }
+
+              // バリデーション発火確認
+              if(validActive) {
+                this.activeError(parentElement, checkValidateType);
+                return;
+              }
+
+              // 問題なければバリデーション解除
+              this.validCancell(parentElement);
+            });
+          }
+
+          // file
+          validateFileElement(parentElement) {
+            //必要なバリデーションタイプを取得
+            const hasValidTypes = parentElement.className.split(' ');
+
+            parentElement.querySelector(this.fileElement).addEventListener('change', (e) => {
+              let validActive = false;  // バリデーション発火フラグ
+              let checkValidateType;    // バリデーション対象物の確認
+
+              // 必須項目チェック（required）、ファイルアップロードチェック
+              if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+
+                if(!e.target.files || !e.target.files.length > 0) {
+                  checkValidateType = this.validateRules.typeRequired;
+                  validActive = true;
+                }
+              }
+
+              // バリデーション発火確認
+              if(validActive) {
+                this.activeError(parentElement, checkValidateType);
+                return;
+              }
+
+              // 問題なければバリデーション解除
+              this.validCancell(parentElement);
+            });
+          }
+
+          // バリデーション解除
+          validCancell(element) {
+            element.classList.remove(this.flagClass, this.errorClass);
+            element.querySelector(`.${this.errorMsgElemClass}`).dataset.validateType = '';
+            element.querySelector(`.${this.errorMsgElemClass}`).textContent = '';
+          }
+          // バリデーション発火
+          activeError(element, validateType) {
+            element.classList.add(this.flagClass, this.errorClass);
+            element.querySelector(`.${this.errorMsgElemClass}`).dataset.validateType = validateType.type;
+            element.querySelector(`.${this.errorMsgElemClass}`).textContent = validateType.message;
+          }
+        }
+
+        const formValidator = new FormValidator();
