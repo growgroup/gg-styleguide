@@ -414,17 +414,14 @@
       }
     }
   }
+}
 
-  //============================
-  // バリデーション
-  //============================
-  &__error {
-    margin-top: rem-calc(5);
-    color: $color-state-danger;
-    font-size: rem-calc(12);
-  }
+//============================
+// バリデーション
+//============================
 
-  .is-error {
+.GGV-validate {
+  &.GGV-error {
     input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
     select,
     textarea {
@@ -435,4 +432,10 @@
       border-color: $color-state-danger;
     }
   }
+}
+
+.GGV-validate-message {
+  margin-top: rem-calc(5);
+  color: $color-state-danger;
+  font-size: rem-calc(12);
 }

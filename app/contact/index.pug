@@ -30,14 +30,14 @@ block body
               +e.item-text 送信完了
       <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
       +c.forms
-        .GG-form-validate
+        .GGV-form
           +e.inner
             +h1.head お問い合わせ
             +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
             +e.blocks
               +e.block
                 +e.title チェックボックス
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.checkbox.is-border
                     span
                       label
@@ -58,7 +58,7 @@ block body
 
               +e.block
                 +e.title ラジオボタン
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.radio.is-border
                     span
                       label
@@ -79,7 +79,7 @@ block body
 
               +e.block
                 +e.title ご希望のサービス（テキストが長い場合）
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.checkbox.is-border.is-vertical
                     span
                       label
@@ -100,7 +100,7 @@ block body
 
               +e.block
                 +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.radio.is-design.is-border
                     span
                       label
@@ -113,7 +113,7 @@ block body
 
               +e.block
                 +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.checkbox.is-design.is-border
                     span
                       label
@@ -129,14 +129,14 @@ block body
                 +e.title
                   | お名前
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
 
               +e.block
                 +e.title
                   | 会社名
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
                   +p.note: small ※個人の方は、「個人」とご入力ください
 
@@ -144,21 +144,21 @@ block body
                 +e.title
                   | メールアドレス
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required.is-email
+                +e.content.GGV-validate.GGV-required.GGV-email
                   +e.input: input(type="email", name="メールアドレス", placeholder="info@mail.jp")
 
               +e.block
                 +e.title
                   | 電話番号
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required.is-telephone
+                +e.content.GGV-validate.GGV-required.GGV-telephone
                   +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
 
               +e.block
                 +e.title
                   | 郵便番号
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.flex-al
                     +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
                     button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
@@ -167,21 +167,14 @@ block body
                 +e.title
                   | ご住所
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required#auto-input-address
-                  +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
-
-              +e.block
-                +e.title
-                  | テスト
-                  span.c-forms__label 必須じゃない
-                +e.content.is-validate.is-hiragana
+                +e.content.GGV-validate.GGV-required#auto-input-address
                   +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
 
               +e.block
                 +e.title
                   | 部署名
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.select
                     select(name="部署名")
                       option(disabled, selected) ー以下から選択してくださいー
@@ -193,7 +186,7 @@ block body
                 +e.title
                   | 役職
                   span.c-forms__label 必須
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.select
                     select(name="役職")
                       option(disabled, selected) ー以下から選択してくださいー
@@ -203,14 +196,14 @@ block body
 
               +e.block
                 +e.title その他質問等
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.textarea
                     textarea(name="その他質問等", placeholder="")
 
               +e.block
                 +e.title
                   | ファイルアップロード
-                +e.content.is-validate.is-required
+                +e.content.GGV-validate.GGV-required
                   +e.file: input(type="file", name="ファイルアップロード")
 
             +e.head --横並びパターン保存用--
@@ -245,7 +238,7 @@ block body
                     +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
 
-            +e.privacy.is-validate.is-required
+            +e.privacy.GGV-validate.GGV-required
               +e.privacybox
                 label
                   input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
@@ -253,47 +246,47 @@ block body
                   | の内容に同意する
 
             +e.submit
-              button.c-button.is-xlg 確認画面へ
+              button.c-button.is-xlg.GGV-submit 確認画面へ
               //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
               //- button.c-button.c-forms__submit__submit.is-lg 送信する
 
       script.
         class FormValidator {
           constructor() {
-            const trrigerClass = document.querySelector('.GG-form-validate');
+            const trrigerClass = document.querySelector('.GGV-form');
             if(!trrigerClass) {
               return;
             }
             this.validateRules = {
               typeRequired: {
-                type: 'is-required',
+                type: 'GGV-required',
                 message: 'この必須項目を入力してください.'
               },
               typeTelephone: {
-                type: 'is-telephone',
+                type: 'GGV-telephone',
                 message: '半角数字と + - ( ) のみ利用できます.'
               },
               typeEmail: {
-                type: 'is-email',
+                type: 'GGV-email',
                 message: 'メールアドレスの形式が正しくありません.'
               },
               typeKatakana: {
-                type: 'is-katakana',
+                type: 'GGV-katakana',
                 message: 'カタカナで入力してください.'
               },
               typeHiragana: {
-                type: 'is-hiragana',
+                type: 'GGV-hiragana',
                 message: 'ひらがなで入力してください.'
               },
               typeKana: {
-                type: 'is-kana',
+                type: 'GGV-kana',
                 message: 'ひらがなもしくはカタカナで入力してください.'
               }
             };
 
-            this.flagClass = 'is-flag';
-            this.errorClass = 'is-error';
-            this.errorMsgElemClass = 'c-forms__error';
+            this.flagClass = 'GGV-flag';
+            this.errorClass = 'GGV-error';
+            this.errorMsgElemClass = 'GGV-validate-message';
             this.dataName = 'data-validate-type';
 
             this.inputElement = 'input[type="text"], input[type="email"], input[type="password"], textarea';
@@ -302,14 +295,14 @@ block body
             this.radioElement = 'input[type="radio"]';
             this.selectElement = 'select';
 
-            this.validateClass = 'is-validate';
+            this.validateClass = 'GGV-validate';
             this.validateElements = document.querySelectorAll(`.${this.validateClass}`);
-            this.submit = document.querySelector('.c-forms__submit button');
+            this.submit = document.querySelector('.GGV-submit');
 
             this.validateElements.forEach(element => {
-              const newErrorElement = document.createElement('div');
-              newErrorElement.className = this.errorMsgElemClass;
-              element.appendChild(newErrorElement);
+              const addErrorElement = document.createElement('div');
+              addErrorElement.className = this.errorMsgElemClass;
+              element.appendChild(addErrorElement);
 
               //バリデーション発火フラグ
               let validActive = false;
@@ -351,7 +344,7 @@ block body
             this.submit.addEventListener('click', (event) => {
               const errorGroups = document.querySelectorAll(`.${this.validateClass}.${this.flagClass}`);
 
-              if(errorGroups.length !== 0) {
+              if(errorGroups.length > 0) {
                 errorGroups.forEach(errorGroup => {
                   errorGroup.classList.add(this.errorClass);
                   const errorElem = errorGroup.querySelector(`.${this.errorMsgElemClass}`);
@@ -360,6 +353,7 @@ block body
                   }
                 });
                 event.preventDefault();
+                return;
               }
             });
           }
@@ -587,15 +581,17 @@ block body
 
           // バリデーション解除
           validCancell(element) {
+            const errorElement = element.querySelector(`.${this.errorMsgElemClass}`);
             element.classList.remove(this.flagClass, this.errorClass);
-            element.querySelector(`.${this.errorMsgElemClass}`).dataset.validateType = '';
-            element.querySelector(`.${this.errorMsgElemClass}`).textContent = '';
+            errorElement.dataset.validateType = '';
+            errorElement.textContent = '';
           }
           // バリデーション発火
           activeError(element, validateType) {
+            const errorElement = element.querySelector(`.${this.errorMsgElemClass}`);
             element.classList.add(this.flagClass, this.errorClass);
-            element.querySelector(`.${this.errorMsgElemClass}`).dataset.validateType = validateType.type;
-            element.querySelector(`.${this.errorMsgElemClass}`).textContent = validateType.message;
+            errorElement.dataset.validateType = validateType.type;
+            errorElement.textContent = validateType.message;
           }
         }
 
