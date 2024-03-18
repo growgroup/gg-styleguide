@@ -431,6 +431,28 @@
     .c-forms__checkbox.is-border label {
       border-color: $color-state-danger;
     }
+    .c-forms__input {
+      position: relative;
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: rem-calc(20);
+        translate: 0 -50%;
+        rotate: -45deg;
+        width: rem-calc(2);
+        height: rem-calc(15);
+        background-color: $color-state-danger;
+        content: '';
+      }
+      &::after {
+        rotate: 45deg;
+      }
+    }
+    .GGV-validate-message {
+      font-size: rem-calc(12);
+      letter-spacing: 0;
+    }
   }
 }
 

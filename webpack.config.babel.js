@@ -20,6 +20,8 @@ module.exports = (env, argv) => {
         entry: {
             app: __dirname + '/app/assets/js/app.js',
           fonts: __dirname + '/app/assets/js/fonts.js',
+       validate: __dirname + '/app/assets/js/validate.js',
+
         },
         output: {
             path: path.join(__dirname, 'dist/'),
