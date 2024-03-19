@@ -31,14 +31,14 @@ block body
       <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 
       +c.forms
-        .js-form-validate
+        .js-GGform-validate
           +e.inner
             +h1.head お問い合わせ
             +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
             +e.blocks
               +e.block
                 +e.title チェックボックス
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.checkbox.is-border
                     span
                       label
@@ -59,7 +59,7 @@ block body
 
               +e.block
                 +e.title ラジオボタン
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.radio.is-border
                     span
                       label
@@ -80,7 +80,7 @@ block body
 
               +e.block
                 +e.title ご希望のサービス（テキストが長い場合）
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.checkbox.is-border.is-vertical
                     span
                       label
@@ -101,7 +101,7 @@ block body
 
               +e.block
                 +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.radio.is-design.is-border
                     span
                       label
@@ -114,7 +114,7 @@ block body
 
               +e.block
                 +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.checkbox.is-design.is-border
                     span
                       label
@@ -130,14 +130,14 @@ block body
                 +e.title
                   | お名前
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
 
               +e.block
                 +e.title
                   | 会社名
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
                   +p.note: small ※個人の方は、「個人」とご入力ください
 
@@ -145,21 +145,21 @@ block body
                 +e.title
                   | メールアドレス
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required.GGV-email
+                +e.content.GGform-validate.GGform-required.GGform-email
                   +e.input: input(type="email", name="メールアドレス", placeholder="info@mail.jp")
 
               +e.block
                 +e.title
                   | 電話番号
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required.GGV-telephone
+                +e.content.GGform-validate.GGform-required.GGform-telephone
                   +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
 
               +e.block
                 +e.title
                   | 郵便番号
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.flex-al
                     +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
                     button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
@@ -168,14 +168,14 @@ block body
                 +e.title
                   | ご住所
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required#auto-input-address
+                +e.content.GGform-validate.GGform-required#auto-input-address
                   +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
 
               +e.block
                 +e.title
                   | 部署名
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.select
                     select(name="部署名")
                       option(disabled, selected) ー以下から選択してくださいー
@@ -187,7 +187,7 @@ block body
                 +e.title
                   | 役職
                   span.c-forms__label 必須
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.select
                     select(name="役職")
                       option(disabled, selected) ー以下から選択してくださいー
@@ -197,14 +197,14 @@ block body
 
               +e.block
                 +e.title その他質問等
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.textarea
                     textarea(name="その他質問等", placeholder="")
 
               +e.block
                 +e.title
                   | ファイルアップロード
-                +e.content.GGV-validate.GGV-required
+                +e.content.GGform-validate.GGform-required
                   +e.file: input(type="file", name="ファイルアップロード")
 
             +e.head --横並びパターン保存用--
@@ -239,7 +239,7 @@ block body
                     +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
 
-            +e.privacy.GGV-validate.GGV-required
+            +e.privacy.GGform-validate.GGform-required
               +e.privacybox
                 label
                   input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
@@ -247,7 +247,7 @@ block body
                   | の内容に同意する
 
             +e.submit
-              button.c-button.is-xlg.GGV-submit 確認画面へ
+              button.c-button.is-xlg.GGform-submit 確認画面へ
               //- button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
               //- button.c-button.c-forms__submit__submit.is-lg 送信する
 

@@ -1,40 +1,40 @@
 class FormValidator {
   constructor() {
 
-    const trrigerClass = document.querySelector('.js-form-validate');
+    const trrigerClass = document.querySelector('.js-GGform-validate');
     if(!trrigerClass) {
       return;
     }
     this.validateRules = {
       typeRequired: {
-        type: 'GGV-required',
+        type: 'GGform-required',
         message: 'この必須項目を入力してください.'
       },
       typeTelephone: {
-        type: 'GGV-telephone',
+        type: 'GGform-telephone',
         message: '半角数字と + - ( ) のみ利用できます.'
       },
       typeEmail: {
-        type: 'GGV-email',
+        type: 'GGform-email',
         message: 'メールアドレスの形式が正しくありません.'
       },
       typeKatakana: {
-        type: 'GGV-katakana',
+        type: 'GGform-katakana',
         message: 'カタカナで入力してください.'
       },
       typeHiragana: {
-        type: 'GGV-hiragana',
+        type: 'GGform-hiragana',
         message: 'ひらがなで入力してください.'
       },
       typeKana: {
-        type: 'GGV-kana',
+        type: 'GGform-kana',
         message: 'ひらがなもしくはカタカナで入力してください.'
       }
     };
 
-    this.flagClass = 'GGV-flag';
-    this.errorClass = 'GGV-error';
-    this.errorMsgElemClass = 'GGV-validate-message';
+    this.flagClass = 'GGform-flag';
+    this.errorClass = 'GGform-error';
+    this.errorMsgElemClass = 'GGform-validate-message';
     this.dataName = 'data-validate-type';
 
     this.inputElement = 'input[type="text"], input[type="email"], input[type="password"], textarea';
@@ -43,9 +43,9 @@ class FormValidator {
     this.radioElement = 'input[type="radio"]';
     this.selectElement = 'select';
 
-    this.validateClass = 'GGV-validate';
+    this.validateClass = 'GGform-validate';
     this.validateElements = document.querySelectorAll(`.${this.validateClass}`);
-    this.submit = document.querySelector('.GGV-submit');
+    this.submit = document.querySelector('.GGform-submit');
 
     this.validateElements.forEach(element => {
       const addErrorElement = document.createElement('div');
