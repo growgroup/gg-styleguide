@@ -17,7 +17,6 @@
     "build:webpack": "webpack --config webpack.config.babel.js --mode production",
     "develop:webpack": "webpack --config webpack.config.babel.js --mode development  --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
-    "develop:pug": "pug -O build/pug.js app --out dist -w -s",
     "build:wp": "node build/wp.js",
     "build:autoprefixer": "postcss -o dist/assets/css/style.css dist/assets/css/style.css",
     "make-admin-style": "postcss -o dist/assets/css/admin-style.css dist/assets/css/style.css",
