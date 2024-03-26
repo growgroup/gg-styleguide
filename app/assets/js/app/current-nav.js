@@ -2,8 +2,8 @@ import url from "url";
 
 var defaultOptions = {
   targetSelector: '.js-current-nav', // 実行するセレクタ
+  childrenData: "data-parent-nav",
   activeClass: "is-current", // 付与するクラス
-  // include_children: true
 }
 
 export default class CurrentNav {
@@ -49,21 +49,24 @@ export default class CurrentNav {
   run() {
     this.reset();
     for (var i = this.target.length - 1; i >= 0; i--) {
-      var href = $(this.target[i]).attr('href');
-      var href = this.isHttp(href);
+      var $element = $(this.target[i]);
+      var href = $element.attr('href');
+      href = this.isHttp(href);
       href = this.isIndexPage(href);
-      if (this.isMatch(href)) {
+
+      //ここでelementを渡す
+      if (this.isMatch(href, $element)) {
         $(this.target[i]).addClass(this.activeClass);
       }
     }
   }
 
-  isMatch(path) {
+  // ここでelementを受け取る
+  isMatch(path, $element) {
     path = path.replace(/^(.*(?:\.\.?))/,'')
-    if (this.currentPathname === path) {
+    if (this.currentPathname === path || $element.attr(defaultOptions.childrenData) === "true" && this.currentPathname.includes(path)) {
       return true;
     }
-
     return false;
   }
 
