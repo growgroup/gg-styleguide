@@ -52,7 +52,7 @@ function pugMiddleWare(req, res, next) {
   var content = pug.renderFile(pugPath, pugConfig);
   res.setHeader('Content-Type', 'text/html');
   // コンパイル結果をレスポンスに渡す
-  res.end(new Buffer(content));
+  res.end(new Buffer.from(content));
   // next();
 }
 
@@ -79,26 +79,31 @@ var config = {
 /**
  * 監視タスク
  */
-bs.watch(["dist/*.html","dist/**/*.html"]).on("change", function (event) {
+
+bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
   bs.reload("*.html")
-  notifier.notify({
-    title: 'Grow Template',
-    message: 'Compiled the HTML'
-  });
 });
+
+// bs.watch(["dist/*.html","dist/**/*.html"]).on("change", function (event) {
+//   bs.reload("*.html")
+//   notifier.notify({
+//     title: 'Grow Template',
+//     message: 'Compiled the HTML'
+//   });
+// });
 bs.watch("dist/assets/**/*.css").on("change", function (event) {
   bs.reload("*.css")
-  notifier.notify({
-    title: 'Grow Template',
-    message: 'Compiled the CSS'
-  });
+  // notifier.notify({
+  //   title: 'Grow Template',
+  //   message: 'Compiled the CSS'
+  // });
 });
 bs.watch("dist/assets/**/*.js").on("change", function () {
   bs.reload("*.js")
-  notifier.notify({
-    title: 'GrowTemplate',
-    message: 'Compiled the JavaScript'
-  });
+  // notifier.notify({
+  //   title: 'GrowTemplate',
+  //   message: 'Compiled the JavaScript'
+  // });
 });
 
 bs.init(config)
