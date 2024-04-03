@@ -7,26 +7,35 @@ var pugconfig = {
   escapePre: true,
   basedir: "app/",
   locals: {
-    addComponentFile: async function (componentName) {
-      var componentPath = __dirname + '/../app/assets/scss/object/components/_' + componentName + '.scss';
+    addFile: async function (componentName, type) {
+      var typePrefix = type === 'component' ? 'c-' : 'l-';
+      var folderName = type === 'component' ? 'object/components' : 'layout';
+      var componentPath = __dirname + '/../app/assets/scss/' + folderName + '/_' + componentName + '.scss';
+      var indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
+
       try {
         fs.statSync(componentPath);
         return true;
       } catch (err) {
-        await fs.writeFileSync(componentPath, '.c-' + componentName + ' {\n\n}', {flag: "a"});
+        await fs.writeFileSync(componentPath, '.' + typePrefix + componentName + ' {\n\n}', {flag: "a"});
+
+        var indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
+        var newImportStmt = "@import '" + componentName + "';";
+
+        for (var i = 0; i < indexContent.length; i++) {
+          const importStmt = indexContent[i];
+          const importName = importStmt.replace(/@import '(.+)';/, '$1');
+          if (importName > componentName) {
+            indexContent.splice(i, 0, newImportStmt);
+            break;
+          }
+        }
+        fs.writeFileSync(indexFilePath, indexContent.join('\n'));
+
+
         return false;
       }
-    },
-    addLayoutFile: async function (componentName) {
-      var componentPath = __dirname + '/../app/assets/scss/layout/_' + componentName + '.scss';
-      try {
-        fs.statSync(componentPath);
-        return true;
-      } catch (err) {
-        await fs.writeFileSync(componentPath, '.l-' + componentName + ' {\n\n}', {flag: "a"});
-        return false;
-      }
-    },
+    }
   },
   filters: {
     // 改行をbrに置換

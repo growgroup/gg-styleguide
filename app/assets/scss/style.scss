@@ -31,8 +31,8 @@
 // サイトで複数回利用する可能性のある粒度の細かい要素をモジュールを定義しています。
 //
 // Styleguide 2.0.0
-@import "layout/*";
-@import "object/components/*";
+@import "layout/index";
+@import "object/components/index";
 
 // ブロック
 //
