@@ -52,30 +52,37 @@ class FormValidator {
       addErrorElement.className = this.errorMsgElemClass;
       element.appendChild(addErrorElement);
 
-      //バリデーション発火フラグ
-      let validActive = false;
-
       // 必須項目は先行してerrorのflagを付与
       if (element.classList.contains(this.validateRules.typeRequired.type)) {
         element.classList.add(this.flagClass);
       }
 
-      // typeに応じて処理を分岐
-      if (element.querySelector(this.inputElement)) {
-        this.validateTextareaElement(element);
-      }
-      if (element.querySelector(this.checkboxElement)) {
-        this.validateCheckboxElement(element);
-      }
-      if (element.querySelector(this.radioElement)) {
-        this.validateRadioElement(element);
-      }
-      if (element.querySelector(this.selectElement)) {
-        this.validateSelectElement(element);
-      }
-      if (element.querySelector(this.fileElement)) {
-        this.validateFileElement(element);
-      }
+      // 以下のイベントに応じてバリデーション発火
+      ['keyup', 'focusout', 'change'].forEach((eventListeners) => {
+
+        // typeに応じて処理を分岐
+        // text
+        if (element.querySelector(this.inputElement)) {
+          this.validateTextareaElement(element, eventListeners);
+        }
+        // checkbox
+        if (element.querySelector(this.checkboxElement)) {
+          this.validateCheckboxElement(element, eventListeners);
+        }
+        // radio
+        if (element.querySelector(this.radioElement)) {
+          this.validateRadioElement(element, eventListeners);
+        }
+        // select
+        if (element.querySelector(this.selectElement)) {
+          this.validateSelectElement(element, eventListeners);
+        }
+        // file
+        if (element.querySelector(this.fileElement)) {
+          this.validateFileElement(element, eventListeners);
+        }
+
+      });
     });
 
     //- 住所自動入力(ajaxzip3)対応
@@ -107,91 +114,90 @@ class FormValidator {
   }
 
   // 入力形
-  validateTextareaElement(parentElement) {
+  validateTextareaElement(parentElement, eventListeners) {
     //必要なバリデーションタイプを取得
     const hasValidTypes = parentElement.className.split(' ');
 
-    ['keyup', 'focusout'].forEach((event) => {
-      parentElement.querySelector(this.inputElement).addEventListener(event, (e) => {
-        let validActive = false;  // バリデーション発火フラグ
-        let checkValidateType;    // バリデーション対象物の確認
+    parentElement.querySelector(this.inputElement).addEventListener(eventListeners, (e) => {
+      let validActive = false;  // バリデーション発火フラグ
+      let checkValidateType;    // バリデーション対象物の確認
 
-        // 必須項目チェック（required）、文字入力・空白チェック
-        if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
+      // 必須項目チェック（required）、文字入力・空白チェック
+      if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
 
-          if(!e.target.value.trim() || e.target.value.trim() === "") {
-            checkValidateType = this.validateRules.typeRequired;
-            validActive = true;
-          }
+        if(!e.target.value.trim() || e.target.value.trim() === "") {
+          checkValidateType = this.validateRules.typeRequired;
+          validActive = true;
         }
+      }
 
-        //　ひらがなチェック
-        if(hasValidTypes.includes(this.validateRules.typeHiragana.type)) {
-          const hiraganaRegex =/^[ぁ-ゞー\s]+$/; // 正規表現：ひらがな
+      //　ひらがなチェック
+      if(hasValidTypes.includes(this.validateRules.typeHiragana.type)) {
+        const hiraganaRegex =/^[ぁ-ゞー\s]+$/; // 正規表現：ひらがな
 
-          if(e.target.value.trim() !== '' && !hiraganaRegex.test(e.target.value)) {
-            checkValidateType = this.validateRules.typeHiragana;
-            validActive = true;
-          }
+        if(e.target.value.trim() !== '' && !hiraganaRegex.test(e.target.value)) {
+          checkValidateType = this.validateRules.typeHiragana;
+          validActive = true;
         }
+      }
 
-        // カタカナチェック
-        if(hasValidTypes.includes(this.validateRules.typeKatakana.type)) {
-          const katakanaRegex = /^[\u30a1-\u30f6｡-ﾟ\s]+$/;; // 正規表現：全角半角カタカナ
+      // カタカナチェック
+      if(hasValidTypes.includes(this.validateRules.typeKatakana.type)) {
+        const katakanaRegex = /^[\u30a1-\u30f6｡-ﾟ\s]+$/;; // 正規表現：全角半角カタカナ
 
-          if (e.target.value.trim() !== '' && !katakanaRegex.test(e.target.value) ) {
-            checkValidateType = this.validateRules.typeKatakana;
-            validActive = true;
-          }
+        if (e.target.value.trim() !== '' && !katakanaRegex.test(e.target.value) ) {
+          checkValidateType = this.validateRules.typeKatakana;
+          validActive = true;
         }
+      }
 
-        //　ひらがなorカタカナチェック
-        if(hasValidTypes.includes(this.validateRules.typeKana.type)) {
-          const kanaRegex = /^[ぁ-ゖァ-ヶーｦ-ﾟ]+$/; // 正規表現：全角半角カタカナひらがな
+      //　ひらがなorカタカナチェック
+      if(hasValidTypes.includes(this.validateRules.typeKana.type)) {
+        const kanaRegex = /^[ぁ-ゖァ-ヶーｦ-ﾟ]+$/; // 正規表現：全角半角カタカナひらがな
 
-          if(e.target.value !== '' && !kanaRegex.test(e.target.value)) {
-            checkValidateType = this.validateRules.typeKana;
-            validActive = true;
-          }
+        if(e.target.value !== '' && !kanaRegex.test(e.target.value)) {
+          checkValidateType = this.validateRules.typeKana;
+          validActive = true;
         }
+      }
 
-        // 電話番号形式チェック
-        if(hasValidTypes.includes(this.validateRules.typeTelephone.type)) {
+      // 電話番号形式チェック
+      if(hasValidTypes.includes(this.validateRules.typeTelephone.type)) {
 
-          if(!/^[0-9+\-()]*$/.test(e.target.value)) {
-            checkValidateType = this.validateRules.typeTelephone;
-            validActive = true;
-          }
+        if(!/^[0-9+\-()]*$/.test(e.target.value)) {
+          checkValidateType = this.validateRules.typeTelephone;
+          validActive = true;
         }
+      }
 
-        // メール形式チェック
-        if(hasValidTypes.includes(this.validateRules.typeEmail.type)) {
+      // メール形式チェック
+      if(hasValidTypes.includes(this.validateRules.typeEmail.type)) {
 
-          if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
-            checkValidateType = this.validateRules.typeEmail;
-            validActive = true;
-          }
+        if (e.target.value.trim() && !/\S+@\S+\.\S+/.test(e.target.value.trim())) {
+          checkValidateType = this.validateRules.typeEmail;
+          validActive = true;
         }
+      }
 
-        // バリデーション発火確認
-        if(validActive) {
-          this.activeError(parentElement, checkValidateType);
-          return;
-        }
+      // バリデーション発火確認
+      if(validActive) {
+        this.activeError(parentElement, checkValidateType);
+        return;
+      }
 
-        // 問題なければバリデーション解除
-        this.validCancell(parentElement);
-      });
+      // 問題なければバリデーション解除
+      this.validCancell(parentElement);
     });
   }
 
   // checkbox
-  validateCheckboxElement(parentElement) {
+  validateCheckboxElement(parentElement, eventListeners) {
+
     //必要なバリデーションタイプを取得
     const hasValidTypes = parentElement.className.split(' ');
 
     parentElement.querySelectorAll(this.checkboxElement).forEach(checkbox => {
-      checkbox.addEventListener('change', (e) => {
+      checkbox.addEventListener(eventListeners, () => {
 
         let validActive = false;  // バリデーション発火フラグ
         let checkValidateType;    // バリデーション対象物の確認
@@ -226,29 +232,29 @@ class FormValidator {
   }
 
   // radio
-  validateRadioElement(parentElement) {
+  validateRadioElement(parentElement, eventListeners) {
+
     //必要なバリデーションタイプを取得
     const hasValidTypes = parentElement.className.split(' ');
 
     parentElement.querySelectorAll(this.radioElement).forEach(radioButton => {
-      radioButton.addEventListener('change', (e) => {
+      radioButton.addEventListener(eventListeners, () => {
 
         let validActive = false;  // バリデーション発火フラグ
         let checkValidateType;    // バリデーション対象物の確認
 
         // 必須項目チェック（required）
         if(hasValidTypes.includes(this.validateRules.typeRequired.type)) {
-          let isChecked = false;
 
           // 選択チェック
-          let checked = false;
+          let isChecked = false;
           parentElement.querySelectorAll(this.radioElement).forEach(radioButton => {
             if (radioButton.checked) {
-              checked = true;
+              isChecked = true;
             }
           });
 
-          if (!checked) {
+          if (!isChecked) {
             checkValidateType = this.validateRules.typeRequired;
             validActive = true;
           }
@@ -263,16 +269,16 @@ class FormValidator {
         // 問題なければバリデーション解除
         this.validCancell(parentElement);
       });
-
     });
   }
 
   // select
-  validateSelectElement(parentElement) {
+  validateSelectElement(parentElement, eventListeners) {
+
     //必要なバリデーションタイプを取得
     const hasValidTypes = parentElement.className.split(' ');
 
-    parentElement.querySelector(this.selectElement).addEventListener('change', (e) => {
+    parentElement.querySelector(this.selectElement).addEventListener(eventListeners, (e) => {
       let validActive = false;  // バリデーション発火フラグ
       let checkValidateType;    // バリデーション対象物の確認
 
@@ -299,11 +305,12 @@ class FormValidator {
   }
 
   // file
-  validateFileElement(parentElement) {
+  validateFileElement(parentElement, eventListeners) {
+
     //必要なバリデーションタイプを取得
     const hasValidTypes = parentElement.className.split(' ');
 
-    parentElement.querySelector(this.fileElement).addEventListener('change', (e) => {
+    parentElement.querySelector(this.fileElement).addEventListener(eventListeners, (e) => {
       let validActive = false;  // バリデーション発火フラグ
       let checkValidateType;    // バリデーション対象物の確認
 
