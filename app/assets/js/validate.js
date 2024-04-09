@@ -111,7 +111,6 @@ class FormValidator {
   }
 
   checkInitialRequired(element) {
-    let validateFlag = false;
 
     // input
     if (element.querySelector(this.inputElement)) {
@@ -119,7 +118,6 @@ class FormValidator {
       // 未入力チェック
       const elemValue = element.querySelector(this.inputElement).value;
       if(elemValue === '') {
-        validateFlag = true;
         element.dataset.validateType = this.dataError;
       }
     }
@@ -136,7 +134,6 @@ class FormValidator {
       });
 
       if(!isChecked) {
-        validateFlag = true;
         element.dataset.validateType = this.dataError;
       }
     }
@@ -152,7 +149,6 @@ class FormValidator {
         }
       });
       if(!isChecked) {
-        validateFlag = true;
         element.dataset.validateType = this.dataError;
       }
     }
@@ -164,7 +160,6 @@ class FormValidator {
 
       // 未選択またはdisabledか確認
       if(elemValue === '' || elem.options[elem.selectedIndex].disabled) {
-        validateFlag = true;
         element.dataset.validateType = this.dataError;
       }
     }
@@ -172,12 +167,15 @@ class FormValidator {
     // file
     if (element.querySelector(this.fileElement)) {
 
-      // 未入力チェック
-      const elemValue = element.querySelector(this.fileElement).value
-      if(elemValue === '') {
-        validateFlag = true;
+      // 未入力チェック（MW WP Form利用を想定してinput[type="hidden"]も許容）
+      const elemValue = element.querySelectorAll(this.fileElement+', .mw-wp-form_file input[type="hidden"]');
+      const flag = Array.from(elemValue).some(elem => elem.value.trim() !== '');
+
+      if(!flag){
         element.dataset.validateType = this.dataError;
+        return;
       }
+      this.validCancell(element);
     }
   }
 
