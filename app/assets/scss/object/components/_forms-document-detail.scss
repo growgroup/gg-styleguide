@@ -13,37 +13,28 @@
   }
 
   &__image {
+    display: block;
     overflow: hidden;
     position: relative;
-    padding-top: calc(141/251*100%);
     background: $color-background;
+    aspect-ratio: 282/158;
+    padding: rem-calc(16);
 
     &.swiper-slide {
       cursor: pointer;
     }
 
-    .bg-img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin:auto;
-      width: 100%;
-      height: 100%;
-      max-height: calc(100% - 30px);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
+    img {
+      @include img-option(contain);
       @include transition();
     }
 
     .is-no {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      @include font-format(17,0.05,25,400);
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-content: center;
+      font-size: rem-calc(17);
       color: rgba($font-base-color,0.5);
 
       @include breakpoint(small only) {
