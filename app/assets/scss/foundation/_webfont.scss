@@ -6,6 +6,7 @@
 @mixin icon-font() {
   font-family: $font-icon-family;
   @include icon-font-style();
+  @include icon-font-size-control();
 }
 
 //@mixin material-icon-default() {

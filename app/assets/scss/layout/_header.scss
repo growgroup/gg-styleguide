@@ -22,6 +22,10 @@ category: Layout
     position: fixed;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
   &__content {
     max-width: rem-calc(2560);
@@ -30,7 +34,7 @@ category: Layout
     align-items: center;
     padding: rem-calc(16) rem-calc(32) rem-calc(24);
     height: rem-calc(80);
-    
+
     @include breakpoint(medium down) {
       padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
       height: rem-calc(55);
@@ -52,67 +56,72 @@ category: Layout
   }
 
   &__nav {
+    width: 100%;
     margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem-calc(24);
+  }
+
+
+  // メインメニュー
+  &__mainmenu {
+    display: flex;
+    align-items: center;
+    gap: rem-calc(32);
+
     @include breakpoint(medium down) {
       display: none;
     }
 
-    ul {
-      display: flex;
-      align-items: center;
-      width: 100%;
+    li {
+      &:hover {
+        .l-header__submenu {
+          visibility: visible;
+          opacity: 1;
+          transition: all .3s;
+        }
+      }
 
-      li {
+      a {
+        font-size: rem-calc(14);
+        position: relative;
+        padding-bottom: rem-calc(36);
 
-        &:not(:last-of-type) {
-          margin-right: 32px;
+        //装飾
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: rem-calc(2);
+          background-color: $color-primary;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          opacity: 0;
+          transform: scaleX(0);
+          transition: transform .3s ease, opacity .3s ease;
         }
 
+        //*hover
         &:hover {
-          .l-header__submenu {
-            visibility: visible;
-            opacity: 1;
-            transition: all .3s;
-          }
-        }
+          opacity: 1;
+          color: $color-primary;
 
-        a {
-          text-decoration: none;
-          color: $font-base-color;
-          font-size: rem-calc(14);
-          position: relative;
-          padding-bottom: rem-calc(36);
-          transition: all .3s ease;
-          //装飾
           &::after {
-            content: "";
-            display: block;
-            width: 0;
-            height: rem-calc(2);
-            background-color: $color-primary;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: all .3s ease;
-          }
-
-          //*hover
-          &:hover {
+            transform: scaleX(1);
             opacity: 1;
-            color: $color-primary;
-
-            &::after {
-              width: 100%;
-              opacity: 1;
-            }
           }
         }
       }
     }
   }
 
+
+  // サブメニュー
   &__submenu {
     position: absolute;
     bottom: 0;
@@ -120,7 +129,7 @@ category: Layout
     transform: translateY(100%);
     width: 100%;
     z-index: 9999;
-    background-color: rgba(#F4F7F9,0.95);
+    background-color: rgba(#F4F7F9, 0.95);
     padding-top: rem-calc(64);
     padding-bottom: rem-calc(40);
     visibility: hidden;
@@ -130,69 +139,83 @@ category: Layout
       padding-left: rem-calc(24);
       padding-right: rem-calc(24);
     }
-    &__outer {
-      display: flex;
-      width: 100%;
-      max-width: rem-calc(1140);
-      margin: 0 auto;
+  }
+
+
+  &__submenu-outer {
+    display: flex;
+    width: 100%;
+    max-width: rem-calc(1140);
+    margin: 0 auto;
+  }
+
+  &__submenu-title {
+    width: rem-calc(390);
+    padding-top: rem-calc(8);
+
+    span {
+      @include webfont();
+      font-size: rem-calc(56);
+      letter-spacing: 0.05em;
+      display: block;
     }
-    &__title {
-      width: rem-calc(390);
-      padding-top: rem-calc(8);
-      span {
-        @include webfont();
-        font-size: rem-calc(56);
-        letter-spacing: 0.05em;
-        display: block;
-      }
-      small {
-        font-weight: 700;
-        font-size: rem-calc(18);
-        letter-spacing: 0.05em;
-        display: block;
-      }
-    }
-    &__content {
-      width: calc(100% - 390px);
-    }
-    &__block {
-      width: math.div(230, 750)*100%;
-      padding-bottom: 0 !important;
-      margin-right: math.div(30, 750)*100%;
-      margin-bottom: rem-calc(24);
-      opacity: 1!important;
-      &::after {
-        display: none!important;
-      }
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-      span {
-        font-size: rem-calc(15);
-        font-weight: 700;
-        margin-top: rem-calc(10);
-        display: block;
-      }
-      &:hover {
-        color: $color-primary;
-      }
-    }
-    &__flex {
-      display: flex;
-      flex-wrap: wrap;
+
+    small {
+      font-weight: 700;
+      font-size: rem-calc(18);
+      letter-spacing: 0.05em;
+      display: block;
     }
   }
 
+  &__submenu-content {
+    width: calc(100% - 390px);
+  }
+
+  &__submenu-menus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem-calc(32);
+  }
+
+  &__submenu-block {
+    padding-bottom: 0;
+    opacity: 1;
+
+    &::after {
+      display: none;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    span {
+      font-size: rem-calc(15);
+      font-weight: 700;
+      margin-top: rem-calc(10);
+      display: block;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+
+  //その他
   &__button {
-    //*矢印削除
-    max-width: rem-calc(196) !important;
-    margin-left: rem-calc(24);
     @include breakpoint(medium down) {
       display: none;
     }
 
-    &::after {
-      display: none;
+    &.c-button.is-sm {
+      color: $color-white;
+      max-width: rem-calc(196);
+
+      &::after {
+        display: none;
+      }
     }
 
     //*アイコン
@@ -204,59 +227,44 @@ category: Layout
   }
 
 
-  &__other {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-
-    @include breakpoint(medium down) {
-      display: none;
-    }
-  }
-
-  &__text {
-    @include font-format(12,0,18,400);
-  }
-
-  &__tel {
-    margin-left: rem-calc(38);
-    @include webfont();
-    @include font-format(24,0,28,700);
-
-    i {
-      font-size: rem-calc(22);
-      margin-right: rem-calc(8);
-    }
-  }
-
-
+  //検索
   &__search {
-    //border: 1px solid $border-base-color;
-    //color: $font-base-color;
     position: relative;
     display: block;
-    margin-left: 1.7857142857rem;
-    max-width: 11.4285714286rem;
     width: 100%;
+    max-width: rem-calc(180);
+
     border: 1px solid $font-base-color;
     color: $font-base-color;
     background: none;
     border-radius: 16px;
-    font-size: 0.7142857143rem;
-    letter-spacing: 0.1em;
+    font-size: rem-calc(11);
     line-height: 1.5;
     font-weight: 400;
-    padding: 0.5rem 1.2857142857rem 0.5rem 2.7142857143rem;
+    padding: rem-calc(8) rem-calc(20) rem-calc(8) rem-calc(42);
     transition: all 0.2s ease-out;
 
-    &:before {
+
+    @include breakpoint(medium down) {
+      padding: 0;
+      width: rem-calc(44);
+      height: rem-calc(44);
+      border: 0;
+
+      span {
+        display: none;
+      }
+      &::before {
+        inset: 0;
+      }
+    }
+
+    &::before {
       position: absolute;
+      top: 0;
+      bottom: 0;
       left: rem-calc(18);
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
+      margin: auto;
       @include icon-font();
       content: "search";
       font-size: rem-calc(18);
@@ -266,20 +274,10 @@ category: Layout
       background: $color-primary;
       color: $color-white;
       border-color: $color-primary;
-
-      &:before {
-      }
     }
   }
 
-  &__search-icon {
-    background: none;
-    border: none;
-    border-radius: 0;
-    line-height: 1;
-    font-size: rem-calc(20);
-    margin-left: auto;
-  }
+
 }
 
 .l-header.is-simple {

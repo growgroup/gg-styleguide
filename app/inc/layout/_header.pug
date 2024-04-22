@@ -17,28 +17,27 @@ header(class=className)
     else
       .l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル")
     nav.l-header__nav
-      ul
-        li: +a("/page/") 1COLUMN
-        li: +a("/twocolumns/") 2COLUMN
-        li: +a("/news/") NEWS
-        li: +a("/archive-twocolumns/") ARCHIVE2
-        li
+      ul.l-header__mainmenu
+        li.l-header__mainmenu-item: +a("/page/") 1COLUMN
+        li.l-header__mainmenu-item: +a("/twocolumns/") 2COLUMN
+        li.l-header__mainmenu-item: +a("/news/") NEWS
+        li.l-header__mainmenu-item: +a("/archive-twocolumns/") ARCHIVE2
+        li.l-header__mainmenu-item
           +a("/format/") FORMAT
           .l-header__submenu
-            .l-header__submenu__outer
-              .l-header__submenu__title
+            .l-header__submenu-outer
+              .l-header__submenu-title
                 span FORMAT
                 small フォーマット
-              .l-header__submenu__content
-                .l-header__submenu__flex
-                  +a("/format/").l-header__submenu__block
-                    .l-header__submenu__image: +img("img-sample-sm.jpg", "フォーマット")
+              .l-header__submenu-content
+                .l-header__submenu-menus
+                  +a("/format/").l-header__submenu-block
+                    .l-header__submenu-image: +img("img-sample.webp", "フォーマット")
                     span フォーマット
-                  +a("/blocks/").l-header__submenu__block
-                    .l-header__submenu__image: +img("img-sample-sm.jpg", "ブロック編集ページ")
+                  +a("/blocks/").l-header__submenu-block
+                    .l-header__submenu-image: +img("img-sample.webp", "ブロック編集ページ")
                     span ブロック編集ページ
-    button.l-header__search.js-header-searchform-open.u-hidden-md キーワードから検索
-    button.l-header__search-icon.js-header-searchform-open.u-visible-md <span class="c-icon-font">search</span>
-    +a("/contact/").l-header__button.c-button.is-sm <span class="c-icon-font">mail</span>お問い合わせ
+      button.l-header__search.js-header-searchform-open(aria-label="キーワードから検索") <span>キーワードから検索</span>
+      +a("/contact/").l-header__button.c-button.is-sm <span class="c-icon-font">mail</span>お問い合わせ
 
 +l_searchform

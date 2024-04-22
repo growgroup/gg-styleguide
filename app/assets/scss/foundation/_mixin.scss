@@ -511,8 +511,11 @@
   line-height: 1;
   letter-spacing: 0;
   text-transform: none;
+  overflow: hidden;
+}
+
+@mixin icon-font-size-control{
   display: inline-block;
   width: 1em;
   height: 1em;
-  overflow: hidden;
 }

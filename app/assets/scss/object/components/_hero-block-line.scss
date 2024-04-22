@@ -14,7 +14,7 @@
     @include breakpoint(small only) {
       margin-bottom: rem-calc(32);
       min-height: inherit;
-      padding-top: 0 !important;
+      padding-top: 0;
     }
     // 偶数番目
     &:nth-child(even),
@@ -58,7 +58,7 @@
     overflow: hidden;
     width: math.div(588, 1140)*100%;
     z-index: 2;
-    opacity: 1 !important;
+    opacity: 1;
     @include breakpoint(small only) {
       position: relative;
       width: 100%;
@@ -118,8 +118,8 @@
       min-height: inherit;
       margin-top: rem-calc(-40px);
       z-index: 99;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      margin-left: auto;
+      margin-right: auto;
       padding: rem-calc(20) rem-calc(24) rem-calc(16);
     }
   }

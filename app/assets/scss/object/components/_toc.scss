@@ -8,9 +8,9 @@ category: PostContent
 
 #toc_container {
   margin: rem-calc(32) 0;
-  width: 100% !important;
+  width: 100%;
   background: $color-secondary;
-  border-radius: 0px;
+  border-radius: 0;
   padding: rem-calc(16) rem-calc(40) rem-calc(40);
   @include breakpoint(small only) {
     margin: rem-calc(16) 0;
@@ -18,7 +18,7 @@ category: PostContent
   }
 
   .toc_title {
-    text-align: center !important;
+    text-align: center;
     font-size: 1.125rem;
     color: $color-primary;
     font-weight: 700;

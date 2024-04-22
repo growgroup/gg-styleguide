@@ -15,13 +15,6 @@ category: Components
       margin-bottom: rem-calc(24);
 
     }
-    //*最後は矢印なし
-    &:last-child {
-      margin-bottom: 0;
-      &::after {
-        display: none !important;
-      }
-    }
   }
   &.is-number-left {
     .c-box__block {
