@@ -77,8 +77,7 @@
     "scroll-hint": "^1.2.5",
     "simple-parallax-js": "^5.6.2",
     "slick-carousel": "^1.8.1",
-    "swiper": "^8.4.7",
-    "url": "^0.11.0"
+    "swiper": "^8.4.7"
   },
   "skipInheritances": [
     "node_modules"

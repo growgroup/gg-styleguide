@@ -1,5 +1,3 @@
-import url from "url";
-
 var defaultOptions = {
   targetSelector: '.js-current-nav', // 実行するセレクタ
   childrenData: "data-parent-nav",
@@ -71,9 +69,9 @@ export default class CurrentNav {
   }
 
   isHttp(targetHref) {
-    var match = targetHref.match(/^http/g);
-    if (!$.isEmptyObject(match) && match[0] === "http") {
-      return url.parse(targetHref).pathname;
+    var match = targetHref.match(/^https?:\/\/[^\/]+(.*)/);
+    if (match) {
+      return match[1]; // フルURLからpathname部分を返す
     }
     return targetHref;
   }
