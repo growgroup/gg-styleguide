@@ -7,7 +7,7 @@
  * ====================================================================
  *
  * # example:
- * <div class="c-panel js-accordion" accordion-responsive="950">
+ * <div class="c-panel js-accordion" data-accordion-responsive="950">
  *     <div class="c-panel__title" data-accordion-title>
  *         Title
  *     </div>
@@ -17,6 +17,10 @@
  * </div>
  *
  */
+
+import Utils from "./utils";
+
+const utils = new Utils();
 
 
 var defaultOptions = {
@@ -59,31 +63,54 @@ export default class Accordion {
    * 実行する
    */
   run() {
-    let win = $(window).innerWidth();
-
     for (var i = 0; i < this.targetAll.length; i++) {
-      var target = $(this.targetAll[i]);
+      let target = $(this.targetAll[i]);
 
       target.responsive = target.data("accordion-responsive");
-      if (win >= target.responsive) {
-        return false;
-      }
-
-      target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
-      target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
-      this.accordion(target);
-      if (this.options.defaultOpen) {
-        target.content.slideDown();
+      // レスポンシブの設定がある場合
+      if (target.responsive !== undefined) {
+        // Media Query にマッチするか確認
+        utils.responsiveMatch(
+          () => {
+            this.elementInit(target);
+          },
+          () => {
+            this.elementDestroy(target);
+          },
+          "max-width: " + target.responsive + "px"
+        );
+      } else {
+        // レスポンシブの設定がない場合、 そのまま実行
+        this.elementInit(target);
       }
     }
   }
+
+  // ターゲットの初期化
+  elementInit(target) {
+    target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
+    target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
+    this.accordion(target);
+    if (this.options.defaultOpen) {
+      target.content.slideDown();
+    }
+  }
+
+  // ターゲットの破棄
+  elementDestroy(target) {
+    if (target.title === undefined) {
+      return false;
+    }
+    target.title.off('click');
+    target.title.off('mouseover');
+  }
+
 
   /**
    * アコーディオンの動作
    * @param el
    */
   accordion(el) {
-
 
     $(el.title).on('click', (e) => {
       e.preventDefault();

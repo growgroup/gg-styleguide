@@ -212,6 +212,32 @@ export default class Utils {
         }
         return requestAnimFrame;
     }
+
+  /**
+   * matchMediaを使ったレスポンシブ対応を便利にする
+   *
+   * @param {Function} onMatch - The function to execute when the media query matches.
+   * @param {Function} onUnMatch - The function to execute when the media query does not match.
+   * @param {string} [media='max-width: 46.8125em'] - The media query to evaluate.
+   */
+  responsiveMatch = (onMatch, onUnMatch, media = 'max-width: 46.8125em') => {
+    //第3引数に入れたメディアクエリもしくは750pxのところでMediaQueryList作成
+    const mql = window.matchMedia('(' + media + ')');
+
+    //MediaQueryListにマッチした時の動作、しなかった時の動作を引数から受け取る
+    function mediaChange(e) {
+      if (e.matches) {
+        onMatch();
+      } else {
+        onUnMatch();
+      }
+    }
+
+    //MediaQueryListのChangeイベント時に発火させる
+    mql.addEventListener("change", mediaChange);
+    //ページ読み込み時にも発火させる
+    mediaChange(mql);
+  }
 }
 
 
