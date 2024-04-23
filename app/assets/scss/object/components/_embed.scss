@@ -1,21 +1,6 @@
 .c-embed {
-  a {
-    display: block;
-    color: inherit;
-
-    &:hover {
-      opacity: 0.7 !important;
-
-      .c-embed__image-bg {
-        opacity: 0.7;
-      }
-    }
-  }
-
   font-size: $font-base-size;
   font-family: $font-base-family;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   color: $font-base-color;
   margin: 0;
   line-height: $font-base-line-height;
@@ -25,9 +10,22 @@
   padding: rem-calc(40) rem-calc(40) rem-calc(40) rem-calc(40);
   border: none;
   box-shadow: none;
+
   @include breakpoint(small only) {
     padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(16);
+  }
 
+  a {
+    display: block;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.7;
+
+      .c-embed__image-bg {
+        opacity: 0.7;
+      }
+    }
   }
 
   &.is-title-only {
@@ -40,7 +38,7 @@
     }
 
     .c-embed__inner {
-      display: none !important;
+      display: none;
     }
 
   }
@@ -108,7 +106,7 @@
       text-decoration: none;
       //color: inherit;
       &:hover {
-        opacity: 0.7 !important;
+        opacity: 0.7;
       }
     }
   }

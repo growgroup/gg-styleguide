@@ -117,10 +117,3 @@ $asideContainer: 320;
 $asideMargin: 70;
 $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 
-// # Margins
-$margin-base: 8px !default;
-//$margin-xlg: $margin-base*12.5 !default;
-$margin-lg: $margin-base*8 !default;
-$margin-md: $margin-base*4 !default;
-$margin-sm: $margin-base*2 !default;
-$margin-xs: $margin-base !default;

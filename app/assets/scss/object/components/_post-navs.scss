@@ -15,42 +15,42 @@ category: Navigation
     align-items: center;
     justify-content: space-between;
     position: relative;
+  }
 
-    li {
-      width: rem-calc(155);
-      max-width: 33%;
-      @include breakpoint(small only) {
-        width: calc(33% - 8px);
-      }
-
-      a {
-        @include breakpoint(small only) {
-          font-size: rem-calc(12) !important;
-          letter-spacing: 0 !important;
-        }
-      }
+  li {
+    width: rem-calc(155);
+    max-width: 33%;
+    @include breakpoint(small only) {
+      width: calc(33% - 8px);
     }
   }
 
-  &__prev {
+  .c-button {
+    @include breakpoint(small only) {
+      font-size: rem-calc(12);
+      letter-spacing: 0;
+    }
+  }
+
+  & &__prev {
     margin-right: auto;
 
     a {
       @include breakpoint(small only) {
-        padding-left: rem-calc(20) !important;
-        padding-right: rem-calc(8) !important;
+        padding-left: rem-calc(20);
+        padding-right: rem-calc(8);
       }
     }
   }
 
-  &__archive {
+  & &__archive {
     a {
       align-items: center;
       margin: auto;
 
       @include breakpoint(small only) {
-        padding-left: rem-calc(8) !important;
-        padding-right: rem-calc(8) !important;
+        padding-left: rem-calc(8);
+        padding-right: rem-calc(8);
       }
 
       &::after {
@@ -68,14 +68,14 @@ category: Navigation
     }
   }
 
-  &__next {
+  & &__next {
     margin-left: auto;
 
     a {
       margin-left: auto;
       @include breakpoint(small only) {
-        padding-right: rem-calc(20) !important;
-        padding-left: rem-calc(8) !important;
+        padding-right: rem-calc(20);
+        padding-left: rem-calc(8);
       }
     }
   }

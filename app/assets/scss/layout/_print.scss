@@ -4,10 +4,9 @@
 
 @media print {
   @page {
-    margin: 8mm;
-    margin: 10mm 8mm 10mm 8mm;
+    //margin: 10mm 8mm 10mm 8mm;
     margin: 4mm !important;
-    size: landscape; //横向き
+    //size: landscape; //横向き
     size: portrait; //縦向き
   }
 

@@ -18,7 +18,7 @@ category: SpecialComponents
     @include breakpoint(small only) {
       margin-bottom: rem-calc(48);
       min-height: inherit;
-      padding-top: 0 !important;
+      padding-top: 0;
     }
     // 偶数番目
     &:nth-child(even),

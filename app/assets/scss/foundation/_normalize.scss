@@ -413,13 +413,13 @@ dl, dd {
  * Remove most spacing between ul, li.
  */
 
-ul {
+ul,ol {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 li {
-  list-style: none;
   margin: 0;
 }
 
