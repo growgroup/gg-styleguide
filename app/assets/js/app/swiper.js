@@ -48,7 +48,7 @@ export default class SwiperSlider {
     //->スライダー
     this.targetAll.imagesLoaded(function () {
 
-      if ($('.c-main-visual.swiper').length <= 0) {
+      if ($('.c-main-visual .swiper').length <= 0) {
         return;
       }
 
@@ -56,7 +56,7 @@ export default class SwiperSlider {
       let pagination = document.querySelector('.c-main-visual__pagination');
       let delayTime = 3500;
 
-      const mainVisualSwiper = new Swiper(".c-main-visual.swiper", {
+      const mainVisualSwiper = new Swiper(".c-main-visual .swiper", {
         loop: true,
         effect: 'fade',
         autoplay: {

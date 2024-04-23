@@ -150,19 +150,6 @@
     &-image {
       position: relative;
     }
-
-    &-bgimg {
-      width: 100%;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: math.div(500,748) * 100%;
-      }
-    }
   }
 
   //nav画像
@@ -202,22 +189,13 @@
       &:hover {
         opacity: 1;
       }
-    }
 
-    &-bgimg {
-      width: 100%;
-      @include bg-option();
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: math.div(92,138)*100%;
-
-        @include breakpoint(small only) {
-          padding-top: math.div(80,138)*100%;
-        }
+      img {
+        @include img-option();
+        aspect-ratio: 138/92;
       }
     }
+
 
     .slick-slide {
       margin: 0 6px;

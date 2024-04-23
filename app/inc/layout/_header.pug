@@ -13,9 +13,9 @@
 header(class=className)
   .l-header__content
     if current.id == 'home'
-      h1.l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル")
+      h1.l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル",175,40)
     else
-      .l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル")
+      .l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル",175,40)
     nav.l-header__nav
       ul.l-header__mainmenu
         li.l-header__mainmenu-item: +a("/page/") 1COLUMN
