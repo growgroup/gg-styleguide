@@ -14,9 +14,6 @@ category: Layout
   top: 0;
   left: 0;
 
-  @media print {
-    position: relative;
-  }
 
   &.is-fixed {
     position: fixed;

@@ -5,35 +5,5 @@ category: Base
 ---
 */
 .c-blockquote {
-  background-color: $color-white;
-  border-top: 1px solid $border-base-color;
-  border-right: 1px solid $border-base-color;
-  border-bottom: 1px solid $border-base-color;
-  border-left: 3px solid $color-primary;
-  position: relative;
-  padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
-  font-size: $font-base-size;
-  margin: rem-calc(16) 0;
-  @include breakpoint(small only) {
-    padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
-  }
-  &::before {
-    content: "format_quote";
-    @include icon-font();
-    font-size: rem-calc(20);
-    color: $color-primary;
-    position: absolute;
-    left: rem-calc(12);
-    top: rem-calc(8);
-    @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.8;
-      top: rem-calc(2);
-      left: rem-calc(8);
-    }
-  }
-
-  cite {
-    display: block;
-    margin-top: rem-calc(16);
-  }
+  @include c-blockquote;
 }

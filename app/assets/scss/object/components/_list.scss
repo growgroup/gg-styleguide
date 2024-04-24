@@ -1,12 +1,5 @@
 .c-list {
-  list-style: none;
-  li {
-    list-style: inherit;
-
-    &:not(:first-child) {
-      margin-top: rem-calc(6);
-    }
-  }
+  @include c-list();
 }
 
 
@@ -18,36 +11,23 @@ category: Base
 
 */
 
-.c-list.is-disc {
-  padding-left: 1em;
-  li {
-    text-indent: -1em;
-
-    &::before {
-      content: "・";
-      color: $font-base-color;
-    }
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 1em;
-    li {
-      text-indent: -1em;
-      list-style: none;
-
-      &::before {
-        content: "・";
-        color: $font-base-color;
-      }
-    }
-  }
-
-  // is-outline の中に入れた場合にmaker削除
-  >li{
-    list-style: none!important;
-  }
-}
+//.c-list.is-disc {
+//  li {
+//    padding-left: rem-calc(16);
+//
+//    &::before {
+//      width: rem-calc(16);
+//      height: calc(1em * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
+//      content: "・";
+//      color: $font-base-color;
+//    }
+//  }
+//
+//  ul {
+//
+//  }
+//
+//}
 
 /*
 ---
@@ -57,46 +37,7 @@ category: Base
 
 */
 .c-list.is-icon {
-  padding-left: rem-calc(20);
-
-  @include breakpoint(small only) {
-    padding-left: rem-calc(18);
-  }
-  li {
-    position: relative;
-
-    &::before {
-      content: "circle";
-      @include icon-font();
-      font-size: rem-calc(10);
-      color: $color-primary;
-      position: absolute;
-      top: rem-calc(6);
-      left: -1.5em;
-
-      @include breakpoint(small only) {
-        top: rem-calc(3);
-      }
-    }
-
-    ul {
-      list-style: none;
-      padding-left: rem-calc(18);
-
-      li {
-
-        &::before {
-          content: "・";
-          color: $font-base-color;
-        }
-      }
-    }
-  }
-
-  // is-outline の中に入れた場合にmaker削除
-  >li{
-    list-style: none!important;
-  }
+  @include c-list-ul() //l-post-contentと共有するスタイル設定
 }
 
 /*
@@ -107,20 +48,5 @@ category: Base
 
 */
 .c-list.is-outline {
-  padding-left: 1.5em;
-  list-style: decimal outside;
-  li {
-    position: relative;
-  }
-
-
-  // is-disc等の中に入れた場合にbefore削除用
-  >li::before{
-    content: none;
-  }
-  // 中に is-disc等入れた場合の調整用
-  ul{
-    padding-left: 0;
-    margin-left: 1em;
-  }
+  @include c-list-ol() //l-post-contentと共有するスタイル設定
 }

@@ -1,0 +1,70 @@
+/*!
+* 管理画面 TinyMce/ヴィジュアルエディタ画面調整用css
+*/
+@import "foundation/_webfont";
+@import "foundation/_settings";
+@import "foundation/_mixin";
+@import "foundation/_mixin-post-content";
+
+#tinymce {
+  //min-width: $grid-row-width !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: rem-calc(12);
+  padding-bottom: rem-calc(12);
+  font-family: $font-base-family !important;
+  overflow: scroll;
+  margin-top: 0 !important;
+  @include breakpoint(small only) {
+    min-width: inherit !important;
+    width: 100%;
+  }
+
+
+  &.post-type-post, //投稿画面
+    //&.post-type-hoge, //他投稿タイプ
+  &.mce-content-body.acf_content //ACF tinyMce
+  {
+    //max-width: rem-calc(736);
+    @include l-post-content;
+  }
+
+  //コンテンツ幅調整
+  &.post-type-post {
+    //max-width: rem-calc(736);
+  }
+
+  //アコーディオン 開放
+  .js-accordion {
+    .c-accordion,
+    .c-faq__text {
+      display: block !important;
+    }
+  }
+}
+
+//
+// ブロックエディタ画面調整用css
+//
+
+#growp-editor-wrapper {
+  font-family: $font-base-family !important;
+
+  &.post-type-post, //投稿画面
+    //&.post-type-hoge //他投稿タイプ
+  {
+    //max-width: rem-calc(736);
+    @include l-post-content;
+  }
+
+  //コンテンツ幅調整
+  &.post-type-post {
+    //max-width: rem-calc(736);
+  }
+
+  ////固定ページ
+  //&.post-type-page {
+  //  //max-width: rem-calc(1080);
+  //}
+
+}
