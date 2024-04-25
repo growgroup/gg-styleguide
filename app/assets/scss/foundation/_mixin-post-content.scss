@@ -10,7 +10,7 @@
   display: flow-root;
   word-break: break-all;
 
-  > * + * {
+  > * + * { //投稿内の各ブロックの間に1emのマージンを設定
     margin-top: 1em;
   }
 
@@ -105,8 +105,6 @@
 
   table {
     @include c-table;
-    margin-top: 1em;
-    margin-bottom: 2em;
     width: 100%;
   }
 
