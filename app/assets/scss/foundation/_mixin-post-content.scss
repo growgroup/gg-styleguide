@@ -178,9 +178,10 @@
 }
 
 
-// c-list ※l-post-contentと共有するスタイルはここに
+// c-list
 @mixin c-list {
   list-style: none;
+  line-height: $font-base-line-height;
 
   li + li {
     margin-top: rem-calc(6);
@@ -198,7 +199,7 @@
   }
 }
 
-// c-list-ul ※l-post-contentと共有するスタイルはここに
+// c-list-ul （.c-list.is-icon）
 @mixin c-list-ul {
   > li { //l-post-content 用に > が必要
     padding-left: rem-calc(16);
@@ -207,10 +208,14 @@
       font-family: $font-icon-family;
       @include icon-font-style();
       content: "circle";
-      width: rem-calc(16);
-      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
       font-size: rem-calc(10);
       color: $color-primary;
+      width: rem-calc(16);
+      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+
+      @include breakpoint(small only) {
+        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      }
     }
   }
 
@@ -222,15 +227,19 @@
       font-family: $font-icon-family;
       @include icon-font-style();
       content: "・";
-      width: rem-calc(16);
-      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
-      font-size: rem-calc(10);
       color: $color-primary;
+      font-size: rem-calc(10);
+      width: rem-calc(16);
+      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+
+      @include breakpoint(small only) {
+        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      }
     }
   }
 }
 
-// c-list-ol ※l-post-contentと共有するスタイルはここに
+// c-list-ol （.c-list.is-outline）
 @mixin c-list-ol { //l-post-content 用に > が必要
   counter-reset: list-counter;
 
@@ -242,7 +251,7 @@
       content: counter(list-counter) ".";
       counter-increment: list-counter;
       width: rem-calc(16);
-      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
+      height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
     }
   }
 
@@ -258,7 +267,7 @@
         content: counter(list-counter) ".";
         counter-increment: list-counter;
         width: rem-calc(16);
-        height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
+        height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
       }
     }
   }
