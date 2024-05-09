@@ -28,6 +28,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: var(--letter-spacing); //全要素へ基準のletter-spacingを当てる
+  min-width: 0; //flexboxのoverflow対策(from destyle.css)
 }
 
 /**
