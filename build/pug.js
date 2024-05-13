@@ -10,7 +10,7 @@ var pugconfig = {
     addFile: async function (componentName, type) {
       var typePrefix = type === 'component' ? 'c-' : 'l-';
       var folderName = type === 'component' ? 'object/components' : 'layout';
-      var componentPath = __dirname + '/../app/assets/scss/' + folderName + '/_' + componentName + '.scss';
+      var componentPath = __dirname + '/../app/assets/scss/' + folderName + '/' + componentName + '.scss';
       var indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
 
       try {
@@ -21,13 +21,16 @@ var pugconfig = {
 
         var indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
         var newImportStmt = "@import '" + componentName + "';";
+        var alreadyImported = indexContent.includes(newImportStmt)
 
-        for (var i = 0; i < indexContent.length; i++) {
-          const importStmt = indexContent[i];
-          const importName = importStmt.replace(/@import '(.+)';/, '$1');
-          if (importName > componentName) {
-            indexContent.splice(i, 0, newImportStmt);
-            break;
+        if (!alreadyImported) {
+          for (var i = 0; i < indexContent.length; i++) {
+            const importStmt = indexContent[i];
+            const importName = importStmt.replace(/@import '(.+)';/, '$1');
+            if (importName > componentName) {
+              indexContent.splice(i, 0, newImportStmt);
+              break;
+            }
           }
         }
         fs.writeFileSync(indexFilePath, indexContent.join('\n'));
