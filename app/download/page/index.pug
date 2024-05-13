@@ -28,12 +28,13 @@ block body
             +e.images
               +e.image: .is-no NO IMAGE
               +loop(5)
-                +e.image.js-modal-image(data-modaal-content-source="/assets/images/img-card-01.jpg"): +bgimg("img-card-01.jpg").bg-img
+                +ae("/assets/images/img-card-01.jpg").image.js-modal-image
+                  +img("img-card-01.jpg")
             +e.slider.swiper
               .swiper-wrapper
                 +e.image.swiper-slide: .is-no NO IMAGE
                 +loop(3)
-                  +e.image.swiper-slide: +bgimg("img-card-01.jpg").bg-img
+                  +e.image.swiper-slide: +img("img-card-01.jpg")
               .swiper-nav
                 .swiper-button-prev
                 .swiper-button-next
@@ -86,6 +87,6 @@ block body
                 input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
                 +a("/privacy-policy/")(target="_blank") 個人情報保護方針
                 | の内容に同意する
-              
+
             +e.submit
               button.c-button 資料ダウンロード

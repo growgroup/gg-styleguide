@@ -28,6 +28,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: var(--letter-spacing); //全要素へ基準のletter-spacingを当てる
+  min-width: 0; //flexboxのoverflow対策(from destyle.css)
 }
 
 /**
@@ -45,10 +46,6 @@ body {
 
   &.is-slidebar-active {
     overflow: hidden;
-  }
-
-  @media print {
-    margin: 0;
   }
 
   @include breakpoint(medium down) {
@@ -413,13 +410,13 @@ dl, dd {
  * Remove most spacing between ul, li.
  */
 
-ul {
+ul,ol {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 li {
-  list-style: none;
   margin: 0;
 }
 

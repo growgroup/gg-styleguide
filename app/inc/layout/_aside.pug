@@ -2,7 +2,7 @@ mixin l-aside(data)
   if (data == news)
     +c.menu-list
       +e.head ページ_2カラム
-      ul
+      +ul.list
         li: +a("/archive-twocolumns/").js-current-nav すべて
         li: +a("/archive-twocolumns/category/").js-current-nav カテゴリ
         li: +a("/archive-twocolumns/").js-current-nav(data-parent-nav="true") 子階層滞在時もis-current

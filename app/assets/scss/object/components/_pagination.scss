@@ -17,8 +17,7 @@ category: Navigation
     align-items: center;
   }
 
-  ul li {
-    list-style: none !important;
+  li {
     margin-bottom: rem-calc(6);
 
     &:not(:last-child) {
@@ -26,8 +25,8 @@ category: Navigation
     }
   }
 
-  ul li > span,
-  ul li > a {
+  li> span,
+  li> a {
     @include webfont();
     @include font-format(16, "", 13, bold);
     display: flex;

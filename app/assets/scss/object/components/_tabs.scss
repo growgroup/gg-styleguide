@@ -21,49 +21,49 @@ category: Tabs
       @include breakpoint(small only) {
         border-width: 1px;
       }
+    }
 
-      a {
-        background-color: $color-white;
-        color: $color-primary;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        padding: rem-calc(10) rem-calc(24);
-        position: relative;
+    a {
+      background-color: $color-white;
+      color: $color-primary;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      padding: rem-calc(10) rem-calc(24);
+      position: relative;
+      transition: all .3s;
+      @include breakpoint(small only) {
+        padding: rem-calc(6) rem-calc(24);
+      }
+
+      &::after {
+        content: "expand_more";
+        @include icon-font();
+        position: absolute;
+        font-size: rem-calc(24);
+        font-weight: 400;
+        right: rem-calc(16);
+        top: calc(50% + 1px);
+        transform: translateY(-50%);
         transition: all .3s;
         @include breakpoint(small only) {
-          padding: rem-calc(6) rem-calc(24);
+          font-size: rem-calc(24)*0.8;
         }
+      }
 
-        &::after {
-          content: "expand_more";
-          @include icon-font();
-          position: absolute;
-          font-size: rem-calc(24);
-          font-weight: 400;
-          right: rem-calc(16);
-          top: calc(50% + 1px);
-          transform: translateY(-50%);
-          transition: all .3s;
-          @include breakpoint(small only) {
-            font-size: rem-calc(24)*0.8;
-          }
-        }
+      // *hover
+      &:hover {
+        background-color: lighten($color-primary, 45);
+        opacity: 1;
+      }
 
-        // *hover
+      // *選択時
+      &.is-active {
+        background-color: $color-primary;
+        color: $color-white;
+
         &:hover {
-          background-color: lighten($color-primary, 45);
           opacity: 1;
-        }
-
-        // *選択時
-        &.is-active {
-          background-color: $color-primary;
-          color: $color-white;
-
-          &:hover {
-            opacity: 1;
-          }
         }
       }
     }
@@ -96,32 +96,32 @@ category: Tabs
 */
 
 .c-tabs {
+  $c :&;
+
   // インデックスタブ
   &.is-index {
-    .c-tabs {
-      &__navs {
-        li {
+    #{$c}__navs {
+      li {
+        width: inherit;
+        min-width: rem-calc(160);
+        border-width: 1px;
+        border-bottom: none;
+        margin: 0 rem-calc(8) 0 0;
+        @include breakpoint(small only) {
           width: inherit;
-          min-width: rem-calc(160);
-          border-width: 1px;
-          border-bottom: none;
-          margin: 0 rem-calc(8) 0 0;
-          @include breakpoint(small only) {
-            width: inherit;
-            min-width: inherit;
-            border: 1px solid $color-primary;
-            margin-bottom: rem-calc(8);
-          }
-
-          a {
-            font-size: rem-calc(14);
-            letter-spacing: 0.1em;
-
-            &::after {
-              display: none;
-            }
-          }
+          min-width: inherit;
+          border: 1px solid $color-primary;
+          margin-bottom: rem-calc(8);
         }
+      }
+    }
+
+    a {
+      font-size: rem-calc(14);
+      letter-spacing: 0.1em;
+
+      &::after {
+        display: none;
       }
     }
   }

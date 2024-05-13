@@ -27,8 +27,8 @@ category: News
     display: block;
 
     img {
-      width: 100%;
-      height: auto;
+      @include img-option(cover);
+      aspect-ratio: 16/9;
     }
   }
 
@@ -99,7 +99,7 @@ category: News
 .c-card-post {
   // タグなしver
   &.is-tag-hidden {
-    margin-botom: rem-calc(32);
+    margin-bottom: rem-calc(32);
 
     .c-card-post__sup {
       position: relative;

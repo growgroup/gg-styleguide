@@ -415,6 +415,13 @@
   @include bg-option();
 }
 
+@mixin img-option($object-fit:cover) {
+  width: 100%;
+  height: 100%;
+  max-width: initial;
+  object-fit: $object-fit;
+}
+
 @mixin card-block(){
   display: block;
   text-decoration: none;
@@ -511,8 +518,11 @@
   line-height: 1;
   letter-spacing: 0;
   text-transform: none;
+  overflow: hidden;
+}
+
+@mixin icon-font-size-control{
   display: inline-block;
   width: 1em;
   height: 1em;
-  overflow: hidden;
 }

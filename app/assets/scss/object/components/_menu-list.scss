@@ -13,81 +13,81 @@ category: Navigation
     padding: rem-calc(12) rem-calc(16);
   }
 
-  > ul {
-
-    > li {
+  &__list{
+    li{
       border-bottom: 1px solid $border-base-color;
+    }
+
+    a {
+      text-decoration: none;
+      color: $font-base-color;
+      font-weight: 700;
+      display: block;
+      padding: rem-calc(14) rem-calc(16) rem-calc(14) rem-calc(36);
+      position: relative;
+      transition: all .2s;
+
+      &::before {
+        content: "chevron_right";
+        @include icon-font();
+        color: $color-primary;
+        position: absolute;
+        top: 50%;
+        left: rem-calc(16);
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: $color-primary;
+        bottom: 0;
+        left: 0;
+        transform: translateY(1px);
+        transition: all .4s ease;
+        opacity: 0;
+      }
+
+      //*hover
+      &:hover, &.is-current {
+        opacity: 1;
+        color: $color-primary;
+
+        &::after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+
+    //*サブメニュー
+    ul {
+      border-top: 1px solid $border-base-color;
+      padding: rem-calc(8) 0;
+
+      li {
+        border-bottom: none;
+      }
 
       a {
-        text-decoration: none;
-        color: $font-base-color;
-        font-weight: 700;
-        display: block;
-        padding: rem-calc(14) rem-calc(16) rem-calc(14) rem-calc(36);
-        position: relative;
-        transition: all .2s;
+        font-weight: 400;
+        padding: rem-calc(5) rem-calc(24) rem-calc(5) rem-calc(48);
 
         &::before {
-          content: "chevron_right";
-          @include icon-font();
-          color: $color-primary;
-          position: absolute;
-          top: 50%;
-          left: rem-calc(16);
-          transform: translateY(-50%);
+          left: rem-calc(32);
+          top: rem-calc(4);
         }
 
         &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 0;
-          height: 1px;
-          background-color: $color-primary;
-          bottom: 0;
-          left: 0;
-          transform: translateY(1px);
-          transition: all .4s ease;
-          opacity: 0;
-        }
-
-        //*hover
-        &:hover, &.is-current {
-          opacity: 1;
-          color: $color-primary;
-
-          &::after {
-            width: 100%;
-            opacity: 1;
-          }
-        }
-      }
-
-      //*サブメニュー
-      ul {
-        border-top: 1px solid $border-base-color;
-        padding: rem-calc(8) 0;
-
-        li {
-          border-bottom: none;
-
-          a {
-            font-weight: 400;
-            padding: rem-calc(5) rem-calc(24) rem-calc(5) rem-calc(48);
-
-            &::before {
-              left: rem-calc(32);
-              top: rem-calc(4);
-            }
-
-            &::after {
-              display: none;
-            }
-          }
+          display: none;
         }
       }
     }
   }
+
 
   //*バナー
   &__banners {
@@ -126,20 +126,20 @@ category: Navigation
       &:last-child {
         border-bottom: none;
       }
+    }
 
-      a {
-        font-weight: 400;
-        font-size: rem-calc(14);
-        padding: rem-calc(20) rem-calc(16) rem-calc(20) rem-calc(20);
+    a {
+      font-weight: 400;
+      font-size: rem-calc(14);
+      padding: rem-calc(20) rem-calc(16) rem-calc(20) rem-calc(20);
 
-        &::before {
-          left: 0;
-          top: rem-calc(20);
-        }
+      &::before {
+        left: 0;
+        top: rem-calc(20);
+      }
 
-        &::after {
-          display: none;
-        }
+      &::after {
+        display: none;
       }
     }
   }

@@ -6,6 +6,24 @@ mixin img(file,alt,width,height)
     }
   img(src=config.rootpath + "/assets/images/" + file, alt!=alt, width!=width, height!=height)&attributes(attributes)
 
+//- picture タグ
+//-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 768, 768)
+//-PC/SPでaspect比共通ならSP用のwidthとheightは不要
+mixin picture(pc,sp,alt,width,height,widthSp,heightSp,media,fetchpriority)
+  -
+    if (typeof alt === "undefined") {
+      var alt = ""
+    }
+  -
+    if (typeof media === "undefined" || media === "") {
+      var media = '(max-width:46.8125em)'
+    } else if (media === "medium") {
+      var media = '(max-width:59.3125em)'
+    }
+  picture&attributes(attributes)
+    source(srcset=config.rootpath + "/assets/images/" + sp + "" media=media width!=widthSp, height!=heightSp)
+    img(src=config.rootpath + "/assets/images/" + pc, alt=alt width!=width, height!=height fetchpriority!=fetchpriority)
+
 //- video タグ
 mixin video(file)
   video(src=config.rootpath + "/assets/files/" + file)&attributes(attributes)

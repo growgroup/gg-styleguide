@@ -5,30 +5,7 @@ category: Base
 ---
 */
 .c-table {
-  width: 100%;
-  border-top: 1px solid $border-base-color;
-
-  tbody {
-    th,
-    td {
-      text-align: left;
-      border-bottom: 1px solid $border-base-color;
-      padding: rem-calc(24);
-      vertical-align: top;
-      @include breakpoint(small only) {
-        padding: rem-calc(12);
-      }
-    }
-
-    th {
-      color: $color-primary;
-      width: rem-calc(196);
-      border-bottom: 1px solid $color-primary;
-      @include breakpoint(small only) {
-        width: rem-calc(96);
-      }
-    }
-  }
+  @include c-table;
 
   &.is-th-bgcolor {
     tbody {

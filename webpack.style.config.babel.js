@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import globImporter from 'node-sass-glob-importer';
+import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 import path from 'path';
 
 const BASE_DIR = "../../"
@@ -20,7 +21,9 @@ module.exports = (env, argv) => {
       //     }
       // },
       entry: {
-        style: __dirname + '/app/assets/js/style.js',
+        style: __dirname + '/app/assets/scss/style.scss',
+        editor: __dirname + '/app/assets/scss/editor.scss',
+        print: __dirname + '/app/assets/scss/print.scss',
       },
       output: {
         path: path.join(__dirname, 'dist/'),
@@ -79,6 +82,7 @@ module.exports = (env, argv) => {
         ]
       },
       plugins: [
+        new RemoveEmptyScriptsPlugin(), // CSS別出力時の不要JSファイルを削除
         new MiniCssExtractPlugin({
           filename: "assets/css/[name].css",
           chunkFilename: "[id].css"

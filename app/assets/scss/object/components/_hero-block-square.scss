@@ -54,14 +54,14 @@ category: SpecialComponents
     align-items: center;
     @include breakpoint(small only) {
       width: 100%;
-      padding: rem-calc(24) 0 !important;
+      padding: rem-calc(24) 0;
       min-height: inherit;
       display: block;
     }
 
     .c-heading {
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(16) !important;
+        margin-bottom: rem-calc(16);
       }
     }
   }

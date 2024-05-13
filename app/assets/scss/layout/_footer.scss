@@ -61,21 +61,21 @@ category: Layout
     li {
       margin-bottom: rem-calc(20);
       @include breakpoint(medium down) {
-        margin: 0!important;
+        margin: 0;
         border-bottom: 1px solid $border-base-color;
       }
-      a {
-        color: $color-white;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: rem-calc(14);
-        @include breakpoint(medium down) {
-          padding: rem-calc(14) rem-calc(24);
-          display: block;
-          background-color: $font-base-color;
-          &:hover {
-            opacity: 1;
-          }
+    }
+    a {
+      color: $color-white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: rem-calc(14);
+      @include breakpoint(medium down) {
+        padding: rem-calc(14) rem-calc(24);
+        display: block;
+        background-color: $font-base-color;
+        &:hover {
+          opacity: 1;
         }
       }
     }
@@ -88,13 +88,13 @@ category: Layout
         @include breakpoint(medium down) {
           border: none;
         }
-        a {
-          font-weight: 400;
-          color: rgba($color-white,0.7);
-          @include breakpoint(medium down) {
-            background-color: rgba($font-base-color,0.8);
-            padding: rem-calc(10) rem-calc(44);
-          }
+      }
+      a {
+        font-weight: 400;
+        color: rgba($color-white,0.7);
+        @include breakpoint(medium down) {
+          background-color: rgba($font-base-color,0.8);
+          padding: rem-calc(10) rem-calc(44);
         }
       }
     }

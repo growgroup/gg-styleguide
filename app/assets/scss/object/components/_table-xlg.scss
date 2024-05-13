@@ -64,9 +64,7 @@ category: Base
       left: 0;
       height: 100%;
       width: 20px;
-      background-repeat: no-repeat;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
-      background-attachment: scroll;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) no-repeat scroll;
       pointer-events: none;
       visibility: hidden;
       opacity: 0;
@@ -82,9 +80,7 @@ category: Base
       right: 0;
       height: 100%;
       width: 20px;
-      background-repeat: no-repeat;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
-      background-attachment: scroll;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)) no-repeat scroll;
       pointer-events: none;
     }
   }

@@ -72,23 +72,23 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: rem-calc(40) !important;
+    margin-bottom: rem-calc(40);
 
 
 
     @include breakpoint(small only) {
       width: 100%;
-      margin-bottom: rem-calc(20) !important;
+      margin-bottom: rem-calc(20);
     }
 
     .slick-slide {
       width: 100%;
-      max-width: rem-calc(748) !important;
-      outline: none !important;
+      max-width: rem-calc(748);
+      outline: none;
       cursor: pointer;
 
       @include breakpoint(1000 down) {
-        max-width: rem-calc(750) !important;
+        max-width: rem-calc(750);
       }
     }
 
@@ -150,19 +150,6 @@
     &-image {
       position: relative;
     }
-
-    &-bgimg {
-      width: 100%;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: math.div(500,748) * 100%;
-      }
-    }
   }
 
   //nav画像
@@ -176,7 +163,7 @@
 
     &.is-sm {
       .slick-dots {
-        display: none !important;
+        display: none;
       }
     }
 
@@ -202,36 +189,27 @@
       &:hover {
         opacity: 1;
       }
-    }
 
-    &-bgimg {
-      width: 100%;
-      @include bg-option();
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: math.div(92,138)*100%;
-
-        @include breakpoint(small only) {
-          padding-top: math.div(80,138)*100%;
-        }
+      img {
+        @include img-option();
+        aspect-ratio: 138/92;
       }
     }
 
+
     .slick-slide {
       margin: 0 6px;
-      outline: none !important;
+      outline: none;
       //@include breakpoint(small only) {
       //  margin: 0 6px;
       //}
 
       width: 100%;
-      max-width: rem-calc(138) !important;
+      max-width: rem-calc(138);
       cursor: pointer;
 
       @include breakpoint(medium down) {
-        max-width: none !important;
+        max-width: none;
       }
     }
 
@@ -254,7 +232,7 @@
     }
 
     .c-gallery-slider__main-texts {
-      display: block !important;
+      display: block;
     }
   }
 
@@ -268,7 +246,7 @@
     top: 50%;
 
     @include breakpoint(medium down) {
-      display: none  !important;
+      display: none;
       //bottom: rem-calc(-105);
       //width: rem-calc(24)*.7;
       //height: rem-calc(48)*.7;
@@ -307,7 +285,7 @@
   }
 
   .draggable {
-    padding: 0 !important;
+    padding: 0;
   }
 
   .slick-dots {
