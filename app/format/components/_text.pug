@@ -52,33 +52,55 @@ div.u-mbs.is-bottom
   blockquote.c-blockquote これは引用テキストです。これは引用テキストです。これは引用テキストです。<br>これは引用テキストです。これは引用テキストです。これは引用テキストです。
 
 // リスト
-div.u-mbs.is-bottom
-  ul.c-list.is-disc
-    li リスト1
-    li リスト2
-      ul
-        li リスト2の子要素
-        li リスト2の子要素
-    li リスト2
+//-
+  div.u-mbs.is-bottom
+    ul.c-list.is-disc
+      li リスト1
+      li リスト2
+        ul
+          li リスト2の子要素
+          li リスト2の子要素
+      li リスト2
 
-// アイコン
+// ul
 div.u-mbs.is-bottom
   ul.c-list.is-icon
     li リスト1
     li リスト2
+      //- ul内のulにはclass無しでスタイルを当てる（WP用）
       ul
         li リスト2の子要素
         li リスト2の子要素
     li リスト2
 
+// ol
 div.u-mbs.is-bottom
   ol.c-list.is-outline
     li リスト1
     li リスト2
+      //- ol内のolにはclass無しでスタイルを当てる（WP用）
       ol
         li リスト2の子要素
         li リスト2の子要素
     li リスト2
+
+// ul/olの入り組んだリストの動作確認（WP用）
+div.u-mbs.is-bottom
+  .l-post-content
+    ul
+      li リスト1
+      li リスト2<br>リスト
+        ol
+          li リスト2の子要素
+          li リスト2の子要素<br>リスト2
+      li リスト2
+    ol
+      li リスト1
+      li リスト2<br>リスト
+        ul
+          li リスト2の子要素
+          li リスト2の子要素<br>リスト2
+      li リスト2
 
 // 区切り線
 div.u-mbs.is-bottom

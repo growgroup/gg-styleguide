@@ -1,0 +1,309 @@
+// Mixin
+//
+// l-post-content用
+//
+
+@use "sass:math";
+
+//l-post-content内のスタイルはすべてここに記述すること ※@extend使わない
+@mixin l-post-content {
+  display: flow-root;
+  word-break: break-all;
+
+  > * + * { //投稿内の各ブロックの間に1emのマージンを設定
+    margin-top: 1em;
+  }
+
+  h1 {
+    // 基本的に利用されることはないはず
+    font-size: rem-calc(32);
+    line-height: 1.6;
+  }
+
+  h2 {
+    font-size: rem-calc(25);
+    line-height: 1.6;
+    margin-top: rem-calc(80);
+    margin-bottom: rem-calc(32);
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(40);
+      font-size: rem-calc(18);
+    }
+
+  }
+
+  h3 {
+    font-size: rem-calc(20);
+    line-height: 1.6;
+    margin-top: rem-calc(54);
+    margin-bottom: rem-calc(24);
+
+    padding: 0.5rem 0.75rem;
+    background-color: #e7e7e7;
+    @include breakpoint(small only) {
+      margin-top: rem-calc(32);
+      font-size: rem-calc(16);
+    }
+
+  }
+
+
+  h4 {
+    font-size: rem-calc(17);
+    line-height: 1.6;
+    margin-top: rem-calc(16);
+    margin-bottom: rem-calc(16);
+
+    &::before {
+      content: "check";
+      @include icon-font();
+      float: left;
+      margin-right: 0.3rem;
+      color: $color-primary;
+    }
+
+    @include breakpoint(small only) {
+      font-size: rem-calc(15);
+    }
+
+  }
+
+  h5 {
+    font-size: rem-calc(16);
+    line-height: 1.6;
+    margin-top: rem-calc(16);
+    margin-bottom: rem-calc(16);
+    @include breakpoint(small only) {
+      font-size: rem-calc(14);
+    }
+  }
+
+  h6 {
+    font-size: rem-calc(16);
+    line-height: 1.6;
+    margin-top: rem-calc(16);
+    margin-bottom: rem-calc(16);
+    @include breakpoint(small only) {
+      font-size: rem-calc(14);
+    }
+  }
+
+  dl {
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+    }
+
+    dd + dt {
+      margin-top: rem-calc(16);
+    }
+  }
+
+  table {
+    @include c-table;
+    width: 100%;
+  }
+
+  ol, ul {
+    @include c-list;
+  }
+  ul {
+    @include c-list-ul;
+  }
+  ol {
+    @include c-list-ol;
+  }
+
+  //.has-small-font-size {
+  //  font-size: rem-calc(14);
+  //  @include breakpoint(small only) {
+  //    font-size: rem-calc(12);
+  //  }
+  //}
+
+  iframe {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  pre {
+    background: #f5f5f5;
+    padding: rem-calc(16) rem-calc(24);
+  }
+
+  code {
+    font-family: monospace, monospace;
+    background: #f5f5f5;
+  }
+
+  blockquote {
+    @include c-blockquote;
+  }
+
+}
+
+// ================================================================================
+// ※l-post-content内外で共有するスタイルは別途mixinに記述すること
+// ================================================================================
+// c-table
+@mixin c-table {
+  width: 100%;
+  border-top: 1px solid $border-base-color;
+
+  tbody {
+    th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid $border-base-color;
+      padding: rem-calc(24);
+      vertical-align: top;
+      @include breakpoint(small only) {
+        padding: rem-calc(12);
+      }
+    }
+
+    th {
+      color: $color-primary;
+      width: rem-calc(196);
+      border-bottom: 1px solid $color-primary;
+      @include breakpoint(small only) {
+        width: rem-calc(96);
+      }
+    }
+  }
+}
+
+
+// c-list
+@mixin c-list {
+  list-style: none;
+  line-height: $font-base-line-height;
+
+  li + li {
+    margin-top: rem-calc(6);
+  }
+  li {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+
+// c-list-ul （.c-list.is-icon）
+@mixin c-list-ul {
+  > li { //l-post-content 用に > が必要
+    padding-left: rem-calc(16);
+
+    &::before {
+      font-family: $font-icon-family;
+      @include icon-font-style();
+      content: "circle";
+      font-size: rem-calc(10);
+      color: $color-primary;
+      width: rem-calc(16);
+      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+
+      @include breakpoint(small only) {
+        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      }
+    }
+  }
+
+  //l-post-content 用に > を使ったので ul > liも必要
+  ul > li {
+    padding-left: rem-calc(16);
+
+    &::before {
+      font-family: $font-icon-family;
+      @include icon-font-style();
+      content: "・";
+      color: $color-primary;
+      font-size: rem-calc(10);
+      width: rem-calc(16);
+      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+
+      @include breakpoint(small only) {
+        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      }
+    }
+  }
+}
+
+// c-list-ol （.c-list.is-outline）
+@mixin c-list-ol { //l-post-content 用に > が必要
+  counter-reset: list-counter;
+
+  > li {
+    padding-left: rem-calc(16);
+
+    &::before {
+      //content: counters(list-counter, "-")".";//2-1のようなカウンター用
+      content: counter(list-counter) ".";
+      counter-increment: list-counter;
+      width: rem-calc(16);
+      height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+    }
+  }
+
+  //l-post-content 用に > を使ったので ol > liも必要
+  ol {
+    counter-reset: list-counter;
+
+    > li {
+      padding-left: rem-calc(16);
+
+      &::before {
+        //content: counters(list-counter, "-")".";//2-1のようなカウンター用
+        content: counter(list-counter) ".";
+        counter-increment: list-counter;
+        width: rem-calc(16);
+        height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      }
+    }
+  }
+}
+
+
+// c-blockquote
+@mixin c-blockquote {
+  background-color: $color-white;
+  border-top: 1px solid $border-base-color;
+  border-right: 1px solid $border-base-color;
+  border-bottom: 1px solid $border-base-color;
+  border-left: 3px solid $color-primary;
+  position: relative;
+  padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
+  font-size: $font-base-size;
+  @include breakpoint(small only) {
+    padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
+  }
+  &::before {
+    content: "format_quote";
+    @include icon-font();
+    font-size: rem-calc(20);
+    color: $color-primary;
+    position: absolute;
+    left: rem-calc(12);
+    top: rem-calc(8);
+    @include breakpoint(small only) {
+      font-size: rem-calc(20)*0.8;
+      top: rem-calc(2);
+      left: rem-calc(8);
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: rem-calc(16);
+  }
+}

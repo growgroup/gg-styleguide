@@ -15,7 +15,9 @@
 //  limitations under the License
 //
 
-
+/*!
+* メインスタイルcss
+*/
 
 @use "sass:math";
 @use "sass:map";
@@ -23,6 +25,7 @@
 @import "foundation/_webfont";
 @import "foundation/_settings";
 @import "foundation/_mixin";
+@import "foundation/_mixin-post-content";
 @import "foundation/_normalize";
 @import "foundation/_form-controls";
 
