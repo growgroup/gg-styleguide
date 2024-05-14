@@ -8,33 +8,45 @@ var pugconfig = {
   basedir: "app/",
   locals: {
     addFile: async function (componentName, type) {
-      var typePrefix = type === 'component' ? 'c-' : 'l-';
-      var folderName = type === 'component' ? 'object/components' : 'layout';
-      var componentPath = __dirname + '/../app/assets/scss/' + folderName + '/' + componentName + '.scss';
-      var indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
+      let typePrefix = type === 'component' ? 'c-' : 'l-';
+      let folderName = type === 'component' ? 'object/components' : 'layout';
+      let componentPath = __dirname + '/../app/assets/scss/' + folderName + '/' + componentName + '.scss';
+      let indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
 
       try {
         fs.statSync(componentPath);
         return true;
       } catch (err) {
+        // ファイルが存在しない場合
+        // ファイルを作成
         await fs.writeFileSync(componentPath, '.' + typePrefix + componentName + ' {\n\n}', {flag: "a"});
 
-        var indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
-        var newImportStmt = "@import '" + componentName + "';";
-        var alreadyImported = indexContent.includes(newImportStmt)
+        // index.scss にインポート文を追加
+        let indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
+        let newImportStmt = "@import '" + componentName + "';";
+        let alreadyImported = indexContent.includes(newImportStmt)
 
+        // 既にインポート文がある場合は何もしない
         if (!alreadyImported) {
-          for (var i = 0; i < indexContent.length; i++) {
+          let isInserted = false;
+          // インポート文をアルファベット順に挿入
+          for (let i = 0; i < indexContent.length; i++) {
             const importStmt = indexContent[i];
             const importName = importStmt.replace(/@import '(.+)';/, '$1');
+
             if (importName > componentName) {
+              // 新規コンポーネント名がアルファベット順になる位置に挿入
               indexContent.splice(i, 0, newImportStmt);
-              break;
+              isInserted = true;
+              break; // 差し込み位置を見つけたらそこで終了
             }
+          }
+          // 一度も追加されなければ末尾に追加
+          if (!isInserted) {
+            indexContent.push(newImportStmt);
           }
         }
         fs.writeFileSync(indexFilePath, indexContent.join('\n'));
-
 
         return false;
       }
