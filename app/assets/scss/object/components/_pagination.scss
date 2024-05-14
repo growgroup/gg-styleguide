@@ -10,32 +10,24 @@ category: Navigation
     margin-top: rem-calc(32);
   }
 
-  ul {
+  &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: rem-calc(6);
   }
 
-  li {
-    margin-bottom: rem-calc(6);
-
-    &:not(:last-child) {
-      margin-right: rem-calc(6);
-    }
-  }
-
-  li> span,
-  li> a {
+  &__num {
     @include webfont();
-    @include font-format(16, "", 13, bold);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    letter-spacing: 0;
+    display: grid;
+    place-items: center;
     width: rem-calc(48);
     height: rem-calc(48);
     text-decoration: none;
     border-radius: 4px;
+
     color: $color-primary;
     border: 1px solid $color-primary;
     background-color: $color-white;
@@ -61,12 +53,30 @@ category: Navigation
       background: transparent;
       border-color: transparent;
       color: $color-primary;
+      width: auto;
     }
   }
 
+  &__prev {
+    margin-right: rem-calc(8);
+
+    .c-pagination__num {
+
+    }
+  }
+
+  &__next {
+    margin-left: rem-calc(8);
+
+    .c-pagination__num {
+
+    }
+  }
+
+
   // 左寄せ
   &.is-align-left {
-    ul {
+    .c-pagination__list {
       justify-content: flex-start;
     }
   }
