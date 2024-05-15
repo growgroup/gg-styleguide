@@ -189,16 +189,26 @@ mixin li
   li(class=className)&attributes(attributes)
     block
 
-mixin ae(href)
+mixin ae(href,autoTarget)
+  -
+    if (autoTarget === undefined) {//autoTargetが未定義の場合はtrueとする
+      autoTarget = true;
+    }
+    href = setHrefValue(href);//hrefの値に応じてconfig.rootpathを付与する
+    if (autoTarget) {//autoTargetがtrueの場合はtarget属性を設定する
+      target = setTargetValue(href, autoTarget);
+    }
   -
     className = utils.inheritClassName(attributes)
-  a(href!= config.rootpath + href, class = className)&attributes(attributes)
+  a(href!= href, class = className target!=target)&attributes(attributes)
     block
 
+//- DEPRECATED: Use `ae(href)`
 mixin aex(href)
+  - href = setHrefValue(href);
   -
     className = utils.inheritClassName(attributes)
-  a(href!= config.rootpath + href, class = className, target="_blank")&attributes(attributes)
+  a(href!= href, class = className, target="_blank")&attributes(attributes)
     block
 
 //- 見出しタグ
