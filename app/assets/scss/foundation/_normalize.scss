@@ -74,10 +74,8 @@ body {
 
 /* chrome opera /
 /! autoprefixer: ignore next */
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
-  body {
+_:lang(x)::-internal-media-controls-overlay-cast-button, body {
     image-rendering: -webkit-optimize-contrast;
-  }
 }
 
 
