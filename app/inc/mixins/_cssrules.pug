@@ -54,7 +54,7 @@ mixin c(el)
       attributes.class =  classlist.join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "c"
-      locals.locals.addComponentFile(temp_class)
+      locals.locals.addFile(temp_class, "component")
     }
   #{el}(class!="c-" + temp_class )&attributes(attributes)
     block
@@ -135,7 +135,7 @@ mixin l(el)
       attributes.class =  classlist.join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "l"
-      locals.locals.addLayoutFile(temp_class)
+      locals.locals.addFile(temp_class, "layout")
     }
   #{el}(class!="l-" + temp_class )&attributes(attributes)
     block
