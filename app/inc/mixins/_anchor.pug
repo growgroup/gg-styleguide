@@ -1,9 +1,29 @@
 //- アンカータグ
-mixin a(href)
-  a(href!= config.rootpath + href )&attributes(attributes)
+  +a("https://example.com")
+  →　-<a href="https://example.com" target="_blank"></a>
+  +a("/assets/files/sample.pdf")
+  →　<a href="/assets/files/sample.pdf" target="_blank"></a>
+  +a("/format/")
+  →　<a href="/format/"></a>
+  +a("https://example.com",false)
+  →　<a href="https://example.com"></a>
+  +a("/format/",'blank') または +a("/format/")(target="_blank")
+  →　<a href="/format/" target="_blank"></a>
+mixin a(href,autoTarget)
+  -
+    if (autoTarget === undefined) {//autoTargetが未定義の場合はtrueとする
+      autoTarget = true;
+    }
+    href = setHrefValue(href);//hrefの値に応じてconfig.rootpathを付与する
+    if (autoTarget) {//autoTargetがtrueの場合はtarget属性を設定する
+      target = setTargetValue(href, autoTarget);
+    }
+  a(href!= href target!=target)&attributes(attributes)
     block
 
 //- external link
+//- DEPRECATED: Use `a(href)`
 mixin a-ex(href)
+  - href = setHrefValue(href);
   a(href!= href target="_blank")&attributes(attributes)
     block

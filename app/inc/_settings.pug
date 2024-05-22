@@ -140,4 +140,32 @@
     return (word[0] === word[0].toUpperCase());
   }
 
+  setSrcValue = function (src, path) {//+img()用のsrc属性判定＆設定
+    if (src === undefined) {
+      return undefined;
+    } else if (src.startsWith('http')) {
+      return src;
+    } else {
+      return config.rootpath + path + src;
+    }
+  }
 
+  setHrefValue = function (href) {//+a()用のhref属性判定＆設定
+    if (href === undefined) {
+      return undefined;
+    } else if (href.startsWith('http')) {
+      return href;
+    } else {
+      return config.rootpath + href;
+    }
+  }
+
+  setTargetValue = function (href, autoTarget) {//+a()用のtarget属性判定＆設定
+    if (href === undefined) {
+      return undefined;
+    } else if (href.startsWith('http') || href.endsWith('.pdf') || autoTarget === 'blank') {
+      return "_blank";
+    } else {
+      return undefined;
+    }
+  }
