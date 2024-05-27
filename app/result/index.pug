@@ -1,4 +1,4 @@
-extends /inc/foundation/_base.pug
+extends /inc/foundation/_base-twocolumn.pug
 block append config
   - current.id = "result" // ページのID
   - current.title = "サイト内検索" // タイトル
@@ -14,15 +14,34 @@ block page_header
     subtitle: "result"
   })
   +c_breadcrumb()
+  +l_searchform("is-search")
 
 block body
-  section.l-section.is-lg
-    .l-container.is-sm
-      +c.news
-        +e.content
-          +c_news__block("result")
-      +c_pagination()
+  section.l-section
+    +c.search
+      +e.head
+        b 「いろはに」
+        | の検索結果
+        b 1-10/3423件
+      +e.situation
+        dl
+          dt 表示件数：
+          dd: +a("").is-active 10 件
+          dd: +a("") 20 件
+          dd: +a("") 30 件
+        dl
+          dt 並び順：
+          dd: +a("").is-active 新着順
+          dd: +a("") 更新順
+      +e.blocks
+        +loop(10)
+          +e.block
+            +ae("").title ページ名テキスト｜2階層目のページ名
+            +e.text ページ内に配置されているテキスト<em>テキストテキストテキスト</em>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストいろはにテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +ae("").url https://www.xxxxxxxx.co.jp
 
-block before_footer
-  +l_offer
+    +c_pagination()
+
+block aside
+  +l-aside("result")
 
