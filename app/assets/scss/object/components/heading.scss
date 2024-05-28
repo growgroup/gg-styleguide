@@ -37,7 +37,6 @@ category: Heading
 
 // h2
 .c-heading.is-lg {
-  color: $color-primary;
   @include font-format-light(32,40);
 
   @include breakpoint(small only) {

@@ -64,24 +64,25 @@
   }
 
   &__block {
-    padding: rem-calc(50) rem-calc(25);
+    padding: rem-calc(24) 0;
     border-bottom: 1px solid $color-border;
 
     @include breakpoint(small down) {
-      padding: rem-calc(24) rem-calc(16);
+      padding: rem-calc(16) 0;
     }
   }
 
   &__title {
     display: block;
-    margin-bottom: rem-calc(14);
-
-    @include breakpoint(small down) {
-      margin-bottom: rem-calc(10);
-    }
+    font-weight: 700;
   }
 
   &__text {
+    margin-top: rem-calc(14);
+
+    @include breakpoint(small down) {
+      margin-top: rem-calc(10);
+    }
 
     em {
       font-style: normal;
@@ -94,10 +95,10 @@
 
   &__url {
     display: block;
-    margin-top: rem-calc(14);
+    margin-top: rem-calc(10);
 
     @include breakpoint(small down) {
-      margin-top: rem-calc(10);
+      margin-top: rem-calc(6);
     }
   }
 }

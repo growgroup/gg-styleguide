@@ -8,11 +8,11 @@ block append config
   - current.depth = 2 // ページの階層
 
 block page_header
-  +l_page_header({
-    image: "img-page-header-format.jpg",
-    title: "サイト内検索",
-    subtitle: "result"
-  })
+  //+l_page_header({
+  //  image: "img-page-header-format.jpg",
+  //  title: "サイト内検索",
+  //  subtitle: "result"
+  //})
   +c_breadcrumb()
   +l_searchform("is-search")
 
@@ -33,12 +33,13 @@ block body
           dt 並び順：
           dd: +a("").is-active 新着順
           dd: +a("") 更新順
+    +c_pagination("u-mbs is-xs is-top")
+    +c.search
       +e.blocks
         +loop(10)
           +e.block
             +ae("").title ページ名テキスト｜2階層目のページ名
-            +e.text ページ内に配置されているテキスト<em>テキストテキストテキスト</em>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストいろはにテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            +ae("").url https://www.xxxxxxxx.co.jp
+            +e.url https://www.xxxxxxxx.co.jp
 
     +c_pagination()
 

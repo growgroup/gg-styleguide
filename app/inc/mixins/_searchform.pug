@@ -4,20 +4,12 @@ mixin l_searchform(type)
     .l-searchform(class=type)
       .l-container
         .l-searchform__head.c-heading.is-lg.is-mg-level-2 サイト内検索
-        form.l-searchform__inner
-          .l-searchform__form
+        .l-searchform__inner
+          form.l-searchform__form
             label.l-searchform__form__label(for="searchform")
               span.l-searchform__form__icon(aria-label="キーワードから検索") search
             input(type="text", placeholder="キーワードから検索")#searchform
             button 検索する
-          .l-searchform__checkbox
-            .l-searchform__title ページで絞り込む
-            ul.l-searchform__list
-              +loop(10)
-                li
-                  label
-                    input(type="checkbox", name="ページで絞り込む", value="ニュース")
-                    span ニュース
   else
     .l-searchform(class=type)
       .l-searchform__overlay

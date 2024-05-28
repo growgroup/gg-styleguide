@@ -195,15 +195,17 @@
     position: relative;
     top: 0;
     opacity: 1;
+    z-index: 1;
     visibility: visible;
+    padding: rem-calc(46) 0 0;
 
     .l-searchform__inner {
       max-width: 100%;
       background-color: $color-background;
-      padding: rem-calc(24) rem-calc(40) rem-calc(32);
+      padding: rem-calc(24) rem-calc(40);
 
       @include breakpoint(small down) {
-        padding: rem-calc(16) rem-calc(16) rem-calc(24);
+        padding: rem-calc(16) rem-calc(20);
       }
     }
 
