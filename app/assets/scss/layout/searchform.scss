@@ -216,6 +216,13 @@
       @include breakpoint(medium up) {
         height: rem-calc(56);
       }
+
+      input {
+
+        @include breakpoint(medium up) {
+          height: rem-calc(32);
+        }
+      }
     }
   }
 }
