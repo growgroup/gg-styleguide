@@ -1,7 +1,7 @@
 .c-search {
 
   &__head {
-    @include font-format-light(18, 27);
+    @include font-format-light(20, 30);
     margin-bottom: rem-calc(24);
 
     @include breakpoint(small down) {
@@ -80,10 +80,10 @@
   &__title {
     display: block;
     font-weight: 700;
-    font-size: rem-calc(16);
+    font-size: rem-calc(18);
 
     @include breakpoint(small down) {
-      font-size: rem-calc(14);
+      font-size: rem-calc(15);
     }
   }
 

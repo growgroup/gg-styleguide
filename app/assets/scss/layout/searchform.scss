@@ -202,7 +202,8 @@
     .l-searchform__inner {
       max-width: 100%;
       background-color: $color-background;
-      padding: rem-calc(24) rem-calc(40);
+      padding: rem-calc(24)
+    ;
 
       @include breakpoint(small down) {
         padding: rem-calc(16) rem-calc(20);
@@ -211,6 +212,10 @@
 
     .l-searchform__form {
       max-width: 100%;
+
+      @include breakpoint(medium up) {
+        height: rem-calc(56);
+      }
     }
   }
 }
