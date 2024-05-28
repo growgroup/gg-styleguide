@@ -22,6 +22,11 @@
 
     dl {
       display: flex;
+      font-size: rem-calc(14);
+
+      @include breakpoint(small down) {
+        font-size: rem-calc(13);
+      }
     }
 
     dt {
@@ -75,6 +80,11 @@
   &__title {
     display: block;
     font-weight: 700;
+    font-size: rem-calc(16);
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(14);
+    }
   }
 
   &__text {
@@ -95,9 +105,11 @@
 
   &__url {
     display: block;
+    font-size: rem-calc(14);
     margin-top: rem-calc(10);
 
     @include breakpoint(small down) {
+      font-size: rem-calc(13);
       margin-top: rem-calc(6);
     }
   }

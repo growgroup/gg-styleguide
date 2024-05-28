@@ -153,5 +153,10 @@ category: Navigation
     display: flex;
     flex-wrap: wrap;
     gap: rem-calc(5) rem-calc(8);
+    font-size: rem-calc(14);
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(13);
+    }
   }
 }
