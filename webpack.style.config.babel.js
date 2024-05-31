@@ -1,6 +1,5 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import globImporter from 'node-sass-glob-importer';
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 import path from 'path';
 
@@ -34,11 +33,6 @@ module.exports = (env, argv) => {
       module: {
         rules: [
           {
-            test: /\.(scss|css)/,
-            enforce: 'pre',
-            loader: 'import-glob-loader'
-          },
-          {
             test: /\.(scss|css|sass)$/,
             include: [
               path.resolve(__dirname, 'app/assets/scss'),
@@ -70,11 +64,6 @@ module.exports = (env, argv) => {
               },
               {
                 loader: 'sass-loader',
-                options: {
-                  sassOptions: {
-                    importer: globImporter()
-                  },
-                }
               }
             ],
           },
