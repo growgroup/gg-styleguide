@@ -16,6 +16,10 @@ block before_main
 
 block body
   +c_main-visual()
+
+  +a('#hoge1').js-anchor テスト1
+  +a('#hoge2').js-anchor テスト2
+
   section.l-section.is-lg.is-color-secondary
     .l-container
       +heading-xlg("私たちについて", "ABOUT").is-bottom
@@ -60,7 +64,7 @@ block body
               h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
               p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
               +e.button: +a("#").c-button.is-sm ボタンテキスト
-      +e.block
+      +e.block#hoge1
         +e.image: +img("img-hero-block-01.jpg","",700,400)
         .l-container
           +e.content
@@ -68,7 +72,7 @@ block body
               h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
               p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
               +e.button: +a("#").c-button.is-sm ボタンテキスト
-  section.l-section.is-lg
+  section.l-section.is-lg#hoge2(style="scroll-margin-top: 150px;")
     .l-container
       +c.news
         +e.columns

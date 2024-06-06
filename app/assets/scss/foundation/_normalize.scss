@@ -3,9 +3,11 @@
 // # CSS 変数の定義
 :root {
   --letter-spacing: #{$font-base-letter-spacing};
+  --header-height: #{rem-calc($header-height)};
 
   //スマホのとき値を変更したい場合は以下に
-  @include breakpoint(small down) {
+  @include breakpoint(medium down) {
+    --header-height: #{rem-calc($header-height-sp)};
   }
 }
 
@@ -436,4 +438,9 @@ a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+//アンカーリンクの対象にscroll-margin-topの付与（https://example.com/#hoge のときに #hogeに自動付与）
+:target {
+  scroll-margin-top: var(--header-height);
 }

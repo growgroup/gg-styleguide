@@ -96,13 +96,16 @@ $breakpoints: (
 // ==============================
 // # 5. Layout
 // ==============================
+// ヘッダーの高さ
+$header-height: 100 !default;
+$header-height-sp: 55 !default;
 
 // スライドバー（スマホメニュー）
 $slidebar-menu-bg: $color-primary !default;
 $slidebar-menu-width: 100% !default;
 $slidebar-menu-eaasing: all ease-in-out .2s !default;
 $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
-$slidebar-header-height: 55 !default; // スマホ時のヘッダーの高さ
+$slidebar-header-height: $header-height-sp !default; // スマホ時のヘッダーの高さ
 
 // # Grid
 $grid-row-width: 1140px !default; // グリッドの幅

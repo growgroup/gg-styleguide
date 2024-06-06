@@ -23,7 +23,6 @@ var defaultOptions = {
   dataSelector: 'anchor-target',
   scrollSpeed: 300,
   easing: 'linear',
-  headerElement:'.l-header' // ヘッダーの高さ分ずらしたいとき '.l-header' のように
 };
 export default class Anchor {
   constructor(options) {
@@ -40,7 +39,6 @@ export default class Anchor {
   init() {
     this.target = $(this.options.selector);
     this.onClick();
-    this.run();
   }
 
   /**
@@ -51,7 +49,7 @@ export default class Anchor {
     var self = this;
 
     this.target.on('click', function(e) {
-      e.preventDefault();
+      // e.preventDefault();
 
       // スクロール先のターゲットを指定
       var anchorTargetSelector = $(this).data(self.options.dataSelector);
@@ -65,6 +63,7 @@ export default class Anchor {
           return false;
         }
         anchorTargetSelector = anchorTargetSelector[0];
+
       }
 
       var anchorTarget = $(anchorTargetSelector);
@@ -73,13 +72,13 @@ export default class Anchor {
         throw new Error('ターゲットとなる要素を取得できませんでした。');
         return false;
       }
-      var top = anchorTarget.offset().top;
 
-      //headerElementの指定があればheaderの高さを測って top の値をずらす
-      var headerHeight;
-      if (self.options.headerElement) {
-        headerHeight = $(self.options.headerElement).outerHeight();
-        top = top - headerHeight
+      let top = anchorTarget.offset().top;
+
+      // scroll-margin-topの値を取得して、スクロール位置を調整
+      let scrollMarginTop = parseInt(window.getComputedStyle(anchorTarget[0]).scrollMarginTop);
+      if (!isNaN(scrollMarginTop)) {
+        top -= scrollMarginTop;
       }
 
       // スクロールさせる
@@ -107,30 +106,4 @@ export default class Anchor {
 
     });
   }
-
-
-  /**
-   * ページロード時に実行
-   */
-  run() {
-    var self = this;
-    //headerElementの指定があればheaderの高さを測って表示位置をずらす
-    var headerHeight;
-    var url = $(location).attr('href');
-    if (url.indexOf("#") !== -1) {
-      if (self.options.headerElement) {
-        window.addEventListener("load", function () {
-          headerHeight = $(self.options.headerElement).outerHeight();
-          var id = url.split("#");
-          var $target = $('#' + id[id.length - 1]);
-          if ($target.length) {
-            var pos = $target.offset().top - headerHeight;
-            $("html, body").animate({scrollTop: pos}, 10);
-          }
-        });
-      }
-    }
-  }
 }
-
-
