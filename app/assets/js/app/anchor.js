@@ -38,6 +38,7 @@ export default class Anchor {
    */
   init() {
     this.target = $(this.options.selector);
+    this.scrollPaddingTopObj = $(this.options.scrollPaddingTopObj);
     this.onClick();
   }
 
@@ -49,7 +50,7 @@ export default class Anchor {
     var self = this;
 
     this.target.on('click', function(e) {
-      // e.preventDefault();
+      e.preventDefault();
 
       // スクロール先のターゲットを指定
       var anchorTargetSelector = $(this).data(self.options.dataSelector);
@@ -75,11 +76,20 @@ export default class Anchor {
 
       let top = anchorTarget.offset().top;
 
-      // scroll-margin-topの値を取得して、スクロール位置を調整
-      let scrollMarginTop = parseInt(window.getComputedStyle(anchorTarget[0]).scrollMarginTop);
-      if (!isNaN(scrollMarginTop)) {
-        top -= scrollMarginTop;
+
+      // ヘッダーの高さを取得
+      // target に指定された要素の scroll-margin-top を取得
+      let rootHeaderHeight = $('html').css('scroll-padding-top');
+      let headerHeight = anchorTarget.css('scroll-margin-top');
+      rootHeaderHeight = parseInt(rootHeaderHeight);
+      headerHeight = parseInt(headerHeight);
+      if (!isNaN(headerHeight)) {
+        top -= headerHeight;
       }
+      if (!isNaN(rootHeaderHeight)) {
+        top -= rootHeaderHeight;
+      }
+      console.log(headerHeight)
 
       // スクロールさせる
       $('body,html').animate({

@@ -23,6 +23,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   text-autospace: no-autospace; /* スクリプト間スペースの自動挿入防止 */
   text-spacing-trim: space-all; /* Chrome122以前のデフォルト値 */
+  scroll-padding-top: var(--header-height); //スクロール位置の調整
 }
 
 * {
@@ -438,9 +439,4 @@ a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-//アンカーリンクの対象にscroll-margin-topの付与（https://example.com/#hoge のときに #hogeに自動付与）
-:target {
-  scroll-margin-top: var(--header-height);
 }
