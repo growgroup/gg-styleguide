@@ -30,7 +30,7 @@ $color-accent: #F44336 !default;
 $color-gray: #cccccc !default;
 
 // # 背景色
-$color-background: #ccc !default;
+$color-background: #f4f4f4 !default;
 
 // # ボーダー（線）色
 $color-border: #ccc !default;
@@ -114,6 +114,8 @@ $grid-column-responsive-gutter: (// カラムとカラムの間隔
 
 // # Two columns
 $asideContainer: 320;
+$asideSearchContainer: 240;
 $asideMargin: 70;
 $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
+$mainSearchContainer: calc(100% - #{$asideSearchContainer}px - #{$asideMargin}px);
 
