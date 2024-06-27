@@ -1,7 +1,7 @@
-import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
-import path from 'path';
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const path = require('path');
 
 const BASE_DIR = "../../"
 
@@ -81,6 +81,16 @@ module.exports = (env, argv) => {
     if (IS_DEVELOPMENT) {
       // development であれば、devtool を追加
       configs.devtool = 'cheap-module-source-map';
+      configs.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename]
+        }
+      };
+      Object.keys(configs.entry).forEach(entryName => {
+        configs.entry[entryName] = ['webpack-hot-middleware/client?reload=true', configs.entry[entryName]];
+      });
+      configs.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
 
 

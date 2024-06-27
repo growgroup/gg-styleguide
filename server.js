@@ -1,7 +1,14 @@
 const pugConfig = require("./build/pug.js")
 const pug = require("pug")
+const pugCache = new Map();
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackConfig = require("./webpack.config.babel.js")
+const webpackStyleConfig = require("./webpack.style.config.babel.js")
+const jsCompiler = webpack(webpackConfig({}, {mode: 'development'}));
+const styleCompiler = webpack(webpackStyleConfig({}, {mode: 'development'}));
 const browserSync = require("browser-sync")
-const notifier = require('node-notifier');
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
@@ -48,8 +55,18 @@ function pugMiddleWare(req, res, next) {
     return next();
   }
 
+  // pugのキャッシュ生成
+  const pugStats = fs.statSync(pugPath);
+  const cacheKey = `${pugPath}:${pugStats.mtime.getTime()}`;
+  if (pugCache.has(cacheKey)) {
+    res.setHeader('Content-Type', 'text/html');
+    res.end(pugCache.get(cacheKey));
+    return;
+  }
+
   // pugがファイルを見つけたのでコンパイルする
   var content = pug.renderFile(pugPath, pugConfig);
+  pugCache.set(cacheKey, content);
   res.setHeader('Content-Type', 'text/html');
   // コンパイル結果をレスポンスに渡す
   res.end(new Buffer.from(content));
@@ -70,8 +87,20 @@ var config = {
     baseDir: [DISTPATH],
     directory: true,
     middleware: [
-      pugMiddleWare
-    ]
+      pugMiddleWare,
+
+      webpackDevMiddleware(jsCompiler, {
+        publicPath: '/',
+        stats: {colors: true}
+      }),
+      webpackDevMiddleware(styleCompiler, {
+        publicPath: '/',
+        stats: {colors: true}
+      }),
+
+      webpackHotMiddleware(jsCompiler),
+      webpackHotMiddleware(styleCompiler),
+    ],
   },
   scrollRestoreTechnique: 'cookie'
 }
@@ -84,26 +113,11 @@ bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
   bs.reload("*.html")
 });
 
-// bs.watch(["dist/*.html","dist/**/*.html"]).on("change", function (event) {
-//   bs.reload("*.html")
-//   notifier.notify({
-//     title: 'Grow Template',
-//     message: 'Compiled the HTML'
-//   });
-// });
-bs.watch("dist/assets/**/*.css").on("change", function (event) {
+bs.watch("app/assets/**/*.scss").on("change", function (event) {
   bs.reload("*.css")
-  // notifier.notify({
-  //   title: 'Grow Template',
-  //   message: 'Compiled the CSS'
-  // });
 });
-bs.watch("dist/assets/**/*.js").on("change", function () {
+bs.watch("app/assets/**/*.js").on("change", function () {
   bs.reload("*.js")
-  // notifier.notify({
-  //   title: 'GrowTemplate',
-  //   message: 'Compiled the JavaScript'
-  // });
 });
 
 bs.init(config)

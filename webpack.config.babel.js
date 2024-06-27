@@ -1,4 +1,4 @@
-import webpack from 'webpack'
+const webpack = require('webpack');
 
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -9,12 +9,12 @@ const globImporter = require('node-sass-glob-importer');
 const BASE_DIR = "../../"
 
 module.exports = (env, argv) => {
-    // 開発モードかどうか
-    // モード（none / production / development）
-    const IS_DEVELOPMENT = argv.mode === 'development';
+  // 開発モードかどうか
+  // モード（none / production / development）
+  const IS_DEVELOPMENT = argv.mode === 'development';
 
     const configs = {
-        mode: argv.mode,
+      mode: argv.mode,
 
         context: __dirname + '/app/',
         entry: {
@@ -106,6 +106,7 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
+          new webpack.HotModuleReplacementPlugin(),
             new CopyPlugin({
                 //画像とscripts.jsは、そのままコピーする
                 patterns: [
@@ -147,6 +148,7 @@ module.exports = (env, argv) => {
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery'
             })
+
         ],
         externals: {
             jquery: 'jQuery'
@@ -154,7 +156,17 @@ module.exports = (env, argv) => {
     }
     if (IS_DEVELOPMENT) {
         // development であれば、devtool を追加
-        configs.devtool = 'cheap-module-source-map';
+      configs.devtool = 'cheap-module-source-map';
+      configs.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename]
+        }
+      };
+      Object.keys(configs.entry).forEach(entryName => {
+        configs.entry[entryName] = ['webpack-hot-middleware/client?reload=true', configs.entry[entryName]];
+      });
+      configs.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
     return configs;
 }
