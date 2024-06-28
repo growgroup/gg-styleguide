@@ -41,56 +41,42 @@ block body
     p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
     h6 見出し六
     p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
     p
       strong 強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト
     p.has-small-font-size
       | 小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト
-
+    p
+      a(href="#") リンクのテキストリンクのテキストリンクのテキスト
+      | テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
     h2 引用 (Blockquote)
-    | 一行の引用:
-    blockquote 貪欲であれ、愚かであれ
-    h2 引用 (Blockquote)
-    | 引用元の参照のある複数行の引用:
+    p 一行の引用:
     blockquote
-      | 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
-      cite スティーブ・ジョブズ - 1997年 Apple 世界的開発者会議
-
+      p 貪欲であれ、愚かであれ
+    h2 引用 (Blockquote)
+    p 引用元の参照のある複数行の引用:
+    blockquote
+      p 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
+      cite スティーブ・ジョブズ – 1997年 Apple 世界的開発者会議
     h2 テーブル
-    table
-      tbody
-        tr
-          th 従業員
-          th 給与
-          th
-        tr
-          td: a(href=".") ジェーン
-          td $￥1
-          td スティーブ・ジョブズの必要な給与。
-        tr
-          td: a(href=".") ジョン
-          td ￥10万
-          td ブログのすべて。
-        tr
-          td: a(href=".") ジェーン
-          td ￥1億
-          td 百聞は一見にしかず。だよね ? なのでトムは1000倍。
-        tr
-          td: a(href=".") ジェーン
-          td ￥1000億
-          td これみたいな髪?! もういいよね…
-    h2 定義リスト
-    dl
-      dt 定義リストタイトル
-      dd これは定義リストです。
-      dt スタートアップ
-      dd スタートアップ会社もしくはスタートアップとは、反復可能でスケーラブルなビジネスモデルを追い求める会社もしくは一時的な組織です。
-      dt #dowork
-      dd ロブ・ダイデクと彼の個人的なボディーガードのクリストファー"ビッグ・ブラック"ボイキンスが作った言い回しで、"仕事しよう" が自己動機付けとして、友達を動機付けるために機能する。
-      dt ライブでやろう
-      dd ビル・オライリーが <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">説明</a> してもらいましょう。
-
-    h2 非順序リスト（ネスト化）
+    figure
+      table
+        thead
+          tr
+            th 従業員
+            th 給与
+            th
+        tbody
+          tr
+            td
+              a(href="#") ジェーン
+            td $￥1
+            td スティーブ・ジョブズの必要な給与。
+          tr
+            td
+              a(href="#") ジョン
+            td ￥10万
+            td ブログのすべて。
+    h2 非順序リスト
     ul
       li リストアイテム1
         ul
@@ -106,7 +92,6 @@ block body
       li リストアイテム2
       li リストアイテム3
       li リストアイテム4
-
     h2 順序リスト
     ol
       li リストアイテム1
@@ -123,139 +108,11 @@ block body
       li リストアイテム2
       li リストアイテム3
       li リストアイテム4
-    h2 HTML　要素タグテスト
-    p 他の HTML タグは <a href="http://ja.support.wordpress.com/code/" rel="nofollow" target="_blank">FAQ</a> をご覧ください。
-
-    p
-      strong 住所タグ<br>
-      | 以下は住所の例です。<br>
-      code &lt;address&gt;
-      | タグを使用しています:
-      address 〒100-0000 東京都千代田区1-1-1 日本
-
-    p
-      strong anchor タグ (リンク)<br>
-      | これは
-      a(href=".", rel="nofollow")
-        code &lt;anchor&gt;
-
-    p
-      strong abbr タグ<br>
-      | この
-      abbr(title="abbreviation") abbr
-      | は文章の中にある
-      code &lt;abbr&gt;
-      | タグの例です。
-
-    p
-      strong Acronym タグ (<em>HTML5 では非推奨</em>)<br>
-      | これは <code>&lt;acronym&gt;</code> タグを使用した
-      acronym(title="three-letter acronym") TLA
-      | です。
-
-    p
-      strong Big タグ(<em>HTML5 では非推奨</em>)
-      | このテストは
-      big 大きな
-      | 文字を表す <code>&lt;big&gt;</code> タグの例ですが、このタグは HTML5 ではサポートされていません。
-
-    p
-      strong Cite タグ<br>
-      | "Code is poetry." --
-      cite WordPress
-
-    p
-      strong Code タグ<br>
-      code &lt;code&gt;
-      |  タグはこのように使います:<br>
-      code word-wrap: break-word;
-
-    p
-      strong Delete タグ<br>
-      code &lt;del&gt;
-      |  タグは
-      del 打ち消し線
-      | などで表現されますが、このタグは HTML5 ではサポートされていません (代わりに <code>&lt;strike&gt;</code> を使ってください)。
-
-    p
-      strong Emphasize タグ<br>
-      code &lt;em&gt;
-      |  タグは<em>文章の強調</em>に使われます。欧文では斜体になっていることがよくあります。
-
-    p
-      strong Insert タグ<br>
-      code &lt;ins&gt;
-      |  タグは
-      ins 挿入されたコンテンツ
-      | を意味します。
-
-    p
-      strong Keyboard タグ<br>
-      | このあまり知られていない
-      code &lt;kbd&gt;
-      |  タグは
-      kbd Ctrl
-      |  のようにキーボードテキストをエミュレートします。通常、<code>&lt;code&gt;</code> タグと同じようにスタイリングされます。
-
-    p
-      strong Preformatted タグ<br>
-      code &lt;pre&gt;
-      |  タグは複数行のコードのスタイリングに使います。
-      pre
-        | .post-title {
-        |     margin: 0 0 5px;
-        |     font-weight: bold;
-        |     font-size: 38px;
-        |     line-height: 1.2;
-        |     and here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
-        | }
-
-    p
-      strong Quote タグ<br>
-      q デベロッパーズ、デベロッパーズ, デベロッパーズ...
-      | --スティーブ・バルマー
-
-    p
-      strong Strike タグ (<em>HTML5 では非推奨</em>)<br>
-      | このタグは
-      strike 打ち消し線
-      | を表しています。
-
-    p
-      strong Strong タグ<br>
-      | このタグは
-      strong 太字
-      | テキストを表しています。
-
-    p
-      strong Subscript タグ<br>
-      | Subscript タグ
-      code &lt;sub&gt;
-      |  を使うと H
-      sub 2
-      | O のような表示の際に「2」が下付きになります。
-
-    p
-      strong Superscript タグ<br>
-      |  Superscript タグ
-      code &lt;sup&gt;
-      |  を使うと E = MC
-      sup 2
-      | のような表示の際に「2」が上付きになります。
-
-    p
-      strong Teletype タグ (<em>HTML5 では非推奨</em>)<br>
-      code &lt;tt&gt;
-      |  はあまり使われないタグですが、
-      tt テレタイプテキスト
-      |  として通常 <code>&lt;code&gt;</code> タグのようにスタイリングされます。
-
-    p
-      strong Variable タグ<br>
-      code &lt;tt&gt;
-      |  変数や引数を表す
-      var variables
-      |  タグです。
+    h2 divが以下のような構成になるときもある
+    div
+      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    div
+      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
 
   div.u-mbs.is-bottom
