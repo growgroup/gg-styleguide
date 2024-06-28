@@ -4,9 +4,9 @@ const pugCache = new Map();
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackConfig = require("./webpack.config.babel.js")
+// const webpackConfig = require("./webpack.config.babel.js")
 const webpackStyleConfig = require("./webpack.style.config.babel.js")
-const jsCompiler = webpack(webpackConfig({}, {mode: 'development'}));
+// const jsCompiler = webpack(webpackConfig({}, {mode: 'development'}));
 const styleCompiler = webpack(webpackStyleConfig({}, {mode: 'development'}));
 const browserSync = require("browser-sync")
 const url = require("url")
@@ -89,16 +89,16 @@ var config = {
     middleware: [
       pugMiddleWare,
 
-      webpackDevMiddleware(jsCompiler, {
-        publicPath: '/',
-        stats: {colors: true}
-      }),
+      // webpackDevMiddleware(jsCompiler, {
+      //   publicPath: '/',
+      //   stats: {colors: true}
+      // }),
       webpackDevMiddleware(styleCompiler, {
         publicPath: '/',
         stats: {colors: true}
       }),
 
-      webpackHotMiddleware(jsCompiler),
+      // webpackHotMiddleware(jsCompiler),
       webpackHotMiddleware(styleCompiler),
     ],
   },
@@ -116,7 +116,7 @@ bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
 bs.watch("app/assets/**/*.scss").on("change", function (event) {
   bs.reload("*.css")
 });
-bs.watch("app/assets/**/*.js").on("change", function () {
+bs.watch("dist/assets/**/*.js").on("change", function () {
   bs.reload("*.js")
 });
 

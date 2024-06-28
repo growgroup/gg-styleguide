@@ -80,7 +80,7 @@ module.exports = (env, argv) => {
     }
     if (IS_DEVELOPMENT) {
       // development であれば、devtool を追加
-      configs.devtool = 'cheap-module-source-map';
+      configs.devtool = 'eval';
       configs.cache = {
         type: 'filesystem',
         buildDependencies: {

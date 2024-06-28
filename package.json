@@ -6,13 +6,15 @@
     "node": ">=16.14.0"
   },
   "scripts": {
-    "start": "npm run server",
+    "start": "npm run develop -s",
     "init": "npm install",
     "server": "node ./server.js",
     "build": "run-s build:*",
+    "develop": "run-p server develop:*",
     "build:css": "run-s webpack-css-production make-admin-style prepend-selector-admin-style",
     "webpack-css-production": "webpack --config webpack.style.config.babel.js --mode production",
     "build:webpack": "webpack --config webpack.config.babel.js --mode production",
+    "develop:webpack": "webpack --config webpack.config.babel.js --mode development  --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
     "build:wp": "node build/wp.js",
     "build:autoprefixer": "postcss -o dist/assets/css/style.css dist/assets/css/style.css",
@@ -56,8 +58,6 @@
     "watch": "^1.0.2",
     "webpack": "^5.65.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-middleware": "^7.2.1",
-    "webpack-hot-middleware": "^2.26.1",
     "webpack-remove-empty-scripts": "^1.0.4"
   },
   "dependencies": {
