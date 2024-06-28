@@ -97,8 +97,8 @@ $breakpoints: (
 // # 5. Layout
 // ==============================
 // ヘッダーの高さ
-$header-height: 100 !default;
-$header-height-sp: 55 !default;
+$header-height: 100 !default; // スクロール位置をずらす計算にも使います
+$header-height-sp: 55 !default; // スクロール位置をずらす計算にも使います
 
 // スライドバー（スマホメニュー）
 $slidebar-menu-bg: $color-primary !default;

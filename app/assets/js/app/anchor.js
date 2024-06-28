@@ -47,18 +47,18 @@ export default class Anchor {
    */
   onClick() {
 
-    var self = this;
+    let self = this;
 
     this.target.on('click', function(e) {
       e.preventDefault();
 
       // スクロール先のターゲットを指定
-      var anchorTargetSelector = $(this).data(self.options.dataSelector);
+      let anchorTargetSelector = $(this).data(self.options.dataSelector);
 
 
       if (typeof anchorTargetSelector === 'undefined') {
         var href = $(this).attr('href');
-        var anchorTargetSelector = href.match(/#(\S*)/g);
+        anchorTargetSelector = href.match(/#(\S*)/g);
         if (typeof anchorTargetSelector[0] === 'undefined') {
           throw new Error('ターゲットとなる要素を取得できませんでした。');
           return false;
@@ -67,7 +67,7 @@ export default class Anchor {
 
       }
 
-      var anchorTarget = $(anchorTargetSelector);
+      let anchorTarget = $(anchorTargetSelector);
 
       if (anchorTarget.length === 0) {
         throw new Error('ターゲットとなる要素を取得できませんでした。');
@@ -77,19 +77,20 @@ export default class Anchor {
       let top = anchorTarget.offset().top;
 
 
-      // ヘッダーの高さを取得
-      // target に指定された要素の scroll-margin-top を取得
+      // 基本的なスクロール位置調整値としてhtml要素のscroll-padding-topを取得
       let rootHeaderHeight = $('html').css('scroll-padding-top');
+      // 個別のスクロール位置調整値としてターゲット要素のscroll-margin-topを取得
       let headerHeight = anchorTarget.css('scroll-margin-top');
       rootHeaderHeight = parseInt(rootHeaderHeight);
       headerHeight = parseInt(headerHeight);
+
+      // スクロール位置調整値が数値であれば、スクロール位置から引く（個別の調整値は追加で引く）
       if (!isNaN(headerHeight)) {
         top -= headerHeight;
       }
       if (!isNaN(rootHeaderHeight)) {
         top -= rootHeaderHeight;
       }
-      console.log(headerHeight)
 
       // スクロールさせる
       $('body,html').animate({

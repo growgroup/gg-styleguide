@@ -16,24 +16,6 @@ block before_main
 
 block body
   +c_main-visual()
-
-  p
-    +a("#test01").js-anchor テスト01:.js-anchorの通常動作
-  p
-    +a("#test01") テスト02:.js-anchorなしでもスクロール位置自体は問題なくなる
-  p
-    +a("#test02").js-anchor テスト03: 敢えてヘッダーにめり込ませる
-  p
-    +a("#test02") テスト04:.js-anchorなしの敢えてヘッダーにめり込ませる
-  p
-    +a("#test03").js-anchor テスト05: ヘッダーの高さよりも大きい値を指定
-  p
-    +a("#test03") テスト06:.js-anchorなしのヘッダーの高さよりも大きい値を指定
-  p
-    +a("#test04").js-anchor  テスト07:レスポンシブ対応
-  p
-    +a("#test04") テスト08:.js-anchorなしのレスポンシブ対応
-
   section.l-section.is-lg.is-color-secondary
     .l-container
       +heading-xlg("私たちについて", "ABOUT").is-bottom
@@ -86,20 +68,6 @@ block body
               h3.c-heading.is-sm.is-bottom タイトルがここに入ります。
               p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
               +e.button: +a("#").c-button.is-sm ボタンテキスト
-  section.l-section.is-bg-color#test01
-    .l-container
-      p 標準動作:html要素のscroll-padding-top依存の動作
-
-  section.l-section#test02(style="scroll-margin-top: -50px;")
-    .l-container
-      p scroll-margin-top: -50px;//html要素のscroll-padding-top + -50px
-  section.l-section.is-bg-color#test03(style="scroll-margin-top: 300px;")
-    .l-container
-      p scroll-margin-top: 300px;//html要素のscroll-padding-top + 300px
-  section.l-section.is-color-secondary.is-scroll-margin-responsive#test04
-    .l-container
-      p PCだとscroll-margin-top: rem-calc(200);//html要素のscroll-padding-top + 200px
-      p SPだとscroll-margin-top: 0px;//html要素のscroll-padding-topのみ
   section.l-section.is-lg
     .l-container
       +c.news
