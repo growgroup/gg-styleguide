@@ -1,11 +1,11 @@
 //- ページネーション
 mixin c_pagination(data)
   +c.pagination(class=data)
-    ul
-      li: +a("#").c-pagination__prev <span class="c-icon-font">chevron_left</span>
-      li: span.is-current 1
-      li: +a("#") 2
-      li: +a("#") 3
-      li: span.is-dot …
-      li: +a("#") 10
-      li: +a("#").c-pagination__next <span class="c-icon-font">chevron_right</span>
+    ul.c-pagination__list
+      li.c-pagination__prev: +a("#").c-pagination__num <span class="c-icon-font">chevron_left</span>
+      li: span.c-pagination__num.is-current 1
+      li: +a("#").c-pagination__num 2
+      li: +a("#").c-pagination__num 3
+      li: span.c-pagination__num.is-dot …
+      li: +a("#").c-pagination__num 10
+      li.c-pagination__next: +a("#").c-pagination__num <span class="c-icon-font">chevron_right</span>
