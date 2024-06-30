@@ -504,9 +504,10 @@
   left: 0;
 }
 
+//https://zenn.dev/kagan/articles/css-hover-style
 @mixin hover {
   @media (hover: hover) {
-    &:hover {
+    &:where(:any-link, :enabled, summary):hover {
       @content;
     }
   }
