@@ -513,6 +513,14 @@
   }
 }
 
+@mixin group-hover {
+  @media (hover: hover) {
+    &:is(:where(:any-link, :enabled, summary):hover *) {
+      @content;
+    }
+  }
+}
+
 @mixin icon-font-style {
   font-weight: normal;
   font-style: normal;
