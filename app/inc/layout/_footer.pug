@@ -2,9 +2,10 @@
 //- description: フッター
 -
   var className = "l-footer"
+  var isSimplePages = ["contact", "confirm", "complete"]
 
-  if (current.id === "contact" || current.id === "confirm" || current.id === "complete") {
-    className = "l-footer is-simple"
+  if (isSimplePages.includes(current.id)) {
+    className += " is-simple"
   }
 
 footer(class=className)
