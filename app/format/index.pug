@@ -19,23 +19,52 @@ block page_header
 block body
   section.l-section.is-lg
     .l-container
-        
+      +c_anchor-nav("u-mbs is-bottom",{
+        link: "#text",
+        title: "テキスト",
+      },{
+        link: "#button",
+        title: "ボタン",
+      },{
+        link: "#other",
+        title: "その他",
+      },{
+        link: "#tab",
+        title: "タブ",
+      },{
+        link: "#anchor-demo",
+        title: "アンカーのデモ",
+      })
 
-      .c-tabs.js-tabs
-        ul.c-tabs__navs.js-tabs-nav
-          li: +a("#").is-active(data-tab-target="0") テキスト
-          li: +a("#")(data-tab-target="1") ボタン
-          li: +a("#")(data-tab-target="2") その他
-          li: +a("#")(data-tab-target="3") タブ
 
-        .c-tabs__content.is-active.js-tabs-content(data-tab-name="0")
-          include /format/components/_text.pug
-        .c-tabs__content.js-tabs-content(data-tab-name="1")
-          include /format/components/_buttons.pug
-        .c-tabs__content.js-tabs-content(data-tab-name="2")
-          include /format/components/_other.pug
-        .c-tabs__content.js-tabs-content(data-tab-name="3")
-          include /format/components/_tab.pug
+      h1#text テキスト
+      include /format/components/_text.pug
+
+      //-スペース空ける
+      .u-mbs.is-lg
+
+
+      h1#button ボタン
+      include /format/components/_buttons.pug
+
+      //-スペース空ける
+      .u-mbs.is-lg
+
+      h1#other その他
+      include /format/components/_other.pug
+
+
+      //-スペース空ける
+      .u-mbs.is-lg
+
+      h1#tab タブ
+      include /format/components/_tab.pug
+
+      h1#anchor-demo(style="scroll-margin-top:100px") アンカーのデモ
+      p アンカー位置を上方向に追加でズラしたデモ（style属性で書いていますが普通にCSSファイル側で指定でOK）
+      p html要素のscroll-padding-top = 標準のズラし量
+      p 個別要素のscroll-margin-top = 追加のズラし量
+      p 標準のズラし量 + 追加のズラし量 = 実際のズラし量
 
 
 block before_footer

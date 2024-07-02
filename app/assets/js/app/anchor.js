@@ -23,7 +23,6 @@ var defaultOptions = {
   dataSelector: 'anchor-target',
   scrollSpeed: 300,
   easing: 'linear',
-  headerElement:'.l-header' // ヘッダーの高さ分ずらしたいとき '.l-header' のように
 };
 export default class Anchor {
   constructor(options) {
@@ -39,8 +38,8 @@ export default class Anchor {
    */
   init() {
     this.target = $(this.options.selector);
+    this.scrollPaddingTopObj = $(this.options.scrollPaddingTopObj);
     this.onClick();
-    this.run();
   }
 
   /**
@@ -48,38 +47,49 @@ export default class Anchor {
    */
   onClick() {
 
-    var self = this;
+    let self = this;
 
     this.target.on('click', function(e) {
       e.preventDefault();
 
       // スクロール先のターゲットを指定
-      var anchorTargetSelector = $(this).data(self.options.dataSelector);
+      let anchorTargetSelector = $(this).data(self.options.dataSelector);
 
 
       if (typeof anchorTargetSelector === 'undefined') {
         var href = $(this).attr('href');
-        var anchorTargetSelector = href.match(/#(\S*)/g);
+        anchorTargetSelector = href.match(/#(\S*)/g);
         if (typeof anchorTargetSelector[0] === 'undefined') {
           throw new Error('ターゲットとなる要素を取得できませんでした。');
           return false;
         }
         anchorTargetSelector = anchorTargetSelector[0];
+
       }
 
-      var anchorTarget = $(anchorTargetSelector);
+      let anchorTarget = $(anchorTargetSelector);
 
       if (anchorTarget.length === 0) {
         throw new Error('ターゲットとなる要素を取得できませんでした。');
         return false;
       }
-      var top = anchorTarget.offset().top;
 
-      //headerElementの指定があればheaderの高さを測って top の値をずらす
-      var headerHeight;
-      if (self.options.headerElement) {
-        headerHeight = $(self.options.headerElement).outerHeight();
-        top = top - headerHeight
+      let top = anchorTarget.offset().top;
+
+
+      // 基本的なスクロール位置調整値としてhtml要素のscroll-padding-topを取得
+      let rootHeaderHeight = $('html').css('scroll-padding-top');
+      // 個別のスクロール位置調整値としてターゲット要素のscroll-margin-topを取得
+      let headerHeight = anchorTarget.css('scroll-margin-top');
+      rootHeaderHeight = parseInt(rootHeaderHeight);
+      headerHeight = parseInt(headerHeight);
+
+      // スクロール位置調整値が数値であれば、スクロール位置から引く（個別の調整値は追加で引く）
+      if (!isNaN(headerHeight)) {
+        top -= headerHeight;
+      }
+      if (!isNaN(rootHeaderHeight)) {
+        top -= rootHeaderHeight;
       }
 
       // スクロールさせる
@@ -107,30 +117,4 @@ export default class Anchor {
 
     });
   }
-
-
-  /**
-   * ページロード時に実行
-   */
-  run() {
-    var self = this;
-    //headerElementの指定があればheaderの高さを測って表示位置をずらす
-    var headerHeight;
-    var url = $(location).attr('href');
-    if (url.indexOf("#") !== -1) {
-      if (self.options.headerElement) {
-        window.addEventListener("load", function () {
-          headerHeight = $(self.options.headerElement).outerHeight();
-          var id = url.split("#");
-          var $target = $('#' + id[id.length - 1]);
-          if ($target.length) {
-            var pos = $target.offset().top - headerHeight;
-            $("html, body").animate({scrollTop: pos}, 10);
-          }
-        });
-      }
-    }
-  }
 }
-
-

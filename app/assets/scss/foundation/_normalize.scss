@@ -3,9 +3,11 @@
 // # CSS 変数の定義
 :root {
   --letter-spacing: #{$font-base-letter-spacing};
+  --header-height: #{rem-calc($header-height)};
 
   //スマホのとき値を変更したい場合は以下に
-  @include breakpoint(small down) {
+  @include breakpoint(medium down) {
+    --header-height: #{rem-calc($header-height-sp)};
   }
 }
 
@@ -21,6 +23,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   text-autospace: no-autospace; /* スクリプト間スペースの自動挿入防止 */
   text-spacing-trim: space-all; /* Chrome122以前のデフォルト値 */
+  scroll-padding-top: var(--header-height); //スクロール位置の調整が不要な場合は 0 にする
 }
 
 * {

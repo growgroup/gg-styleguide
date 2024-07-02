@@ -84,3 +84,11 @@ $xs: 32;
     background: $color-background;
   }
 }
+
+
+.l-section.is-scroll-margin-responsive {
+  scroll-margin-top: rem-calc(200);
+  @include breakpoint(small only) {
+    scroll-margin-top: 0;
+  }
+}
