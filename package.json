@@ -58,6 +58,8 @@
     "watch": "^1.0.2",
     "webpack": "^5.65.0",
     "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^7.2.1",
+    "webpack-hot-middleware": "^2.26.1",
     "webpack-remove-empty-scripts": "^1.0.4"
   },
   "dependencies": {
