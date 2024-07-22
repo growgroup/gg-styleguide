@@ -1,13 +1,18 @@
 -
-  var className = "l-header js-fixedheader is-normal"
+  var className = "l-header"
+  var isSimplePages = ["contact", "confirm", "complete"]
 
-  if (current.id === "contact" || current.id === "confirm" || current.id === "complete") {
-    className = "l-header is-simple"
+  if (isSimplePages.includes(current.id)) {
+    //isSimplePagesにcurrent.idが含まれている場合
+    className += " is-simple"
+  } else {
+    //それ以外のとき
+    className += " js-fixedheader"
+  }
+  if (current.id === "home") {
+    className += " is-home"
   }
 
-  else if (current.id === "home") {
-    className = "l-header js-fixedheader"
-  }
 
 
 header(class=className)

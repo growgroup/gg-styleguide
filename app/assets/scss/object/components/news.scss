@@ -66,6 +66,10 @@ category: News
     &:first-child {
       padding-top: 0;
     }
+
+    &:any-link:hover {
+      background-color: $color-secondary;
+    }
   }
 
   &__inner {
@@ -112,6 +116,7 @@ category: News
     }
 
     .c-news__date {
+      flex-shrink: 0;
       margin-top: rem-calc(6);
       @include breakpoint(small only) {
         margin-top: 0;
@@ -119,6 +124,7 @@ category: News
     }
 
     .c-news__title {
+      flex-grow: 1;
       text-align: center;
       margin-bottom: rem-calc(40);
       @include breakpoint(small only) {
