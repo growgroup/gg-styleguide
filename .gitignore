@@ -32,6 +32,7 @@ sitemap.xml
 sitemap.xml.gz
 wp-config.php
 wp-content/advanced-cache.php
+wp-content/ai1wm-backups/
 wp-content/backup-db/
 wp-content/backups/
 wp-content/blogs.dir/
@@ -41,6 +42,8 @@ wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 wp-content/plugins/siteguard/really-simple-captcha/tmp/
+wp-content/siteguard/*.png
+wp-content/siteguard/*.txt
 /readme.html
 /license.txt
 *.sql
