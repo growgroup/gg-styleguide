@@ -54,8 +54,8 @@ a,
   text-decoration: underline;
   cursor: pointer;
 }
-a{
 
+.u-text-link {
   &.is-pdf {
 
     &:after {
@@ -84,15 +84,19 @@ a{
 }
 
 a:hover,
-.u-text-link:hover,
+.u-text-link:any-link:hover,
 .u-text-link.is-hover {
   opacity: 0.8;
 }
 
-a:active,
+a:any-link:active,
 .u-text-link:active,
 .u-text-link.is-active {
   // color: darken($color-primary, 10);
+}
+
+.u-hover-disabled, .u-pointer-events-none {
+  pointer-events: none;
 }
 
 // p a:visited {
@@ -112,3 +116,4 @@ a:active,
 .u-text-success {
   color: $color-state-info;
 }
+

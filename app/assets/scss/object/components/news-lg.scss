@@ -18,6 +18,10 @@ category: News
     &:first-child {
       padding-top: 0;
     }
+
+    &:any-link:hover {
+      background-color: $color-secondary;
+    }
   }
 
   &__sup {

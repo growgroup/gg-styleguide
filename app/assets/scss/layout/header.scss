@@ -30,11 +30,11 @@ category: Layout
     display: flex;
     align-items: center;
     padding: rem-calc(16) rem-calc(32) rem-calc(24);
-    height: rem-calc(80);
+    height: rem-calc($header-height);
 
     @include breakpoint(medium down) {
       padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
-      height: rem-calc(55);
+      height: rem-calc($header-height-sp);
     }
   }
 

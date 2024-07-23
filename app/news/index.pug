@@ -21,6 +21,12 @@ block body
         +c.news.is-onecolumn
           h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
           +e.content
+            +e.block
+              +e.date 2022.01.01
+              +e.label.c-label.is-white カテゴリ
+              +e.inner
+                +e.text リンク無し記事のテスト
+                +e.excerpt リンク無し記事のテスト
             +loop(3)
               +c_news__block("news")
         +c_pagination()
