@@ -13,7 +13,6 @@
     "develop": "run-p server develop:*",
     "build:css": "run-s webpack-css-production make-admin-style prepend-selector-admin-style",
     "webpack-css-production": "webpack --config webpack.style.config.babel.js --mode production",
-    "develop:css": "webpack --config webpack.style.config.babel.js --mode development --watch --watch-options-stdin --progress",
     "build:webpack": "webpack --config webpack.config.babel.js --mode production",
     "develop:webpack": "webpack --config webpack.config.babel.js --mode development  --watch --watch-options-stdin --progress",
     "build:pug": "pug -O build/pug.js app --out dist -s",
@@ -59,6 +58,8 @@
     "watch": "^1.0.2",
     "webpack": "^5.65.0",
     "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^6.0.2",
+    "webpack-hot-middleware": "^2.26.1",
     "webpack-remove-empty-scripts": "^1.0.4"
   },
   "dependencies": {

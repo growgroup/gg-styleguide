@@ -1,7 +1,14 @@
 const pugConfig = require("./build/pug.js")
 const pug = require("pug")
+const pugCache = new Map();
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+// const webpackConfig = require("./webpack.config.babel.js")
+const webpackStyleConfig = require("./webpack.style.config.babel.js")
+// const jsCompiler = webpack(webpackConfig({}, {mode: 'development'}));
+const styleCompiler = webpack(webpackStyleConfig({}, {mode: 'development'}));
 const browserSync = require("browser-sync")
-const notifier = require('node-notifier');
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
@@ -36,24 +43,38 @@ function pugMiddleWare(req, res, next) {
   if (!requestPath.match(/(\/|\.html)$/)) {
     return next();
   }
-
   // HTMLファイルが存在すれば、HTMLを返す
   var htmlPath = path.parse(requestPath).ext == '' ? `${requestPath}index.html` : requestPath;
-
   // pug のファイルパスに変換
   var pugPath = path.join(APPPATH, htmlPath.replace('.html', '.pug'));
-
   // pugファイルがなければ404を返す
   if (!fileExists(pugPath)) {
     return next();
   }
 
+  // pugのキャッシュ生成
+  const pugStats = fs.statSync(pugPath);
+  const cacheKey = pugPath;
+  const cachedData = pugCache.get(cacheKey);
+
+  if (cachedData && cachedData.mtime === pugStats.mtime.getTime()) {
+    res.setHeader('Content-Type', 'text/html');
+    res.end(cachedData.content);
+    return;
+  }
+
   // pugがファイルを見つけたのでコンパイルする
   var content = pug.renderFile(pugPath, pugConfig);
+
+  // キャッシュを更新
+  pugCache.set(cacheKey, {
+    mtime: pugStats.mtime.getTime(),
+    content: content
+  });
+
   res.setHeader('Content-Type', 'text/html');
   // コンパイル結果をレスポンスに渡す
   res.end(new Buffer.from(content));
-  // next();
 }
 
 var config = {
@@ -70,8 +91,20 @@ var config = {
     baseDir: [DISTPATH],
     directory: true,
     middleware: [
-      pugMiddleWare
-    ]
+
+      // webpackDevMiddleware(jsCompiler, {
+      //   publicPath: '/',
+      //   stats: {colors: true}
+      // }),
+      webpackDevMiddleware(styleCompiler, {
+        publicPath: '/',
+        stats: {colors: true}
+      }),
+
+      // webpackHotMiddleware(jsCompiler),
+      webpackHotMiddleware(styleCompiler),
+      pugMiddleWare,
+    ],
   },
   scrollRestoreTechnique: 'cookie'
 }
@@ -81,29 +114,17 @@ var config = {
  */
 
 bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
-  bs.reload("*.html")
+
+    // キャッシュをクリア
+    pugCache.clear();
+    bs.reload("*.html")
 });
 
-// bs.watch(["dist/*.html","dist/**/*.html"]).on("change", function (event) {
-//   bs.reload("*.html")
-//   notifier.notify({
-//     title: 'Grow Template',
-//     message: 'Compiled the HTML'
-//   });
-// });
-bs.watch("dist/assets/**/*.css").on("change", function (event) {
+bs.watch("app/assets/**/*.scss").on("change", function (event) {
   bs.reload("*.css")
-  // notifier.notify({
-  //   title: 'Grow Template',
-  //   message: 'Compiled the CSS'
-  // });
 });
 bs.watch("dist/assets/**/*.js").on("change", function () {
   bs.reload("*.js")
-  // notifier.notify({
-  //   title: 'GrowTemplate',
-  //   message: 'Compiled the JavaScript'
-  // });
 });
 
 bs.init(config)
