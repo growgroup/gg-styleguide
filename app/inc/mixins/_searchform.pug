@@ -7,7 +7,8 @@ mixin l_searchform(type)
         .l-searchform__inner
           form.l-searchform__form
             label.l-searchform__form__label(for="searchform")
-              span.l-searchform__form__icon(aria-label="キーワードから検索") search
+              span.u-visually-hidden キーワードから検索
+              span.l-searchform__form__icon(aria-hidden="true") search
             input(type="text", placeholder="キーワードから検索")#searchform
             button 検索する
   else
@@ -19,6 +20,7 @@ mixin l_searchform(type)
             span.c-icon-font.l-searchform__close__icon close
           form.l-searchform__form.js-header-searchform-content
             label.l-searchform__form__label(for="searchform")
-              span.l-searchform__form__icon(aria-label="キーワードから検索") search
+              span.u-visually-hidden キーワードから検索
+              span.l-searchform__form__icon(aria-hidden="true") search
             input(type="text", placeholder="キーワードから検索")#searchform
             button 検索する
