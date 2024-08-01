@@ -3,97 +3,111 @@
 // スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
 // Styleguide 4.5
 
+
 @include breakpoint(large up) {
   .c-slidebar-button {
     display: none;
   }
 }
 
-@include breakpoint(medium down) {
-  // トリガーとなるボタン
-  .c-slidebar-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: fixed;
-    right: 0;
-    top: 0;
-    text-align: center;
-    font-size: rem-calc(12);
-    z-index: 9999;
-    text-decoration: none;
-    background-color: $color-primary;
-    line-height: 1;
-    color: $color-white;
-    width: rem-calc($slidebar-header-height);
-    height: rem-calc($slidebar-header-height);
-    padding-top: rem-calc(6);
-    border: none;
+// トリガーとなるボタン
+.c-slidebar-button {
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  font-size: rem-calc(12);
+  z-index: 9999;
+  text-decoration: none;
+  background-color: $color-primary;
+  color: $color-white;
+  width: rem-calc($slidebar-header-height);
+  height: rem-calc($slidebar-header-height);
+  border: none;
+  padding: 0;
 
-    &:active,
-    &:hover {
-      opacity: 1;
+  &:active,
+  &:hover {
+    opacity: 1;
+  }
+
+  &__inner {
+    display: grid;
+    position: absolute;
+    inset: 0;
+    place-content: center;
+    padding-top: rem-calc(12);
+  }
+
+  // ボーダー
+  &__line {
+    --color-slidebar-button-line: #{$color-white}; //線の色が開閉で変化しない場合はここで指定
+    position: relative;
+    width: 26px; //線の長さ
+    height: 2px; //線の太さ
+    background-color: var(--color-slidebar-button-line);
+    //background-color: transparent;//線2本の時は、ここは透明に
+    transition: all ease-out .2s;
+
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      //background-color: var(--color-slidebar-button-line);//線2本の時は、親は透明にしてこちらで色を指定
+      transition: inherit;
     }
 
-    &__inner{
-      display: block;
+    &::before {
+      top: -7px;
     }
 
-    // ボーダー
-    &__line {
-      height: rem-calc(16);
-      display: block;
-      > span {
-        display: block;
-        width: rem-calc(26);
-        height: rem-calc(2);
-        background: $color-white;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 5px;
-        transition: all ease .2s;
+    &::after {
+      top: 7px;
+    }
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+    //メニューが開いているとき
+    @at-root .is-slidebar-active & {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        top: 0;
+        background-color: var(--color-slidebar-button-line);
       }
-    }
 
-    // メニューテキスト
-    &__text {
-      transition: all ease .2s;
-      font-size: 9px;
-      letter-spacing: 0.4px;
-      @include webfont();
-      margin-top: rem-calc(8);
-      display: block;
+      &::before {
+        transform: rotate(45deg);
+      }
 
-      &.is-close {
-        display: none;
+      &::after {
+        transform: rotate(-45deg);
       }
     }
   }
 
-  // 有効時
-  .is-slidebar-active {
-    //cursor: pointer;
+  // メニューテキスト
+  &__text {
+    transition: all ease .2s;
+    font-size: 9px;
+    letter-spacing: 0.4px;
+    @include webfont();
+    margin-top: rem-calc(12);
+    display: block;
 
-    .c-slidebar-button {
-      &__line {
-        > span {
-          &:nth-child(1) {
-            transform: rotate(-45deg) translateY(4px) translateX(-4px);
-          }
+    &.is-close {
+      display: none;
+    }
 
-          &:nth-child(2) {
-            transform: rotate(45deg) translateY(-1px) translateX(-1px);
-          }
+    @at-root .is-slidebar-active & {
+      display: none;
 
-          &:nth-child(3) {
-            display: none;
-          }
-        }
+      &.is-close {
+        display: block;
       }
     }
   }
