@@ -40,7 +40,7 @@ html {
 
 body {
   color: $font-base-color;
-  margin: rem-calc(80) 0 0;
+  margin: var(--header-height) 0 0;
   line-height: $font-base-line-height;
   //letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
@@ -49,10 +49,6 @@ body {
 
   &.is-slidebar-active {
     overflow: hidden;
-  }
-
-  @include breakpoint(medium down) {
-    margin-top: rem-calc(55);
   }
 
   @include breakpoint(small only) {

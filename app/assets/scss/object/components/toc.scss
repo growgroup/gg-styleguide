@@ -8,7 +8,7 @@ category: PostContent
 
 #toc_container {
   margin: rem-calc(32) 0;
-  width: 100%;
+  width: 100% !important; //WPプラグインでインラインスタイルが指定されているため!importantを使用
   background: $color-secondary;
   border-radius: 0;
   padding: rem-calc(16) rem-calc(40) rem-calc(40);
