@@ -9,7 +9,14 @@ block layout
 
   // ページヘッダー
   block page_header
-  main.l-main.is-two-column
+  -
+    var className = "l-main.is-two-column"
+
+    if (current.id == "result") {
+      className = "l-main is-two-column is-search"
+    }
+
+  main(class=className)
     .l-container
       .l-wrapper
         block body

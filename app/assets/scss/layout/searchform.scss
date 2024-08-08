@@ -55,7 +55,7 @@
 
 
   //検索フォーム本体部分
-  &__form{
+  &__form {
     display: flex;
     align-items: center;
     height: rem-calc(72);
@@ -67,6 +67,10 @@
 
     @include breakpoint(small only) {
       height: rem-calc(46);
+    }
+
+    &__label {
+      flex-shrink: 0;
     }
 
     &__icon {
@@ -81,7 +85,7 @@
 
       @include breakpoint(small only) {
         padding: rem-calc(10);
-        span{
+        span {
           font-size: rem-calc(20);
         }
       }
@@ -133,6 +137,94 @@
     }
   }
 
+  &__title {
+    flex-shrink: 0;
+    @include font-format(14,null,21,700);
+    margin-top: rem-calc(2);
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(13);
+      margin-top: 0;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: rem-calc(16);
+    margin-top: rem-calc(20);
+
+    @include breakpoint(small down) {
+      flex-direction: column;
+      margin-top: rem-calc(16);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem-calc(16) rem-calc(24);
+
+    @include breakpoint(small down) {
+      gap: rem-calc(12) rem-calc(16);
+    }
+
+    li {
+
+      label {
+        cursor: pointer;
+
+        input[type=checkbox] {
+          vertical-align: text-bottom;
+        }
+
+        span {
+          @include font-format-light(14,21);
+          margin-left: rem-calc(12);
+
+          @include breakpoint(small down) {
+            font-size: rem-calc(13);
+            margin-left: rem-calc(8);
+          }
+        }
+      }
+    }
+  }
+
+  &.is-search {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+    padding: rem-calc(46) 0 0;
+
+    .l-searchform__inner {
+      max-width: 100%;
+      background-color: $color-background;
+      padding: rem-calc(24)
+    ;
+
+      @include breakpoint(small down) {
+        padding: rem-calc(16) rem-calc(20);
+      }
+    }
+
+    .l-searchform__form {
+      max-width: 100%;
+
+      @include breakpoint(medium up) {
+        height: rem-calc(56);
+      }
+
+      input {
+
+        @include breakpoint(medium up) {
+          height: rem-calc(32);
+        }
+      }
+    }
+  }
 }
 
 body.is-search-modal-open {

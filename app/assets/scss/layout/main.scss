@@ -37,3 +37,35 @@
     }
   }
 }
+.l-main.is-search {
+  padding-top: rem-calc(48);
+
+  @include breakpoint(medium down) {
+    padding-top: rem-calc(32);
+  }
+
+  .l-container {
+
+    .l-wrapper {
+      max-width: $mainSearchContainer;
+    }
+
+    .l-aside {
+      max-width: rem-calc($asideSearchContainer);
+
+      @include breakpoint(medium down) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .c-pagination li > span, .c-pagination li > a {
+    width: rem-calc(40);
+    height: rem-calc(40);
+
+    @include breakpoint(small down) {
+      width: rem-calc(32);
+      height: rem-calc(32);
+    }
+  }
+}
