@@ -18,12 +18,12 @@ import myScript from './scripts.js';
 // import OwlCarousel from "./app/owl-carousel.js";
 // import SlickSlider from "./app/slick-slider";
 import SwiperSlider from "./app/swiper.js";
-import modaal from 'modaal';
+// import modaal from 'modaal';
 import CustomFunctions from "./app/custom";
 import modal from './app/modal.js';
 import GsapAnimation from "./app/gsap";
 import anime from 'animejs';
-import modaalCss from 'modaal/dist/css/modaal.css';
+// import modaalCss from 'modaal/dist/css/modaal.css';
 import ScrollTable from "./app/scroll-table";
 import Parallax from "./app/parallax";
 

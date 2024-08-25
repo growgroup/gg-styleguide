@@ -18,9 +18,9 @@
   growApp.prototype.myCode = function () {
   }
 
-  growApp.prototype.modalContents = function () {
-    $('.js-modal-content').modaal();
-  }
+  // growApp.prototype.modalContents = function () {
+  //   $('.js-modal-content').modaal();
+  // }
 
   growApp.prototype.enterAnimation = function () {
     let $loader = $('.c-loader');
