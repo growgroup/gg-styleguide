@@ -30,14 +30,15 @@ block body
               +loop(5)
                 +ae("/assets/images/img-card-01.jpg").image.js-modal-image
                   +img("img-card-01.jpg")
-            +e.slider.swiper
-              .swiper-wrapper
+            +e.slider.js-document-slider.swiper
+              +e.slider-wrapper.swiper-wrapper
                 +e.image.swiper-slide: .is-no NO IMAGE
                 +loop(3)
                   +e.image.swiper-slide: +img("img-card-01.jpg")
-              .swiper-nav
-                .swiper-button-prev
-                .swiper-button-next
+              +e.slider-nav.swiper-nav
+                +e.slider-prev.swiper-prev.js-document-slider-prev.swiper-button-prev
+                +e.slider-next.swiper-next.js-document-slider-next.swiper-button-next
+                
         .c-block-document__form
           +c.forms
             .c-heading.is-xs.is-mg-level-4 ダウンロードフォーム
