@@ -135,6 +135,7 @@ export default class SwiperSlider {
 
 
   //スライド枚数が著しく少ない場合、事前にスライドを複製してスライダーを初期化するサンプル
+  //動作の安定性に疑問があるため、不具合があれば別の実装方法を検討する
   LogoSlider(selector, reverse = false) {
     const minSlides = 2;
     const targetSelector = selector;
@@ -155,12 +156,6 @@ export default class SwiperSlider {
 
     // スライドの数が8未満の場合、スライドを複製して8枚以上になるまで追加する
     if (targetSlides.length < 8) {
-      // targetSlidesを複製
-      for (let i = 0; i < targetSlides.length; i++) {
-        const cloneSlide = targetSlides[i].cloneNode(true);
-        target.querySelector(".swiper-wrapper").appendChild(cloneSlide);
-      }
-      // 8枚以上になるまで複製
       while (target.querySelectorAll(targetSlideSelector).length < 8) {
         for (let i = 0; i < targetSlides.length; i++) {
           const cloneSlide = targetSlides[i].cloneNode(true);
