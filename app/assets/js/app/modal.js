@@ -1,3 +1,4 @@
+import MicroModal from "micromodal";
 import MicromodalWrapper from "./wrapperClasses/micromodalWrapper";
 
 
@@ -23,6 +24,11 @@ export default class modal {
    * 実行
    */
   run() {
+    this.microModalWrapper();
+    // this.microModal();
+  }
+
+  microModalWrapper() {
     new MicromodalWrapper({
       wrapper: {
         modalTrigger: ".js-modal",
@@ -31,4 +37,18 @@ export default class modal {
       }
     });
   }
+
+  microModal() {
+    //Micromodal.js本体をそのまま起動することも可能
+    // MicroModal.init({
+    //   openTrigger: 'data-micromodal-open',
+    //   closeTrigger: 'data-micromodal-close',
+    //   disableScroll: true,
+    //   disableFocus: false,
+    //   awaitOpenAnimation: true,
+    //   awaitCloseAnimation: true,
+    //   debugMode: true,
+    // });
+  }
+
 }
