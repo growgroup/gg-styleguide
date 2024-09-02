@@ -8,7 +8,7 @@
 //l-post-content内のスタイルはすべてここに記述すること ※@extend使わない
 @mixin l-post-content {
   display: flow-root;
-  word-break: break-all;
+  //word-break: break-all;
 
   > * + * { //投稿内の各ブロックの間に1emのマージンを設定
     margin-top: 1em;
