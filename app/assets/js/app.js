@@ -2,11 +2,12 @@
 import "../scss/font.scss";
 
 
+
 import Utils from './app/utils.js';
 import Accordion from './app/accordion.js';
 import Anchor from './app/anchor.js';
 import FixedHeader from './app/fixedheader.js';
-import HeightLine from './app/heightline.js';
+// import HeightLine from './app/heightline.js';
 import CopyRight from './app/copyright.js';
 import ResponsiveTable from './app/responsive-table.js';
 import Slidebar from './app/slidebar.js';
@@ -35,7 +36,7 @@ class App {
     this.FixedHeader = new FixedHeader();
     this.modal = new modal();
     this.CopyRight = new CopyRight();
-    this.HeightLine = new HeightLine();
+    // this.HeightLine = new HeightLine();
     this.ResponsiveTable = new ResponsiveTable();
     this.Slidebar = new Slidebar();
     this.ScrollSpy = new ScrollSpy();

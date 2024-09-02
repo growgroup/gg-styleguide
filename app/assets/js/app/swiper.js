@@ -1,14 +1,42 @@
 // core version + navigation, pagination modules:
-import Swiper, {Navigation, Pagination, Autoplay,Controller, EffectCreative,Keyboard,EffectFade,Scrollbar} from 'swiper';
-Swiper.use([Pagination, Navigation,Autoplay,Controller, EffectCreative,Keyboard,EffectFade,Scrollbar]);
+import Swiper, {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Controller,
+  Keyboard,
+  EffectFade,
+  // EffectCreative,
+  // Scrollbar,
+  // Thumbs,
+} from 'swiper';
+
+Swiper.use([
+  Pagination,
+  Navigation,
+  Autoplay,
+  Controller,
+  Keyboard,
+  EffectFade,
+  // EffectCreative,
+  // Scrollbar,
+  // Thumbs
+]);
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import 'swiper/css/effect-fade';
+// import 'swiper/css/effect-creative';
+// import 'swiper/css/scrollbar';
+// import 'swiper/css/thumbs';
 
+
+import imagesLoaded from "imagesloaded";
+import Utils from "./utils";
+
+const utils = new Utils();
 
 
 let defaultOptions = {
@@ -21,7 +49,7 @@ export default class SwiperSlider {
    * @param options
    */
   constructor(options) {
-    this.options = $.extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
     this.init();
   }
 
@@ -30,7 +58,7 @@ export default class SwiperSlider {
    */
   init() {
     // ターゲットを取得する
-    this.targetAll = $(this.options.selector);
+    this.targetAll = document.querySelectorAll(this.options.selector);
 
     // ターゲットが存在しない場合は実行しない
     if (!this.targetAll.length) {
@@ -45,162 +73,279 @@ export default class SwiperSlider {
    * 実行する
    */
   run() {
-    //->スライダー
-    this.targetAll.imagesLoaded(function () {
+    imagesLoaded(this.targetAll, () => {
+      this.MainVisualSlider(); //->メインビジュアル
+      this.LogoSlider(".js-logo-slider:nth-child(odd of .js-logo-slider)"); //->ロゴスライダー
+      this.LogoSlider(".js-logo-slider:nth-child(even of .js-logo-slider)", true); //->ロゴスライダー
+      this.runCardSlider(); //->カードスライダー
+      this.documentSlider(); //->ドキュメントスライダー
+      this.textLoopSlider(); //->テキストループ
+    });
+  }
 
-      if ($('.c-main-visual .swiper').length <= 0) {
+  MainVisualSlider() {
+    const minSlides = 2;
+    const targetSelector = '.js-main-visual';
+    const targetSlideSelector = `${targetSelector} .swiper-slide`;
+    const target = document.querySelector(targetSelector);
+    const targetSlides = document.querySelectorAll(targetSlideSelector);
+
+    // ターゲット要素が存在しない場合、処理を終了する
+    if (!target) {
+      return;
+    }
+
+    // スライドの数が最低限必要な数（minSlides）より少ない場合、スライダーを初期化せずに処理を終了する
+    if (targetSlides.length < minSlides) {
+      return;
+    }
+
+    // const prev = document.querySelector(targetSelector + '-prev');
+    // const next = document.querySelector(targetSelector + '-next');
+    const pagination = document.querySelector(targetSelector + '-pagination');
+    const bar = document.querySelector(targetSelector + '-bar span');
+    const delayTime = 4000;
+
+    const swiper = new Swiper(targetSelector, {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: delayTime, // ４秒後に次の画像へ
+        disableOnInteraction: false, // ユーザー操作後に自動再生を再開する
+      },
+      speed: 2000,
+      allowTouchMove: false,
+      pagination: {
+        el: pagination, // ページネーションのクラス名を指定
+      },
+      on: {
+        //スライド（次または前）へのアニメーションの開始後にイベント発生
+        slideChangeTransitionStart: function (result) {
+          bar.style.transitionDuration = '0ms';
+          bar.style.transform = 'scaleY(0)'
+        },
+        //スライド（次または前）へのアニメーションの開始後にイベント発生
+        slideChangeTransitionEnd: function (result) {
+          bar.style.transitionDuration = delayTime + 'ms';
+          bar.style.transform = 'scaleY(1)'
+        },
+      },
+    });
+  }
+
+
+  //スライド枚数が著しく少ない場合、事前にスライドを複製してスライダーを初期化するサンプル
+  //動作の安定性に疑問があるため、不具合があれば別の実装方法を検討する
+  LogoSlider(selector, reverse = false) {
+    const minSlides = 2;
+    const targetSelector = selector;
+    const target = document.querySelector(targetSelector);
+
+    // ターゲット要素が存在しない場合、処理を終了する
+    if (!target) {
+      return;
+    }
+
+    const targetSlideSelector = `${targetSelector} .swiper-slide`;
+    const targetSlides = target.querySelectorAll(targetSlideSelector);
+
+    // スライドの数が最低限必要な数（minSlides）より少ない場合、スライダーを初期化せずに処理を終了する
+    if (targetSlides.length < minSlides) {
+      return;
+    }
+
+    // スライドの数が8未満の場合、スライドを複製して8枚以上になるまで追加する
+    if (targetSlides.length < 8) {
+      while (target.querySelectorAll(targetSlideSelector).length < 8) {
+        for (let i = 0; i < targetSlides.length; i++) {
+          const cloneSlide = targetSlides[i].cloneNode(true);
+          target.querySelector(".swiper-wrapper").appendChild(cloneSlide);
+        }
+      }
+    }
+
+    let options = {
+      loop: true,
+      speed: 4000,
+      loopedSlides: targetSlides.length + 2,
+      slidesPerView: "auto",
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: reverse,
+      },
+      breakpoints: {
+        0: {
+          spaceBetween: 16,
+        },
+        950: {
+          spaceBetween: 32,
+        },
+      },
+    }
+
+    return new Swiper(targetSelector,
+      options
+    );
+
+  }
+
+
+  // スマホとPCで最低限必要なスライド数が異なる場合のサンプル
+  //initとrunを分ける（init側は、スライダーの初期化のみを行う）
+  initCardSlider(target, minSlides) {
+    // ターゲット要素が存在しない場合、nullを返して処理を終了する
+    if (!target) {
+      return null;
+    }
+
+    const targetSlides = target.querySelectorAll('.swiper-slide');
+    const prev = target.querySelector('.js-card-slider-prev');
+    const next = target.querySelector('.js-card-slider-next');
+    const pagination = target.querySelector('.js-card-slider-pagination');
+
+    // スライドの数が最低限必要な数（minSlides）より少ない場合、nullを返して処理を終了する
+    if (targetSlides.length < minSlides) {
+      return null;
+    }
+
+    return new Swiper(target, {
+      spaceBetween: 40,
+      loop: true,
+      navigation: {
+        nextEl: next,
+        prevEl: prev,
+      },
+      pagination: {
+        el: pagination,
+        clickable: false,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.25,
+          centeredSlides: true,
+          spaceBetween: 16,
+        },
+        950: {
+          spaceBetween: 40,
+          slidesPerView: 3,
+          loopAdditionalSlides: 3,
+        }
+      },
+    });
+  }
+
+  // スマホとPCで最低限必要なスライド数が異なる場合のサンプル
+  //initとrunを分ける(run側でレスポンシブ対応を行う)
+  runCardSlider() {
+    const targetSelector = '.js-card-slider';
+    const sliders = document.querySelectorAll(targetSelector);
+
+    sliders.forEach(slider => {
+      let swiper = null;
+
+      utils.responsiveMatch(
+        // SP (mobile) の場合の処理
+        () => {
+          if (swiper) {
+            swiper.destroy();
+          }
+          swiper = this.initCardSlider(slider, 2);
+          // ナビゲーション表示非表示方法参考
+          //  &__slider-nav {
+          //     display: none;
+          //     // swiper が初期化された後に表示する
+          //     @at-root .swiper-initialized & {
+          //       display: block;
+          //     }
+          //   }
+        },
+        // PC の場合の処理
+        () => {
+          if (swiper) {
+            swiper.destroy();
+          }
+          swiper = this.initCardSlider(slider, 4);
+        }
+      );
+    });
+  }
+
+  // 同じスライダーを複数設置する場合のサンプル
+  documentSlider() {
+    const targetSelector = '.js-document-slider';
+    const targetSlideSelector = `${targetSelector} .swiper-slide`;
+    const minSlides = 2;
+    const targets = document.querySelectorAll(targetSelector);
+
+    // スライダーのターゲット要素が存在しない場合、処理を終了する
+    if (!targets.length) {
+      return;
+    }
+
+    targets.forEach(target => {
+
+      const targetSlides = target.querySelectorAll(targetSlideSelector);
+
+      // スライドの数が最低限必要な数（minSlides）より少ない場合、処理を終了する
+      if (targetSlides.length < minSlides) {
         return;
       }
 
-      let bar = document.querySelector('.c-main-visual__bar span');
-      let pagination = document.querySelector('.c-main-visual__pagination');
-      let delayTime = 3500;
+      const prev = target.querySelector(targetSelector + '-prev');
+      const next = target.querySelector(targetSelector + '-next');
+      // const pagination = target.querySelector(targetSelector + '-pagination');
+      const delayTime = 4000;
 
-      const mainVisualSwiper = new Swiper(".c-main-visual .swiper", {
+      const swiper = new Swiper(target, {
         loop: true,
-        effect: 'fade',
+        effect: 'slide',
         autoplay: {
           delay: delayTime, // ４秒後に次の画像へ
           disableOnInteraction: false, // ユーザー操作後に自動再生を再開する
         },
-        speed: 2000,
+        speed: 400,
         allowTouchMove: false,
-        pagination: {
-          el: pagination, // ページネーションのクラス名を指定
-        },
-        on: {
-          //スライド（次または前）へのアニメーションの開始後にイベント発生
-          slideChangeTransitionStart: function (result) {
-            bar.style.transitionDuration = '0ms';
-            bar.style.transform = 'scaleY(0)'
-          },
-          //スライド（次または前）へのアニメーションの開始後にイベント発生
-          slideChangeTransitionEnd: function (result) {
-            bar.style.transitionDuration = delayTime + 'ms';
-            bar.style.transform = 'scaleY(1)'
-          },
-        },
-      });
-    });
-
-    this.targetAll.imagesLoaded(function () {
-
-      if ($('.js-float-swiper.swiper').length <= 0) {
-        return;
-      }
-
-      const textLoopInstagramSwiper = new Swiper(".js-float-swiper.swiper", {
-        loop: true,
-        speed: 20000,
-        slidesPerView: "auto",
-        allowTouchMove: false,
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          0: {
-            spaceBetween: 32,
-          },
-          950: {
-            spaceBetween: 54,
-          },
-        },
-      });
-    });
-
-    this.targetAll.imagesLoaded(function () {
-
-      if ($('.c-gallery-logo__slider.swiper').length <= 0) {
-        return;
-      }
-
-      const infiniteSwiperEven = new Swiper(".c-gallery-logo__slider.swiper:nth-child(even)", {
-        loop: true,
-        speed: 4000,
-        slidesPerView: "auto",
-        allowTouchMove: false,
-        autoplay: {
-          delay: 0,
-        },
-        breakpoints: {
-          0: {
-            spaceBetween: 32,
-          },
-          950: {
-            spaceBetween: 90,
-          },
-        },
-      });
-
-      const infiniteSwiperOdd = new Swiper(".c-gallery-logo__slider.swiper:nth-child(odd)", {
-        loop: true,
-        speed: 4000,
-        slidesPerView: "auto",
-        allowTouchMove: false,
-        autoplay: {
-          delay: 0,
-          reverseDirection: true,
-        },
-        breakpoints: {
-          0: {
-            spaceBetween: 32,
-          },
-          950: {
-            spaceBetween: 90,
-          },
-        },
-      });
-    });
-
-    this.targetAll.imagesLoaded(function () {
-
-      if ($('.c-gallery-card.swiper').length <= 0) {
-        return;
-      }
-
-      let bar = document.querySelector('.swiper-scrollbar');
-
-      const cultureGallerySwiper = new Swiper(".c-gallery-card.swiper", {
-        loop: true,
-        speed: 500,
-        slidesPerView: "auto",
-        slideToClickedSlide: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 3000,
-        },
         navigation: {
-          prevEl: ".swiper-button-prev",
-          nextEl: ".swiper-button-next",
-        },
-        pagination: {
-          el: bar,
-          type: 'progressbar',
-          draggable: true,
-        },
-      });
-    });
-
-    this.targetAll.imagesLoaded(function () {
-
-      if ($('.c-block-document__slider.swiper').length <= 0) {
-        return;
-      }
-
-      let delayTime = 3500;
-
-      const downloadSwiper = new Swiper(".c-block-document__slider.swiper", {
-        loop: true,
-        speed: 500,
-        autoplay: {
-          delay: delayTime,
-        },
-        navigation: {
-          prevEl: ".swiper-button-prev",
-          nextEl: ".swiper-button-next",
+          nextEl: next,
+          prevEl: prev,
         },
       });
     });
   }
+
+
+  textLoopSlider() {
+    const targetSelector = '.js-text-loop';
+
+    // ターゲット要素が存在しない場合、処理を終了する
+    if (!document.querySelector(targetSelector)) {
+      return;
+    }
+
+    const swiper = new Swiper(targetSelector, {
+      loop: true,
+      speed: 20000,
+      slidesPerView: "auto",
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: {
+          spaceBetween: 32,
+        },
+        950: {
+          spaceBetween: 54,
+        },
+      },
+    });
+  }
+
 }

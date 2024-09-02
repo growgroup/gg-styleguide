@@ -213,6 +213,15 @@ export default class Utils {
         return requestAnimFrame;
     }
 
+
+  debounce(func) {
+    var timer;
+    return function (event) {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(func, 300, event);
+    };
+  }
+
   /**
    * matchMediaを使ったレスポンシブ対応を便利にする
    *

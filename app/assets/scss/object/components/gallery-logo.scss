@@ -13,11 +13,11 @@
 
   &__image {
     position: relative;
-    width: 100%;
-    max-width: rem-calc(160);
+    width: rem-calc(240);
+    max-width: 100%;
 
     @include breakpoint(small down) {
-      max-width: rem-calc(120);
+      width: rem-calc(120);
     }
 
     img {
@@ -26,7 +26,14 @@
     }
   }
 
-  .swiper-wrapper {
+  &__images {
     transition-timing-function: linear;
+    display: flex;
+    gap: rem-calc(32);
+
+    @at-root .swiper-initialized & {
+      display: flex;
+      gap: 0;
+    }
   }
 }
