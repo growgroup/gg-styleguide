@@ -1,21 +1,42 @@
 {
+  "excludeFiles": [
+    "./dist/format/*.html",
+    "./dist/blocks/*.html",
+    "./dist/archive-twocolumns/**/*.html",
+    "./dist/twocolumns/*.html"
+  ],
   "rules": {
     "attr-duplication": true,
-    "deprecated-attr": false,
+    "attr-value-quotes": false,
+    "case-sensitive-attr-name": true,
+    "case-sensitive-tag-name": true,
+    "character-reference": false,
+    "class-naming": "/^\\.?[a-z]+(-[a-z]+)*(__[a-z]+)?(--?[a-z]+)?/",
+    "deprecated-attr": true,
     "deprecated-element": true,
-    "disallowed-element": true,
-    "doctype": true,
+    "doctype": "always",
+    "end-tag": false,
+    "heading-levels": {
+      "severity": "warning"
+    },
     "id-duplication": true,
     "ineffective-attr": false,
-    "invalid-attr": true,
-    "landmark-roles": false,
+    "invalid-attr": false,
+    "label-has-control": true,
+    "no-ambiguous-navigable-target-names": true,
+    "no-consecutive-br": false,
+    "no-boolean-attr-value": false,
+    "no-default-value": false,
+    "no-duplicate-dt": true,
+    "no-empty-palpable-content": false,
     "no-hard-code-id": false,
-    "no-refer-to-non-existent-id": false,
+    "no-orphaned-end-tag": true,
     "no-use-event-handler-attr": false,
-    "permitted-contents": true,
-    "required-attr": true,
-    "required-element": true,
+    "placeholder-label-option": true,
+    "require-accessible-name": false,
+    "require-datetime": true,
     "required-h1": true,
+    "table-row-column-alignment": true,
     "use-list": false,
     "wai-aria": false
   },
@@ -23,50 +44,51 @@
     {
       "selector": "meta[property]",
       "rules": {
+        "required-attr": false,
         "invalid-attr": {
-          "option": {
-            "attrs": {
-              "property": {
-                "type": "Any"
-              },
-              "content": {
-                "type": "Any"
-              }
-            }
+          "options": {
+            "allowAttrs": [
+              "property",
+              "content"
+            ]
           }
         }
       }
     },
     {
-      "tagName": "meta",
+      "selector": "meta",
       "rules": {
         "required-attr": false
       }
     },
-      {
-        "tagName": "iframe",
-        "rules": {
-          "invalid-attr": false,
-          "required-attr": false
-        }
-      },
-      {
-        "selector": ".fb-like",
-        "rules": {
-          "invalid-attr": false,
-          "required-attr": false
+    {
+      "selector": "iframe",
+      "rules": {
+        "invalid-attr": false,
+        "required-attr": false,
+        "deprecated-attr": false
+      }
+    },
+    //    {
+    //      "selector": "table",
+    //      "rules": {
+    //        "required-element": [
+    //          "tbody"
+    //        ]
+    //      }
+    //    },
+    {
+      "selector": ".l-main img",
+      "rules": {
+        "invalid-attr": {
+          "options": {
+            "disallowAttrs": [
+              "class"
+            ]
+          },
+          "severity": "warning"
         }
       }
-  ],
-    "childNodeRules": [
-      {
-        "selector": "svg",
-        "inheritance": true,
-        "rules": {
-          "invalid-attr": false,
-          "id-duplication": false,
-          "required-attr": false
-        }
-      },
-    ]
+    }
+  ]
 }
