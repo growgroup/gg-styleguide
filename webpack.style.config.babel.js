@@ -55,7 +55,8 @@ module.exports = (env, argv) => {
                       [
                         'postcss-sort-media-queries',
                         {
-                          sort: 'desktop-first'
+                          sort: 'desktop-first',
+                          onlyTopLevel: true,
                         }
                       ],
                     ],
