@@ -108,14 +108,34 @@
       $bp-max: $bp;
     }
   }
-  $bp: to-em($bp); // ブレイクポイント値をemに変換
+
+
+  // ブレイクポイント値をemに変換して微調整
+  @if $bp {
+    $bp: to-em($bp) - math.div(1, 16);
+  }
+
   // ブレイクポイント最大値がある場合、emに変換して微調整
   @if $bp-max {
-    $bp-max: to-em($bp-max);
+    $bp-max: to-em($bp-max) - math.div(1, 16);
+  }
+
+  // dir が upで bpが0の場合、dirを''に設定
+  @if $dir == 'up' and $bp <= 0em {
+    $dir: '';
+  }
+
+  // dir が onlyで bpが0の場合、dirをdownに設定
+  @if $dir == 'only' and $bp <= 0em {
+    $dir: 'down';
   }
 
   // 最終的なメディアクエリ文字列と方向をリストで返す
-  @return ($bp, $bp-max, $dir);
+  @return (
+    $bp,
+    $bp-max,
+    $dir
+  );
 }
 
 // ブレイクポイントのメディアクエリを出力するミキシン
@@ -128,9 +148,8 @@
   // 方向指定なしの場合はそのまま内容を出力
   @if $dir == '' {
     @content;
-  }
+  } @else {
     // メディアクエリがある場合、条件付きで内容を出力
-  @else {
     @if $dir == 'only' {
       @media screen and (max-width: #{$bp-max}) {
         @media not screen and (max-width: #{$bp}) {
