@@ -5,181 +5,189 @@
 
 @use "sass:math";
 
+// 数値の単位を削除する関数
 @function strip-unit($number) {
+  // 数値が単位付きの場合
   @if type-of($number) == 'number' and not unitless($number) {
+    // 単位を削除するために1で割る
     @return math.div($number, $number * 0 + 1);
   }
-
+  // 単位が無い場合はそのまま返す
   @return $number;
 }
 
-// rem へ変換
+// 値をremに変換する関数
 @function to-rem($value, $base: null) {
+  // 値が数値でない場合の警告
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
     @return $value;
   }
-
+  // 値がremでない場合
   @if unit($value) != 'rem' {
     $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
-
+  // 値が0remの場合
   @if $value == 0rem {
     $value: 0;
   }
+  // 最終的なrem値を返す
   @return $value;
 }
 
-// rem 計算
+// remを計算する関数
 @function rem-calc($values, $base: null) {
+  // 結果を保存するリスト
   $rem-values: ();
+  // 入力された値の長さ
   $count: length($values);
-
+  // 基準値がnullの場合、デフォルトサイズを使用
   @if $base == null {
     $base: $font-html-size;
   }
-
+  // 基準値が%の場合、pxに変換
   @if unit($base) == '%' {
     $base: math.div($base, 100%) * 16px;
   }
-
+  // 入力された値が一つだけの場合
   @if $count == 1 {
     @return to-rem($values, $base);
   }
-
+  // すべての値をremに変換してリストに追加
   @for $i from 1 through $count {
     $rem-values: append($rem-values, to-rem(nth($values, $i), $base));
   }
-
+  // 最終的なrem値のリストを返す
   @return $rem-values;
 }
 
-// em へ変換
+// 値をemに変換する関数
 @function to-em($value) {
+  // 値がpxまたは単位なしの場合、remに変換
   @if unit($value) == 'px' or unitless($value) {
     $value: rem-calc($value, $base: 16px);
   }
+  // 単位を取り除きemを掛ける
   @return strip-unit($value) * 1em;
 }
 
-// ブレイクポイントのテキストを返す
+// ブレイクポイントのメディアクエリ文字列を返し、方向も返す関数
 @function breakpoint($val: small) {
+  $bp: nth($val, 1); // ブレイクポイントの値
+  $bp-max: 0; // 最大値の初期化
+  $dir: if(length($val) > 1, nth($val, 2), up); // 方向の設定
+  $named: false; // Namedフラグの初期化
 
-  $bp: nth($val, 1);
-
-  $bp-max: 0;
-
-  $dir: if(length($val) > 1, nth($val, 2), up);
-
-  $str: '';
-
-  $named: false;
-
-  @if $bp == 'landscape' or $bp == 'portrait' {
-    @return '(orientation: #{$bp})';
-  }
-  @else if $bp == 'retina' {
-    @return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
-  }
-
-
+  // ブレイクポイントが文字列の場合
   @if type-of($bp) == 'string' {
+    // ブレイクポイントが設定に存在する場合
     @if map-has-key($breakpoints, $bp) {
+      // 方向が'only'または'down'の場合、最大値を設定
       @if $dir == 'only' or $dir == 'down' {
-        $next-bp: map-next($breakpoints, $bp);
-
+        $next-bp: map-next($breakpoints, $bp); // 次のブレイクポイントを取得
+        // 次のブレイクポイントがない場合の警告
         @if $next-bp == null {
           $bp-max: null;
           @warn 'breakpoint(): the media query "#{$val}" cannot be used because #{$bp} is the largest breakpoint.';
         }
+          // 次のブレイクポイントを最大値に設定
         @else {
           $bp-max: $next-bp;
         }
       }
-
-      $bp: map-get($breakpoints, $bp);
-      $named: true;
+      $bp: map-get($breakpoints, $bp); // 現在のブレイクポイント値を取得
+      $named: true; // Namedフラグをtrueに設定
     }
+      // ブレイクポイントが設定に存在しない場合
     @else {
       $bp: 0;
     }
+  } @else {
+    // ブレイクポイントが数値の場合
+    @if $dir == 'only' or $dir == 'down' {
+      $bp-max: $bp;
+    }
   }
 
-  $bp: to-em($bp);
+
+  // ブレイクポイント値をemに変換して微調整
+  @if $bp {
+    $bp: to-em($bp) - math.div(1, 16);
+  }
+
+  // ブレイクポイント最大値がある場合、emに変換して微調整
   @if $bp-max {
     $bp-max: to-em($bp-max) - math.div(1, 16);
   }
 
-  @if $bp > 0em or $dir == 'only' or $dir == 'down' {
+  // dir が upで bpが0の場合、dirを''に設定
+  @if $dir == 'up' and $bp <= 0em {
+    $dir: '';
+  }
 
+  // dir が onlyで bpが0の場合、dirをdownに設定
+  @if $dir == 'only' and $bp <= 0em {
+    $dir: 'down';
+  }
+
+  // 最終的なメディアクエリ文字列と方向をリストで返す
+  @return (
+    $bp,
+    $bp-max,
+    $dir
+  );
+}
+
+// ブレイクポイントのメディアクエリを出力するミキシン
+@mixin breakpoint($value) {
+  $result: breakpoint($value); // ブレイクポイントの値を取得
+  $bp: nth($result, 1); // サイズを取得
+  $bp-max: nth($result, 2); // サイズを取得2
+  $dir: nth($result, 3); // 方向を取得
+
+  // 方向指定なしの場合はそのまま内容を出力
+  @if $dir == '' {
+    @content;
+  } @else {
+    // メディアクエリがある場合、条件付きで内容を出力
     @if $dir == 'only' {
-      @if $named == true {
-        $str: $str + '(min-width: #{$bp})';
-
-        @if $bp-max != null {
-          $str: $str + ' and (max-width: #{$bp-max})';
+      @media screen and (max-width: #{$bp-max}) {
+        @media not screen and (max-width: #{$bp}) {
+          @content;
         }
       }
-      @else {
-        @warn 'Only named media queries can have an `only` range.';
+    } @else if $dir == 'down' {
+      @media screen and (max-width: #{$bp-max}) {
+        @content;
       }
-    }
-
-    @else if $dir == 'down' {
-      $max: 0;
-
-      @if $named {
-        $max: $bp-max;
+    } @else if $dir == 'up' {
+      @media not screen and (max-width: #{$bp}) {
+        @content;
       }
-      @else {
-        $max: $bp;
-      }
-
-      @if $named or $bp > 0em {
-        $str: $str + '(max-width: #{$max})';
-      }
-    }
-    @else if $bp > 0em {
-      $str: $str + '(min-width: #{$bp})';
-    }
-  }
-  @return $str;
-}
-
-
-// ブレイクポイントを出力
-@mixin breakpoint($value) {
-  $str: breakpoint($value);
-
-  @if $str == '' {
-    @content;
-  }
-
-  @else {
-    @media screen and #{$str} {
-      @content;
     }
   }
 }
 
-
-// map にアクセス
+// mapの次の値を取得する関数
 @function map-next($map, $key) {
-  $values: map-values($map);
-
-  $i: 1;
-  $found: false;
+  $values: map-values($map); // mapの値のリスト
+  $i: 1; // インデックスの初期値
+  $found: false; // 発見フラグの初期化
+  // mapのキーを順に確認
   @each $val in map-keys($map) {
     @if $found == false {
+      // キーが見つかった場合、次のループで値を取得
       @if ($key == $val) {
         $found: true;
       }
       $i: $i + 1;
     }
   }
+  // 最後の値を超えた場合はnullを返す
   @if $i > length($map) {
     @return null;
   }
+    // 次の値を返す
   @else {
     @return nth($values, $i);
   }
