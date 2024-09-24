@@ -5,7 +5,7 @@ import Lenis from '@studio-freight/lenis'
  */
 var defaultOptions = {
   lerp: 0.15,//数字を0.1にするとスクロールの滑らかさが強く、0.2にすると弱くなる
-  insideLerp: 0.2,//insideはlerpよりも強めに設定しても良い
+  insideLerp: 0.2,//insideはlerpよりも数値を大きくすると良いかも
   insideSelector: '.js-lenis-inside',
 };
 
