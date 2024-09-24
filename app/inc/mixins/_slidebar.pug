@@ -4,9 +4,8 @@ mixin c_slidebar
   +c("button").slidebar-button.js-slidebar-button(type="button")
     +e("span").inner
       +e("span").line
-        span
-        span
-        span
+        //- .text が存在するときは.u-visually-hidden要素不要
+        span.u-visually-hidden メニューを開閉する
       +e("span").text.is-open MENU
       +e("span").text.is-close CLOSE
 

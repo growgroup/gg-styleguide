@@ -28,7 +28,7 @@ block body
             +e.item
               +e.item-number 3
               +e.item-text 送信完了
-      <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+      <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
       +c.forms
         +e.inner
           +h1.head お問い合わせ
@@ -39,119 +39,131 @@ block body
               +e.content
                 +e.checkbox.is-border
                   span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4
+                    span
+                      span
+                        label
+                          input(type="checkbox", name="service_options", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="checkbox", name="service_options", value="選択肢2")
+                          span 選択肢2
+                      span
+                        label
+                          input(type="checkbox", name="service_options", value="選択肢3")
+                          span 選択肢3
+                      span
+                        label
+                          input(type="checkbox", name="service_options", value="選択肢4")
+                          span 選択肢4
 
             +e.block
               +e.title ラジオボタン
               +e.content
                 +e.radio.is-border
                   span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4
+                    span
+                      span
+                        label
+                          input(type="radio", name="service_selection", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="radio", name="service_selection", value="選択肢2")
+                          span 選択肢2
+                      span
+                        label
+                          input(type="radio", name="service_selection", value="選択肢3")
+                          span 選択肢3
+                      span
+                        label
+                          input(type="radio", name="service_selection", value="選択肢4")
+                          span 選択肢4
 
             +e.block
               +e.title ご希望のサービス（テキストが長い場合）
               +e.content
                 +e.checkbox.is-border.is-vertical
                   span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2 長いテキスト長いテキスト長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢3")
-                      span 選択肢3 長いテキスト
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢4")
-                      span 選択肢4 長いテキスト
+                    span
+                      span
+                        label
+                          input(type="checkbox", name="long_text_options", value="選択肢1")
+                          span 選択肢1 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
+                      span
+                        label
+                          input(type="checkbox", name="long_text_options", value="選択肢2")
+                          span 選択肢2 長いテキスト長いテキスト長いテキスト
+                      span
+                        label
+                          input(type="checkbox", name="long_text_options", value="選択肢3")
+                          span 選択肢3 長いテキスト
+                      span
+                        label
+                          input(type="checkbox", name="long_text_options", value="選択肢4")
+                          span 選択肢4 長いテキスト
 
             +e.block
               +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
               +e.content
                 +e.radio.is-design.is-border
                   span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
+                    span
+                      span
+                        label
+                          input(type="radio", name="custom_service_selection", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="radio", name="custom_service_selection", value="選択肢2")
+                          span 選択肢2
 
             +e.block
               +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
               +e.content
                 +e.checkbox.is-design.is-border
                   span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
-
+                    span
+                      span
+                        label
+                          input(type="checkbox", name="custom_service_options", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="checkbox", name="custom_service_options", value="選択肢2")
+                          span 選択肢2
 
             +e.block
               +e.title
                 | お名前
                 span.c-forms__label 必須
+                //- ★Contact form 7 の場合は name="name" は使えないので name="your_name" にしてください
               +e.content
-                +e.input: input(type="text", name="お名前", placeholder="山田　太郎")
+                +e.input: input(type="text", name="your_name", placeholder="山田　太郎")
 
             +e.block
               +e.title
                 | 会社名
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="会社名", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="company_name", placeholder="〇〇株式会社")
                 +p.note: small ※個人の方は、「個人」とご入力ください
 
             +e.block
               +e.title
                 | メールアドレス
                 span.c-forms__label 必須
+                //- ★Contact form 7 の場合は メールアドレスは type="email" にしてください
               +e.content
-                +e.input: input(type="text", name="メールアドレス", placeholder="info@mail.jp")
+                +e.input: input(type="email", name="your_email", placeholder="info@mail.jp")
 
             +e.block
               +e.title
                 | 電話番号
                 span.c-forms__label 必須
+                //- ★Contact form 7 の場合は 電話番号は type="tel" にしてください
               +e.content
-                +e.input: input(type="text", name="TEL", placeholder="123-456-7890")
+                +e.input: input(type="tel", name="your_tel", placeholder="123-456-7890")
 
             +e.block
               +e.title
@@ -159,15 +171,15 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
-                  +e.input.is-sm: input(type="text", name="郵便番号", placeholder="0001234")
-                  button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
+                  +e.input.is-sm: input(type="text", name="postal_code", placeholder="0001234")
+                  button(onclick="AjaxZip3.zip2addr('postal_code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
 
             +e.block
               +e.title
                 | ご住所
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="ご住所", placeholder="ご住所を入力してください")
+                +e.input: input(type="text", name="address", placeholder="ご住所を入力してください")
 
             +e.block
               +e.title
@@ -175,7 +187,7 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.select
-                  select(name="部署名")
+                  select(name="department_name")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
@@ -187,7 +199,7 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.select
-                  select(name="役職")
+                  select(name="position")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
@@ -197,13 +209,41 @@ block body
               +e.title その他質問等
               +e.content
                 +e.textarea
-                  textarea(name="その他質問等", placeholder="")
+                  textarea(name="questions", placeholder="")
 
             +e.block
               +e.title
                 | ファイルアップロード
               +e.content
-                +e.file: input(type="file", name="ファイルアップロード")
+                +e.file: input(type="file", name="file_upload")
+
+          +e.head --MW WP Form版保存用--
+          //- ★MW WP Formの場合はname値を日本語にします
+          +e.blocks
+            +e.block
+              +e.title チェックボックス
+              +e.content
+                +e.checkbox.is-mw
+                  span
+                    label
+                      input(type="checkbox", name="ご希望のサービス", value="選択肢1")
+                      span 選択肢1
+                  span
+                    label
+                      input(type="checkbox", name="ご希望のサービス", value="選択肢2")
+                      span 選択肢2
+            +e.block
+              +e.title ラジオボタン
+              +e.content
+                +e.radio.is-mw
+                  span
+                    label
+                      input(type="radio", name="ご希望のサービス", value="選択肢1")
+                      span 選択肢1
+                  span
+                    label
+                      input(type="radio", name="ご希望のサービス", value="選択肢2")
+                      span 選択肢2
 
           +e.head --横並びパターン保存用--
           +e.blocks
@@ -212,14 +252,14 @@ block body
                 | 横並びパターン
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="横並びパターン", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="horizontal_pattern", placeholder="〇〇株式会社")
 
             +e.block.is-horizontal
               +e.title.is-vertical-top
                 | 横並び（タイトル上寄せ）
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="横並び（タイトル上寄せ）", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="horizontal_pattern_title_top", placeholder="〇〇株式会社")
                 +p.note: small 補足のテキスト
 
             +e.block.is-horizontal
@@ -230,16 +270,17 @@ block body
                 +e.flexbox
                   span 郵便番号
                   +e.flex-al
-                    +e.input.is-sm: input(type="text", name="郵便番号", placeholder="（例）464-0850")
-                    button(onclick="AjaxZip3.zip2addr('郵便番号','','ご住所','ご住所');", type="button").c-forms__button#zipauto 住所を自動入力
+                    +e.input.is-sm: input(type="text", name="postal_code_address", placeholder="（例）464-0850")
+                    button(onclick="AjaxZip3.zip2addr('postal_code_address','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
                 +e.flexbox
                   span ご住所
-                  +e.input: input(type="text", name="ご住所", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+                  +e.input: input(type="text", name="address_detail", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
-
+          //- WP側で c-forms__privacyの中のinputを判定して処理するので、
+          //- 同意のチェックボックスは .c-forms__privacy の中に入れてください
           +e.privacy
             label
-              input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
+              input(type="checkbox", name="policy", value="確認しました")
               +a("/privacy-policy/")(target="_blank") 個人情報保護方針
               | の内容に同意する
           +e.submit

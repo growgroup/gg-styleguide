@@ -8,7 +8,7 @@
 //l-post-content内のスタイルはすべてここに記述すること ※@extend使わない
 @mixin l-post-content {
   display: flow-root;
-  word-break: break-all;
+  //word-break: break-all;
 
   > * + * { //投稿内の各ブロックの間に1emのマージンを設定
     margin-top: 1em;
@@ -154,27 +154,50 @@
   width: 100%;
   border-top: 1px solid $border-base-color;
 
-  tbody {
-    th,
-    td {
-      text-align: left;
-      border-bottom: 1px solid $border-base-color;
-      padding: rem-calc(24);
-      vertical-align: top;
-      @include breakpoint(small only) {
-        padding: rem-calc(12);
-      }
-    }
+  //▼WordPressのスタイルをリセットするためのCSS
+  thead {
+    border: 0;
+  }
+  th, td {
+    border: 0;
+  }
+  //▲ここまでWordPressのスタイルをリセットするためのCSS
 
+
+  //thead tbody共通スタイル
+  th, td {
+    text-align: left;
+    border-bottom: 1px solid $border-base-color;
+    padding: rem-calc(24);
+    vertical-align: top;
+    @include breakpoint(small only) {
+      padding: rem-calc(12);
+    }
+  }
+
+  th {
+    color: $color-primary;
+    border-bottom: 1px solid $color-primary;
+  }
+
+
+  //thead専用スタイル
+  thead {
+
+  }
+
+  //tbody専用スタイル
+  tbody {
     th {
-      color: $color-primary;
       width: rem-calc(196);
-      border-bottom: 1px solid $color-primary;
       @include breakpoint(small only) {
         width: rem-calc(96);
       }
     }
   }
+
+  //table自体にmodifierをつける場合は、 components/table.scssに記載する
+
 }
 
 
