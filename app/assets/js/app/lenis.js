@@ -4,9 +4,9 @@ import Lenis from '@studio-freight/lenis'
  * デフォルトオプション
  */
 var defaultOptions = {
-  insideSlector: '.js-lenis-inside',
   lerp: 0.15,//数字を0.1にするとスクロールの滑らかさが強く、0.2にすると弱くなる
   insideLerp: 0.2,//insideはlerpよりも強めに設定しても良い
+  insideSelector: '.js-lenis-inside',
 };
 
 export default class LenisScroll {
@@ -45,7 +45,7 @@ export default class LenisScroll {
   }
 
   lenisInside() {
-    const containers = document.querySelectorAll(this.options.insideSlector);
+    const containers = document.querySelectorAll(this.options.insideSelector);
     if (containers.length <= 0) return false;
 
     containers.forEach((container) => {
