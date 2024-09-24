@@ -109,7 +109,7 @@
   $(function () {
     var app = new growApp();
     app.myCode();
-    app.modalContents();
+    // app.modalContents();
     app.enterAnimation();
     app.showCookie();
     app.backCache();
