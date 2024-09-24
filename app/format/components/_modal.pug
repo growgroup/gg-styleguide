@@ -1,0 +1,72 @@
+h3 画像モーダル
++a("https://placehold.jp/300x250.png").c-modal-link.js-modal(data-modal-type="image")
+  img(src='https://placehold.jp/300x250.png' alt='画像1')
+h3 画像モーダル：グループ化
++a("https://placehold.jp/300x250.png").c-modal-link.js-modal(data-modal-type="gallery" data-modal-group="group1")
+  img(src='https://placehold.jp/300x250.png' alt='画像1')
++a("https://placehold.jp/300x300.png").c-modal-link.js-modal(data-modal-type="gallery" data-modal-group="group1")
+  img(src='https://placehold.jp/300x300.png' alt='画像2')
++a("https://placehold.jp/400x300.png").c-modal-link.js-modal(data-modal-type="gallery" data-modal-group="group1")
+  img(src='https://placehold.jp/400x300.png' alt='画像3')
+
+h3 その他のコンテンツモーダル
+// YouTubeモーダル
++a("https://www.youtube.com/watch?v=dQw4w9WgXcQ").js-modal(data-modal-type="youtube") YouTube動画を表示
+
+// MP4モーダル
++a("https://lets-web.site/tools/sample-photo/video/hanabi-audio.mp4").js-modal(data-modal-type="video") MP4動画を表示
+
+// iframeモーダル
++a("https://grow-group.jp/").js-modal(data-modal-type="iframe") iframeを表示
+
+// コンテンツモーダル
++a("#source-content-id").c-modal-link.js-modal(data-modal-type="content") コンテンツを表示1
+#source-content-id(style='display: none;')
+  h2 モーダル内のコンテンツ1
+  p
+    | ここに任意のHTMLコンテンツを配置できます。
+    br
+    |     ここに任意のHTMLコンテンツを配置できます。
+    |     ここに任意のHTMLコンテンツを配置できますここに任意のHTMLコンテンツを配置できます。
+
++a("#source-content-id2").c-modal-link.js-modal(data-modal-type="content") コンテンツを表示2
+#source-content-id2(style='display: none;')
+  h2 モーダル内のコンテンツ2
+  p
+    | ここに任意のHTMLコンテンツを配置できます。
+    br
+    |     ここに任意のHTMLコンテンツを配置できます。
+    |     ここに任意のHTMLコンテンツを配置できますここに任意のHTMLコンテンツを配置できます。
+
+
+
+
+//-
+
+    //modaal系
+    //https://shu-naka-blog.com/website/modaal-js/#i-4
+    //div.u-mbs.is-bottom
+    //  data属性でやり取り
+    //  .c-button.js-modal-image(data-modaal-content-source="/assets/images/img-sample.jpg") モーダル画像
+    div.u-mbs.is-bottom(style="display:flex;")
+      +a("/assets/images/img-sample.jpg").c-button.js-modal-image モーダル画像
+      +a("/assets/images/logo.png").c-button.js-modal-image(data-group="gallery") モーダルギャラリー
+        +a("/assets/images/logo.png")(data-group="gallery").js-modal-image
+        +a("/assets/images/logo.png")(data-group="gallery").js-modal-image
+        +a("/assets/images/logo.png")(data-group="gallery").js-modal-image
+      +a("https://www.youtube.com/embed/M7lc1UVf-VE").c-button.js-modal-image.js-video モーダルiframe
+      +a("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4").c-button.js-modal-image.js-video モーダルvideo
+      +a("#modal-content01").c-button.js-modal-content モーダルコンテンツ
+
+    //IDで連動している
+    +c.block-modal#modal-content01
+      +e.overlay
+      +e.container
+        +e.wrapper
+          +e.head.c-heading.is-lg タイトルテキスト
+          +e.inner
+            +loop(5)
+              +e.content
+                +e.title.c-heading.is-md サブタイトルテキスト
+                +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+

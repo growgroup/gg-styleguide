@@ -1,0 +1,24 @@
+.c-modal-link {
+  position: relative;
+  cursor: pointer;
+  @include transition();
+
+  &:after {
+    content: "search";
+    @include icon-font();
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem-calc(20);
+    height: rem-calc(20);
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
