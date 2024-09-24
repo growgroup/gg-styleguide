@@ -50,8 +50,7 @@
 #growp-editor-wrapper {
   font-family: $font-base-family !important;
 
-  &.post-type-post, //投稿画面
-    //&.post-type-hoge //他投稿タイプ
+  &:is(.post-type-post) .is-root-container //投稿画面
   {
     //max-width: rem-calc(736);
     @include l-post-content;
