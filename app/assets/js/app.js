@@ -28,6 +28,8 @@ import anime from 'animejs';
 import ScrollTable from "./app/scroll-table";
 import Parallax from "./app/parallax";
 
+// import LenisScroll from "./app/lenis";
+
 class App {
   constructor() {
     this.Utils = new Utils();
@@ -45,6 +47,7 @@ class App {
     this.gsap = new GsapAnimation();
     this.ScrollTable = new ScrollTable();
     this.parallax = new Parallax();
+    // this.lenis = new LenisScroll();
     this.defaultOptions = {
       gsap: this.gsap,
       utils: this.Utils
