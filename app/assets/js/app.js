@@ -20,7 +20,7 @@ import CustomFunctions from "./app/custom";
 import modal from './app/modal.js';
 import GsapAnimation from "./app/gsap";
 // import modaalCss from 'modaal/dist/css/modaal.css';
-import ScrollTable from "./app/scroll-table";
+import Scrollable from "./app/scrollable";
 // import Parallax from "./app/parallax";
 
 class App {
@@ -37,7 +37,7 @@ class App {
     this.CurrentNav = new CurrentNav();
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();
-    this.ScrollTable = new ScrollTable();
+    this.Scrollable = new Scrollable();
     // this.parallax = new Parallax();
     this.defaultOptions = {
       gsap: this.gsap,
