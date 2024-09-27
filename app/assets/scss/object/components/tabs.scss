@@ -4,6 +4,8 @@ name: タブ
 category: Tabs
 ---
 */
+@use "sass:color";
+
 .c-tabs {
   // タブ
   &__navs {
@@ -53,7 +55,7 @@ category: Tabs
 
       // *hover
       &:hover {
-        background-color: lighten($color-primary, 45);
+        background-color: color.adjust($color-primary, $lightness: 45%);
         opacity: 1;
       }
 

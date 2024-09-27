@@ -104,10 +104,10 @@
   }
 
   table {
-    @include c-table;
     width: 100%;
+    @include c-table;
   }
-
+  
   ol, ul {
     @include c-list;
   }
