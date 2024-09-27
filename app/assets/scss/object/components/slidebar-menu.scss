@@ -15,10 +15,10 @@
     width: $slidebar-menu-width;
     transform: translate3d(100%, 0px, 0px);
     right: 0;
-    transition: $slidebar-menu-eaasing;
     overflow-x: scroll;
     top: 0;
     -webkit-overflow-scrolling: touch;
+    @include transition(.2s,ease-in-out);
 
     &.is-active {
       height: calc(100% - 60px);
@@ -202,7 +202,7 @@
       line-height: 1.5;
       font-weight: 400;
       height: rem-calc(46);
-      transition: all 0.2s ease-out;
+      @include transition(.2s,ease-out);
 
       &:before {
         position: absolute;

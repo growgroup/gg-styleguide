@@ -134,7 +134,7 @@
     &-content {
 
       transform: scale(0.9, 0.9);
-      transition: .3s;
+      @include transition();
 
 
       @include breakpoint(small only) {
@@ -170,8 +170,8 @@
     &-image {
       width: math.div(138,1038) * 100%;
       position: relative;
-      transition: all .3s;
       cursor: pointer;
+      @include transition();
 
       &::after {
         content: "";
@@ -182,8 +182,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        transition: all .3s;
         opacity: 0;
+        @include transition();
       }
 
       &:hover {

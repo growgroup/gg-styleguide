@@ -56,7 +56,7 @@ category: Base
   position: relative;
 
   &::before{
-    @include transition(.2);
+    @include transition(.2s);
     @include breakpoint(small only) {
       content: "";
       position: absolute;
@@ -72,7 +72,7 @@ category: Base
   }
 
   &::after{
-    @include transition(.2);
+    @include transition(.2s);
     @include breakpoint(small only) {
       content: "";
       position: absolute;

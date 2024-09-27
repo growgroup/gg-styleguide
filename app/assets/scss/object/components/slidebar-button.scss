@@ -47,7 +47,7 @@
     height: 2px; //線の太さ
     background-color: var(--color-slidebar-button-line);
     //background-color: transparent;//線2本の時は、ここは透明に
-    transition: all ease-out .2s;
+    @include transition(.2s,ease-out);
 
 
     &::before,
@@ -92,12 +92,12 @@
 
   // メニューテキスト
   &__text {
-    transition: all ease .2s;
     font-size: 9px;
     letter-spacing: 0.4px;
     @include webfont();
     margin-top: rem-calc(12);
     display: block;
+    @include transition(.2s,ease);
 
     &.is-close {
       display: none;

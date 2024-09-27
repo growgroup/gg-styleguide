@@ -423,10 +423,6 @@ li {
 
 a {
   @include transition();
-
-  &:hover {
-    @include transition()
-  }
 }
 
 *.is-indent {

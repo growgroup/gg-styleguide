@@ -47,7 +47,7 @@ category: PostContent
     a {
       display: block;
       padding-left: rem-calc(16);
-      transition: all ease .2s;
+      @include transition(.2s);
       text-decoration: none;
       color: $font-base-color;
       font-weight: 400;

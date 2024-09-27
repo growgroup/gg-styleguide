@@ -17,7 +17,7 @@ category: Buttons
   background-color: $color-primary;
   padding: rem-calc(13) rem-calc(24);
   border: 1px solid $color-primary;
-  transition: all .3s;
+  @include transition();
   // *アイコン
   &::after {
     content: "chevron_right";
