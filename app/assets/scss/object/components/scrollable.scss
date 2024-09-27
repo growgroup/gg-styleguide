@@ -1,0 +1,8 @@
+//<div class="c-scrollable">
+// <div class="js-scrollable">
+//   <!-- ここにスクロールさせたいコンテンツを入れる -->
+.c-scrollable{
+  img,table{
+    min-width: rem-calc(750);//デザインに合わせて調整
+  }
+}

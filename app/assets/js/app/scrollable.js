@@ -17,7 +17,7 @@ import ScrollHintCss from 'scroll-hint/css/scroll-hint.css';
 //         td テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 //         td テキストテキストテキストテキストテキスト
 
-export default class ScrollTable {
+export default class Scrollable {
 
   constructor() {
     this.targetSelector = ".js-scrollable";

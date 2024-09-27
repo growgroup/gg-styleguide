@@ -78,3 +78,31 @@ div.u-mbs.is-bottom
           for num in [1,2,3,4,5,6]
             - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
             +e.image.swiper-slide: +img(img)
+
+h3 画面幅が狭いとき横スクロールする画像やテーブル
+
+div.u-mbs.is-bottom
+  .c-scrollable
+    // scroll-hint が .js-scrollableの親の要素に対して適用されるため
+    // c-scrollableと .js-scrollableを分けることを推奨
+    .js-scrollable
+      +img("img-sample.jpg")
+
+div.u-mbs.is-bottom
+  .c-scrollable
+    .js-scrollable
+      table.c-table
+        tbody
+          tr
+            th テスト
+            th テスト
+            th テスト
+            th テスト
+            th テスト
+          tr
+            td テスト
+            td テスト
+            td テスト
+            td テスト
+            td テスト
+
