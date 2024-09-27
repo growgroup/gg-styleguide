@@ -1,0 +1,76 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "privacy-policy" // ページのID
+  - current.title = "プライバシーポリシー" // タイトル
+  - current.description = `これは${current.title}についての説明文です` // 説明文
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "プライバシーポリシー",
+    subtitle: "Privacy Policy"
+  })
+  +c_breadcrumb()
+
+block body
+  section.l-section.is-lg
+    .l-container
+      .l-container
+        .u-mbs.is-sm.is-bottom
+          p
+            | 株式会社○○○○（以下「当社」）は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。
+
+        .u-mbs.is-sm.is-bottom
+          h2.c-heading.is-sm.is-mg-level-6 見出しテキスト見出しテキスト見出しテキスト見出しテキスト
+          p
+            | 本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト
+
+
+        .u-mbs.is-sm.is-bottom
+          h2.c-heading.is-sm.is-mg-level-6 見出しテキスト見出しテキスト見出しテキスト見出しテキスト
+          p
+            | 本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト
+
+        .u-mbs.is-sm.is-bottom
+          h2.c-heading.is-sm.is-mg-level-6 情報収集モジュールの利用について
+          p
+            | 当社が提供するwebサイトにおいては、クッキー（Cookie）、を使用しています。本サービスにおいてはクッキー等を通じて、本サービスへの利用者のアクセス情報、閲覧情報等を取得しています。なお、クッキー等を通じてこれらの情報（以下「クッキー情報」といいます。）には、単独で利用者自身を識別し特定できる情報は含まれていません。<br>
+            | 本サービスで利用しているクッキー等の内容については、以下をご参照ください。
+
+
+        .c-scrollable
+          table.c-table.js-scrollable
+            colgroup
+              col(style="width: 20%")
+              col(style="width: 20%")
+              col(style="width: 30%")
+              col(style="width: 30%")
+            thead
+              tr
+                th クッキー等の名称
+                th 送信先
+                th 取得する情報
+                th 利用目的
+            tbody
+              tr
+                th Google Analytics
+                td Google LLC.
+                td サイト内の閲覧数、各ページの滞在時間、IPアドレス、ブラウザ情報、端末情報など
+                td
+                  | 本サービスの利用状況を把握することにより、本サービスの改善及び利用者の興味やニーズにより適したサービスを提供するため<br>
+                  | <br>
+                  | ※Google Analyticsにおけるデータ取り扱いの詳細は
+                  +a("https://policies.google.com/technologies/partner-sites?hl=ja") こちら
+                  |をご確認ください
+              tr
+                th Clarity
+                td Microsoft Corporation
+                td 利用者のクリック箇所、スクロール率のヒートマップなど
+                td 本サービスの利用状況を把握することにより、本サービスの改善及び利用者の興味やニーズにより適したサービスを提供するため
+
+block before_footer
+  +l_offer
+
