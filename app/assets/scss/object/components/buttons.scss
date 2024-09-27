@@ -4,6 +4,8 @@ name: ボタン_カラー別
 category: Buttons
 ---
 */
+@use "sass:color";
+
 .c-button {
   position: relative;
   display: inline-flex;
@@ -49,9 +51,9 @@ category: Buttons
 
   // -> セカンダリカラー
   &.is-secondary {
-    background-color: lighten($color-primary, 40);
+    background-color: color.adjust($color-primary, $lightness:40%);
     color: $color-primary;
-    border-color: lighten($color-primary, 40);
+    border-color: color.adjust($color-primary, $lightness:40%);
 
     @include hover {
       background-color: $color-white;
