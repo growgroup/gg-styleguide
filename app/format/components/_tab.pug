@@ -1,5 +1,6 @@
 // タブ
 // -> 通常タブ
+// タブ in タブ するとき data-tab-name は一意の値にしてください
 div.u-mbs.is-bottom
   +c.tabs.js-tabs
     ul.c-tabs__navs.js-tabs-nav
@@ -8,36 +9,36 @@ div.u-mbs.is-bottom
     .c-tabs__content.is-active.js-tabs-content(data-tab-name="0")
       +c.tabs.is-index.js-tabs
         ul.c-tabs__navs.js-tabs-nav
-          li: +a("#").is-active(data-tab-target="0") タブ1
-          li: +a("#")(data-tab-target="1") タブ2
-          li: +a("#")(data-tab-target="2") タブ3
-          li: +a("#")(data-tab-target="3") タブ4
-          li: +a("#")(data-tab-target="4") タブ5
-        .c-tabs__content.is-active.js-tabs-content(data-tab-name="0")
+          li: +a("#").is-active(data-tab-target="0-0") タブ1
+          li: +a("#")(data-tab-target="0-1") タブ2
+          li: +a("#")(data-tab-target="0-2") タブ3
+          li: +a("#")(data-tab-target="0-3") タブ4
+          li: +a("#")(data-tab-target="0-4") タブ5
+        .c-tabs__content.is-active.js-tabs-content(data-tab-name="0-0")
           h3.u-text-center タブ1
-        .c-tabs__content.js-tabs-content(data-tab-name="1")
+        .c-tabs__content.js-tabs-content(data-tab-name="0-1")
           h3.u-text-center タブ2
-        .c-tabs__content.js-tabs-content(data-tab-name="2")
+        .c-tabs__content.js-tabs-content(data-tab-name="0-2")
           h3.u-text-center タブ3
-        .c-tabs__content.js-tabs-content(data-tab-name="3")
+        .c-tabs__content.js-tabs-content(data-tab-name="0-3")
           h3.u-text-center タブ4
-        .c-tabs__content.js-tabs-content(data-tab-name="4")
+        .c-tabs__content.js-tabs-content(data-tab-name="0-4")
           h3.u-text-center タブ5
     .c-tabs__content.js-tabs-content(data-tab-name="1")
       +c.tabs.is-index.js-tabs
         ul.c-tabs__navs.js-tabs-nav
-          li: +a("#").is-active(data-tab-target="0") タブ1
-          li: +a("#")(data-tab-target="1") タブ2
-          li: +a("#")(data-tab-target="2") タブ3
-          li: +a("#")(data-tab-target="3") タブ4
-          li: +a("#")(data-tab-target="4") タブ5
-        .c-tabs__content.is-active.js-tabs-content(data-tab-name="0")
+          li: +a("#").is-active(data-tab-target="1-0") タブ1
+          li: +a("#")(data-tab-target="1-1") タブ2
+          li: +a("#")(data-tab-target="1-2") タブ3
+          li: +a("#")(data-tab-target="1-3") タブ4
+          li: +a("#")(data-tab-target="1-4") タブ5
+        .c-tabs__content.is-active.js-tabs-content(data-tab-name="1-0")
           h3 タブ1
-        .c-tabs__content.js-tabs-content(data-tab-name="1")
+        .c-tabs__content.js-tabs-content(data-tab-name="1-1")
           h3 タブ2
-        .c-tabs__content.js-tabs-content(data-tab-name="2")
+        .c-tabs__content.js-tabs-content(data-tab-name="1-2")
           h3 タブ3
-        .c-tabs__content.js-tabs-content(data-tab-name="3")
+        .c-tabs__content.js-tabs-content(data-tab-name="1-3")
           h3 タブ4
-        .c-tabs__content.js-tabs-content(data-tab-name="4")
+        .c-tabs__content.js-tabs-content(data-tab-name="1-4")
           h3 タブ5
