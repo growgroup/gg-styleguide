@@ -107,7 +107,7 @@
     width: 100%;
     @include c-table;
   }
-  
+
   ol, ul {
     @include c-list;
   }
@@ -306,21 +306,31 @@
   border-left: 3px solid $color-primary;
   position: relative;
   padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
-  font-size: $font-base-size;
+  margin-right: 0;
+  margin-left: 0;
+  //font-size: $font-base-size;
   @include breakpoint(small only) {
     padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
   }
   &::before {
-    content: "format_quote";
-    @include icon-font();
-    font-size: rem-calc(20);
-    color: $color-primary;
+    //content: "format_quote";
+    //@include icon-font();
+    //font-size: rem-calc(20);
+    //color: $color-primary;
+
+    content: "";
+    width: rem-calc(19);
+    height: rem-calc(16);
+    background: $color-primary;
+    mask: url("../images/icon-blockquote.svg") no-repeat center / contain;
     position: absolute;
-    left: rem-calc(12);
-    top: rem-calc(8);
+    left: rem-calc(16);
+    top: rem-calc(16);
     @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.8;
-      top: rem-calc(2);
+      //font-size: rem-calc(20)*0.8;
+      width: rem-calc(13);
+      height: rem-calc(11);
+      top: rem-calc(8);
       left: rem-calc(8);
     }
   }
