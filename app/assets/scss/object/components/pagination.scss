@@ -58,6 +58,14 @@ category: Navigation
     }
   }
 
+  &__prev,&__next {
+
+    // スマホ時は「前へ」「次へ」ボタンを削除する場合
+    @include breakpoint(small down){
+      display: none;
+    }
+  }
+
   &__prev {
     margin-right: rem-calc(8);
 
