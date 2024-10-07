@@ -1,26 +1,48 @@
 //- パンくずリスト
-mixin c_breadcrumb(parent,parentURL,parent2,parentURL2)
-  +c.breadcrumb
-    .l-container
-      +e.inner
-        span
+mixin c_breadcrumb(props, cache)
+
+  if cache && cache.count === props.paths.length
+    //- パンくずリストの最後の要素の場合（現在のページタイトルを表示）
+    span=current.title
+
+  else if cache && cache.count
+    //- パンくずリストの途中の要素の場合
+    //- 現在のリンクパスを次の要素のURLで更新
+    - var linkedPath = cache.linkedPath + props.paths[cache.count].url + "/"
+    span
+      +a(linkedPath)=props.paths[cache.count].text
+      span.is-arrow
+        span.c-icon-font
+          | chevron_right
+      //- 次のパンくずリスト要素を再帰的に処理
+      +c_breadcrumb({paths: props.paths}, {count: cache.count + 1, linkedPath: linkedPath})
+
+  else
+    //- パンくずリストの最初の要素の場合
+    //- クラス名を&attributesを用いて設定
+    .c-breadcrumb&attributes(attributes)
+      .l-container
+        .c-breadcrumb__inner
           span
-            +a("/") TOP
-            span.is-arrow <span class="c-icon-font">chevron_right</span>
-            if !parent
-              //- parent設定がないとき
-              span !{current.title}
-            else
-              //- parent設定があるとき
-              span
-                +a('/' + parentURL + '/')=parent
-                span.is-arrow <span class="c-icon-font">chevron_right</span>
-                if !parent2
-                  //- parent2設定がないとき
-                  span !{current.title}
-                else
-                  //- parent2設定があるとき
-                  span
-                    +a('/' + parentURL + '/' + parentURL2 + '/')=parent2
-                    span.is-arrow <span class="c-icon-font">chevron_right</span>
-                    span !{current.title}
+            span
+              //- トップへのリンク（最初の要素）
+              +a("/") TOP
+              span.is-arrow
+                span.c-icon-font
+                  | chevron_right
+
+              if props === undefined ||props.paths === undefined ||!props.paths[0]
+                //- パスが存在しない場合は現在のページタイトルを表示
+                span=current.title
+
+              else
+                //- パスが存在する場合は最初のパンくず要素を表示
+                span
+                  +a(`/${props.paths[0].url}/`)=props.paths[0].text
+                  span.is-arrow
+                    span.c-icon-font
+                      | chevron_right
+                  //- 最初のリンクパスを設定
+                  - var linkedPath = `/${props.paths[0].url}/`
+                  //- 次のパンくずリスト要素を再帰的に処理
+                  +c_breadcrumb({paths: props.paths}, {count: 1, linkedPath: linkedPath})
