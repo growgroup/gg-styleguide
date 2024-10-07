@@ -117,7 +117,7 @@ $grid-column-responsive-gutter: (// カラムとカラムの間隔
 
 // # Two columns
 $asideContainer: 320;
-$asideSearchContainer: 240;
+$asideSearchContainer: 226;
 $asideMargin: 70;
 $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 $mainSearchContainer: calc(100% - #{$asideSearchContainer}px - #{$asideMargin}px);
