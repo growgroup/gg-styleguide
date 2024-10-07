@@ -3,7 +3,6 @@
 //============================
 // variables / mixins
 //============================
-$form-controls-transition: all ease-in-out .2s !default;
 $form-controls-font-size: 15px;
 $form-controls-border-color: #D8D8D8;
 $form-controls-active-border-color: #0097D8;
@@ -15,10 +14,10 @@ $form-controls-active-border-color: #0097D8;
   line-height: 1.46666;
   color: $font-base-color;
   border: 1px solid $form-controls-border-color;
-  transition: $form-controls-transition;
   background-color: $color-white;
   width: 100%;
   box-shadow: none;
+  @include transition-colors(0.2s,ease-in-out);
 
   @include breakpoint(small down) {
     font-size: 16px; //16px以下にするのはNG

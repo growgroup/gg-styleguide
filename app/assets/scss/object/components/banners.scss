@@ -59,7 +59,7 @@ category: Banners
       min-width: 100%;
       min-height: 100%;
       max-width: inherit;
-      transition: all .25s ease;
+      @include transition();
       @include breakpoint(small only) {
         max-width: 100%;
         max-height: inherit;
@@ -115,7 +115,6 @@ category: Banners
       &:hover {
         .c-banners__button {
           &::after {
-            transition: .3s;
             right: 0;
           }
         }
@@ -179,7 +178,7 @@ category: Banners
         width: 30px;
         height: 1px;
         background: $color-white;
-        transition: .3s;
+        @include transition();
       }
     }
   }

@@ -447,9 +447,39 @@
 }
 
 // トランジション
-@mixin transition($duration: 0.3s, $easing: ease) {
-  transition: all $duration 0s $easing;
+@mixin transition($duration: .3s, $easing: ease) {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, visibility, box-shadow, transform;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
 }
+
+@mixin transition-all($duration: .3s, $easing: ease) {
+  transition-property: all;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+}
+
+@mixin transition-colors($duration: .3s, $easing: ease) {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+}
+
+@mixin transition-opacity($duration: .3s, $easing: ease) {
+  transition-property: opacity, visibility;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+}
+
+@mixin transition-transform($duration: .3s, $easing: ease) {
+  transition-property: transform;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+}
+
+
+
+
 
 // 可変背景画像の高さ計算（擬似要素の中にお使いください。）
 @mixin bgimg-pt($height: 200, $width: 356) {
