@@ -32,8 +32,8 @@ $form-controls-active-border-color: #0097D8;
 
 //input, textareaの共通スタイル
 @mixin form-controls-input-style {
-  @include form-controls-common-style;
   padding: rem-calc(10) rem-calc(16);
+  @include form-controls-common-style;
 
   @include breakpoint(small down) {
     padding: rem-calc(9) rem-calc(12);
@@ -137,17 +137,16 @@ input[type="radio"] {
 //
 // Styleguide 1.6.5
 select {
-  @include form-controls-common-style();
   display: block;
   height: rem-calc(44);
   padding: rem-calc(10) rem-calc(16);
   text-transform: none;
-
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
   background-repeat: no-repeat;
   background-position: calc(100% - 16px) center;
   background-size: 9px 5px;
+  @include form-controls-common-style();
 
   @include breakpoint(small down) {
     padding: rem-calc(9) rem-calc(12);

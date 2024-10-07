@@ -104,8 +104,8 @@
   }
 
   table {
-    @include c-table;
     width: 100%;
+    @include c-table;
   }
 
   ol, ul {
@@ -226,19 +226,20 @@
 @mixin c-list-ul {
   > li { //l-post-content 用に > が必要
     padding-left: rem-calc(16);
+    position: relative;
 
     &::before {
-      font-family: $font-icon-family;
-      @include icon-font-style();
-      content: "circle";
-      font-size: rem-calc(10);
-      color: $color-primary;
-      width: rem-calc(16);
-      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      --_icon-size: #{rem-calc(4)};
 
-      @include breakpoint(small only) {
-        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
-      }
+      content: "";
+      width: var(--_icon-size);
+      height: var(--_icon-size);
+      background: $color-primary;
+      border-radius: 50%;
+      top: calc(1em * #{$font-base-line-height} / 2 - var(--_icon-size) / 2);
+      left: 0.25em;
+      position: absolute;
+
     }
   }
 
@@ -247,17 +248,16 @@
     padding-left: rem-calc(16);
 
     &::before {
-      font-family: $font-icon-family;
-      @include icon-font-style();
-      content: "・";
-      color: $color-primary;
-      font-size: rem-calc(10);
-      width: rem-calc(16);
-      height: calc(rem-calc(16) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      --_icon-size: #{rem-calc(2)};
 
-      @include breakpoint(small only) {
-        height: calc(rem-calc(13) * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
-      }
+      content: "";
+      width: var(--_icon-size);
+      height: var(--_icon-size);
+      background: $color-primary;
+      border-radius: 50%;
+      top: calc(1em * #{$font-base-line-height} / 2 - var(--_icon-size) / 2);
+      left: 0.5em;
+      position: absolute;
     }
   }
 }
@@ -306,21 +306,31 @@
   border-left: 3px solid $color-primary;
   position: relative;
   padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
-  font-size: $font-base-size;
+  margin-right: 0;
+  margin-left: 0;
+  //font-size: $font-base-size;
   @include breakpoint(small only) {
     padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
   }
   &::before {
-    content: "format_quote";
-    @include icon-font();
-    font-size: rem-calc(20);
-    color: $color-primary;
+    //content: "format_quote";
+    //@include icon-font();
+    //font-size: rem-calc(20);
+    //color: $color-primary;
+
+    content: "";
+    width: rem-calc(19);
+    height: rem-calc(16);
+    background: $color-primary;
+    mask: url("../images/icon-blockquote.svg") no-repeat center / contain;
     position: absolute;
-    left: rem-calc(12);
-    top: rem-calc(8);
+    left: rem-calc(16);
+    top: rem-calc(16);
     @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.8;
-      top: rem-calc(2);
+      //font-size: rem-calc(20)*0.8;
+      width: rem-calc(13);
+      height: rem-calc(11);
+      top: rem-calc(8);
       left: rem-calc(8);
     }
   }

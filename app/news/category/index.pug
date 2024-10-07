@@ -2,7 +2,7 @@ extends /inc/foundation/_base.pug
 block append config
   - current.id = "category" // ページのID
   - current.title = "カテゴリ" // タイトル
-  - current.description = `これは${current.title}についての説明文です` // 説明文
+  //- - current.description = `これは${current.title}についての説明文です` // ページごとに説明文を設定する場合のみ
   - current.bodyClass = `${current.id}` // body に付与するクラス
   - current.path = `/news/${current.id}/` // ページのpath
   - current.depth = 3 // ページの階層

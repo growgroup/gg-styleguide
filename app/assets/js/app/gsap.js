@@ -1,6 +1,9 @@
 import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
+import Utils from './utils.js';
+
+const utils = new Utils();
 
 
 export default class GsapAnimation {
@@ -11,14 +14,6 @@ export default class GsapAnimation {
    */
   constructor(options) {
     this.options = $.extend(options);
-    //this._animate = this.animate;
-    this.init();
-  }
-
-  /**
-   *
-   */
-  init() {
     this.run();
   }
 
@@ -27,52 +22,49 @@ export default class GsapAnimation {
    * インスタンス化直後に呼ばれる関数
    */
   run() {
-    if(document.querySelector(".c-main-visual")) {
+      this.mainVisual();
+      // this.sampleCustomSpring();
+  }
+
+  /**
+   * メインビジュアル
+   */
+  mainVisual() {
+    const targetSelector = ".js-main-visual";
+    if (!document.querySelector(targetSelector)) {
+      return;
+    }
     gsap
       .timeline({
         defaults: {},
         scrollTrigger: {
-          trigger: ".c-main-visual",
+          trigger: targetSelector,
           start: "top 100%",
         },
       })
-      .from(".c-main-visual",
+        .from(targetSelector,
         {
           opacity: 0,
           delay: .5,
           duration: 1,
         }
       )
-    }
   }
 
+  // /**
+  //  * Figmaのカスタムスプリングを使用したサンプル
+  // */
+  // sampleCustomSpring() {
+  //   const targetSelector = ".js-box";
+  //   if (!document.querySelector(targetSelector)) {
+  //     return;
+  //   }
+  //   gsap.to(targetSelector, {
+  //     x: 300,
+  //     duration: 0.8,
+  //     ease: utils.customSpring(100, 15, 1)
+  //   });
+  // }
 
-  /**
-   * インスタンス化後に呼び出せる関数
-   * 例) app.js　から　this.gsap._animate　を呼び出す
-   */
-  get animate() {
-    if(document.querySelector(".c-card.is-top")) {
-    gsap
-      .timeline({
-        defaults: {},
-        scrollTrigger: {
-          trigger: ".c-card.is-top",
-          start: "top 80%",
-        },
-      })
-      .from(".c-card__block",
-        {
-          opacity: 0,
-          y: 30,
-          delay: .3,
-          duration: .4,
-          stagger: {
-            from: "start",
-            each: .3,
-          }
-        }
-      )
-    }
-  }
+
 }
