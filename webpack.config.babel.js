@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-const globImporter = require('node-sass-glob-importer');
 
 
 const BASE_DIR = "../../"
@@ -72,7 +71,6 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 sassOptions: {
-                  importer: globImporter()
                 },
 
               }

@@ -6,8 +6,8 @@
   z-index: 99999;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.2s ease;
   padding: rem-calc(90) 0;
+  @include transition(.2s);
 
   @include breakpoint(medium down) {
     top: rem-calc(55);
@@ -124,7 +124,7 @@
       font-size: rem-calc(16);
       font-weight: bold;
       height: 100%;
-      transition: all 0.2s ease-out;
+      @include transition-colors(0.2s);
 
       @include breakpoint(small only) {
         width: rem-calc(78);

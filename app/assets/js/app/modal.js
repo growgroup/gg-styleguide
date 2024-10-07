@@ -1,26 +1,22 @@
-
-
-// <div data-modaal-content-source="assets/image/image.jpg" class="js-modal-image">Show</div>
-// 動画の場合 → js-video
-// iframeの場合 → js-iframe
-
+import MicroModal from "micromodal";
+import MicromodalWrapper from "./wrapperClasses/micromodalWrapper";
 
 
 let defaultOptions = {
-  selector: ".js-modal-image",
+  selector: ".js-modal",
 }
 
 export default class modal {
 
   constructor(options) {
-    this.options = $.extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
     this.init();
   }
+
   /**
    * 初期化
    */
   init() {
-    this.targetEle = $(this.options.selector);
     this.run();
   }
 
@@ -28,25 +24,31 @@ export default class modal {
    * 実行
    */
   run() {
-    for (var i = 0; i < this.targetEle.length; i++) {
-      var target = $(this.targetEle[i]);
-
-      if (target.hasClass('js-video')){
-        target.modaal({
-          type: 'video'
-        });
-      }
-
-      if (target.hasClass('js-iframe')){
-        target.modaal({
-          type: 'iframe'
-        });
-      }
-
-      target.modaal({
-        type: 'image'
-      });
-    }
+    this.microModalWrapper();
+    // this.microModal();
   }
-}
 
+  microModalWrapper() {
+    new MicromodalWrapper({
+      wrapper: {
+        modalTrigger: ".js-modal",
+        // galleryLoop: true,
+        // videoAutoplay: true
+      }
+    });
+  }
+
+  microModal() {
+    //Micromodal.js本体をそのまま起動することも可能
+    // MicroModal.init({
+    //   openTrigger: 'data-micromodal-open',
+    //   closeTrigger: 'data-micromodal-close',
+    //   disableScroll: true,
+    //   disableFocus: false,
+    //   awaitOpenAnimation: true,
+    //   awaitCloseAnimation: true,
+    //   debugMode: true,
+    // });
+  }
+
+}

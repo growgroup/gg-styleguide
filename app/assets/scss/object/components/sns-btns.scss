@@ -15,7 +15,7 @@ category: Other
   &__btn {
     width: rem-calc(44);
     margin-right: rem-calc(20);
-    transition: all .3s;
+    @include transition(.3s,ease-out);
     @include breakpoint(small only) {
       margin-right: rem-calc(8);
     }

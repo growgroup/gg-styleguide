@@ -201,23 +201,65 @@
   //ラジオボタン,チェックボックス
   &__radio,
   &__checkbox {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: rem-calc(10);
-    line-height: 1.2;
+    //Contact Form 7
+    &:where(:not(.is-mw)) {
+      & > span > span {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: rem-calc(10);
+        line-height: 1.2;
+        @include breakpoint(small only) {
+          flex-direction: column;
+        }
+      }
 
-    @include breakpoint(small only) {
-      flex-direction: column;
+      & > span > span > span {
+        width: calc(50% - #{rem-calc(5)});
+        @include breakpoint(small only) {
+          width: 100%;
+        }
+      }
 
-      & > span {
-        width: 100%;
+      &.is-vertical {
+        flex-direction: column;
+
+        & > span > span > span {
+          width: 100%;
+        }
       }
     }
 
-    & > span {
-      width: calc(50% - #{rem-calc(5)});
+
+    //MW WP Form
+    &:where(.is-mw) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: rem-calc(10);
+      line-height: 1.2;
+
+      @include breakpoint(small only) {
+        flex-direction: column;
+
+        & > span {
+          width: 100%;
+        }
+      }
+
+      & > span {
+        width: calc(50% - #{rem-calc(5)});
+      }
+
+      &.is-vertical {
+        flex-direction: column;
+
+        & > span {
+          width: 100%;
+        }
+      }
     }
+
 
     label {
       display: flex;
@@ -229,13 +271,6 @@
       }
     }
 
-    &.is-vertical {
-      flex-direction: column;
-
-      & > span {
-        width: 100%;
-      }
-    }
 
 
     &.is-border {

@@ -86,7 +86,7 @@ a,
 a:hover,
 .u-text-link:any-link:hover,
 .u-text-link.is-hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 a:any-link:active,
@@ -116,4 +116,3 @@ a:any-link:active,
 .u-text-success {
   color: $color-state-info;
 }
-

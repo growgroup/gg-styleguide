@@ -77,7 +77,6 @@ category: Layout
         .l-header__submenu {
           visibility: visible;
           opacity: 1;
-          transition: all .3s;
         }
       }
 
@@ -100,7 +99,7 @@ category: Layout
           margin: auto;
           opacity: 0;
           transform: scaleX(0);
-          transition: transform .3s ease, opacity .3s ease;
+          @include transition();
         }
 
         //*hover
@@ -131,8 +130,9 @@ category: Layout
     padding-bottom: rem-calc(40);
     visibility: hidden;
     opacity: 0;
-    transition: all .05s;
-    @media (max-width: 1280px) {
+    @include transition(.2s);
+
+    @include breakpoint(large down){
       padding-left: rem-calc(24);
       padding-right: rem-calc(24);
     }
@@ -239,7 +239,7 @@ category: Layout
     line-height: 1.5;
     font-weight: 400;
     padding: rem-calc(8) rem-calc(20) rem-calc(8) rem-calc(42);
-    transition: all 0.2s ease-out;
+    @include transition(.2s);
 
 
     @include breakpoint(medium down) {

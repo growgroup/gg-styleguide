@@ -25,7 +25,7 @@ category: Navigation
       display: block;
       padding: rem-calc(14) rem-calc(16) rem-calc(14) rem-calc(36);
       position: relative;
-      transition: all .2s;
+      @include transition(.2s);
 
       &::before {
         content: "chevron_right";
@@ -47,7 +47,7 @@ category: Navigation
         bottom: 0;
         left: 0;
         transform: translateY(1px);
-        transition: all .4s ease;
+        @include transition(.4s);
         opacity: 0;
       }
 

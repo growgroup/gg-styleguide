@@ -5,25 +5,36 @@ category: Components
 ---
 */
 .c-card {
-  &__block {
-    width: 100%;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem-calc(36);
+  }
+
+  &__card {
     display: block;
     text-decoration: none;
     color: $font-base-color;
     font-weight: 400;
 
-    span,
-    small {
-      display: block;
+    @include hover() {
+      opacity: 1;
+      color: $color-primary;
+
+      .c-card__image img {
+        transform: scale(1.05);
+      }
     }
   }
 
   &__image {
-    transition: all .2s;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 
     img {
-      width: 100%;
-      height: auto;
+      @include img-option();
+      transition: transform .2s;
     }
   }
 
@@ -48,6 +59,36 @@ category: Components
       margin-top: rem-calc(6);
     }
   }
+
+
+  // スライドショーサンプル
+  &__slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem-calc(36);
+
+    @at-root .swiper-initialized & {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+
+  &__slider-nav {
+    display: none;
+    @at-root .swiper-initialized & {
+      display: block;
+    }
+  }
+
+  &__slider-pagination {
+    display: none;
+    @at-root .swiper-initialized & {
+      display: block;
+    }
+  }
+
+
 }
 
 /*

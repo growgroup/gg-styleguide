@@ -2,7 +2,7 @@ extends /inc/foundation/_base.pug
 block append config
   - current.id = "download-page" // ページのID
   - current.title = "資料ダウンロードサンプル詳細" // タイトル
-  - current.description = `これは${current.title}についての説明文です` // 説明文
+  //- - current.description = `これは${current.title}についての説明文です` // ページごとに説明文を設定する場合のみ
   - current.bodyClass = `${current.id}` // body に付与するクラス
   - current.path = `/${current.id}/` // ページのpath
   - current.depth = 3 // ページの階層
@@ -30,14 +30,15 @@ block body
               +loop(5)
                 +ae("/assets/images/img-card-01.jpg").image.js-modal-image
                   +img("img-card-01.jpg")
-            +e.slider.swiper
-              .swiper-wrapper
+            +e.slider.js-document-slider.swiper
+              +e.slider-wrapper.swiper-wrapper
                 +e.image.swiper-slide: .is-no NO IMAGE
                 +loop(3)
                   +e.image.swiper-slide: +img("img-card-01.jpg")
-              .swiper-nav
-                .swiper-button-prev
-                .swiper-button-next
+              +e.slider-nav.swiper-nav
+                +e.slider-prev.swiper-prev.js-document-slider-prev.swiper-button-prev
+                +e.slider-next.swiper-next.js-document-slider-next.swiper-button-next
+
         .c-block-document__form
           +c.forms
             .c-heading.is-xs.is-mg-level-4 ダウンロードフォーム

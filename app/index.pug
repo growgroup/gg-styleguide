@@ -4,8 +4,8 @@
 extends /inc/foundation/_base.pug
 block append config
   - current.id = "home" // ページのID
-  - current.title = "トップページ" // タイトルあ
-  - current.description = "これはトップページの説明文です" // 説明文
+  - current.title = "トップページ" // タイトル
+  //- - current.description = "これはトップページの説明文です" // ページごとに説明文を設定する場合のみ
   - current.bodyClass = "home" // body に付与するクラス
   - current.path = "/" // ページのpath
   - current.depth = 1 // ページの階層
@@ -21,25 +21,22 @@ block body
       +heading-xlg("私たちについて", "ABOUT").is-bottom
       p.u-text-center テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
       +c.card.u-mbs.is-top.is-lg
-        .row.slide
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg","",712,420)
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg","",712,420)
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          .large-4.small-12
-            +e.block
-              +e.image: +img("img-card-01.jpg","",712,420)
-              +e.content
-                h3.c-card__title コンセプトタイトル
-                p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+        +e.list
+          +ae("#").card
+            +e.image: +img("img-card-01.jpg","",712,420)
+            +e.content
+              +h3.title コンセプトタイトル
+              +p.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          +e.card
+            +e.image: +img("img-card-01.jpg","",712,420)
+            +e.content
+              +h3.title コンセプトタイトル
+              +p.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          +e.card
+            +e.image: +img("img-card-01.jpg","",712,420)
+            +e.content
+              +h3.title コンセプトタイトル
+              +p.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
   section.l-section.is-lg.is-top
     .l-container
       +heading-xlg("事業内容", "SERVICE").is-bottom

@@ -18,9 +18,9 @@
   growApp.prototype.myCode = function () {
   }
 
-  growApp.prototype.modalContents = function () {
-    $('.js-modal-content').modaal();
-  }
+  // growApp.prototype.modalContents = function () {
+  //   $('.js-modal-content').modaal();
+  // }
 
   growApp.prototype.enterAnimation = function () {
     let $loader = $('.c-loader');
@@ -29,24 +29,28 @@
     }
 
     function changeClass(el, className, time) {
-      return new Promise(function (resolve, reject) {
+      return new Promise(function (resolve) {
         setTimeout(function () {
           el.addClass(className);
           resolve(className);
         }, time);
       });
     }
+    function removeClass(el, className, time) {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          el.removeClass(className);
+          resolve(className);
+        }, time);
+      });
+    }
 
-    var loaderFunction = function () {
+    var loaderFunction = async function () {
       // ここから実行
       if ($loader) {
-        changeClass($loader, "is-active", 1000).then(function () {
-          changeClass($loader, "is-close", 2000).then(function () {
-            changeClass($loader, "is-hidden", 1000).then(function () {
-
-            });
-          });
-        });
+        await changeClass($loader, "is-active", 1000);
+        await changeClass($loader, "is-close", 2000);
+        await changeClass($loader, "is-hidden", 1000);
       }
     };
 
@@ -105,7 +109,7 @@
   $(function () {
     var app = new growApp();
     app.myCode();
-    app.modalContents();
+    // app.modalContents();
     app.enterAnimation();
     app.showCookie();
     app.backCache();

@@ -7,7 +7,7 @@
   background: rgba($font-base-color, .9);
   visibility: hidden;
   opacity: 0;
-  transition: all 0.2s ease;
+  @include transition(.2s);
 
   @include breakpoint(medium down) {
     top: rem-calc(55);
@@ -115,7 +115,7 @@
       outline: none;
       @include font-format(16,.1,24,400);
       border-radius: 0 2px 2px 0;
-      transition: all 0.2s ease-out;
+      @include transition(.2s, ease-out);
 
       @include breakpoint(small only) {
         width: rem-calc(78);

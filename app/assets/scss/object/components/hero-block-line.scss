@@ -76,7 +76,7 @@
       height: 100%;
       background-color: $color-white;
       opacity: 0;
-      transition: all .2s;
+      @include transition(.2s);
     }
 
     &:hover {

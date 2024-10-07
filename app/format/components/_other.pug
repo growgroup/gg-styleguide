@@ -16,39 +16,93 @@ div.u-mbs.is-bottom
         +e.content(data-accordion-content="accordion--text")
           +e.icon.is-color-accent A
           +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-div.u-mbs.is-bottom
-  +c.gallery-text.js-float-swiper.swiper
-    ul.swiper-wrapper
-      +loop(2)
-        li.swiper-slide: span TEXTGALLERY
 
+h3 カードスライダー
 div.u-mbs.is-bottom
-  +c.gallery-logo
-    .l-container
-      +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
-    +loop(2)
-      +e.slider.swiper
+  +c.card.js-card-slider.swiper
+    +e.slider.swiper-wrapper
+      +e.block.swiper-slide
+        +e.image: +img("img-card-01.jpg","",712,420)
+        +e.content
+          h3.c-card__title スマホでスライダーになるサンプル
+          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+      +e.block.swiper-slide
+        +e.image: +img("img-card-01.jpg","",712,420)
+        +e.content
+          h3.c-card__title スマホでスライダーになるサンプル
+          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+    +e.slider-nav
+      +button.button-prev.js-card-slider-prev < 前へ
+      +button.button-next.js-card-slider-next > 次へ
+    +e.slider-pagination.js-card-slider-pagination
+div.u-mbs.is-bottom
+  +c.card.js-card-slider.swiper
+    +e.slider.swiper-wrapper
+      +e.block.swiper-slide
+        +e.image: +img("img-card-01.jpg","",712,420)
+        +e.content
+          h3.c-card__title スマホでスライダーになるサンプル
+          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+      +e.block.swiper-slide
+        +e.image: +img("img-card-01.jpg","",712,420)
+        +e.content
+          h3.c-card__title スマホでスライダーになるサンプル
+          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+    +e.slider-nav
+      +button.button-prev.js-card-slider-prev < 前へ
+      +button.button-next.js-card-slider-next > 次へ
+    +e.slider-pagination.js-card-slider-pagination
+
+  h3 横に流れ続けるスライダー
+  div.u-mbs.is-bottom
+    +c.gallery-text.js-text-loop.swiper
+      ul.swiper-wrapper
+        +loop(2)
+          li.swiper-slide: span TEXTGALLERY
+
+  div.u-mbs.is-bottom
+    +c.gallery-logo
+      .l-container
+        +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
+
+      +e.slider.js-logo-slider.swiper
         +e.images.swiper-wrapper
-          +loop(10)
-            +e.image.swiper-slide: +img("logo.png")
+          for num in [1,2]
+            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+            +e.image.swiper-slide: +img(img)
+
+      +e.slider.js-logo-slider.swiper
+        +e.images.swiper-wrapper
+          for num in [1,2,3,4,5,6]
+            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+            +e.image.swiper-slide: +img(img)
+
+h3 画面幅が狭いとき横スクロールする画像やテーブル
 
 div.u-mbs.is-bottom
-  +c.gallery-card.swiper
-    .l-container
-      +h2.head.c-heading.is-md.is-center.is-mg-level-2 会社紹介ギャラリー
-    +e.cards.swiper-wrapper
-      +e.card.swiper-slide
-        +e.image: +img("img-sample.jpg","",803, 451)
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-      +e.card.swiper-slide
-        +e.image: +img("img-sample.jpg","",803, 451)
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-      +e.card.swiper-slide
-        +e.image: +img("img-sample.jpg","",803, 451)
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    .l-container
-      .swiper-content
-        .swiper-scrollbar
-        .swiper-nav
-          .swiper-button-prev
-          .swiper-button-next
+  .c-scrollable
+    // scroll-hint が .js-scrollableの親の要素に対して適用されるため
+    // c-scrollableと .js-scrollableを分けることを推奨
+    .js-scrollable
+      +img("img-sample.jpg")
+
+div.u-mbs.is-bottom
+  .c-scrollable
+    .js-scrollable
+      table.c-table
+        tbody
+          tr
+            th テスト
+            th テスト
+            th テスト
+            th テスト
+            th テスト
+          tr
+            td テスト
+            td テスト
+            td テスト
+            td テスト
+            td テスト
+

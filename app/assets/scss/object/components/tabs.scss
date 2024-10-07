@@ -4,6 +4,8 @@ name: タブ
 category: Tabs
 ---
 */
+@use "sass:color";
+
 .c-tabs {
   // タブ
   &__navs {
@@ -31,7 +33,7 @@ category: Tabs
       display: block;
       padding: rem-calc(10) rem-calc(24);
       position: relative;
-      transition: all .3s;
+      @include transition();
       @include breakpoint(small only) {
         padding: rem-calc(6) rem-calc(24);
       }
@@ -45,7 +47,7 @@ category: Tabs
         right: rem-calc(16);
         top: calc(50% + 1px);
         transform: translateY(-50%);
-        transition: all .3s;
+        @include transition();
         @include breakpoint(small only) {
           font-size: rem-calc(24)*0.8;
         }
@@ -53,7 +55,7 @@ category: Tabs
 
       // *hover
       &:hover {
-        background-color: lighten($color-primary, 45);
+        background-color: color.adjust($color-primary, $lightness: 45%);
         opacity: 1;
       }
 
