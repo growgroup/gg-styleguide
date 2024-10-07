@@ -68,6 +68,7 @@
     "@fontsource/material-icons-two-tone": "^5.1.0",
     "@fontsource/noto-sans-jp": "^5.1.0",
     "@fontsource/roboto": "^5.1.0",
+    "@studio-freight/lenis": "^1.0.42",
     "animejs": "^3.2.2",
     "gsap": "^3.12.5",
     "imagesloaded": "^5.0.0",

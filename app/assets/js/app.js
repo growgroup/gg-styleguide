@@ -22,6 +22,7 @@ import GsapAnimation from "./app/gsap";
 // import modaalCss from 'modaal/dist/css/modaal.css';
 import Scrollable from "./app/scrollable";
 // import Parallax from "./app/parallax";
+// import LenisScroll from "./app/lenis";
 
 class App {
   constructor() {
@@ -39,6 +40,7 @@ class App {
     this.gsap = new GsapAnimation();
     this.Scrollable = new Scrollable();
     // this.parallax = new Parallax();
+    // this.lenis = new LenisScroll();
     this.defaultOptions = {
       gsap: this.gsap,
       utils: this.Utils
