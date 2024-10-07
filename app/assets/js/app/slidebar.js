@@ -33,6 +33,7 @@ var defaultOptions = {
   containerSelector: '.js-slidebar-container',
   buttonSelector: '.js-slidebar-button',
   menuSelector: '.js-slidebar-menu',
+  activateWidth: 950,//950px未満の場合のみ有効化。PCでもslidebarを利用する場合はnullを設定
   slideSpeed: 500
 }
 
@@ -45,7 +46,10 @@ export default class Slidebar {
     this.isActive = false;
 
     this.init();
-    this.setupResizeObserver(); // ResizeObserverをセットアップ
+
+    if (this.options.activateWidth !== null) {
+      this.setupResizeObserver(); // ResizeObserverをセットアップ
+    }
   }
 
   /**
@@ -75,9 +79,9 @@ export default class Slidebar {
     });
 
     // ページ内リンク時の挙動
-    // $(".c-slidebar-menu a[href*=\"#\"]").on('click', function (e) {
-    //   self.close();
-    // });
+    this.menu.find("a[href*='#']").on('click', function (e) {
+      self.close();
+    });
   }
 
   /**
@@ -151,7 +155,7 @@ export default class Slidebar {
   setupResizeObserver() {
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
-        if (entry.contentRect.width >= 950) {
+        if (entry.contentRect.width > this.options.activateWidth) {
           document.body.classList.remove("is-slidebar-active");
           this.isActive = false;
           this.menu.attr("inert", "true");
