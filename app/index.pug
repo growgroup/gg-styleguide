@@ -4,8 +4,8 @@
 extends /inc/foundation/_base.pug
 block append config
   - current.id = "home" // ページのID
-  - current.title = "トップページ" // タイトルあ
-  - current.description = "これはトップページの説明文です" // 説明文
+  - current.title = "トップページ" // タイトル
+  //- - current.description = "これはトップページの説明文です" // ページごとに説明文を設定する場合のみ
   - current.bodyClass = "home" // body に付与するクラス
   - current.path = "/" // ページのpath
   - current.depth = 1 // ページの階層
