@@ -143,4 +143,20 @@ category: Navigation
       }
     }
   }
+
+  &__search {
+    padding: rem-calc(20) rem-calc(16) rem-calc(30);
+    border: 1px solid $color-border;
+  }
+
+  &__keyword {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem-calc(5) rem-calc(8);
+    font-size: rem-calc(14);
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(13);
+    }
+  }
 }
