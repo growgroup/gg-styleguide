@@ -50,6 +50,17 @@ export default class Anchor {
     let self = this;
 
     this.target.on('click', function(e) {
+
+      // アンカーが同一ページか判定
+      const targetUrl = e.target.href;
+      const targetPage = targetUrl.split('#')[0];
+      const currentPage = window.location.href.split('#')[0];
+
+      // 異なるページであればそのままリンクさせて以降処理しない
+      if(targetPage !== currentPage) {
+        return;
+      }
+
       e.preventDefault();
 
       // スクロール先のターゲットを指定
