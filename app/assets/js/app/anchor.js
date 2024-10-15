@@ -51,18 +51,15 @@ export default class Anchor {
 
     this.target.on('click', function(e) {
 
-      // 現在のページのパスとリンクのパスを比較
-      let currentPath = window.location.pathname;
-      let linkPath = $(this).attr('href').split('#')[0];
+      // リンク先のパスと現在のページのパスを比較
+      let linkHref = $(this).attr('href').split('#')[0]; // hrefのパス部分を取得
+      let currentPath = window.location.pathname; // 現在のページのパス
 
-      // 同一パスかつ同一階層かチェック
-      let currentPathArray = currentPath.split('/');
-      let linkPathArray = linkPath.split('/');
-      let flag = (linkPath !== '' && currentPathArray.slice(-linkPathArray.length).join('/') !== linkPath);
+      // linkHrefが空の場合（#はじまりのリンク）は同一ページと判定
+      let isSamePage = !linkHref || new URL(linkHref, window.location.origin).pathname === currentPath;
 
-      // パスや階層が異なる場合は何もせずに通常のリンク遷移を行う
-      if (flag) return;
-
+      // 他ページの場合は何もせずに通常のリンク遷移を行う
+      if (!isSamePage) return;
 
       e.preventDefault();
 
