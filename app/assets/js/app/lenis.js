@@ -31,6 +31,9 @@ export default class LenisScroll {
   }
 
 
+  /**
+   * 通常のページ全体への適用
+   */
   lenis() {
     const lenis = new Lenis({
       lerp: this.options.lerp,
@@ -44,6 +47,12 @@ export default class LenisScroll {
     requestAnimationFrame(raf)
   }
 
+
+  /**
+   * overflow:autoまたはscrollがある場合の適用
+   * ただし動的に要素内の高さが変更されると壊れるので
+   * slidebarではこちらは使わずに data-lenis-prevent を付与することを推奨
+   */
   lenisInside() {
     const containers = document.querySelectorAll(this.options.insideSelector);
     if (containers.length <= 0) return false;
