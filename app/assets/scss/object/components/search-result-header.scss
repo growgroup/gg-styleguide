@@ -1,0 +1,16 @@
+.c-search-result-header {
+  padding: rem-calc(46) 0 0;
+
+  &__title{
+  }
+
+  &__form{
+    background-color: $color-background;
+    padding: rem-calc(24);
+
+    @include breakpoint(small down) {
+      padding: rem-calc(16) rem-calc(20);
+    }
+  }
+
+}

@@ -14,7 +14,11 @@ block page_header
   //  subtitle: "result"
   //})
   +c_breadcrumb()
-  +l_searchform("is-search")
+  .l-container
+    +c.search-result-header
+      +h1.head.c-heading.is-lg.is-mg-level-2 サイト内検索
+      +e.form
+        +c_searchform-bar("resultSearch").is-sm
 
 block body
   section.l-section
