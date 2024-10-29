@@ -369,13 +369,27 @@
 
   &__flex-al {
     display: flex;
-    align-items: center;
+    align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
+    gap: rem-calc(16);
+  }
+
+  &__flex-al-label{
+    flex-shrink: 0;
+    width: rem-calc(32);
+    text-align: right;
+    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+  }
+
+  &__flex-al-unit{
+    flex-shrink: 0;
+    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
   }
 
   &__flexbox {
     display: flex;
-    align-items: center;
+    align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
     margin-bottom: rem-calc(16);
+    gap: rem-calc(16);
     @include breakpoint(small only) {
       display: block;
     }
@@ -388,13 +402,20 @@
       margin-bottom: 0;
     }
 
-    span {
-      min-width: rem-calc(120);
-      display: block;
-      @include breakpoint(small only) {
-        min-width: 100%;
-        margin-bottom: rem-calc(8);
-      }
+  }
+
+  &__flexbox-label {
+    min-width: rem-calc(120);
+    display: block;
+    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+
+    @include breakpoint(small only) {
+      min-width: 100%;
+      margin-bottom: rem-calc(8);
+    }
+
+    &.is-sm{
+      min-width: 4em;
     }
   }
 
@@ -409,10 +430,12 @@
     display: block;
     text-align: center;
     border-radius: 2px;
-    margin-left: rem-calc(16);
     font-size: rem-calc(14);
+    margin-top: calc((#{rem-calc(44)} - #{rem-calc(34)})/2);// （inputの高さ - ボタンの高さ）÷ 2
+
     @include breakpoint(small only) {
       padding: rem-calc(6) rem-calc(12);
+      margin-top: calc((#{rem-calc(44)} - #{rem-calc(38)})/2);// （inputの高さ - ボタンの高さ）÷ 2
     }
   }
 
