@@ -20,7 +20,9 @@
     "build:autoprefixer": "postcss -o dist/assets/css/style.css dist/assets/css/style.css",
     "make-admin-style": "postcss -o dist/assets/css/admin-style.css dist/assets/css/style.css",
     "prepend-selector-admin-style": "postcss -o dist/assets/css/admin-style.css dist/assets/css/admin-style.css",
-    "lint:html": "markuplint \"./dist/**/*.html\""
+    "lint:html": "markuplint \"./dist/**/*.html\"",
+    "lint:scss": "stylelint \"./app/**/*.scss\"",
+    "lint": "run-s --continue-on-error lint:*"
   },
   "author": "GrowGroup",
   "devDependencies": {
@@ -54,6 +56,8 @@
     "sass": "^1.78.0",
     "sass-loader": "^16.0.2",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^7.4.2",
