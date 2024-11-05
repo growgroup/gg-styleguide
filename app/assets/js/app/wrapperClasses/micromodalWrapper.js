@@ -110,7 +110,7 @@ export default class MicromodalWrapper {
       <div class="c-mm__overlay" tabindex="-1" data-micromodal-close>
         <div role="dialog" class="c-mm__container" aria-modal="true" aria-label="${modalTitle}">
           <button class="c-mm__close" aria-label="Close modal" data-micromodal-close></button>
-          <div class="c-mm__container-inner" id="${id}-content">
+          <div class="c-mm__container-inner" id="${id}-container-inner">
           <div class="c-mm__content" id="${id}-content">
             ${content}
           </div>
