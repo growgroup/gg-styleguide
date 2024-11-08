@@ -14,7 +14,11 @@ block page_header
     title: "お知らせ",
     subtitle: "news"
   })
-  +c_breadcrumb()
+  +c_breadcrumb({
+    paths: [
+      {url: "news", text: "お知らせ"},
+    ]
+  })
 
 block body
   +c.news

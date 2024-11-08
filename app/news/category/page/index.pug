@@ -13,7 +13,12 @@ block page_header
     title: "お知らせ",
     subtitle: "news"
   })
-  +c_breadcrumb("お知らせ","news","カテゴリ","category")
+  +c_breadcrumb({
+    paths: [
+      {url: "news", text: "お知らせ"},
+      {url: "category", text: "カテゴリ"},
+    ]
+  })
 
 block body
   section.l-section.is-lg
