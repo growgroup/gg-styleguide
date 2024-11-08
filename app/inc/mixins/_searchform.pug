@@ -3,13 +3,13 @@ mixin l_searchform(type)
   if type == "is-search"
     .l-searchform(class=type)
       .l-container
-        .l-searchform__head.c-heading.is-lg.is-mg-level-2 サイト内検索
+        h1.l-searchform__head.c-heading.is-lg.is-mg-level-2 サイト内検索
         .l-searchform__inner
           form.l-searchform__form
-            label.l-searchform__form__label(for="searchform")
+            label.l-searchform__form__label(for="resultSearchform")
               span.u-visually-hidden キーワードから検索
               span.l-searchform__form__icon(aria-hidden="true") search
-            input(type="text", placeholder="キーワードから検索")#searchform
+            input(type="text", placeholder="キーワードから検索")#resultSearchform
             button 検索する
   else
     .l-searchform(class=type)
