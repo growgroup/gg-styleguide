@@ -76,7 +76,6 @@ bower_components
 ### App ###
 dist/
 styleguide/
-base/
 tests/results/
 
 ### basic ###
