@@ -5,6 +5,14 @@
   --letter-spacing: #{$font-base-letter-spacing};
   --header-height: #{rem-calc($header-height)};
 
+  //2カラムレイアウト計算用
+  --two-column-aside: #{rem-calc($asideContainer)};
+  --two-column-gap: #{rem-calc($asideMargin)};
+  --two-column-gutterL: (100% - #{rem-calc($grid-row-width)}) / 2; // 100% - l-containerの幅/2
+  --two-column-gutterR: (100% - #{rem-calc($grid-row-width)}) / 2; // 100% - l-containerの幅/2
+  --max-two-column-gutterL: max(32px, var(--two-column-gutterL));
+  --max-two-column-gutterR: max(32px, var(--two-column-gutterR));
+
   //スマホのとき値を変更したい場合は以下に
   @include breakpoint(medium down) {
     --header-height: #{rem-calc($header-height-sp)};

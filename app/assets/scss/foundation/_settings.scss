@@ -107,7 +107,11 @@ $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 $slidebar-header-height: $header-height-sp !default; // スマホ時のヘッダーの高さ
 
 // # Grid
-$grid-row-width: 1140px !default; // グリッドの幅
+$grid-row-width: 1140 !default; // グリッドの幅
+$grid-responsive-margin: (//両サイドの余白
+  sm: 16px, // モバイル
+  md: 32px, // タブレット以上
+);
 $grid-column-count: 12 !default; // グリッド数
 $grid-column-responsive-gutter: (// カラムとカラムの間隔
   small: 16px, // モバイル

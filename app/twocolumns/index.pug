@@ -7,6 +7,9 @@ block append config
   - current.path = `/${current.id}/` // ページのpath
   - current.depth = 2 // ページの階層
 
+block layout_params
+  - twoColumnAddClass = "is-reverse" //- "" or "is-reverse"
+
 block page_header
   +l_page_header({
       image: "img-page-header-format.jpg",
@@ -16,36 +19,44 @@ block page_header
   +c_breadcrumb()
 
 block body
-  section.l-section.is-lg.is-bottom
-    h2.c-heading.is-lg.is-mg-level-6 セクションタイトル
-    +c_anchor-nav("u-mbs is-bottom",{
-      link: "#section01",
-      title: "テキストテキスト",
-    },{
-      link: "#section02",
-      title: "テキストテキスト",
-    },{
-      link: "#section03",
-      title: "テキストテキスト",
-    },{
-      link: "#section04",
-      title: "テキストテキスト",
-    })
-    .u-mbs.is-sm
-      p
-        | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
-    +c.box
-      +e.block
-        +e.content
-          h3.c-heading.is-md サブタイトル
-          p テキストテキストテキストテキストテキストテキストテキストテキスト
-          +img("img-sample.jpg")
-          +a("/").c-button.is-sm ボタンテキスト
+  section.l-section.is-md.is-bg-color
+    .l-container
+      h2.c-heading.is-lg.is-mg-level-6 セクションタイトル
+      +c_anchor-nav("u-mbs is-bottom",{
+        link: "#section01",
+        title: "テキストテキスト",
+      },{
+        link: "#section02",
+        title: "テキストテキスト",
+      },{
+        link: "#section03",
+        title: "テキストテキスト",
+      },{
+        link: "#section04",
+        title: "テキストテキスト",
+      })
+      .u-mbs.is-sm
+        p
+          | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
+      +c.box
+        +e.block
+          +e.content
+            h3.c-heading.is-md サブタイトル
+            p テキストテキストテキストテキストテキストテキストテキストテキスト
+            +img("img-sample.jpg")
+            +a("/").c-button.is-sm ボタンテキスト
 
-  section.l-section.is-lg.is-bottom
-    h2.c-heading.is-lg セクションタイトル
-    p
-      | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
+  section.l-section.is-lg
+    .l-container
+      h2.c-heading.is-lg セクションタイトル
+      p
+        | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
+
+  section.l-section.is-md.is-bg-color
+    .l-container
+      h2.c-heading.is-lg セクションタイトル
+      p
+        | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
 
 block aside
   +l-aside()

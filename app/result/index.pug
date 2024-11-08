@@ -17,7 +17,7 @@ block page_header
   +l_searchform("is-search")
 
 block body
-  section.l-section
+  section.l-section.is-search-result
     +c.search
       +e.head
         b 「いろはに」
@@ -43,5 +43,5 @@ block body
     +c_pagination()
 
 block aside
-  +l-aside("result")
+  +l-aside-search-result
 
