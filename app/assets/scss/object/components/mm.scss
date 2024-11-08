@@ -3,10 +3,95 @@ Styles for the Modal component.
 */
 
 .c-mm {
-  $c: #{&};
-
+  $c: &;
   display: none;
+  //============================
+  // オーバーレイ
+  //============================
 
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  //============================
+  // 閉じるボタン
+  //============================
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    font-size: rem-calc(32);
+    cursor: pointer;
+    background: transparent;
+    color: $color-black;
+    transition: color 0.3s ease;
+
+    height: rem-calc(44);
+    width: rem-calc(44);
+    padding: 0;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+
+    &::before {
+      content: "clear";
+      @include icon-font();
+    }
+  }
+
+
+  //============================
+  // コンテンツエリア
+  //============================
+
+  //白背景
+  &__container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    width: min(#{rem-calc(1140)}, 90%);
+    height: auto;
+    max-height: min(#{rem-calc(700)}, 90%);
+    border-radius: 16px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .c-mm__container-inner {
+    padding: rem-calc(56) rem-calc(62);
+    width: 100%;
+
+    @include breakpoint(small down) {
+      padding: rem-calc(32) rem-calc(24);
+    }
+  }
+
+  //スクロールバーを出す領域
+  .c-mm__content {
+    overflow-y: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+  }
+
+
+
+
+  //============================
+  // 展開時のスタイル
+  //============================
   &.is-open {
     display: block;
 
@@ -18,172 +103,111 @@ Styles for the Modal component.
       animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
-}
 
+  &.is-open[aria-hidden="true"] {
+    #{$c}__overlay {
+      animation: fadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
 
-.c-mm__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-
-.c-mm__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  font-size: rem-calc(32);
-  cursor: pointer;
-  background: transparent;
-  color: $color-black;
-  transition: color 0.3s ease;
-
-  height: rem-calc(44);
-  width: rem-calc(44);
-  padding: 0;
-  display: grid;
-  place-items: center;
-  z-index: 2;
-
-  &::before {
-    content: "clear";
-    @include icon-font();
-  }
-
-}
-
-.c-mm__container {
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-
-  width: min(#{rem-calc(1140)}, 90%);
-  height: auto;
-  max-height: min(#{rem-calc(700)}, 90%);
-  border-radius: 16px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.c-mm__container-inner {
-  padding: rem-calc(16) rem-calc(48);
-  width: 100%;
-
-  @include breakpoint(small down) {
-    padding: rem-calc(24);
+    #{$c}__container {
+      animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 }
 
 
-.c-mm__content {
-  overflow-y: auto;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
-}
-
-.c-mm__img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 
 
-.c-mm__iframe {
-  width: 100%;
-  height: rem-calc(800);
-  max-height: 100%;
-  display: block;
-  border: none;
-}
+//====================================================================================
+// （削除しない/CSS変更可）jsで自動生成する画像モーダル、動画モーダル、
+// iframeモーダル、ギャラリーモーダル用のスタイル
+//====================================================================================
 
-.c-mm__video, .c-mm__iframe--yt {
-  aspect-ratio: 16/9;
-  width: 100%;
-  height: auto;
-}
-
-
-.c-mm__gallery-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.c-mm__gallery-nav {
-
-}
-
-.c-mm__gallery-btn {
-  background-color: transparent;
-  height: rem-calc(44);
-  width: rem-calc(44);
-  color: $color-gray;
-  font-size: rem-calc(44);
-  transition: color 0.3s ease;
-  border: none;
-  padding: 0;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  &::before {
-    @include icon-font();
+.c-mm{
+  &__img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
-  &:hover {
-    &:not(:disabled) {
-      color: $color-primary;
+  &__iframe{
+    width: 100%;
+    height: rem-calc(800);
+    max-height: 100%;
+    display: block;
+    border: none;
+  }
+
+  &__video, &__iframe--yt{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+  }
+
+  &__gallery-img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__gallery-nav{
+
+  }
+
+  &__gallery-btn{
+    background-color: transparent;
+    height: rem-calc(44);
+    width: rem-calc(44);
+    color: $color-gray;
+    font-size: rem-calc(44);
+    transition: color 0.3s ease;
+    border: none;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    &::before{
+      @include icon-font();
+    }
+
+    &:hover{
+      &:not(:disabled){
+        color: $color-primary;
+      }
+    }
+
+    &:disabled{
+      opacity: 0;
+      pointer-events: none;
+      //cursor: not-allowed;
     }
   }
 
-  &:disabled {
-    opacity: 0;
-    pointer-events: none;
-    //cursor: not-allowed;
+  &__gallery-btn--prev{
+    left: rem-calc(-16);
+
+    &::before{
+      content: "chevron_left";
+    }
+  }
+
+  &__gallery-btn--next{
+    right: rem-calc(-16);
+
+    &::before{
+      content: "chevron_right";
+    }
   }
 }
 
-.c-mm__gallery-btn--prev {
-  left: rem-calc(-16);
-
-  &::before {
-    content: "chevron_left";
-  }
-}
-
-.c-mm__gallery-btn--next {
-  right: rem-calc(-16);
-
-  &::before {
-    content: "chevron_right";
-  }
-}
-
-.c-mm.is-open[aria-hidden="true"] {
-  .c-mm__overlay {
-    animation: fadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
-  }
-
-  .c-mm__container {
-    animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
-  }
-}
 
 
 @keyframes mmslideIn {
