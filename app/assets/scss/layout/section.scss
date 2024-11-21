@@ -7,59 +7,47 @@
 //
 // Styleguide 5.3.0
 
-$xlg: 120;
-$lg: 100;
-$md: 80;
-$sm: 64;
-$xs: 32;
+// サイズ定義 (必ずPC用, SP用の2つの値を指定)
+$sizes: (
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (80, 40),
+  sm: (64, 32),
+  xs: (32, 16),
+);
+
 
 .l-section {
+
   // サイズ設定
+  @each $key, $value in $sizes {
+    $pc-value: nth($value, 1); // PC用
+    $sp-value: nth($value, 2); // SP用
 
+    &.is-#{$key} {
+      padding-top: rem-calc($pc-value);
+      padding-bottom: rem-calc($pc-value);
+      @include breakpoint(small down) {
+        padding-top: rem-calc($sp-value);
+        padding-bottom: rem-calc($sp-value);
+      }
 
-  &.is-xlg {
-    padding-top: rem-calc($xlg);
-    padding-bottom: rem-calc($xlg);
-    @include breakpoint(small only) {
-      padding-top: rem-calc($xlg) * 0.5;
-      padding-bottom: rem-calc($xlg) * 0.5;
+      &-top {
+        padding-top: rem-calc($pc-value);
+        @include breakpoint(small down) {
+          padding-top: rem-calc($sp-value);
+        }
+      }
+
+      &-bottom {
+        padding-bottom: rem-calc($pc-value);
+        @include breakpoint(small down) {
+          padding-bottom: rem-calc($sp-value);
+        }
+      }
     }
   }
 
-  &.is-lg {
-    padding-top: rem-calc($lg);
-    padding-bottom: rem-calc($lg);
-    @include breakpoint(small only) {
-      padding-top: rem-calc($lg) * 0.5;
-      padding-bottom: rem-calc($lg) * 0.5;
-    }
-  }
-
-  &.is-md {
-    padding-top: rem-calc($md);
-    padding-bottom: rem-calc($md);
-    @include breakpoint(small only) {
-      padding-top: rem-calc($md) * 0.5;
-      padding-bottom: rem-calc($md) * 0.5;
-    }
-  }
-
-  &.is-sm {
-    padding-top: rem-calc($sm);
-    padding-bottom: rem-calc($sm);
-    @include breakpoint(small only) {
-      padding-top: rem-calc($sm) * 0.5;
-      padding-bottom: rem-calc($sm) * 0.5;
-    }
-  }
-  &.is-xs {
-    padding-top: rem-calc($xs);
-    padding-bottom: rem-calc($xs);
-    @include breakpoint(small only) {
-      padding-top: rem-calc($xs) * 0.5;
-      padding-bottom: rem-calc($xs) * 0.5;
-    }
-  }
 
   // カラー設定
   //->プライマリー
