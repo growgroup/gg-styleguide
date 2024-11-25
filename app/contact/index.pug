@@ -42,19 +42,19 @@ block body
                     span
                       span
                         label
-                          input(type="checkbox", name="service_options", value="選択肢1")
+                          input(type="checkbox", name="service-options", value="選択肢1")
                           span 選択肢1
                       span
                         label
-                          input(type="checkbox", name="service_options", value="選択肢2")
+                          input(type="checkbox", name="service-options", value="選択肢2")
                           span 選択肢2
                       span
                         label
-                          input(type="checkbox", name="service_options", value="選択肢3")
+                          input(type="checkbox", name="service-options", value="選択肢3")
                           span 選択肢3
                       span
                         label
-                          input(type="checkbox", name="service_options", value="選択肢4")
+                          input(type="checkbox", name="service-options", value="選択肢4")
                           span 選択肢4
 
             +e.block
@@ -65,19 +65,19 @@ block body
                     span
                       span
                         label
-                          input(type="radio", name="service_selection", value="選択肢1")
+                          input(type="radio", name="service-selection", value="選択肢1")
                           span 選択肢1
                       span
                         label
-                          input(type="radio", name="service_selection", value="選択肢2")
+                          input(type="radio", name="service-selection", value="選択肢2")
                           span 選択肢2
                       span
                         label
-                          input(type="radio", name="service_selection", value="選択肢3")
+                          input(type="radio", name="service-selection", value="選択肢3")
                           span 選択肢3
                       span
                         label
-                          input(type="radio", name="service_selection", value="選択肢4")
+                          input(type="radio", name="service-selection", value="選択肢4")
                           span 選択肢4
 
             +e.block
@@ -88,19 +88,19 @@ block body
                     span
                       span
                         label
-                          input(type="checkbox", name="long_text_options", value="選択肢1")
+                          input(type="checkbox", name="long-text-options", value="選択肢1")
                           span 選択肢1 長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト
                       span
                         label
-                          input(type="checkbox", name="long_text_options", value="選択肢2")
+                          input(type="checkbox", name="long-text-options", value="選択肢2")
                           span 選択肢2 長いテキスト長いテキスト長いテキスト
                       span
                         label
-                          input(type="checkbox", name="long_text_options", value="選択肢3")
+                          input(type="checkbox", name="long-text-options", value="選択肢3")
                           span 選択肢3 長いテキスト
                       span
                         label
-                          input(type="checkbox", name="long_text_options", value="選択肢4")
+                          input(type="checkbox", name="long-text-options", value="選択肢4")
                           span 選択肢4 長いテキスト
 
             +e.block
@@ -111,11 +111,11 @@ block body
                     span
                       span
                         label
-                          input(type="radio", name="custom_service_selection", value="選択肢1")
+                          input(type="radio", name="custom-service-selection", value="選択肢1")
                           span 選択肢1
                       span
                         label
-                          input(type="radio", name="custom_service_selection", value="選択肢2")
+                          input(type="radio", name="custom-service-selection", value="選択肢2")
                           span 選択肢2
 
             +e.block
@@ -126,27 +126,27 @@ block body
                     span
                       span
                         label
-                          input(type="checkbox", name="custom_service_options", value="選択肢1")
+                          input(type="checkbox", name="custom-service-options", value="選択肢1")
                           span 選択肢1
                       span
                         label
-                          input(type="checkbox", name="custom_service_options", value="選択肢2")
+                          input(type="checkbox", name="custom-service-options", value="選択肢2")
                           span 選択肢2
 
             +e.block
               +e.title
                 | お名前
                 span.c-forms__label 必須
-                //- ★Contact form 7 の場合は name="name" は使えないので name="your_name" にしてください
+                //- ★Contact form 7 の場合は name="name" は使えないので name="your-name" にしてください
               +e.content
-                +e.input: input(type="text", name="your_name", placeholder="山田　太郎")
+                +e.input: input(type="text", name="your-name", placeholder="山田　太郎")
 
             +e.block
               +e.title
                 | 会社名
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="company_name", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="company-name", placeholder="〇〇株式会社")
                 +p.note: small ※個人の方は、「個人」とご入力ください
 
             +e.block
@@ -155,7 +155,7 @@ block body
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は メールアドレスは type="email" にしてください
               +e.content
-                +e.input: input(type="email", name="your_email", placeholder="info@mail.jp")
+                +e.input: input(type="email", name="your-email", placeholder="info@mail.jp")
 
             +e.block
               +e.title
@@ -163,7 +163,7 @@ block body
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は 電話番号は type="tel" にしてください
               +e.content
-                +e.input: input(type="tel", name="your_tel", placeholder="123-456-7890")
+                +e.input: input(type="tel", name="tel-number", placeholder="123-456-7890")
 
             +e.block
               +e.title
@@ -171,8 +171,8 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
-                  +e.input.is-sm: input(type="text", name="postal_code", placeholder="0001234")
-                  button(onclick="AjaxZip3.zip2addr('postal_code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
+                  +e.input.is-sm: input(type="text", name="zip-code", placeholder="0001234")
+                  button(onclick="AjaxZip3.zip2addr('zip-code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
 
             +e.block
               +e.title
@@ -187,7 +187,7 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.select
-                  select(name="department_name")
+                  select(name="department-name")
                     option(disabled, selected) ー以下から選択してくださいー
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
@@ -209,13 +209,57 @@ block body
               +e.title その他質問等
               +e.content
                 +e.textarea
-                  textarea(name="questions", placeholder="")
+                  textarea(name="your-message", placeholder="")
 
             +e.block
               +e.title
                 | ファイルアップロード
               +e.content
-                +e.file: input(type="file", name="file_upload")
+                +e.file: input(type="file", name="file-upload")
+
+          +e.head --姓名を分離するパターン--
+          +e.blocks
+            +e.block
+              +e.title
+                | お名前
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al
+                  +e.flex-al
+                    +span.flex-al-label 姓
+                    +e.input: input(type="text", name="last-name", placeholder="山田")
+                  +e.flex-al
+                    +span.flex-al-label 名
+                    +e.input: input(type="text", name="first-name", placeholder="太郎")
+            +e.block
+              +e.title
+                | フリガナ
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al
+                  +span.flex-al-label セイ
+                  +e.input: input(type="text", name="last-kana-name", placeholder="ヤマダ")
+                  +span.flex-al-label メイ
+                  +e.input: input(type="text", name="first-kana-name", placeholder="タロウ")
+            +e.block
+              +e.title
+                | 生年月日
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al
+                  +span.flex-al-label 西暦
+                  +e.flex-al
+                    +e.input
+                      input(type="text", name="birth-year", placeholder="1980")
+                    +span.flex-al-unit 年
+                  +e.flex-al
+                    +e.input.is-sm
+                      input(type="text", name="birth-month", placeholder="01")
+                    +span.flex-al-unit 月
+                  +e.flex-al
+                    +e.input.is-sm
+                      input(type="text", name="birth-day", placeholder="01")
+                    +span.flex-al-unit 日
 
           +e.head --MW WP Form版保存用--
           //- ★MW WP Formの場合はname値を日本語にします
@@ -252,14 +296,14 @@ block body
                 | 横並びパターン
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="horizontal_pattern", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="horizontal-pattern", placeholder="〇〇株式会社")
 
             +e.block.is-horizontal
               +e.title.is-vertical-top
                 | 横並び（タイトル上寄せ）
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="horizontal_pattern_title_top", placeholder="〇〇株式会社")
+                +e.input: input(type="text", name="horizontal-pattern-title-top", placeholder="〇〇株式会社")
                 +p.note: small 補足のテキスト
 
             +e.block.is-horizontal
@@ -268,13 +312,13 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.flexbox
-                  span 郵便番号
+                  +span.flexbox-label 郵便番号
                   +e.flex-al
-                    +e.input.is-sm: input(type="text", name="postal_code_address", placeholder="（例）464-0850")
-                    button(onclick="AjaxZip3.zip2addr('postal_code_address','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
+                    +e.input.is-sm: input(type="text", name="zip-code-address", placeholder="（例）464-0850")
+                    button(onclick="AjaxZip3.zip2addr('zip-code-address','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
                 +e.flexbox
-                  span ご住所
-                  +e.input: input(type="text", name="address_detail", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
+                  +span.flexbox-label ご住所
+                  +e.input: input(type="text", name="address-detail", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
           //- WP側で c-forms__privacyの中のinputを判定して処理するので、
           //- 同意のチェックボックスは .c-forms__privacy の中に入れてください
