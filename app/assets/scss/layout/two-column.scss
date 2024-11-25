@@ -2,7 +2,7 @@
   display: grid;
   grid-template:
     "gutterL main gap side gutterR" auto /
-    var(--max-two-column-gutterR) 1fr var(--two-column-gap) var(--two-column-aside) var(--max-two-column-gutterL);
+    var(--max-two-column-gutterL) 1fr var(--two-column-gap) var(--two-column-aside) var(--max-two-column-gutterR);
 
   @include breakpoint(medium down) {
     grid-template:
