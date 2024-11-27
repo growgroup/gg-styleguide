@@ -102,6 +102,7 @@ $header-height-sp: 55 !default; // スクロール位置をずらす計算にも
 
 // スライドバー（スマホメニュー）
 $slidebar-menu-bg: $color-primary !default;
+$slidebar-menu-text-color: $color-white !default;
 $slidebar-menu-width: 100% !default;
 $slidebar-container-bg: rgba(0, 0, 0, 0.8) !default;
 $slidebar-header-height: $header-height-sp !default; // スマホ時のヘッダーの高さ
