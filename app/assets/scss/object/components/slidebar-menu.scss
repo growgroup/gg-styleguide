@@ -34,7 +34,6 @@
   // メニュー要素（一番外・全体で共通する設定）
   &__list {
     width: 100%;
-    background: $color-primary;
     font-size: rem-calc(14);
     font-weight: 700;
 
@@ -62,8 +61,8 @@
   }
 
   &__parent { //親li
-    color: $color-white;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+    color: $slidebar-menu-text-color;
+    border-bottom: solid 1px rgba($slidebar-menu-text-color, 0.4);
 
     &.is-open {
       //background: $color-white;
