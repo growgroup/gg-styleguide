@@ -7,13 +7,6 @@ mixin l-aside(data)
         li: +a("/archive-twocolumns/category/").js-current-nav カテゴリ
         li: +a("/archive-twocolumns/").js-current-nav(data-parent-nav="true") 子階層滞在時もis-current
         li: +a("#").js-current-nav カテゴリ
-  else if (data == "result")
-    +c.menu-list
-      +e.search
-        +e.title.c-heading.is-xxs.is-mg-level-6.is-center よく検索される<br class="u-hidden-md">キーワード
-        +ul.keyword
-          +loop(10)
-            li: +a("#") キーワード
   else
     +c.menu-list
       +e.head ページ_2カラム
@@ -40,3 +33,12 @@ mixin l-aside(data)
         ul.c-menu-list__submenu(data-accordion-content="accordion-text")
           li: +a("#") カテゴリ
           li: +a("#") カテゴリ
+
+mixin l-aside-search-result
+  +c.search-result-aside
+
+    +e.popular
+      +e.title よく検索される<br class="u-hidden-md">キーワード
+      +ul.keyword
+        +loop(10)
+          li: +a("#") キーワード

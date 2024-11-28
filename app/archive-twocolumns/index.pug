@@ -7,6 +7,9 @@ block append config
   - current.path = `/${current.id}/` // ページのpath
   - current.depth = 2 // ページの階層
 
+block layout_params
+  - twoColumnAddClass = "" //- "" or "is-reverse"
+
 block page_header
   +l_page_header({
     image: "img-page-header-format.jpg",
@@ -16,54 +19,56 @@ block page_header
   +c_breadcrumb()
 
 block body
-  +c.news
-    h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
-    +e.content
-      +loop(3)
-        +c_news__block("twocolumns")
-  +c_pagination()
-  +c.box-archive.u-mbs.is-top.is-lg
-    +e.block
-      +e.title カテゴリ
-      ul
-        li: +a("/news/") すべて
-        li: +a("/news/category/") お知らせ
-        li: +a("/news/category/") ブログ
-    +e.block
-      +e.title 年月アーカイブ
-      ul
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-        li: +a("/news/category/") 2019年01月
-  +c.news-lg.u-mbs.is-top.is-lg
-    +loop(5)
-      +a("/news/category/page/").c-news-lg__block
-        +e.sup
-          +e.label.c-label.is-sm お知らせ
-          +e.date 2018.06.01
-        +e.title お知らせの投稿タイトルがここに入ります。
-        +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
-  +c_pagination("is-align-left")
+  section.l-section.is-md
+    .l-container
+      +c.news
+        h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
+        +e.content
+          +loop(3)
+            +c_news__block("twocolumns")
+      +c_pagination()
+      +c.box-archive.u-mbs.is-top.is-lg
+        +e.block
+          +e.title カテゴリ
+          ul
+            li: +a("/news/") すべて
+            li: +a("/news/category/") お知らせ
+            li: +a("/news/category/") ブログ
+        +e.block
+          +e.title 年月アーカイブ
+          ul
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+            li: +a("/news/category/") 2019年01月
+      +c.news-lg.u-mbs.is-top.is-lg
+        +loop(5)
+          +a("/news/category/page/").c-news-lg__block
+            +e.sup
+              +e.label.c-label.is-sm お知らせ
+              +e.date 2018.06.01
+            +e.title お知らせの投稿タイトルがここに入ります。
+            +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+      +c_pagination("is-align-left")
 
-  +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg
-    .row
-      +loop(4)
-        .large-3.small-6
-          +e.block
-            +a.c-card-post__image
-              +img("img-card-01.jpg")
-            +e.content
-              +e.sup
-                span.c-card-post__label.c-label カテゴリ名
-                +e.date 2018.01.01
-              +e.title タイトルが入ります。タイトルが入ります。
-  +c_pagination()
+      +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg
+        .row
+          +loop(4)
+            .large-3.small-6
+              +e.block
+                +a.c-card-post__image
+                  +img("img-card-01.jpg")
+                +e.content
+                  +e.sup
+                    span.c-card-post__label.c-label カテゴリ名
+                    +e.date 2018.01.01
+                  +e.title タイトルが入ります。タイトルが入ります。
+      +c_pagination()
 
 block aside
-  +l-aside(news)
+  +l-aside("news")

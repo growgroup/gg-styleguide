@@ -14,10 +14,14 @@ block page_header
   //  subtitle: "result"
   //})
   +c_breadcrumb()
-  +l_searchform("is-search")
+  .l-container
+    +c.search-result-header
+      +h1.head.c-heading.is-lg.is-mg-level-2 サイト内検索
+      +e.form
+        +c_searchform-bar("resultSearch").is-sm
 
 block body
-  section.l-section
+  section.l-section.is-search-result
     +c.search
       +e.head
         b 「いろはに」
@@ -33,7 +37,6 @@ block body
           dt 並び順：
           dd: +a("").is-active 新着順
           dd: +a("") 更新順
-    +c.search
       +e.blocks
         +loop(10)
           +e.block
@@ -43,5 +46,5 @@ block body
     +c_pagination()
 
 block aside
-  +l-aside("result")
+  +l-aside-search-result
 
