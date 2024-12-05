@@ -1,5 +1,5 @@
-mixin heading-xlg(lg, sm)
-  .c-heading.is-xlg&attributes(attributes)
+mixin heading-xlg(tag,lg, sm)
+  #{tag}.c-heading.is-xlg&attributes(attributes)
     if !sm
       | !{lg}
     else
@@ -7,16 +7,16 @@ mixin heading-xlg(lg, sm)
       b.is-ja !{lg}
 
 
-mixin heading-lg(lg, sm)
-  .c-heading.is-lg&attributes(attributes)
+mixin heading-lg(tag, lg, sm)
+  #{tag}.c-heading.is-lg&attributes(attributes)
     if !sm
       | !{lg}
     else
       span.is-eng !{sm}
       b.is-ja !{lg}
 
-mixin heading-md(lg, sm)
-  .c-heading.is-md&attributes(attributes)
+mixin heading-md(tag, lg, sm)
+  #{tag}.c-heading.is-md&attributes(attributes)
     if !sm
       | !{lg}
     else
