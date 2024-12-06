@@ -1,8 +1,14 @@
 //<div class="c-scrollable">
 // <div class="js-scrollable">
 //   <!-- ここにスクロールさせたいコンテンツを入れる -->
-.c-scrollable{
-  img,table{
+.c-scrollable {
+  img,table {
     min-width: rem-calc(750);//デザインに合わせて調整
+  }
+
+  //scroll-hint 応急処置
+  .scroll-hint-icon {
+    width: auto!important;
+    height: auto!important;
   }
 }
