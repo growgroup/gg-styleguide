@@ -108,6 +108,8 @@ export default class SwiperSlider {
 
     const swiper = new Swiper(targetSelector, {
       loop: true,
+      //loopedSlidesLimit:false, //スライドの複製を無制限にする
+      //loopedSlides: 2, //スライドの複製数を指定する
       effect: 'fade',
       autoplay: {
         delay: delayTime, // ４秒後に次の画像へ
@@ -115,6 +117,7 @@ export default class SwiperSlider {
       },
       speed: 2000,
       allowTouchMove: false,
+      threshold: 10, // allowTouchMoveがtrueのとき、スライド内のリンクがクリックできない問題の解決
       pagination: {
         el: pagination, // ページネーションのクラス名を指定
       },
@@ -213,6 +216,8 @@ export default class SwiperSlider {
     return new Swiper(target, {
       spaceBetween: 40,
       loop: true,
+      // loopedSlidesLimit:false, //スライドの複製を無制限にする
+      // loopedSlides: 2, //スライドの複製数を指定する
       navigation: {
         nextEl: next,
         prevEl: prev,
@@ -221,6 +226,7 @@ export default class SwiperSlider {
         el: pagination,
         clickable: false,
       },
+      threshold: 10, // allowTouchMoveがtrueのとき、スライド内のリンクがクリックできない問題の解決
       keyboard: {
         enabled: true,
         onlyInViewport: true,
@@ -304,6 +310,8 @@ export default class SwiperSlider {
 
       const swiper = new Swiper(target, {
         loop: true,
+        //loopedSlidesLimit:false, //スライドの複製を無制限にする
+        //loopedSlides: 2, //スライドの複製数を指定する
         effect: 'slide',
         autoplay: {
           delay: delayTime, // ４秒後に次の画像へ
@@ -311,6 +319,7 @@ export default class SwiperSlider {
         },
         speed: 400,
         allowTouchMove: false,
+        threshold: 10, // allowTouchMoveがtrueのとき、スライド内のリンクがクリックできない問題の解決
         navigation: {
           nextEl: next,
           prevEl: prev,
