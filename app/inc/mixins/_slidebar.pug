@@ -9,7 +9,7 @@ mixin c_slidebar
       +e("span").text.is-open MENU
       +e("span").text.is-close CLOSE
 
-  +c.slidebar-menu.js-slidebar-menu.is-top-to-bottom(inert="true")
+  +c.slidebar-menu.js-slidebar-menu.is-top-to-bottom(inert="inert")
     +ul.list
       +li.parent.js-accordion
         +span.parent-link(data-accordion-title='menu-title') メニュー レベル1
