@@ -5,16 +5,14 @@ block layout
   block header
     include /inc/layout/_header.pug
 
-  //- ページヘッダー
-  block page_header
-
-  //- メインコンテンツ
-  block before_main
-
-  main.l-main
-    block body
-
-  block before_footer
+  //- main に classは付与しない
+  main
+    //- ページヘッダー
+    block page_header
+    block upper_main
+    .l-main
+      block body
+    block under_main
 
   //- フッター
   block footer

@@ -1,0 +1,99 @@
+//検索フォーム本体部分
+.c-searchform-bar {
+  $c: &;
+
+  display: flex;
+  align-items: center;
+  height: rem-calc(72);
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background: $color-white;
+
+  @include breakpoint(small only) {
+    height: rem-calc(46);
+  }
+
+  &__label {
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    @include icon-font();
+    font-size: rem-calc(24);
+    color: $font-base-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem-calc(20);
+    box-sizing: content-box;
+
+    @include breakpoint(small only) {
+      padding: rem-calc(10);
+      span {
+        font-size: rem-calc(20);
+      }
+    }
+  }
+
+  input {
+    border: none;
+    border-left: solid 1px $border-base-color;
+    font-family: inherit;
+    position: relative;
+    height: rem-calc(40);
+    padding-left: rem-calc(22);
+    line-height: 1;
+    @include breakpoint(small only) {
+      height: rem-calc(22);
+      padding-top: 0;
+      padding-bottom: rem-calc(4);
+    }
+
+    &::placeholder {
+      line-height: 1;
+      color: $color-gray;
+      @include breakpoint(small only) {
+        font-size: rem-calc(11);
+      }
+    }
+  }
+
+  button {
+    width: rem-calc(130);
+    flex-shrink: 0;
+    background: $color-primary;
+    border: none;
+    padding: 0;
+    color: $color-white;
+    font-size: rem-calc(16);
+    font-weight: bold;
+    height: 100%;
+    @include transition-colors(0.2s);
+
+    @include breakpoint(small only) {
+      width: rem-calc(78);
+      font-size: rem-calc(12);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+
+
+  &.is-sm{
+    @include breakpoint(medium up) {
+      height: rem-calc(56);
+    }
+
+    input {
+      @include breakpoint(medium up) {
+        height: rem-calc(32);
+      }
+    }
+  }
+}
+
+

@@ -15,18 +15,35 @@
 // Styleguide 5.5.0
 
 .l-container {
-  max-width: $grid-row-width;
+  max-width: rem-calc($grid-row-width);
   margin-inline: auto;
   box-sizing: content-box;
-  padding-inline: 32px;
+  padding-inline: map-get($grid-responsive-margin,"md");
 
   @include breakpoint(small down) {
-    padding-inline: 16px;
+    padding-inline: map-get($grid-responsive-margin,"sm");
   }
 
   &.is-sm {
     max-width: rem-calc(944);
-    margin: 0 auto;
   }
 }
 
+:where(.l-two-column) .l-container {
+  padding-inline: 0;
+  margin-left: var(--max-two-column-gutterL);
+  margin-right: calc(var(--max-two-column-gutterR) + var(--two-column-gap) + var(--two-column-aside));
+  @include breakpoint(medium down) {
+    margin-inline: auto;
+    padding-inline: map-get($grid-responsive-margin,"md");
+  }
+  @include breakpoint(small down) {
+    padding-inline: map-get($grid-responsive-margin,"sm");
+  }
+}
+
+
+:where(.l-two-column.is-reverse) .l-container {
+  margin-right: var(--max-two-column-gutterR);
+  margin-left: calc(var(--max-two-column-gutterL) + var(--two-column-gap) + var(--two-column-aside));
+}

@@ -80,3 +80,15 @@ $sizes: (
     scroll-margin-top: 0;
   }
 }
+
+
+//検索結果
+.l-section.is-search-result {
+  padding-top: rem-calc(48);
+  padding-bottom: rem-calc(80);
+
+  @include breakpoint(medium down) {
+    padding-top: rem-calc(32);
+    padding-bottom: rem-calc(40);
+  }
+}
