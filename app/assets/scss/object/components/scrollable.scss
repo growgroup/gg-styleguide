@@ -8,6 +8,9 @@
 
   //scroll-hint 応急処置
   .scroll-hint-icon {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: auto!important;
     height: auto!important;
   }
