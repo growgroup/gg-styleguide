@@ -115,7 +115,7 @@ export default class Slidebar {
   close() {
     $("body").removeClass('is-slidebar-active');
     this.isActive = false;
-    this.menu.attr("inert", "true");
+    this.menu.attr("inert", "inert");
 
     this.focusToOuterMenu();
   }
@@ -158,7 +158,7 @@ export default class Slidebar {
         if (entry.contentRect.width > this.options.activateWidth) {
           document.body.classList.remove("is-slidebar-active");
           this.isActive = false;
-          this.menu.attr("inert", "true");
+          this.menu.attr("inert", "inert");
         }
       }
     });
