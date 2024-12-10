@@ -40,8 +40,5 @@ export default class Scrollable {
         scrollable: 'スクロールできます'//表示されるテキストを変更
       }
     });
-
-    $(".scroll-hint-icon").width(this.iconWidth - 20);
-    $(".scroll-hint-icon").height(this.iconHeight - 30);
   }
 }
