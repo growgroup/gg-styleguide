@@ -2,61 +2,37 @@
 // margin size
 
 $default: 56;
-$xlg: 120;
-$lg: 100;
-$md: 64;
-$sm: 42;
-$xs: 24;
+$sizes: (
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (64, 32),
+  sm: (42, 20),
+  xs: (24, 12),
+);
 
 .u-mbs {
+
   margin-top: rem-calc($default);
   margin-bottom: rem-calc($default);
-  @include breakpoint(small only) {
+  @include breakpoint(small down) {
     margin-top: rem-calc($default) * 0.5;
     margin-bottom: rem-calc($default) * 0.5;
   }
 
-  &.is-xlg {
-    margin-top: rem-calc($xlg);
-    margin-bottom: rem-calc($xlg);
-    @include breakpoint(small only) {
-      margin-top: rem-calc($xlg) * 0.5;
-      margin-bottom: rem-calc($xlg) * 0.5;
-    }
-  }
-  &.is-lg {
-    margin-top: rem-calc($lg);
-    margin-bottom: rem-calc($lg);
-    @include breakpoint(small only) {
-      margin-top: rem-calc($lg) * 0.5;
-      margin-bottom: rem-calc($lg) * 0.5;
-    }
-  }
-  &.is-md {
-    margin-top: rem-calc($md);
-    margin-bottom: rem-calc($md);
-    @include breakpoint(small only) {
-      margin-top: rem-calc($md) * 0.5;
-      margin-bottom: rem-calc($md) * 0.5;
-    }
-  }
-  &.is-sm {
-    margin-top: rem-calc($sm);
-    margin-bottom: rem-calc($sm);
-    @include breakpoint(small only) {
-      margin-top: rem-calc($sm) * 0.5;
-      margin-bottom: rem-calc($sm) * 0.5;
-    }
-  }
-  &.is-xs {
-    margin-top: rem-calc($xs);
-    margin-bottom: rem-calc($xs);
-    @include breakpoint(small only) {
-      margin-top: rem-calc($xs) * 0.5;
-      margin-bottom: rem-calc($xs) * 0.5;
-    }
-  }
+  // サイズ設定
+  @each $key, $value in $sizes {
+    $pc-value: nth($value, 1); // PC用
+    $sp-value: nth($value, 2); // SP用
 
+    &.is-#{$key} {
+      margin-top: rem-calc($pc-value);
+      margin-bottom: rem-calc($pc-value);
+      @include breakpoint(small down) {
+        margin-top: rem-calc($sp-value);
+        margin-bottom: rem-calc($sp-value);
+      }
+    }
+  }
 
   &.is-top {
     margin-bottom: 0 !important;
@@ -65,5 +41,4 @@ $xs: 24;
   &.is-bottom {
     margin-top: 0 !important;
   }
-
 }
