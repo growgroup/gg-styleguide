@@ -3,15 +3,15 @@
 
 $default: 56;
 $sizes: (
-  xlg: 120,
-  lg: 100,
-  md: 64,
-  sm: 42,
-  xs: 24,
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (64, 32),
+  sm: (42, 20),
+  xs: (24, 12),
 );
 
-
 .u-mbs {
+
   margin-top: rem-calc($default);
   margin-bottom: rem-calc($default);
   @include breakpoint(small down) {
@@ -19,13 +19,17 @@ $sizes: (
     margin-bottom: rem-calc($default) * 0.5;
   }
 
+  // サイズ設定
   @each $key, $value in $sizes {
+    $pc-value: nth($value, 1); // PC用
+    $sp-value: nth($value, 2); // SP用
+
     &.is-#{$key} {
-      margin-top: rem-calc($value);
-      margin-bottom: rem-calc($value);
+      margin-top: rem-calc($pc-value);
+      margin-bottom: rem-calc($pc-value);
       @include breakpoint(small down) {
-        margin-top: rem-calc($value) * 0.5;
-        margin-bottom: rem-calc($value) * 0.5;
+        margin-top: rem-calc($sp-value);
+        margin-bottom: rem-calc($sp-value);
       }
     }
   }
