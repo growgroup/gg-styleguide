@@ -1,108 +1,1 @@
-//アコーディオン
-div.u-mbs.is-bottom
-  .l-container
-    +c.accordion
-      +e.block.js-accordion.is-open
-        +e.head(data-accordion-title="accordion-title")
-          +e.icon Q
-          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
-        +e.content(data-accordion-content="accordion--text", style="display: block;")
-          +e.icon.is-color-accent A
-          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-      +e.block.js-accordion
-        +e.head(data-accordion-title="accordion-title")
-          +e.icon Q
-          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト
-        +e.content(data-accordion-content="accordion--text")
-          +e.icon.is-color-accent A
-          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-
-h3 カードスライダー
-div.u-mbs.is-bottom
-  +c.card.js-card-slider.swiper
-    +e.slider.swiper-wrapper
-      +e.block.swiper-slide
-        +e.image: +img("img-card-01.jpg","",712,420)
-        +e.content
-          h3.c-card__title スマホでスライダーになるサンプル
-          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-      +e.block.swiper-slide
-        +e.image: +img("img-card-01.jpg","",712,420)
-        +e.content
-          h3.c-card__title スマホでスライダーになるサンプル
-          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-
-    +e.slider-nav
-      +button.button-prev.js-card-slider-prev < 前へ
-      +button.button-next.js-card-slider-next > 次へ
-    +e.slider-pagination.js-card-slider-pagination
-div.u-mbs.is-bottom
-  +c.card.js-card-slider.swiper
-    +e.slider.swiper-wrapper
-      +e.block.swiper-slide
-        +e.image: +img("img-card-01.jpg","",712,420)
-        +e.content
-          h3.c-card__title スマホでスライダーになるサンプル
-          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-      +e.block.swiper-slide
-        +e.image: +img("img-card-01.jpg","",712,420)
-        +e.content
-          h3.c-card__title スマホでスライダーになるサンプル
-          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-
-    +e.slider-nav
-      +button.button-prev.js-card-slider-prev < 前へ
-      +button.button-next.js-card-slider-next > 次へ
-    +e.slider-pagination.js-card-slider-pagination
-
-  h3 横に流れ続けるスライダー
-  div.u-mbs.is-bottom
-    +c.gallery-text.js-text-loop.swiper
-      ul.swiper-wrapper
-        +loop(2)
-          li.swiper-slide: span TEXTGALLERY
-
-  div.u-mbs.is-bottom
-    +c.gallery-logo
-      .l-container
-        +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
-
-      +e.slider.js-logo-slider.swiper
-        +e.images.swiper-wrapper
-          for num in [1,2]
-            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
-            +e.image.swiper-slide: +img(img)
-
-      +e.slider.js-logo-slider.swiper
-        +e.images.swiper-wrapper
-          for num in [1,2,3,4,5,6]
-            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
-            +e.image.swiper-slide: +img(img)
-
-h3 画面幅が狭いとき横スクロールする画像やテーブル
-
-div.u-mbs.is-bottom
-  .c-scrollable
-    // scroll-hint が .js-scrollableの親の要素に対して適用されるため
-    // c-scrollableと .js-scrollableを分けることを推奨
-    .js-scrollable
-      +img("img-sample.jpg")
-
-div.u-mbs.is-bottom
-  .c-scrollable
-    .js-scrollable
-      table.c-table
-        tbody
-          tr
-            th テスト
-            th テスト
-            th テスト
-            th テスト
-            th テスト
-          tr
-            td テスト
-            td テスト
-            td テスト
-            td テスト
-            td テスト
-
+//アコーディオンdiv.u-mbs.is-bottom  .l-container    +accordion-list([      {        title: "見出しタイトルテキスト　テキストテキストテキストテキストテキスト",        content: "ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。",        defaultOpen: true,      },      {        title: "見出しタイトルテキスト　テキストテキストテキストテキストテキスト",        content: `テキスト                <br>                <a href="">リンク</a>`,      },      {        title: "<a href='https://example.com' target='_blank'>スマホではアコーディオン、PCでははじめから展開しているパターンのサンプル：PCのときリンクがあっても動作する</a>",        content: "ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。",        responsive: "950"      },    ])    details.c-accordion-new__block.js-accordion-new      summary.c-accordion-new__title(data-accordion-title="title")        span.c-accordion-new__title-icon Q        | アコーディオンinアコーディオンの挙動確認      .c-accordion-new__content-wrapper(data-accordion-content="content")        .c-accordion-new__content          span.c-accordion-new__content-icon A          .c-accordion-new__content-inner            | アコーディオンinアコーディオンの挙動確認（親階層の本文）            details.c-accordion-new__block.js-accordion-new              summary.c-accordion-new__title(data-accordion-title="title")                span.c-accordion-new__title-icon Q                | アコーディオンinアコーディオンの挙動確認（子）              .c-accordion-new__content-wrapper(data-accordion-content="content")                .c-accordion-new__content                  span.c-accordion-new__content-icon A                  .c-accordion-new__content-inner                    | アコーディオンinアコーディオンの挙動確認（子階層の本文）                    details.c-accordion-new__block.js-accordion-new                      summary.c-accordion-new__title(data-accordion-title="title")                        span.c-accordion-new__title-icon Q                        | アコーディオンinアコーディオンの挙動確認（孫）                      .c-accordion-new__content-wrapper(data-accordion-content="content")                        .c-accordion-new__content                          span.c-accordion-new__content-icon A                          .c-accordion-new__content-inner                            | アコーディオンinアコーディオンの挙動確認（孫階層の本文）    .u-mbs.is-top    +c.accordion      +e.block.js-accordion.is-open        +e.head(data-accordion-title="accordion-title")          +e.icon Q          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト        +e.content(data-accordion-content="accordion--text", style="display: block;")          +e.icon.is-color-accent A          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。      +e.block.js-accordion        +e.head(data-accordion-title="accordion-title")          +e.icon Q          +e.title 見出しタイトルテキスト16px　テキストテキストテキストテキストテキスト        +e.content(data-accordion-content="accordion--text")          +e.icon.is-color-accent A          +e.text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。h3 カードスライダーdiv.u-mbs.is-bottom  +c.card.js-card-slider.swiper    +e.slider.swiper-wrapper      +e.block.swiper-slide        +e.image: +img("img-card-01.jpg","",712,420)        +e.content          h3.c-card__title スマホでスライダーになるサンプル          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。      +e.block.swiper-slide        +e.image: +img("img-card-01.jpg","",712,420)        +e.content          h3.c-card__title スマホでスライダーになるサンプル          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。    +e.slider-nav      +button.button-prev.js-card-slider-prev < 前へ      +button.button-next.js-card-slider-next > 次へ    +e.slider-pagination.js-card-slider-paginationdiv.u-mbs.is-bottom  +c.card.js-card-slider.swiper    +e.slider.swiper-wrapper      +e.block.swiper-slide        +e.image: +img("img-card-01.jpg","",712,420)        +e.content          h3.c-card__title スマホでスライダーになるサンプル          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。      +e.block.swiper-slide        +e.image: +img("img-card-01.jpg","",712,420)        +e.content          h3.c-card__title スマホでスライダーになるサンプル          p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。    +e.slider-nav      +button.button-prev.js-card-slider-prev < 前へ      +button.button-next.js-card-slider-next > 次へ    +e.slider-pagination.js-card-slider-pagination  h3 横に流れ続けるスライダー  div.u-mbs.is-bottom    +c.gallery-text.js-text-loop.swiper      ul.swiper-wrapper        +loop(2)          li.swiper-slide: span TEXTGALLERY  div.u-mbs.is-bottom    +c.gallery-logo      .l-container        +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー      +e.slider.js-logo-slider.swiper        +e.images.swiper-wrapper          for num in [1,2]            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"            +e.image.swiper-slide: +img(img)      +e.slider.js-logo-slider.swiper        +e.images.swiper-wrapper          for num in [1,2,3,4,5,6]            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"            +e.image.swiper-slide: +img(img)h3 画面幅が狭いとき横スクロールする画像やテーブルdiv.u-mbs.is-bottom  .c-scrollable    // scroll-hint が .js-scrollableの親の要素に対して適用されるため    // c-scrollableと .js-scrollableを分けることを推奨    .js-scrollable      +img("img-sample.jpg")div.u-mbs.is-bottom  .c-scrollable    .js-scrollable      table.c-table        tbody          tr            th テスト            th テスト            th テスト            th テスト            th テスト          tr            td テスト            td テスト            td テスト            td テスト            td テスト
