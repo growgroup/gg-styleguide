@@ -6,114 +6,83 @@ category: Components
 */
 
 .c-accordion {
-  &__block {
-    border: 1px solid $border-base-color;
-    padding: 0 rem-calc(32);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem-calc(16); //ブロック間
 
-    @include breakpoint(small only) {
-      padding: 0 rem-calc(16);
-    }
-
-    &:not(:last-child) {
-      margin-bottom: rem-calc(16);
-
-      @include breakpoint(small down) {
-        margin-bottom: rem-calc(12);
-      }
-    }
-
-    // オープン時
-    &.is-open {
-      .c-accordion__head {
-        &::after {
-          content: "expand_more";
-        }
-      }
-    }
+  &__block{
+    border: solid 1px $color-border;
   }
-  &__head {
+
+  //タイトル
+  &__title{
     cursor: pointer;
     display: flex;
-    align-items: flex-start;
-    padding: rem-calc(16) rem-calc(24) rem-calc(16) 0;
+    align-items: center;
+    font-weight: 700;
+    gap: rem-calc(16);
+    padding: rem-calc(16) rem-calc(48) rem-calc(16) rem-calc(24);
     position: relative;
+
     @include breakpoint(small only) {
-      padding: rem-calc(16) rem-calc(24) rem-calc(12) 0;
+      padding: rem-calc(16) rem-calc(32) rem-calc(12) rem-calc(16);
     }
+
     //*矢印
     &::after {
       content: "expand_less";
       @include icon-font();
       color: $color-primary;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 0;
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      right: rem-calc(24);
       @include breakpoint(small only) {
-        top: rem-calc(20);
-        transform: translateY(0);
+        right: rem-calc(16);
       }
     }
   }
-  &__title {
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: $color-primary;
-    padding-top: rem-calc(6);
-    @include breakpoint(small only) {
-      padding-top: rem-calc(0);
-    }
 
-    button {
-      background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-      display: block;
-      width: 100%;
-      text-align: left;
-
-      &:focus {
-        background: $color-primary;
-        color: $color-white;
-      }
-    }
-  }
-  &__icon {
-    color: $color-white;
-    @include webfont();
-    font-size: rem-calc(22);
-    background-color: $color-primary;
+  //アイコン共通
+  &__title-icon, &__content-icon{
     width: rem-calc(40);
     height: rem-calc(40);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-shrink: 0;
-    margin-right: rem-calc(16);
-    padding-left: rem-calc(2);
+    display: grid;
+    place-items: center;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: rem-calc(24);
+    @include webfont();
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  &__content-icon{
+    background-color: $color-accent;
+  }
+
+
+  //コンテンツ
+  &__content-wrapper{
+    padding: 0 rem-calc(24) rem-calc(16) rem-calc(24);
+
     @include breakpoint(small only) {
-      width: rem-calc(32);
-      height: rem-calc(32);
-      font-size: rem-calc(18);
-    }
-    &.is-color-accent {
-      background-color: $color-accent;
-      position: absolute;
-      top: rem-calc(16);
-      left: 0;
+      padding: 0 rem-calc(16) rem-calc(12) rem-calc(16);
     }
   }
-  &__content {
-    padding: rem-calc(24) 0 rem-calc(24) rem-calc(56);
-    position: relative;
-    border-top: 1px solid $border-base-color;
-    display: none;
-    @include breakpoint(small only) {
-      padding: rem-calc(16) 0 rem-calc(16) rem-calc(48);
-    }
+
+  &__content{
+    border-top: solid 1px $color-border;
+    padding-top: rem-calc(20);
+    display: flex;
+    gap: rem-calc(16);
   }
+
+  &__content-inner{
+    flex-grow: 1;
+
+  }
+
 }

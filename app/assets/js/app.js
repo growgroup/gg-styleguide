@@ -5,7 +5,6 @@ import "../scss/font.scss";
 
 import Utils from './app/utils.js';
 import Accordion from './app/accordion.js';
-import AccordionNew from './app/accordion-new.js';
 import Anchor from './app/anchor.js';
 import FixedHeader from './app/fixedheader.js';
 // import HeightLine from './app/heightline.js';
@@ -29,7 +28,6 @@ class App {
   constructor() {
     this.Utils = new Utils();
     this.Accordion = new Accordion();
-    this.AccordionNew = new AccordionNew();
     this.Anchor = new Anchor();
     this.FixedHeader = new FixedHeader();
     this.modal = new modal();
