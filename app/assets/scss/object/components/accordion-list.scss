@@ -13,6 +13,7 @@ category: Components
     }
   }
   &__head {
+    display: block;
     cursor: pointer;
     font-size: rem-calc(20);
     font-weight: 700;
@@ -26,7 +27,6 @@ category: Components
     }
   }
   &__content {
-    display: none;
     ul {
       li {
         padding: rem-calc(24) rem-calc(8);
