@@ -7,14 +7,13 @@
  * ====================================================================
  *
  * # example:
- * <div class="c-panel js-accordion" data-accordion-responsive="950">
- *     <div class="c-panel__title" data-accordion-title>
- *         Title
- *     </div>
- *     <div class="c-panel__content" data-accordion-content>
- *         Content
- *     </div>
- * </div>
+ * .c-accordion
+ *   details.c-accordion__block.js-accordion(data-accordion-responsive="950")
+ *     summary.c-accordion__title(data-accordion-title="title")
+ *       |タイトルテキスト
+ *    .c-accordion__content(data-accordion-content="content")
+ *      .c-accordion__content-inner
+ *        |コンテンツ
  *
  */
 

@@ -83,7 +83,7 @@ mixin slidebar-menu(data)
     each item in data
       if item.children
         li
-          +e("details").parent.js-accordion-new
+          +e("details").parent.js-accordion
             +e("summary").parent-link(data-accordion-title='menu-title') !{item.title}
             +slidebar-children(item.children)
       else
@@ -96,7 +96,7 @@ mixin slidebar-children(data)
     each item in data
       if item.grandchildren
         li
-          +e("details").child.js-accordion-new
+          +e("details").child.js-accordion
             +e("summary").child-link(data-accordion-title='menu-title') !{item.title}
             +slidebar-grandchildren(item.grandchildren)
       else
