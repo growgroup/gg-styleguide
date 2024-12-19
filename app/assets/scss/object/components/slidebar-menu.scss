@@ -45,6 +45,9 @@
           @include icon-font();
         }
       }
+      summary::-webkit-details-marker{
+        display: none;//Safariの矢印を非表示
+      }
     }
 
     [data-accordion-title] {

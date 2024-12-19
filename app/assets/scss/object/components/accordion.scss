@@ -42,6 +42,11 @@ category: Components
         right: rem-calc(16);
       }
     }
+
+
+    &::-webkit-details-marker{
+      display: none;//Safariの矢印を非表示
+    }
   }
 
   //アイコン共通

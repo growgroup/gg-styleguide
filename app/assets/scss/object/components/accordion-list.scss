@@ -25,6 +25,10 @@ category: Components
       border-width: 1px;
       padding-bottom: rem-calc(8);
     }
+
+    &::-webkit-details-marker{
+      display: none;//Safariの矢印を非表示
+    }
   }
   &__content {
     ul {
