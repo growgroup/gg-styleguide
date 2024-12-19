@@ -1,14 +1,19 @@
 //- アコーディオン
 //- Use Case
-//- +accordion({id: String, className: String | null, title: String, text: String})
-mixin accordion(props)
-  .c-accordion.js-accordion(class=props.className ? props.className : "")&attributes(attributes)
-    h2.c-accordion__title(data-accordion-title="true")
-      button(aria-controls=props.id aria-expanded="false")=props.title
-    .c-accordion__content(data-accordion-content="true" id=props.id)=props.text
+//- +accordion-list([
+//-   {title:String, content:String, defaultOpen: Boolean | null, responsive: Number | null, className: String | null}
+//- ])
 
-//- - テンプレート
-//-  .c-accordion.js-accordion
-//-   h2.c-accordion__title(data-accordion-title="true")
-//-     button(aria-controls="accordion-panel-1" aria-expanded="false") title
-//-   .c-accordion__content(data-accordion-content="true")#accordion-panel-1 text
+mixin accordion-list(data)
+  .c-accordion&attributes(attributes)
+    each item in data
+      details.c-accordion__block.js-accordion(class=item.className ? item.className : "", open=item.defaultOpen? "open":false, data-accordion-responsive=item.responsive ? item.responsive : false)
+        summary.c-accordion__title(data-accordion-title="title")
+          span.c-accordion__title-icon Q
+          |!{item.title}
+        .c-accordion__content-wrapper(data-accordion-content="content")
+          .c-accordion__content
+            span.c-accordion__content-icon A
+            .c-accordion__content-inner
+              |!{item.content}
+

@@ -13,6 +13,7 @@ category: Components
     }
   }
   &__head {
+    display: block;
     cursor: pointer;
     font-size: rem-calc(20);
     font-weight: 700;
@@ -24,9 +25,12 @@ category: Components
       border-width: 1px;
       padding-bottom: rem-calc(8);
     }
+
+    &::-webkit-details-marker{
+      display: none;//Safariの矢印を非表示
+    }
   }
   &__content {
-    display: none;
     ul {
       li {
         padding: rem-calc(24) rem-calc(8);

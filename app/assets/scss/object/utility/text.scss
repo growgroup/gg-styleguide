@@ -47,7 +47,7 @@ del,
 // テキスト - リンク
 // Styleguide 1.2.5
 
-a,
+:where(a),
 .u-text-link {
   color: $color-primary;
   font-weight: 400;
@@ -83,13 +83,13 @@ a,
   }
 }
 
-a:hover,
+:where(a):hover,
 .u-text-link:any-link:hover,
 .u-text-link.is-hover {
   opacity: 0.5;
 }
 
-a:any-link:active,
+:where(a):any-link:active,
 .u-text-link:active,
 .u-text-link.is-active {
   // color: darken($color-primary, 10);
