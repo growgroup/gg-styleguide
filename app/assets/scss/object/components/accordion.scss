@@ -30,7 +30,7 @@ category: Components
 
     //*矢印
     &::after {
-      content: "expand_less";
+      content: "expand_more";
       @include icon-font();
       color: $color-primary;
       position: absolute;
@@ -40,6 +40,12 @@ category: Components
       right: rem-calc(24);
       @include breakpoint(small only) {
         right: rem-calc(16);
+      }
+    }
+
+    @at-root {
+      .c-accordion__block[open] &::after {
+        content: "expand_less";
       }
     }
 
