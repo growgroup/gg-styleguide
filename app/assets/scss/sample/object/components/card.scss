@@ -1,0 +1,141 @@
+/*
+---
+name: カード_通常
+category: Components
+---
+*/
+.c-card {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem-calc(36);
+  }
+
+  &__card {
+    display: block;
+    text-decoration: none;
+    color: $font-base-color;
+    font-weight: 400;
+
+    @include hover() {
+      opacity: 1;
+      color: $color-primary;
+
+      .c-card__image img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      @include img-option();
+      transition: transform .2s;
+    }
+  }
+
+  &__content {
+    margin-top: rem-calc(12);
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem-calc(20);
+    letter-spacing: 0.1em;
+    margin: 0;
+    @include breakpoint(small only) {
+      font-size: rem-calc(20)*0.9;
+    }
+  }
+
+  &__text {
+    margin-top: rem-calc(12);
+    font-size: rem-calc(14);
+    @include breakpoint(small only) {
+      margin-top: rem-calc(6);
+    }
+  }
+
+
+  // スライドショーサンプル
+  &__slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem-calc(36);
+
+    @at-root .swiper-initialized & {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+
+  &__slider-nav {
+    display: none;
+    @at-root .swiper-initialized & {
+      display: block;
+    }
+  }
+
+  &__slider-pagination {
+    display: none;
+    @at-root .swiper-initialized & {
+      display: block;
+    }
+  }
+
+
+}
+
+/*
+---
+name: カード_数字付き
+category: Components
+---
+*/
+.c-card {
+  &.is-number-left {
+    .c-card__block {
+      position: relative;
+      padding-top: rem-calc(52);
+    }
+
+    .c-card__number {
+      text-align: center;
+      color: $color-primary;
+      @include webfont();
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      left: 8px;
+
+      small {
+        @include webfont();
+        font-size: rem-calc(18);
+        letter-spacing: 0.1em;
+      }
+
+      span {
+        font-size: rem-calc(60);
+        letter-spacing: 0;
+      }
+    }
+
+    .c-card__text {
+      font-size: $font-base-size;
+      @include breakpoint(small only) {
+        font-size: $font-base-size*0.85;
+      }
+    }
+  }
+}
+
+//.c-card{
+//  &__list{
+//    display: block !important;
+//  }
+//}
