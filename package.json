@@ -40,7 +40,7 @@
     "file-loader": "^6.2.0",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.7.1",
-    "markuplint": "^4.9.3",
+    "markuplint": "^2.11.4",
     "mini-css-extract-plugin": "^2.9.1",
     "node-notifier": "^10.0.1",
     "node-sass-glob-importer": "^5.3.3",
