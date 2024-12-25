@@ -35,7 +35,11 @@
 // サイトで複数回利用する可能性のある粒度の細かい要素をモジュールを定義しています。
 //
 // Styleguide 2.0.0
+@import "wordpress/layout/index";
+@import "sample/layout/index";
 @import "layout/index";
+@import "wordpress/index";
+@import "sample/object/components/index";
 @import "object/components/index";
 
 // ブロック
