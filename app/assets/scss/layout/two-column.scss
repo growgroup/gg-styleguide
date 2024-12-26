@@ -1,0 +1,66 @@
+.l-two-column{
+  display: grid;
+  grid-template:
+    "gutterL main gap side gutterR" auto /
+    var(--max-two-column-gutterL) 1fr var(--two-column-gap) var(--two-column-aside) var(--max-two-column-gutterR);
+
+  @include breakpoint(medium down) {
+    grid-template:
+        "main" auto
+        "gap" rem-calc(32)
+        "side" 1fr / 1fr;
+  }
+
+  &__main{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    @include breakpoint(medium down) {
+      grid-area: main;
+    }
+  }
+
+  &__side{
+    grid-area: side;
+  }
+
+  //============================
+  // 左右反転
+  //============================
+
+  &:where(.is-reverse){
+    grid-template:
+      "gutterR side gap main gutterL" auto /
+      var(--max-two-column-gutterL) var(--two-column-aside) var(--two-column-gap) 1fr var(--max-two-column-gutterR);
+  }
+
+  //============================
+  // サイト内検索結果
+  //============================
+
+  &:where(&:has(.l-section.is-search-result)){
+    grid-template:
+      "gutterL main gap side gutterR" auto /
+      var(--max-two-column-gutterR) 1fr var(--two-column-gap) #{rem-calc(226)} var(--max-two-column-gutterL);
+
+    @include breakpoint(medium down) {
+      grid-template:
+        "main" auto
+        "gap" rem-calc(32)
+        "side" 1fr / 1fr;
+    }
+
+    .l-two-column__main{
+      grid-area: main;
+
+      @include breakpoint(medium down) {
+        padding-inline: map-get($grid-responsive-margin,"md");
+      }
+
+      @include breakpoint(small down) {
+        padding-inline: map-get($grid-responsive-margin,"sm");
+      }
+    }
+  }
+
+}

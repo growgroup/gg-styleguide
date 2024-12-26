@@ -11,7 +11,7 @@ block append config
   - current.depth = 1 // ページの階層
 
 
-block before_main
+block upper_main
   +c_loader
 
 block body
@@ -78,7 +78,7 @@ block body
             +loop(3)
               +c_news__block("home")
 
-block before_footer
+block under_main
   +c_cookie
   // オファーブロック
   +l_offer
