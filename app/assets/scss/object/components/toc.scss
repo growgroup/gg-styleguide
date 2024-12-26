@@ -17,6 +17,10 @@ category: PostContent
     padding: rem-calc(16) rem-calc(24) rem-calc(24);
   }
 
+  &.contracted .toc_title{
+    margin-bottom: 0;
+  }
+
   .toc_title {
     text-align: center;
     font-size: 1.125rem;
@@ -34,6 +38,8 @@ category: PostContent
     padding-left: 0;
   }
   .toc_list li {
+    padding-left: 0;
+
     &::before {
       display: none;
     }
