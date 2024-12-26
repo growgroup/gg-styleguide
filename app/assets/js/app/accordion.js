@@ -7,14 +7,13 @@
  * ====================================================================
  *
  * # example:
- * <div class="c-panel js-accordion" data-accordion-responsive="950">
- *     <div class="c-panel__title" data-accordion-title>
- *         Title
- *     </div>
- *     <div class="c-panel__content" data-accordion-content>
- *         Content
- *     </div>
- * </div>
+ * .c-accordion
+ *   details.c-accordion__block.js-accordion(data-accordion-responsive="950")
+ *     summary.c-accordion__title(data-accordion-title="title")
+ *       |タイトルテキスト
+ *    .c-accordion__content(data-accordion-content="content")
+ *      .c-accordion__content-inner
+ *        |コンテンツ
  *
  */
 
@@ -27,9 +26,8 @@ var defaultOptions = {
   selector: '.js-accordion',
   titleTargetAttr: 'data-accordion-title',
   contentTargetAttr: 'data-accordion-content',
-  responsive: 0,
-  speed: 300,
-  defaultOpen: false,
+  responsive: null,
+  speed: 250,
 };
 
 export default class Accordion {
@@ -66,7 +64,12 @@ export default class Accordion {
     for (var i = 0; i < this.targetAll.length; i++) {
       let target = $(this.targetAll[i]);
 
+      // ターゲットの初期設定
+      target.defaultOpen = target.attr("open") !== undefined; //初期値がopenか確認
       target.responsive = target.data("accordion-responsive");
+      target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
+      target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
+
       // レスポンシブの設定がある場合
       if (target.responsive !== undefined) {
         // Media Query にマッチするか確認
@@ -88,21 +91,27 @@ export default class Accordion {
 
   // ターゲットの初期化
   elementInit(target) {
-    target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
-    target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
+    target.title.off('click'); // イベントを削除
     this.accordion(target);
-    if (this.options.defaultOpen) {
-      target.content.slideDown();
+
+    if(!target.defaultOpen){
+      target.removeAttr('open');
     }
   }
 
   // ターゲットの破棄
   elementDestroy(target) {
-    if (target.title === undefined) {
-      return false;
-    }
-    target.title.off('click');
-    target.title.off('mouseover');
+    target.attr("open",'');//open属性をつける（アコーディオンを開く）
+
+    target.title.off('click'); // イベントを削除
+    target.title.on('click', (e) => {
+      // クリックされた要素が a タグの場合は処理をスキップ
+      if (e.target.tagName.toLowerCase() === 'a') {
+        return;
+      }
+      // デフォルトの動作をキャンセル
+      e.preventDefault();
+    });
   }
 
 
@@ -111,15 +120,22 @@ export default class Accordion {
    * @param el
    */
   accordion(el) {
-
     $(el.title).on('click', (e) => {
       e.preventDefault();
-      el.content.slideToggle(this.options.speed);
-      el.content.closest(this.options.selector).toggleClass('is-open');
-    });
-
-    $(el.title).on('mouseover', (e) => {
-      $(this).css('cursor', 'pointer');
+      if(el.content.parent().attr("open")){
+        // open属性がついていれば：アコーディオンを閉じるときの処理
+        el.content.slideUp(this.options.speed, function (){
+          // アニメーションの完了後にopen属性を取り除き、display:none;を外す
+          $(this).parent().removeAttr("open");
+          $(this).show();
+        });
+      } else {
+        // open属性が無ければ:アコーディオンを開くときの処理
+        // open属性を付ける
+        el.content.parent().attr("open",'');
+        // いったんdisplay:none;してからslideDownで開く
+        el.content.hide().slideDown(this.options.speed);
+      }
     });
 
   }
