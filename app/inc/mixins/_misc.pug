@@ -104,31 +104,35 @@ mixin c_news__block(data)
         .c-label.is-white カテゴリ
       +e.block-text !{item.title}
       +e.block-icon-wrap
-        span.c-button-icon
-          if item.icon
+        if item.icon === "pdf"
+          span.c-label-file PDF
+        else if item.icon
+          span.c-button-icon
             .c-icon-font !{item.icon}
+        else
+          span.c-button-icon
 
 
-//mixin c_news__block(data)
-//  if data == "home"
-//    +a("/news/category/page/").c-news__block
-//      +e.date 2018.10.10
-//      +e.label.c-label.is-white カテゴリ
-//      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
-//  else if data == "news"
-//    +ae("/news/category/page/").block
-//      +e.date 2022.01.01
-//      +e.label.c-label.is-white カテゴリ
-//      +e.inner
-//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-//  else if data == "twocolumns"
-//    +ae("/archive-twocolumns/category/page/").block
-//      +e.date 2022.01.01
-//      +e.label.c-label.is-white カテゴリ
-//      +e.inner
-//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+//- mixin c_news__block(data)
+//-   if data == "home"
+//-     +a("/news/category/page/").c-news__block
+//-       +e.date 2018.10.10
+//-       +e.label.c-label.is-white カテゴリ
+//-       +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+//-   else if data == "news"
+//-     +ae("/news/category/page/").block
+//-       +e.date 2022.01.01
+//-       +e.label.c-label.is-white カテゴリ
+//-       +e.inner
+//-         +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//-         +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+//-   else if data == "twocolumns"
+//-     +ae("/archive-twocolumns/category/page/").block
+//-       +e.date 2022.01.01
+//-       +e.label.c-label.is-white カテゴリ
+//-       +e.inner
+//-         +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//-         +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
 
 
 mixin select-prefectures()
