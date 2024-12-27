@@ -49,13 +49,27 @@ block body
               li: +a("/news/category/") 2019年01月
               li: +a("/news/category/") 2019年01月
         +c.news-lg.u-mbs.is-top.is-lg
-          +loop(5)
-            +a("/news/category/page/").c-news-lg__block
-              +e.sup
+          +ae("/news/category/page/").block
+            +e.block-image
+              +img("img-sample.jpg")
+            +e.block-content
+              +e.block-meta
                 +e.label.c-label.is-sm お知らせ
                 +e.date 2018.06.01
-              +e.title お知らせの投稿タイトルがここに入ります。
-              +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+              +e.block-title お知らせの投稿タイトルがここに入ります。
+              +e.block-excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            +e.block-icon-wrap
+              span.c-button-icon
+          +loop(4)
+            +ae("/news/category/page/").block
+              +e.block-content
+                +e.block-meta
+                  +e.label.c-label.is-sm お知らせ
+                  +e.date 2018.06.01
+                +e.block-title お知らせの投稿タイトルがここに入ります。
+                +e.block-excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+              +e.block-icon-wrap
+                span.c-button-icon
         +c_pagination("is-align-left")
 
         +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg

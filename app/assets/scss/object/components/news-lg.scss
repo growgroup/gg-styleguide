@@ -5,41 +5,66 @@ category: News
 ---
 */
 .c-news-lg {
+
   &__block {
-    display: block;
+    display: flex;
     text-decoration: none;
     font-weight: 400;
     color: $font-base-color;
+    gap: rem-calc(24);
     padding: rem-calc(24) 0;
     @include breakpoint(small only) {
+      gap: rem-calc(12);
       padding: rem-calc(16) 0;
     }
 
-    &:first-child {
-      padding-top: 0;
-    }
+    //&:first-child {
+    //  padding-top: 0;
+    //}
 
-    &:any-link:hover {
+    @include hover() {
+      opacity: 1;
       background-color: $color-secondary;
     }
   }
 
-  &__sup {
+
+  &__block-image{
+    flex-shrink: 0;
+    aspect-ratio: 300 / 200; // デザイン時の 横幅 / 縦幅
+    width: calc(300/1140 * 100%);
+    align-self: flex-start;
+
+    @include breakpoint(small down) {
+      width: calc(100/343 * 100%);
+    }
+
+    img {
+      @include img-option();
+    }
+  }
+
+  &__block-content{
+
+  }
+
+  &__block-meta{
     display: flex;
     align-items: center;
+    gap: rem-calc(16);
     margin-bottom: rem-calc(16);
     @include breakpoint(small only) {
+      gap: rem-calc(8);
       margin-bottom: rem-calc(8);
     }
   }
 
-  &__label {
-
+  &__block-category {
+    flex-shrink: 0;
   }
 
-  &__date {
+  &__block-date {
     @include news-date();
-    margin-left: rem-calc(12);
 
     &::before {
       content: "schedule";
@@ -49,7 +74,7 @@ category: News
     }
   }
 
-  &__title {
+  &__block-title {
     font-size: rem-calc(24);
     margin-bottom: rem-calc(8);
     line-height: 1.5;
@@ -59,26 +84,15 @@ category: News
     }
   }
 
-  &__excerpt {
+  &__block-excerpt {
     font-size: rem-calc(12);
   }
 
-  // サムネイル有り
-  &.is-image-display {
-    .c-news-lg__block {
-      display: flex;
-      align-items: flex-start;
-      border-bottom: 1px solid $border-base-color;
-    }
 
-    .c-news-lg__image {
-      width: rem-calc(136);
-      flex-shrink: 0;
-      margin-right: rem-calc(24);
-      @include breakpoint(small only) {
-        width: rem-calc(100);
-        margin-right: rem-calc(24);
-      }
-    }
+  &__block-icon-wrap{
+    /* 内側のアイコンはWP時に HTML上で取り替えたいので spanとして置く */
+    flex-shrink: 0;
+    align-self: center;
+
   }
 }
