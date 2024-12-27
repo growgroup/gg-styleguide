@@ -96,15 +96,31 @@ category: News
 
   &__block-icon-wrap{
     /* 内側のアイコンはWP時に .c-label-file に置き換わる可能性がある */
-    width: rem-calc(42);
     text-align: center;
     flex-shrink: 0;
 
     @include breakpoint(small down) {
-      width: rem-calc(28);
       position: absolute;
       right: 0;
     }
   }
+
+  // サイト共通のリンクアイコン c-button-icon を使わない場合は以下のように処理
+  // アイコンごと c-icon-font や c-label-fileに置き換え可能なように作る
+  //&__block-icon{
+  //  &::before {
+  //    display: block;
+  //    width: rem-calc(22);
+  //    height: rem-calc(22);
+  //    background: $color-black;
+  //    mask: url("../images/icon-arrow.svg") no-repeat center / contain;
+  //
+  //    @include breakpoint(small down) {
+  //      width: rem-calc(12);
+  //      height: rem-calc(12);
+  //      mask: url("../images/icon-arrow-sm.svg") no-repeat center / contain;
+  //    }
+  //  }
+  //}
 }
 

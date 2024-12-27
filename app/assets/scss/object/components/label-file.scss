@@ -1,6 +1,7 @@
 /* お知らせ一覧をWP実装する際に使う、ファイルリンク機能用 */
 
 .c-label-file{
+  width: rem-calc(42);
   background: $color-white;
   border: 1px solid $color-gray;
   border-radius: rem-calc(20);
@@ -11,6 +12,7 @@
   vertical-align: middle;
 
   @include breakpoint(small down) {
+    width: rem-calc(28);
     font-size: rem-calc(8);
     padding: rem-calc(3) rem-calc(4);
   }
