@@ -25,7 +25,13 @@ block body
         h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
         +e.content
           +loop(3)
-            +c_news__block("twocolumns")
+            +c_news__block([
+              {
+                date: "2020.01.01",
+                title: "タイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+                url: "/archive-twocolumns/category/page/"
+              }
+            ])
       +c_pagination()
       +c.box-archive.u-mbs.is-top.is-lg
         +e.block

@@ -1,0 +1,89 @@
+
+.c-button-icon {
+  width: rem-calc(42);
+  height: rem-calc(42);
+  font-size: rem-calc(14);
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  background: $color-background;
+  border: 1px solid $color-background;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include transition-colors();
+  @include breakpoint(small only) {
+    width: rem-calc(28);
+    height: rem-calc(28);
+    font-size: rem-calc(9);
+  }
+
+  &::before {
+    content: "arrow_forward";
+    @include icon-font();
+  }
+
+  //============================
+  //サイズ展開
+  //============================
+
+  //&.is-lg{
+  //  width: rem-calc(56);
+  //  height: rem-calc(56);
+  //  @include breakpoint(small only) {
+  //    width: rem-calc(28);
+  //    height: rem-calc(28);
+  //  }
+  //}
+
+
+  //============================
+  // デザインバリエーション
+  //============================
+
+  //内側にc-icon-fontを持つ場合、::beforeを削除
+  &:has(.c-icon-font) {
+    &::before {
+      content: none;
+    }
+  }
+
+  //白背景グレー枠線
+  &.is-white {
+    background: $color-white;
+    border-color: $color-gray;
+  }
+
+
+  //別タブ
+  [target="_blank"] &,
+  &.is-external, &[target="_blank"] {
+    &::before {
+      content: "open_in_new";
+    }
+  }
+
+  //============================
+  // ホバー hover
+  // hover: hoverが有効なデバイスのみ
+  // .is-hover-none付与でhoverの反応を無効にする
+  //============================
+  @media (hover: hover) {
+    a:hover &:where(:not(.is-hover-none)),
+    &:where(:not(.is-hover-none)):hover {
+      opacity: 1;
+      background: $color-white;
+      border-color: $color-white;
+    }
+
+    &.is-white:hover {
+      background: $color-background;
+      border-color: $color-background;
+    }
+
+    //.c-button-text:hover &,
+    //&.is-border-hover:hover {
+    //  border-color: $color-black;
+    //}
+  }
+}

@@ -5,10 +5,6 @@ category: News
 ---
 */
 .c-news {
-  @include breakpoint(small only) {
-    position: relative;
-    padding-bottom: rem-calc(72);
-  }
 
   //============================
   //  TOPページ
@@ -53,104 +49,55 @@ category: News
   &__block {
     text-decoration: none;
     color: $font-base-color;
-    font-weight: 400;
     border-bottom: 1px solid $border-base-color;
     display: flex;
     align-items: center;
-    padding: rem-calc(24) 0 rem-calc(16);
+    gap: rem-calc(16);
+    padding: rem-calc(16) 0;
     @include breakpoint(small only) {
-      flex-wrap: wrap;
-      padding: rem-calc(16) 0 rem-calc(12);
+      padding: rem-calc(12) 0;
+      gap: rem-calc(12);
     }
 
-    &:first-child {
-      padding-top: 0;
-    }
+    //&:first-child {
+    //  padding-top: 0;
+    //}
 
-    &:any-link:hover {
+    @include hover() {
+      opacity: 1;
       background-color: $color-secondary;
     }
   }
 
-  &__inner {
-
+  &__block-content{
+    display: flex;
+    align-items: center;
   }
 
-  &__date {
+  &__block-date {
     @include news-date();
+    flex-shrink: 0;
   }
 
-  &__label {
-    margin-left: rem-calc(24);
-    margin-right: rem-calc(24);
+  &__block-category {
+    flex-shrink: 0;
     @include breakpoint(small only) {
-      margin-left: rem-calc(16);
-      margin-right: 0;
-
     }
   }
 
-  &__text {
+  &__block-text {
+    width:100%;
     font-weight: 700;
     @include line-clamp(1);
 
     @include breakpoint(small only) {
-      width:100%;
       margin-top: rem-calc(8);
     }
   }
-}
 
-
-.c-news {
-  &.is-onecolumn {
-    padding-bottom: 0;
-
-    .c-news__block {
-      padding: rem-calc(24) 0;
-      align-items: flex-start;
-      @include breakpoint(small only) {
-        align-items: center;
-        padding: rem-calc(12) 0;
-      }
-    }
-
-    .c-news__date {
-      flex-shrink: 0;
-      margin-top: rem-calc(6);
-      @include breakpoint(small only) {
-        margin-top: 0;
-      }
-    }
-
-    .c-news__title {
-      flex-grow: 1;
-      text-align: center;
-      margin-bottom: rem-calc(40);
-      @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
-      }
-    }
-
-    .c-news__label {
-      margin-top: rem-calc(2);
-    }
-
-    .c-news__excerpt {
-      font-size: rem-calc(14);
-      margin-top: rem-calc(8);
-      @include breakpoint(small only) {
-        font-size: rem-calc(12);
-        margin-top: rem-calc(4);
-      }
-    }
-
-    .c-news__button {
-      text-align: center;
-
-      .c-button {
-        max-width: rem-calc(224);
-      }
-    }
+  &__block-icon-wrap{
+    /* 内側のアイコンはWP時に span.c-icon-font picture_as_pdf になっても成立するように */
+    flex-shrink: 0;
   }
 }
+

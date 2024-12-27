@@ -86,26 +86,49 @@ mixin c_anchor-nav(style,...data)
       each itemData in data
         +e.button: +a(itemData.link).c-button.is-nav.js-anchor !{itemData.title}
 
+
+
 mixin c_news__block(data)
-  if data == "home"
-    +a("/news/category/page/").c-news__block
-      +e.date 2018.10.10
-      +e.label.c-label.is-white カテゴリ
-      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
-  else if data == "news"
-    +ae("/news/category/page/").block
-      +e.date 2022.01.01
-      +e.label.c-label.is-white カテゴリ
-      +e.inner
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-  else if data == "twocolumns"
-    +ae("/archive-twocolumns/category/page/").block
-      +e.date 2022.01.01
-      +e.label.c-label.is-white カテゴリ
-      +e.inner
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+  if !data
+    -
+      data = [{
+        date: "2020.01.01",
+        title: "タイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+        url: "/news/category/page/"
+      }]
+
+  each item in data
+    +ae(item.url).block
+      +e.block-date !{item.date}
+      +e.block-category
+        .c-label.is-white カテゴリ
+      +e.block-text !{item.title}
+      +e.block-icon-wrap
+        span.c-button-icon
+          if item.icon
+            .c-icon-font !{item.icon}
+
+
+//mixin c_news__block(data)
+//  if data == "home"
+//    +a("/news/category/page/").c-news__block
+//      +e.date 2018.10.10
+//      +e.label.c-label.is-white カテゴリ
+//      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+//  else if data == "news"
+//    +ae("/news/category/page/").block
+//      +e.date 2022.01.01
+//      +e.label.c-label.is-white カテゴリ
+//      +e.inner
+//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+//  else if data == "twocolumns"
+//    +ae("/archive-twocolumns/category/page/").block
+//      +e.date 2022.01.01
+//      +e.label.c-label.is-white カテゴリ
+//      +e.inner
+//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
 
 
 mixin select-prefectures()

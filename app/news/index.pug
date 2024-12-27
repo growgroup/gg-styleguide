@@ -22,13 +22,12 @@ block body
           h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
           +e.content
             +e.block
-              +e.date 2022.01.01
-              +e.label.c-label.is-white カテゴリ
-              +e.inner
-                +e.text リンク無し記事のテスト
-                +e.excerpt リンク無し記事のテスト
-            +loop(3)
-              +c_news__block("news")
+              +e.block-date 2022.01.01
+              +e.block-category
+                span.c-label.is-white カテゴリ
+              +e.block-text リンク無し記事のテスト
+            +loop(9)
+              +c_news__block()
         +c_pagination()
         +c.box-archive.u-mbs.is-top.is-lg
           +e.block
