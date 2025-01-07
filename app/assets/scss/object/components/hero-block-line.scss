@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .c-hero-block-line {
   overflow: hidden;
 
@@ -79,7 +81,7 @@
       @include transition(.2s);
     }
 
-    &:hover {
+    @include hover() {
       &::after {
         opacity: 0.3;
       }

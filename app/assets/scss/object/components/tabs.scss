@@ -54,7 +54,7 @@ category: Tabs
       }
 
       // *hover
-      &:hover {
+      @include hover(){
         background-color: color.adjust($color-primary, $lightness: 45%);
         opacity: 1;
       }
@@ -64,7 +64,7 @@ category: Tabs
         background-color: $color-primary;
         color: $color-white;
 
-        &:hover {
+        @include hover(){
           opacity: 1;
         }
       }

@@ -34,8 +34,8 @@ category: Banners
       }
     }
 
-    // *hover
-    &:hover {
+
+    @include hover(){
       opacity: 1;
 
       .c-banners__image {
@@ -112,7 +112,7 @@ category: Banners
         display: none;
       }
 
-      &:hover {
+      @include hover() {
         .c-banners__button {
           &::after {
             right: 0;

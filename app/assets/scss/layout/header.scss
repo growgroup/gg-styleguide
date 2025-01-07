@@ -73,6 +73,7 @@ category: Layout
     }
 
     li {
+      //submenu表示用のhoverは hover mixinの利用を避ける
       &:hover {
         .l-header__submenu {
           visibility: visible;
@@ -103,7 +104,8 @@ category: Layout
         }
 
         //*hover
-        &:hover {
+
+        @include hover() {
           opacity: 1;
           color: $color-primary;
 
@@ -194,7 +196,7 @@ category: Layout
       display: block;
     }
 
-    &:hover {
+    @include hover() {
       color: $color-primary;
     }
   }
@@ -267,7 +269,12 @@ category: Layout
       font-size: rem-calc(18);
     }
 
-    &:hover, &.is-active {
+    @include hover() {
+      background: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+    }
+    &.is-active {
       background: $color-primary;
       color: $color-white;
       border-color: $color-primary;

@@ -83,8 +83,11 @@ del,
   }
 }
 
-:where(a):hover,
-.u-text-link:any-link:hover,
+:where(a),.u-text-link{
+  @include hover(){
+    opacity: 0.5;
+  }
+}
 .u-text-link.is-hover {
   opacity: 0.5;
 }

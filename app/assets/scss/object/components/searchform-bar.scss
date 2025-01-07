@@ -76,7 +76,8 @@
       font-size: rem-calc(12);
     }
 
-    &:hover {
+
+    @include hover() {
       opacity: 0.5;
     }
   }

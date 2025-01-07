@@ -41,7 +41,8 @@
       @include icon-font();
     }
 
-    &:hover {
+
+    @include hover() {
       color: $font-base-color;
       background: $color-white;
     }

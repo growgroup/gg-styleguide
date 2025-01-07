@@ -18,7 +18,7 @@
     color: $color-white;
   }
 
-  &:hover {
+  @include hover() {
     opacity: 0.5;
   }
 }

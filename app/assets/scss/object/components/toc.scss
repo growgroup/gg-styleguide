@@ -58,7 +58,7 @@ category: PostContent
       color: $font-base-color;
       font-weight: 400;
 
-      &:hover {
+      @include hover(){
         text-decoration: none;
         background: rgba(214, 214, 214, 0.2);
       }

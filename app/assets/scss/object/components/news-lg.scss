@@ -19,7 +19,7 @@ category: News
       padding-top: 0;
     }
 
-    &:any-link:hover {
+    @include hover() {
       background-color: $color-secondary;
     }
   }

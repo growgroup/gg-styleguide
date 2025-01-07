@@ -70,13 +70,14 @@
         margin: 0;
         @include transition();
 
-        &:after {
+        &::after {
           content: "chevron_right";
           @include icon-font();
           color: $color-primary;
         }
 
-        &:hover {
+
+        @include hover() {
           opacity: 0.5;
         }
       }

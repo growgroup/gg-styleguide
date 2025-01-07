@@ -48,7 +48,7 @@
       }
     }
 
-    &:hover {
+    @include hover() {
       opacity: 1;
 
       img {

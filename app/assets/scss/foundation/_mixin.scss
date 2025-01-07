@@ -259,9 +259,10 @@
 @mixin button_colors($color){
   background: $color;
   border-color: $color;
-  &:hover {
-    background: #fff;
-    color: $color;
+
+  @include hover() {
+    background: $color;
+    color: #fff;
   }
 }
 

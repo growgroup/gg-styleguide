@@ -68,15 +68,16 @@
         height: rem-calc(48);
       }
 
-      &:after {
+      &::after {
         content: "chevron_right";
         @include icon-font();
         color: $color-primary;
       }
 
-      &:hover {
+      @include hover() {
         opacity: 0.5;
       }
+
     }
 
     .swiper-button-prev {
@@ -86,7 +87,7 @@
         margin-right: rem-calc(12);
       }
 
-      &:after {
+      &::after {
         transform: rotate(-180deg);
       }
     }
