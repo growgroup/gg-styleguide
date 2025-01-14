@@ -186,7 +186,8 @@
         @include transition();
       }
 
-      &:hover {
+
+      @include hover() {
         opacity: 1;
       }
 

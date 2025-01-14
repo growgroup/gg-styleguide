@@ -44,9 +44,11 @@
       right: rem-calc(-4);
       top: rem-calc(-48);
     }
-    &:hover {
+
+    @include hover(){
       opacity: 0.5;
     }
+
     &__icon {
       font-size: rem-calc(48);
     }

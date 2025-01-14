@@ -74,7 +74,8 @@ category: Layout
         padding: rem-calc(14) rem-calc(24);
         display: block;
         background-color: $font-base-color;
-        &:hover {
+
+        @include hover() {
           opacity: 1;
         }
       }

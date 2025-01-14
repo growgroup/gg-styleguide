@@ -17,8 +17,8 @@
   right: 0;
   transform: translateY(-100%);
 
-  &:hover {
 
+  @include hover(){
     &:before, &:after {
       background: $color-primary;
     }
@@ -49,7 +49,7 @@
     color: $color-white;
   }
 
-  &:hover {
+  @include hover(){
     opacity: 0.5;
   }
 }

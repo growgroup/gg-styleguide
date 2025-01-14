@@ -178,7 +178,7 @@ Styles for the Modal component.
       @include icon-font();
     }
 
-    &:hover{
+    @include hover(){
       &:not(:disabled){
         color: $color-primary;
       }

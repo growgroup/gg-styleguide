@@ -26,11 +26,6 @@
   border: none;
   padding: 0;
 
-  &:active,
-  &:hover {
-    opacity: 1;
-  }
-
   &__inner {
     display: grid;
     position: absolute;

@@ -37,7 +37,7 @@ category: Navigation
       height: rem-calc(40);
     }
 
-    &:hover {
+    @include hover(){
       opacity: 1;
       background: $color-primary;
       color: $color-white;

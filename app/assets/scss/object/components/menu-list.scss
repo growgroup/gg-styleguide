@@ -52,7 +52,17 @@ category: Navigation
       }
 
       //*hover
-      &:hover, &.is-current {
+      @include hover(){
+        opacity: 1;
+        color: $color-primary;
+
+        &::after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+
+      &.is-current {
         opacity: 1;
         color: $color-primary;
 

@@ -19,7 +19,8 @@
     display: block;
     color: inherit;
 
-    &:hover {
+
+    @include hover() {
       opacity: 0.7;
 
       .c-embed__image-bg {
@@ -105,9 +106,10 @@
       color: $font-base-color;
       text-decoration: none;
       //color: inherit;
-      &:hover {
+      @include hover() {
         opacity: 0.7;
       }
+
     }
   }
 
