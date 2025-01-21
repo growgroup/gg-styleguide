@@ -81,7 +81,7 @@ body {
   }
 
   @at-root :where(html[lang="zh-Hans"], html[lang="zh-CN"]) & {
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $font-base-family, sans-serif;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $font-base-family;
   }
 }
 
