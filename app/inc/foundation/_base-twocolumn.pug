@@ -8,8 +8,9 @@ block layout
   main
     //- layout_paramsは追加クラス名のデータを受け取るブロック
     block layout_params
-    block page_header
-    block upper_main
+    .l-upper-main
+      block page_header
+      block upper_main
     .l-main
       .l-two-column(class=twoColumnAddClass)
         .l-two-column__main
@@ -18,6 +19,7 @@ block layout
         aside.l-two-column__side
           .l-aside
             block aside
+    .l-under-main
       +l_offer
       //block under_main
 
