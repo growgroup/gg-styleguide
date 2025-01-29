@@ -50,7 +50,6 @@ body {
   color: $font-base-color;
   margin: var(--header-height) 0 0;
   line-height: $font-base-line-height;
-  //letter-spacing: $font-base-letter-spacing;
   font-size: $font-base-size;
   font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
@@ -70,15 +69,19 @@ body {
   //  margin-top: 0;
   //}
 
-  &.en {
-    font-family: 'Roboto', sans-serif;
+  @at-root :where(html[lang="en"], html[lang="en-US"]) & {
+    font-family: 'Roboto Flex Variable', sans-serif;
     line-height: $font-base-line-height-en;
-    letter-spacing: $font-base-letter-spacing-en;
+    --letter-spacing: #{$font-base-letter-spacing-en};
     font-size: $font-base-size-en;
 
     @include breakpoint(small only) {
       font-size: $font-base-size-en*0.875;
     }
+  }
+
+  @at-root :where(html[lang="zh-Hans"], html[lang="zh-CN"]) & {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $font-base-family;
   }
 }
 
