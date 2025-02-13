@@ -11,12 +11,12 @@ category: SpecialComponents
   overflow: hidden;
 
   &__block {
-    margin-bottom: rem-calc(80);
+    margin-bottom: 80px;
     position: relative;
-    min-height: rem-calc(480);
-    padding-top: rem-calc(80);
+    min-height: 480px;
+    padding-top: 80px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(48);
+      margin-bottom: 48px;
       min-height: inherit;
       padding-top: 0;
     }
@@ -36,7 +36,7 @@ category: SpecialComponents
 
     //*最後のブロック
     &:last-child {
-      margin-bottom: rem-calc(8);
+      margin-bottom: 8px;
     }
   }
 
@@ -45,7 +45,7 @@ category: SpecialComponents
     top: 0;
     left: 0;
     width: math.div(880, 1600)*100%;
-    height: rem-calc(480);
+    height: 480px;
     overflow: hidden;
     @include breakpoint(small only) {
       position: relative;
@@ -75,15 +75,15 @@ category: SpecialComponents
     position: relative;
     z-index: 99;
     width: math.div(588, 1140)*100%;
-    min-height: rem-calc(312);
+    min-height: 312px;
     margin-left: auto;
-    padding: rem-calc(64);
+    padding: 64px;
     border: 1px solid $color-primary;
     @include breakpoint(small only) {
       width: 100%;
       min-height: inherit;
       margin-top: rem-calc(-24);
-      padding: rem-calc(24);
+      padding: 24px;
     }
   }
 
@@ -96,40 +96,40 @@ category: SpecialComponents
   &__head {
     display: flex;
     align-items: center;
-    margin-bottom: rem-calc(24);
+    margin-bottom: 24px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(24)*0.5;
+      margin-bottom: 24px*0.5;
     }
 
     small {
       @include webfont();
-      font-size: rem-calc(100);
+      font-size: 100px;
       opacity: 0.25;
       line-height: 1;
       letter-spacing: 0;
       cursor: pointer;
-      margin-right: rem-calc(16);
+      margin-right: 16px;
       @include breakpoint(small only) {
-        font-size: rem-calc(100)*0.5;
-        margin-right: rem-calc(16)*0.5;
+        font-size: 100px*0.5;
+        margin-right: 16px*0.5;
       }
     }
 
     span {
       @include webfont();
-      font-size: rem-calc(28);
+      font-size: 28px;
       letter-spacing: 0.1em;
       @include breakpoint(small only) {
-        font-size: rem-calc(28)*0.85;
+        font-size: 28px*0.85;
       }
     }
   }
 
   &__button {
-    margin-top: rem-calc(32);
+    margin-top: 32px;
     text-align: right;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32)*0.5;
+      margin-top: 32px*0.5;
     }
   }
 }

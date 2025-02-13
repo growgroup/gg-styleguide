@@ -25,15 +25,15 @@ category: Layout
   }
 
   &__content {
-    max-width: rem-calc(2560);
+    max-width: 2560px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: rem-calc(16) rem-calc(32) rem-calc(24);
+    padding: 16px 32px 24px;
     height: rem-calc($header-height);
 
     @include breakpoint(medium down) {
-      padding: rem-calc(3) rem-calc(64) rem-calc(3) rem-calc(16);
+      padding: 3px 64px 3px 16px;
       height: rem-calc($header-height-sp);
     }
   }
@@ -58,7 +58,7 @@ category: Layout
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: rem-calc(24);
+    gap: 24px;
   }
 
 
@@ -66,7 +66,7 @@ category: Layout
   &__mainmenu {
     display: flex;
     align-items: center;
-    gap: rem-calc(32);
+    gap: 32px;
 
     @include breakpoint(medium down) {
       display: none;
@@ -82,16 +82,16 @@ category: Layout
       }
 
       a {
-        font-size: rem-calc(14);
+        font-size: 14px;
         position: relative;
-        padding-bottom: rem-calc(36);
+        padding-bottom: 36px;
 
         //装飾
         &::after {
           content: "";
           display: block;
           width: 100%;
-          height: rem-calc(2);
+          height: 2px;
           background-color: $color-primary;
           position: absolute;
           bottom: 0;
@@ -128,15 +128,15 @@ category: Layout
     width: 100%;
     z-index: 9999;
     background-color: rgba(#F4F7F9, 0.95);
-    padding-top: rem-calc(64);
-    padding-bottom: rem-calc(40);
+    padding-top: 64px;
+    padding-bottom: 40px;
     visibility: hidden;
     opacity: 0;
     @include transition(.2s);
 
     @include breakpoint(large down){
-      padding-left: rem-calc(24);
-      padding-right: rem-calc(24);
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 
@@ -144,24 +144,24 @@ category: Layout
   &__submenu-outer {
     display: flex;
     width: 100%;
-    max-width: rem-calc(1140);
+    max-width: 1140px;
     margin: 0 auto;
   }
 
   &__submenu-title {
-    width: rem-calc(390);
-    padding-top: rem-calc(8);
+    width: 390px;
+    padding-top: 8px;
 
     span {
       @include webfont();
-      font-size: rem-calc(56);
+      font-size: 56px;
       letter-spacing: 0.05em;
       display: block;
     }
 
     small {
       font-weight: 700;
-      font-size: rem-calc(18);
+      font-size: 18px;
       letter-spacing: 0.05em;
       display: block;
     }
@@ -174,7 +174,7 @@ category: Layout
   &__submenu-menus {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: rem-calc(32);
+    gap: 32px;
   }
 
   &__submenu-block {
@@ -190,9 +190,9 @@ category: Layout
     }
 
     span {
-      font-size: rem-calc(15);
+      font-size: 15px;
       font-weight: 700;
-      margin-top: rem-calc(10);
+      margin-top: 10px;
       display: block;
     }
 
@@ -210,7 +210,7 @@ category: Layout
 
     &.c-button.is-sm {
       color: $color-white;
-      max-width: rem-calc(196);
+      max-width: 196px;
 
       &::after {
         display: none;
@@ -219,8 +219,8 @@ category: Layout
 
     //*アイコン
     span {
-      font-size: rem-calc(16);
-      padding-right: rem-calc(8);
+      font-size: 16px;
+      padding-right: 8px;
       vertical-align: sub;
     }
   }
@@ -231,23 +231,23 @@ category: Layout
     position: relative;
     display: block;
     width: 100%;
-    max-width: rem-calc(180);
+    max-width: 180px;
 
     border: 1px solid $font-base-color;
     color: $font-base-color;
     background: none;
     border-radius: 16px;
-    font-size: rem-calc(11);
+    font-size: 11px;
     line-height: 1.5;
     font-weight: 400;
-    padding: rem-calc(8) rem-calc(20) rem-calc(8) rem-calc(42);
+    padding: 8px 20px 8px 42px;
     @include transition(.2s);
 
 
     @include breakpoint(medium down) {
       padding: 0;
-      width: rem-calc(44);
-      height: rem-calc(44);
+      width: 44px;
+      height: 44px;
       border: 0;
 
       span {
@@ -262,11 +262,11 @@ category: Layout
       position: absolute;
       top: 0;
       bottom: 0;
-      left: rem-calc(18);
+      left: 18px;
       margin: auto;
       @include icon-font();
       content: "search";
-      font-size: rem-calc(18);
+      font-size: 18px;
     }
 
     @include hover() {

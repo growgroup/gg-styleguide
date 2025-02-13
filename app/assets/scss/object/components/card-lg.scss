@@ -9,27 +9,27 @@
   }
 
   &__content {
-    padding: rem-calc(20);
+    padding: 20px;
     @include breakpoint(small only) {
-      padding: rem-calc(12);
+      padding: 12px;
     }
   }
 
   &__title {
     font-weight: 700;
-    font-size: rem-calc(20);
+    font-size: 20px;
     letter-spacing: 0.1em;
     margin: 0;
     @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.9;
+      font-size: 20px*0.9;
     }
   }
 
   &__text {
-    margin-top: rem-calc(12);
-    font-size: rem-calc(14);
+    margin-top: 12px;
+    font-size: 14px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(6);
+      margin-top: 6px;
     }
   }
 }

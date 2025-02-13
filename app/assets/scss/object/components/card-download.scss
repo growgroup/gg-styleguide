@@ -3,10 +3,10 @@
   &__head {
 
     &.c-heading.is-md.is-border-bottom {
-      margin-bottom: rem-calc(40);
+      margin-bottom: 40px;
 
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
+        margin-bottom: 24px;
       }
     }
   }
@@ -28,23 +28,23 @@
     color: $font-base-color;
     width: calc(50% - 36px);
     background: $color-white;
-    padding: rem-calc(24) rem-calc(24) rem-calc(32);
-    margin: 0 rem-calc(18);
+    padding: 24px 24px 32px;
+    margin: 0 18px;
 
     @include breakpoint(small only) {
       width: 100%;
-      padding: rem-calc(20) rem-calc(20) rem-calc(24);
+      padding: 20px 20px 24px;
       margin: 0;
     }
 
     &:nth-child(n + 3) {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
 
     &:not(:first-child) {
 
       @include breakpoint(small only) {
-        margin-top: rem-calc(24);
+        margin-top: 24px;
       }
     }
 
@@ -78,11 +78,11 @@
       height: 100%;
       display: grid;
       place-content: center;
-      font-size: rem-calc(17);
+      font-size: 17px;
       color: rgba($font-base-color,0.5);
 
       @include breakpoint(small only) {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
   }
@@ -94,24 +94,24 @@
   }
 
   &__content {
-    margin-top: rem-calc(16);
+    margin-top: 16px;
 
     @include breakpoint(small only) {
-      margin-top: rem-calc(12);
+      margin-top: 12px;
     }
   }
 
   &__button {
-    margin-top: rem-calc(24);
+    margin-top: 24px;
 
     @include breakpoint(small only) {
-      margin-top: rem-calc(16);
+      margin-top: 16px;
     }
 
     .c-button {
       max-width: 100%;
-      padding-top: rem-calc(8);
-      padding-bottom: rem-calc(8);
+      padding-top: 8px;
+      padding-bottom: 8px;
 
       &:before {
         content: none;
@@ -139,20 +139,20 @@
       }
 
       &:nth-child(n + 4) {
-        margin-top: rem-calc(32);
+        margin-top: 32px;
       }
 
       &:nth-child(n + 3) {
 
         @include breakpoint(medium down) {
-          margin-top: rem-calc(32);
+          margin-top: 32px;
         }
       }
 
       &:not(:first-child) {
 
         @include breakpoint(small only) {
-          margin-top: rem-calc(24);
+          margin-top: 24px;
         }
       }
     }

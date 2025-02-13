@@ -3,7 +3,7 @@
 //   <!-- ここにスクロールさせたいコンテンツを入れる -->
 .c-scrollable {
   img,table {
-    min-width: rem-calc(750);//デザインに合わせて調整
+    min-width: 750px;//デザインに合わせて調整
   }
 
   //scroll-hint 応急処置

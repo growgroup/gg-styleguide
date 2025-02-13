@@ -10,7 +10,7 @@
   &__item {
 
     &:not(:last-child) {
-      margin-bottom: rem-calc(20);
+      margin-bottom: 20px;
     }
 
     a {
@@ -18,12 +18,12 @@
       @include font-format(20, 0, 32, bold);
       color: $font-base-color;
       position: relative;
-      padding-bottom: rem-calc(10);
+      padding-bottom: 10px;
       border-bottom: 2px solid $border-base-color;
       display: block;
 
       @include breakpoint(small only) {
-        font-size: rem-calc(16);
+        font-size: 16px;
       }
 
 
@@ -31,17 +31,17 @@
 
         &:after {
           color: $color-primary;
-          margin-left: rem-calc(14);
+          margin-left: 14px;
           vertical-align: middle;
         }
       }
     }
 
     &.is-parent {
-      margin-bottom: rem-calc(40);
+      margin-bottom: 40px;
 
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(20);
+        margin-bottom: 20px;
       }
     }
   }
@@ -54,10 +54,10 @@
   &__sublist {
     display: flex;
     flex-wrap: wrap;
-    margin-top: rem-calc(36);
+    margin-top: 36px;
 
     @include breakpoint(small only) {
-      margin-top: rem-calc(18);
+      margin-top: 18px;
     }
 
     &.is-three-col {
@@ -97,15 +97,15 @@
   &__subitem {
 
     width: 25%;
-    margin-bottom: rem-calc(20);
-    padding-right: rem-calc(10);
+    margin-bottom: 20px;
+    padding-right: 10px;
 
     @include breakpoint(medium down) {
       width: 50%;
     }
 
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(10);
+      margin-bottom: 10px;
     }
 
     a {
@@ -114,13 +114,13 @@
       padding: 0;
 
       @include breakpoint(small only) {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
 
 
     ul {
-      margin-top: rem-calc(20);
+      margin-top: 20px;
 
 
     }
@@ -136,7 +136,7 @@
         }
 
         @include breakpoint(small only) {
-          font-size: rem-calc(12);
+          font-size: 12px;
         }
       }
     }

@@ -5,21 +5,21 @@ category: PostContent
 ---
 */
 .c-news-header {
-  margin-bottom: rem-calc(32);
+  margin-bottom: 32px;
   @include breakpoint(small only) {
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
   }
 
   &__title {
-    font-size: rem-calc(28);
+    font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.1em;
     line-height: 1.5;
-    margin-bottom: rem-calc(24);
+    margin-bottom: 24px;
     margin-top: 0;
     @include breakpoint(small only) {
-      font-size: rem-calc(20);
-      margin-bottom: rem-calc(16);
+      font-size: 20px;
+      margin-bottom: 16px;
     }
   }
 
@@ -35,16 +35,16 @@ category: PostContent
 
   &__date {
     @include news-date();
-    margin: 0 rem-calc(24);
+    margin: 0 24px;
 
     @include breakpoint(small only) {
-      margin: 0 rem-calc(16);
+      margin: 0 16px;
     }
   }
 
   &__tag {
     @include breakpoint(small only) {
-      margin-top: rem-calc(8);
+      margin-top: 8px;
       width: 100%;
     }
 
@@ -54,12 +54,12 @@ category: PostContent
       align-items: center;
 
       li {
-        margin-right: rem-calc(16);
+        margin-right: 16px;
 
         a {
           text-decoration: none;
           font-weight: 400;
-          font-size: rem-calc(14);
+          font-size: 14px;
           display: block;
         }
       }

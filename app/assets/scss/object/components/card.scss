@@ -9,7 +9,7 @@ category: Components
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem-calc(36);
+    gap: 36px;
   }
 
   &__card {
@@ -39,24 +39,24 @@ category: Components
   }
 
   &__content {
-    margin-top: rem-calc(12);
+    margin-top: 12px;
   }
 
   &__title {
     font-weight: 700;
-    font-size: rem-calc(20);
+    font-size: 20px;
     letter-spacing: 0.1em;
     margin: 0;
     @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.9;
+      font-size: 20px*0.9;
     }
   }
 
   &__text {
-    margin-top: rem-calc(12);
-    font-size: rem-calc(14);
+    margin-top: 12px;
+    font-size: 14px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(6);
+      margin-top: 6px;
     }
   }
 
@@ -65,7 +65,7 @@ category: Components
   &__slider {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem-calc(36);
+    gap: 36px;
 
     @at-root .swiper-initialized & {
       display: flex;
@@ -101,7 +101,7 @@ category: Components
   &.is-number-left {
     .c-card__block {
       position: relative;
-      padding-top: rem-calc(52);
+      padding-top: 52px;
     }
 
     .c-card__number {
@@ -115,12 +115,12 @@ category: Components
 
       small {
         @include webfont();
-        font-size: rem-calc(18);
+        font-size: 18px;
         letter-spacing: 0.1em;
       }
 
       span {
-        font-size: rem-calc(60);
+        font-size: 60px;
         letter-spacing: 0;
       }
     }

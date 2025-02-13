@@ -9,31 +9,31 @@ category: Layout
   @include bg-option();
   text-align: center;
   color: $color-white;
-  padding: rem-calc(48) 0;
+  padding: 48px 0;
   @include breakpoint(small only) {
-    padding: rem-calc(40) 0;
+    padding: 40px 0;
   }
   // padding大きめ
   &.is-padding-lg {
-    padding: rem-calc(64) 0;
+    padding: 64px 0;
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: rem-calc(36);
+    gap: 36px;
 
-    margin-top: rem-calc(48);
+    margin-top: 48px;
     @include breakpoint(small only) {
       grid-template-columns: 1fr;
-      gap: rem-calc(16);
-      margin-top: rem-calc(24);
+      gap: 16px;
+      margin-top: 24px;
     }
     // ボタン1つ
     &.is-button-one {
-      margin-top: rem-calc(24);
+      margin-top: 24px;
       text-align: center;
       .l-offer__button {
-        max-width: rem-calc(454);
+        max-width: 454px;
       }
     }
   }
@@ -41,32 +41,32 @@ category: Layout
     color: $color-white;
     text-decoration: none;
     font-weight: 700;
-    font-size: rem-calc(16);
+    font-size: 16px;
     letter-spacing: 0.05em;
     text-align: center;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     border: 2px solid $color-white;
-    padding: rem-calc(24) rem-calc(32);
+    padding: 24px 32px;
     position: relative;
     width: 100%;
-    min-height: rem-calc(88);
+    min-height: 88px;
     @include breakpoint(small only) {
-      font-size: rem-calc(15);
-      min-height: rem-calc(64);
+      font-size: 15px;
+      min-height: 64px;
     }
     &::after {
       content: "chevron_right";
       @include icon-font();
       position: absolute;
-      font-size: rem-calc(20);
+      font-size: 20px;
       top: 50%;
-      right: rem-calc(24);
+      right: 24px;
       transform: translateY(-50%);
       font-weight: 400;
       @include breakpoint(small only) {
-        font-size: rem-calc(18);
+        font-size: 18px;
       }
     }
     &.is-bgcolor-primary {
@@ -76,13 +76,13 @@ category: Layout
     //->電話番号はアクセントフォント
     &.is-tel {
       @include webfont();
-      font-size: rem-calc(32);
+      font-size: 32px;
       line-height: 1;
       @include breakpoint(small only) {
-        font-size: rem-calc(28);
+        font-size: 28px;
       }
       i {
-        margin-right: rem-calc(8);
+        margin-right: 8px;
       }
     }
   }
@@ -90,12 +90,12 @@ category: Layout
     text-align: center;
     font-weight: 700;
     letter-spacing: 0.05em;
-    margin-top: rem-calc(14);
+    margin-top: 14px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(6);
-      font-size: rem-calc(12);
+      margin-top: 6px;
+      font-size: 12px;
       font-weight: 400;
-      margin-bottom: rem-calc(24);
+      margin-bottom: 24px;
     }
   }
 }
@@ -135,52 +135,52 @@ category: Layout
   &.is-color-primary {
     background-image: none;
     background-color: $color-primary;
-    padding: rem-calc(64) 0;
+    padding: 64px 0;
     @include breakpoint(small only) {
-      padding: rem-calc(48) 0;
+      padding: 48px 0;
     }
     .c-heading {
       color: $color-white;
-      margin-bottom: rem-calc(32);
+      margin-bottom: 32px;
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
+        margin-bottom: 24px;
       }
     }
     .l-offer__items {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
     .l-offer__box {
       border: 1px solid $color-white;
       height: 100%;
       text-align: center;
-      padding: rem-calc(32) rem-calc(48);
+      padding: 32px 48px;
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(8);
+        margin-bottom: 8px;
         height: inherit;
-        padding: rem-calc(24);
+        padding: 24px;
       }
     }
     .l-offer__box-text {
-      font-size: rem-calc(14);
+      font-size: 14px;
       letter-spacing: 0.1em;
-      margin-bottom: rem-calc(20);
+      margin-bottom: 20px;
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(12);
+        margin-bottom: 12px;
       }
     }
     .l-offer__box-tel {
       @include webfont();
-      font-size: rem-calc(32);
+      font-size: 32px;
       line-height: 1;
       i {
-        margin-right: rem-calc(8);
+        margin-right: 8px;
       }
       small {
         display: block;
-        font-size: rem-calc(13);
+        font-size: 13px;
         letter-spacing: 0.1em;
         font-weight: 400;
-        margin-top: rem-calc(8);
+        margin-top: 8px;
       }
     }
   }

@@ -31,14 +31,14 @@ Styles for the Modal component.
     top: 0;
     right: 0;
     border: none;
-    font-size: rem-calc(32);
+    font-size: 32px;
     cursor: pointer;
     background: transparent;
     color: $color-black;
     transition: color 0.3s ease;
 
-    height: rem-calc(44);
-    width: rem-calc(44);
+    height: 44px;
+    width: 44px;
     padding: 0;
     display: grid;
     place-items: center;
@@ -60,9 +60,9 @@ Styles for the Modal component.
     background-color: #fff;
     display: flex;
     justify-content: center;
-    width: min(#{rem-calc(1140)}, 90%);
+    width: min(#{1140px}, 90%);
     height: auto;
-    max-height: min(#{rem-calc(700)}, 90%);
+    max-height: min(#{700px}, 90%);
     border-radius: 16px;
     box-sizing: border-box;
     position: relative;
@@ -70,11 +70,11 @@ Styles for the Modal component.
   }
 
   .c-mm__container-inner {
-    padding: rem-calc(56) rem-calc(62);
+    padding: 56px 62px;
     width: 100%;
 
     @include breakpoint(small down) {
-      padding: rem-calc(32) rem-calc(24);
+      padding: 32px 24px;
     }
   }
 
@@ -133,7 +133,7 @@ Styles for the Modal component.
 
   &__iframe{
     width: 100%;
-    height: rem-calc(800);
+    height: 800px;
     max-height: 100%;
     display: block;
     border: none;
@@ -158,10 +158,10 @@ Styles for the Modal component.
 
   &__gallery-btn{
     background-color: transparent;
-    height: rem-calc(44);
-    width: rem-calc(44);
+    height: 44px;
+    width: 44px;
     color: $color-gray;
-    font-size: rem-calc(44);
+    font-size: 44px;
     transition: color 0.3s ease;
     border: none;
     padding: 0;

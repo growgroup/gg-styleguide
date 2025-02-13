@@ -1,12 +1,12 @@
 .c-gallery-card {
 
   &__card {
-    max-width: rem-calc(500);
-    margin: 0 rem-calc(20);
+    max-width: 500px;
+    margin: 0 20px;
 
     @include breakpoint(small down) {
-      max-width: rem-calc(300);
-      margin: 0 rem-calc(12);
+      max-width: 300px;
+      margin: 0 12px;
     }
   }
 
@@ -19,11 +19,11 @@
 
   &__text {
     @include font-format(14,0.1,22,400);
-    margin: rem-calc(14) rem-calc(16) 0;
+    margin: 14px 16px 0;
 
     @include breakpoint(small down) {
-      font-size: rem-calc(13);
-      margin: rem-calc(10) rem-calc(12) 0;
+      font-size: 13px;
+      margin: 10px 12px 0;
     }
   }
 
@@ -31,11 +31,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: rem-calc(50);
+    margin-top: 50px;
 
     @include breakpoint(small down) {
       display: block;
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
   }
 
@@ -43,11 +43,11 @@
     flex: none;
     display: flex;
     align-items: center;
-    margin-left: rem-calc(40);
+    margin-left: 40px;
 
     @include breakpoint(small down) {
       justify-content: flex-end;
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
 
     .swiper-button-prev ,.swiper-button-next {
@@ -56,16 +56,16 @@
       right: 0;
       top: 0;
       bottom: 0;
-      width: rem-calc(60);
-      height: rem-calc(60);
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       border: 1px solid $font-base-color;
       margin: 0;
       @include transition();
 
       @include breakpoint(small down) {
-        width: rem-calc(48);
-        height: rem-calc(48);
+        width: 48px;
+        height: 48px;
       }
 
       &::after {
@@ -81,10 +81,10 @@
     }
 
     .swiper-button-prev {
-      margin-right: rem-calc(16);
+      margin-right: 16px;
 
       @include breakpoint(small down) {
-        margin-right: rem-calc(12);
+        margin-right: 12px;
       }
 
       &::after {
@@ -99,7 +99,7 @@
     bottom: 0;
     height: 2px;
     width: 100%;
-    max-width: rem-calc(440);
+    max-width: 440px;
     background: rgba($font-base-color,0.3);
 
     @include breakpoint(small down) {

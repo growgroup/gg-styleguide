@@ -1,29 +1,29 @@
 .l-block {
   &__margin-normal {
-    margin-top: rem-calc(56);
+    margin-top: 56px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(56)*0.5;
+      margin-top: 56px*0.5;
     }
   }
 
   &__margin-large {
-    margin-top: rem-calc(64);
+    margin-top: 64px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(64)*0.5;
+      margin-top: 64px*0.5;
     }
   }
 
   &__margin-medium {
-    margin-top: rem-calc(48);
+    margin-top: 48px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(24)*0.5;
+      margin-top: 24px*0.5;
     }
   }
 
   &__margin-small {
-    margin-top: rem-calc(24);
+    margin-top: 24px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(24)*0.5;
+      margin-top: 24px*0.5;
     }
   }
 

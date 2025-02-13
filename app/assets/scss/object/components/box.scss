@@ -8,11 +8,11 @@ category: Components
 .c-box {
   &__block {
     background-color: $color-secondary;
-    padding: rem-calc(32) rem-calc(40);
-    margin-bottom: rem-calc(56);
+    padding: 32px 40px;
+    margin-bottom: 56px;
     @include breakpoint(small only) {
-      padding: rem-calc(24);
-      margin-bottom: rem-calc(24);
+      padding: 24px;
+      margin-bottom: 24px;
 
     }
   }
@@ -39,42 +39,42 @@ category: Components
     .c-box__number {
       background-color: $color-primary;
       color: $color-white;
-      width: rem-calc(86);
-      height: rem-calc(86);
+      width: 86px;
+      height: 86px;
       text-align: center;
       @include webfont();
       position: absolute;
       top: 0;
       line-height: 1;
       left: 0;
-      padding-top: rem-calc(14);
+      padding-top: 14px;
       @include breakpoint(small only) {
-        width: rem-calc(64);
-        height: rem-calc(64);
-        padding-top: rem-calc(10);
+        width: 64px;
+        height: 64px;
+        padding-top: 10px;
       }
       small {
         @include webfont();
-        font-size: rem-calc(18);
+        font-size: 18px;
         letter-spacing: 0.1em;
         display: block;
         @include breakpoint(small only) {
-          font-size: rem-calc(14);
+          font-size: 14px;
         }
       }
       span {
-        font-size: rem-calc(42);
+        font-size: 42px;
         letter-spacing: 0;
         display: block;
         @include breakpoint(small only) {
-          font-size: rem-calc(32);
+          font-size: 32px;
         }
       }
     }
   }
   &__image {
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(16);
+      margin-bottom: 16px;
     }
   }
 
@@ -82,8 +82,8 @@ category: Components
   &.is-roundimg {
 
     .c-box__image {
-      width: rem-calc(200);
-      height: rem-calc(200);
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       overflow: hidden;
       position: relative;

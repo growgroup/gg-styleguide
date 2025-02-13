@@ -16,45 +16,45 @@
 
   h1 {
     // 基本的に利用されることはないはず
-    font-size: rem-calc(32);
+    font-size: 32px;
     line-height: 1.6;
   }
 
   h2 {
-    font-size: rem-calc(25);
+    font-size: 25px;
     line-height: 1.6;
-    margin-top: rem-calc(80);
-    margin-bottom: rem-calc(32);
+    margin-top: 80px;
+    margin-bottom: 32px;
     border-bottom: 2px solid $color-primary;
-    padding-bottom: rem-calc(14);
+    padding-bottom: 14px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(40);
-      font-size: rem-calc(18);
+      margin-top: 40px;
+      font-size: 18px;
     }
 
   }
 
   h3 {
-    font-size: rem-calc(20);
+    font-size: 20px;
     line-height: 1.6;
-    margin-top: rem-calc(54);
-    margin-bottom: rem-calc(24);
+    margin-top: 54px;
+    margin-bottom: 24px;
 
     padding: 0.5rem 0.75rem;
     background-color: #e7e7e7;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32);
-      font-size: rem-calc(16);
+      margin-top: 32px;
+      font-size: 16px;
     }
 
   }
 
 
   h4 {
-    font-size: rem-calc(17);
+    font-size: 17px;
     line-height: 1.6;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     &::before {
       content: "check";
@@ -65,28 +65,28 @@
     }
 
     @include breakpoint(small only) {
-      font-size: rem-calc(15);
+      font-size: 15px;
     }
 
   }
 
   h5 {
-    font-size: rem-calc(16);
+    font-size: 16px;
     line-height: 1.6;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
+    margin-top: 16px;
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      font-size: rem-calc(14);
+      font-size: 14px;
     }
   }
 
   h6 {
-    font-size: rem-calc(16);
+    font-size: 16px;
     line-height: 1.6;
-    margin-top: rem-calc(16);
-    margin-bottom: rem-calc(16);
+    margin-top: 16px;
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      font-size: rem-calc(14);
+      font-size: 14px;
     }
   }
 
@@ -99,7 +99,7 @@
     }
 
     dd + dt {
-      margin-top: rem-calc(16);
+      margin-top: 16px;
     }
   }
 
@@ -119,9 +119,9 @@
   }
 
   //.has-small-font-size {
-  //  font-size: rem-calc(14);
+  //  font-size: 14px;
   //  @include breakpoint(small only) {
-  //    font-size: rem-calc(12);
+  //    font-size: 12px;
   //  }
   //}
 
@@ -132,7 +132,7 @@
 
   pre {
     background: #f5f5f5;
-    padding: rem-calc(16) rem-calc(24);
+    padding: 16px 24px;
   }
 
   code {
@@ -168,10 +168,10 @@
   th, td {
     text-align: left;
     border-bottom: 1px solid $border-base-color;
-    padding: rem-calc(24);
+    padding: 24px;
     vertical-align: top;
     @include breakpoint(small only) {
-      padding: rem-calc(12);
+      padding: 12px;
     }
   }
 
@@ -189,9 +189,9 @@
   //tbody専用スタイル
   tbody {
     th {
-      width: rem-calc(196);
+      width: 196px;
       @include breakpoint(small only) {
-        width: rem-calc(96);
+        width: 96px;
       }
     }
   }
@@ -207,7 +207,7 @@
   line-height: $font-base-line-height;
 
   li + li {
-    margin-top: rem-calc(6);
+    margin-top: 6px;
   }
   li {
     position: relative;
@@ -225,11 +225,11 @@
 // c-list-ul （.c-list.is-icon）
 @mixin c-list-ul {
   > li { //l-post-content 用に > が必要
-    padding-left: rem-calc(16);
+    padding-left: 16px;
     position: relative;
 
     &::before {
-      --_icon-size: #{rem-calc(4)};
+      --_icon-size: #{4px};
 
       content: "";
       width: var(--_icon-size);
@@ -245,10 +245,10 @@
 
   //l-post-content 用に > を使ったので ul > liも必要
   ul > li {
-    padding-left: rem-calc(16);
+    padding-left: 16px;
 
     &::before {
-      --_icon-size: #{rem-calc(2)};
+      --_icon-size: #{2px};
 
       content: "";
       width: var(--_icon-size);
@@ -267,13 +267,13 @@
   counter-reset: list-counter;
 
   > li {
-    padding-left: rem-calc(16);
+    padding-left: 16px;
 
     &::before {
       //content: counters(list-counter, "-")".";//2-1のようなカウンター用
       content: counter(list-counter) ".";
       counter-increment: list-counter;
-      width: rem-calc(16);
+      width: 16px;
       height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
     }
   }
@@ -283,13 +283,13 @@
     counter-reset: list-counter;
 
     > li {
-      padding-left: rem-calc(16);
+      padding-left: 16px;
 
       &::before {
         //content: counters(list-counter, "-")".";//2-1のようなカウンター用
         content: counter(list-counter) ".";
         counter-increment: list-counter;
-        width: rem-calc(16);
+        width: 16px;
         height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
       }
     }
@@ -305,38 +305,38 @@
   border-bottom: 1px solid $border-base-color;
   border-left: 3px solid $color-primary;
   position: relative;
-  padding: rem-calc(24) rem-calc(24) rem-calc(24) rem-calc(48);
+  padding: 24px 24px 24px 48px;
   margin-right: 0;
   margin-left: 0;
   //font-size: $font-base-size;
   @include breakpoint(small only) {
-    padding: rem-calc(12) rem-calc(12) rem-calc(12) rem-calc(32);
+    padding: 12px 12px 12px 32px;
   }
   &::before {
     //content: "format_quote";
     //@include icon-font();
-    //font-size: rem-calc(20);
+    //font-size: 20px;
     //color: $color-primary;
 
     content: "";
-    width: rem-calc(19);
-    height: rem-calc(16);
+    width: 19px;
+    height: 16px;
     background: $color-primary;
     mask: url("../images/icon-blockquote.svg") no-repeat center / contain;
     position: absolute;
-    left: rem-calc(16);
-    top: rem-calc(16);
+    left: 16px;
+    top: 16px;
     @include breakpoint(small only) {
-      //font-size: rem-calc(20)*0.8;
-      width: rem-calc(13);
-      height: rem-calc(11);
-      top: rem-calc(8);
-      left: rem-calc(8);
+      //font-size: 20px*0.8;
+      width: 13px;
+      height: 11px;
+      top: 8px;
+      left: 8px;
     }
   }
 
   cite {
     display: block;
-    margin-top: rem-calc(16);
+    margin-top: 16px;
   }
 }

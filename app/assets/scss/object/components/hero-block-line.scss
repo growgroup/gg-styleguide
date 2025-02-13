@@ -9,12 +9,12 @@
 
 
   &__block {
-    margin-bottom: rem-calc(80);
+    margin-bottom: 80px;
     position: relative;
-    min-height: rem-calc(480);
-    padding-top: rem-calc(48);
+    min-height: 480px;
+    padding-top: 48px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(32);
+      margin-bottom: 32px;
       min-height: inherit;
       padding-top: 0;
     }
@@ -31,8 +31,8 @@
         padding-right: math.div(160, 1140)*100%;
         padding-left: math.div(62, 1140)*100%;
         @include breakpoint(small only) {
-          padding-left: rem-calc(24);
-          padding-right: rem-calc(24);
+          padding-left: 24px;
+          padding-right: 24px;
         }
       }
 
@@ -47,7 +47,7 @@
 
     //*最後のブロック
     &:last-child {
-      margin-bottom: rem-calc(8);
+      margin-bottom: 8px;
     }
   }
 
@@ -56,7 +56,7 @@
     position: absolute;
     top: rem-calc(-48);
     left: 0;
-    height: rem-calc(400);
+    height: 400px;
     overflow: hidden;
     width: math.div(588, 1140)*100%;
     z-index: 2;
@@ -107,11 +107,11 @@
     background-color: $color-white;
     position: relative;
     width: math.div(650, 1140)*100%;
-    min-height: rem-calc(312);
+    min-height: 312px;
     margin-left: auto;
-    padding-top: rem-calc(88);
-    padding-right: rem-calc(64);
-    padding-bottom: rem-calc(103);
+    padding-top: 88px;
+    padding-right: 64px;
+    padding-bottom: 103px;
     padding-left: math.div(160, 1140)*100%;
     border: 1px solid $color-primary;
     z-index: 0;
@@ -122,14 +122,14 @@
       z-index: 99;
       margin-left: auto;
       margin-right: auto;
-      padding: rem-calc(20) rem-calc(24) rem-calc(16);
+      padding: 20px 24px 16px;
     }
   }
 
   &__label {
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(12);
+      margin-bottom: 12px;
     }
   }
 
@@ -140,25 +140,25 @@
 
   &__link {
     position: absolute;
-    bottom: rem-calc(52);
-    right: rem-calc(64);
+    bottom: 52px;
+    right: 64px;
     @include breakpoint(small only) {
       position: relative;
       bottom: auto;
       right: auto;
       text-align: right;
-      margin-top: rem-calc(16);
+      margin-top: 16px;
     }
 
     a {
       color: $font-base-color;
       text-decoration: none;
-      font-size: rem-calc(14);
+      font-size: 14px;
       letter-spacing: .1em;
       line-height: math.div(30, 14)*100%;
       font-weight: 700;
       display: inline-block;
-      padding-right: rem-calc(18);
+      padding-right: 18px;
       position: relative;
 
       &::after {
@@ -177,40 +177,40 @@
   &__head {
     display: flex;
     align-items: center;
-    margin-bottom: rem-calc(24);
+    margin-bottom: 24px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(24)*0.5;
+      margin-bottom: 24px*0.5;
     }
 
     small {
       @include webfont();
-      font-size: rem-calc(100);
+      font-size: 100px;
       opacity: 0.25;
       line-height: 1;
       letter-spacing: 0;
       cursor: pointer;
-      margin-right: rem-calc(16);
+      margin-right: 16px;
       @include breakpoint(small only) {
-        font-size: rem-calc(100)*0.5;
-        margin-right: rem-calc(16)*0.5;
+        font-size: 100px*0.5;
+        margin-right: 16px*0.5;
       }
     }
 
     span {
       @include webfont();
-      font-size: rem-calc(28);
+      font-size: 28px;
       letter-spacing: 0.1em;
       @include breakpoint(small only) {
-        font-size: rem-calc(28)*0.85;
+        font-size: 28px*0.85;
       }
     }
   }
 
   &__button {
-    margin-top: rem-calc(32);
+    margin-top: 32px;
     text-align: right;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32)*0.5;
+      margin-top: 32px*0.5;
     }
   }
 
