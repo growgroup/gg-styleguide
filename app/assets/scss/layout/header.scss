@@ -40,7 +40,7 @@ category: Layout
 
   &__logo {
     margin: 0;
-    width: 175px;
+    width: min-vw(175);
     flex-shrink: 0;
     @include breakpoint(medium down) {
       width: 148px;
@@ -58,7 +58,7 @@ category: Layout
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: rem-calc(24);
+    gap: min-vw(24);
   }
 
 
@@ -66,7 +66,7 @@ category: Layout
   &__mainmenu {
     display: flex;
     align-items: center;
-    gap: rem-calc(32);
+    gap: min-vw(32);
 
     @include breakpoint(medium down) {
       display: none;
@@ -82,7 +82,7 @@ category: Layout
       }
 
       a {
-        font-size: rem-calc(14);
+        font-size: min-vw(14);
         position: relative;
         padding-bottom: rem-calc(36);
 
@@ -210,7 +210,8 @@ category: Layout
 
     &.c-button.is-sm {
       color: $color-white;
-      max-width: rem-calc(196);
+      font-size: min-vw(14);
+      max-width: min-vw(196);
 
       &::after {
         display: none;
@@ -220,7 +221,7 @@ category: Layout
     //*アイコン
     span {
       font-size: rem-calc(16);
-      padding-right: rem-calc(8);
+      padding-right: min-vw(8);
       vertical-align: sub;
     }
   }
@@ -231,16 +232,16 @@ category: Layout
     position: relative;
     display: block;
     width: 100%;
-    max-width: rem-calc(180);
+    max-width: min-vw(180);
 
     border: 1px solid $font-base-color;
     color: $font-base-color;
     background: none;
     border-radius: 16px;
-    font-size: rem-calc(11);
+    font-size: min-vw(11);
     line-height: 1.5;
     font-weight: 400;
-    padding: rem-calc(8) rem-calc(20) rem-calc(8) rem-calc(42);
+    padding: rem-calc(8) min-vw(20) rem-calc(8) min-vw(42);
     @include transition(.2s);
 
 
