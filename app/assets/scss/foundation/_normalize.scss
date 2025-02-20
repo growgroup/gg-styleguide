@@ -96,6 +96,7 @@ _:lang(x)::-internal-media-controls-overlay-cast-button, body {
    ========================================================================== */
 
 a {
+  //リンクスタイルは mixin-post-content.scss の text-link() で設定
   text-decoration: none;
 }
 

@@ -14,6 +14,10 @@
     margin-top: 1em;
   }
 
+  a{
+    @include text-link();
+  }
+
   h1 {
     // 基本的に利用されることはないはず
     font-size: rem-calc(32);
@@ -149,6 +153,17 @@
 // ================================================================================
 // ※l-post-content内外で共有するスタイルは別途mixinに記述すること
 // ================================================================================
+
+// u-text-link と .l-post-content a は同じスタイルを適用する
+@mixin text-link{
+  color: $color-primary;
+  text-decoration: underline;
+  cursor: pointer;
+  @include hover(){
+    opacity: 0.5;
+  }
+}
+
 // c-table
 @mixin c-table {
   width: 100%;
