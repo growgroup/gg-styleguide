@@ -78,7 +78,7 @@
 }
 
 // 値をcqwに変換する関数
-// container-size:inline で指定したコンテナのデザイン上の幅を第2引数に指定すること
+// container-type を指定したコンテナのデザイン上の幅を第2引数に指定すること
 @function cqw-calc($value, $container-width: 1400) {
   @return strip-unit($value) / strip-unit($container-width) * 100cqw;
 }
@@ -102,14 +102,14 @@
 }
 
 // レスポンシブな値を生成するためのclamp関数
-// @param {Number} $values... - 設定値（順番に基準値、ビューポート幅、最小値、最大ビューポート幅）
+// @param {Number} $values... - 設定値（順番に基準値、最小値、最大ビューポート幅、ビューポート幅）
 // @return {String} - clamp関数を使用したレスポンシブな値
 // @example
 //   .element {
 //     font-size: clamp-vw(16);             // 基準値のみ
-//     padding: clamp-vw(20, 1400);         // 基準値, ビューポート幅
-//     margin: clamp-vw(24, 1400, 12);      // 基準値, ビューポート幅, 最小値
-//     width: clamp-vw(100, 1400, 16, 2560);// 基準値, ビューポート幅, 最小値, 最大ビューポート幅
+//     margin: clamp-vw(24, 10);            // 基準値, 最小値
+//     padding: clamp-vw(24, 10, 2560);     // 基準値, 最小値, 最大ビューポート幅
+//     width: clamp-vw(24, 10, 2560, 1400); // 基準値, 最小値, 最大ビューポート幅, ビューポート幅
 //   }
 @function clamp-vw($values...) {
   // デフォルト値の設定
@@ -119,9 +119,9 @@
   $min: 10;            // デフォルトの最小値
 
   // 引数の数に応じて値を上書き
-  @if length($values) >= 2 { $viewport: nth($values, 2); }
-  @if length($values) >= 3 { $min: nth($values, 3); }
-  @if length($values) >= 4 { $viewport-max: nth($values, 4); }
+  @if length($values) >= 2 { $min: nth($values, 2); }
+  @if length($values) >= 3 { $viewport-max: nth($values, 3); }
+  @if length($values) >= 4 { $viewport: nth($values, 4); }
 
   // clamp関数で最小値、可変値、最大値を設定
   @return clamp(
