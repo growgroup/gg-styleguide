@@ -84,12 +84,11 @@
 }
 
 // レスポンシブな最小値を生成するmin関数
-// @param {Number} $values... - 設定値（順番に基準値、ビューポート幅）
 // @return {String} - min関数を使用したレスポンシブな値
 // @example
 //   .element {
-//     font-size: miv-vw(16);      // 基準値のみ
-//     margin: miv-vw(24, 1200);   // 基準値, ビューポート幅
+//     font-size: miv-vw(16);      // デザイン上のサイズ
+//     margin: miv-vw(24, 1200);   // 基準値, 基準にするデザインフレームの横幅
 //   }
 @function min-vw($values...) {
   $value: nth($values, 1);
@@ -102,14 +101,13 @@
 }
 
 // レスポンシブな値を生成するためのclamp関数
-// @param {Number} $values... - 設定値（順番に基準値、最小値、最大ビューポート幅、ビューポート幅）
 // @return {String} - clamp関数を使用したレスポンシブな値
 // @example
 //   .element {
-//     font-size: clamp-vw(16);             // 基準値のみ
-//     margin: clamp-vw(24, 10);            // 基準値, 最小値
-//     padding: clamp-vw(24, 10, 2560);     // 基準値, 最小値, 最大ビューポート幅
-//     width: clamp-vw(24, 10, 2560, 1400); // 基準値, 最小値, 最大ビューポート幅, ビューポート幅
+//     font-size: clamp-vw(16);             // デザイン上のサイズ
+//     margin: clamp-vw(24, 10);            // デザイン上のサイズ, 最小値
+//     padding: clamp-vw(24, 10, 2560);     // デザイン上のサイズ, 最小値, 最大画面幅
+//     width: clamp-vw(24, 10, 2560, 1400); // デザイン上のサイズ, 最小値, 最大画面幅, 基準にするデザインフレームの横幅
 //   }
 @function clamp-vw($values...) {
   // デフォルト値の設定
