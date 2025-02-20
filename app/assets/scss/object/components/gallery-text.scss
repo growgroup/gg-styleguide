@@ -11,11 +11,11 @@
     @include font-format(180,0.02,180,400);
 
     @include breakpoint(medium down) {
-      font-size: rem-calc(120);
+      font-size: 120px;
     }
 
     @include breakpoint(small down) {
-      font-size: rem-calc(70);
+      font-size: 70px;
     }
   }
 

@@ -4,35 +4,35 @@
   color: $color-white;
   display: inline-block;
   text-align: center;
-  min-width: rem-calc(116);
-  padding: rem-calc(1) rem-calc(8);
+  min-width: 116px;
+  padding: 1px 8px;
   border: 1px solid $color-primary;
   @include font-format-light(14,20);
   font-weight: 700;
 
   @include breakpoint(small only) {
-    font-size: rem-calc(13);
-    min-width: rem-calc(88);
+    font-size: 13px;
+    min-width: 88px;
   }
 
   &.is-xlg {
-    min-width: rem-calc(156);
-    font-size: rem-calc(14);
-    padding: rem-calc(3) rem-calc(8);
+    min-width: 156px;
+    font-size: 14px;
+    padding: 3px 8px;
     @include breakpoint(small only) {
-      min-width: rem-calc(120);
-      font-size: rem-calc(12);
-      padding: rem-calc(2) rem-calc(8);
+      min-width: 120px;
+      font-size: 12px;
+      padding: 2px 8px;
     }
   }
   &.is-lg {
-    min-width: rem-calc(160);
-    font-size: rem-calc(13);
+    min-width: 160px;
+    font-size: 13px;
   }
   &.is-sm {
-    min-width: rem-calc(80);
-    font-size: rem-calc(12);
-    padding: 0 rem-calc(8);
+    min-width: 80px;
+    font-size: 12px;
+    padding: 0 8px;
   }
 
   // カラー

@@ -7,12 +7,12 @@
   letter-spacing: $font-base-letter-spacing;
   overflow-x: hidden;
   background: #F9F9F9;
-  padding: rem-calc(40) rem-calc(40) rem-calc(40) rem-calc(40);
+  padding: 40px 40px 40px 40px;
   border: none;
   box-shadow: none;
 
   @include breakpoint(small only) {
-    padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(16);
+    padding: 16px 16px 16px 16px;
   }
 
   a {
@@ -58,20 +58,20 @@
       color: $color-primary;
       text-decoration: none;
       font-weight: bold;
-      font-size: rem-calc(18);
+      font-size: 18px;
       line-height: 1.2;
     }
 
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(8);
+      margin-bottom: 8px;
 
     }
   }
 
   &__image {
     width: 30%;
-    margin-right: rem-calc(32);
+    margin-right: 32px;
 
     @include breakpoint(small down) {
       width: 100%;
@@ -80,7 +80,7 @@
 
   &__image-bg {
     width: 100%;
-    max-width: rem-calc(240);
+    max-width: 240px;
     margin: 0 auto;
     @include bg-option();
     background-size: cover;

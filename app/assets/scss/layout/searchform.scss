@@ -1,24 +1,24 @@
 .l-searchform {
   position: fixed;
-  top: rem-calc(80);
+  top: 80px;
   left: 0;
   width: 100%;
   z-index: 99999;
   visibility: hidden;
   opacity: 0;
-  padding: rem-calc(90) 0;
+  padding: 90px 0;
   @include transition(.2s);
 
   @include breakpoint(medium down) {
-    top: rem-calc(55);
+    top: 55px;
   }
   @include breakpoint(small down) {
-    padding: rem-calc(60) 0;
+    padding: 60px 0;
   }
 
   &__inner {
     width: 100%;
-    max-width: rem-calc(748);
+    max-width: 748px;
     position: relative;
     margin: auto;
   }
@@ -50,7 +50,7 @@
     }
 
     &__icon {
-      font-size: rem-calc(48);
+      font-size: 48px;
     }
   }
 }

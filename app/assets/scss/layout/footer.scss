@@ -13,20 +13,20 @@ category: Layout
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top: rem-calc(80);
-    padding-bottom: rem-calc(56);
+    padding-top: 80px;
+    padding-bottom: 56px;
     @include breakpoint(medium down) {
       display: block;
       width: calc(100% + 32px);
       margin-left: rem-calc(-16);
-      padding-top: rem-calc(0);
-      padding-bottom: rem-calc(0);
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
   }
   &__block {
-    padding-right: rem-calc(40);
+    padding-right: 40px;
     @media (max-width: 900px) {
-      padding-right: rem-calc(24);
+      padding-right: 24px;
       &:last-child {
         padding-right: 0;
       }
@@ -36,19 +36,19 @@ category: Layout
     }
   }
   &__menutitle {
-    margin-bottom: rem-calc(10);
+    margin-bottom: 10px;
     font-weight: 400;
-    font-size: rem-calc(14);
+    font-size: 14px;
     @include breakpoint(medium down) {
       border-bottom: 1px solid $border-base-color;
-      padding: rem-calc(12) rem-calc(24);
+      padding: 12px 24px;
       margin: 0;
       background-color: $font-base-color;
       &::before {
         content: "chevron_right";
         @include icon-font();
         color: $color-primary;
-        padding-right: rem-calc(12);
+        padding-right: 12px;
       }
       &.is-open {
         &::before {
@@ -59,7 +59,7 @@ category: Layout
   }
   &__menulist {
     li {
-      margin-bottom: rem-calc(20);
+      margin-bottom: 20px;
       @include breakpoint(medium down) {
         margin: 0;
         border-bottom: 1px solid $border-base-color;
@@ -69,9 +69,9 @@ category: Layout
       color: $color-white;
       text-decoration: none;
       font-weight: 400;
-      font-size: rem-calc(14);
+      font-size: 14px;
       @include breakpoint(medium down) {
-        padding: rem-calc(14) rem-calc(24);
+        padding: 14px 24px;
         display: block;
         background-color: $font-base-color;
 
@@ -85,7 +85,7 @@ category: Layout
         display: none;
       }
       li {
-        margin-bottom: rem-calc(8);
+        margin-bottom: 8px;
         @include breakpoint(medium down) {
           border: none;
         }
@@ -95,42 +95,42 @@ category: Layout
         color: rgba($color-white,0.7);
         @include breakpoint(medium down) {
           background-color: rgba($font-base-color,0.8);
-          padding: rem-calc(10) rem-calc(44);
+          padding: 10px 44px;
         }
       }
     }
   }
   &__content {
     border-top: 1px solid rgba($border-base-color,0.2);
-    padding: rem-calc(40) 0;
+    padding: 40px 0;
     display: flex;
     align-items: center;
     @include breakpoint(medium down) {
       display: block;
-      padding: rem-calc(24) 0;
+      padding: 24px 0;
     }
   }
   &__logo {
     display: block;
     width: 100%;
-    max-width: rem-calc(175);
+    max-width: 175px;
   }
   &__address {
     font-style: normal;
-    font-size: rem-calc(13);
+    font-size: 13px;
     letter-spacing: 0.1em;
-    margin-left: rem-calc(24);
+    margin-left: 24px;
     @include breakpoint(medium down) {
-      margin: rem-calc(24) 0;
-      font-size: rem-calc(12);
+      margin: 24px 0;
+      font-size: 12px;
     }
   }
   &__copyright {
     opacity: 0.5;
     margin-left: auto;
-    margin-top: rem-calc(12);
+    margin-top: 12px;
     display: block;
-    font-size: rem-calc(12);
+    font-size: 12px;
     @include breakpoint(medium down) {
       margin-top: 0;
       text-align: center;

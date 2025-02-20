@@ -1,15 +1,15 @@
 .c-pagetop {
   position: fixed;
-  right: rem-calc(24);
-  bottom: rem-calc(24);
+  right: 24px;
+  bottom: 24px;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
   @include transition();
 
   @include breakpoint(small only) {
-    right: rem-calc(14);
-    bottom: rem-calc(14);
+    right: 14px;
+    bottom: 14px;
   }
 
   &.is-fixed {
@@ -26,14 +26,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: rem-calc(50);
-    height: rem-calc(50);
+    width: 50px;
+    height: 50px;
     color: $color-white;
     background: $font-base-color;
     box-shadow: 0 0 10px rgba($color-black, .1);
     text-decoration: none;
     @include transition();
-    font-size: rem-calc(25);
+    font-size: 25px;
     line-height: 1;
 
     &:after {

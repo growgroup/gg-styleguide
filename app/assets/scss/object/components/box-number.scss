@@ -8,9 +8,9 @@ category: Components
   &__block {
     display: flex;
     position: relative;
-    margin-bottom: rem-calc(40);
+    margin-bottom: 40px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(32);
+      margin-bottom: 32px;
     }
     &::after {
       content: "";
@@ -36,12 +36,12 @@ category: Components
   //*ナンバー
   &__head {
     background-color: $color-primary;
-    width: rem-calc(86);
+    width: 86px;
     display: flex;
     justify-content: center;
     align-items: center;
     @include breakpoint(small only) {
-      width: rem-calc(72);
+      width: 72px;
     }
   }
   &__number {
@@ -51,33 +51,33 @@ category: Components
     line-height: 1.2;
     small {
       @include webfont();
-      font-size: rem-calc(16);
+      font-size: 16px;
       letter-spacing: 0.1em;
       display: block;
       @include breakpoint(small only) {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
     span {
-      font-size: rem-calc(32);
+      font-size: 32px;
       letter-spacing: 0;
       display: block;
       @include breakpoint(small only) {
-        font-size: rem-calc(32);
+        font-size: 32px;
       }
     }
   }
   //*テキストコンテンツ
   &__content {
     background-color: $color-secondary;
-    padding: rem-calc(28) rem-calc(40);
+    padding: 28px 40px;
     width: calc(100% - 86px);
     @include breakpoint(small only) {
-      padding: rem-calc(16) rem-calc(24);
+      padding: 16px 24px;
       width: calc(100% - 72px);
     }
   }
   &__text {
-    font-size: rem-calc(14);
+    font-size: 14px;
   }
 }

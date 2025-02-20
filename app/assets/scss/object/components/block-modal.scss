@@ -39,7 +39,7 @@
     height: auto;
     max-height: calc(80vh - 84px);
     overflow-y: scroll;
-    padding: rem-calc(30);
+    padding: 30px;
 
     //paddingに関してはmodaal-content-containerとうまく調整してください
     @include breakpoint(medium down) {
@@ -59,10 +59,10 @@
   &__content {
 
     &:not(:first-child) {
-      margin-top: rem-calc(80);
+      margin-top: 80px;
 
       @include breakpoint(small only) {
-        margin-top: rem-calc(40);
+        margin-top: 40px;
       }
     }
   }
@@ -70,10 +70,10 @@
   &__title {
 
     &.c-heading.is-md {
-      margin: 0 0 rem-calc(40);
+      margin: 0 0 40px;
 
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
+        margin-bottom: 24px;
       }
     }
   }
