@@ -98,6 +98,7 @@ _:lang(x)::-internal-media-controls-overlay-cast-button, body {
 a {
   // リンクスタイルにデザインを反映する場合はは
   // 基本は mixin-post-content.scss の text-link() で設定
+  color: inherit;
   text-decoration: none;
   @include transition();
 
