@@ -96,8 +96,15 @@ _:lang(x)::-internal-media-controls-overlay-cast-button, body {
    ========================================================================== */
 
 a {
-  //リンクスタイルは mixin-post-content.scss の text-link() で設定
+  // リンクスタイルにデザインを反映する場合はは
+  // 基本は mixin-post-content.scss の text-link() で設定
   text-decoration: none;
+  @include transition();
+
+  // サイト内のすべてのhover時の基本の不透明度
+  @include hover() {
+    opacity: $base-hover-opacity;
+  }
 }
 
 /**
@@ -432,10 +439,6 @@ li {
   margin: 0;
 }
 
-
-a {
-  @include transition();
-}
 
 *.is-indent {
   padding-left: 1em;
