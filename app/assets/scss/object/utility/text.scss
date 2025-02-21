@@ -82,7 +82,7 @@ del,
 }
 
 .u-text-link.is-hover {
-  opacity: 0.5;
+  opacity: $base-hover-opacity;
 }
 
 .u-hover-disabled, .u-pointer-events-none {
