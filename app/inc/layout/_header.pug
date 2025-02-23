@@ -27,9 +27,24 @@ header(class=className)
         li.l-header__mainmenu-item: +a("/twocolumns/") 2COLUMN
         li.l-header__mainmenu-item: +a("/news/") NEWS
         li.l-header__mainmenu-item: +a("/archive-twocolumns/") ARCHIVE2
-        li.l-header__mainmenu-item
-          +a("/format/") FORMAT
-          .l-header__submenu
+        li.l-header__mainmenu-item.js-dropdown
+          +a("/format/")(data-dropdown-trigger="trigger") FORMAT
+          .l-header__submenu(data-dropdown-target="target")
+            .l-header__submenu-outer
+              .l-header__submenu-title
+                span FORMAT
+                small フォーマット
+              .l-header__submenu-content
+                .l-header__submenu-menus
+                  +a("/format/").l-header__submenu-block
+                    .l-header__submenu-image: +img("img-sample.jpg", "フォーマット")
+                    span フォーマット
+                  +a("/blocks/").l-header__submenu-block
+                    .l-header__submenu-image: +img("img-sample.jpg", "ブロック編集ページ")
+                    span ブロック編集ページ
+        li.l-header__mainmenu-item.js-dropdown(data-dropdown-animation="slide" data-dropdown-event="click")
+          +a("/format/")(data-dropdown-trigger="trigger") CLICK
+          .l-header__submenu(data-dropdown-target="target")
             .l-header__submenu-outer
               .l-header__submenu-title
                 span FORMAT

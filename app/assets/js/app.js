@@ -21,12 +21,14 @@ import modal from './app/modal.js';
 import GsapAnimation from "./app/gsap";
 // import modaalCss from 'modaal/dist/css/modaal.css';
 import Scrollable from "./app/scrollable";
+import Dropdown from "./app/dropdown";
 // import Parallax from "./app/parallax";
 // import LenisScroll from "./app/lenis";
 
 class App {
   constructor() {
     this.Utils = new Utils();
+    this.Dropdown = new Dropdown();
     this.Accordion = new Accordion();
     this.Anchor = new Anchor();
     this.FixedHeader = new FixedHeader();
