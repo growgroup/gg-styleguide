@@ -6,7 +6,6 @@ const defaultOptions = {
   selector: '.js-dropdown',
   triggerSelector: 'data-dropdown-trigger',
   targetSelector: 'data-dropdown-target',
-  closeButtonSelector: 'data-dropdown-close',
   eventTypeSelector: 'data-dropdown-event',
   animationTypeSelector: 'data-dropdown-animation',
   openClass: 'is-open',
@@ -25,6 +24,7 @@ export default class Dropdown {
 
   init() {
     this.dropdown = document.querySelectorAll(this.options.selector);
+    if (!this.dropdown.length) return;
     this.dropdown.forEach((dropdown) => {
       const wrapper = dropdown;
       const trigger = dropdown.querySelector(`[${this.options.triggerSelector}]`);
@@ -110,8 +110,6 @@ export default class Dropdown {
   }
 
   clickInit(wrapper, trigger, target, animationType) {
-    const closeBtn = wrapper.querySelector(`[${this.options.closeButtonSelector}]`);
-
     // triggerのクリックイベント
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
@@ -128,19 +126,6 @@ export default class Dropdown {
         this.dropdownOpen(wrapper, target, animationType);
       }
     });
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // クリックイベントの伝播を止める
-
-        if (gsap.isTweening(target)) {
-          gsap.killTweensOf(target);
-        }
-
-        this.dropdownClose(wrapper, target, animationType);
-      });
-    }
 
     // ドキュメントのクリックイベント
     const handleClickOutside = (e) => {
