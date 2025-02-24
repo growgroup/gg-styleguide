@@ -17,7 +17,7 @@ const defaultOptions = {
   selector: '.js-dropdown-text-sync',
   triggerSelector: 'data-dropdown-trigger',
   targetSelector: 'data-dropdown-target',
-  currentClass: 'is-current',
+  currentClasses: ['is-current', 'is-active', 'gt-current-lang'], // 複数のクラスを配列で指定
 };
 
 export default class DropdownTextSync {
@@ -52,11 +52,16 @@ export default class DropdownTextSync {
 
     if (!trigger || !target) return;
 
-    const currentElement = target.querySelector(`.${this.options.currentClass}`);
+    // いずれかのクラスを持つ要素を検索
+    const currentElement = this.options.currentClasses.reduce((found, className) => {
+      return found || target.querySelector(`.${className}`);
+    }, null);
+
     if (currentElement) {
       trigger.textContent = currentElement.textContent.trim();
     }
   }
+
 
 
   /**
