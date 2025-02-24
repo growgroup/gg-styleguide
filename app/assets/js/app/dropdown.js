@@ -1,3 +1,18 @@
+/**
+ * ドロップダウンメニューを制御するクラス
+ *
+ *  // hoverで展開・fadeIn
+ * .c-dropdown.js-dropdown
+ *   +a("/format/").c-dropdown-trigger(data-dropdown-trigger="trigger") FORMAT
+ *   .c-dropdown-content(data-dropdown-target="target")
+ *
+ *  // clickで展開・slideDown
+ * .c-dropdown.js-dropdown(data-dropdown-event="click", data-dropdown-animation="slide")
+ *   +a("/format/").c-dropdown-trigger(data-dropdown-trigger="trigger") FORMAT
+ *   .c-dropdown-content(data-dropdown-target="target")
+ *
+ */
+
 'use strict';
 
 import {gsap} from "gsap";
@@ -29,9 +44,7 @@ export default class Dropdown {
       const wrapper = dropdown;
       const trigger = dropdown.querySelector(`[${this.options.triggerSelector}]`);
       const target = dropdown.querySelector(`[${this.options.targetSelector}]`);
-      //dropdownのイベントタイプを取得
       const eventType = dropdown.getAttribute(this.options.eventTypeSelector);
-      //dropdownのアニメーションタイプを取得
       const animationType = dropdown.getAttribute(this.options.animationTypeSelector);
 
       //triggerまたはtargetが存在しないときerrorを投げる
@@ -39,12 +52,13 @@ export default class Dropdown {
         throw new Error('triggerまたはtargetが存在しません');
       }
 
-      //wrapperにis-openクラスがないかつanimationTypeがnone以外の場合はtargetを非表示にする
+      //wrapperにis-openクラスがない ＆ animationTypeがnone以外の場合はtargetを非表示にする
       if (!wrapper.classList.contains(this.options.openClass)&&animationType!=='none') {
         target.style.visibility = 'hidden';
         target.style.opacity = 0;
       }
 
+      // イベントタイプごとにイベントを初期化
       if (eventType !== 'click') {
         this.hoverInit(wrapper, trigger, target, animationType);
       } else {
@@ -57,7 +71,7 @@ export default class Dropdown {
     let timeoutId;
 
     trigger.addEventListener('mouseenter', () => {
-      // ページロード完了から1秒経過していない場合は処理を実行しない
+      // ページを開いた瞬間は処理を実行しない
       if (!this.isReady) return;
       if (timeoutId) clearTimeout(timeoutId);
       if (wrapper.classList.contains(this.options.openClass)) {
@@ -69,9 +83,8 @@ export default class Dropdown {
       this.dropdownOpen(wrapper, target, animationType);
     });
 
-
+    //wrapperからマウスが離れたら閉じる
     wrapper.addEventListener('mouseleave', () => {
-
       //100ms後に処理を実行
       timeoutId =
         setTimeout(() => {
@@ -82,35 +95,26 @@ export default class Dropdown {
       }, 100);
     });
 
+    //targetにマウスが載ったとき、閉じる途中であれば再度開く
     target.addEventListener('mouseenter', () => {
       if (timeoutId) clearTimeout(timeoutId);
-
-      //targetにマウスが乗った時に、targetが開いている場合はクリア
       if (wrapper.classList.contains(this.options.openClass)) {
         return;
       }
       if (gsap.isTweening(target)) {
         const currentTween = gsap.getTweensOf(target)[0];
         const progress = currentTween.progress();
-
-        // 進捗が50%以上の場合は処理をキャンセル
-        if (progress >= 0.5) {
+        // 進捗が80%以上の場合は処理をキャンセル
+        if (progress >= 0.8) {
           return;
         }
-
         gsap.killTweensOf(target);
+        this.dropdownOpen(wrapper, target, animationType);
       }
-      this.dropdownOpen(wrapper, target, animationType);
-
     });
-
-
-
-
   }
 
   clickInit(wrapper, trigger, target, animationType) {
-    // triggerのクリックイベント
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation(); // クリックイベントの伝播を止める
@@ -127,10 +131,8 @@ export default class Dropdown {
       }
     });
 
-    // ドキュメントのクリックイベント
     const handleClickOutside = (e) => {
       if (!wrapper.classList.contains(this.options.openClass)) return;
-
       // triggerとtarget以外をクリックした場合に閉じる
       if (!target.contains(e.target) && !trigger.contains(e.target)) {
         this.dropdownClose(wrapper, target, animationType);
@@ -169,7 +171,6 @@ export default class Dropdown {
     if (animationType === 'none') {
       return;
     }
-
 
     if (animationType === 'slide') {
       this.animationSlideUp(target);
@@ -224,7 +225,6 @@ export default class Dropdown {
   }
 
   animationSlideUp(target) {
-
     gsap.to(target, {
       duration: 0.3,
       clipPath: 'inset(0 0 100% 0)',
@@ -232,6 +232,4 @@ export default class Dropdown {
       ease: 'power2.out',
     });
   }
-
-
 }
