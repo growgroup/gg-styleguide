@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
 
   const configs = {
     mode: argv.mode,
-
+    stats:'minimal',
     context: __dirname + '/app/',
     entry: {
       app: __dirname + '/app/assets/js/app.js',

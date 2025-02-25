@@ -98,7 +98,7 @@ var config = {
       // }),
       webpackDevMiddleware(styleCompiler, {
         publicPath: '/',
-        stats: {colors: true}
+        stats: 'minimal',
       }),
 
       // webpackHotMiddleware(jsCompiler),
