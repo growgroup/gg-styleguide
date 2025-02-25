@@ -9,6 +9,6 @@ module.exports = {
   ],
   "rules": {
     "custom/replace-assets-path": true,
-    "custom/line-height-unit-change": true
+    "custom/line-height-unit-change": [true, { "severity": "warning" }]
   }
 }

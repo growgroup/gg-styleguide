@@ -30,24 +30,30 @@ const ruleFunction = (primaryOption, _, context) => {
         return;
       }
 
-      if (matched) {
-        stylelint.utils.report({
-          ruleName,
-          result,
-          message: messages.expected,
-          node: decl,
-        });
+      // %を除去して数値変換
+      const unitDelete = decl.value.toString().replace(/%/i, '');
+      const numberValue = Number(unitDelete);
 
-        if (context.fix) {
-          // 文字列変換して%を取る
-          const unitDelete = decl.value.toString().replace(/%/i, '');
-          // 100で割る
-          const changeResult = (Number(unitDelete) / 100).toString();
+      // 数値変換が失敗してNaNの場合は、エラー報告もせずにそのまま返す
+      if (isNaN(numberValue)) {
+        return;
+      }
 
-          return decl.value = changeResult;
-        }
+      // エラー報告
+      stylelint.utils.report({
+        ruleName,
+        result,
+        message: messages.expected,
+        node: decl,
+      });
+
+      if (context.fix) {
+        // 100で割る
+        const changeResult = (numberValue / 100).toString();
+        decl.value = changeResult;
       }
     });
+
 
     if (!validOptions) {
       return;
