@@ -74,13 +74,13 @@
 // 値をvwに変換する関数
 @function vw-calc($value, $viewport: 1400) {
   // 単位を取り除きvwを掛ける
-  @return strip-unit($value) / strip-unit($viewport) * 100vw;
+  @return calc(strip-unit($value) / strip-unit($viewport)) * 100vw;
 }
 
 // 値をcqwに変換する関数
 // container-type を指定したコンテナのデザイン上の幅を第2引数に指定すること
 @function cqw-calc($value, $container-width: 1400) {
-  @return strip-unit($value) / strip-unit($container-width) * 100cqw;
+  @return calc(strip-unit($value) / strip-unit($container-width)) * 100cqw;
 }
 
 // レスポンシブな最小値を生成するmin関数

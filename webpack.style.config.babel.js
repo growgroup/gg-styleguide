@@ -66,6 +66,13 @@ module.exports = (env, argv) => {
             },
             {
               loader: 'sass-loader',
+              options: {
+                // dart-sassのJS APIに渡すオプション
+                sassOptions: {
+                  silenceDeprecations:['mixed-decls']
+                  // silenceDeprecations: ['DEPRECATION_MIXED_DECLARATIONS']
+                }
+              }
             }
           ],
         },
