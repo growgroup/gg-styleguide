@@ -157,7 +157,7 @@
 // u-text-link と .l-post-content a は同じスタイルを適用する
 @mixin text-link{
   color: $color-primary;
-  text-decoration: underline;
+  text-decoration-line: underline;
   cursor: pointer;
   @include hover(){
   }
