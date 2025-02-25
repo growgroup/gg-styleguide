@@ -41,7 +41,7 @@ strong,
 
 del,
 .u-text-del {
-  text-decoration: line-through;
+  text-decoration-line: line-through;
 }
 
 // テキスト - リンク
@@ -51,7 +51,7 @@ del,
 .u-text-link {
   color: $color-primary;
   font-weight: 400;
-  text-decoration: underline;
+  text-decoration-line: underline;
   cursor: pointer;
 }
 
