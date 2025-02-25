@@ -46,15 +46,13 @@ del,
 
 // テキスト - リンク
 // Styleguide 1.2.5
-
-:where(a),
+// aタグには直接スタイルを当てない
 .u-text-link {
-  color: $color-primary;
-  font-weight: 400;
-  text-decoration-line: underline;
-  cursor: pointer;
+  // u-text-link と .l-post-content a は同じスタイルを適用する
+  @include text-link();
 }
 
+// u-text-link には アイコン用のスタイルを追加する
 .u-text-link {
   &.is-pdf {
 
@@ -83,31 +81,20 @@ del,
   }
 }
 
-:where(a),.u-text-link{
-  @include hover(){
-    opacity: 0.5;
-  }
-}
 .u-text-link.is-hover {
-  opacity: 0.5;
-}
-
-:where(a):any-link:active,
-.u-text-link:active,
-.u-text-link.is-active {
-  // color: darken($color-primary, 10);
+  opacity: $base-hover-opacity;
 }
 
 .u-hover-disabled, .u-pointer-events-none {
   pointer-events: none;
 }
 
-// p a:visited {
-//   color: #887EBF;
-// }
-
 
 // 用途別テキストカラー
+.u-text-primary {
+  color: $color-primary;
+}
+
 .u-text-danger {
   color: $color-state-danger;
 }
