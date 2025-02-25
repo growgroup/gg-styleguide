@@ -27,9 +27,9 @@ header(class=className)
         li.l-header__mainmenu-item: +a("/twocolumns/") 2COLUMN
         li.l-header__mainmenu-item: +a("/news/") NEWS
         li.l-header__mainmenu-item: +a("/archive-twocolumns/") ARCHIVE2
-        li.l-header__mainmenu-item
-          +a("/format/") FORMAT
-          .l-header__submenu
+        li.l-header__mainmenu-item.js-dropdown
+          +a("/format/")(data-dropdown-trigger="trigger") FORMAT
+          .l-header__submenu(data-dropdown-target="target")
             .l-header__submenu-outer
               .l-header__submenu-title
                 span FORMAT
@@ -42,6 +42,13 @@ header(class=className)
                   +a("/blocks/").l-header__submenu-block
                     .l-header__submenu-image: +img("img-sample.jpg", "ブロック編集ページ")
                     span ブロック編集ページ
+      .l-header__lang
+        .c-lang-selector.js-dropdown.js-dropdown-text-sync(data-dropdown-event="click", data-dropdown-animation="slide")
+          button.c-lang-selector__trigger(type="button", data-dropdown-trigger="trigger") Language
+          .c-lang-selector__content(data-dropdown-target="target")
+            ul.c-lang-selector__list
+              li.c-lang-selector__item: +a("/").c-lang-selector__link.is-current 日本語
+              li.c-lang-selector__item: +a("/en/").c-lang-selector__link English
       button.l-header__search.js-header-searchform-open(aria-label="キーワードから検索") <span>キーワードから検索</span>
       +a("/contact/").l-header__button.c-button.is-sm <span class="c-icon-font">mail</span>お問い合わせ
 
