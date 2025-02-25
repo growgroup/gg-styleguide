@@ -4,14 +4,14 @@
 
   display: flex;
   align-items: center;
-  height: rem-calc(72);
+  height: 72px;
   width: 100%;
   margin: auto;
   position: relative;
   background: $color-white;
 
   @include breakpoint(small only) {
-    height: rem-calc(46);
+    height: 46px;
   }
 
   &__label {
@@ -20,18 +20,18 @@
 
   &__icon {
     @include icon-font();
-    font-size: rem-calc(24);
+    font-size: 24px;
     color: $font-base-color;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: rem-calc(20);
+    padding: 20px;
     box-sizing: content-box;
 
     @include breakpoint(small only) {
-      padding: rem-calc(10);
+      padding: 10px;
       span {
-        font-size: rem-calc(20);
+        font-size: 20px;
       }
     }
   }
@@ -41,39 +41,39 @@
     border-left: solid 1px $border-base-color;
     font-family: inherit;
     position: relative;
-    height: rem-calc(40);
-    padding-left: rem-calc(22);
+    height: 40px;
+    padding-left: 22px;
     line-height: 1;
     @include breakpoint(small only) {
-      height: rem-calc(22);
+      height: 22px;
       padding-top: 0;
-      padding-bottom: rem-calc(4);
+      padding-bottom: 4px;
     }
 
     &::placeholder {
       line-height: 1;
       color: $color-gray;
       @include breakpoint(small only) {
-        font-size: rem-calc(11);
+        font-size: 11px;
       }
     }
   }
 
   button {
-    width: rem-calc(130);
+    width: 130px;
     flex-shrink: 0;
     background: $color-primary;
     border: none;
     padding: 0;
     color: $color-white;
-    font-size: rem-calc(16);
+    font-size: 16px;
     font-weight: bold;
     height: 100%;
     @include transition-colors(0.2s);
 
     @include breakpoint(small only) {
-      width: rem-calc(78);
-      font-size: rem-calc(12);
+      width: 78px;
+      font-size: 12px;
     }
 
 
@@ -86,12 +86,12 @@
 
   &.is-sm{
     @include breakpoint(medium up) {
-      height: rem-calc(56);
+      height: 56px;
     }
 
     input {
       @include breakpoint(medium up) {
-        height: rem-calc(32);
+        height: 32px;
       }
     }
   }

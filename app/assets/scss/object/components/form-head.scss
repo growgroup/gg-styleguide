@@ -10,12 +10,12 @@
   }
 
   &__title{
-    font-size: rem-calc(24);
+    font-size: 24px;
     letter-spacing: 0.1em;
     line-height: math.div(42, 24)*1;
     margin-top: 0;
     @include breakpoint(medium down) {
-      font-size: rem-calc(18);
+      font-size: 18px;
     }
   }
 
@@ -23,18 +23,18 @@
     display: flex;
     @include breakpoint(medium down) {
       justify-content: center;
-      margin-top: rem-calc(24);
+      margin-top: 24px;
     }
   }
 
   &__item{
-    padding-left: rem-calc(70);
+    padding-left: 70px;
     position: relative;
     @include breakpoint(medium down) {
-      padding-left: rem-calc(30);
+      padding-left: 30px;
     }
     &:first-of-type{
-      padding-left: rem-calc(0);
+      padding-left: 0px;
       &::before{
         display: none;
       }
@@ -42,41 +42,41 @@
     &::before{
       content: "";
       position: absolute;
-      top: rem-calc(15);
+      top: 15px;
       left: 0;
       margin:auto;
-      width: rem-calc(35);
-      height: rem-calc(1);
+      width: 35px;
+      height: 1px;
       transform: translateX(50%);
       background: $color-primary;
       @include breakpoint(medium down) {
-        width: rem-calc(15);
+        width: 15px;
       }
     }
     &-number{
-      width: rem-calc(30);
-      height: rem-calc(30);
+      width: 30px;
+      height: 30px;
       color: $color-white;
       background: $color-gray;
       border-radius: 1000px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: rem-calc(14);
+      font-size: 14px;
       margin:auto;
       @include breakpoint(medium down) {
-        width: rem-calc(24);
-        height: rem-calc(24);
-        font-size: rem-calc(12);
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
       }
     }
     &-text{
-      font-size: rem-calc(14);
+      font-size: 14px;
       letter-spacing: 0.1em;
       line-height: math.div(24, 14)*1;
-      margin-top: rem-calc(10);
+      margin-top: 10px;
       @include breakpoint(medium down) {
-        font-size: rem-calc(12);
+        font-size: 12px;
       }
     }
   }

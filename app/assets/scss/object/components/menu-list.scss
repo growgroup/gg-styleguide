@@ -10,7 +10,7 @@ category: Navigation
     background-color: $color-primary;
     color: $color-white;
     font-weight: 700;
-    padding: rem-calc(12) rem-calc(16);
+    padding: 12px 16px;
   }
 
   &__list{
@@ -23,7 +23,7 @@ category: Navigation
       color: $font-base-color;
       font-weight: 700;
       display: block;
-      padding: rem-calc(14) rem-calc(16) rem-calc(14) rem-calc(36);
+      padding: 14px 16px 14px 36px;
       position: relative;
       @include transition(.2s);
 
@@ -33,7 +33,7 @@ category: Navigation
         color: $color-primary;
         position: absolute;
         top: 50%;
-        left: rem-calc(16);
+        left: 16px;
         transform: translateY(-50%);
       }
 
@@ -76,7 +76,7 @@ category: Navigation
     //*サブメニュー
     ul {
       border-top: 1px solid $border-base-color;
-      padding: rem-calc(8) 0;
+      padding: 8px 0;
 
       li {
         border-bottom: none;
@@ -84,11 +84,11 @@ category: Navigation
 
       a {
         font-weight: 400;
-        padding: rem-calc(5) rem-calc(24) rem-calc(5) rem-calc(48);
+        padding: 5px 24px 5px 48px;
 
         &::before {
-          left: rem-calc(32);
-          top: rem-calc(4);
+          left: 32px;
+          top: 4px;
         }
 
         &::after {
@@ -101,7 +101,7 @@ category: Navigation
 
   //*バナー
   &__banners {
-    margin-top: rem-calc(8);
+    margin-top: 8px;
   }
 
   &__block {
@@ -109,10 +109,10 @@ category: Navigation
     text-decoration: none;
     color: $color-primary;
     background-color: rgba($color-primary, 0.2);
-    font-size: rem-calc(14);
-    min-height: rem-calc(64);
+    font-size: 14px;
+    min-height: 64px;
     align-items: center;
-    padding: rem-calc(8) rem-calc(32) rem-calc(8) rem-calc(16);
+    padding: 8px 32px 8px 16px;
     position: relative;
 
     &::after {
@@ -121,14 +121,14 @@ category: Navigation
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: rem-calc(16);
-      font-size: rem-calc(16);
+      right: 16px;
+      font-size: 16px;
     }
   }
 
   //*サブメニュー
   &__submenu {
-    padding-left: rem-calc(24);
+    padding-left: 24px;
     border-bottom: 1px solid $border-base-color;
     display: none;
 
@@ -140,12 +140,12 @@ category: Navigation
 
     a {
       font-weight: 400;
-      font-size: rem-calc(14);
-      padding: rem-calc(20) rem-calc(16) rem-calc(20) rem-calc(20);
+      font-size: 14px;
+      padding: 20px 16px 20px 20px;
 
       &::before {
         left: 0;
-        top: rem-calc(20);
+        top: 20px;
       }
 
       &::after {
@@ -155,18 +155,18 @@ category: Navigation
   }
 
   &__search {
-    padding: rem-calc(20) rem-calc(16) rem-calc(30);
+    padding: 20px 16px 30px;
     border: 1px solid $color-border;
   }
 
   &__keyword {
     display: flex;
     flex-wrap: wrap;
-    gap: rem-calc(5) rem-calc(8);
-    font-size: rem-calc(14);
+    gap: 5px 8px;
+    font-size: 14px;
 
     @include breakpoint(small down) {
-      font-size: rem-calc(13);
+      font-size: 13px;
     }
   }
 }

@@ -13,11 +13,11 @@ category: Other
   }
 
   &__btn {
-    width: rem-calc(44);
-    margin-right: rem-calc(20);
+    width: 44px;
+    margin-right: 20px;
     @include transition(.3s,ease-out);
     @include breakpoint(small only) {
-      margin-right: rem-calc(8);
+      margin-right: 8px;
     }
   }
 }

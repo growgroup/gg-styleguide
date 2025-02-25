@@ -9,9 +9,9 @@ hr,
   border: none;
   border-top: 1px solid $border-base-color;
   box-shadow: none;
-  margin: rem-calc(48) auto;
+  margin: 48px auto;
   @include breakpoint(small only) {
-    margin: rem-calc(32) auto;
+    margin: 32px auto;
   }
 
   &.is-border-dotted {

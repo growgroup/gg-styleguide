@@ -1,31 +1,31 @@
 .c-search-result-aside {
-  padding-top: rem-calc(48);
+  padding-top: 48px;
 
   @include breakpoint(small down) {
-    padding-top: rem-calc(32);
+    padding-top: 32px;
   }
 
   &__popular{
-    padding: rem-calc(20) rem-calc(16) rem-calc(30);
+    padding: 20px 16px 30px;
     border: 1px solid $color-border;
   }
 
   &__title{
     text-align: center;
-    font-size: rem-calc(18);
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
   }
 
   &__keyword{
     display: flex;
     flex-wrap: wrap;
-    gap: rem-calc(5) rem-calc(8);
-    font-size: rem-calc(14);
+    gap: 5px 8px;
+    font-size: 14px;
 
     @include breakpoint(small down) {
-      font-size: rem-calc(13);
+      font-size: 13px;
     }
   }
 

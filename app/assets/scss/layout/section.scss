@@ -75,7 +75,7 @@ $sizes: (
 
 
 .l-section.is-scroll-margin-responsive {
-  scroll-margin-top: rem-calc(200);
+  scroll-margin-top: 200px;
   @include breakpoint(small only) {
     scroll-margin-top: 0;
   }
@@ -84,11 +84,11 @@ $sizes: (
 
 //検索結果
 .l-section.is-search-result {
-  padding-top: rem-calc(48);
-  padding-bottom: rem-calc(80);
+  padding-top: 48px;
+  padding-bottom: 80px;
 
   @include breakpoint(medium down) {
-    padding-top: rem-calc(32);
-    padding-bottom: rem-calc(40);
+    padding-top: 32px;
+    padding-bottom: 40px;
   }
 }

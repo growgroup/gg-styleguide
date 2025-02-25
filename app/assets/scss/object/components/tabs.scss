@@ -13,12 +13,12 @@ category: Tabs
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: rem-calc(56);
+    margin-bottom: 56px;
 
     li {
       width: 50%;
-      max-width: rem-calc(276);
-      margin-bottom: rem-calc(8);
+      max-width: 276px;
+      margin-bottom: 8px;
       border: 2px solid $color-primary;
       @include breakpoint(small only) {
         border-width: 1px;
@@ -31,25 +31,25 @@ category: Tabs
       text-align: center;
       text-decoration: none;
       display: block;
-      padding: rem-calc(10) rem-calc(24);
+      padding: 10px 24px;
       position: relative;
       @include transition();
       @include breakpoint(small only) {
-        padding: rem-calc(6) rem-calc(24);
+        padding: 6px 24px;
       }
 
       &::after {
         content: "expand_more";
         @include icon-font();
         position: absolute;
-        font-size: rem-calc(24);
+        font-size: 24px;
         font-weight: 400;
-        right: rem-calc(16);
+        right: 16px;
         top: calc(50% + 1px);
         transform: translateY(-50%);
         @include transition();
         @include breakpoint(small only) {
-          font-size: rem-calc(24)*0.8;
+          font-size: 24px*0.8;
         }
       }
 
@@ -105,21 +105,21 @@ category: Tabs
     #{$c}__navs {
       li {
         width: inherit;
-        min-width: rem-calc(160);
+        min-width: 160px;
         border-width: 1px;
         border-bottom: none;
-        margin: 0 rem-calc(8) 0 0;
+        margin: 0 8px 0 0;
         @include breakpoint(small only) {
           width: inherit;
           min-width: inherit;
           border: 1px solid $color-primary;
-          margin-bottom: rem-calc(8);
+          margin-bottom: 8px;
         }
       }
     }
 
     a {
-      font-size: rem-calc(14);
+      font-size: 14px;
       letter-spacing: 0.1em;
 
       &::after {

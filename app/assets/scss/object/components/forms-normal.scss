@@ -2,9 +2,9 @@
 
 .c-forms-normal {
   &__block {
-    margin-bottom: rem-calc(48);
+    margin-bottom: 48px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(32);
+      margin-bottom: 32px;
     }
     &:last-child {
       margin-bottom: 0;
@@ -12,16 +12,16 @@
   }
 
   &__title {
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(12);
+      margin-bottom: 12px;
     }
   }
 
   &__label {
     display: inline-block;
     color: #f00;
-    margin-left: rem-calc(5);
+    margin-left: 5px;
   }
 
   &__content {
@@ -29,7 +29,7 @@
       background-color: #F9F9F9;
       border-color: #ECECEC;
       border-radius: 4px;
-      font-size: rem-calc(16);
+      font-size: 16px;
       letter-spacing: 0.05em;
       line-height: math.div(28, 16)*1;
       &:focus {
@@ -42,19 +42,19 @@
   &__input {
     width: 100%;
     &.is-sm {
-      width: rem-calc(180);
+      width: 180px;
     }
     input {
-      padding: rem-calc(19) rem-calc(32);
+      padding: 19px 32px;
       @include breakpoint(small only) {
-        padding: rem-calc(16);
+        padding: 16px;
       }
     }
   }
   //セレクトボックス
   &__select {
     select {
-      height: rem-calc(68);
+      height: 68px;
       box-shadow: none;
     }
   }
@@ -67,15 +67,15 @@
     label {
       display: flex;
       align-items: center;
-      margin-right: rem-calc(64);
+      margin-right: 64px;
       @include breakpoint(small only) {
-        margin-right: rem-calc(48);
-        margin-bottom: rem-calc(8);
+        margin-right: 48px;
+        margin-bottom: 8px;
       }
     }
     input {
-      margin-right: rem-calc(8);
-      margin-top: rem-calc(2);
+      margin-right: 8px;
+      margin-top: 2px;
     }
 
     span {
@@ -88,25 +88,25 @@
   }
   &__checkbox {
     input {
-      margin-right: rem-calc(6);
-      margin-top: rem-calc(4);
+      margin-right: 6px;
+      margin-top: 4px;
     }
   }
   // テキストエリア
   &__textarea {
     textarea {
-      padding: rem-calc(19) rem-calc(32);
+      padding: 19px 32px;
       @include breakpoint(small only) {
-        padding: rem-calc(16);
+        padding: 16px;
       }
     }
   }
   // 個人情報保護方針
   &__privacy {
-    margin-top: rem-calc(86);
+    margin-top: 86px;
     text-align: center;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
     a {
       font-weight: 400;
@@ -117,45 +117,45 @@
   &__flexbox {
     display: flex;
     align-items: center;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     &:last-child {
       margin-bottom: 0;
     }
     .c-forms-normal__input {
-      margin-right: rem-calc(16);
+      margin-right: 16px;
       &:last-child {
         margin-right: 0;
       }
     }
 
     span {
-      min-width: rem-calc(120);
+      min-width: 120px;
       @include breakpoint(small only) {
         min-width: 100%;
-        margin-bottom: rem-calc(8);
+        margin-bottom: 8px;
       }
     }
   }
   // 住所自動入力ボタン
   &__button {
-    max-width: rem-calc(150);
+    max-width: 150px;
     border: 1px solid $font-base-color;
     outline: none;
     background-color: $color-white;
-    padding: rem-calc(3) rem-calc(12);
+    padding: 3px 12px;
     display: block;
     text-align: center;
-    margin-left: rem-calc(16);
+    margin-left: 16px;
     @include breakpoint(small only) {
-      padding: rem-calc(9) rem-calc(12);
+      padding: 9px 12px;
     }
   }
   // 送信ボタン
   &__submit {
     text-align: center;
-    margin-top: rem-calc(48);
+    margin-top: 48px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
     //横並び
     &.is-two-columns {

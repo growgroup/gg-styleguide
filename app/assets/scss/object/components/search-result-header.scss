@@ -1,15 +1,15 @@
 .c-search-result-header {
-  padding: rem-calc(46) 0 0;
+  padding: 46px 0 0;
 
   &__title{
   }
 
   &__form{
     background-color: $color-background;
-    padding: rem-calc(24);
+    padding: 24px;
 
     @include breakpoint(small down) {
-      padding: rem-calc(16) rem-calc(20);
+      padding: 16px 20px;
     }
   }
 

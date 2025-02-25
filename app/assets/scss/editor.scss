@@ -10,8 +10,8 @@
   //min-width: $grid-row-width !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-top: rem-calc(12);
-  padding-bottom: rem-calc(12);
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-family: $font-base-family !important;
   overflow: scroll;
   margin-top: 0 !important;
@@ -25,13 +25,13 @@
     //&.post-type-hoge, //他投稿タイプ
   &.mce-content-body.acf_content //ACF tinyMce
   {
-    //max-width: rem-calc(736);
+    //max-width: 736px;
     @include l-post-content;
   }
 
   //コンテンツ幅調整
   &.post-type-post {
-    //max-width: rem-calc(736);
+    //max-width: 736px;
   }
 
   //アコーディオン 開放
@@ -52,18 +52,18 @@
 
   &:is(.post-type-post,.growp-post-content) :is(.is-root-container,.mce-content-body) //投稿画面
   {
-    //max-width: rem-calc(736);
+    //max-width: 736px;
     @include l-post-content;
   }
 
   //コンテンツ幅調整
   &.post-type-post {
-    //max-width: rem-calc(736);
+    //max-width: 736px;
   }
 
   ////固定ページ
   //&.post-type-page {
-  //  //max-width: rem-calc(1080);
+  //  //max-width: 1080px;
   //}
 
 }

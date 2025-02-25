@@ -8,15 +8,15 @@ category: PostContent
 
 .c-box-share {
   width: 100%;
-  min-height: rem-calc(270);
+  min-height: 270px;
   background: url("../images/img-sample.jpg");
   @include bg-option();
   position: relative;
   text-align: center;
-  margin: rem-calc(48) 0;
+  margin: 48px 0;
   @include breakpoint(small only) {
-    margin: rem-calc(24) 0;
-    min-height: rem-calc(200);
+    margin: 24px 0;
+    min-height: 200px;
   }
   &::after {
     content: "";
@@ -39,13 +39,13 @@ category: PostContent
   &__title {
     color: $color-white;
     font-weight: 700;
-    font-size: rem-calc(24);
+    font-size: 24px;
     letter-spacing: 0.1em;
     line-height: 1.5;
-    margin-bottom: rem-calc(20);
+    margin-bottom: 20px;
     @include breakpoint(small only) {
-      font-size: rem-calc(20);
-      margin-bottom: rem-calc(14);
+      font-size: 20px;
+      margin-bottom: 14px;
     }
   }
 }

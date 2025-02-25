@@ -31,17 +31,17 @@ category: Base
 
     th {
       text-align: left;
-      padding: rem-calc(10) rem-calc(16);
+      padding: 10px 16px;
       @include breakpoint(small only) {
-        padding: rem-calc(5) rem-calc(8);
+        padding: 5px 8px;
       }
     }
 
     td {
       text-align: center;
-      padding: rem-calc(10) rem-calc(8);
+      padding: 10px 8px;
       @include breakpoint(small only) {
-        padding: rem-calc(5) rem-calc(4);
+        padding: 5px 4px;
       }
     }
   }
@@ -49,11 +49,11 @@ category: Base
   tbody {
     th,
     td {
-      padding: rem-calc(18) rem-calc(8);
+      padding: 18px 8px;
       font-weight: 400;
       text-align: center;
       @include breakpoint(small only) {
-        padding: rem-calc(8) rem-calc(4);
+        padding: 8px 4px;
       }
     }
 

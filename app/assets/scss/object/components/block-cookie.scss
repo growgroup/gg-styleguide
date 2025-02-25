@@ -5,13 +5,13 @@
   bottom: 0;
   width: 100%;
   background: rgba($font-base-color, .8);
-  padding: rem-calc(14) 0;
+  padding: 14px 0;
   opacity: 0;
   visibility: hidden;
   @include transition();
 
   @include breakpoint(small only) {
-    padding: rem-calc(20) 0;
+    padding: 20px 0;
   }
 
   &.is-fixed {
@@ -42,13 +42,13 @@
 
     @include breakpoint(small only) {
       @include font-format(10,.08,18,400);
-      margin-bottom: rem-calc(16);
+      margin-bottom: 16px;
     }
   }
 
   &__button {
     flex: none;
-    margin-left: rem-calc(32);
+    margin-left: 32px;
 
     @include breakpoint(small only) {
       width: 100%;
@@ -62,13 +62,13 @@
       align-items: center;
       justify-content: center;
       color: $color-white;
-      padding: rem-calc(15) rem-calc(100);
+      padding: 15px 100px;
       background: $color-gray;
 
       @include breakpoint(small only) {
         width: 100%;
         @include font-format(12,.12,18,400);
-        padding: rem-calc(14) rem-calc(100);
+        padding: 14px 100px;
       }
     }
   }

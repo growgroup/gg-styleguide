@@ -32,11 +32,11 @@ $form-controls-active-border-color: #0097D8;
 
 //input, textareaの共通スタイル
 @mixin form-controls-input-style {
-  padding: rem-calc(10) rem-calc(16);
+  padding: 10px 16px;
   @include form-controls-common-style;
 
   @include breakpoint(small down) {
-    padding: rem-calc(9) rem-calc(12);
+    padding: 9px 12px;
   }
 }
 
@@ -65,15 +65,15 @@ textarea {
 
 // ファイル選択
 input[type="file"] {
-  font-size: rem-calc(12);
+  font-size: 12px;
 
   &::file-selector-button {
     background-color: #F9F9F9;
     background-image: linear-gradient(135deg, #FFF 0%, #FFF 80%, #EFEFEF 100%);
     border-radius: 4px;
     border: 1px solid #bababa;
-    padding: rem-calc(2) rem-calc(16) rem-calc(4);
-    margin-right: rem-calc(16);
+    padding: 2px 16px 4px;
+    margin-right: 16px;
     color: $color-black;
     line-height: 1.46666;
 
@@ -88,7 +88,7 @@ input[type="file"] {
 //
 // Styleguide 1.6.2
 textarea {
-  min-height: rem-calc(140);
+  min-height: 140px;
   display: block;
 }
 
@@ -138,8 +138,8 @@ input[type="radio"] {
 // Styleguide 1.6.5
 select {
   display: block;
-  height: rem-calc(44);
-  padding: rem-calc(10) rem-calc(16);
+  height: 44px;
+  padding: 10px 16px;
   text-transform: none;
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
@@ -149,7 +149,7 @@ select {
   @include form-controls-common-style();
 
   @include breakpoint(small down) {
-    padding: rem-calc(9) rem-calc(12);
+    padding: 9px 12px;
   }
 }
 
@@ -159,7 +159,7 @@ select {
 
   //スマホだけ文字サイズを変更したいとき
   //@include breakpoint(small down) {
-  //  font-size: rem-calc(14);
+  //  font-size: 14px;
   //}
 }
 

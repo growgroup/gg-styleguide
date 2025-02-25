@@ -1,14 +1,14 @@
 // パンくずナビゲーション
 // Styleguide 2.3.0
 .c-breadcrumb {
-  padding: rem-calc(12) 0;
+  padding: 12px 0;
   @include breakpoint(medium down) {
 
   }
 
   &__inner {
     //三点リーダーの色を変更したい場合はここにcolorを入れる
-    font-size: rem-calc(12);
+    font-size: 12px;
     line-height: 1.5;
 
     @include breakpoint(small only) {
@@ -17,8 +17,8 @@
 
     span {
       &.is-arrow {
-        margin:0 rem-calc(8);
-        font-size: rem-calc(10);
+        margin:0 8px;
+        font-size: 10px;
         line-height: 1;
         vertical-align: middle;
         span {

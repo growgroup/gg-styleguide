@@ -8,7 +8,7 @@ category: Components
 .c-accordion {
   display: grid;
   grid-template-columns: 1fr;
-  gap: rem-calc(16); //ブロック間
+  gap: 16px; //ブロック間
 
   &__block{
     border: solid 1px $color-border;
@@ -20,12 +20,12 @@ category: Components
     display: flex;
     align-items: center;
     font-weight: 700;
-    gap: rem-calc(16);
-    padding: rem-calc(16) rem-calc(48) rem-calc(16) rem-calc(24);
+    gap: 16px;
+    padding: 16px 48px 16px 24px;
     position: relative;
 
     @include breakpoint(small only) {
-      padding: rem-calc(16) rem-calc(32) rem-calc(12) rem-calc(16);
+      padding: 16px 32px 12px 16px;
     }
 
     //*矢印
@@ -37,9 +37,9 @@ category: Components
       margin: auto 0;
       top: 0;
       bottom: 0;
-      right: rem-calc(24);
+      right: 24px;
       @include breakpoint(small only) {
-        right: rem-calc(16);
+        right: 16px;
       }
     }
 
@@ -57,14 +57,14 @@ category: Components
 
   //アイコン共通
   &__title-icon, &__content-icon{
-    width: rem-calc(40);
-    height: rem-calc(40);
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     display: grid;
     place-items: center;
     background-color: $color-primary;
     color: $color-white;
-    font-size: rem-calc(24);
+    font-size: 24px;
     @include webfont();
     font-weight: 400;
     letter-spacing: 0;
@@ -77,18 +77,18 @@ category: Components
 
   //コンテンツ
   &__content-wrapper{
-    padding: 0 rem-calc(24) rem-calc(16) rem-calc(24);
+    padding: 0 24px 16px 24px;
 
     @include breakpoint(small only) {
-      padding: 0 rem-calc(16) rem-calc(12) rem-calc(16);
+      padding: 0 16px 12px 16px;
     }
   }
 
   &__content{
     border-top: solid 1px $color-border;
-    padding-top: rem-calc(20);
+    padding-top: 20px;
     display: flex;
-    gap: rem-calc(16);
+    gap: 16px;
   }
 
   &__content-inner{

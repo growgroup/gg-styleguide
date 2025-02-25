@@ -7,7 +7,7 @@ category: News
 .c-news {
   @include breakpoint(small only) {
     position: relative;
-    padding-bottom: rem-calc(72);
+    padding-bottom: 72px;
   }
 
   //============================
@@ -17,11 +17,11 @@ category: News
   &__columns {
     display: grid;
     grid-template-columns: 3fr 9fr;
-    gap: rem-calc(36);
+    gap: 36px;
 
     @include breakpoint(small only) {
       grid-template-columns: 1fr;
-      gap: rem-calc(16);
+      gap: 16px;
     }
   }
 
@@ -33,7 +33,7 @@ category: News
   }
 
   &__button {
-    margin-top: rem-calc(56);
+    margin-top: 56px;
     @include breakpoint(small only) {
       margin-top: 0;
       position: absolute;
@@ -42,7 +42,7 @@ category: News
       right: 0;
       text-align: center;
       .c-button {
-        max-width: rem-calc(224);
+        max-width: 224px;
       }
     }
   }
@@ -57,10 +57,10 @@ category: News
     border-bottom: 1px solid $border-base-color;
     display: flex;
     align-items: center;
-    padding: rem-calc(24) 0 rem-calc(16);
+    padding: 24px 0 16px;
     @include breakpoint(small only) {
       flex-wrap: wrap;
-      padding: rem-calc(16) 0 rem-calc(12);
+      padding: 16px 0 12px;
     }
 
     &:first-child {
@@ -81,10 +81,10 @@ category: News
   }
 
   &__label {
-    margin-left: rem-calc(24);
-    margin-right: rem-calc(24);
+    margin-left: 24px;
+    margin-right: 24px;
     @include breakpoint(small only) {
-      margin-left: rem-calc(16);
+      margin-left: 16px;
       margin-right: 0;
 
     }
@@ -96,7 +96,7 @@ category: News
 
     @include breakpoint(small only) {
       width:100%;
-      margin-top: rem-calc(8);
+      margin-top: 8px;
     }
   }
 }
@@ -107,17 +107,17 @@ category: News
     padding-bottom: 0;
 
     .c-news__block {
-      padding: rem-calc(24) 0;
+      padding: 24px 0;
       align-items: flex-start;
       @include breakpoint(small only) {
         align-items: center;
-        padding: rem-calc(12) 0;
+        padding: 12px 0;
       }
     }
 
     .c-news__date {
       flex-shrink: 0;
-      margin-top: rem-calc(6);
+      margin-top: 6px;
       @include breakpoint(small only) {
         margin-top: 0;
       }
@@ -126,22 +126,22 @@ category: News
     .c-news__title {
       flex-grow: 1;
       text-align: center;
-      margin-bottom: rem-calc(40);
+      margin-bottom: 40px;
       @include breakpoint(small only) {
-        margin-bottom: rem-calc(24);
+        margin-bottom: 24px;
       }
     }
 
     .c-news__label {
-      margin-top: rem-calc(2);
+      margin-top: 2px;
     }
 
     .c-news__excerpt {
-      font-size: rem-calc(14);
-      margin-top: rem-calc(8);
+      font-size: 14px;
+      margin-top: 8px;
       @include breakpoint(small only) {
-        font-size: rem-calc(12);
-        margin-top: rem-calc(4);
+        font-size: 12px;
+        margin-top: 4px;
       }
     }
 
@@ -149,7 +149,7 @@ category: News
       text-align: center;
 
       .c-button {
-        max-width: rem-calc(224);
+        max-width: 224px;
       }
     }
   }

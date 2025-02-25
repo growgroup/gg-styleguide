@@ -10,9 +10,9 @@ category: News
     text-decoration: none;
     font-weight: 400;
     color: $font-base-color;
-    padding: rem-calc(24) 0;
+    padding: 24px 0;
     @include breakpoint(small only) {
-      padding: rem-calc(16) 0;
+      padding: 16px 0;
     }
 
     &:first-child {
@@ -27,9 +27,9 @@ category: News
   &__sup {
     display: flex;
     align-items: center;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(8);
+      margin-bottom: 8px;
     }
   }
 
@@ -39,28 +39,28 @@ category: News
 
   &__date {
     @include news-date();
-    margin-left: rem-calc(12);
+    margin-left: 12px;
 
     &::before {
       content: "schedule";
       @include icon-font();
-      margin-right: rem-calc(4);
+      margin-right: 4px;
       vertical-align: top;
     }
   }
 
   &__title {
-    font-size: rem-calc(24);
-    margin-bottom: rem-calc(8);
+    font-size: 24px;
+    margin-bottom: 8px;
     line-height: 1.5;
     @include breakpoint(small only) {
-      font-size: rem-calc(18);
-      margin-bottom: rem-calc(4);
+      font-size: 18px;
+      margin-bottom: 4px;
     }
   }
 
   &__excerpt {
-    font-size: rem-calc(12);
+    font-size: 12px;
   }
 
   // サムネイル有り
@@ -72,12 +72,12 @@ category: News
     }
 
     .c-news-lg__image {
-      width: rem-calc(136);
+      width: 136px;
       flex-shrink: 0;
-      margin-right: rem-calc(24);
+      margin-right: 24px;
       @include breakpoint(small only) {
-        width: rem-calc(100);
-        margin-right: rem-calc(24);
+        width: 100px;
+        margin-right: 24px;
       }
     }
   }

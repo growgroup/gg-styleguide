@@ -11,7 +11,7 @@ category: Base
   width: 100%;
   border-top: 1px solid $border-base-color;
   @include breakpoint(small only) {
-    width: rem-calc(944);
+    width: 944px;
   }
 
   th,
@@ -24,9 +24,9 @@ category: Base
 
     th,
     td {
-      padding: rem-calc(10) rem-calc(16);
+      padding: 10px 16px;
       @include breakpoint(small only) {
-        padding: rem-calc(6) rem-calc(8);
+        padding: 6px 8px;
       }
     }
   }
@@ -34,10 +34,10 @@ category: Base
   tbody {
     th,
     td {
-      padding: rem-calc(20) rem-calc(32);
+      padding: 20px 32px;
       font-weight: 400;
       @include breakpoint(small only) {
-        padding: rem-calc(12) rem-calc(24);
+        padding: 12px 24px;
       }
     }
 

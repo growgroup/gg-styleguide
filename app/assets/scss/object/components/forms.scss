@@ -18,18 +18,18 @@
 // styles
 //============================
 .c-forms {
-  max-width: rem-calc(800);
+  max-width: 800px;
   margin: auto;
-  padding: rem-calc(54) rem-calc(32) rem-calc(58);
+  padding: 54px 32px 58px;
   background: $color-white;
 
   @include breakpoint(small only) {
-    padding: rem-calc(32) rem-calc(16);
+    padding: 32px 16px;
   }
 
   &__inner {
     width: 100%;
-    max-width: rem-calc(500);
+    max-width: 500px;
     margin: auto;
 
     @include breakpoint(small only) {
@@ -39,20 +39,20 @@
 
   &__head {
     font-weight: bold;
-    font-size: rem-calc(30);
-    margin: 0 0 rem-calc(24);
+    font-size: 30px;
+    margin: 0 0 24px;
 
     @include breakpoint(small only) {
-      font-size: rem-calc(24);
+      font-size: 24px;
     }
   }
 
   &__text {
-    font-size: rem-calc(14);
-    margin-bottom: rem-calc(40);
+    font-size: 14px;
+    margin-bottom: 40px;
 
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(24);
+      margin-bottom: 24px;
     }
   }
 
@@ -67,23 +67,23 @@
   &__block {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: rem-calc(4);
+    row-gap: 4px;
 
     &:not(:last-child) {
-      margin-bottom: rem-calc(20);
+      margin-bottom: 20px;
     }
 
     //項目名と項目の横並び
     &.is-horizontal {
       grid-template-columns: minmax(auto, min-content) 1fr;
-      column-gap: rem-calc(60);
+      column-gap: 60px;
 
       @include breakpoint(small only) {
         grid-template-columns: 1fr;
       }
 
       .c-forms__title {
-        min-width: rem-calc(220);
+        min-width: 220px;
         justify-content: space-between;
 
         @include breakpoint(small only) {
@@ -95,10 +95,10 @@
 
   &__title {
     display: flex;
-    gap: rem-calc(8);
+    gap: 8px;
     align-items: baseline;
     align-self: center;
-    font-size: rem-calc(14);
+    font-size: 14px;
     --letter-spacing: 0;
 
 
@@ -110,13 +110,13 @@
   //ラベル
   &__label {
     display: block;
-    min-width: rem-calc(34);
-    padding: rem-calc(3);
+    min-width: 34px;
+    padding: 3px;
     border-radius: 5px;
     background-color: $color-accent; //#F44336
     text-align: center;
     color: $color-white;
-    font-size: rem-calc(12);
+    font-size: 12px;
     line-height: 1;
     --letter-spacing: 0em;
   }
@@ -161,7 +161,7 @@
     }
 
     &.is-sm {
-      width: rem-calc(180);
+      width: 180px;
 
       input {
       }
@@ -188,7 +188,7 @@
     }
 
     &.is-sm {
-      width: rem-calc(180);
+      width: 180px;
     }
   }
 
@@ -207,7 +207,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: rem-calc(10);
+        gap: 10px;
         line-height: 1.2;
         @include breakpoint(small only) {
           flex-direction: column;
@@ -215,7 +215,7 @@
       }
 
       & > span > span > span {
-        width: calc(50% - #{rem-calc(5)});
+        width: calc(50% - #{5px});
         @include breakpoint(small only) {
           width: 100%;
         }
@@ -236,7 +236,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: rem-calc(10);
+      gap: 10px;
       line-height: 1.2;
 
       @include breakpoint(small only) {
@@ -248,7 +248,7 @@
       }
 
       & > span {
-        width: calc(50% - #{rem-calc(5)});
+        width: calc(50% - #{5px});
       }
 
       &.is-vertical {
@@ -267,7 +267,7 @@
       cursor: pointer;
 
       & > span {
-        margin-left: rem-calc(10);
+        margin-left: 10px;
       }
     }
 
@@ -276,7 +276,7 @@
     &.is-border {
       label {
         @include forms-input-common-style;
-        padding: rem-calc(11) rem-calc(8);
+        padding: 11px 8px;
         border: 1px solid $border-base-color;
         border-radius: $border-radius;
       }
@@ -292,8 +292,8 @@
           appearance: none;
           background: $color-white;
           border: 1px solid $border-base-color;
-          width: rem-calc(20);
-          height: rem-calc(20);
+          width: 20px;
+          height: 20px;
           position: relative;
 
           &:checked {
@@ -333,7 +333,7 @@
               place-content: center;
               background: $color-primary;
               color: $color-white;
-              font-size: rem-calc(20);
+              font-size: 20px;
             }
           }
         }
@@ -342,9 +342,9 @@
   }
 
   &__note {
-    margin-top: rem-calc(4);
+    margin-top: 4px;
     opacity: 0.6;
-    font-size: rem-calc(12);
+    font-size: 12px;
 
     small {
       font-size: inherit;
@@ -353,11 +353,11 @@
 
 
   &__privacy {
-    margin-top: rem-calc(24);
+    margin-top: 24px;
     text-align: center;
 
     input {
-      margin-right: rem-calc(10);
+      margin-right: 10px;
     }
 
     a {
@@ -370,26 +370,26 @@
   &__flex-al {
     display: flex;
     align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
-    gap: rem-calc(16);
+    gap: 16px;
   }
 
   &__flex-al-label{
     flex-shrink: 0;
-    width: rem-calc(32);
+    width: 32px;
     text-align: right;
-    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
   }
 
   &__flex-al-unit{
     flex-shrink: 0;
-    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
   }
 
   &__flexbox {
     display: flex;
     align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
-    margin-bottom: rem-calc(16);
-    gap: rem-calc(16);
+    margin-bottom: 16px;
+    gap: 16px;
     @include breakpoint(small only) {
       display: block;
     }
@@ -405,13 +405,13 @@
   }
 
   &__flexbox-label {
-    min-width: rem-calc(120);
+    min-width: 120px;
     display: block;
-    padding-top:calc((#{rem-calc(44)} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
 
     @include breakpoint(small only) {
       min-width: 100%;
-      margin-bottom: rem-calc(8);
+      margin-bottom: 8px;
     }
 
     &.is-sm{
@@ -422,29 +422,29 @@
   // 住所自動入力ボタン
   &__button {
     flex: none;
-    max-width: rem-calc(132);
+    max-width: 132px;
     border: 1px solid $font-base-color;
     outline: none;
     background-color: $color-white;
-    padding: rem-calc(4) rem-calc(12);
+    padding: 4px 12px;
     display: block;
     text-align: center;
     border-radius: 2px;
-    font-size: rem-calc(14);
-    margin-top: calc((#{rem-calc(44)} - #{rem-calc(34)})/2);// （inputの高さ - ボタンの高さ）÷ 2
+    font-size: 14px;
+    margin-top: calc((#{44px} - #{34px})/2);// （inputの高さ - ボタンの高さ）÷ 2
 
     @include breakpoint(small only) {
-      padding: rem-calc(6) rem-calc(12);
-      margin-top: calc((#{rem-calc(44)} - #{rem-calc(38)})/2);// （inputの高さ - ボタンの高さ）÷ 2
+      padding: 6px 12px;
+      margin-top: calc((#{44px} - #{38px})/2);// （inputの高さ - ボタンの高さ）÷ 2
     }
   }
 
   // 送信ボタン
   &__submit {
     text-align: center;
-    margin-top: rem-calc(40);
+    margin-top: 40px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
 
     &__back {

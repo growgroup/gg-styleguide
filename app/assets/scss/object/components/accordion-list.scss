@@ -7,23 +7,23 @@ category: Components
 
 .c-accordion-list {
   &__block {
-    margin-bottom: rem-calc(20);
+    margin-bottom: 20px;
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(16);
+      margin-bottom: 16px;
     }
   }
   &__head {
     display: block;
     cursor: pointer;
-    font-size: rem-calc(20);
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.1em;
     border-bottom: 2px solid rgba($font-base-color,0.5);
-    padding-bottom: rem-calc(12);
+    padding-bottom: 12px;
     @include breakpoint(small only) {
-      font-size: rem-calc(20)*0.8;
+      font-size: 20px*0.8;
       border-width: 1px;
-      padding-bottom: rem-calc(8);
+      padding-bottom: 8px;
     }
 
     &::-webkit-details-marker{
@@ -33,10 +33,10 @@ category: Components
   &__content {
     ul {
       li {
-        padding: rem-calc(24) rem-calc(8);
+        padding: 24px 8px;
         border-bottom: 1px solid $border-base-color;
         @include breakpoint(small only) {
-          padding: rem-calc(16) rem-calc(8);
+          padding: 16px 8px;
         }
         a {
           font-weight: 400;

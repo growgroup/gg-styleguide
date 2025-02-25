@@ -8,15 +8,15 @@
 
   &__detail {
     background: $color-white;
-    padding: rem-calc(56) calc(62/1140*100%);
+    padding: 56px calc(62/1140*100%);
 
     @include breakpoint(medium down) {
       width: 100%;
-      padding: rem-calc(40) rem-calc(32);
+      padding: 40px 32px;
     }
 
     @include breakpoint(small only) {
-      padding: rem-calc(24) rem-calc(20);
+      padding: 24px 20px;
     }
   }
 
