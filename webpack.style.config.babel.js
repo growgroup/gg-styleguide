@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
 
   const configs = {
     mode: argv.mode,
+    stats:'minimal',
     context: __dirname + '/app/',
     // cache: {
     //     type: 'filesystem',
