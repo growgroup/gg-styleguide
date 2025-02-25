@@ -34,16 +34,12 @@ html {
   scroll-padding-top: var(--header-height); //スクロール位置の調整が不要な場合は 0 にする
 }
 
-* {
+*,
+::before,::after {
   box-sizing: border-box;
   letter-spacing: var(--letter-spacing); //全要素へ基準のletter-spacingを当てる
   min-width: 0;
   text-decoration-thickness: inherit;//from-font の設定値を各要素に適用しやすくする
-
-  &::before,
-  &::after {
-    box-sizing: inherit;
-  }
 }
 
 /**
