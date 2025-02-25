@@ -9,6 +9,7 @@ const webpackStyleConfig = require("./webpack.style.config.babel.js")
 // const jsCompiler = webpack(webpackConfig({}, {mode: 'development'}));
 const styleCompiler = webpack(webpackStyleConfig({}, {mode: 'development'}));
 const browserSync = require("browser-sync")
+const stylelint = require("stylelint");
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
@@ -120,7 +121,13 @@ bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
     bs.reload("*.html")
 });
 
-bs.watch("app/assets/**/*.scss").on("change", function (event) {
+bs.watch("app/assets/**/*.scss").on("change", async function (event) {
+  const results = await stylelint.lint({
+    files: event,
+    formatter: "string",
+    fix: true
+  });
+
   bs.reload("*.css")
 });
 bs.watch("dist/assets/**/*.js").on("change", function () {
