@@ -72,13 +72,6 @@ category: Layout
     }
 
     li {
-      //submenu表示用のhoverは hover mixinの利用を避ける
-      &:hover {
-        .l-header__submenu {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
 
       a {
         font-size: min-vw(14);
@@ -200,6 +193,14 @@ category: Layout
     }
   }
 
+
+  &__lang{
+    font-size: min-vw(14);
+
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
 
   //その他
   &__button {
