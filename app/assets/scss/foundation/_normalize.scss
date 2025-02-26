@@ -34,12 +34,12 @@ html {
   scroll-padding-top: var(--header-height); //スクロール位置の調整が不要な場合は 0 にする
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+*,
+::before,::after {
   box-sizing: border-box;
   letter-spacing: var(--letter-spacing); //全要素へ基準のletter-spacingを当てる
-  min-width: 0; //flexboxのoverflow対策(from destyle.css)
+  min-width: 0;
+  text-decoration-thickness: inherit;//from-font の設定値を各要素に適用しやすくする
 }
 
 /**
@@ -53,9 +53,11 @@ body {
   font-size: $font-base-size;
   font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
-  overflow-wrap: anywhere; /* 収まらない場合に折り返す */
-  word-break: normal; /* 単語の分割はデフォルトに依存 */
-  line-break: strict; /* 禁則処理を厳格に適用 */
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
 
   &.is-slidebar-active {
     overflow: hidden;
@@ -96,7 +98,16 @@ _:lang(x)::-internal-media-controls-overlay-cast-button, body {
    ========================================================================== */
 
 a {
+  // リンクスタイルにデザインを反映する場合はは
+  // 基本は mixin-post-content.scss の text-link() で設定
+  color: inherit;
   text-decoration: none;
+  @include transition();
+
+  // サイト内のすべてのhover時の基本の不透明度
+  @include hover() {
+    opacity: $base-hover-opacity;
+  }
 }
 
 /**
@@ -431,10 +442,6 @@ li {
   margin: 0;
 }
 
-
-a {
-  @include transition();
-}
 
 *.is-indent {
   padding-left: 1em;
