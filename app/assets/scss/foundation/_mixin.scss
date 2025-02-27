@@ -17,15 +17,11 @@
 }
 
 // 値をremに変換する関数
-@function to-rem($value, $base: null) {
+@function to-rem($value, $base: $font-base-size) {
   // 値が数値でない場合の警告
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
     @return $value;
-  }
-  // $base が null または 0 の場合、デフォルト値を設定
-  @if $base == null or strip-unit($base) == 0 {
-    $base: $font-base-size;
   }
   // 値がremでない場合
   @if unit($value) != 'rem' {
