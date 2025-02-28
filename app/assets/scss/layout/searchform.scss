@@ -34,15 +34,15 @@
 
   &__close {
     position: absolute;
-    right: rem-calc(-66);
-    top: rem-calc(-66);
+    right: -66px;
+    top: -66px;
     color: $color-white;
     background: transparent;
     border: none;
     padding: 0;
     @include breakpoint(medium down) {
-      right: rem-calc(-4);
-      top: rem-calc(-48);
+      right: -4px;
+      top: -48px;
     }
 
     @include hover(){

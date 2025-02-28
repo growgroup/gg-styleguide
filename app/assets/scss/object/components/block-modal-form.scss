@@ -139,8 +139,8 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    width: rem-calc(53.2);
-    height: rem-calc(53.2);
+    width: 53.2px;
+    height: 53.2px;
     @include transition();
 
     @include breakpoint(1300px down) {
@@ -156,7 +156,7 @@
     &::before {
       content: "";
       display: block;
-      width: rem-calc(53.2);
+      width: 53.2px;
       height: 1px;
       background: $color-white;
       transform: rotate(45deg);
@@ -169,7 +169,7 @@
     &::after {
       content: "";
       display: block;
-      width: rem-calc(53.2);
+      width: 53.2px;
       height: 1px;
       background: $color-white;
       transform: translateY(-1px) rotate(-45deg);

@@ -16,7 +16,7 @@ category: Navigation
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 rem-calc(-6);
+    margin: 0 -6px;
 
     @include breakpoint(small only) {
       margin: 0;
@@ -53,7 +53,7 @@ category: Navigation
   &.is-next {
 
     .c-anchor-nav__buttons {
-      margin: 0 rem-calc(-16);
+      margin: 0 -16px;
 
       @include breakpoint(small only) {
         margin: 0;

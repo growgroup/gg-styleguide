@@ -192,7 +192,7 @@ Styles for the Modal component.
   }
 
   &__gallery-btn--prev{
-    left: rem-calc(-16);
+    left: -16px;
 
     &::before{
       content: "chevron_left";
@@ -200,7 +200,7 @@ Styles for the Modal component.
   }
 
   &__gallery-btn--next{
-    right: rem-calc(-16);
+    right: -16px;
 
     &::before{
       content: "chevron_right";

@@ -82,7 +82,7 @@ category: SpecialComponents
     @include breakpoint(small only) {
       width: 100%;
       min-height: inherit;
-      margin-top: rem-calc(-24);
+      margin-top: -24px;
       padding: 24px;
     }
   }

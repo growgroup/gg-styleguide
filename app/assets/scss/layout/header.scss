@@ -220,7 +220,7 @@ category: Layout
 
     //*アイコン
     span {
-      font-size: rem-calc(16);
+      font-size: 16px;
       padding-right: min-vw(8);
       vertical-align: sub;
     }
@@ -241,7 +241,7 @@ category: Layout
     font-size: min-vw(11);
     line-height: 1.5;
     font-weight: 400;
-    padding: rem-calc(8) min-vw(20) rem-calc(8) min-vw(42);
+    padding: 8px min-vw(20) 8px min-vw(42);
     @include transition(.2s);
 
 
@@ -299,7 +299,3 @@ category: Layout
     left: 0;
   }
 }
-
-
-
-

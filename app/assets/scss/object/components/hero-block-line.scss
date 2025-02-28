@@ -54,7 +54,7 @@
   &__image {
     display: block;
     position: absolute;
-    top: rem-calc(-48);
+    top: -48px;
     left: 0;
     height: 400px;
     overflow: hidden;
@@ -118,7 +118,7 @@
     @include breakpoint(small only) {
       width: calc(100% - 24px);
       min-height: inherit;
-      margin-top: rem-calc(-40px);
+      margin-top: -40px;
       z-index: 99;
       margin-left: auto;
       margin-right: auto;

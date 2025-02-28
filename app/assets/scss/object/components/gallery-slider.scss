@@ -248,7 +248,7 @@
 
     @include breakpoint(medium down) {
       display: none;
-      //bottom: rem-calc(-105);
+      //bottom: -105px;
       //width: 24px*.7;
       //height: 48px*.7;
     }
@@ -264,7 +264,7 @@
     }
   }
   .slick-prev{
-    left: rem-calc(-74);
+    left: -74px;
 
     //@include breakpoint(1300 down) {
     //  left: 5%;
@@ -274,7 +274,7 @@
     }
   }
   .slick-next{
-    right: rem-calc(-74);
+    right: -74px;
 
     @include breakpoint(medium down){
       right: 0;
@@ -294,7 +294,7 @@
     //position: relative;
     //margin-top: 22px;
     height: auto;
-    bottom: rem-calc(-32);
+    bottom: -32px;
 
     //@include breakpoint(medium down) {
     //  bottom: -36%;
