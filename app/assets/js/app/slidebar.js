@@ -98,7 +98,7 @@ export default class Slidebar {
   bodyTrigger() {
     var self = this;
     $(document).on('click', this.options.containerSelector, function (e) {
-      if (self.isActive) {
+      if (e.target === e.currentTarget && self.isActive) {
         self.close();
       }
     });
