@@ -7,7 +7,7 @@
 
 .c-slidebar-menu {
   height: calc(100vh - #{$slidebar-header-height}px);
-  padding: 0 0 rem-calc(104);
+  padding: 0 0 104px;
   position: fixed;
   background-color: $slidebar-menu-bg;
   z-index: 9980;
@@ -27,7 +27,7 @@
   // メニュー要素（一番外・全体で共通する設定）
   &__list {
     width: 100%;
-    font-size: rem-calc(14);
+    font-size: 14px;
     font-weight: 700;
 
     :where(&){
@@ -79,22 +79,22 @@
 
   &__parent-link { //親a, span
     cursor: pointer;
-    padding: rem-calc(18) rem-calc(46) rem-calc(18) rem-calc(20);
+    padding: 18px 46px 18px 20px;
   }
 
   // メニュー要素（子）
   &__children {
-    font-size: rem-calc(13);
+    font-size: 13px;
     width: 100%;
-    padding-left: rem-calc(20);
-    padding-bottom: rem-calc(20);
+    padding-left: 20px;
+    padding-bottom: 20px;
     display: none;
   }
 
   &__child { //子li
     //color: $color-white;
     background: rgba(0, 0, 0, 0.2);
-    margin-bottom: rem-calc(4);
+    margin-bottom: 4px;
 
     &[open] {
       //color: $color-primary;
@@ -108,17 +108,17 @@
   }
 
   &__child-link { //子a, span
-    padding: rem-calc(13) rem-calc(48) rem-calc(13) rem-calc(20);
+    padding: 13px 48px 13px 20px;
   }
 
   // メニュー要素（孫）
   &__grandchildren {
-    font-size: rem-calc(12);
+    font-size: 12px;
     font-weight: 400;
     width: 100%;
     display: none;
     border-top: solid 1px $border-base-color;
-    padding-left: rem-calc(26);
+    padding-left: 26px;
   }
 
   &__grandchild { //孫li
@@ -131,26 +131,26 @@
   }
 
   &__grandchild-link { //孫a, span
-    padding: rem-calc(12) rem-calc(40) rem-calc(12) rem-calc(0);
+    padding: 12px 40px 12px 0px;
   }
 
   //大きいボタン（お問い合わせなど）
   &__buttons {
-    margin-top: rem-calc(20);
-    padding: 0 rem-calc(20);
+    margin-top: 20px;
+    padding: 0 20px;
   }
 
   &__button + &__button {
-    margin-top: rem-calc(8);
+    margin-top: 8px;
   }
 
   &__button {
     max-width: 100%;
     font-weight: bold;
-    font-size: rem-calc(18);
+    font-size: 18px;
     color: $color-primary;
     background-color: $color-white;
-    padding: rem-calc(24);
+    padding: 24px;
     text-align: center;
 
     &::after {
@@ -159,17 +159,17 @@
 
     &__icon {
       display: inline;
-      vertical-align: rem-calc(-6);
+      vertical-align: -6px;
       line-height: 1;
-      font-size: rem-calc(24);
-      margin-right: rem-calc(8);
+      font-size: 24px;
+      margin-right: 8px;
     }
   }
 
   //SNSボタンなど小さいボタン
   &__sns-btns {
     max-width: 100%;
-    margin-top: rem-calc(24);
+    margin-top: 24px;
     display: flex;
     justify-content: center;
     line-height: 1;
@@ -179,11 +179,11 @@
     background: $color-white;
     color: $color-primary;
     text-decoration: none;
-    //font-size: rem-calc(24);
-    margin: 0 rem-calc(8);
-    width: rem-calc(44);
-    height: rem-calc(44);
-    border-radius: rem-calc(44);
+    //font-size: 24px;
+    margin: 0 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,23 +194,23 @@
     //color: $font-base-color;
     position: relative;
     display: block;
-    margin-bottom: rem-calc(22);
+    margin-bottom: 22px;
     max-width: 100%;
     width: 100%;
     border: 1px solid $color-primary;
     color: $color-gray;
     background: $color-white;
-    border-radius: rem-calc(23);
-    font-size: rem-calc(16);
+    border-radius: 23px;
+    font-size: 16px;
     letter-spacing: 0.1em;
     line-height: 1.5;
     font-weight: 400;
-    height: rem-calc(46);
+    height: 46px;
     @include transition(.2s,ease-in-out);
 
     &:before {
       position: absolute;
-      left: rem-calc(18);
+      left: 18px;
       top: 50%;
       transform: translateY(-50%);
       line-height: 1;
@@ -219,7 +219,7 @@
       background-size: cover;
       @include icon-font();
       content: "search";
-      font-size: rem-calc(18);
+      font-size: 18px;
       color: $color-primary;
     }
   }

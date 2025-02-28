@@ -1,6 +1,6 @@
 .c-block-modal-form {
   position: fixed;
-  top: rem-calc(80);
+  top: 80px;
   left: 0;
   width: 100%;
   z-index: 99999;
@@ -10,15 +10,15 @@
   @include transition(.2s);
 
   @include breakpoint(medium down) {
-    top: rem-calc(55);
+    top: 55px;
   }
 
   &__inner {
-    padding: rem-calc(90) 0;
+    padding: 90px 0;
     position: relative;
 
     @include breakpoint(small only) {
-      padding: rem-calc(60) 0;
+      padding: 60px 0;
     }
   }
 
@@ -40,29 +40,29 @@
 
   &__form {
     display: flex;
-    height: rem-calc(72);
+    height: 72px;
     width: 100%;
-    max-width: rem-calc(748);
+    max-width: 748px;
     margin: auto;
     position: relative;
 
     @include breakpoint(small only) {
-      height: rem-calc(46);
+      height: 46px;
     }
 
     &::after {
       content: "";
-      height: rem-calc(46);
+      height: 46px;
       width: 1px;
       background: $border-base-color;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: rem-calc(62);
+      left: 62px;
 
       @include breakpoint(small only) {
-        height: rem-calc(22);
-        left: rem-calc(42);
+        height: 22px;
+        left: 42px;
       }
     }
 
@@ -70,16 +70,16 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: rem-calc(22);
-      width: rem-calc(21);
-      height: rem-calc(21);
+      left: 22px;
+      width: 21px;
+      height: 21px;
       z-index: 1;
       pointer-events: none;
 
       @include breakpoint(small only) {
-        font-size: rem-calc(10);
+        font-size: 10px;
         transform: scale(.9) translateY(-50%);;
-        left: rem-calc(12);
+        left: 12px;
       }
     }
 
@@ -87,12 +87,12 @@
       border: none;
       font-family: inherit;
       position: relative;
-      padding-left: rem-calc(86);
+      padding-left: 86px;
       @include font-format(14,.1,20,400);
       border-radius: 2px 0 0 2px;
 
       @include breakpoint(small only) {
-        padding-left: rem-calc(60);
+        padding-left: 60px;
         @include font-format(11,.08,17,400);
       }
 
@@ -106,7 +106,7 @@
     }
 
     button {
-      width: rem-calc(112);
+      width: 112px;
       flex: none;
       background: $color-primary;
       border: none;
@@ -118,7 +118,7 @@
       @include transition(.2s, ease-out);
 
       @include breakpoint(small only) {
-        width: rem-calc(78);
+        width: 78px;
         @include font-format(12,.08,18,400);
       }
 
@@ -130,8 +130,8 @@
 
   &__close {
     position: absolute;
-    right: rem-calc(140);
-    top: rem-calc(24);
+    right: 140px;
+    top: 24px;
     background: none;
     color: inherit;
     border: none;
@@ -139,43 +139,43 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    width: rem-calc(53.2);
-    height: rem-calc(53.2);
+    width: 53.2px;
+    height: 53.2px;
     @include transition();
 
     @include breakpoint(1300px down) {
-      right: rem-calc(20);
+      right: 20px;
     }
 
     @include breakpoint(small only) {
       right: 0;
-      top: rem-calc(6);
+      top: 6px;
     }
 
 
     &::before {
       content: "";
       display: block;
-      width: rem-calc(53.2);
+      width: 53.2px;
       height: 1px;
       background: $color-white;
       transform: rotate(45deg);
 
       @include breakpoint(small only) {
-        width: rem-calc(40);
+        width: 40px;
       }
     }
 
     &::after {
       content: "";
       display: block;
-      width: rem-calc(53.2);
+      width: 53.2px;
       height: 1px;
       background: $color-white;
       transform: translateY(-1px) rotate(-45deg);
 
       @include breakpoint(small only) {
-        width: rem-calc(40);
+        width: 40px;
       }
     }
 

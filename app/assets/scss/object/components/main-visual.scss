@@ -13,7 +13,7 @@ category: Components
     position: relative;
     width: 100%;
     height: calc(100vh - 75px);
-    max-height: rem-calc(1080);
+    max-height: 1080px;
 
     @include breakpoint(medium down) {
       height: 50vw;
@@ -52,19 +52,19 @@ category: Components
     letter-spacing: 0.1em;
     line-height: calc(30/16*1);
     font-weight: 700;
-    margin-top: rem-calc(50);
+    margin-top: 50px;
 
     @include breakpoint(small down) {
-      font-size: rem-calc(14.5);
-      margin-top: rem-calc(24);
+      font-size: 14.5px;
+      margin-top: 24px;
     }
   }
 
   &__animation {
     position: absolute;
     height: 100%;
-    max-height: rem-calc(120);
-    right: rem-calc(20);
+    max-height: 120px;
+    right: 20px;
     bottom: 45%;
     transform: translateY(50%);
     display: flex;
@@ -72,12 +72,12 @@ category: Components
     justify-content: flex-end;
     flex-direction: column;
     z-index: 10;
-    padding-top: rem-calc(24);
+    padding-top: 24px;
 
     @include breakpoint(small down) {
       transform: none;
-      right: rem-calc(10);
-      bottom: rem-calc(70);
+      right: 10px;
+      bottom: 70px;
     }
   }
 

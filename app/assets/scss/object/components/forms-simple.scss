@@ -6,8 +6,8 @@
     }
   }
   &__title {
-    min-width: rem-calc(258);
-    padding: rem-calc(16) rem-calc(32);
+    min-width: 258px;
+    padding: 16px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,19 +15,19 @@
     @include breakpoint(small only) {
       width: 100%;
       background-color: transparent;
-      padding: rem-calc(12) 0 0;
+      padding: 12px 0 0;
       font-weight: 700;
     }
     &.is-vertical-top {
       align-items: flex-start;
       &.is-just{
-        padding-top: rem-calc(40);
+        padding-top: 40px;
         @include breakpoint(small only) {
-          padding-top: rem-calc(12);
+          padding-top: 12px;
         }
       }
       .c-forms__label {
-        margin-top: rem-calc(3);
+        margin-top: 3px;
       }
     }
   }
@@ -36,18 +36,18 @@
     display: block;
     background-color: $color-accent;
     color: $color-white;
-    font-size: rem-calc(12);
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-align: center;
-    padding: rem-calc(1) rem-calc(10);
-    margin-left: rem-calc(16);
-    min-width: rem-calc(48);
+    padding: 1px 10px;
+    margin-left: 16px;
+    min-width: 48px;
   }
   &__content {
     width: 100%;
-    padding: rem-calc(16) rem-calc(32);
+    padding: 16px 32px;
     @include breakpoint(small only) {
-      padding: rem-calc(12) 0;
+      padding: 12px 0;
     }
     &.is-column{
       display: flex;
@@ -74,19 +74,19 @@
     input {
       border-radius: 4px;
       background: #F9F9F9;
-      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      padding: 16px 16px 16px 24px;
       @include breakpoint(small only) {
-        padding: rem-calc(12) rem-calc(16);
+        padding: 12px 16px;
       }
       &:focus{
         border-color: $color-primary;
       }
     }
     &.is-sm {
-      width: rem-calc(180);
+      width: 180px;
       input {
-        padding-top: rem-calc(12);
-        padding-bottom: rem-calc(12);
+        padding-top: 12px;
+        padding-bottom: 12px;
       }
     }
   }
@@ -94,9 +94,9 @@
     textarea {
       border-radius: 4px;
       background: #F9F9F9;
-      padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(24);
+      padding: 16px 16px 16px 24px;
       @include breakpoint(small only) {
-        padding: rem-calc(12) rem-calc(16);
+        padding: 12px 16px;
       }
       &:focus{
         border-color: $color-primary;
@@ -112,15 +112,15 @@
     label {
       display: flex;
       align-items: center;
-      margin-right: rem-calc(64);
+      margin-right: 64px;
       @include breakpoint(small only) {
-        margin-right: rem-calc(48);
-        margin-bottom: rem-calc(8);
+        margin-right: 48px;
+        margin-bottom: 8px;
       }
     }
     input {
-      margin-right: rem-calc(8);
-      margin-top: rem-calc(2);
+      margin-right: 8px;
+      margin-top: 2px;
     }
 
     span {
@@ -133,17 +133,17 @@
   }
   &__checkbox {
     input {
-      margin-right: rem-calc(6);
-      margin-top: rem-calc(4);
+      margin-right: 6px;
+      margin-top: 4px;
     }
   }
   &__privacy {
     text-align: center;
     @include breakpoint(small only) {
-      margin-top: rem-calc(16);
+      margin-top: 16px;
     }
     input{
-      margin-right: rem-calc(10);
+      margin-right: 10px;
     }
     a {
       font-weight: 400;
@@ -158,7 +158,7 @@
   &__flexbox {
     display: flex;
     align-items: center;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
       display: block;
     }
@@ -169,35 +169,35 @@
       margin-bottom: 0;
     }
     span {
-      min-width: rem-calc(120);
+      min-width: 120px;
       display: block;
       @include breakpoint(small only) {
         min-width: 100%;
-        margin-bottom: rem-calc(8);
+        margin-bottom: 8px;
       }
     }
   }
   // 住所自動入力ボタン
   &__button {
-    max-width: rem-calc(150);
+    max-width: 150px;
     border: 1px solid $font-base-color;
     outline: none;
     background-color: $color-white;
-    padding: rem-calc(3) rem-calc(12);
+    padding: 3px 12px;
     display: block;
     text-align: center;
     border-radius: 4px;
-    margin-left: rem-calc(16);
+    margin-left: 16px;
     @include breakpoint(small only) {
-      padding: rem-calc(9) rem-calc(12);
+      padding: 9px 12px;
     }
   }
   // 送信ボタン
   &__submit {
     text-align: center;
-    margin-top: rem-calc(40);
+    margin-top: 40px;
     @include breakpoint(small only) {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
     //横並び
     &.is-two-columns {

@@ -16,7 +16,7 @@
     border: solid 1px $color-border;
     border-radius: 100px;
     font-size: inherit;
-    padding: rem-calc(4) rem-calc(8);
+    padding: 4px 8px;
 
     @include hover(){
       opacity: 0.5;
@@ -58,7 +58,7 @@
   &__link {
     display: block;
     text-decoration: none;
-    padding: rem-calc(8) rem-calc(16);
+    padding: 8px 16px;
 
     &.is-current {
       background-color: $color-background;

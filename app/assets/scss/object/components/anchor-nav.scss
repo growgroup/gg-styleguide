@@ -16,7 +16,7 @@ category: Navigation
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 rem-calc(-6);
+    margin: 0 -6px;
 
     @include breakpoint(small only) {
       margin: 0;
@@ -30,7 +30,7 @@ category: Navigation
 
   &__button {
     width: calc(33.3% - 12px);
-    margin: 0 rem-calc(6);
+    margin: 0 6px;
 
     @include breakpoint(small only) {
       width: 100%;
@@ -38,13 +38,13 @@ category: Navigation
     }
 
     &:nth-child(n + 4) {
-      margin-top: rem-calc(12);
+      margin-top: 12px;
     }
 
     &:not(:first-child) {
 
       @include breakpoint(small only) {
-        margin-top: rem-calc(12);
+        margin-top: 12px;
       }
     }
   }
@@ -53,7 +53,7 @@ category: Navigation
   &.is-next {
 
     .c-anchor-nav__buttons {
-      margin: 0 rem-calc(-16);
+      margin: 0 -16px;
 
       @include breakpoint(small only) {
         margin: 0;
@@ -62,7 +62,7 @@ category: Navigation
 
     .c-anchor-nav__button {
       width: calc(50% - 32px);
-      margin: 0 rem-calc(16);
+      margin: 0 16px;
 
       @include breakpoint(small only) {
         width: 100%;
@@ -70,13 +70,13 @@ category: Navigation
       }
 
       &:nth-child(n + 3) {
-        margin-top: rem-calc(24);
+        margin-top: 24px;
       }
 
       &:not(:first-child) {
 
         @include breakpoint(small only) {
-          margin-top: rem-calc(12);
+          margin-top: 12px;
         }
       }
     }

@@ -13,10 +13,10 @@ category: Base
 
 //.c-list.is-disc {
 //  li {
-//    padding-left: rem-calc(16);
+//    padding-left: 16px;
 //
 //    &::before {
-//      width: rem-calc(16);
+//      width: 16px;
 //      height: calc(1em * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
 //      content: "・";
 //      color: $font-base-color;

@@ -4,7 +4,7 @@
   z-index: 1;
   padding-top: 158px;
   overflow: hidden;
-  padding-bottom: rem-calc(30);
+  padding-bottom: 30px;
   @include breakpoint(small only) {
     padding-top: 50px;
   }
@@ -13,7 +13,7 @@
     content: "";
     position: absolute;
     right: 0;
-    top: rem-calc(42);
+    top: 42px;
     background: #F0F0F0;
     left: 0;
     margin:auto;
@@ -26,27 +26,27 @@
     }
   }
   @include breakpoint(medium down){
-    padding-bottom: rem-calc(40);
+    padding-bottom: 40px;
   }
 
   &__heading {
     position: relative;
     z-index: 2;
-    margin: 0 0 rem-calc(80);
-    padding-left: rem-calc(60);
+    margin: 0 0 80px;
+    padding-left: 60px;
 
     @include breakpoint(small only) {
-      margin-bottom: rem-calc(40);
+      margin-bottom: 40px;
       padding-left: 0;
     }
 
     &-en {
       margin: 0;
       width: 100%;
-      max-width: rem-calc(218);
+      max-width: 218px;
 
       @include breakpoint(small only) {
-        max-width: rem-calc(218) * .6;
+        max-width: 218px * .6;
       }
 
       img {
@@ -55,14 +55,14 @@
     }
 
     &-sub {
-      padding-left: rem-calc(35);
-      font-size: rem-calc(20);
+      padding-left: 35px;
+      font-size: 20px;
       letter-spacing: .1em;
       line-height: math.div(26,20);
 
       @include breakpoint(small only) {
-        font-size: rem-calc(16);
-        padding-left: rem-calc(30);
+        font-size: 16px;
+        padding-left: 30px;
       }
     }
   }
@@ -72,23 +72,23 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: rem-calc(40);
+    margin-bottom: 40px;
 
 
 
     @include breakpoint(small only) {
       width: 100%;
-      margin-bottom: rem-calc(20);
+      margin-bottom: 20px;
     }
 
     .slick-slide {
       width: 100%;
-      max-width: rem-calc(748);
+      max-width: 748px;
       outline: none;
       cursor: pointer;
 
       @include breakpoint(1000 down) {
-        max-width: rem-calc(750);
+        max-width: 750px;
       }
     }
 
@@ -99,34 +99,34 @@
       z-index: 33;
       background: rgba($color-primary, .9);
       color: $color-white;
-      padding: rem-calc(19) rem-calc(40);
+      padding: 19px 40px;
       display: none;
 
       @include breakpoint(small only) {
-        padding: rem-calc(10) rem-calc(16);
+        padding: 10px 16px;
       }
 
     }
 
     &-title {
-      font-size: rem-calc(16);
+      font-size: 16px;
       letter-spacing: .05em;
       line-height: math.div(24,16);
       font-weight: bold;
-      margin-bottom: rem-calc(4);
+      margin-bottom: 4px;
 
       @include breakpoint(small only) {
-        font-size: rem-calc(13);
+        font-size: 13px;
       }
     }
 
     &-text {
-      font-size: rem-calc(12);
+      font-size: 12px;
       letter-spacing: .05em;
       line-height: math.div(20,12);
 
       @include breakpoint(small only) {
-        font-size: rem-calc(11);
+        font-size: 11px;
       }
 
     }
@@ -206,7 +206,7 @@
       //}
 
       width: 100%;
-      max-width: rem-calc(138);
+      max-width: 138px;
       cursor: pointer;
 
       @include breakpoint(medium down) {
@@ -242,15 +242,15 @@
 
     margin:auto;
     z-index: 999;
-    width: rem-calc(50);
-    height: rem-calc(50);
+    width: 50px;
+    height: 50px;
     top: 50%;
 
     @include breakpoint(medium down) {
       display: none;
-      //bottom: rem-calc(-105);
-      //width: rem-calc(24)*.7;
-      //height: rem-calc(48)*.7;
+      //bottom: -105px;
+      //width: 24px*.7;
+      //height: 48px*.7;
     }
 
     &::before{
@@ -264,7 +264,7 @@
     }
   }
   .slick-prev{
-    left: rem-calc(-74);
+    left: -74px;
 
     //@include breakpoint(1300 down) {
     //  left: 5%;
@@ -274,7 +274,7 @@
     }
   }
   .slick-next{
-    right: rem-calc(-74);
+    right: -74px;
 
     @include breakpoint(medium down){
       right: 0;
@@ -292,9 +292,9 @@
   .slick-dots {
     line-height: 1;
     //position: relative;
-    //margin-top: rem-calc(22);
+    //margin-top: 22px;
     height: auto;
-    bottom: rem-calc(-32);
+    bottom: -32px;
 
     //@include breakpoint(medium down) {
     //  bottom: -36%;
@@ -305,32 +305,32 @@
     //}
 
     li {
-      width: rem-calc(8);
-      height: rem-calc(8);
-      margin: 0 rem-calc(8);
+      width: 8px;
+      height: 8px;
+      margin: 0 8px;
       @include breakpoint(small only) {
         width: .4rem;
         height: .4rem;
       }
       button {
-        width: rem-calc(8);
-        height: rem-calc(8);
+        width: 8px;
+        height: 8px;
         padding: 0;
         @include breakpoint(small only) {
-          width: rem-calc(6);
-          height: rem-calc(6);
+          width: 6px;
+          height: 6px;
         }
 
         &::before {
           content: '';
           opacity: 1;
-          width: rem-calc(8);
-          height: rem-calc(8);
+          width: 8px;
+          height: 8px;
           background-color: rgba(#464646, .2);
           border-radius: 1000px;
           @include breakpoint(small only) {
-            width: rem-calc(6);
-            height: rem-calc(6);
+            width: 6px;
+            height: 6px;
           }
         }
       }

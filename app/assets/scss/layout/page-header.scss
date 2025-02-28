@@ -33,21 +33,21 @@ category: Layout
     position: relative;
     text-align: center;
     color: $color-white;
-    padding: rem-calc(64) rem-calc(16);
+    padding: 64px 16px;
     @include breakpoint(small only) {
-      padding: rem-calc(46) rem-calc(8);
+      padding: 46px 8px;
     }
   }
 
 
   &__title {
     @include webfont();
-    font-size: rem-calc(42);
+    font-size: 42px;
     line-height: 1.2;
     letter-spacing: 0.06em;
     margin: 0;
     @include breakpoint(small only) {
-      font-size: math.div(rem-calc(42), 1.5);
+      font-size: math.div(42px, 1.5);
     }
   }
   &__subtitle {
@@ -57,7 +57,7 @@ category: Layout
 
   // 画像なし単色
   &.is-image-hidden {
-    height: rem-calc(200);
+    height: 200px;
     background-color: $color-secondary;
     &::after {
       display: none;

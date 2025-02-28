@@ -15,9 +15,9 @@ category: Buttons
   color: $color-white;
   text-decoration: none;
   width: 100%;
-  max-width: rem-calc(203);
+  max-width: 203px;
   background-color: $color-primary;
-  padding: rem-calc(13) rem-calc(24);
+  padding: 13px 24px;
   border: 1px solid $color-primary;
   @include transition();
   // *アイコン
@@ -26,7 +26,7 @@ category: Buttons
     @include icon-font();
     position: absolute;
     top: 50%;
-    right: rem-calc(16);
+    right: 16px;
     transform: translateY(-50%);
   }
 
@@ -73,27 +73,27 @@ category: Buttons
   // サイズ設定
   // -> 大
   &.is-xlg {
-    max-width: rem-calc(392);
-    padding: rem-calc(26) rem-calc(32);
-    font-size: rem-calc(18);
+    max-width: 392px;
+    padding: 26px 32px;
+    font-size: 18px;
     @include breakpoint(small only) {
       max-width: 100%;
-      font-size: rem-calc(18)*0.9;
-      padding: rem-calc(20) rem-calc(32);
+      font-size: 18px*0.9;
+      padding: 20px 32px;
     }
 
     &::after {
-      font-size: rem-calc(24);
+      font-size: 24px;
       @include breakpoint(small only) {
-        font-size: rem-calc(24)*0.9;
+        font-size: 24px*0.9;
       }
     }
   }
 
   // -> 中
   &.is-lg {
-    max-width: rem-calc(356);
-    padding: rem-calc(16) rem-calc(24);
+    max-width: 356px;
+    padding: 16px 24px;
     @include breakpoint(small only) {
       max-width: 100%;
     }
@@ -101,16 +101,16 @@ category: Buttons
 
   // -> 小
   &.is-sm {
-    max-width: rem-calc(155);
-    padding: rem-calc(10) rem-calc(18);
-    font-size: rem-calc(14);
+    max-width: 155px;
+    padding: 10px 18px;
+    font-size: 14px;
     letter-spacing: 0.1em;
     @include breakpoint(small only) {
-      font-size: rem-calc(14)*0.9;
+      font-size: 14px*0.9;
     }
 
     &::after {
-      right: rem-calc(10);
+      right: 10px;
     }
   }
 
@@ -119,13 +119,13 @@ category: Buttons
     width: inherit;
     max-width: 100%;
     background-color: transparent;
-    padding: 0 rem-calc(16) 0 0;
+    padding: 0 16px 0 0;
     border: none;
     color: $font-base-color;
-    font-size: rem-calc(14);
+    font-size: 14px;
     letter-spacing: 0.1em;
     @include breakpoint(small only) {
-      font-size: rem-calc(14)*0.9;
+      font-size: 14px*0.9;
     }
 
     &::after {
@@ -143,24 +143,24 @@ category: Buttons
     color: $color-primary;
     background: $color-white;
     border: 1px solid $color-primary;
-    padding: rem-calc(16) rem-calc(24);
+    padding: 16px 24px;
     max-width: 100%;
     height: 100%;
     border-radius: $border-radius;
 
     @include breakpoint(small only) {
-      padding: rem-calc(12) rem-calc(24);
+      padding: 12px 24px;
     }
 
     &:after {
       content: "expand_more";
-      right: rem-calc(16);
+      right: 16px;
       transform: translateY(-50%);
-      font-size: rem-calc(18);
+      font-size: 18px;
       line-height: 1;
 
       @include breakpoint(small only) {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
 
@@ -176,9 +176,7 @@ category: Buttons
     &:after {
       content: "chevron_left";
       right: auto;
-      left: rem-calc(10);
+      left: 10px;
     }
   }
 }
-
-

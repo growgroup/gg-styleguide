@@ -7,14 +7,14 @@ category: PostContent
 */
 
 #toc_container {
-  margin: rem-calc(32) 0;
+  margin: 32px 0;
   width: 100% !important; //WPプラグインでインラインスタイルが指定されているため!importantを使用
   background: $color-secondary;
   border-radius: 0;
-  padding: rem-calc(16) rem-calc(40) rem-calc(40);
+  padding: 16px 40px 40px;
   @include breakpoint(small only) {
-    margin: rem-calc(16) 0;
-    padding: rem-calc(16) rem-calc(24) rem-calc(24);
+    margin: 16px 0;
+    padding: 16px 24px 24px;
   }
 
   &.contracted .toc_title{
@@ -26,10 +26,10 @@ category: PostContent
     font-size: 1.125rem;
     color: $color-primary;
     font-weight: 700;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
 
     .toc_toggle {
-      margin-left: rem-calc(16);
+      margin-left: 16px;
     }
   }
 
@@ -52,7 +52,7 @@ category: PostContent
 
     a {
       display: block;
-      padding-left: rem-calc(16);
+      padding-left: 16px;
       @include transition(.2s);
       text-decoration: none;
       color: $font-base-color;

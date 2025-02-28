@@ -7,23 +7,23 @@ category: Navigation
 .c-box-archive {
   &__block {
     border: 1px solid $color-primary;
-    padding: rem-calc(24) rem-calc(32) rem-calc(12);
-    margin-bottom: rem-calc(16);
+    padding: 24px 32px 12px;
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      padding: rem-calc(16) rem-calc(24) rem-calc(12);
+      padding: 16px 24px 12px;
     }
     &:last-child {
       margin-bottom: 0;
     }
   }
   &__title {
-    font-size: rem-calc(20);
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: $color-primary;
-    margin-bottom: rem-calc(16);
+    margin-bottom: 16px;
     @include breakpoint(small only) {
-      font-size: rem-calc(16);
+      font-size: 16px;
     }
   }
   ul {
@@ -31,17 +31,17 @@ category: Navigation
     flex-wrap: wrap;
     align-items: center;
     li {
-      margin-right: rem-calc(48);
-      margin-bottom: rem-calc(12);
+      margin-right: 48px;
+      margin-bottom: 12px;
       @include breakpoint(small only) {
-        margin-right: rem-calc(24);
-        margin-bottom: rem-calc(8);
+        margin-right: 24px;
+        margin-bottom: 8px;
       }
       &::before {
         content: "chevron_right";
         @include icon-font();
         color: $color-primary;
-        padding-right: rem-calc(8);
+        padding-right: 8px;
       }
       a {
         color: $font-base-color;

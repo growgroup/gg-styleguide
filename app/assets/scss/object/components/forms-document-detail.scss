@@ -3,12 +3,12 @@
   &__images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: rem-calc(24);
-    margin-top: rem-calc(24);
+    gap: 24px;
+    margin-top: 24px;
 
     @include breakpoint(small down) {
       grid-template-columns: 1fr;
-      gap: rem-calc(20);
+      gap: 20px;
     }
   }
 
@@ -18,7 +18,7 @@
     position: relative;
     background: $color-background;
     aspect-ratio: 282/158;
-    padding: rem-calc(16);
+    padding: 16px;
 
     &.swiper-slide {
       cursor: pointer;
@@ -34,20 +34,20 @@
       height: 100%;
       display: grid;
       place-content: center;
-      font-size: rem-calc(17);
+      font-size: 17px;
       color: rgba($font-base-color,0.5);
 
       @include breakpoint(small only) {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
   }
 
   &__slider {
-    margin-top: rem-calc(24);
+    margin-top: 24px;
 
     @include breakpoint(small down) {
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
 
     .swiper-nav {
