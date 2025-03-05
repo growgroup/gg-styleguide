@@ -59,6 +59,31 @@ mixin c(el)
   #{el}(class!="c-" + temp_class )&attributes(attributes)
     block
 
+//- コンポーネント
+mixin pr(el)
+  -
+    var temp_class = ""
+    var target_component_class_key = 0
+    if (typeof el === "undefined") {
+      var el = "div"
+    }
+    if ( typeof attributes.class !== "undefined" ){
+
+      var classlist = attributes.class.split(" ")
+      if ( isUpperCase(classlist[0]) ){
+        var el = classlist[0].toLowerCase()
+        delete classlist[0]
+        target_component_class_key = 1
+      }
+      temp_class = classlist[target_component_class_key]
+      delete classlist[target_component_class_key]
+      attributes.class =  classlist.join(" ")
+      cssrules.addComponent(temp_class)
+      cssrules.layer = "p"
+      locals.locals.addFile(temp_class, "project")
+    }
+  #{el}(class!="p-" + temp_class )&attributes(attributes)
+    block
 
 //- 要素
 mixin e(el,component_name,history)

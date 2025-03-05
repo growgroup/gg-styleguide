@@ -1,5 +1,5 @@
 // Pug の設定ファイル
-var fs = require("fs")
+var fs = require("fs");
 
 var pugconfig = {
   pretty: true,
@@ -8,8 +8,20 @@ var pugconfig = {
   basedir: "app/",
   locals: {
     addFile: async function (componentName, type) {
-      let typePrefix = type === 'component' ? 'c-' : 'l-';
-      let folderName = type === 'component' ? 'object/components' : 'layout';
+      let typePrefix = '';
+      let folderName = '';
+
+      if (type === 'component') {
+        typePrefix = 'c-';
+        folderName = 'object/components';
+      } else if (type === 'project') {
+        typePrefix = 'p-';
+        folderName = 'object/project';
+      } else if (type === 'layout') {
+        typePrefix = 'l-';
+        folderName = 'layout';
+      }
+
       let componentPath = __dirname + '/../app/assets/scss/' + folderName + '/' + componentName + '.scss';
       let indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
 
@@ -24,7 +36,7 @@ var pugconfig = {
         // index.scss にインポート文を追加
         let indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
         let newImportStmt = "@import '" + componentName + "';";
-        let alreadyImported = indexContent.includes(newImportStmt)
+        let alreadyImported = indexContent.includes(newImportStmt);
 
         // 既にインポート文がある場合は何もしない
         if (!alreadyImported) {
