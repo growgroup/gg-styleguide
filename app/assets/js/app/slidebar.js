@@ -9,17 +9,11 @@
  * # example:
  *
  * <div class="js-slidebar-menu">
- *    <ul>
- *        <li>menu</li>
- *        <li>menu</li>
- *        <li>menu</li>
- *    </ul>
- * </div>
+ *  <div class="js-slidebar-container">
  *
- * <a href="#" class="js-slidebar-button"><i class="fa fa-bars"></i></a>
+ *    content
  *
- * <div class="js-slidebar-container">
- *     content
+ *  </div>
  * </div>
  *
  */
@@ -62,7 +56,7 @@ export default class Slidebar {
     this.container = $(this.options.containerSelector)
 
     this.trigger();
-    this.bodyTrigger();
+    this.closeOnOuterClick();
     this.toggle = this.toggle.bind(this);
 
     $("body").addClass('slidebar-init')
@@ -95,7 +89,7 @@ export default class Slidebar {
     }
   }
 
-  bodyTrigger() {
+  closeOnOuterClick() {
     var self = this;
     $(document).on('click', this.options.containerSelector, function (e) {
       if (e.target === e.currentTarget && self.isActive) {
