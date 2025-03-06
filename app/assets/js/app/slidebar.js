@@ -8,6 +8,9 @@
  *
  * # example:
  *
+ *
+ * <button class="js-slidebar-button"></button>
+ *
  * <div class="js-slidebar-menu">
  *  <div class="js-slidebar-container">
  *
