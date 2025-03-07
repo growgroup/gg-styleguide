@@ -15,6 +15,14 @@
  *      .c-accordion__content-inner
  *        |コンテンツ
  *
+ * # div example:
+ * .c-accordion
+ *   .c-accordion__block.js-accordion(data-open="true")
+ *     .c-accordion__title(data-accordion-title="title")
+ *       |タイトルテキスト
+ *    .c-accordion__content(data-accordion-content="content")
+ *      .c-accordion__content-inner
+ *        |コンテンツ
  */
 
 import Utils from "./utils";
@@ -62,11 +70,11 @@ export default class Accordion {
     for (var i = 0; i < this.targetAll.length; i++) {
       let target = $(this.targetAll[i]);
 
-      
+
       target.isDetails = target.prop("tagName").toLowerCase() === "details";
 
       // ターゲットの初期設定
-      target.defaultOpen = target.attr("open") !== undefined;
+      target.defaultOpen = target.isDetails ? target.prop("open") : target.attr("data-open") !== undefined;
       target.responsive = target.data("accordion-responsive");
       target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
       target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
@@ -85,6 +93,11 @@ export default class Accordion {
       } else {
         this.elementInit(target);
       }
+
+      // divかつfalseの時、データ属性を付与
+      if (!target.defaultOpen) {
+        target.attr("data-open", 'true');
+      }
     }
   }
 
@@ -96,7 +109,11 @@ export default class Accordion {
     this.accordion(target);
 
     if (!target.defaultOpen) {
-      target.removeAttr('open');
+      if (target.isDetails) {
+        target.removeAttr("open");
+      } else {
+        target.removeAttr("data-open");
+      }
     }
   }
 
@@ -135,13 +152,13 @@ export default class Accordion {
           el.content.hide().slideDown(this.options.speed);
         }
       } else {
-        // 通常のアコーディオン
-        if (el.content.parent().attr("open")) {
+        // 通常のアコーディオン (divなど)
+        if (el.content.parent().attr("data-open")) {
           el.content.slideUp(this.options.speed, function () {
-            $(this).parent().removeAttr("open").show();
+            $(this).parent().removeAttr("data-open").show();
           });
         } else {
-          el.content.parent().attr("open", '');
+          el.content.parent().attr("data-open", "true");
           el.content.hide().slideDown(this.options.speed);
         }
       }
