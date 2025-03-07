@@ -5,6 +5,11 @@ category: Layout
 ---
 */
 
+.l-footer__unit {
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
 .l-footer {
   position: relative;
   background-color: $font-base-color;
