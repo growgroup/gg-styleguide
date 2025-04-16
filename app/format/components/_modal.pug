@@ -1,6 +1,11 @@
 h3 画像モーダル
 +a("https://placehold.jp/300x250.png").c-modal-link.js-modal(data-modal-type="image")
   img(src='https://placehold.jp/300x250.png' alt='画像1')
+
+h3 画像モーダル（Buttonタグ）
+button.c-modal-link.js-modal(data-modal-type="image" , data-modal-src="https://placehold.jp/300x250.png")
+  img(src='https://placehold.jp/300x250.png' alt='画像1')
+
 h3 画像モーダル：グループ化
 +a("https://placehold.jp/300x250.png").c-modal-link.js-modal(data-modal-type="gallery" data-modal-group="group1")
   img(src='https://placehold.jp/300x250.png' alt='画像1')
@@ -37,5 +42,3 @@ h3 その他のコンテンツモーダル
     br
     |     ここに任意のHTMLコンテンツを配置できます。
     |     ここに任意のHTMLコンテンツを配置できますここに任意のHTMLコンテンツを配置できます。
-
-

@@ -135,7 +135,9 @@ export default class MicromodalWrapper {
    */
   setupModalTrigger(trigger) {
     const type = trigger.dataset.modalType;
-    const href = trigger.getAttribute("href");
+    // hrefかdata-modal-srcを参照
+    const href = trigger.getAttribute("href") || trigger.dataset.modalSrc;
+    
     if (!href) {
       // href 属性が無い場合は警告を出力して終了
       console.warn(`Modal trigger element has no href attribute:`, trigger);
