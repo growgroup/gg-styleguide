@@ -1,4 +1,4 @@
-.c-aside-navs {
+.c-aside-posts {
 
   &__block {
     &:where(:not(:first-child)) {
@@ -10,6 +10,7 @@
   &__head {
     margin-bottom: rem-calc(24);
   }
+
   &__head-title {
     text-align: center;
     background-color: $color-primary;
@@ -20,40 +21,31 @@
 
   // 通常リスト
   &__list {}
+
   &__list-item {
-    padding: 6px 0;
-    summary{
+
+    summary {
       display: block;
       cursor: pointer;
     }
+
     &::-webkit-details-marker {
       display: none; //Safariの矢印を非表示
     }
   }
+
   &__list-link {
     display: block;
     position: relative;
-    padding: 0 16px;
-    &::before {
-      content: '';
-      position: absolute;
-      top: calc(1em * $font-base-line-height / 2);
-      left: 0;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: $border-base-color;
-    }
-    &.is-current {
-      color: $color-primary;
-      &::before {
-        background: $color-primary;
-      }
-    }
+    padding: 6px 16px;
+    border-bottom: 1px solid $border-base-color;
   }
 
-  &__submenu {}
+  &__submenu {
+    padding: 6px 16px;
+  }
+
   &__submenu-item {}
+
   &__submenu-link {}
 }
