@@ -112,6 +112,6 @@
     // app.modalContents();
     app.enterAnimation();
     app.showCookie();
-    app.backCache();
+    // app.backCache();
   });
 })(jQuery);

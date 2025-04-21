@@ -17,7 +17,7 @@
 }
 
 // 値をremに変換する関数
-@function to-rem($value, $base: null) {
+@function to-rem($value, $base: $font-base-size) {
   // 値が数値でない場合の警告
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
@@ -222,6 +222,66 @@
       @media not screen and (max-width: #{$bp}) {
         @content;
       }
+    }
+  }
+}
+
+// コンテナクエリのブレイクポイント関数
+@function container($val) {
+  $min: null;
+  $max: null;
+  $dir: null;
+
+  // 範囲指定 (最小値 + 最大値)
+  @if length($val) == 2 and type-of(nth($val, 1)) == 'number' and type-of(nth($val, 2)) == 'number' {
+    $min: to-rem(min(nth($val, 1), nth($val, 2)));
+    $max: to-rem(max(nth($val, 1), nth($val, 2)));
+    $dir: 'range';
+  }
+  // 数値 + 方向指定 (up または down)
+  @else if length($val) == 2 and type-of(nth($val, 1)) == 'number' and type-of(nth($val, 2)) == 'string' {
+    $bp: nth($val, 1);
+    $dir: nth($val, 2);
+
+    @if $dir == 'down' {
+      $max: to-rem($bp);
+    } @else if $dir == 'up' {
+      $min: to-rem($bp);
+    } @else {
+      @error 'container(): Direction must be "up" or "down".';
+    }
+  }
+  // 数値のみ (up をデフォルトに)
+  @else if length($val) == 1 and type-of(nth($val, 1)) == 'number' {
+    $min: to-rem(nth($val, 1));
+    $dir: 'up';
+  }
+  // 不正な入力の場合
+  @else {
+    @error 'container(): Invalid input. Provide one or two numbers, or a number with "up"/"down".';
+  }
+
+  @return ( $min, $max, $dir );
+}
+
+// コンテナクエリ用 Mixin
+@mixin container($value) {
+  $result: container($value);
+  $min: nth($result, 1);
+  $max: nth($result, 2);
+  $dir: nth($result, 3);
+
+  @if $dir == 'range' {
+    @container (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  } @else if $dir == 'down' {
+    @container (max-width: #{$max}) {
+      @content;
+    }
+  } @else if $dir == 'up' {
+    @container (min-width: #{$min}) {
+      @content;
     }
   }
 }
@@ -633,3 +693,5 @@
   width: 1em;
   height: 1em;
 }
+
+
