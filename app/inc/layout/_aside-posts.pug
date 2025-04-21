@@ -1,12 +1,12 @@
-mixin l-aside-news(data)
+mixin l-aside-posts
   +c.aside-posts
     +e.block
       +e.head
         +e.head-title 通常リスト
       +e.list
-        +e.list-item: +ae("/twocolumns/").list-link 通常リンク
-        +e.list-item: +ae("/twocolumns/").list-link カレントリンク
-        +e.list-item: +ae("/twocolumns/page/").list-link 通常リンク
+        +e.list-item: +ae("/archive-twocolumns/").list-link すべて
+        +e.list-item: +ae("/archive-twocolumns/category/").list-link.js-current-nav カテゴリ
+        +e.list-item: +ae("/archive-twocolumns/").list-link.js-current-nav(data-parent-nav="true") 子階層滞在時もis-current
 
     +e.block
       +e.head
@@ -14,7 +14,7 @@ mixin l-aside-news(data)
       +e.list
         +loop(3)
           +e.DETAILS.list-item.js-accordion
-            summary.c-aside-posts__list-link(data-accordion-title="title") アコーディオンタイトル
+            +e.SUMMARY.list-link(data-accordion-title="title") アコーディオンタイトル
             +e.submenu(data-accordion-content="content")
                 +e.submenu-item: +ae("").submenu-link アコーディオンリンク01
                 +e.submenu-item: +ae("").submenu-link アコーディオンリンク02
