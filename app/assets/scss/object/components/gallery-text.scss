@@ -1,5 +1,6 @@
 .c-gallery-text {
   overflow: hidden;
+
   &__track{
     display: flex;
     gap: 48px;
@@ -8,11 +9,7 @@
   &__item{
     flex-shrink: 0;
     color: rgba($font-base-color,0.5);
-    font-size: 180px;
-
-    @include breakpoint(medium down) {
-      font-size: 120px;
-    }
+    font-size: 100px;
 
     @include breakpoint(small down) {
       font-size: 70px;
