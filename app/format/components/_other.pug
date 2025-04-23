@@ -63,27 +63,25 @@ div.u-mbs.is-bottom
 
   h3 横に流れ続けるスライダー
   div.u-mbs.is-bottom
-    +c.gallery-text.js-text-loop.swiper
-      ul.swiper-wrapper
-        +loop(2)
-          li.swiper-slide: span TEXTGALLERY
+    +c.gallery-text.js-infinite-slider(data-infinite-speed="10000")
+      +e.track.js-infinite-slider-track
+        +e.item TEXTGALLERY
 
   div.u-mbs.is-bottom
-    +c.gallery-logo
-      .l-container
-        +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
+    .l-container
+      +h2.head.c-heading.is-md.is-center.is-mg-level-2 ロゴギャラリー
 
-      +e.slider.js-logo-slider.swiper
-        +e.images.swiper-wrapper
-          for num in [1,2]
-            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
-            +e.image.swiper-slide: +img(img)
+    +c.gallery-logo.js-infinite-slider(data-infinite-speed="5000")
+      +e.track.js-infinite-slider-track
+        for num in [1,2]
+          - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+          +e.image: +img(img)
 
-      +e.slider.js-logo-slider.swiper
-        +e.images.swiper-wrapper
-          for num in [1,2,3,4,5,6]
-            - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
-            +e.image.swiper-slide: +img(img)
+    +c.gallery-logo.js-infinite-slider(data-infinite-speed="5000" data-infinite-direction="reverse")
+      +e.track.js-infinite-slider-track
+        for num in [1,2,3,4,5,6]
+          - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+          +e.image: +img(img)
 
 h3 画面幅が狭いとき横スクロールする画像やテーブル
 

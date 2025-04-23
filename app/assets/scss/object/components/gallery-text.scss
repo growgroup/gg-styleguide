@@ -1,14 +1,14 @@
 .c-gallery-text {
-  pointer-events: none;
-
-  li {
-    white-space: nowrap;
+  overflow: hidden;
+  &__track{
+    display: flex;
+    gap: 48px;
   }
 
-  span {
-    display: block;
+  &__item{
+    flex-shrink: 0;
     color: rgba($font-base-color,0.5);
-    @include font-format(180,0.02,180,400);
+    font-size: 180px;
 
     @include breakpoint(medium down) {
       font-size: 120px;
@@ -17,13 +17,5 @@
     @include breakpoint(small down) {
       font-size: 70px;
     }
-  }
-
-  .swiper-wrapper {
-    transition-timing-function: linear;
-  }
-
-  .swiper-slide {
-    width: auto;
   }
 }

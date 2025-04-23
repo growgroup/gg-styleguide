@@ -23,6 +23,7 @@ import GsapAnimation from "./app/gsap";
 import Scrollable from "./app/scrollable";
 import Dropdown from "./app/dropdown";
 import DropdownTextSync from "./app/dropdown-text-sync";
+import InfiniteSlider from "./app/infinite-slider";
 // import Parallax from "./app/parallax";
 // import LenisScroll from "./app/lenis";
 
@@ -43,6 +44,7 @@ class App {
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();
     this.Scrollable = new Scrollable();
+    this.InfiniteSlider = new InfiniteSlider();
     // this.parallax = new Parallax();
     // this.lenis = new LenisScroll();
     this.defaultOptions = {
