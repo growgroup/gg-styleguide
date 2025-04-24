@@ -109,11 +109,10 @@ mixin c_news__block(data)
           +e.block-text !{item.title}
           if item.excerpt
             +e.block-excerpt !{item.excerpt}
-      //-item.iconがあれば.c-link-icon > .c-icon-fontを追加、+span.block-label-file を追加
+      //-item.iconがあれば .c-icon-fontを追加、+span.block-label-file を追加
       +e.block-icon
         if item.icon
-          span.c-link-icon
-            span.c-icon-font !{item.icon}
+          span.c-icon-font !{item.icon}
         else
           +span.block-icon-file PDF
 

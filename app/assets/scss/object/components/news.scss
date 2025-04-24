@@ -79,7 +79,7 @@ category: News
     }
 
     &:has(.c-news__block-excerpt){
-      align-items: flex-start;
+      align-items: baseline;
       @include breakpoint(small only) {
         align-items: center;
       }
@@ -115,11 +115,16 @@ category: News
   &__block-icon{
     flex-shrink: 0;
     align-self: center;
+    text-align: center;
+    width: 40px;
+
+    @include breakpoint(small only) {
+      padding-top: 32px;
+    }
   }
 
   &__block-icon-file{
     display: block;
-    width: 40px;
     padding: 1px 4px;
     font-size: 10px;
     text-align: center;
