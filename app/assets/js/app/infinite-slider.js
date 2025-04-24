@@ -1,11 +1,11 @@
-import { gsap } from "gsap";
-import imagesLoaded from "imagesloaded";
+import { gsap } from 'gsap';
+import imagesLoaded from 'imagesloaded';
 
 
 /**
  * 無限スクロールクラス
  *
- * .js-infinite-slider(data-infinite-speed="5000" data-infinite-direction="forward")
+ * .js-infinite-slider(data-infinite-speed='5000' data-infinite-direction='forward')
  *   .js-infinite-slider-track
  *      div スライド
  *      div スライド
@@ -24,7 +24,7 @@ const defaultOptions = {
   dataDirection: 'data-infinite-direction',         // スクロール方向を指定するデータ属性
   speed: 3000,                                      // 1スライド送りにかかるミリ秒
   direction: 'forward',                             // 'forward' | 'reverse'
-  waitForFonts: false,                              // テキストスライダーの計算がズレる場合はtrueにする
+  waitForFonts: true,                              // テキストスライダーの計算がズレる場合はtrueにする
 };
 
 export default class InfiniteSlider {
@@ -40,7 +40,7 @@ export default class InfiniteSlider {
   // 初期化関数
   init() {
     // フォントの読み込み待ちが必要な場合
-    if (this.options.waitForFonts && "fonts" in document) {
+    if (this.options.waitForFonts && 'fonts' in document) {
       document.fonts.ready
         .then(() => this.initAll())
         .catch(() => this.initAll());
@@ -58,8 +58,8 @@ export default class InfiniteSlider {
       // それぞれのtrack内の画像が読み込み終わるごとに初期化
       imagesLoaded(track, { background: false }, () => {
         // 必要に応じて多重防止。初期化済み判定
-        if (wrapper.dataset.sliderInited === "true") return;
-        wrapper.dataset.sliderInited = "true";
+        if (wrapper.dataset.sliderInited === 'true') return;
+        wrapper.dataset.sliderInited = 'true';
 
         const speed = parseFloat(wrapper.getAttribute(this.options.dataSpeed)) || this.options.speed;
         const direction = wrapper.getAttribute(this.options.dataDirection) || this.options.direction;
@@ -123,6 +123,7 @@ class SliderInstance {
     this.isPlaying = false;
     this.gsapTween = null;
     this.currentCloneSets = 0;
+    this.prevOriginalTrackWidth = 0;
 
     this.setup();
     this.bindControls();
@@ -146,6 +147,7 @@ class SliderInstance {
 
     // 全体track幅も取得
     const originalTrackWidth = this.track.getBoundingClientRect().width;
+    this.prevOriginalTrackWidth = originalTrackWidth;
 
     // ラッパー幅を取得
     const wrapperWidth = this.wrapper.getBoundingClientRect().width;
@@ -192,7 +194,7 @@ class SliderInstance {
       const tweenVars = {
         x: endX,
         duration: duration,
-        ease: "none",
+        ease: 'none',
         onComplete: animate
       };
 
@@ -213,12 +215,14 @@ class SliderInstance {
     const originalItems = Array.from(this.track.querySelectorAll(':scope > :not([data-cloned])'));
     if (originalItems.length === 0) return;
 
-    // 実際のtrack幅を取得
-    const originalTrackWidth = (() => {
-      return originalItems.reduce((sum, item) => {
-        return sum + item.getBoundingClientRect().width;
-      }, 0);
-    })();
+    // track幅を取得
+    const computedStyle = window.getComputedStyle(this.track);
+    const gap = parseInt(computedStyle.gap) || 0;
+    const itemCount = originalItems.length;
+    const originalTrackWidth =
+      originalItems.reduce((sum, item) => sum + item.getBoundingClientRect().width, 0)
+      + gap * (itemCount - 1);
+
 
     // ラッパー幅を取得
     const wrapperWidth = this.wrapper.getBoundingClientRect().width;
@@ -226,8 +230,9 @@ class SliderInstance {
     // 必要なクローンセット数を再計算
     const newCloneSets = Math.ceil((wrapperWidth + originalTrackWidth) / originalTrackWidth);
 
-    // クローンセット数が変わった場合のみdestroyとsetupを実行
-    if (newCloneSets !== this.currentCloneSets) {
+    // クローンセット数またはスライド幅が変わった場合のみdestroyとsetupを実行
+    const trackWidthChanged = (this.prevOriginalTrackWidth !== originalTrackWidth);
+    if (newCloneSets !== this.currentCloneSets || trackWidthChanged) {
       this.destroy();
       this.setup();
 
