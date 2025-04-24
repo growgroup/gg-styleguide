@@ -1,5 +1,5 @@
-import { gsap } from 'gsap';
-import imagesLoaded from 'imagesloaded';
+import { gsap } from "gsap";
+import imagesLoaded from "imagesloaded";
 
 
 /**
@@ -16,15 +16,15 @@ import imagesLoaded from 'imagesloaded';
 
 
 const defaultOptions = {
-  wrapperSelector: '.js-infinite-slider',           // スライダー全体のラッパー
-  trackSelector: '.js-infinite-slider-track',       // アイテムを流すトラック
-  pauseSelector: '.js-infinite-slider-pause',       // 一時停止ボタン
-  playSelector: '.js-infinite-slider-play',         // 再生ボタン
-  dataSpeed: 'data-infinite-speed',                 // スピードを指定するデータ属性
-  dataDirection: 'data-infinite-direction',         // スクロール方向を指定するデータ属性
+  wrapperSelector: ".js-infinite-slider",           // スライダー全体のラッパー
+  trackSelector: ".js-infinite-slider-track",       // アイテムを流すトラック
+  pauseSelector: ".js-infinite-slider-pause",       // 一時停止ボタン
+  playSelector: ".js-infinite-slider-play",         // 再生ボタン
+  dataSpeed: "data-infinite-speed",                 // スピードを指定するデータ属性
+  dataDirection: "data-infinite-direction",         // スクロール方向を指定するデータ属性
   speed: 3000,                                      // 1スライド送りにかかるミリ秒
-  direction: 'forward',                             // 'forward' | 'reverse'
-  waitForFonts: true,                              // テキストスライダーの計算がズレる場合はtrueにする
+  direction: "forward",                             // 'forward' | 'reverse'
+  waitForFonts: true                              // テキストスライダーの計算がズレる場合はtrueにする
 };
 
 export default class InfiniteSlider {
@@ -40,7 +40,7 @@ export default class InfiniteSlider {
   // 初期化関数
   init() {
     // フォントの読み込み待ちが必要な場合
-    if (this.options.waitForFonts && 'fonts' in document) {
+    if (this.options.waitForFonts && "fonts" in document) {
       document.fonts.ready
         .then(() => this.initAll())
         .catch(() => this.initAll());
@@ -58,8 +58,8 @@ export default class InfiniteSlider {
       // それぞれのtrack内の画像が読み込み終わるごとに初期化
       imagesLoaded(track, { background: false }, () => {
         // 必要に応じて多重防止。初期化済み判定
-        if (wrapper.dataset.sliderInited === 'true') return;
-        wrapper.dataset.sliderInited = 'true';
+        if (wrapper.dataset.sliderInited === "true") return;
+        wrapper.dataset.sliderInited = "true";
 
         const speed = parseFloat(wrapper.getAttribute(this.options.dataSpeed)) || this.options.speed;
         const direction = wrapper.getAttribute(this.options.dataDirection) || this.options.direction;
@@ -70,7 +70,7 @@ export default class InfiniteSlider {
           pauseSelector: this.options.pauseSelector,
           playSelector: this.options.playSelector,
           speed,
-          direction,
+          direction
         });
         this.instances.push(instance);
       });
@@ -82,11 +82,9 @@ export default class InfiniteSlider {
     let timer;
     this.resizeHandler = () => {
       clearTimeout(timer);
-      timer = setTimeout(() => {
-        this.instances.forEach(inst => inst.recalc());
-      }, 200);
+      timer = setTimeout(() => this.instances.forEach(inst => inst.recalc()), 200);
     };
-    window.addEventListener('resize', this.resizeHandler);
+    window.addEventListener("resize", this.resizeHandler);
   }
 
   // 全インスタンス一時停止
@@ -103,7 +101,7 @@ export default class InfiniteSlider {
   destroy() {
     // リサイズイベントリスナーを削除
     if (this.resizeHandler) {
-      window.removeEventListener('resize', this.resizeHandler);
+      window.removeEventListener("resize", this.resizeHandler);
       this.resizeHandler = null;
     }
     this.instances.forEach(inst => inst.destroy());
@@ -133,73 +131,52 @@ class SliderInstance {
   // 要素複製＆GSAPアニメーション設定
   setup() {
     // クローン追加前にオリジナルアイテムのみ取得
-    const originalItems = Array.from(this.track.querySelectorAll(':scope > :not([data-cloned])'));
+    const originalItems = Array.from(this.track.querySelectorAll(":scope > :not([data-cloned])"));
     if (originalItems.length === 0) return;
 
     // 実際のtrack幅を取得（これにはgapも含まれる）
-    this.track.style.width = 'max-content';
+    this.track.style.width = "max-content";
 
-    // 1枚目スライド幅を取得
+    // 必要な値を取得
     const firstSlide = originalItems[0];
     const firstSlideWidth = firstSlide.getBoundingClientRect().width;
     const computedStyle = window.getComputedStyle(this.track);
     const gapValue = parseInt(computedStyle.gap) || 0;
-
-    // 全体track幅も取得
     const originalTrackWidth = this.track.getBoundingClientRect().width;
-    this.prevOriginalTrackWidth = originalTrackWidth;
-
-    // ラッパー幅を取得
     const wrapperWidth = this.wrapper.getBoundingClientRect().width;
 
     // 必要なクローンセット数を計算
-    const minCloneSets = Math.ceil((wrapperWidth + originalTrackWidth) / originalTrackWidth);
-
-    // 現在のクローンセット数を保存
-    this.currentCloneSets = minCloneSets;
+    this.currentCloneSets = Math.ceil((wrapperWidth + originalTrackWidth) / originalTrackWidth);
+    this.prevOriginalTrackWidth = originalTrackWidth;
 
     // 必要なセット数分のクローンを追加
-    for (let i = 0; i < minCloneSets; i++) {
+    for (let i = 0; i < this.currentCloneSets; i++) {
       originalItems.forEach(el => {
         const clone = el.cloneNode(true);
-        clone.setAttribute('data-cloned', 'true');
+        clone.setAttribute("data-cloned", "true");
         this.track.appendChild(clone);
       });
     }
 
-    // direction判定
-    const dirSign = this.direction === 'forward' ? -1 : 1;
-
-    // 移動距離を計算
-    const firstSlideWidthWithGap = firstSlideWidth + gapValue;
+    // アニメーション設定
+    const dirSign = this.direction === "forward" ? -1 : 1;
     const moveDistance = originalTrackWidth + gapValue;
-
-    // 方向ごとに初期位置と終了位置を設定
-    let startX, endX;
-    if (this.direction === 'forward') {
-      startX = 0;
-      endX = dirSign * moveDistance; // -originalTrackWidth（トラック全体を移動）
-    } else {
-      startX = -moveDistance;
-      endX = 0;
-    }
+    let startX = this.direction === "forward" ? 0 : -moveDistance;
+    let endX = this.direction === "forward" ? dirSign * moveDistance : 0;
 
     // 初期位置を設定
     gsap.set(this.track, { x: startX });
 
-    // durationを計算
-    const duration = (Math.abs(endX - startX) / firstSlideWidthWithGap) * (this.speed / 1000);
-
+    // アニメーション実行
+    const duration = (Math.abs(endX - startX) / (firstSlideWidth + gapValue)) * (this.speed / 1000);
     const animate = () => {
-      const tweenVars = {
-        x: endX,
-        duration: duration,
-        ease: 'none',
-        onComplete: animate
-      };
-
       gsap.set(this.track, { x: startX });
-      this.gsapTween = gsap.to(this.track, tweenVars);
+      this.gsapTween = gsap.to(this.track, {
+        x: endX,
+        duration,
+        ease: "none",
+        onComplete: animate
+      });
       if (!this.isPlaying) this.gsapTween.pause();
     };
     animate();
@@ -212,36 +189,28 @@ class SliderInstance {
     const wasPlaying = this.isPlaying;
 
     // 必要なクローンセット数を計算
-    const originalItems = Array.from(this.track.querySelectorAll(':scope > :not([data-cloned])'));
+    const originalItems = Array.from(this.track.querySelectorAll(":scope > :not([data-cloned])"));
     if (originalItems.length === 0) return;
 
     // track幅を取得
     const computedStyle = window.getComputedStyle(this.track);
     const gap = parseInt(computedStyle.gap) || 0;
-    const itemCount = originalItems.length;
-    const originalTrackWidth =
-      originalItems.reduce((sum, item) => sum + item.getBoundingClientRect().width, 0)
-      + gap * (itemCount - 1);
+    const originalTrackWidth = originalItems.reduce((sum, item) =>
+      sum + item.getBoundingClientRect().width, 0) + gap * (originalItems.length - 1);
 
-
-    // ラッパー幅を取得
+    // 新しいクローンセット数を計算
     const wrapperWidth = this.wrapper.getBoundingClientRect().width;
-
-    // 必要なクローンセット数を再計算
     const newCloneSets = Math.ceil((wrapperWidth + originalTrackWidth) / originalTrackWidth);
 
-    // クローンセット数またはスライド幅が変わった場合のみdestroyとsetupを実行
-    const trackWidthChanged = (this.prevOriginalTrackWidth !== originalTrackWidth);
-    if (newCloneSets !== this.currentCloneSets || trackWidthChanged) {
+    // 変更が必要な場合のみ再構築
+    if (newCloneSets !== this.currentCloneSets || this.prevOriginalTrackWidth !== originalTrackWidth) {
       this.destroy();
       this.setup();
 
-      // 保存した進行状況を新しいtweenに適用
+      // 状態を復元
       if (this.gsapTween) {
         this.gsapTween.progress(currentProgress);
-        if (!wasPlaying) {
-          this.pause();
-        }
+        if (!wasPlaying) this.pause();
       }
     }
   }
@@ -250,33 +219,30 @@ class SliderInstance {
   bindControls() {
     const pauseBtn = this.wrapper.querySelector(this.pauseSelector);
     const playBtn = this.wrapper.querySelector(this.playSelector);
-    if (pauseBtn) pauseBtn.addEventListener('click', () => this.pause());
-    if (playBtn) playBtn.addEventListener('click', () => this.play());
+    if (pauseBtn) pauseBtn.addEventListener("click", () => this.pause());
+    if (playBtn) playBtn.addEventListener("click", () => this.play());
   }
 
   pause() {
     if (this.gsapTween) this.gsapTween.pause();
-    this.wrapper.classList.add('is-paused');
+    this.wrapper.classList.add("is-paused");
     this.isPlaying = false;
   }
 
   play() {
     if (this.gsapTween) this.gsapTween.play();
-    this.wrapper.classList.remove('is-paused');
+    this.wrapper.classList.remove("is-paused");
     this.isPlaying = true;
   }
 
   destroy() {
-    // 停止＆クリーンアップ
     if (this.gsapTween) {
       this.gsapTween.kill();
       this.gsapTween = null;
     }
-    // クローン要素を削除
-    this.track.querySelectorAll('[data-cloned]').forEach(el => el.remove());
-    // トラックの位置とスタイルをリセット
+    this.track.querySelectorAll("[data-cloned]").forEach(el => el.remove());
     gsap.set(this.track, { x: 0 });
-    this.track.removeAttribute('style');
+    this.track.removeAttribute("style");
   }
 }
 
