@@ -87,25 +87,61 @@ mixin c_anchor-nav(style,...data)
         +e.button: +a(itemData.link).c-button.is-nav.js-anchor !{itemData.title}
 
 mixin c_news__block(data)
-  if data == "home"
-    +a("/news/category/page/").c-news__block
-      +e.date 2018.10.10
-      +e.label.c-label.is-white カテゴリ
-      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
-  else if data == "news"
-    +ae("/news/category/page/").block
-      +e.date 2022.01.01
-      +e.label.c-label.is-white カテゴリ
-      +e.inner
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-  else if data == "twocolumns"
-    +ae("/archive-twocolumns/category/page/").block
-      +e.date 2022.01.01
-      +e.label.c-label.is-white カテゴリ
-      +e.inner
-        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+  -
+    if (typeof data === "undefined") {
+      var data = [
+        {
+          url: "/news/category/page/",
+          date: "2022.01.01",
+          label: "カテゴリ",
+          title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+          icon: "arrow_forward",
+        }
+      ]
+    }
+  each item in data
+    +ae(item.url).block
+      +e.block-content
+        +e.block-date !{item.date}
+        if item.label
+          +e.block-label.c-label !{item.label}
+        +e.block-text-wrap
+          +e.block-text !{item.title}
+          if item.excerpt
+            +e.block-excerpt !{item.excerpt}
+      //item.iconがあれば.c-icon-fontを追加、なければ.c-label-fileを追加
+      +e.block-icon
+        if item.icon
+          span.c-link-icon
+            span.c-icon-font !{item.icon}
+        else
+          span.c-label-file PDF
+//
+//mixin c_news__block(data)
+//  //デフォルトデータ
+//  +ae("/news/category/page/").block
+//    +e.date 2022.01.01
+//    +e.label.c-label.is-white カテゴリ
+//    +e.inner
+//      +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//      +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+//
+//
+//      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
+//  else if data == "news"
+//    +ae("/news/category/page/").block
+//      +e.date 2022.01.01
+//      +e.label.c-label.is-white カテゴリ
+//      +e.inner
+//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
+//  else if data == "twocolumns"
+//    +ae("/archive-twocolumns/category/page/").block
+//      +e.date 2022.01.01
+//      +e.label.c-label.is-white カテゴリ
+//      +e.inner
+//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
 
 
 mixin select-prefectures()

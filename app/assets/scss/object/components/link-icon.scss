@@ -1,0 +1,77 @@
+
+.c-link-icon {
+  width: 40px;
+  aspect-ratio: 1;
+  font-size: 14px;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  background: $color-background;
+  border: 1px solid $color-background;
+  border-radius: 50%;
+  cursor: pointer;
+  @include transition-colors();
+  @include breakpoint(small only) {
+    width: 28px;
+    font-size: 12px;
+  }
+
+  // WP工程で自由にアイコンを調整できるようにするため通常は::beforeではなく
+  // .c-link-iconの中に直接 .c-icon-fontを入れる
+
+  //============================
+  //サイズ展開
+  //============================
+
+  &.is-lg {
+    width: 56px;
+
+    @include breakpoint(small only) {
+      width: 32px;
+    }
+  }
+
+
+  //============================
+  // デザインバリエーション
+  //============================
+
+  //自動アイコン
+  &.is-auto-icon {
+    &::before{
+      content: "arrow_forward";
+      @include icon-font();
+    }
+
+    //別タブ
+    [target="_blank"] &,
+    &.is-external, &[target="_blank"] {
+      &::before {
+        content: "open_in_new";
+      }
+    }
+  }
+
+  //白背景グレー枠線
+  &.is-white {
+    background: $color-white;
+    border-color: $color-gray;
+  }
+
+  //============================
+  // ホバー hover
+  //============================
+  @media (hover: hover) {
+    a:any-link:hover &,
+    &:any-link:hover {
+      opacity: 1;
+      background: $color-white;
+      border-color: $color-white;
+    }
+
+    &.is-white:any-link:hover {
+      background: $color-background;
+      border-color: $color-background;
+    }
+  }
+}

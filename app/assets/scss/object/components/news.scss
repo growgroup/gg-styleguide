@@ -1,6 +1,6 @@
 /*
 ---
-name: お知らせ_通常_フロントページ
+name: お知らせ_通常
 category: News
 ---
 */
@@ -57,40 +57,49 @@ category: News
     border-bottom: 1px solid $border-base-color;
     display: flex;
     align-items: center;
-    padding: 24px 0 16px;
-    @include breakpoint(small only) {
-      flex-wrap: wrap;
-      padding: 16px 0 12px;
-    }
+    gap: 0 8px;
+    padding: 16px 0;
 
     &:first-child {
       padding-top: 0;
     }
 
     @include hover(){
-        background-color: $color-secondary;
+      background-color: $color-secondary;
     }
   }
 
-  &__inner {
+  &__block-content {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    flex-grow: 1;
+    @include breakpoint(small only) {
+      flex-wrap: wrap;
+    }
 
+    &:has(.c-news__block-excerpt){
+      align-items: flex-start;
+      @include breakpoint(small only) {
+        align-items: center;
+      }
+    }
   }
 
-  &__date {
+  &__block-date {
+    flex-shrink: 0;
     @include news-date();
   }
 
-  &__label {
-    margin-left: 24px;
-    margin-right: 24px;
-    @include breakpoint(small only) {
-      margin-left: 16px;
-      margin-right: 0;
-
-    }
+  &__block-label {
   }
 
-  &__text {
+  &__block-text-wrap{
+    flex-grow: 1;
+  }
+
+  &__block-text {
+    flex-grow: 1;
     font-weight: 700;
     @include line-clamp(1);
 
@@ -99,58 +108,12 @@ category: News
       margin-top: 8px;
     }
   }
-}
 
+  &__block-excerpt{
+  }
 
-.c-news {
-  &.is-onecolumn {
-    padding-bottom: 0;
-
-    .c-news__block {
-      padding: 24px 0;
-      align-items: flex-start;
-      @include breakpoint(small only) {
-        align-items: center;
-        padding: 12px 0;
-      }
-    }
-
-    .c-news__date {
-      flex-shrink: 0;
-      margin-top: 6px;
-      @include breakpoint(small only) {
-        margin-top: 0;
-      }
-    }
-
-    .c-news__title {
-      flex-grow: 1;
-      text-align: center;
-      margin-bottom: 40px;
-      @include breakpoint(small only) {
-        margin-bottom: 24px;
-      }
-    }
-
-    .c-news__label {
-      margin-top: 2px;
-    }
-
-    .c-news__excerpt {
-      font-size: 14px;
-      margin-top: 8px;
-      @include breakpoint(small only) {
-        font-size: 12px;
-        margin-top: 4px;
-      }
-    }
-
-    .c-news__button {
-      text-align: center;
-
-      .c-button {
-        max-width: 224px;
-      }
-    }
+  &__block-icon{
+    flex-shrink: 0;
+    align-self: center;
   }
 }
