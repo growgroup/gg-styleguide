@@ -116,4 +116,15 @@ category: News
     flex-shrink: 0;
     align-self: center;
   }
+
+  &__block-icon-file{
+    display: block;
+    width: 40px;
+    padding: 1px 4px;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid $border-base-color;
+    border-radius: 100px;
+  }
+
 }

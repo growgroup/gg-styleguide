@@ -109,40 +109,13 @@ mixin c_news__block(data)
           +e.block-text !{item.title}
           if item.excerpt
             +e.block-excerpt !{item.excerpt}
-      //item.iconがあれば.c-icon-fontを追加、なければ.c-label-fileを追加
+      //-item.iconがあれば.c-link-icon > .c-icon-fontを追加、+span.block-label-file を追加
       +e.block-icon
         if item.icon
           span.c-link-icon
             span.c-icon-font !{item.icon}
         else
-          span.c-label-file PDF
-//
-//mixin c_news__block(data)
-//  //デフォルトデータ
-//  +ae("/news/category/page/").block
-//    +e.date 2022.01.01
-//    +e.label.c-label.is-white カテゴリ
-//    +e.inner
-//      +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-//      +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-//
-//
-//      +e.text お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。
-//  else if data == "news"
-//    +ae("/news/category/page/").block
-//      +e.date 2022.01.01
-//      +e.label.c-label.is-white カテゴリ
-//      +e.inner
-//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-//  else if data == "twocolumns"
-//    +ae("/archive-twocolumns/category/page/").block
-//      +e.date 2022.01.01
-//      +e.label.c-label.is-white カテゴリ
-//      +e.inner
-//        +e.text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-//        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います…[続きを見る]
-
+          +span.block-icon-file PDF
 
 mixin select-prefectures()
   select(name="都道府県")

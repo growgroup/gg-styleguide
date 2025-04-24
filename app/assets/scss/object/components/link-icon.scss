@@ -37,20 +37,20 @@
   //============================
 
   //自動アイコン
-  &.is-auto-icon {
-    &::before{
-      content: "arrow_forward";
-      @include icon-font();
-    }
-
-    //別タブ
-    [target="_blank"] &,
-    &.is-external, &[target="_blank"] {
-      &::before {
-        content: "open_in_new";
-      }
-    }
-  }
+  //&.is-auto-icon {
+  //  &::before{
+  //    content: "arrow_forward";
+  //    @include icon-font();
+  //  }
+  //
+  //  //別タブ
+  //  [target="_blank"] &,
+  //  &.is-external, &[target="_blank"] {
+  //    &::before {
+  //      content: "open_in_new";
+  //    }
+  //  }
+  //}
 
   //白背景グレー枠線
   &.is-white {
