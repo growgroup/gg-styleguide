@@ -22,11 +22,40 @@ block page_header
 block body
   section.l-section.is-lg
     .l-container.is-sm
-      +c.news.is-onecolumn
-        h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary カテゴリ
+      h2.c-heading.is-md.is-center.is-mg-level-1 カテゴリ
+      +c.news
         +e.content
-          +loop(10)
-            +c_news__block("news")
+          +e.block
+            +e.block-content
+              +e.block-date 2022.01.01
+              +e.block-label.c-label カテゴリ
+              +e.block-text-wrap
+                +e.block-text リンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
+                +e.block-excerpt リンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
+          +loop(3)
+            +c_news__block([
+              {
+                url: "/news/category/page/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                excerpt: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+                icon: "arrow_forward",
+              },
+              {
+                url: "https://example.com/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                icon: "open_in_new",
+              },
+              {
+                url: "https://example.com/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+              }
+            ])
       +c_pagination()
 
 block under_main
