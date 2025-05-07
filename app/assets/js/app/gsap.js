@@ -1,6 +1,13 @@
+// import Lottie from 'lottie-web';
 import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+// import {GSDevTools} from "gsap/GSDevTools";
+// import {MorphSVGPlugin} from "gsap/MorphSVGPlugin";
+
 gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(GSDevTools);
+// gsap.registerPlugin(MorphSVGPlugin);
+
 import Utils from './utils.js';
 
 const utils = new Utils();
@@ -63,6 +70,38 @@ export default class GsapAnimation {
   //     x: 300,
   //     duration: 0.8,
   //     ease: utils.customSpring(100, 15, 1)
+  //   });
+  // }
+
+
+  // /**
+  //  * Lottieを使用する場合のサンプル
+  //  * import Lottie from 'lottie-web'; をgsap.js上部に追加してから使用してください
+  // */
+  // sampleLottieScrollTrigger() {
+  //   const triggerSelector = ".js-hogehoge-trigger";
+  //   const targetSelector = ".js-hogehoge-lottie";
+  //   // if (!document.querySelector(triggerSelector)) {
+  //     return;
+  //   }
+  //
+  //   // Lottieの初期化
+  //   const lottieAnimation = Lottie.loadAnimation({
+  //     container: document.querySelector(targetSelector),
+  //     renderer: 'svg',
+  //     loop: false,//ループしない
+  //     autoplay: false,//自動再生しない
+  //     path: `/assets/files/sample-lottie.json`, // Lottieファイルのパス
+  //   });
+  //
+  //   // ScrollTriggerの設定 画面内に入ったら発火させる
+  //   ScrollTrigger.create({
+  //     trigger: triggerSelector,
+  //     start: "top 90%",
+  //     markers: true,
+  //     onEnter: () => {
+  //       lottieAnimation.play();
+  //     }
   //   });
   // }
 

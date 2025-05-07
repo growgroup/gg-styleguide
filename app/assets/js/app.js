@@ -24,6 +24,7 @@ import Scrollable from "./app/scrollable";
 import Dropdown from "./app/dropdown";
 import DropdownTextSync from "./app/dropdown-text-sync";
 import InfiniteSlider from "./app/infinite-slider";
+// import LottieSimple from "./app/lottie";
 // import Parallax from "./app/parallax";
 // import LenisScroll from "./app/lenis";
 
@@ -47,6 +48,7 @@ class App {
     this.InfiniteSlider = new InfiniteSlider();
     // this.parallax = new Parallax();
     // this.lenis = new LenisScroll();
+    // this.LottieSimple = new LottieSimple();
     this.defaultOptions = {
       gsap: this.gsap,
       utils: this.Utils
