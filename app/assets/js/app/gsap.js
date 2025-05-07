@@ -1,7 +1,13 @@
 // import Lottie from 'lottie-web';
 import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+// import {GSDevTools} from "gsap/GSDevTools";
+// import {MorphSVGPlugin} from "gsap/MorphSVGPlugin";
+
 gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(GSDevTools);
+// gsap.registerPlugin(MorphSVGPlugin);
+
 import Utils from './utils.js';
 
 const utils = new Utils();

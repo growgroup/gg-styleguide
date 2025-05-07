@@ -75,7 +75,7 @@
     "@fontsource/material-icons-sharp": "^5.1.0",
     "@fontsource/material-icons-two-tone": "^5.1.0",
     "@fontsource/noto-sans-jp": "^5.1.0",
-    "gsap": "^3.12.5",
+    "gsap": "^3.13.0",
     "imagesloaded": "^5.0.0",
     "lenis": "^1.1.18",
     "lottie-web": "^5.12.2",
