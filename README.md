@@ -67,6 +67,9 @@ dist ディレクトリ内に展開します。
 │   │       │    ├── components
 │   │       │    ├── project
 │   │       │    └── utility
+│   │       ├── wordpress
+│   │       │    ├── layout
+│   │       │    ├── components
 │   │       └── style.scss
 │   ├── inc
 │   │   ├── foundation
