@@ -1,14 +1,9 @@
 .c-gallery-logo {
+  overflow: hidden;
 
-  &__slider {
-
-    &:not(:first-child) {
-      margin-top: 56px;
-
-      @include breakpoint(small down) {
-        margin-top: 24px;
-      }
-    }
+  &__track {
+    display: flex;
+    gap: 32px;
   }
 
   &__image {
@@ -26,14 +21,4 @@
     }
   }
 
-  &__images {
-    transition-timing-function: linear;
-    display: flex;
-    gap: 32px;
-
-    @at-root .swiper-initialized & {
-      display: flex;
-      gap: 0;
-    }
-  }
 }
