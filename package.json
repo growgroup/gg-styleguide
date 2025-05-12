@@ -48,7 +48,7 @@
     "postcss": "^8.5.2",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "^8.1.1",
-    "postcss-prefix-selector": "^1.16.1",
+    "postcss-prefix-selector": "^2.1.1",
     "postcss-pxtorem": "^6.1.0",
     "postcss-scss": "^4.0.9",
     "postcss-sort-media-queries": "^5.2.0",
