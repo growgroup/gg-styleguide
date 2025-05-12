@@ -1,15 +1,17 @@
 /*!
 * マテリアルアイコン設定
 */
+@use "pkg:@fontsource-utils/scss" as fontsource;
 
-//@use "@fontsource/material-icons/scss/mixins" as material-icons;
-//@use "@fontsource/material-icons-round/scss/mixins" as material-icons;
-@use "@fontsource/material-icons-outlined/scss/mixins" as material-icons;
-//@use "@fontsource/material-icons-sharp/scss/mixins" as material-icons;
-//@use "@fontsource/material-icons-two-tone/scss/mixins" as material-icons;
+//@use "pkg:@fontsource/material-icons/scss" as material-icons;
+//@use "pkg:@fontsource/material-icons-round/scss" as material-icons;
+@use "pkg:@fontsource/material-icons-outlined/scss" as material-icons;
+//@use "pkg:@fontsource/material-icons-sharp/scss" as material-icons;
+//@use "pkg:@fontsource/material-icons-two-tone/scss" as material-icons;
 
 //font-displayの値を変更
-@include material-icons.faces(
+
+@include fontsource.faces(
+  $metadata: material-icons.$metadata,
   $display: block,
 );
-
