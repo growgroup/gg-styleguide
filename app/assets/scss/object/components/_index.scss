@@ -1,5 +1,7 @@
 @import 'accordion';
 @import 'anchor-nav';
+@import 'aside-navs';
+@import 'aside-posts';
 @import 'block';
 @import 'block-cookie';
 @import 'block-document';
@@ -17,7 +19,6 @@
 @import 'forms-document-detail';
 @import 'gallery-logo';
 @import 'gallery-text';
-@import 'grid';
 @import 'heading';
 @import 'hero-block-square';
 @import 'hr';
@@ -28,7 +29,6 @@
 @import 'list';
 @import 'loader';
 @import 'main-visual';
-@import 'menu-list';
 @import 'mm';
 @import 'modal-link';
 @import 'news-header';
@@ -38,11 +38,7 @@
 @import 'pagination';
 @import 'post-navs';
 @import 'relation';
-@import 'search';
 @import 'scrollable';
-@import 'search-result-aside';
-@import 'search-result-header';
-@import 'searchform-bar';
 @import 'sitemap';
 @import 'slidebar-button';
 @import 'slidebar-menu';
@@ -50,4 +46,3 @@
 @import 'table-sm';
 @import 'table-xlg';
 @import 'tabs';
-@import 'toc';

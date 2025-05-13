@@ -75,11 +75,8 @@ export default class SwiperSlider {
   run() {
     imagesLoaded(this.targetAll, () => {
       this.MainVisualSlider(); //->メインビジュアル
-      this.LogoSlider(".js-logo-slider:nth-child(odd of .js-logo-slider)"); //->ロゴスライダー
-      this.LogoSlider(".js-logo-slider:nth-child(even of .js-logo-slider)", true); //->ロゴスライダー
       this.runCardSlider(); //->カードスライダー
       this.documentSlider(); //->ドキュメントスライダー
-      this.textLoopSlider(); //->テキストループ
     });
   }
 
@@ -136,63 +133,6 @@ export default class SwiperSlider {
     });
   }
 
-
-  //スライド枚数が著しく少ない場合、事前にスライドを複製してスライダーを初期化するサンプル
-  //動作の安定性に疑問があるため、不具合があれば別の実装方法を検討する
-  LogoSlider(selector, reverse = false) {
-    const minSlides = 2;
-    const targetSelector = selector;
-    const target = document.querySelector(targetSelector);
-
-    // ターゲット要素が存在しない場合、処理を終了する
-    if (!target) {
-      return;
-    }
-
-    const targetSlideSelector = `${targetSelector} .swiper-slide`;
-    const targetSlides = target.querySelectorAll(targetSlideSelector);
-
-    // スライドの数が最低限必要な数（minSlides）より少ない場合、スライダーを初期化せずに処理を終了する
-    if (targetSlides.length < minSlides) {
-      return;
-    }
-
-    // スライドの数が8未満の場合、スライドを複製して8枚以上になるまで追加する
-    if (targetSlides.length < 8) {
-      while (target.querySelectorAll(targetSlideSelector).length < 8) {
-        for (let i = 0; i < targetSlides.length; i++) {
-          const cloneSlide = targetSlides[i].cloneNode(true);
-          target.querySelector(".swiper-wrapper").appendChild(cloneSlide);
-        }
-      }
-    }
-
-    let options = {
-      loop: true,
-      speed: 4000,
-      loopedSlides: targetSlides.length + 2,
-      slidesPerView: "auto",
-      allowTouchMove: false,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-        reverseDirection: reverse,
-      },
-      breakpoints: {
-        0: {
-          spaceBetween: 16,
-        },
-        950: {
-          spaceBetween: 32,
-        },
-      },
-    }
-
-    return new Swiper(targetSelector,
-      options
-    );
-
-  }
 
 
   // スマホとPCで最低限必要なスライド数が異なる場合のサンプル
@@ -328,33 +268,5 @@ export default class SwiperSlider {
     });
   }
 
-
-  textLoopSlider() {
-    const targetSelector = '.js-text-loop';
-
-    // ターゲット要素が存在しない場合、処理を終了する
-    if (!document.querySelector(targetSelector)) {
-      return;
-    }
-
-    const swiper = new Swiper(targetSelector, {
-      loop: true,
-      speed: 20000,
-      slidesPerView: "auto",
-      allowTouchMove: false,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          spaceBetween: 32,
-        },
-        950: {
-          spaceBetween: 54,
-        },
-      },
-    });
-  }
 
 }

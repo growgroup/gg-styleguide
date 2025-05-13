@@ -71,6 +71,22 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 sassOptions: {
+                  importer: {
+                    //@use "pkg:@fontsource-utils/scss" as fontsource; に対応させる
+                    canonicalize: function(url, options) {
+                      if (url.startsWith('pkg:')) {
+                        return new URL(
+                          'file://' + 
+                          path.resolve(__dirname, 'node_modules/', url.replace(/^pkg:/, ''))
+                        );
+                      }
+                      return null;
+                    },
+                    load: function(canonicalUrl) {
+                      // ファイルシステムからの読み込みはデフォルト動作に任せる
+                      return null;
+                    }
+                  }
                 },
 
               }

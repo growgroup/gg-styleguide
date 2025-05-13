@@ -1,38 +1,18 @@
-mixin l-aside(data)
-  if (data == "news")
-    +c.menu-list
-      +e.head ページ_2カラム
-      +ul.list
-        li: +a("/archive-twocolumns/").js-current-nav すべて
-        li: +a("/archive-twocolumns/category/").js-current-nav カテゴリ
-        li: +a("/archive-twocolumns/").js-current-nav(data-parent-nav="true") 子階層滞在時もis-current
-        li: +a("#").js-current-nav カテゴリ
-  else
-    +c.menu-list
-      +e.head ページ_2カラム
-      +e.banners.js-accordion
-        +a("#").c-menu-list__block(data-accordion-title="accordion-title") コンテンツタイトル
-        ul.c-menu-list__submenu(data-accordion-content="accordion-text")
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-      +e.banners.js-accordion
-        +a("#").c-menu-list__block(data-accordion-title="accordion-title") コンテンツタイトル
-        ul.c-menu-list__submenu(data-accordion-content="accordion-text")
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-      +e.banners.js-accordion
-        +a("#").c-menu-list__block(data-accordion-title="accordion-title") コンテンツタイトル
-        ul.c-menu-list__submenu(data-accordion-content="accordion-text")
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
-      +e.banners.js-accordion
-        +a("#").c-menu-list__block(data-accordion-title="accordion-title") コンテンツタイトル
-        ul.c-menu-list__submenu(data-accordion-content="accordion-text")
-          li: +a("#") カテゴリ
-          li: +a("#") カテゴリ
+mixin l-aside
+  +c.aside-navs
+    +e.block
+      +e.head
+        +e.head-title 通常リスト
+      +e.list
+        +e.list-item: +ae("/twocolumns/").list-link 通常リンク
+        +e.list-item: +ae("/twocolumns/").list-link.js-current-nav カレントリンク
+        +e.list-item: +ae("/twocolumns/page/").list-link 通常リンク
+
+    +e.block
+      +e.head
+        +e.head-title バナー
+      +e.image
+        +img("img-main-visual-01.jpg")
 
 mixin l-aside-search-result
   +c.search-result-aside

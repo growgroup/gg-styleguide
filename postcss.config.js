@@ -13,10 +13,6 @@ module.exports = (ctx) => ({
           transform: function (prefix, selector, prefixedSelector) {
             if (selector.includes("#growp-editor-wrapper")) {
               return selector;
-            } else if (selector === "body") {
-              return prefix;
-            } else if (selector === "html") {
-              return prefix;
             } else {
               return prefixedSelector;
             }

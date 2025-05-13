@@ -21,83 +21,85 @@ block page_header
   })
 
 block body
-  +c.news
-    h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
-    +e.content
-      +e.block
-        +e.block-content
-          +e.block-date 2022.01.01
-          +e.block-label.c-label カテゴリ
-          +e.block-text-wrap
-            +e.block-text リンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
-            +e.block-excerpt リンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
-      +loop(3)
-        +c_news__block([
-          {
-            url: "/archive-twocolumns/category/page/",
-            date: "2022.01.01",
-            label: "カテゴリ",
-            title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
-            excerpt: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
-            icon: "arrow_forward",
-          },
-          {
-            url: "https://example.com/",
-            date: "2022.01.01",
-            label: "カテゴリ",
-            title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
-            icon: "open_in_new",
-          },
-          {
-            url: "https://example.com/",
-            date: "2022.01.01",
-            label: "カテゴリ",
-            title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
-          }
-        ])
-  +c_pagination()
-  +c.box-archive.u-mbs.is-top.is-lg
-    +e.block
-      +e.title カテゴリ
-      ul
-        li: +a("/archive-twocolumns/category/") すべて
-        li: +a("/archive-twocolumns/category/") お知らせ
-        li: +a("/archive-twocolumns/category/") ブログ
-    +e.block
-      +e.title 年月アーカイブ
-      ul
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-        li: +a("/archive-twocolumns/category/") 2019年01月
-  +c.news-lg.u-mbs.is-top.is-lg
-    +loop(5)
-      +a("/archive-twocolumns/category/page/").c-news-lg__block
-        +e.sup
-          +e.label.c-label.is-sm お知らせ
-          +e.date 2018.06.01
-        +e.title お知らせの投稿タイトルがここに入ります。
-        +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
-  +c_pagination("is-align-left")
-
-  +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg
-    .row
-      +loop(4)
-        .large-3.small-6
+  section.l-section.is-md
+    .l-container
+      +c.news
+        h2.c-news__title.c-heading.is-md.is-line-under.is-color-primary すべて
+        +e.content
           +e.block
-            +a.c-card-post__image
-              +img("img-card-01.jpg")
-            +e.content
-              +e.sup
-                span.c-card-post__label.c-label カテゴリ名
-                +e.date 2018.01.01
-              +e.title タイトルが入ります。タイトルが入ります。
-  +c_pagination()
+            +e.block-content
+              +e.block-date 2022.01.01
+              +e.block-label.c-label カテゴリ
+              +e.block-text-wrap
+                +e.block-text リンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
+                +e.block-excerpt リンク無し記事のテストリンク無し記事のテストリンク無し記事のテスト
+          +loop(3)
+            +c_news__block([
+              {
+                url: "/archive-twocolumns/category/page/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                excerpt: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+                icon: "arrow_forward",
+              },
+              {
+                url: "https://example.com/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                icon: "open_in_new",
+              },
+              {
+                url: "https://example.com/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+              }
+            ])
+      +c_pagination()
+      +c.box-archive.u-mbs.is-top.is-lg
+        +e.block
+          +e.title カテゴリ
+          ul
+            li: +a("/archive-twocolumns/category/") すべて
+            li: +a("/archive-twocolumns/category/") お知らせ
+            li: +a("/archive-twocolumns/category/") ブログ
+        +e.block
+          +e.title 年月アーカイブ
+          ul
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+            li: +a("/archive-twocolumns/category/") 2019年01月
+      +c.news-lg.u-mbs.is-top.is-lg
+        +loop(5)
+          +a("/archive-twocolumns/category/page/").c-news-lg__block
+            +e.sup
+              +e.label.c-label.is-sm お知らせ
+              +e.date 2018.06.01
+            +e.title お知らせの投稿タイトルがここに入ります。
+            +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+      +c_pagination("is-align-left")
+
+      +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg
+        .row
+          +loop(4)
+            .large-3.small-6
+              +e.block
+                +a.c-card-post__image
+                  +img("img-card-01.jpg")
+                +e.content
+                  +e.sup
+                    span.c-card-post__label.c-label カテゴリ名
+                    +e.date 2018.01.01
+                  +e.title タイトルが入ります。タイトルが入ります。
+      +c_pagination()
 
 block aside
-  +l-aside(news)
+  +l-aside-posts()
