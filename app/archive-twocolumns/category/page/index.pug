@@ -22,173 +22,176 @@ block page_header
 
 
 block body
-  +c.news-header
-    h1.c-news-header__title ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。
-    +e.sup
-      +e.label.c-label カテゴリ
-      +e.date 2018.10.10
-      +e.tag
-        ul
-          li: +a("#") #タグ
-          li: +a("#") #タグ
-          li: +a("#") #タグ
+  section.l-section.is-md
+    .l-container
+      +c.news-header
+        h1.c-news-header__title ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。 ここに記事のタイトルが入ります。
+        +e.sup
+          +e.label.c-label カテゴリ
+          +e.date 2018.10.10
+          +e.tag
+            ul
+              li: +a("#") #タグ
+              li: +a("#") #タグ
+              li: +a("#") #タグ
 
-  .l-post-content.is-twocolumns
-    +img("img-sample.jpg")
-    <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle">[<a href="#">非表示</a>]</span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
+      .l-post-content.is-twocolumns
+        +img("img-sample.jpg")
+        <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle">[<a href="#">非表示</a>]</span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
 
-    h2 見出し弐
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    h3 見出し参
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    h4 見出し四
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    h5 見出し五
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    h6 見出し六
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    p
-      strong 強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト
-    p.has-small-font-size
-      | 小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト
-    p
-      a(href="#") リンクのテキストリンクのテキストリンクのテキスト
-      | テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    h2 引用 (Blockquote)
-    p 一行の引用:
-    blockquote
-      p 貪欲であれ、愚かであれ
-    h2 引用 (Blockquote)
-    p 引用元の参照のある複数行の引用:
-    blockquote
-      p 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
-      cite スティーブ・ジョブズ – 1997年 Apple 世界的開発者会議
-    h2 テーブル
-    figure
-      table
-        thead
-          tr
-            th 従業員
-            th 給与
-            th
-        tbody
-          tr
-            td
-              a(href="#") ジェーン
-            td $￥1
-            td スティーブ・ジョブズの必要な給与。
-          tr
-            td
-              a(href="#") ジョン
-            td ￥10万
-            td ブログのすべて。
-    h2 非順序リスト
-    ul
-      li リストアイテム1
+        h2 見出し弐
+        p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h3 見出し参
+        p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h4 見出し四
+        p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h5 見出し五
+        p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h6 見出し六
+        p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        p
+          strong 強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト強調テキスト
+        p.has-small-font-size
+          | 小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト小さいテキスト
+        p
+          a(href="#") リンクのテキストリンクのテキストリンクのテキスト
+          | テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h2 引用 (Blockquote)
+        p 一行の引用:
+        blockquote
+          p 貪欲であれ、愚かであれ
+        h2 引用 (Blockquote)
+        p 引用元の参照のある複数行の引用:
+        blockquote
+          p 集中という意味は集中しなくてはいけないことにイエスということだと、人は言います。しかし、それはまったく違います。そうではなく、そこにある何百ものいいアイディアにノーということなのです。慎重に選択しなくてはいけません。実際、私は成し遂げたことと同じように成し遂げられなかったことにも満足しています。革新というのは1000ものことにノーということなのです。
+          cite スティーブ・ジョブズ – 1997年 Apple 世界的開発者会議
+        h2 テーブル
+        figure
+          table
+            thead
+              tr
+                th 従業員
+                th 給与
+                th
+            tbody
+              tr
+                td
+                  a(href="#") ジェーン
+                td $￥1
+                td スティーブ・ジョブズの必要な給与。
+              tr
+                td
+                  a(href="#") ジョン
+                td ￥10万
+                td ブログのすべて。
+        h2 非順序リスト
         ul
           li リストアイテム1
             ul
               li リストアイテム1
+                ul
+                  li リストアイテム1
+                  li リストアイテム2
+                  li リストアイテム3
+                  li リストアイテム4
               li リストアイテム2
               li リストアイテム3
               li リストアイテム4
           li リストアイテム2
           li リストアイテム3
           li リストアイテム4
-      li リストアイテム2
-      li リストアイテム3
-      li リストアイテム4
-    h2 順序リスト
-    ol
-      li リストアイテム1
+        h2 順序リスト
         ol
           li リストアイテム1
             ol
               li リストアイテム1
+                ol
+                  li リストアイテム1
+                  li リストアイテム2
+                  li リストアイテム3
+                  li リストアイテム4
               li リストアイテム2
               li リストアイテム3
               li リストアイテム4
           li リストアイテム2
           li リストアイテム3
           li リストアイテム4
-      li リストアイテム2
-      li リストアイテム3
-      li リストアイテム4
-    h2 divが以下のような構成になるときもある
-    div
-      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    div
-      p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        h2 divが以下のような構成になるときもある
+        div
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        div
+          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
 
-  hr.c-hr
-  +c.box-share
-    +e.inner
-      +e.title この記事が気に入ったら<br class="u-hidden-lg">「いいね！」
-      +e.items
-        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/GrowGroupLLC/" data-width="100" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=712&amp;href=https%3A%2F%2Fwww.facebook.com%2FGrowGroupLLC%2F&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;width=100"><span style="vertical-align: bottom; width: 72px; height: 40px;"><iframe name="ffbce1802e0a34" width="100px" height="1000px" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.8/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2abe0a77578bb8%26domain%3Dgrow-group.jp%26origin%3Dhttps%253A%252F%252Fgrow-group.jp%252Ffb94e260fbe5c4%26relation%3Dparent.parent&amp;container_width=712&amp;href=https%3A%2F%2Fwww.facebook.com%2FGrowGroupLLC%2F&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;width=100" style="border: none; visibility: visible; width: 72px; height: 40px;" class=""></iframe></span></div>
+      hr.c-hr
+      +c.box-share
+        +e.inner
+          +e.title この記事が気に入ったら<br class="u-hidden-lg">「いいね！」
+          +e.items
+            <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/GrowGroupLLC/" data-width="100" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=712&amp;href=https%3A%2F%2Fwww.facebook.com%2FGrowGroupLLC%2F&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;width=100"><span style="vertical-align: bottom; width: 72px; height: 40px;"><iframe name="ffbce1802e0a34" width="100px" height="1000px" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.8/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2abe0a77578bb8%26domain%3Dgrow-group.jp%26origin%3Dhttps%253A%252F%252Fgrow-group.jp%252Ffb94e260fbe5c4%26relation%3Dparent.parent&amp;container_width=712&amp;href=https%3A%2F%2Fwww.facebook.com%2FGrowGroupLLC%2F&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey&amp;share=false&amp;show_faces=true&amp;width=100" style="border: none; visibility: visible; width: 72px; height: 40px;" class=""></iframe></span></div>
 
-  h4 この記事を書いた人
-  +c.block
-    .row
-      .large-3.small-4
-        +e.image: +img("img-thumbnail-01.jpg")
-      .large-9.small-8
-        +e.content
-          h6 名前名前
-          p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          div.u-text-right.u-mbs.is-top.is-xxs
-            +a("").c-button.is-xs この執筆者の記事一覧
-  hr.c-hr
-  +c_post_nav("post-twocolumns")
-  h3 関連コンテンツ
-  +c.news-lg.is-image-display
-    +a("#").c-news-lg__block
-      +e.image: +img("img-thumbnail-01.jpg")
-      +e.content
-        +e.sup
-          +e.label.c-label.is-sm お知らせ
-          +e.date 2018.06.01
-        +e.title お知らせの投稿タイトルがここに入ります。
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
-    +a("#").c-news-lg__block
-      +e.image: +img("img-thumbnail-01.jpg")
-      +e.content
-        +e.sup
-          +e.label.c-label.is-sm お知らせ
-          +e.date 2018.06.01
-        +e.title お知らせの投稿タイトルがここに入ります。
-        +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
-  div.u-mbs.is-top.is-lg
-    +c.card-post.is-tag-hidden
-      .row
-        .large-4.small-6
-          +e.block
-            +a.c-card-post__image
-              +img("img-card-01.jpg")
+
+      h4 この記事を書いた人
+      +c.block
+        .row
+          .large-3.small-4
+            +e.image: +img("img-thumbnail-01.jpg")
+          .large-9.small-8
             +e.content
-              +e.sup
-                +e.date 2018.01.01
-                span.c-card-post__label.c-label.is-sm カテゴリ名
-              +e.title タイトルが入ります。タイトルが入ります。
-        .large-4.small-6
-          +e.block
-            +a.c-card-post__image
-              +img("img-card-01.jpg")
-            +e.content
-              +e.sup
-                +e.date 2018.01.01
-                span.c-card-post__label.c-label.is-sm カテゴリ名
-              +e.title タイトルが入ります。タイトルが入ります。
-        .large-4.small-6
-          +e.block
-            +a.c-card-post__image
-              +img("img-card-01.jpg")
-            +e.content
-              +e.sup
-                +e.date 2018.01.01
-                span.c-card-post__label.c-label.is-sm カテゴリ名
-              +e.title タイトルが入ります。タイトルが入ります。
+              h6 名前名前
+              p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              div.u-text-right.u-mbs.is-top.is-xxs
+                +a("").c-button.is-xs この執筆者の記事一覧
+      hr.c-hr
+      +c_post_nav("post-twocolumns")
+      h3 関連コンテンツ
+      +c.news-lg.is-image-display
+        +a("#").c-news-lg__block
+          +e.image: +img("img-thumbnail-01.jpg")
+          +e.content
+            +e.sup
+              +e.label.c-label.is-sm お知らせ
+              +e.date 2018.06.01
+            +e.title お知らせの投稿タイトルがここに入ります。
+            +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
+        +a("#").c-news-lg__block
+          +e.image: +img("img-thumbnail-01.jpg")
+          +e.content
+            +e.sup
+              +e.label.c-label.is-sm お知らせ
+              +e.date 2018.06.01
+            +e.title お知らせの投稿タイトルがここに入ります。
+            +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
+      div.u-mbs.is-top.is-lg
+        +c.card-post.is-tag-hidden
+          .row
+            .large-4.small-6
+              +e.block
+                +a.c-card-post__image
+                  +img("img-card-01.jpg")
+                +e.content
+                  +e.sup
+                    +e.date 2018.01.01
+                    span.c-card-post__label.c-label.is-sm カテゴリ名
+                  +e.title タイトルが入ります。タイトルが入ります。
+            .large-4.small-6
+              +e.block
+                +a.c-card-post__image
+                  +img("img-card-01.jpg")
+                +e.content
+                  +e.sup
+                    +e.date 2018.01.01
+                    span.c-card-post__label.c-label.is-sm カテゴリ名
+                  +e.title タイトルが入ります。タイトルが入ります。
+            .large-4.small-6
+              +e.block
+                +a.c-card-post__image
+                  +img("img-card-01.jpg")
+                +e.content
+                  +e.sup
+                    +e.date 2018.01.01
+                    span.c-card-post__label.c-label.is-sm カテゴリ名
+                  +e.title タイトルが入ります。タイトルが入ります。
 
 block aside
-  +l-aside(news)
+  +l-aside-posts()

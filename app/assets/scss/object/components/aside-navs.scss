@@ -1,0 +1,59 @@
+.c-aside-navs {
+
+  &__block {
+    &:where(:not(:first-child)) {
+      margin-top: 40px;
+    }
+  }
+
+  // 見出し
+  &__head {
+    margin-bottom: rem-calc(24);
+  }
+  &__head-title {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 700;
+    padding: 12px 16px;
+  }
+
+  // 通常リスト
+  &__list {}
+  &__list-item {
+    padding: 6px 0;
+    summary{
+      display: block;
+      cursor: pointer;
+    }
+    &::-webkit-details-marker {
+      display: none; //Safariの矢印を非表示
+    }
+  }
+  &__list-link {
+    display: block;
+    position: relative;
+    padding: 0 16px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(1em * $font-base-line-height / 2);
+      left: 0;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $border-base-color;
+    }
+    &.is-current {
+      color: $color-primary;
+      &::before {
+        background: $color-primary;
+      }
+    }
+  }
+
+  &__submenu {}
+  &__submenu-item {}
+  &__submenu-link {}
+}
