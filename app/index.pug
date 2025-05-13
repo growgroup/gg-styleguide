@@ -70,13 +70,33 @@ block body
       +c.news
         +e.columns
           +e.head
-            h2.c-news__title.c-heading.is-xlg
-              span NEWS
-              small お知らせ
+            h2.c-heading.is-xlg
+              span.is-eng NEWS
+              span.is-ja お知らせ
             +e.button: +a("/news/").c-button.is-sm 一覧を見る
           +e.content
-            +loop(3)
-              +c_news__block("home")
+            +c_news__block([
+              {
+                url: "/news/category/page/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                icon: "arrow_forward",
+              },
+              {
+                url: "https://example.com/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+                icon: "open_in_new",
+              },
+              {
+                url: "/news/category/page/",
+                date: "2022.01.01",
+                label: "カテゴリ",
+                title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+              }
+            ])
 
 block under_main
   +c_cookie
