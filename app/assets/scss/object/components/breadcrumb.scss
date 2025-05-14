@@ -12,7 +12,9 @@
     line-height: 1.5;
 
     @include breakpoint(small only) {
-      @include line-clamp(1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     span {
