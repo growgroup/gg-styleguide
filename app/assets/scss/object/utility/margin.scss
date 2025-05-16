@@ -1,26 +1,16 @@
 
-// margin size
-
-$default: 56;
-$sizes: (
-  xlg: (120, 60),
-  lg: (100, 50),
-  md: (64, 32),
-  sm: (42, 20),
-  xs: (24, 12),
-);
 
 .u-mbs {
 
-  margin-top: rem-calc($default);
-  margin-bottom: rem-calc($default);
+  margin-top: rem-calc(nth($marginDefault, 1));
+  margin-bottom: rem-calc(nth($marginDefault, 1));
   @include breakpoint(small down) {
-    margin-top: rem-calc($default) * 0.5;
-    margin-bottom: rem-calc($default) * 0.5;
+    margin-top: rem-calc(nth($marginDefault, 2));
+    margin-bottom: rem-calc(nth($marginDefault, 2));
   }
 
   // サイズ設定
-  @each $key, $value in $sizes {
+  @each $key, $value in $marginSizes {
     $pc-value: nth($value, 1); // PC用
     $sp-value: nth($value, 2); // SP用
 
