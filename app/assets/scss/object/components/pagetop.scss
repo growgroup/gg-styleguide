@@ -22,7 +22,7 @@
     opacity: 1;
   }
 
-  a {
+  a , button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +35,7 @@
     @include transition();
     font-size: 25px;
     line-height: 1;
+    border: 1px solid $font-base-color;
 
     &:after {
       content: "expand_less";
