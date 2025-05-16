@@ -34,8 +34,11 @@ block body
           +h1.head お問い合わせ
           +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
           +e.blocks
-            +e.block
-              +e.title チェックボックス
+
+            +e("fieldset").block
+              +e("legend").title
+                | チェックボックス
+                span.c-forms__label 必須
               +e.content
                 +e.checkbox.is-border
                   span
@@ -57,15 +60,18 @@ block body
                           input(type="checkbox", name="service-options", value="選択肢4")
                           span 選択肢4
 
-            +e.block
-              +e.title ラジオボタン
+
+            +e("fieldset").block
+              +e("legend").title
+                | ラジオボタン
+                span.c-forms__label 必須
               +e.content
                 +e.radio.is-border
                   span
                     span
                       span
                         label
-                          input(type="radio", name="service-selection", value="選択肢1")
+                          inpu(type="radio", name="service-selection", value="選択肢1")
                           span 選択肢1
                       span
                         label
@@ -80,8 +86,11 @@ block body
                           input(type="radio", name="service-selection", value="選択肢4")
                           span 選択肢4
 
-            +e.block
-              +e.title ご希望のサービス（テキストが長い場合）
+
+            +e("fieldset").block
+              +e("legend").title
+                | ご希望のサービス（テキストが長い場合）
+                span.c-forms__label 必須
               +e.content
                 +e.checkbox.is-border.is-vertical
                   span
@@ -103,8 +112,12 @@ block body
                           input(type="checkbox", name="long-text-options", value="選択肢4")
                           span 選択肢4 長いテキスト
 
-            +e.block
-              +e.title ラジオボタン（ブラウザのデフォルトから変更したいとき）
+
+
+            +e("fieldset").block
+              +e("legend").title
+                | ラジオボタン（ブラウザのデフォルトから変更したいとき）
+                span.c-forms__label 必須
               +e.content
                 +e.radio.is-design.is-border
                   span
@@ -118,8 +131,8 @@ block body
                           input(type="radio", name="custom-service-selection", value="選択肢2")
                           span 選択肢2
 
-            +e.block
-              +e.title チェックボックス（ブラウザのデフォルトから変更したいとき）
+            +e("fieldset").block
+              +e("legend").title チェックボックス（ブラウザのデフォルトから変更したいとき）
               +e.content
                 +e.checkbox.is-design.is-border
                   span
@@ -134,7 +147,7 @@ block body
                           span 選択肢2
 
             +e.block
-              +e.title
+              +e("label").title
                 | お名前
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は name="name" は使えないので name="your-name" にしてください
@@ -142,7 +155,7 @@ block body
                 +e.input: input(type="text", name="your-name", placeholder="山田　太郎")
 
             +e.block
-              +e.title
+              +e("label").title
                 | 会社名
                 span.c-forms__label 必須
               +e.content
@@ -150,7 +163,7 @@ block body
                 +p.note: small ※個人の方は、「個人」とご入力ください
 
             +e.block
-              +e.title
+              +e("label").title
                 | メールアドレス
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は メールアドレスは type="email" にしてください
@@ -158,7 +171,7 @@ block body
                 +e.input: input(type="email", name="your-email", placeholder="info@mail.jp")
 
             +e.block
-              +e.title
+              +e("label").title
                 | 電話番号
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は 電話番号は type="tel" にしてください
@@ -166,7 +179,7 @@ block body
                 +e.input: input(type="tel", name="tel-number", placeholder="123-456-7890")
 
             +e.block
-              +e.title
+              +e("label").title
                 | 郵便番号
                 span.c-forms__label 必須
               +e.content
@@ -175,14 +188,14 @@ block body
                   button(onclick="AjaxZip3.zip2addr('zip-code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
 
             +e.block
-              +e.title
+              +e("label").title
                 | ご住所
                 span.c-forms__label 必須
               +e.content
                 +e.input: input(type="text", name="address", placeholder="ご住所を入力してください")
 
             +e.block
-              +e.title
+              +e("label").title
                 | 部署名
                 span.c-forms__label 必須
               +e.content
@@ -194,7 +207,7 @@ block body
                     option(value="選択肢C") 選択肢C
 
             +e.block
-              +e.title
+              +e("label").title
                 | 役職
                 span.c-forms__label 必須
               +e.content
@@ -206,48 +219,49 @@ block body
                     option(value="選択肢C") 選択肢C
 
             +e.block
-              +e.title その他質問等
+              +e("label").title
+                | その他質問等
               +e.content
                 +e.textarea
                   textarea(name="your-message", placeholder="")
 
             +e.block
-              +e.title
+              +e("label").title
                 | ファイルアップロード
               +e.content
                 +e.file: input(type="file", name="file-upload")
 
           +e.head --姓名を分離するパターン--
           +e.blocks
-            +e.block
-              +e.title
+            +e("fieldset").block
+              +e("legend").title
                 | お名前
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
                   +e.flex-al
-                    +span.flex-al-label 姓
+                    +e("label").flex-al-label 姓
                     +e.input: input(type="text", name="last-name", placeholder="山田")
                   +e.flex-al
-                    +span.flex-al-label 名
+                    +e("label").flex-al-label 名
                     +e.input: input(type="text", name="first-name", placeholder="太郎")
-            +e.block
-              +e.title
+            +e("fieldset").block
+              +e("legend").title
                 | フリガナ
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
-                  +span.flex-al-label セイ
+                  +e("label").flex-al-label セイ
                   +e.input: input(type="text", name="last-kana-name", placeholder="ヤマダ")
-                  +span.flex-al-label メイ
+                  +e("label").flex-al-label メイ
                   +e.input: input(type="text", name="first-kana-name", placeholder="タロウ")
-            +e.block
-              +e.title
+            +e("fieldset").block
+              +e("legend").title
                 | 生年月日
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
-                  +span.flex-al-label 西暦
+                  +e("label").flex-al-label 西暦
                   +e.flex-al
                     +e.input
                       input(type="text", name="birth-year", placeholder="1980")
@@ -264,8 +278,8 @@ block body
           +e.head --MW WP Form版保存用--
           //- ★MW WP Formの場合はname値を日本語にします
           +e.blocks
-            +e.block
-              +e.title チェックボックス
+            +e("fieldset").block
+              +e("legend").title チェックボックス
               +e.content
                 +e.checkbox.is-mw
                   span
@@ -276,8 +290,8 @@ block body
                     label
                       input(type="checkbox", name="ご希望のサービス", value="選択肢2")
                       span 選択肢2
-            +e.block
-              +e.title ラジオボタン
+            +e("fieldset").block
+              +e("legend").title ラジオボタン
               +e.content
                 +e.radio.is-mw
                   span
@@ -292,14 +306,14 @@ block body
           +e.head --横並びパターン保存用--
           +e.blocks
             +e.block.is-horizontal
-              +e.title
+              +e("label").title
                 | 横並びパターン
                 span.c-forms__label 必須
               +e.content
                 +e.input: input(type="text", name="horizontal-pattern", placeholder="〇〇株式会社")
 
             +e.block.is-horizontal
-              +e.title.is-vertical-top
+              +e("label").title.is-vertical-top
                 | 横並び（タイトル上寄せ）
                 span.c-forms__label 必須
               +e.content
