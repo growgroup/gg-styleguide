@@ -10,7 +10,11 @@
 
 footer(class=className)
   +c.pagetop.js-fixedheader
-    +a("#top")(data-anchor-target="html", aria-label="ページ上部に戻る").js-anchor
+    //- +a("#top")(data-anchor-target="html", aria-label="ページ上部に戻る").js-anchor
+    button(
+      type="button",
+      data-anchor-target="html",
+      aria-label="ページ上部に戻る").js-anchor
   .l-container
     .l-footer__menu
       .l-footer__block
