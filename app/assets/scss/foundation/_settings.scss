@@ -127,3 +127,22 @@ $asideContainer: 320;
 $asideMargin: 70;
 $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 
+// # Section size
+$sectionDefault: (120, 60) !default;
+$sectionSizes: (
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (80, 40),
+  sm: (64, 32),
+  xs: (32, 16),
+);
+
+// # Margin size
+$marginDefault: (120, 60) !default;
+$marginSizes: (
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (64, 32),
+  sm: (42, 20),
+  xs: (24, 12),
+);
