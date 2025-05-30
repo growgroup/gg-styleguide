@@ -1,15 +1,14 @@
 // core version + navigation, pagination modules:
-import Swiper, {
-  Navigation,
-  Pagination,
-  Autoplay,
-  Controller,
-  Keyboard,
-  EffectFade,
-  // EffectCreative,
-  // Scrollbar,
-  // Thumbs,
-} from 'swiper';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
+import { Controller } from 'swiper/modules';
+import { Keyboard } from 'swiper/modules';
+import { EffectFade } from 'swiper/modules';
+// import { EffectCreative } from 'swiper/modules';
+// import { Scrollbar } from 'swiper/modules';
+// import { Thumbs } from 'swiper/modules';
 
 Swiper.use([
   Pagination,
@@ -77,6 +76,7 @@ export default class SwiperSlider {
       this.MainVisualSlider(); //->メインビジュアル
       this.runCardSlider(); //->カードスライダー
       this.documentSlider(); //->ドキュメントスライダー
+      this.testSlider();
     });
   }
 
@@ -134,7 +134,6 @@ export default class SwiperSlider {
   }
 
 
-
   // スマホとPCで最低限必要なスライド数が異なる場合のサンプル
   //initとrunを分ける（init側は、スライダーの初期化のみを行う）
   initCardSlider(target, minSlides) {
@@ -156,8 +155,7 @@ export default class SwiperSlider {
     return new Swiper(target, {
       spaceBetween: 40,
       loop: true,
-      // loopedSlidesLimit:false, //スライドの複製を無制限にする
-      // loopedSlides: 2, //スライドの複製数を指定する
+
       navigation: {
         nextEl: next,
         prevEl: prev,
@@ -166,7 +164,7 @@ export default class SwiperSlider {
         el: pagination,
         clickable: false,
       },
-      threshold: 10, // allowTouchMoveがtrueのとき、スライド内のリンクがクリックできない問題の解決
+      threshold: 10,
       keyboard: {
         enabled: true,
         onlyInViewport: true,
@@ -180,7 +178,6 @@ export default class SwiperSlider {
         950: {
           spaceBetween: 40,
           slidesPerView: 3,
-          loopAdditionalSlides: 3,
         }
       },
     });
@@ -216,7 +213,9 @@ export default class SwiperSlider {
           if (swiper) {
             swiper.destroy();
           }
-          swiper = this.initCardSlider(slider, 4);
+          // 最低限必要なスライド数を指定
+          // 枚数以下の場合スライダーになりません
+          swiper = this.initCardSlider(slider, 3);
         }
       );
     });
