@@ -19,7 +19,7 @@
  * @type {{}}
  */
 var defaultOptions = {
-  selector: 'a.js-anchor, button.js-anchor',
+  selector: '.js-anchor',
   dataSelector: 'anchor-target',
   scrollSpeed: 300,
   easing: 'linear',
@@ -49,36 +49,33 @@ export default class Anchor {
     let self = this;
 
     this.target.on('click', function(e) {
+      // リンク先のパスと現在のページのパスを比較
+      let linkHref = $(this).attr('href') ? $(this).attr('href').split('#')[0] : ''; // hrefのパス部分を取得
+      let currentPath = window.location.pathname; // 現在のページのパス
+
+      // linkHrefが空の場合（#はじまりのリンク）は同一ページと判定
+      let isSamePage = !linkHref || new URL(linkHref, window.location.origin).pathname === currentPath;
+
+      // 他ページの場合は何もせずに通常のリンク遷移を行う
+      if (!isSamePage) return;
+
       e.preventDefault();
 
       // スクロール先のターゲットを指定
       let anchorTargetSelector = $(this).data(self.options.dataSelector);
 
-      // aタグの場合のみhrefの処理を行う
-      if ($(this).is('a')) {
-        // リンク先のパスと現在のページのパスを比較
-        let linkHref = $(this).attr('href').split('#')[0]; // hrefのパス部分を取得
-        let currentPath = window.location.pathname; // 現在のページのパス
-
-        // linkHrefが空の場合（#はじまりのリンク）は同一ページと判定
-        let isSamePage = !linkHref || new URL(linkHref, window.location.origin).pathname === currentPath;
-
-        // 他ページの場合は何もせずに通常のリンク遷移を行う
-        if (!isSamePage) return;
-
-        // data-anchor-targetが未定義の場合、hrefから取得を試みる
-        if (typeof anchorTargetSelector === 'undefined') {
-          var href = $(this).attr('href');
-          anchorTargetSelector = href.match(/#(\S*)/g);
-          if (typeof anchorTargetSelector[0] === 'undefined') {
-            throw new Error('ターゲットとなる要素を取得できませんでした。');
-            return false;
+      // data属性が未定義の場合、href属性をチェック
+      if (typeof anchorTargetSelector === 'undefined') {
+        var href = $(this).attr('href');
+        if (href) {
+          let hrefMatch = href.match(/#(\S*)/g);
+          if (hrefMatch && typeof hrefMatch[0] !== 'undefined') {
+            anchorTargetSelector = hrefMatch[0];
           }
-          anchorTargetSelector = anchorTargetSelector[0];
         }
       }
 
-      // data-anchor-targetが未定義の場合はエラー
+      // どちらの属性も存在しない場合はエラー
       if (typeof anchorTargetSelector === 'undefined') {
         throw new Error('ターゲットとなる要素を取得できませんでした。');
         return false;
