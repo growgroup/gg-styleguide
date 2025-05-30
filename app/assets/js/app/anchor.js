@@ -46,13 +46,11 @@ export default class Anchor {
    * クリック時のイベント
    */
   onClick() {
-
     let self = this;
 
     this.target.on('click', function(e) {
-
       // リンク先のパスと現在のページのパスを比較
-      let linkHref = $(this).attr('href').split('#')[0]; // hrefのパス部分を取得
+      let linkHref = $(this).attr('href') ? $(this).attr('href').split('#')[0] : ''; // hrefのパス部分を取得
       let currentPath = window.location.pathname; // 現在のページのパス
 
       // linkHrefが空の場合（#はじまりのリンク）は同一ページと判定
@@ -66,16 +64,21 @@ export default class Anchor {
       // スクロール先のターゲットを指定
       let anchorTargetSelector = $(this).data(self.options.dataSelector);
 
-
+      // data属性が未定義の場合、href属性をチェック
       if (typeof anchorTargetSelector === 'undefined') {
         var href = $(this).attr('href');
-        anchorTargetSelector = href.match(/#(\S*)/g);
-        if (typeof anchorTargetSelector[0] === 'undefined') {
-          throw new Error('ターゲットとなる要素を取得できませんでした。');
-          return false;
+        if (href) {
+          let hrefMatch = href.match(/#(\S*)/g);
+          if (hrefMatch && typeof hrefMatch[0] !== 'undefined') {
+            anchorTargetSelector = hrefMatch[0];
+          }
         }
-        anchorTargetSelector = anchorTargetSelector[0];
+      }
 
+      // どちらの属性も存在しない場合はエラー
+      if (typeof anchorTargetSelector === 'undefined') {
+        throw new Error('ターゲットとなる要素を取得できませんでした。');
+        return false;
       }
 
       let anchorTarget = $(anchorTargetSelector);
