@@ -7,20 +7,15 @@
 //
 // Styleguide 5.3.0
 
-// サイズ定義 (必ずPC用, SP用の2つの値を指定)
-$sizes: (
-  xlg: (120, 60),
-  lg: (100, 50),
-  md: (80, 40),
-  sm: (64, 32),
-  xs: (32, 16),
-);
-
-
 .l-section {
 
+  // height: rem-calc(nth($sectionDefault , 1));
+  // @include breakpoint(small down) {
+  //   height: rem-calc(nth($sectionDefault, 2));
+  // }
+
   // サイズ設定
-  @each $key, $value in $sizes {
+  @each $key, $value in $sectionSizes {
     $pc-value: nth($value, 1); // PC用
     $sp-value: nth($value, 2); // SP用
 

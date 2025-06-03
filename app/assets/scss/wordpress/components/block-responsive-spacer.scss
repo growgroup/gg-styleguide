@@ -1,0 +1,24 @@
+
+// setting.scssからインポート
+
+.c-block-responsive-spacer {
+
+  // height: rem-calc(nth($sectionDefault , 1));
+  // @include breakpoint(small down) {
+  //   height: rem-calc(nth($sectionDefault, 2));
+  // }
+
+  @each $key, $value in $sectionSizes {
+    $pc-value: nth($value, 1); // PC用
+    $sp-value: nth($value, 2); // SP用
+
+    &.is-#{$key} {
+      height: rem-calc($pc-value); // PCサイズ
+
+      @include breakpoint(small down) {
+        height: rem-calc($sp-value); // SPサイズ
+      }
+    }
+  }
+
+}
