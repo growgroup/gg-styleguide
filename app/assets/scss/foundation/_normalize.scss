@@ -87,12 +87,6 @@ body {
   }
 }
 
-/* chrome opera /
-/! autoprefixer: ignore next */
-_:lang(x)::-internal-media-controls-overlay-cast-button, body {
-    image-rendering: -webkit-optimize-contrast;
-}
-
 
 /* Links
    ========================================================================== */
