@@ -68,10 +68,6 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 4px;
-    margin-right: rem-calc(0);
-    margin-left: rem-calc(0);
-    padding: 0;
-    border: none;
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -95,6 +91,11 @@
         }
       }
     }
+  }
+
+  // fieldsetバグのため意図的に記述
+  &__fieldset {
+    display: contents;
   }
 
   &__title {
