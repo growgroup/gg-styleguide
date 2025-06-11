@@ -76,7 +76,6 @@ export default class SwiperSlider {
       this.MainVisualSlider(); //->メインビジュアル
       this.runCardSlider(); //->カードスライダー
       this.documentSlider(); //->ドキュメントスライダー
-      this.testSlider();
     });
   }
 
