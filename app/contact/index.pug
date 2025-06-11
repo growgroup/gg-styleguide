@@ -320,6 +320,84 @@ block body
                   +span.flexbox-label ご住所
                   +e.input: input(type="text", name="address-detail", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F")
 
+
+          +e.head --CF7用バリデーションパターン--
+          +e.blocks
+            +e.block
+              +e.title チェックボックス
+              +e.content
+                +e.checkbox.is-border
+                  span
+                    span
+                      span
+                        label
+                          input(type="checkbox", name="service-options", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="checkbox", name="service-options", value="選択肢2")
+                          span 選択肢2
+                      span
+                        label
+                          input(type="checkbox", name="service-options", value="選択肢3")
+                          span 選択肢3
+                      span
+                        label
+                          input(type="checkbox", name="service-options", value="選択肢4")
+                          span 選択肢4
+                    span.wpcf7-not-valid-tip エラーメッセージ
+
+            +e.block
+              +e.title ラジオボタン
+              +e.content
+                +e.radio.is-border
+                  span
+                    span
+                      span
+                        label
+                          input(type="radio", name="service-selection", value="選択肢1")
+                          span 選択肢1
+                      span
+                        label
+                          input(type="radio", name="service-selection", value="選択肢2")
+                          span 選択肢2
+                      span
+                        label
+                          input(type="radio", name="service-selection", value="選択肢3")
+                          span 選択肢3
+                      span
+                        label
+                          input(type="radio", name="service-selection", value="選択肢4")
+                          span 選択肢4
+                    span.wpcf7-not-valid-tip エラーメッセージ
+
+            +e.block
+              +e.title
+                | お名前
+                span.c-forms__label 必須
+                //- ★Contact form 7 の場合は name="name" は使えないので name="your-name" にしてください
+              +e.content
+                +e.input
+                  input(type="text", name="your-name", placeholder="山田　太郎")
+                  span.wpcf7-not-valid-tip エラーメッセージ
+
+            +e.block
+              +e.title その他質問等
+              +e.content
+                +e.textarea
+                  textarea(name="your-message", placeholder="")
+                  span.wpcf7-not-valid-tip エラーメッセージ
+
+            +e.block
+              +e.title
+                | ファイルアップロード
+              +e.content
+                +e.file
+                  input(type="file", name="file-upload")
+                  span.wpcf7-not-valid-tip エラーメッセージ
+
+
+
           //- WP側で c-forms__privacyの中のinputを判定して処理するので、
           //- 同意のチェックボックスは .c-forms__privacy の中に入れてください
           +e.privacy

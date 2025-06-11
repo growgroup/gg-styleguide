@@ -146,6 +146,27 @@
       flex-wrap: wrap;
       align-items: center;
     }
+
+
+    //CF7のバリデーションチップ対応
+    .wpcf7-not-valid-tip {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.7;
+      color: $color-state-danger;
+    }
+
+    &:has(.wpcf7-not-valid-tip) {
+      input,
+      textarea,
+      select,
+      label:has(input[type="radio"]),
+      label:has(input[type="checkbox"]) {
+        background-color: rgba($color-state-danger, 0.05);
+        color: $color-state-danger;
+        border-color: $color-state-danger;
+      }
+    }
   }
 
   //============================
