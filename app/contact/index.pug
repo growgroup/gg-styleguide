@@ -36,7 +36,7 @@ block body
           +e.blocks
 
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | チェックボックス
                   span.c-forms__label 必須
@@ -63,7 +63,7 @@ block body
 
 
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | ラジオボタン
                   span.c-forms__label 必須
@@ -90,7 +90,7 @@ block body
 
 
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | ご希望のサービス（テキストが長い場合）
                   span.c-forms__label 必須
@@ -117,7 +117,7 @@ block body
 
 
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | ラジオボタン（ブラウザのデフォルトから変更したいとき）
                   span.c-forms__label 必須
@@ -135,7 +135,7 @@ block body
                             span 選択肢2
 
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title チェックボックス（ブラウザのデフォルトから変更したいとき）
                 +e.content
                   +e.checkbox.is-design.is-border
@@ -238,7 +238,7 @@ block body
           +e.head --姓名を分離するパターン--
           +e.blocks
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | お名前
                   span.c-forms__label 必須
@@ -251,7 +251,7 @@ block body
                       +e("span").flex-al-label 名
                       +e.input: input(type="text", name="first-name", placeholder="太郎")
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title
                   | フリガナ
                   span.c-forms__label 必須
@@ -288,7 +288,7 @@ block body
           //- ★MW WP Formの場合はname値を日本語にします
           +e.blocks
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title チェックボックス
                 +e.content
                   +e.checkbox.is-mw
@@ -301,7 +301,7 @@ block body
                         input(type="checkbox", name="ご希望のサービス", value="選択肢2")
                         span 選択肢2
             +e.block
-              +e.FIELDSET.fieldset
+              +e("fieldset").fieldset
                 +e("legend").title ラジオボタン
                 +e.content
                   +e.radio.is-mw
