@@ -4,6 +4,7 @@ module.exports = (ctx) => ({
       propList: ["*", "!border*", "!box-shadow*"],
       selectorBlackList: [/^html$/], //html要素は除外
     },
+    '@tailwindcss/postcss': {},
     autoprefixer: {},
     "postcss-prefix-selector":
       ctx.file.basename === "admin-style.css"
