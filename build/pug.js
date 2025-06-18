@@ -1,6 +1,9 @@
 // Pug の設定ファイル
 var fs = require("fs");
 
+// ビルドプロセスかどうかを判定
+const isBuildProcess = process.env.NODE_ENV === 'production';
+
 var pugconfig = {
   pretty: true,
   cache: false,
@@ -39,7 +42,9 @@ var pugconfig = {
         try {
           // wpComponentPathにファイルが存在する場合は、componentPathにも作成しない
           fs.statSync(wpComponentPath);
-          console.warn('\x1b[33m[Info] @sass/wordpress に重複するコンポーネントが存在しています。\x1b[0m:',wpComponentPath);
+          if (!isBuildProcess) {
+            console.warn('\x1b[33m[Info] @sass/wordpress に重複するコンポーネントが存在しています。\x1b[0m:',wpComponentPath);
+          }
           return true;
         } catch (wpErr) {
           // どちらにも存在しない場合のみ、ファイルを作成
