@@ -93,6 +93,11 @@
     }
   }
 
+  // fieldsetバグのため意図的に記述
+  &__fieldset {
+    display: contents;
+  }
+
   &__title {
     display: flex;
     gap: 8px;
