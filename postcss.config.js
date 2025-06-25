@@ -4,6 +4,11 @@ module.exports = (ctx) => ({
       propList: ["*", "!border*", "!box-shadow*"],
       selectorBlackList: [/^html$/], //html要素は除外
     },
+    // postcss-pxtoremが対応していないCSS変数のvar()内のフォールバック値のpx→rem変換
+    [require.resolve('./config/postcss-var-pxtorem')]: {
+      rootValue: 16,
+      exclude: ['border*', 'box-shadow*']
+    },
     autoprefixer: {},
     "postcss-prefix-selector":
       ctx.file.basename === "admin-style.css"
