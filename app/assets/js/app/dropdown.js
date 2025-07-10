@@ -31,7 +31,7 @@ export default class Dropdown {
     this.options = Object.assign({}, defaultOptions, options);
     this.isReady = false;
     // ページロード完了後にisReadyをtrueにする
-    window.addEventListener('load', () => {
+    window.addEventListener('DOMContentLoaded', () => {
       this.isReady = true;
     });
     this.init();
