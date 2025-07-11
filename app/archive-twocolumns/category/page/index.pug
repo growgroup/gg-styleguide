@@ -164,34 +164,16 @@ block body
             +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
       div.u-mbs.is-top.is-lg
         +c.card-post.is-tag-hidden
-          .row
-            .large-4.small-6
-              +e.block
-                +a.c-card-post__image
-                  +img("img-card-01.jpg")
-                +e.content
-                  +e.sup
-                    +e.date 2018.01.01
-                    span.c-card-post__label.c-label.is-sm カテゴリ名
-                  +e.title タイトルが入ります。タイトルが入ります。
-            .large-4.small-6
-              +e.block
-                +a.c-card-post__image
-                  +img("img-card-01.jpg")
-                +e.content
-                  +e.sup
-                    +e.date 2018.01.01
-                    span.c-card-post__label.c-label.is-sm カテゴリ名
-                  +e.title タイトルが入ります。タイトルが入ります。
-            .large-4.small-6
-              +e.block
-                +a.c-card-post__image
-                  +img("img-card-01.jpg")
-                +e.content
-                  +e.sup
-                    +e.date 2018.01.01
-                    span.c-card-post__label.c-label.is-sm カテゴリ名
-                  +e.title タイトルが入ります。タイトルが入ります。
+          +loop(3)
+            +e.block
+              +a.c-card-post__image
+                +img("img-card-01.jpg")
+              +e.content
+                +e.sup
+                  +e.date 2018.01.01
+                  span.c-card-post__label.c-label.is-sm カテゴリ名
+                +e.title タイトルが入ります。タイトルが入ります。
+
 
 block aside
   +l-aside-posts()

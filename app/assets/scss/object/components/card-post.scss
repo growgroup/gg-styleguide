@@ -5,6 +5,11 @@ category: News
 ---
 */
 .c-card-post {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+
+
   &__block {
     width: 100%;
     display: block;
@@ -48,6 +53,7 @@ category: News
     font-size: 18px;
     font-weight: 700;
     line-height: 1.6;
+    margin-top: 8px;
   }
 
   &__text {
@@ -63,6 +69,7 @@ category: News
     margin-top: 6px;
     display: flex;
     align-items: flex-start;
+    gap: 8px;
   }
 
   &__date {
@@ -105,7 +112,6 @@ category: News
       position: relative;
       display: flex;
       align-items: center;
-      margin-bottom: 8px;
     }
 
     .c-card-post__label {
@@ -114,7 +120,6 @@ category: News
 
     .c-card-post__date {
       margin-right: 0;
-      margin-left: 18px;
     }
 
     .c-card-post__title {
