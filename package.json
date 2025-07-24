@@ -55,7 +55,7 @@
     "postcss-sort-media-queries": "^5.2.0",
     "pug": "^3.0.3",
     "rimraf": "^6.0.1",
-    "sass": "1.78.0",
+    "sass": "^1.78.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "stylelint": "^16.19.1",
