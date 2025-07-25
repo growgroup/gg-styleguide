@@ -14,6 +14,17 @@
     margin-top: 1em;
   }
 
+  > :is(h1, h2, h3, h4, h5, h6) {
+    // 最初の要素が見出しの場合
+    &:first-child {
+      margin-top: 0;
+    }
+    // 見出しの直後の要素にmargin-topを付けない（見出し側にmarginを設定するため）
+    & + * {
+      margin-top: 0;
+    }
+  }
+
   a{
     @include text-link();
   }
