@@ -27,6 +27,10 @@ category: PostContent
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 8px 24px;
+    @include breakpoint(small down) {
+      gap: 8px 16px;
+    }
   }
 
   &__label {
@@ -35,16 +39,10 @@ category: PostContent
 
   &__date {
     @include news-date();
-    margin: 0 24px;
-
-    @include breakpoint(small only) {
-      margin: 0 16px;
-    }
   }
 
   &__tag {
     @include breakpoint(small only) {
-      margin-top: 8px;
       width: 100%;
     }
 
@@ -52,9 +50,9 @@ category: PostContent
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      gap: 8px 16px;
 
       li {
-        margin-right: 16px;
 
         a {
           text-decoration: none;
