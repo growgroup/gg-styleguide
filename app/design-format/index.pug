@@ -1,0 +1,43 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "design-format" // ページのID
+  - current.title = "デザインフォーマット" // タイトル
+  //- - current.description = `ページごとに説明文を設定する場合の動作サンプルです` // ページごとに説明文を設定する場合のみ
+  - current.bodyClass = `${current.id}` // body に付与するクラス
+  - current.path = `/${current.id}/` // ページのpath
+  - current.depth = 2 // ページの階層
+
+block page_header
+  // メインビジュアル
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "デザインフォーマット",
+    subtitle: "Design Format"
+  })
+  +c_breadcrumb().is-bg-color
+
+block body
+  .u-mbs
+    .l-container
+      p.
+        こちらはデザイナー向けフォーマット確認ページです。<br>
+        必要項目は以下の通りですが、案件に合わせて必要な項目を相談し追加してください。
+      ul.c-list.is-icon.u-mbs.is-top.is-xs
+        li 見出し
+        li 投稿用見出し
+        li ボタン各種
+  hr
+  section.l-section
+    h1 見出し
+    .l-container
+      include /format/components/_heading.pug
+
+  hr
+  section.l-section
+    h1 ボタン
+    .l-container
+      include /format/components/_buttons.pug
+
+
+block under_main
+  +l_offer()
