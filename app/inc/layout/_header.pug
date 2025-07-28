@@ -1,6 +1,8 @@
 -
   var className = "l-header"
   var isSimplePages = ["contact", "confirm", "complete"]
+  var tag = "div"
+  var img = "logo.png"
 
   if (isSimplePages.includes(current.id)) {
     //isSimplePagesにcurrent.idが含まれている場合
@@ -11,16 +13,14 @@
   }
   if (current.id === "home") {
     className += " is-home"
+    tag = "h1"
   }
 
 
 
 header(class=className)
   .l-header__content
-    if current.id == 'home'
-      h1.l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル",175,40)
-    else
-      .l-header__logo: +a("/"): +img("logo.png","株式会社 サンプル",175,40)
+    #{tag}.l-header__logo: +a("/"): +img(img,"株式会社 サンプル",175,40)
     nav.l-header__nav
       ul.l-header__mainmenu
         li.l-header__mainmenu-item: +a("/page/") 1COLUMN
