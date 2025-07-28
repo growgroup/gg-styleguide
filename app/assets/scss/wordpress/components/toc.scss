@@ -9,7 +9,7 @@ category: PostContent
 #toc_container {
   margin: 32px 0;
   width: 100% !important; //WPプラグインでインラインスタイルが指定されているため!importantを使用
-  background: $color-secondary;
+  background: $color-background;
   border-radius: 0;
   padding: 16px 40px 40px;
   @include breakpoint(small only) {
@@ -52,7 +52,6 @@ category: PostContent
 
     a {
       display: block;
-      padding-left: 16px;
       @include transition(.2s);
       text-decoration: none;
       color: $font-base-color;
