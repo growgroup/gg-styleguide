@@ -22,7 +22,24 @@ block body
       +c_anchor-nav("u-mbs is-bottom",{
         link: "#text",
         title: "テキスト",
-      },{
+      },
+      {
+        link: "#heading",
+        title: "見出し",
+      },
+      {
+        link: "#hr",
+        title: "区切り線",
+      },
+      {
+        link: "#list",
+        title: "リスト",
+      },
+      {
+        link: "#table",
+        title: "テーブル",
+      },
+      {
         link: "#button",
         title: "ボタン",
       },{
@@ -39,6 +56,18 @@ block body
 
       h1#text テキスト
       include /format/components/_text.pug
+
+      h1#heading 見出し
+      include /format/components/_heading.pug
+
+      h1#hr 区切り線
+      include /format/components/_hr.pug
+
+      h1#list リスト
+      include /format/components/_list.pug
+
+      h1#table テーブル
+      include /format/components/_table.pug
 
       //-スペース空ける
       .u-mbs.is-lg
