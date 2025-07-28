@@ -3,6 +3,11 @@
 // スマホ時のメニュー。別途 GApp プラグインを呼び出す必要があります。
 // Styleguide 4.5
 
+$slidebar-bar-distance: 7px;      // 線同士の距離
+$slidebar-bar-width: 26px;        // 線の幅
+$slidebar-bar-height: 2px;        // 線の高さ
+$slidebar-bar-open-rotate: 45deg; // メニューが開いた時の線の回転角度
+
 
 @include breakpoint(large up) {
   .c-slidebar-button {
@@ -38,8 +43,8 @@
   &__line {
     --color-slidebar-button-line: #{$color-white}; //線の色が開閉で変化しない場合はここで指定
     position: relative;
-    width: 26px; //線の長さ
-    height: 2px; //線の太さ
+    width: $slidebar-bar-width; //線の長さ
+    height: $slidebar-bar-height; //線の太さ
     background-color: var(--color-slidebar-button-line);
     //background-color: transparent;//線2本の時は、ここは透明に
     @include transition(.2s,ease-out);
@@ -58,11 +63,11 @@
     }
 
     &::before {
-      top: -7px;
+      top: -$slidebar-bar-distance;
     }
 
     &::after {
-      top: 7px;
+      top: $slidebar-bar-distance;
     }
 
     //メニューが開いているとき
@@ -76,11 +81,11 @@
       }
 
       &::before {
-        transform: rotate(45deg);
+        transform: rotate($slidebar-bar-open-rotate);
       }
 
       &::after {
-        transform: rotate(-45deg);
+        transform: rotate(-$slidebar-bar-open-rotate);
       }
     }
   }
