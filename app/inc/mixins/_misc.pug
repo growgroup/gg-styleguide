@@ -11,23 +11,44 @@ mixin img(file,alt,width,height)
 //- picture タグ
 //-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 768, 768)
 //-PC/SPでaspect比共通ならSP用のwidthとheightは不要
-mixin picture(pc,sp,alt,width,height,widthSp,heightSp,media,fetchpriority)
+mixin picture(opts)
+  -
+    opts = opts || {}
+    var pc = opts.pc || "",
+        sp = opts.sp || "",
+        alt = opts.alt || "",
+        width = opts.width || "",
+        height = opts.height || "",
+        widthSp = opts.widthSp || "",
+        heightSp = opts.heightSp || "",
+        media = opts.media || "",
+        fetchpriority = opts.fetchpriority || ""
+
   -
     pc = setSrcValue(pc, "/assets/images/")
     sp = setSrcValue(sp, "/assets/images/")
+
   -
-    if (typeof alt === "undefined") {
-      var alt = ""
-    }
-  -
-    if (typeof media === "undefined" || media === "") {
-      var media = '(max-width:46.8125em)'
+    if (!media || media === "") {
+      media = '(max-width:46.8125em)'
     } else if (media === "medium") {
-      var media = '(max-width:59.3125em)'
+      media = '(max-width:59.3125em)'
     }
+
   picture&attributes(attributes)
-    source(srcset=sp + "" media=media width!=widthSp, height!=heightSp)
-    img(src=pc, alt=alt width!=width, height!=height fetchpriority!=fetchpriority)
+    source(
+      srcset=sp
+      media!=media
+      width!=widthSp
+      height!=heightSp
+    )
+    img(
+      src=pc
+      alt=alt
+      width!=width
+      height!=height
+      fetchpriority!=fetchpriority
+    )
 
 //- video タグ
 mixin video(file)
@@ -286,5 +307,3 @@ mixin link(href)
 
 mixin script(src)
   script(src=config.rootpath + src)&attributes(attributes)
-
-
