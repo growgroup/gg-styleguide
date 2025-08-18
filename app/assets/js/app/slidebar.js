@@ -86,6 +86,10 @@ export default class Slidebar {
    */
   toggle() {
     if (this.isActive === false) {
+      if (this.options.activateWidth !== null &&
+          window.innerWidth >= this.options.activateWidth) {
+        return;
+      }
       this.open();
     } else {
       this.close();
@@ -152,7 +156,7 @@ export default class Slidebar {
   setupResizeObserver() {
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
-        if (entry.contentRect.width > this.options.activateWidth) {
+        if (entry.contentRect.width >= this.options.activateWidth) {
           document.body.classList.remove("is-slidebar-active");
           this.isActive = false;
           this.menu.attr("inert", "inert");
