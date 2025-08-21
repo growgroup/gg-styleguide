@@ -33,6 +33,12 @@ block body
               li: +a("#") #タグ
               li: +a("#") #タグ
               li: +a("#") #タグ
+      //基本的には触らなくて良いがボタンによっては調整が必要
+      //+c("form").post-password
+      //  +e("label").label(for="hoge") このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。
+      //  +e.content
+      //    +e.input: input(type="password" name="post_password" size="20" id="hoge")
+      //    +e.submit: input.c-button(type="submit" name="Submit" value="認証")
       .l-post-content
         +img("ogp.png")
         <div id="toc_container" class="no_bullets"><p class="toc_title">目次 <span class="toc_toggle"><span class="toc_brackets">[</span><a href="#">非表示</a><span class="toc_brackets">]</span></span></p><ul class="toc_list"><li><a href="#Web"><span class="toc_number toc_depth_1">1</span> Webマーケティングとは？</a></li><li><a href="#Web-2"><span class="toc_number toc_depth_1">2</span> Webマーケティングのメリットとは？</a><ul><li><a href="#i"><span class="toc_number toc_depth_2">2.1</span> あらゆる方たちに配信ができる</a></li><li><a href="#i-2"><span class="toc_number toc_depth_2">2.2</span> 素早く情報を配信できる</a></li><li><a href="#i-3"><span class="toc_number toc_depth_2">2.3</span> 修正を簡単に実行できる</a></li><li><a href="#i-4"><span class="toc_number toc_depth_2">2.4</span> 少ない費用で情報を配信できる</a></li><li><a href="#i-5"><span class="toc_number toc_depth_2">2.5</span> ターゲットを細かく設定できる</a></li></ul></li></ul></div>
