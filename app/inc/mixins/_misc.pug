@@ -112,9 +112,7 @@ mixin c_news__block(data)
       //-item.iconがあれば .c-icon-fontを追加、+span.block-label-file を追加
       if item.fileType
         +e.block-icon
-          - let fileClass = "is-" + item.fileType.toLowerCase()
-          // ファイル種別は pdf, excel, word, pptx のいずれか
-          +span.block-icon-file(class=fileClass) !{item.fileType}
+          +span.block-icon-file(class=item.fileClass) !{item.fileType}
       else if item.icon
         +e.block-icon
           span.c-icon-font !{item.icon}
