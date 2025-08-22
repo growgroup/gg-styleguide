@@ -116,7 +116,7 @@ category: News
     flex-shrink: 0;
     align-self: center;
     text-align: center;
-    width: 40px;
+    width: 48px;
 
     @include breakpoint(small only) {
       padding-top: 32px;
@@ -124,12 +124,36 @@ category: News
   }
 
   &__block-icon-file{
+    --news-file-icon-border-color: #{$border-base-color};
+    --news-file-icon-color: #{$font-base-color};
     display: block;
     padding: 1px 4px;
     font-size: 10px;
     text-align: center;
-    border: 1px solid $border-base-color;
+    border: 1px solid var(--news-file-icon-border-color);
     border-radius: 100px;
+    color: var(--news-file-icon-color);
+
+
+    &.is-pdf {
+      --news-file-icon-border-color: #{$color-file-pdf};
+      --news-file-icon-color: #{$color-file-pdf};
+    }
+
+    &.is-excel {
+      --news-file-icon-border-color: #{$color-file-excel};
+      --news-file-icon-color: #{$color-file-excel};
+    }
+
+    &.is-word {
+      --news-file-icon-border-color: #{$color-file-word};
+      --news-file-icon-color: #{$color-file-word};
+    }
+
+    &.is-pptx {
+      --news-file-icon-border-color: #{$color-file-pptx};
+      --news-file-icon-color: #{$color-file-pptx};
+    }
   }
 
 }

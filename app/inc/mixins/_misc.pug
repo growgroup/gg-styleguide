@@ -110,11 +110,14 @@ mixin c_news__block(data)
           if item.excerpt
             +e.block-excerpt !{item.excerpt}
       //-item.iconがあれば .c-icon-fontを追加、+span.block-label-file を追加
-      +e.block-icon
-        if item.icon
+      if item.fileType
+        +e.block-icon
+          - let fileClass = "is-" + item.fileType.toLowerCase()
+          // ファイル種別は pdf, excel, word, pptx のいずれか
+          +span.block-icon-file(class=fileClass) !{item.fileType}
+      else if item.icon
+        +e.block-icon
           span.c-icon-font !{item.icon}
-        else
-          +span.block-icon-file PDF
 
 mixin select-prefectures()
   select(name="都道府県")
