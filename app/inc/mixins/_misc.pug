@@ -167,53 +167,11 @@ mixin select-prefectures()
     <option value="鹿児島県">鹿児島県</option>
     <option value="沖縄県">沖縄県</option>
 
-mixin select-ages(start, end)
-  select(name="age")
-    option(disabled,selected) 選択してください
-    - for (let i = start; i <= end; i++)
-      <option value="#{i}">#{i}</option>
-  |　歳
-
-
-mixin select-year(name="year", startYear=1975, endYear=2007)
+mixin select-nums(name="age", start=18, end=50,selected="選択してください", unit)
   select(name=name)
-    option(disabled,selected) ----
-    - for (let i = startYear; i <= endYear; i++)
-      <option value="#{i}">#{i}</option>
-
-
-//デフォルトは1月から12月
-mixin select-month(name="month", start=1, end=12)
-  select(name=name)
-    option(disabled,selected) ----
+    option(disabled,selected) !{selected}
     - for (let i = start; i <= end; i++)
-      <option value="#{i}">#{i}</option>
-
-//デフォルトは1日から31日
-mixin select-day(name="day", start=1, end=31)
-  select(name=name)
-    option(disabled,selected) ----
-    - for (let i = start; i <= end; i++)
-      <option value="#{i}">#{i}</option>
-
-
-mixin select-birthday(startYear, endYear)
-  +e.flex-al
-    +e.flex-al-label 西暦
-    +e("label").flex-al
-      +span.select.is-sm
-        +select-year("birth-year")
-      +span.flex-al-unit 年
-    +e("label").flex-al
-      +span.select.is-sm
-        +select-month("birth-month")
-      +span.flex-al-unit 月
-    +e("label").flex-al
-      +span.select.is-sm
-        +select-day("birth-day")
-      +span.flex-al-unit 日
-
-
+      <option value="#{i}">#{i}#{unit || ""}</option>
 
 mixin c_cookie
   +c.block-cookie.js-cookie#cookie
