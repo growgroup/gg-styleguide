@@ -283,6 +283,18 @@ block body
                     +e.input.is-sm
                       input(type="text", name="birth-day", placeholder="01")
                     +span.flex-al-unit 日
+            +e.block
+              +e.title
+                | 生年月日
+                span.c-forms__label 必須
+              +e.content
+                +select-birthday(1970, 2007)
+            +e.block
+              +e.title
+                | 年齢
+                span.c-forms__label 必須
+              +e.content
+                +select-ages(18, 50)
 
           +e.head --MW WP Form版保存用--
           //- ★MW WP Formの場合はname値を日本語にします
