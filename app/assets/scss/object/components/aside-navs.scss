@@ -35,13 +35,13 @@
     position: relative;
     padding: 0 16px;
     &::before {
+      --_icon-size: #{8px};
       content: '';
       position: absolute;
-      top: calc(1em * $font-base-line-height / 2);
+      top: calc(0.5lh - (var(--_icon-size) / 2));
       left: 0;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
+      width: var(--_icon-size);
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
       background: $border-base-color;
     }
