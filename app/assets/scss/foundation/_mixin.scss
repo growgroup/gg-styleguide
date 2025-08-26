@@ -17,7 +17,7 @@
 }
 
 // 値をremに変換する関数
-@function to-rem($value, $base: $font-base-size) {
+@function to-rem($value, $base: $font-html-size) {
   // 値が数値でない場合の警告
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
@@ -270,15 +270,15 @@
   $dir: nth($result, 3);
 
   @if $dir == 'range' {
-    @container (min-width: #{$min}) and (max-width: #{$max}) {
+    @container (#{$min} < width <= #{$max}) {
       @content;
     }
   } @else if $dir == 'down' {
-    @container (max-width: #{$max}) {
+    @container (width <= #{$max}) {
       @content;
     }
   } @else if $dir == 'up' {
-    @container (min-width: #{$min}) {
+    @container (width > #{$min}) {
       @content;
     }
   }
