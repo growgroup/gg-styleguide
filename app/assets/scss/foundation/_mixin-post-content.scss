@@ -263,10 +263,10 @@
 
       content: "";
       width: var(--_icon-size);
-      height: var(--_icon-size);
+      aspect-ratio: 1 / 1;
       background: $color-primary;
       border-radius: 50%;
-      top: calc(1em * #{$font-base-line-height} / 2 - var(--_icon-size) / 2);
+      top: calc(0.5lh - (var(--_icon-size) / 2));
       left: 0.25em;
       position: absolute;
 
@@ -282,10 +282,10 @@
 
       content: "";
       width: var(--_icon-size);
-      height: var(--_icon-size);
+      aspect-ratio: 1 / 1;
       background: $color-primary;
       border-radius: 50%;
-      top: calc(1em * #{$font-base-line-height} / 2 - var(--_icon-size) / 2);
+      top: calc(0.5lh - (var(--_icon-size) / 2));
       left: 0.5em;
       position: absolute;
     }
@@ -300,11 +300,10 @@
     padding-left: 16px;
 
     &::before {
-      //content: counters(list-counter, "-")".";//2-1のようなカウンター用
       content: counter(list-counter) ".";
       counter-increment: list-counter;
       width: 16px;
-      height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+      height: 1lh;
     }
   }
 
@@ -320,7 +319,7 @@
         content: counter(list-counter) ".";
         counter-increment: list-counter;
         width: 16px;
-        height: calc(1em * $font-base-line-height); //1行分の高さ（liのフォントサイズ * line-height）
+        height: 1lh;
       }
     }
   }

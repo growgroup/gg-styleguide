@@ -17,7 +17,7 @@ category: Base
 //
 //    &::before {
 //      width: 16px;
-//      height: calc(1em * $font-base-line-height); //1行分の高さ（1em * line-height = 1lh）
+//      height: 1lh;
 //      content: "・";
 //      color: $font-base-color;
 //    }
