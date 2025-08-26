@@ -403,12 +403,12 @@
     flex-shrink: 0;
     width: 32px;
     text-align: right;
-    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
   }
 
   &__flex-al-unit{
     flex-shrink: 0;
-    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
   }
 
   &__flexbox {
@@ -433,7 +433,7 @@
   &__flexbox-label {
     min-width: 120px;
     display: block;
-    padding-top:calc((#{44px} - 1em * $font-base-line-height)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
 
     @include breakpoint(small only) {
       min-width: 100%;
