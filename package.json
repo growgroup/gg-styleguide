@@ -95,8 +95,8 @@
   "browserslist": [
     "last 3 versions",
     "not dead",
-    "iOS >= 15",
-    "Safari >= 15"
+    "iOS >= 17",
+    "Safari >= 17"
   ],
   "repository": {
     "type": "git",
