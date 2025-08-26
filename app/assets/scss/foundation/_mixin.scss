@@ -168,14 +168,14 @@
   }
 
 
-  // ブレイクポイント値をemに変換して微調整
+  // ブレイクポイント値をemに変換
   @if $bp {
-    $bp: to-em($bp) - math.div(1, 16);
+    $bp: to-em($bp);
   }
 
-  // ブレイクポイント最大値がある場合、emに変換して微調整
+  // ブレイクポイント最大値がある場合、emに変換
   @if $bp-max {
-    $bp-max: to-em($bp-max) - math.div(1, 16);
+    $bp-max: to-em($bp-max);
   }
 
   // dir が upで bpが0の場合、dirを''に設定
@@ -209,17 +209,15 @@
   } @else {
     // メディアクエリがある場合、条件付きで内容を出力
     @if $dir == 'only' {
-      @media screen and (max-width: #{$bp-max}) {
-        @media not screen and (max-width: #{$bp}) {
-          @content;
-        }
+      @media screen and (#{$bp} <= width < #{$bp-max}) {
+        @content;
       }
     } @else if $dir == 'down' {
-      @media screen and (max-width: #{$bp-max}) {
+      @media screen and (width < #{$bp-max}) {
         @content;
       }
     } @else if $dir == 'up' {
-      @media not screen and (max-width: #{$bp}) {
+      @media screen and (width >= #{$bp}) {
         @content;
       }
     }
