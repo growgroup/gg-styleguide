@@ -160,7 +160,7 @@
   }
 
   // ブラウザのデフォルトスタイルをリセットし、WordPressと同様のスタイリングにする
-  :where(figure) {
+  :where(&) figure{
     margin: 0 0 1em
   }
 
