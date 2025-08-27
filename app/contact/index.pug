@@ -283,6 +283,32 @@ block body
                     +e.input.is-sm
                       input(type="text", name="birth-day", placeholder="01")
                     +span.flex-al-unit 日
+            +e.block
+              +e.title
+                | 生年月日
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al
+                  +e.flex-al-label 西暦
+                  +e("label").flex-al
+                    +span.select.is-sm
+                      +select-nums("birth-year",1975,2007,"----")
+                    +span.flex-al-unit 年
+                  +e("label").flex-al
+                    +span.select.is-sm
+                      +select-nums("birth-month",1,12,"----")
+                    +span.flex-al-unit 月
+                  +e("label").flex-al
+                    +span.select.is-sm
+                      +select-nums("birth-day",1,31,"----")
+                    +span.flex-al-unit 日
+            +e.block
+              +e.title
+                | 年齢
+                span.c-forms__label 必須
+              +e.content
+                +e.select.is-sm
+                  +select-nums("age",18,50,"年齢を選択","歳")
 
           +e.head --MW WP Form版保存用--
           //- ★MW WP Formの場合はname値を日本語にします
