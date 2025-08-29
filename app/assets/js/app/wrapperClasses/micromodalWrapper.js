@@ -32,7 +32,22 @@ export default class MicromodalWrapper {
       awaitOpenAnimation: true,
       awaitCloseAnimation: true,
       onShow: this.defaultOnShow.bind(this),
-      onClose: this.defaultOnClose.bind(this)
+      onClose: this.defaultOnClose.bind(this),
+      disableFocus: true, // ← 自動フォーカス無効化
+      onShow: (modal) => {
+        this.defaultOnShow(modal);
+
+        // 一番最初の data-micromodal-close 要素を優先的にフォーカス
+        const closeBtn = modal.querySelector('button[data-micromodal-close]');
+        if (closeBtn) {
+          closeBtn.focus();
+          return;
+        }
+
+        // 無ければ他のフォーカス可能要素にフォーカス
+        const fallback = modal.querySelector('input, button, a, textarea, select');
+        if (fallback) fallback.focus();
+      },
     };
     return { ...defaultMicroModalOptions, ...userOptions };
   }
@@ -137,7 +152,7 @@ export default class MicromodalWrapper {
     const type = trigger.dataset.modalType;
     // hrefかdata-modal-srcを参照
     const href = trigger.getAttribute("href") || trigger.dataset.modalSrc;
-    
+
     if (!href) {
       // href 属性が無い場合は警告を出力して終了
       console.warn(`Modal trigger element has no href attribute:`, trigger);
