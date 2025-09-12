@@ -153,7 +153,7 @@
   setHrefValue = function (href) {//+a()用のhref属性判定＆設定
     if (href === undefined) {
       return undefined;
-    } else if (href.startsWith('http') || href.startsWith('#')) {
+    } else if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
       return href;
     } else {
       return config.rootpath + href;
