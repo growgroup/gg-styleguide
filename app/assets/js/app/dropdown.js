@@ -112,6 +112,20 @@ export default class Dropdown {
         this.dropdownOpen(wrapper, target, animationType);
       }
     });
+
+    //aタグ以外の場合はclickでも処理を実行する
+    trigger.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a') {
+        return;
+      }
+      //開いて無ければ開く、開いていれば閉じる
+      if (wrapper.classList.contains(this.options.openClass)) {
+        this.dropdownClose(wrapper, target, animationType);
+      } else {
+        this.dropdownOpen(wrapper, target, animationType);
+      }
+    });
+
   }
 
   clickInit(wrapper, trigger, target, animationType) {
