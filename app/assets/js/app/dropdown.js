@@ -115,6 +115,11 @@ export default class Dropdown {
 
     //aタグ以外の場合はclickでも処理を実行する
     trigger.addEventListener('click', (e) => {
+      // mouseenterのイベントが発火している場合は処理を実行しない
+      if (e.detail !== 0) {
+        return;
+      }
+      // aタグの場合は処理を実行しない
       if (e.target.tagName.toLowerCase() === 'a') {
         return;
       }
