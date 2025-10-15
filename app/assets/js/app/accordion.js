@@ -74,7 +74,7 @@ export default class Accordion {
       target.isDetails = target.prop("tagName").toLowerCase() === "details";
 
       // ターゲットの初期設定
-      target.defaultOpen = target.isDetails ? target.prop("open") : target.attr("data-open") !== undefined;
+      target.defaultOpen = target.isDetails ? target.prop("open") : target.attr("data-open") !== false;
       target.responsive = target.data("accordion-responsive");
       target.title = target.find('*[' + this.options.titleTargetAttr + ']').eq(0);
       target.content = target.find('*[' + this.options.contentTargetAttr + ']').eq(0);
