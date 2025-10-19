@@ -5,7 +5,14 @@ mixin c_main-visual
       +e.slider.swiper-wrapper
         +loop(3)
           +e.image.swiper-slide
-            +picture("img-main-visual-01.jpg", "img-sample.jpg","", 1600, 620, 803, 451)
+            +picture({
+              pc: "img-main-visual-01.jpg",
+              sp: "img-sample.jpg",
+              width: 1600,
+              height: 620,
+              widthSp: 803,
+              heightSp: 451
+            })
       +e.animation
         +e.bar.js-main-visual-bar: span
         +e.pagination.js-main-visual-pagination
