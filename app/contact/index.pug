@@ -8,12 +8,17 @@ block append config
   - current.depth = 2 // ページの階層
 
 block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "お問い合わせ",
+    subtitle: "Contact"
+  })
 
   //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
   //- /confirm/ と /complete/ もCSS調整必須！
   //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 block body
-  section.l-section.is-xlg.is-bottom.is-bg-color
+  section.l-section.is-xlg.is-bg-color
     .l-container
       //+c.form-head
         +e.block
@@ -31,7 +36,6 @@ block body
       <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
       +c.forms
         +e.inner
-          +h1.head お問い合わせ
           +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
           +e.blocks
 
@@ -88,11 +92,36 @@ block body
                             input(type="radio", name="service-selection", value="選択肢4")
                             span 選択肢4
 
+            +e.block
+              +e("fieldset").fieldset
+                +e("legend").title
+                  | チェックボックス(2カラムにしたいとき)
+                  span.c-forms__label 必須
+                +e.content
+                  +e.checkbox.is-border.is-column
+                    span
+                      span
+                        span
+                          label
+                            input(type="checkbox", name="column-options", value="選択肢1")
+                            span 選択肢1
+                        span
+                          label
+                            input(type="checkbox", name="column-options", value="選択肢2")
+                            span 選択肢2
+                        span
+                          label
+                            input(type="checkbox", name="column-options", value="選択肢3")
+                            span 選択肢3
+                        span
+                          label
+                            input(type="checkbox", name="column-options", value="選択肢4")
+                            span 選択肢4
 
             +e.block
               +e("fieldset").fieldset
                 +e("legend").title
-                  | ご希望のサービス（テキストが長い場合）
+                  | チェックボックス（テキストが長い場合）
                   span.c-forms__label 必須
                 +e.content
                   +e.checkbox.is-border.is-vertical
@@ -163,8 +192,8 @@ block body
                 | 会社名
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="company-name", placeholder="〇〇株式会社" , id="company-name")
                 +p.note: small ※個人の方は、「個人」とご入力ください
+                +e.input: input(type="text", name="company-name", placeholder="〇〇株式会社" , id="company-name")
 
             +e.block
               +e("label").title(for="your-email")
@@ -188,7 +217,7 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +e.flex-al
-                  +e.input.is-sm: input(type="text", name="zip-code", placeholder="0001234" , id="zip-code")
+                  +e.input.is-md: input(type="text", name="zip-code", placeholder="0001234" , id="zip-code")
                   button(onclick="AjaxZip3.zip2addr('zip-code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
 
             +e.block
@@ -354,8 +383,8 @@ block body
                 | 横並び（タイトル上寄せ）
                 span.c-forms__label 必須
               +e.content
-                +e.input: input(type="text", name="horizontal-pattern-title-top", placeholder="〇〇株式会社" , id="horizontal-pattern-title-top")
                 +p.note: small 補足のテキスト
+                +e.input: input(type="text", name="horizontal-pattern-title-top", placeholder="〇〇株式会社" , id="horizontal-pattern-title-top")
 
             +e.block.is-horizontal
               +e("label").title.is-vertical-top(for="zip-code-address")
