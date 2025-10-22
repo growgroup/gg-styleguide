@@ -34,11 +34,15 @@ block body
               +e.item-number 3
               +e.item-text 送信完了
       <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
+
+
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      //- タイプ1: 基本スタイル（1列型）
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
       +c.forms
         +e.inner
-          +e.text ご質問、ご相談はこちらのフォームからご連絡ください。
+          +e.text ご質問・ご相談は下記のフォームからお問い合わせください。
           +e.blocks
-
             +e.block
               +e("fieldset").fieldset
                 +e("legend").title
@@ -51,7 +55,7 @@ block body
                         span
                           label
                             input(type="checkbox", name="service-options", value="選択肢1")
-                            span 選択肢1
+                            span 選択肢テキスト1
                         span
                           label
                             input(type="checkbox", name="service-options", value="選択肢2")
@@ -78,7 +82,7 @@ block body
                         span
                           label
                             input(type="radio", name="service-selection", value="選択肢1")
-                            span 選択肢1
+                            span 選択肢テキスト1
                         span
                           label
                             input(type="radio", name="service-selection", value="選択肢2")
@@ -185,7 +189,7 @@ block body
                 span.c-forms__label 必須
                 //- ★Contact form 7 の場合は name="name" は使えないので name="your-name" にしてください
               +e.content
-                +e.input: input(type="text", name="your-name", placeholder="山田　太郎" , id="your-name")
+                +e.input: input(type="text", name="your-name", placeholder="例）山田　太郎" , id="your-name")
 
             +e.block
               +e("label").title(for="company-name")
@@ -193,39 +197,8 @@ block body
                 span.c-forms__label 必須
               +e.content
                 +p.note: small ※個人の方は、「個人」とご入力ください
-                +e.input: input(type="text", name="company-name", placeholder="〇〇株式会社" , id="company-name")
+                +e.input: input(type="text", name="company-name", placeholder="例）〇〇株式会社" , id="company-name")
 
-            +e.block
-              +e("label").title(for="your-email")
-                | メールアドレス
-                span.c-forms__label 必須
-                //- ★Contact form 7 の場合は メールアドレスは type="email" にしてください
-              +e.content
-                +e.input: input(type="email", name="your-email", placeholder="info@mail.jp" , id="your-email")
-
-            +e.block
-              +e("label").title(for="tel-number")
-                | 電話番号
-                span.c-forms__label 必須
-                //- ★Contact form 7 の場合は 電話番号は type="tel" にしてください
-              +e.content
-                +e.input: input(type="tel", name="tel-number", placeholder="123-456-7890" , id="tel-number")
-
-            +e.block
-              +e("label").title(for="zip-code")
-                | 郵便番号
-                span.c-forms__label 必須
-              +e.content
-                +e.flex-al
-                  +e.input.is-md: input(type="text", name="zip-code", placeholder="0001234" , id="zip-code")
-                  button(onclick="AjaxZip3.zip2addr('zip-code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
-
-            +e.block
-              +e("label").title(for="address")
-                | ご住所
-                span.c-forms__label 必須
-              +e.content
-                +e.input: input(type="text", name="address", placeholder="ご住所を入力してください" , id="address")
 
             +e.block
               +e("label").title(for="department-name")
@@ -252,11 +225,45 @@ block body
                     option(value="選択肢C") 選択肢C
 
             +e.block
+              +e("label").title(for="your-email")
+                | メールアドレス
+                span.c-forms__label 必須
+                //- ★Contact form 7 の場合は メールアドレスは type="email" にしてください
+              +e.content
+                +e.input: input(type="email", name="your-email", placeholder="例）info@mail.jp" , id="your-email")
+
+            +e.block
+              +e("label").title(for="tel-number")
+                | 電話番号
+                span.c-forms__label 必須
+                //- ★Contact form 7 の場合は 電話番号は type="tel" にしてください
+              +e.content
+                +p.note: small ※半角数字
+                +e.input: input(type="tel", name="tel-number", placeholder="例）123-456-7890" , id="tel-number")
+
+            +e.block
+              +e("label").title(for="zip-code")
+                | 郵便番号
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al.is-gap-sm
+                  +e.input.is-md: input(type="text", name="zip-code", placeholder="例）0000000" , id="zip-code")
+                  button(onclick="AjaxZip3.zip2addr('zip-code','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
+
+            +e.block
+              +e("label").title(for="address")
+                | ご住所
+                span.c-forms__label 必須
+              +e.content
+                +e.input: input(type="text", name="address", placeholder="ご住所を入力してください" , id="address")
+
+
+            +e.block
               +e("label").title(for="your-message")
-                | その他質問等
+                | お問い合わせ内容
               +e.content
                 +e.textarea
-                  textarea(name="your-message", placeholder="" , id="your-message")
+                  textarea(name="your-message", placeholder="お問い合わせ内容をご記入ください" , id="your-message")
 
             +e.block
               +e("label").title(for="file-upload")
@@ -272,7 +279,7 @@ block body
                   | お名前
                   span.c-forms__label 必須
                 +e.content
-                  +e.flex-al
+                  +e.flex-al.is-gap-lg
                     +e("label").flex-al
                       +e("span").flex-al-label 姓
                       +e.input: input(type="text", name="last-name", placeholder="山田")
@@ -285,7 +292,7 @@ block body
                   | フリガナ
                   span.c-forms__label 必須
                 +e.content
-                  +e.flex-al
+                  +e.flex-al.is-gap-lg
                     +e("label").flex-al
                       +e("span").flex-al-label(for="last-kana-name") セイ
                       +e.input: input(type="text", name="last-kana-name", placeholder="ヤマダ" , id="last-kana-name")
@@ -298,10 +305,10 @@ block body
                 | 生年月日
                 span.c-forms__label 必須
               +e.content
-                +e.flex-al
-                  +e.flex-al-label 西暦
+                +e.flex-al.is-gap-lg
                   +e("label").flex-al
-                    +e.input
+                    //-+e.flex-al-label 西暦
+                    +e.input.is-sm
                       input(type="text", name="birth-year", placeholder="1980")
                     +span.flex-al-unit 年
                   +e("label").flex-al
@@ -317,9 +324,9 @@ block body
                 | 生年月日
                 span.c-forms__label 必須
               +e.content
-                +e.flex-al
-                  +e.flex-al-label 西暦
+                +e.flex-al.is-gap-lg
                   +e("label").flex-al
+                    //- +e.flex-al-label 西暦
                     +span.select.is-sm
                       +select-nums("birth-year",1975,2007,"----")
                     +span.flex-al-unit 年
@@ -339,14 +346,14 @@ block body
                 +e.select.is-sm
                   +select-nums("age",18,50,"年齢を選択","歳")
 
-          +e.head --MW WP Form版保存用--
+          +e.head --MW WP Form版HTML保存用--
           //- ★MW WP Formの場合はname値を日本語にします
           +e.blocks
             +e.block
               +e("fieldset").fieldset
                 +e("legend").title チェックボックス
                 +e.content
-                  +e.checkbox.is-mw
+                  +e.checkbox.is-mw.is-border
                     span
                       label
                         input(type="checkbox", name="ご希望のサービス", value="選択肢1")
@@ -359,46 +366,16 @@ block body
               +e("fieldset").fieldset
                 +e("legend").title ラジオボタン
                 +e.content
-                  +e.radio.is-mw
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢1")
-                      span 選択肢1
-                  span
-                    label
-                      input(type="radio", name="ご希望のサービス", value="選択肢2")
-                      span 選択肢2
+                  +e.radio.is-mw.is-border
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢1")
+                        span 選択肢1
+                    span
+                      label
+                        input(type="radio", name="ご希望のサービス", value="選択肢2")
+                        span 選択肢2
 
-          +e.head --横並びパターン保存用--
-          +e.blocks
-            +e.block.is-horizontal
-              +e("label").title(for="horizontal-pattern")
-                | 横並びパターン
-                span.c-forms__label 必須
-              +e.content
-                +e.input: input(type="text", name="horizontal-pattern", placeholder="〇〇株式会社" , id="horizontal-pattern")
-
-            +e.block.is-horizontal
-              +e("label").title.is-vertical-top(for="horizontal-pattern-title-top")
-                | 横並び（タイトル上寄せ）
-                span.c-forms__label 必須
-              +e.content
-                +p.note: small 補足のテキスト
-                +e.input: input(type="text", name="horizontal-pattern-title-top", placeholder="〇〇株式会社" , id="horizontal-pattern-title-top")
-
-            +e.block.is-horizontal
-              +e("label").title.is-vertical-top(for="zip-code-address")
-                | 住所
-                span.c-forms__label 必須
-              +e.content
-                +e.flexbox
-                  +span.flexbox-label 郵便番号
-                  +e.flex-al
-                    +e.input.is-sm: input(type="text", name="zip-code-address", placeholder="（例）464-0850" , id="zip-code-address")
-                    button(onclick="AjaxZip3.zip2addr('zip-code-address','','address','address');", type="button").c-forms__button#zipauto 住所を自動入力
-                +e.flexbox
-                  +span.flexbox-label(for="address-detail") ご住所
-                  +e.input: input(type="text", name="address-detail", placeholder="（例）愛知県名古屋市千種区今池3丁目12-20 KAビル 6F" , id="address-detail")
 
 
           +e.head --CF7用バリデーションパターン--
@@ -486,6 +463,105 @@ block body
               +a("/privacy-policy/")(target="_blank") 個人情報保護方針
               | の内容に同意する
           +e.submit
-            button.c-button.is-xlg 確認画面へ
-            //button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
-            //button.c-button.c-forms__submit__submit.is-lg 送信する
+            button.c-button.is-xlg この内容で送信する
+            //button.c-button.c-forms__submit__back.is-arrow-left 戻る
+            //button.c-button.c-forms__submit__submit 送信する
+
+
+
+  section.l-section.is-xlg
+    h1 タイプ2：横列組
+
+    .l-container
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      //- タイプ2：横列組
+      //- タイプ2にのみ任意ラベルあり
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      +c.forms
+        +e.inner
+          +e.text.u-text-left ご質問・ご相談は下記のフォームからお問い合わせください。
+          +e.blocks
+            +e.block.is-horizontal
+              +e("fieldset").fieldset
+                +e("legend").title
+                  | チェックボックス
+                  span.c-forms__label 必須
+                +e.content
+                  +e.checkbox.is-vertical
+                    span
+                      span
+                        span
+                          label
+                            input(type="checkbox", name="service-options", value="選択肢1")
+                            span 選択肢1
+                        span
+                          label
+                            input(type="checkbox", name="service-options", value="選択肢2")
+                            span 選択肢2
+                        span
+                          label
+                            input(type="checkbox", name="service-options", value="選択肢3")
+                            span 選択肢3
+            +e.block.is-horizontal
+              +e("fieldset").fieldset
+                +e("legend").title
+                  | ラジオボタン
+                  span.c-forms__label 必須
+                +e.content
+                  +e.radio.is-vertical
+                    span
+                      span
+                        span
+                          label
+                            input(type="radio", name="service-selection", value="選択肢1")
+                            span 選択肢1
+                        span
+                          label
+                            input(type="radio", name="service-selection", value="選択肢2")
+                            span 選択肢2
+                        span
+                          label
+                            input(type="radio", name="service-selection", value="選択肢3")
+                            span 選択肢3
+
+            +e.block.is-horizontal
+              +e("label").title(for="your-name")
+                | お名前
+                span.c-forms__label 必須
+              +e.content
+                +e.input: input(type="text", name="your-name", placeholder="例）山田　太郎" , id="your-name")
+
+            +e.block.is-horizontal
+              +e("label").title(for="your-message")
+                | お問い合わせ内容
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.textarea
+                  textarea(name="your-message", placeholder="お問い合わせ内容をご記入ください" , id="your-message")
+
+            +e.block.is-horizontal
+              +e("label").title.is-vertical-top(for="your-message")
+                | タイトル上寄せパターン保存用
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.textarea
+                  textarea(name="your-message", placeholder="お問い合わせ内容をご記入ください" , id="your-message")
+
+            +e.block.is-horizontal
+              +e("label").title(for="your-message")
+                | お問い合わせ内容
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +p.note.is-mg-lg
+                  +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+                  |の同意の上でお進みください。
+                //- WP側で c-forms__privacyの中のinputを判定して処理するので、
+                //- 同意のチェックボックスは .c-forms__privacy の中に入れてください
+                +e.privacy.is-display-contents
+                  +e.checkbox
+                    span
+                      span
+                        span
+                          label
+                            input(type="checkbox", name="policy", value="確認しました")
+                            span 同意する
