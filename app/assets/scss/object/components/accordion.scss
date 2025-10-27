@@ -44,7 +44,7 @@ category: Components
     }
 
     @at-root {
-      .c-accordion__block[open] &::after {
+      .c-accordion__block[open] > &::after {
         content: "expand_less";
       }
     }
