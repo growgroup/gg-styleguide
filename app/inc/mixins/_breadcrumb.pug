@@ -1,3 +1,10 @@
+//- 矢印アイコン
+mixin c_breadcrumb_arrow()
+  span.is-arrow
+    span.c-icon-font
+      | chevron_right
+
+
 //- パンくずリスト
 mixin c_breadcrumb(props, cache)
 
@@ -11,9 +18,7 @@ mixin c_breadcrumb(props, cache)
     - var linkedPath = cache.linkedPath + props.paths[cache.count].url + "/"
     span
       +a(linkedPath)=props.paths[cache.count].text
-      span.is-arrow
-        span.c-icon-font
-          | chevron_right
+      +c_breadcrumb_arrow()
       //- 次のパンくずリスト要素を再帰的に処理
       +c_breadcrumb({paths: props.paths}, {count: cache.count + 1, linkedPath: linkedPath})
 
@@ -27,9 +32,7 @@ mixin c_breadcrumb(props, cache)
             span
               //- トップへのリンク（最初の要素）
               +a("/") TOP
-              span.is-arrow
-                span.c-icon-font
-                  | chevron_right
+              +c_breadcrumb_arrow()
 
               if props === undefined ||props.paths === undefined ||!props.paths[0]
                 //- パスが存在しない場合は現在のページタイトルを表示
@@ -39,9 +42,7 @@ mixin c_breadcrumb(props, cache)
                 //- パスが存在する場合は最初のパンくず要素を表示
                 span
                   +a(`/${props.paths[0].url}/`)=props.paths[0].text
-                  span.is-arrow
-                    span.c-icon-font
-                      | chevron_right
+                  +c_breadcrumb_arrow()
                   //- 最初のリンクパスを設定
                   - var linkedPath = `/${props.paths[0].url}/`
                   //- 次のパンくずリスト要素を再帰的に処理
