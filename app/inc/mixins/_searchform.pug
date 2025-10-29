@@ -6,7 +6,7 @@ mixin l_searchform()
       .l-searchform__inner
         button.l-searchform__close.js-header-searchform-close
           span.c-icon-font.l-searchform__close__icon close
-        +c_searchform-bar("headerSearch")
+        +c_searchform-bar("headerSearch").js-header-searchform-content
 
 //- サイト内共通の検索フォーム部分（ヘッダー、サイト内検索）
 mixin c_searchform-bar(label)
