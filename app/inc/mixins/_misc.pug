@@ -17,12 +17,12 @@ mixin picture(opts)
     var pc = opts.pc || "",
         sp = opts.sp || "",
         alt = opts.alt || "",
-        width = opts.width || "",
-        height = opts.height || "",
-        widthSp = opts.widthSp || "",
-        heightSp = opts.heightSp || "",
+        width = opts.width || null,
+        height = opts.height || null,
+        widthSp = opts.widthSp || null,
+        heightSp = opts.heightSp || null,
         media = opts.media || "",
-        fetchpriority = opts.fetchpriority || ""
+        fetchpriority = opts.fetchpriority || null
 
   -
     pc = setSrcValue(pc, "/assets/images/")
