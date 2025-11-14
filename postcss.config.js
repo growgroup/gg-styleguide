@@ -1,5 +1,6 @@
 module.exports = (ctx) => ({
   plugins: {
+    "@tailwindcss/postcss": {},
     "postcss-pxtorem": {
       propList: ["*", "!border*", "!box-shadow*"],
       selectorBlackList: [/^html$/], //html要素は除外
