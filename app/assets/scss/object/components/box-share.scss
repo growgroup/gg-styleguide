@@ -9,8 +9,8 @@ category: PostContent
 .c-box-share {
   width: 100%;
   min-height: 270px;
-  background: url("../images/img-sample.jpg");
-  @include bg-option();
+  //background: url("../images/img-sample.jpg");
+  // @include bg-option();
   position: relative;
   text-align: center;
   margin: 48px 0;
@@ -28,6 +28,19 @@ category: PostContent
     left: 0;
     background-color: rgba($color-black,0.6);
   }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    img {
+      @include img-option();
+    }
+  }
+
   &__inner {
     position: absolute;
     top: 50%;

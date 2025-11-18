@@ -5,11 +5,11 @@ category: Layout
 ---
 */
 .l-offer {
-  background-image: url("../images/bg-offer.jpg");
-  @include bg-option();
   text-align: center;
   color: $color-white;
   padding: 48px 0;
+  position: relative;
+
   @include breakpoint(small only) {
     padding: 40px 0;
   }
@@ -17,6 +17,25 @@ category: Layout
   &.is-padding-lg {
     padding: 64px 0;
   }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    img {
+      @include img-option();
+    }
+  }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
