@@ -167,3 +167,4 @@ JavaScript の構文チェッカーとして ESLint を採用しています。
 * [HTMLコーディング規約](docs/RULES_HTML_CODING.md)
 * [命名規則](docs/RULES_NAMING.md)
 
+# d-1121
