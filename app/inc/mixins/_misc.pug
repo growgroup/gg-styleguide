@@ -72,7 +72,13 @@ mixin loop(count)
     block
     - n++
 
-
+//- スクローラブルブロック（スクロールヒント）
+mixin c_scrollable
+  //- scroll-hint が .js-scrollableの親の要素に対して適用されるため
+  //- c-scrollableと .js-scrollableを分けることを推奨
+  .c-scrollable&attributes(attributes)
+    .js-scrollable
+      block
 
 //- 投稿ページナビゲーション
 mixin c_post_nav(listID)

@@ -82,26 +82,22 @@ div.u-mbs.is-bottom
 h3 画面幅が狭いとき横スクロールする画像やテーブル
 
 div.u-mbs.is-bottom
-  .c-scrollable
-    // scroll-hint が .js-scrollableの親の要素に対して適用されるため
-    // c-scrollableと .js-scrollableを分けることを推奨
-    .js-scrollable
-      +img("img-sample.jpg")
+  +c_scrollable()
+    +img("img-sample.jpg")
 
 div.u-mbs.is-bottom
-  .c-scrollable
-    .js-scrollable
-      table.c-table
-        tbody
-          tr
-            th テスト
-            th テスト
-            th テスト
-            th テスト
-            th テスト
-          tr
-            td テスト
-            td テスト
-            td テスト
-            td テスト
-            td テスト
+  +c_scrollable()
+    table.c-table
+      tbody
+        tr
+          th テスト
+          th テスト
+          th テスト
+          th テスト
+          th テスト
+        tr
+          td テスト
+          td テスト
+          td テスト
+          td テスト
+          td テスト
