@@ -30,9 +30,9 @@ mixin picture(opts)
 
   -
     if (!media || media === "") {
-      media = '(max-width:46.8125em)'
+      media = '(width < 46.875em)'
     } else if (media === "medium") {
-      media = '(max-width:59.3125em)'
+      media = '(width < 59.375em)'
     }
 
   picture&attributes(attributes)
