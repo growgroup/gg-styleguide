@@ -12,7 +12,6 @@ $form-controls-active-border-color: $color-primary;
 //input, textarea, selectの共通スタイル
 @mixin form-controls-common-style {
   font-size: $form-controls-font-size;
-  --letter-spacing: 0;
   color: $font-base-color;
   border: 1px solid $form-controls-border-color;
   background-color: $color-background;

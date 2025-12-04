@@ -80,7 +80,7 @@
 
     //項目名と項目の横並び
     &:where(.is-horizontal) {
-      grid-template-columns: minmax(auto, min-content) 1fr;
+      grid-template-columns: max(calc(332/1140*100%), 220px) 1fr;
       column-gap: 52px;
       border-bottom: 1px solid $border-base-color;
       padding: 32px 0 32px 24px;
@@ -96,7 +96,7 @@
       }
 
       .c-forms__title {
-        min-width: 220px;
+        // min-width: 220px;
         justify-content: space-between;
 
         @include breakpoint(small only) {
@@ -542,12 +542,20 @@
     }
   }
 
-  // 送信ボタン
-  &__submit {
-    text-align: center;
+
+  &__privacy + &__submit {
     margin-top: 40px;
     @include breakpoint(small only) {
       margin-top: 32px;
+    }
+  }
+
+  // 送信ボタン
+  &__submit {
+    text-align: center;
+    margin-top: 64px;
+    @include breakpoint(small only) {
+      margin-top: 48px;
     }
 
     &__back {
