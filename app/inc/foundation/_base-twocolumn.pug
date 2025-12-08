@@ -11,6 +11,7 @@ block layout
     block page_header
     block upper_main
     .l-main
+      block l-main_top
       .l-two-column(class=twoColumnAddClass)
         .l-two-column__main
           block body
@@ -18,6 +19,7 @@ block layout
         aside.l-two-column__side
           .l-aside
             block aside
+      block l-main_bottom
     +l_offer
     //block under_main
 
