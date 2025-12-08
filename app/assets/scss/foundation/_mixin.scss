@@ -125,7 +125,7 @@
   @return clamp(
     rem-calc($min),
     vw-calc($value, $viewport),
-    rem-calc(math.div($value / $viewport) * $viewport-max)
+    rem-calc(math.div($value, $viewport) * $viewport-max)
   );
 }
 
