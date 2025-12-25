@@ -18,9 +18,9 @@ mixin c_breadcrumb(props, cache)
     - var linkedPath = cache.linkedPath + props.paths[cache.count].url + "/"
     span
       +a(linkedPath)=props.paths[cache.count].text
-      +c_breadcrumb_arrow()
-      //- 次のパンくずリスト要素を再帰的に処理
-      +c_breadcrumb({paths: props.paths}, {count: cache.count + 1, linkedPath: linkedPath})
+    +c_breadcrumb_arrow()
+    //- 次のパンくずリスト要素を再帰的に処理
+    +c_breadcrumb({paths: props.paths}, {count: cache.count + 1, linkedPath: linkedPath})
 
   else
     //- パンくずリストの最初の要素の場合
@@ -42,8 +42,8 @@ mixin c_breadcrumb(props, cache)
               //- パスが存在する場合は最初のパンくず要素を表示
               span
                 +a(`/${props.paths[0].url}/`)=props.paths[0].text
-                +c_breadcrumb_arrow()
-                //- 最初のリンクパスを設定
-                - var linkedPath = `/${props.paths[0].url}/`
-                //- 次のパンくずリスト要素を再帰的に処理
-                +c_breadcrumb({paths: props.paths}, {count: 1, linkedPath: linkedPath})
+              +c_breadcrumb_arrow()
+              //- 最初のリンクパスを設定
+              - var linkedPath = `/${props.paths[0].url}/`
+              //- 次のパンくずリスト要素を再帰的に処理
+              +c_breadcrumb({paths: props.paths}, {count: 1, linkedPath: linkedPath})
