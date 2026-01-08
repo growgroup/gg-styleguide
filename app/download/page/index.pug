@@ -40,7 +40,7 @@ block body
                 +e.slider-next.swiper-next.js-document-slider-next.swiper-button-next
 
         .c-block-document__form
-          +c.forms
+          +c.forms.is-padding-sm
             .c-heading.is-xs.is-mg-level-4 ダウンロードフォーム
             +e.blocks
               +e.block
@@ -72,7 +72,7 @@ block body
                 +e.content
                   +e.select
                     select(name="制作の開始時期について")
-                      option(disabled, selected) ー以下から選択してくださいー
+                      option(disabled, selected) 選択してください
                       option(value="選択肢A") 選択肢A
                       option(value="選択肢B") 選択肢B
                       option(value="選択肢C") 選択肢C
@@ -86,7 +86,7 @@ block body
             +e.privacy
               label
                 input(type="checkbox", name="「個人情報保護の取り扱いに関するご確認」を確認する", value="確認しました")
-                +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+                +a("/privacy-policy/")(target="_blank").u-text-link 個人情報保護方針
                 | の内容に同意する
 
             +e.submit

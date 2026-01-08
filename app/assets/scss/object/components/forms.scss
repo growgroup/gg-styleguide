@@ -28,6 +28,14 @@
     padding: 32px 16px;
   }
 
+  &.is-padding-sm {
+    padding: 32px 24px;
+    @include breakpoint(small only) {
+      padding: 24px 12px;
+    }
+  }
+
+
   &:has(.c-forms__block.is-horizontal) {
     padding: 0 0;
   }
@@ -121,6 +129,11 @@
 
     &.is-vertical-top {
       align-self: start;
+      padding-top: 16px;
+
+      @include breakpoint(small only) {
+        padding-top: 0;
+      }
     }
   }
 
@@ -251,7 +264,7 @@
       & > span > span {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: stretch;
         gap: var(--_options-gap);
       }
 
@@ -342,6 +355,7 @@
         padding: 12px 32px 12px 16px;
         border: 1px solid $border-base-color;
         border-radius: $border-radius;
+        height: 100%;
 
         @include breakpoint(small only) {
           padding: 9px 24px 9px 12px;
@@ -436,12 +450,6 @@
       input {
         margin-right: 10px;
       }
-
-      a {
-        font-weight: 400;
-        text-decoration-line: underline;
-        color: $font-base-color;
-      }
     }
   }
 
@@ -529,7 +537,8 @@
     background-color: $color-white;
     display: grid;
     padding: 16px 24px;
-    height: 57px;
+    // height: 57px;
+    align-self: stretch;
     place-content: center;
     text-align: center;
     border-radius: 4px;

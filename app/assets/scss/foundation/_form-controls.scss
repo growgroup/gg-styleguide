@@ -147,9 +147,14 @@ select {
   appearance: none;
   background-image: url('../images/icon-form-select.svg');
   background-repeat: no-repeat;
-  background-position: calc(100% - 16px) center;
-  background-size: 9px 5px;
+  background-position: calc(100% - 26px) center;
+  background-size: 10px 6px;
   @include form-controls-input-style();
+
+  @include breakpoint(small down) {
+    background-position: calc(100% - 12px) center;
+    background-size: 9px 5px;
+  }
 }
 
 /*  プレイスホルダーの色変更 */

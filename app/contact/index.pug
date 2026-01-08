@@ -116,7 +116,7 @@ block body
                         span
                           label
                             input(type="checkbox", name="column-options", value="選択肢3")
-                            span 選択肢3
+                            span 選択肢3テキストが長い時テキストが長い時テキストが長い時テキストが長い時テキストが長い時
                         span
                           label
                             input(type="checkbox", name="column-options", value="選択肢4")
@@ -207,7 +207,7 @@ block body
               +e.content
                 +e.select
                   select(name="department-name" , id="department-name")
-                    option(disabled, selected) ー以下から選択してくださいー
+                    option(disabled, selected) 選択してください
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
@@ -219,7 +219,7 @@ block body
               +e.content
                 +e.select
                   select(name="position" , id="position")
-                    option(disabled, selected) ー以下から選択してくださいー
+                    option(disabled, selected) 選択してください
                     option(value="選択肢A") 選択肢A
                     option(value="選択肢B") 選択肢B
                     option(value="選択肢C") 選択肢C
@@ -460,10 +460,10 @@ block body
           +e.privacy
             label
               input(type="checkbox", name="policy", value="確認しました")
-              +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+              +a("/privacy-policy/")(target="_blank").u-text-link 個人情報保護方針
               | の内容に同意する
           +e.submit
-            button.c-button.is-xlg この内容で送信する
+            button.c-button この内容で送信する
             //button.c-button.c-forms__submit__back.is-arrow-left 戻る
             //button.c-button.c-forms__submit__submit 送信する
 
@@ -553,7 +553,7 @@ block body
                 span.c-forms__label.is-optional 任意
               +e.content
                 +p.note.is-mg-lg
-                  +a("/privacy-policy/")(target="_blank") 個人情報保護方針
+                  +a("/privacy-policy/")(target="_blank").u-text-link 個人情報保護方針
                   |の同意の上でお進みください。
                 //- WP側で c-forms__privacyの中のinputを判定して処理するので、
                 //- 同意のチェックボックスは .c-forms__privacy の中に入れてください
@@ -566,4 +566,4 @@ block body
                             input(type="checkbox", name="policy", value="確認しました")
                             span 同意する
           +e.submit
-            button.c-button.is-xlg この内容で送信する
+            button.c-button この内容で送信する
