@@ -301,9 +301,10 @@ block body
                       +e.input: input(type="text", name="first-kana-name", placeholder="タロウ" , id="first-kana-name")
 
             +e.block
-              +e.title
-                | 生年月日
-                span.c-forms__label 必須
+              +e("fieldset").fieldset
+                +e("legend").title
+                  | 生年月日
+                  span.c-forms__label 必須
               +e.content
                 +e.flex-al.is-gap-lg
                   +e("label").flex-al
@@ -320,9 +321,10 @@ block body
                       input(type="text", name="birth-day", placeholder="01")
                     +span.flex-al-unit 日
             +e.block
-              +e.title
-                | 生年月日
-                span.c-forms__label 必須
+              +e("fieldset").fieldset
+                +e("legend").title
+                  | 生年月日
+                  span.c-forms__label 必須
               +e.content
                 +e.flex-al.is-gap-lg
                   +e("label").flex-al
@@ -339,12 +341,23 @@ block body
                       +select-nums("birth-day",1,31,"----")
                     +span.flex-al-unit 日
             +e.block
-              +e.title
+              +e("label").title(for="age")
                 | 年齢
                 span.c-forms__label 必須
               +e.content
-                +e.select.is-md
-                  +select-nums("age",18,50,"選択してください","歳")
+                +e.flex-al
+                  +e.input.is-sm
+                    input(type="text", name="age", placeholder="30" , id="age")
+                  +e.flex-al-unit 歳
+            +e.block
+              +e("label").title(for="age-select")
+                | 年齢
+                span.c-forms__label 必須
+              +e.content
+                +e.flex-al
+                  +e.select.is-sm
+                    +select-nums("age",18,50,"----","")#age-select
+                  +e.flex-al-unit 歳
 
           +e.head --MW WP Form版HTML保存用--
           //- ★MW WP Formの場合はname値を日本語にします
