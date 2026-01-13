@@ -62,20 +62,71 @@ function pugMiddleWare(req, res, next) {
     res.end(cachedData.content);
     return;
   }
+  try {
+    // pugがファイルを見つけたのでコンパイルする
+    var content = pug.renderFile(pugPath, pugConfig);
 
-  // pugがファイルを見つけたのでコンパイルする
-  var content = pug.renderFile(pugPath, pugConfig);
+    // キャッシュを更新
+    pugCache.set(cacheKey, {
+      mtime: pugStats.mtime.getTime(),
+      content: content
+    });
 
-  // キャッシュを更新
-  pugCache.set(cacheKey, {
-    mtime: pugStats.mtime.getTime(),
-    content: content
-  });
+    res.setHeader('Content-Type', 'text/html');
+    // コンパイル結果をレスポンスに渡す
+    res.end(new Buffer.from(content));
 
+  } catch (err) {
+    // エラー画面を返す
+  res.statusCode = 500;
   res.setHeader('Content-Type', 'text/html');
-  // コンパイル結果をレスポンスに渡す
-  res.end(new Buffer.from(content));
+
+  const escape = (str = '') =>
+    String(str).replace(/[&<>"']/g, s => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    }[s]));
+
+  // ★ Pug が教えてくれる「本当の原因ファイル」
+  const errorFile =
+    err.filename ||
+    err.path ||
+    err.babylonError?.filename ||
+    pugPath;
+
+  const mainStack = err.stack || err.toString();
+  const babelStack = err.babylonError?.stack || '';
+
+  res.end(`
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pug Error</title>
+  <style>
+    body {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pug Compile Error</h1>
+  <h2>Entry</h2>
+  <pre>${escape(errorFile)}</pre>
+  <h2>Stack</h2>
+  <pre>${escape(mainStack)}</pre>
+  ${babelStack ? `
+    <pre>${escape(babelStack)}</pre>
+  ` : ''}
+</body>
+</html>
+  `);
+  }
 }
+
 
 var config = {
   notify: false,
