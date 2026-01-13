@@ -247,7 +247,7 @@
     width: 100%;
 
     &.is-md {
-      width: 294px;
+      width: 240px;
     }
 
     &.is-sm {
@@ -351,10 +351,10 @@
     &.is-border {
       --_options-gap: 4px;
       label {
-        @include forms-input-common-style;
+        border-radius: 4px;
+        background-color: $color-background;
         padding: 12px 32px 12px 16px;
         border: 1px solid $border-base-color;
-        border-radius: $border-radius;
         height: 100%;
 
         @include breakpoint(small only) {
@@ -404,6 +404,8 @@
         }
 
         &[type='checkbox'] {
+          border-radius: 2px;
+
           &:checked {
             background: $color-primary;
             border-color: $color-primary;
