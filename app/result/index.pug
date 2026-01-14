@@ -15,19 +15,19 @@ block page_header
   //})
   +c_breadcrumb()
   .l-container
-    +c.search-result-header
-      +h1.head.c-heading.is-lg.is-mg-level-2 サイト内検索
-      +e.form
+    .c-search-result-header
+      h1.c-search-result-header__head.c-heading.is-lg.is-mg-level-2 サイト内検索
+      .c-search-result-header__form
         +c_searchform-bar("resultSearch").is-sm
 
 block body
   section.l-section.is-search-result
-    +c.search
-      +e.head
+    .c-search
+      .c-search__head
         b 「いろはに」
         | の検索結果
         b 1-10/3423件
-      +e.situation
+      .c-search__situation
         dl
           dt 表示件数：
           dd: +a("").is-active 10 件
@@ -37,11 +37,11 @@ block body
           dt 並び順：
           dd: +a("").is-active 新着順
           dd: +a("") 更新順
-      +e.blocks
+      .c-search__blocks
         +loop(10)
-          +e.block
-            +ae("").title ページ名テキスト｜2階層目のページ名
-            +e.url https://www.xxxxxxxx.co.jp
+          .c-search__block
+            +a("").c-search__title ページ名テキスト｜2階層目のページ名
+            .c-search__url https://www.xxxxxxxx.co.jp
 
     +c_pagination()
 
