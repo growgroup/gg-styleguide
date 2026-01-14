@@ -15,10 +15,10 @@ mixin l-aside
         +img("img-main-visual-01.jpg")
 
 mixin l-aside-search-result
-  +c.search-result-aside
+  .c-search-result-aside
 
-    +e.popular
-      +e.title よく検索される<br class="u-hidden-md">キーワード
-      +ul.keyword
+    .c-search-result-aside__popular
+      .c-search-result-aside__title よく検索される<br class="u-hidden-md">キーワード
+      ul.c-search-result-aside__keyword
         +loop(10)
           li: +a("#") キーワード
