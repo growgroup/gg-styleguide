@@ -221,6 +221,7 @@
   &__textarea {
     textarea {
       @include forms-input-common-style;
+      resize: vertical;
     }
   }
 
