@@ -37,7 +37,7 @@ export default class Fixedheader {
         this.isFixed = this.isFixed.bind(this);
         this.run = this.run.bind(this);
         if (
-            ( screen.width > 768 && this.options.mobile )
+            ( screen.width > 750 && this.options.mobile )
             || this.options.mobile === false
         ) {
             window.requestAnimationFrame(this.run);
