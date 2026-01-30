@@ -9,90 +9,108 @@ category: Heading
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .c-heading {
-
   // h1
   &.is-xlg {
-    color: $color-primary;
-
-    .is-eng {
-      display: block;
-      @include webfont();
-      @include font-format-light(42, 52);
-      @include breakpoint(small only) {
-        font-size: 42px*0.8;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0.16em;
+    padding-bottom: 20px;
+    &.is-decoration {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50% 0;
+        width: 64px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          $color-primary 0% 50%,
+          $color-secondary 50% 100%
+        );
       }
-    }
-    .is-ja {
-      display: block;
-      @include font-format-light(16, 26);
-      @include breakpoint(small only) {
-        font-size: 16px*0.8;
+      &.is-white {
+        color: $color-white;
+        &::before {
+          background: linear-gradient(
+            90deg,
+            $color-primary 0% 50%,
+            $color-white 50% 100%
+          );
+        }
+      }
+      &.is-text-left {
+        text-align: left;
+        &::before {
+          left: 0;
+          translate: 0 0;
+        }
       }
     }
   }
 
   // h2
   &.is-lg {
-    @include font-format-light(32,40);
-
-    @include breakpoint(small only) {
-      font-size: 32px*0.8;
-    }
-
-    .is-eng {
-      display: block;
-      @include webfont();
-    }
-
-    .is-ja {
-      display: block;
-      @include font-format-light(14, 20);
-      margin-top: 6px;
-      @include breakpoint(small only) {
-        font-size: 14px*0.8;
-      }
+    font-size: 28px;
+    letter-spacing: 0.14em;
+    &.is-decoration {
+      background-color: $color-background_blue;
+      padding: 10px 16px;
+      border-left: 6px solid $color-primary;
     }
   }
 
   // h3
   &.is-md {
-    @include font-format-light(28,38);
-
-    @include breakpoint(small only) {
-      font-size: 28px*0.8;
+    font-size: 24px;
+    padding-block-end: 0.5em;
+    letter-spacing: 0.12em;
+    &.is-decoration {
+      border-bottom: 2px solid $color-primary;
     }
   }
 
   // h4
   &.is-sm {
-    @include font-format-light(24, 34);
-    @include breakpoint(small only) {
-      font-size: 24px*0.8;
+    font-size: 20px;
+    letter-spacing: 0.09em;
+    &.is-decoration {
+      padding-inline-start: 10px;
+      border-left: 4px solid $color-primary;
     }
   }
 
   // h5
   &.is-xs {
-    @include font-format-light(20,30);
-
-    @include breakpoint(small only) {
-      font-size: 20px*0.8;
+    font-size: 18px;
+    letter-spacing: 0.09em;
+    &.is-decoration {
+      position: relative;
+      padding-inline-start: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.4em;
+        left: 0;
+        width: 12px;
+        aspect-ratio: 1/1;
+        border-radius: calc(infinity * 1px);
+        background-color: $color-primary;
+      }
     }
   }
 
   // h6
   &.is-xxs {
-    @include font-format-light(18, 28);
-
-    @include breakpoint(small only) {
-      font-size: 18px*0.8;
-    }
+    font-size: 16px;
+    letter-spacing: 0.08em;
   }
-
 
   //--------------------------------
   // カラー設定
@@ -106,7 +124,6 @@ category: Heading
     color: $color-white;
   }
 
-
   //--------------------------------
   // 位置調整
   &.is-center {
@@ -116,12 +133,30 @@ category: Heading
   //--------------------------------
   // マージン調整
   $mg-levels: (
-    1: (pc: 64px, sp: 40px),
-    2: (pc: 40px, sp: 32px),
-    3: (pc: 32px, sp: 24px),
-    4: (pc: 24px, sp: 20px),
-    5: (pc: 20px, sp: 16px),
-    6: (pc: 16px, sp: 16px),
+    1: (
+      pc: 64px,
+      sp: 40px,
+    ),
+    2: (
+      pc: 40px,
+      sp: 32px,
+    ),
+    3: (
+      pc: 32px,
+      sp: 24px,
+    ),
+    4: (
+      pc: 24px,
+      sp: 20px,
+    ),
+    5: (
+      pc: 20px,
+      sp: 16px,
+    ),
+    6: (
+      pc: 16px,
+      sp: 16px,
+    ),
   );
 
   @each $level, $sizes in $mg-levels {
@@ -135,8 +170,13 @@ category: Heading
     }
   }
 
-  &.is-top {margin-top: 0 !important;}
-  &.is-bottom {margin-bottom: 0 !important;}
-  &.is-mg-none {margin-block: 0 !important;}
-
+  &.is-top {
+    margin-top: 0 !important;
+  }
+  &.is-bottom {
+    margin-bottom: 0 !important;
+  }
+  &.is-mg-none {
+    margin-block: 0 !important;
+  }
 }

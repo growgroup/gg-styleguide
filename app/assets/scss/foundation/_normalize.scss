@@ -10,8 +10,14 @@
   --two-column-gap: #{rem-calc($asideMargin)};
   --two-column-gutterL: (100% - #{rem-calc($grid-row-width)}) / 2; // 100% - l-containerの幅/2
   --two-column-gutterR: (100% - #{rem-calc($grid-row-width)}) / 2; // 100% - l-containerの幅/2
-  --max-two-column-gutterL: max(#{map-get($grid-responsive-margin,"md")}, var(--two-column-gutterL));
-  --max-two-column-gutterR: max(#{map-get($grid-responsive-margin,"md")}, var(--two-column-gutterR));
+  --max-two-column-gutterL: max(
+    #{map-get($grid-responsive-margin, "md")},
+    var(--two-column-gutterL)
+  );
+  --max-two-column-gutterR: max(
+    #{map-get($grid-responsive-margin, "md")},
+    var(--two-column-gutterR)
+  );
 
   //スマホのとき値を変更したい場合は以下に
   @include breakpoint(medium down) {
@@ -31,15 +37,18 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   text-autospace: no-autospace; /* スクリプト間スペースの自動挿入防止 */
   text-spacing-trim: space-all; /* Chrome122以前のデフォルト値 */
-  scroll-padding-top: var(--header-height); //スクロール位置の調整が不要な場合は 0 にする
+  scroll-padding-top: var(
+    --header-height
+  ); //スクロール位置の調整が不要な場合は 0 にする
 }
 
 *,
-::before,::after {
+::before,
+::after {
   box-sizing: border-box;
   letter-spacing: var(--letter-spacing); //全要素へ基準のletter-spacingを当てる
   min-width: 0;
-  text-decoration-thickness: inherit;//from-font の設定値を各要素に適用しやすくする
+  text-decoration-thickness: inherit; //from-font の設定値を各要素に適用しやすくする
 }
 
 /**
@@ -51,7 +60,7 @@ body {
   margin: var(--header-height) 0 0;
   line-height: $font-base-line-height;
   font-size: $font-base-size;
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   text-decoration-thickness: from-font;
   text-underline-position: from-font;
@@ -64,7 +73,7 @@ body {
   }
 
   @include breakpoint(small only) {
-    font-size: $font-base-size*0.875;
+    font-size: 14px;
   }
 
   //&.home {
@@ -72,21 +81,21 @@ body {
   //}
 
   @at-root :where(html[lang="en"], html[lang="en-US"]) & {
-    font-family: 'Roboto Flex Variable', sans-serif;
+    font-family: "Roboto Flex Variable", sans-serif;
     line-height: $font-base-line-height-en;
     --letter-spacing: #{$font-base-letter-spacing-en};
     font-size: $font-base-size-en;
 
     @include breakpoint(small only) {
-      font-size: $font-base-size-en*0.875;
+      font-size: $font-base-size-en * 0.875;
     }
   }
 
   @at-root :where(html[lang="zh-Hans"], html[lang="zh-CN"]) & {
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $font-base-family;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+      $font-base-family;
   }
 }
-
 
 /* Links
    ========================================================================== */
@@ -183,7 +192,6 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
-
 /**
  * Address inconsistent and variable font size in all browsers.
  */
@@ -223,7 +231,6 @@ img {
 
 /* Grouping content
    ========================================================================== */
-
 
 /**
  * Address differences between Firefox and other browsers.
@@ -279,16 +286,15 @@ textarea {
   margin: 0; /* 3 */
 }
 
-
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
-
 
 /**
  * Correct the inability to style clickable types in iOS and Safari.
@@ -301,7 +307,6 @@ button,
   -webkit-appearance: button;
   cursor: pointer;
 }
-
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -361,7 +366,6 @@ fieldset {
   -webkit-appearance: none;
 }
 
-
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
@@ -380,7 +384,6 @@ fieldset {
 legend {
   padding: 0; /* 3 */
 }
-
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
@@ -415,7 +418,8 @@ th {
  * Remove most spacing between dl, dd.
  */
 
-dl, dd {
+dl,
+dd {
   margin: 0;
 }
 
@@ -426,7 +430,8 @@ dl, dd {
  * Remove most spacing between ul, li.
  */
 
-ul,ol {
+ul,
+ol {
   list-style: none;
   margin: 0;
   padding: 0;

@@ -1,46 +1,63 @@
 // ボタン関係
 // -> カラー別
 div.u-mbs.is-bottom
-  +a("#").c-button ボタンテキスト
+  +a("#").c-button 今すぐ学びを探す
 div.u-mbs.is-bottom
-  +a("#").c-button.is-secondary ボタンテキスト
+  +a("#").c-button.is-shadow 今すぐ学びを探す
+div.u-mbs.is-bottom
+  +a("#").c-button.is-decoration-primary 今すぐ学びを探す
+
+
+
+
+
+//- div.u-mbs.is-bottom
+//-   +a("#").c-button.is-secondary ボタンテキスト
 
 // -> サイズ別
+//- div.u-mbs.is-bottom
 div.u-mbs.is-bottom
+  +a("#").c-button.is-sm Amazonで購入
 div.u-mbs.is-bottom
-  +a("#").c-button.is-xlg ボタンテキスト
+  +a("#").c-button.is-xlg 今すぐ学びを探す
 div.u-mbs.is-bottom
-  +a("#").c-button.is-lg ボタンテキスト
+  +a("#").c-button.is-xlg.is-decoration-secondary 今すぐ学びを探す
 div.u-mbs.is-bottom
-  +a("#").c-button.is-sm ボタンテキスト
+ +a("#", 'blank').c-button.is-xlg.is-new-tab-icon  今すぐ学びを探す
 div.u-mbs.is-bottom
-  +a("#").c-button.is-xs ボタンテキスト
+  +a("#",'blank').c-button.is-xlg.is-decoration-secondary.is-new-tab-icon  今すぐ学びを探す
+//- div.u-mbs.is-bottom
+//-   +a("#").c-button.is-lg ボタンテキスト
+//- div.u-mbs.is-bottom
+//-   +a("#").c-button.is-sm ボタンテキスト
+//- div.u-mbs.is-bottom
+//-   +a("#").c-button.is-xs ボタンテキスト
 
-+c_anchor-nav("u-mbs is-bottom",{
-  link: "#section01",
-  title: "テキストテキスト",
-},{
-  link: "#section02",
-  title: "テキストテキスト",
-},{
-  link: "#section03",
-  title: "テキストテキスト",
-},{
-  link: "#section04",
-  title: "テキストテキスト",
-})
+//- +c_anchor-nav("u-mbs is-bottom",{
+//-   link: "#section01",
+//-   title: "テキストテキスト",
+//- },{
+//-   link: "#section02",
+//-   title: "テキストテキスト",
+//- },{
+//-   link: "#section03",
+//-   title: "テキストテキスト",
+//- },{
+//-   link: "#section04",
+//-   title: "テキストテキスト",
+//- })
 
-section.l-section.is-sm
-  +c_relation("関連するコンテンツ",{
-    link: "/format/",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  })
+//- section.l-section.is-sm
+//-   +c_relation("関連するコンテンツ",{
+//-     link: "/format/",
+//-     title: "テキストテキスト",
+//-   },{
+//-     link: "#",
+//-     title: "テキストテキスト",
+//-   },{
+//-     link: "#",
+//-     title: "テキストテキスト",
+//-   },{
+//-     link: "#",
+//-     title: "テキストテキスト",
+//-   })
