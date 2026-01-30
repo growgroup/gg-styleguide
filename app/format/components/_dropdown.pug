@@ -1,8 +1,0 @@
-// ドロップダウン
-// -> hoverで展開（デフォルト）
-div.u-mbs.is-bottom
-  +c_dropdown("メニューを選ぶ", "/format/", {link: "/format/", title: "フォーマット"}, {link: "/blocks/", title: "ブロック"}, {link: "/news/", title: "お知らせ"})
-
-// -> clickで展開（スライドアニメーション）
-div.u-mbs.is-bottom
-  +c_dropdown("クリックで開く", "#", {link: "/format/", title: "フォーマット"}, {link: "/blocks/", title: "ブロック"}, {link: "/contact/", title: "お問い合わせ"}, {event: "click", animation: "slide"})

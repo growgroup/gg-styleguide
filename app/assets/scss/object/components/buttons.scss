@@ -15,13 +15,10 @@ category: Buttons
   color: $color-white;
   text-decoration: none;
   width: 100%;
-  max-width: 340px;
+  max-width: 203px;
   background-color: $color-primary;
-  padding: 20px 80px;
+  padding: 13px 24px;
   border: 1px solid $color-primary;
-  border-radius: 4px;
-  line-height: 1.6;
-  font-weight: 700;
   @include transition();
   // *アイコン
   &::after {
@@ -32,60 +29,38 @@ category: Buttons
     right: 16px;
     transform: translateY(-50%);
   }
-  &.is-new-tab-icon {
-    &::after {
-      content: "open_in_new";
-      position: static;
-      display: flex;
-      transform: translateY(0);
-      margin-inline-start: 6px;
-    }
-  }
+
   // *hover
   @include hover {
-    opacity: 0.5;
-  }
-  &.is-shadow {
-    box-shadow: 0 2px 20px 0 rgba(0, 58, 144, 0.2);
-  }
-  &.is-decoration-primary {
+    opacity: 1;
     background-color: $color-white;
     color: $color-primary;
-    &::after {
-      color: $color-primary;
-    }
   }
-  &.is-decoration-secondary {
+
+  // カラー設定
+  //文字と背景反転
+  &.is-reverse {
     background-color: $color-white;
     color: $color-primary;
-    border-color: $color-white;
-    &::after {
-      color: $color-primary;
+
+    @include hover {
+      background-color: $color-primary;
+      color: $color-white;
     }
   }
-  // // カラー設定
-  // //文字と背景反転
-  // &.is-reverse {
-  //   background-color: $color-white;
-  //   color: $color-primary;
 
-  //   @include hover {
-  //     background-color: $color-primary;
-  //     color: $color-white;
-  //   }
-  // }
+  // -> セカンダリカラー
+  &.is-secondary {
+    background-color: color.adjust($color-primary, $lightness:40%);
+    color: $color-primary;
+    border-color: color.adjust($color-primary, $lightness:40%);
 
-  // // -> セカンダリカラー
-  // &.is-secondary {
-  //   background-color: color.adjust($color-primary, $lightness: 40%);
-  //   color: $color-primary;
-  //   border-color: color.adjust($color-primary, $lightness: 40%);
+    @include hover {
+      background-color: $color-white;
+      border-color: $color-primary;
+    }
+  }
 
-  //   @include hover {
-  //     background-color: $color-white;
-  //     border-color: $color-primary;
-  //   }
-  // }
 }
 
 /*
@@ -97,66 +72,72 @@ category: Buttons
 .c-button {
   // サイズ設定
   // -> 大
-
   &.is-xlg {
-    display: flex;
-    max-width: 432px;
-    width: 100%;
-    padding: 28px 80px;
+    max-width: 392px;
+    padding: 26px 32px;
     font-size: 18px;
-    letter-spacing: 0.09em;
+    @include breakpoint(small only) {
+      max-width: 100%;
+      font-size: 18px*0.9;
+      padding: 20px 32px;
+    }
+
     &::after {
-      font-size: 18px;
-      // @include breakpoint(small only) {
-      //   font-size: 24px * 0.9;
-      // }
+      font-size: 24px;
+      @include breakpoint(small only) {
+        font-size: 24px*0.9;
+      }
     }
   }
 
-  // // -> 中
-  // &.is-lg {
-  //   max-width: 356px;
-  //   padding: 16px 24px;
-  //   @include breakpoint(small only) {
-  //     max-width: 100%;
-  //   }
-  // }
+  // -> 中
+  &.is-lg {
+    max-width: 356px;
+    padding: 16px 24px;
+    @include breakpoint(small only) {
+      max-width: 100%;
+    }
+  }
 
   // -> 小
   &.is-sm {
-    max-width: 160px;
-    padding: 10px 30px 10px 18px;
-    font-size: 13px;
-    letter-spacing: 0.065em;
+    max-width: 155px;
+    padding: 10px 18px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: 14px*0.9;
+    }
+
     &::after {
       right: 10px;
     }
   }
 
-  // // -> 極小
-  // &.is-xs {
-  //   width: inherit;
-  //   max-width: 100%;
-  //   background-color: transparent;
-  //   padding: 0 16px 0 0;
-  //   border: none;
-  //   color: $font-base-color;
-  //   font-size: 14px;
-  //   letter-spacing: 0.1em;
-  //   @include breakpoint(small only) {
-  //     font-size: 14px * 0.9;
-  //   }
+  // -> 極小
+  &.is-xs {
+    width: inherit;
+    max-width: 100%;
+    background-color: transparent;
+    padding: 0 16px 0 0;
+    border: none;
+    color: $font-base-color;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    @include breakpoint(small only) {
+      font-size: 14px*0.9;
+    }
 
-  //   &::after {
-  //     color: $color-primary;
-  //     right: 0;
-  //   }
+    &::after {
+      color: $color-primary;
+      right: 0;
+    }
 
-  //   // *hover
-  //   @include hover {
-  //     opacity: 0.6;
-  //   }
-  // }
+    // *hover
+    @include hover {
+      opacity: 0.6;
+    }
+  }
 
   &.is-nav {
     color: $color-primary;
@@ -191,6 +172,7 @@ category: Buttons
   }
 
   &.is-arrow-left {
+
     &:after {
       content: "chevron_left";
       right: auto;

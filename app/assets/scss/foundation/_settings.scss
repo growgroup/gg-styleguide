@@ -2,40 +2,39 @@
 //
 // プロジェクトのCSSで利用する変数を定義
 
+
 // ==============================
 // # 1. Color
 // ==============================
 
 // # 基本の白黒
 $color-white: #fff !default;
-$color-black: #1a1a1c !default;
+$color-black: #000 !default;
 
 // # プライマリー
-$color-primary: #00a1fc !default;
+$color-primary: #297B50 !default;
 //$color-primary-light: #99bd8a !default;
 
 // # セカンダリー
-$color-secondary: #014493 !default;
-$color-secondary-dark: #00234b !default;
+$color-secondary: #f9f7f0 !default;
 
 // # ターシャリー
 $color-tertiary: #cccccc !default;
 
 // # アクセント
-$color-accent: #f44336 !default;
+$color-accent: #F44336 !default;
 //$color-accent-green: #65AC29 !default;
 //$color-accent-orange: #E6A54D !default;
 
 // # 灰色（主にテキストで使用）
-$color-gray: #6e6e74 !default;
+$color-gray: #cccccc !default;
 
 // # 背景色
 $color-background: #f4f4f4 !default;
-$color-background_blue: #f0f6fa !default;
-$color-background_gray: #f7f7f7 !default;
 
 // # ボーダー（線）色
-$color-border: #dcdcdc !default;
+$color-border: #ccc !default;
+
 
 // # 役割別
 $color-state-danger: #cc2919 !default; // 危険
@@ -44,36 +43,31 @@ $color-state-info: #378da3 !default; // お知らせ
 $color-state-success: #13a83a !default; // 成功
 
 // # SNS color
-$color-sns-line: #00b900;
+$color-sns-line: #00B900;
 $color-sns-facebook: #1877f2;
-$color-sns-twitter: #1da1f2;
-$color-sns-youtube: #da1725;
+$color-sns-twitter: #1DA1F2;
+$color-sns-youtube: #DA1725;
 
 // # ファイル種別
-$color-file-pdf: #ff0000;
+$color-file-pdf: #FF0000;
 $color-file-excel: #217346;
-$color-file-word: #2b579a;
-$color-file-pptx: #d24726;
-
-// 　#追加カラー
-$color-gray: #6e6e74;
-$color-linear_dark: linear-gradient(90deg, #053057 0%, #2573bb 100%);
-$color-linear_btn: linear-gradient(90deg, #005baa 0%, #048cc2 100%);
-$color-linear_light: linear-gradient(90deg, #0060b9cc 0%, #00c0cc66 100%);
+$color-file-word: #2B579A;
+$color-file-pptx: #D24726;
 
 // # hover opacity
 $base-hover-opacity: 0.5;
+
 
 // ==============================
 // # 2. font
 // ==============================
 $font-html-size: 16px !default; // （変更しない）html のフォントサイズ
 
-$font-base-size: 16px !default; // body のフォントサイズ（本文のフォントサイズ）
-$font-base-line-height: 1.8 !default; // body の行間（本文の行間）
+$font-base-size: 15px !default; // body のフォントサイズ（本文のフォントサイズ）
+$font-base-line-height: 1.75 !default; // body の行間（本文の行間）
 $font-base-letter-spacing: 0.05em !default; // 基本の文字間隔
 $font-base-color: $color-black !default; // body のフォントカラー
-$font-base-family: "Noto Sans JP", sans-serif !default; // フォントファミリー
+$font-base-family: 'Noto Sans JP', sans-serif !default; // フォントファミリー
 $font-base-weight: normal !default; // フォント幅
 $font-base-style: normal !default; // フォントスタイル
 
@@ -83,7 +77,7 @@ $font-base-line-height-en: 1.8 !default; // body.en のフォントサイズ
 $font-base-letter-spacing-en: 0 !default; // body.en のフォントサイズ
 
 //icon
-$font-icon-family: "Material Icons Outlined" !default; // アイコンフォントファミリー
+$font-icon-family: 'Material Icons Outlined' !default; // アイコンフォントファミリー
 
 // ==============================
 // # 3. border
@@ -93,6 +87,7 @@ $border-base-color: $color-border;
 $border-base-width: 1px !default;
 $border-radius: 3px !default;
 $border: $border-base-width solid $border-base-color;
+
 
 // ==============================
 // # 4. breakpoint
@@ -105,6 +100,7 @@ $breakpoints: (
   xlarge: 1140px,
   xxlarge: 1440px,
 ) !default;
+
 
 // ==============================
 // # 5. Layout
@@ -122,20 +118,14 @@ $slidebar-header-height: $header-height-sp !default; // スマホ時のヘッダ
 
 // # Grid
 $grid-row-width: 1140 !default; // グリッドの幅
-$grid-responsive-margin: (
-  //両サイドの余白
-  sm: 16px,
-  // モバイル
-  md: 32px,
-  // タブレット以上
+$grid-responsive-margin: (//両サイドの余白
+  sm: 16px, // モバイル
+  md: 32px, // タブレット以上
 );
 $grid-column-count: 12 !default; // グリッド数
-$grid-column-responsive-gutter: (
-  // カラムとカラムの間隔
-  small: 16px,
-  // モバイル
-  medium: 36px,
-  // タブレット以上
+$grid-column-responsive-gutter: (// カラムとカラムの間隔
+  small: 16px, // モバイル
+  medium: 36px, // タブレット以上
 );
 
 // # Two columns
@@ -146,49 +136,19 @@ $mainContainer: calc(100% - #{$asideContainer}px - #{$asideMargin}px);
 // # Section size
 // $sectionDefault: (120, 60) !default;
 $sectionSizes: (
-  xlg: (
-    120,
-    60,
-  ),
-  lg: (
-    100,
-    50,
-  ),
-  md: (
-    80,
-    40,
-  ),
-  sm: (
-    64,
-    32,
-  ),
-  xs: (
-    32,
-    16,
-  ),
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (80, 40),
+  sm: (64, 32),
+  xs: (32, 16),
 );
 
 // # Margin size
 $marginDefault: (56, 32) !default;
 $marginSizes: (
-  xlg: (
-    120,
-    60,
-  ),
-  lg: (
-    100,
-    50,
-  ),
-  md: (
-    64,
-    32,
-  ),
-  sm: (
-    42,
-    20,
-  ),
-  xs: (
-    24,
-    12,
-  ),
+  xlg: (120, 60),
+  lg: (100, 50),
+  md: (64, 32),
+  sm: (42, 20),
+  xs: (24, 12),
 );
