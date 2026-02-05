@@ -156,6 +156,11 @@ app/inc/_settings.pug ファイルの値を変更することで、
 
 ### JavaScript
 
+##### ESLint について
+
+JavaScript の構文チェッカーとして ESLint を採用しています。
+
+[http://eslint.org/](http://eslint.org/)
 
 ### その他
 
