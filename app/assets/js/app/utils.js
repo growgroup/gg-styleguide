@@ -92,7 +92,7 @@ export default class Utils {
     isMobile() {
         var ua = navigator.userAgent;
 
-        if (screen.width < 768) {
+        if (screen.width < 750) {
             return true;
         }
 
