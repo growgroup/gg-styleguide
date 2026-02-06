@@ -5,7 +5,7 @@ var fs = require("fs");
 const isBuildProcess = process.env.NODE_ENV === 'production';
 
 var pugconfig = {
-  pretty: true,
+  pretty: false,
   cache: false,
   escapePre: true,
   basedir: "app/",
