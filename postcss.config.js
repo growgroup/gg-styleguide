@@ -69,13 +69,31 @@ module.exports = (ctx) => ({
                   return;
                 }
 
-                // 対象にする形（* / ::before のみ / tag[attrs][::before]）かを判定
+                // 対象にする形（* / ::before のみ / tag[attrs][:where([attrs],...)][::before]）かを判定
                 const compound = compounds[0];
                 const tagNodes = compound.filter((n) => n.type === "tag");
                 const hasClass = compound.some((n) => n.type === "class");
                 const pseudoElementIndex = compound.findIndex(
                   (n) => n.type === "pseudo" && n.value && n.value.startsWith("::")
                 );
+                const isAttributeOnlyWherePseudo = (pseudoNode) => {
+                  if (
+                    pseudoNode.type !== "pseudo" ||
+                    pseudoNode.value !== ":where" ||
+                    !Array.isArray(pseudoNode.nodes) ||
+                    pseudoNode.nodes.length === 0
+                  ) {
+                    return false;
+                  }
+
+                  return pseudoNode.nodes.every((innerSelector) => {
+                    return (
+                      innerSelector.type === "selector" &&
+                      innerSelector.nodes.length > 0 &&
+                      innerSelector.nodes.every((innerNode) => innerNode.type === "attribute")
+                    );
+                  });
+                };
                 const isUniversal =
                   compound.length === 1 && compound[0].type === "universal";
                 const isSinglePseudoElement =
@@ -84,7 +102,11 @@ module.exports = (ctx) => ({
                   tagNodes.length === 1 &&
                   !hasClass &&
                   compound.every((n) => {
-                    if (n.type === "tag" || n.type === "attribute") {
+                    if (
+                      n.type === "tag" ||
+                      n.type === "attribute" ||
+                      isAttributeOnlyWherePseudo(n)
+                    ) {
                       return true;
                     }
                     return (
