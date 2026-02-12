@@ -6,6 +6,7 @@
     "node": ">=20.12.2"
   },
   "scripts": {
+    "setup": "node build/generate-pug.js",
     "start": "npm run develop -s",
     "init": "npm install",
     "server": "node ./server.js",
