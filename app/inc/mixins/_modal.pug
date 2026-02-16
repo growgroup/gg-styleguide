@@ -9,19 +9,6 @@ mixin entry-modal01()
     data-entry-modal-title="モーダルタイトル"
     data-entry-modal-light-dismiss="false"
   )
-    h2.c-heading.is-lg 医療関係者の確認
-    p
-      | ここからのページは、国内の医療関係者の方々（医師、看護師、臨床工学技士等）を対象に弊社の商品情報を提供するもので、一般の皆様に対する情報提供を目的としたものではないことをご了承ください。
-    h3.c-heading.is-md あなたは医療関係者ですか？
-    button.c-button(data-micromodal-close, type="button") はい
-    +a("/").c-button.is-secondary いいえ
+    +a("https://example.com")
+      +img("img-sample.jpg")
 
-mixin entry-modal02
-  //- エントリーモーダルサンプル02（imageタイプ）
-  #entry-modal-content-02.js-auto-entry-modal(
-    style="display: none"
-    data-entry-modal-id="entry-modal-02"
-    data-entry-modal-type="image"
-    data-entry-modal-src="https://placehold.jp/300x250.png"
-    data-entry-modal-title="画像モーダル"
-  )
