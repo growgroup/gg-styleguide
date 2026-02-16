@@ -6,7 +6,7 @@ import MicromodalWrapper from "./wrapperClasses/micromodalWrapper";
    *
    *
    * 【エントリーモーダルの使用方法】
-   * <div style="display: none" class="js-auto-entry-modal" id="entry-modal-content-01" data-entry-modal-id="entry-modal-02" data-entry-modal-src="#entry-modal-content-01" data-entry-modal-title="モーダルタイトル">
+   * <div style="display: none" class="js-auto-entry-modal" id="entry-modal-content-01" data-entry-modal-id="entry-modal-02" data-entry-modal-type="content" data-entry-modal-src="#entry-modal-content-01" data-entry-modal-title="モーダルタイトル">
    * <p>モーダルコンテンツ</p>
    * </div>
    */
@@ -101,6 +101,7 @@ export default class modal {
   //【エントリーモーダル用】モーダルを開く
   openAutoEntryModal(target) {
     const modalId = target.dataset.entryModalId;
+    const modalType = target.dataset.entryModalType || "content";
     const modalSrc = target.dataset.entryModalSrc;
     const modalTitle = target.dataset.entryModalTitle || "Modal Window";
 
@@ -108,10 +109,10 @@ export default class modal {
     if (this.isEntryModalDismissed(modalId)) return;
 
     this.micromodalWrapperInstance.createAndShowModal(
-      "content",
+      modalType,
       modalSrc,
       modalId,
-      null,
+      target,
       modalTitle
     );
   }
