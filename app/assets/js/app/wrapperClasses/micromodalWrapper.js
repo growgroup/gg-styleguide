@@ -159,11 +159,24 @@ export default class MicromodalWrapper {
     const modalId = `modal-${type}-${Math.random().toString(36).slice(2, 11)}`;
     const modalTitle =
       trigger.dataset.modalTitle || this.wrapperOptions.defaultModalTitle;
+    const lightDismiss = this.parseLightDismiss(trigger.dataset.modalLightDismiss);
 
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
-      this.createAndShowModal(type, href, modalId, trigger, modalTitle);
+      this.createAndShowModal(
+        type,
+        href,
+        modalId,
+        trigger,
+        modalTitle,
+        { lightDismiss }
+      );
     });
+  }
+
+  parseLightDismiss(value) {
+    if (value == null) return true;
+    return !["false", "0", "off"].includes(String(value).toLowerCase());
   }
 
   /**

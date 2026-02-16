@@ -6,7 +6,7 @@ import MicromodalWrapper from "./wrapperClasses/micromodalWrapper";
    *
    *
    * 【エントリーモーダルの使用方法】
-   * <div style="display: none" class="js-auto-entry-modal" id="entry-modal-content-01" data-entry-modal-id="entry-modal-02" data-entry-modal-type="content" data-entry-modal-src="#entry-modal-content-01" data-entry-modal-title="モーダルタイトル">
+   * <div style="display: none" class="js-auto-entry-modal" id="entry-modal-content-01" data-entry-modal-id="entry-modal-02" data-entry-modal-type="content" data-entry-modal-src="#entry-modal-content-01" data-entry-modal-title="モーダルタイトル" data-entry-modal-light-dismiss="false">
    * <p>モーダルコンテンツ</p>
    * </div>
    */
@@ -104,6 +104,7 @@ export default class modal {
     const modalType = target.dataset.entryModalType || "content";
     const modalSrc = target.dataset.entryModalSrc;
     const modalTitle = target.dataset.entryModalTitle || "Modal Window";
+    const lightDismiss = this.parseLightDismiss(target.dataset.entryModalLightDismiss);
 
     if (!modalId || !modalSrc || !this.micromodalWrapperInstance) return;
     if (this.isEntryModalDismissed(modalId)) return;
@@ -113,8 +114,14 @@ export default class modal {
       modalSrc,
       modalId,
       target,
-      modalTitle
+      modalTitle,
+      { lightDismiss }
     );
+  }
+
+  parseLightDismiss(value) {
+    if (value == null) return true;
+    return !["false", "0", "off"].includes(String(value).toLowerCase());
   }
 
 
