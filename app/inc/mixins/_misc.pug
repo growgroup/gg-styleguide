@@ -196,7 +196,7 @@ mixin select-prefectures()
     <option value="沖縄県">沖縄県</option>
 
 mixin select-nums(name="age", start=18, end=50,selected="選択してください", unit)
-  select(name=name)
+  select(name=name)&attributes(attributes)
     option(disabled,selected) !{selected}
     - for (let i = start; i <= end; i++)
       <option value="#{i}">#{i}#{unit || ""}</option>

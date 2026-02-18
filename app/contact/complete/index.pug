@@ -8,9 +8,14 @@ block append config
   - current.depth = 3 // ページの階層
 
 block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "お問い合わせ",
+    subtitle: "Contact"
+  })
 
 block body
-  section.l-section.is-xlg.is-bottom.is-bg-color
+  section.l-section.is-xlg.is-bg-color
     .l-container
       //
         +c.form-head
@@ -28,7 +33,37 @@ block body
                 +e.item-text 送信完了
       +c.forms
         +e.inner
-          +h1.head お問い合わせ<br>ありがとうございました。
+          +h1.head.u-text-center お問い合わせ<br>ありがとうございました。
+          +e.text.
+            この度はお問い合わせいただき、誠にありがとうございます。<br>
+            いただいた内容を確認後、担当者より再度ご連絡いたします。<br>
+            大変恐縮ですが、今しばらくお待ちくださいませ。<br><br>
+
+            ※尚、ご入力いただいたメールアドレス宛に<br class="u-hidden-sm">お問い合わせ内容を記載した自動返信メールが配信されております。<br>
+            そちらも併せてご確認くださいませ。<br>
+
+        +e.pagetop.u-text-center
+          +a("/").c-button.is-xlg トップページに戻る
+
+  section.l-section.is-xlg
+    .l-container
+      //
+        +c.form-head
+          +e.block
+            +h1.title お問い合わせ
+            +e.list
+              +e.item
+                +e.item-number 1
+                +e.item-text お客様情報入力
+              +e.item
+                +e.item-number 2
+                +e.item-text 入力内容の確認
+              +e.item.is-current
+                +e.item-number 3
+                +e.item-text 送信完了
+      +c.forms
+        +e.inner
+          +h1.head.u-text-center お問い合わせ<br>ありがとうございました。
           +e.text.
             この度はお問い合わせいただき、誠にありがとうございます。<br>
             いただいた内容を確認後、担当者より再度ご連絡いたします。<br>

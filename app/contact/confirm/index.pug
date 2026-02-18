@@ -8,9 +8,14 @@ block append config
   - current.depth = 3 // ページの階層
 
 block page_header
+  +l_page_header({
+    image: "img-page-header-format.jpg",
+    title: "お問い合わせ",
+    subtitle: "Contact"
+  })
 
 block body
-  section.l-section.is-xlg.is-bottom.is-bg-color
+  section.l-section.is-xlg.is-bg-color
     .l-container
       //
         +c.form-head
@@ -29,52 +34,120 @@ block body
       +c.forms
         +e.inner
           +h1.head お問い合わせ：入力内容確認
-          +e.text.
+          +e.text.u-text-left.
             ご入力いただいた内容は下記の通りです。<br>
             お間違いがなければ送信を、入力内容を変更する場合はお手数ですが、再入力をお願い致します。
-          +e.block
-            +e.title
-              | 貴社名
-            +e.content
-              +e.input 株式会社 サンプル
-          +e.block
-            +e.title
-              | 部署
-            +e.content
-              +e.input 総務課
-          +e.block
-            +e.title
-              | ご担当者氏名
-              span.c-forms__label 必須
-            +e.content
-              +e.input 山田 太郎
-          +e.block
-            +e.title
-              | フリガナ
-              span.c-forms__label 必須
-            +e.content
-              +e.input ヤマダ タロウ
-          +e.block
-            +e.title
-              | TEL
-              span.c-forms__label 必須
-            +e.content
-              +e.input 123-456-789
-          +e.block
-            +e.title
-              | メールアドレス
-              span.c-forms__label 必須
-            +e.content
-              +e.input info@mail.com
-          +e.block
-            +e.title
-              | ファイル添付
-            +e.content
-              +e.input text.png
-          +e.block
-            +e.title.is-vertical-top お問い合わせ内容
-            +e.content
-              +e.textarea サービスについてご不明点のある方はこちらにご記載ください。
+          +e.blocks
+            +e.block
+              +e.title
+                | 貴社名
+              +e.content
+                +e.input 株式会社 サンプル
+            +e.block
+              +e.title
+                | 部署
+              +e.content
+                +e.input 総務課
+            +e.block
+              +e.title
+                | ご担当者氏名
+                span.c-forms__label 必須
+              +e.content
+                +e.input 山田 太郎
+            +e.block
+              +e.title
+                | フリガナ
+                span.c-forms__label 必須
+              +e.content
+                +e.input ヤマダ タロウ
+            +e.block
+              +e.title
+                | TEL
+                span.c-forms__label 必須
+              +e.content
+                +e.input 123-456-789
+            +e.block
+              +e.title
+                | メールアドレス
+                span.c-forms__label 必須
+              +e.content
+                +e.input info@mail.com
+            +e.block
+              +e.title
+                | ファイル添付
+              +e.content
+                +e.input text.png
+            +e.block
+              +e.title.is-vertical-top お問い合わせ内容
+              +e.content
+                +e.textarea サービスについてご不明点のある方はこちらにご記載ください。
+        +e.submit
+          button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
+          button.c-button.c-forms__submit__submit.is-lg 送信する
+
+
+  section.l-section.is-xlg
+    h1 タイプ2：横列組
+
+    .l-container
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      //- タイプ2：横列組
+      //- タイプ2にのみ任意ラベルあり
+      //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      +c.forms
+        +e.inner
+          +h1.head お問い合わせ：入力内容確認
+          +e.text.u-text-left.
+            ご入力いただいた内容は下記の通りです。<br>
+            お間違いがなければ送信を、入力内容を変更する場合はお手数ですが、再入力をお願い致します。
+          +e.blocks
+            +e.block.is-horizontal
+              +e.title
+                | 貴社名
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.input 株式会社 サンプル
+            +e.block.is-horizontal
+              +e.title
+                | 部署
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.input 総務課
+            +e.block.is-horizontal
+              +e.title
+                | ご担当者氏名
+                span.c-forms__label 必須
+              +e.content
+                +e.input 山田 太郎
+            +e.block.is-horizontal
+              +e.title
+                | フリガナ
+                span.c-forms__label 必須
+              +e.content
+                +e.input ヤマダ タロウ
+            +e.block.is-horizontal
+              +e.title
+                | TEL
+                span.c-forms__label 必須
+              +e.content
+                +e.input 123-456-789
+            +e.block.is-horizontal
+              +e.title
+                | メールアドレス
+                span.c-forms__label 必須
+              +e.content
+                +e.input info@mail.com
+            +e.block.is-horizontal
+              +e.title
+                | ファイル添付
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.input text.png
+            +e.block.is-horizontal
+              +e.title お問い合わせ内容
+                span.c-forms__label.is-optional 任意
+              +e.content
+                +e.textarea サービスについてご不明点のある方はこちらにご記載ください。
         +e.submit
           button.c-button.c-forms__submit__back.is-lg.is-secondary.is-arrow-left 戻る
           button.c-button.c-forms__submit__submit.is-lg 送信する

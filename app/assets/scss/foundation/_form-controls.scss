@@ -3,18 +3,18 @@
 //============================
 // variables / mixins
 //============================
-$form-controls-font-size: 15px;
-$form-controls-border-color: #D8D8D8;
-$form-controls-active-border-color: #0097D8;
+$form-controls-font-size: 16px;
+$form-controls-border-color: $border-base-color;
+$form-controls-border-radius: 4px;
+$form-controls-active-border-color: $color-primary;
+//active-border-colorはプライマリーカラーがエラーと区別がつかないときは #0097D8
 
 //input, textarea, selectの共通スタイル
 @mixin form-controls-common-style {
   font-size: $form-controls-font-size;
-  --letter-spacing: 0;
-  line-height: 1.46666;
   color: $font-base-color;
   border: 1px solid $form-controls-border-color;
-  background-color: $color-white;
+  background-color: $color-background;
   width: 100%;
   box-shadow: none;
   @include transition-colors(0.2s,ease-in-out);
@@ -32,7 +32,7 @@ $form-controls-active-border-color: #0097D8;
 
 //input, textareaの共通スタイル
 @mixin form-controls-input-style {
-  padding: 10px 16px;
+  padding: 16px 24px;
   @include form-controls-common-style;
 
   @include breakpoint(small down) {
@@ -65,19 +65,24 @@ textarea {
 
 // ファイル選択
 input[type="file"] {
-  font-size: 12px;
 
   &::file-selector-button {
-    background-color: #F9F9F9;
-    background-image: linear-gradient(135deg, #FFF 0%, #FFF 80%, #EFEFEF 100%);
+    background-image: url('../images/icon-form-file.svg');
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 10px 12px;
+    background-color: $color-white;
     border-radius: 4px;
-    border: 1px solid #bababa;
-    padding: 2px 16px 4px;
+    border: 1px solid $font-base-color;
+    padding: 3px 16px 3px 40px;
     margin-right: 16px;
-    color: $color-black;
-    line-height: 1.46666;
-
+    color: $font-base-color;
     appearance: none;
+
+    @include breakpoint(small only) {
+      padding: 3px 12px;
+      background: $color-white;
+    }
   }
 }
 
@@ -88,7 +93,7 @@ input[type="file"] {
 //
 // Styleguide 1.6.2
 textarea {
-  min-height: 140px;
+  min-height: 136px;
   display: block;
 }
 
@@ -100,8 +105,8 @@ textarea {
 // Styleguide 1.6.3
 
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   vertical-align: middle;
   accent-color: $color-primary;
   flex-shrink: 0;
@@ -116,8 +121,8 @@ input[type="checkbox"] {
 
 input[type="radio"] {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   vertical-align: middle;
   accent-color: $color-primary;
   flex-shrink: 0;
@@ -138,18 +143,17 @@ input[type="radio"] {
 // Styleguide 1.6.5
 select {
   display: block;
-  height: 44px;
-  padding: 10px 16px;
   text-transform: none;
   appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.945 2.38419e-05L9 1.05402L4.5 5.55402L0 1.05402L1.055 -0.000976562L4.5 3.44502L7.945 2.38419e-05Z" fill="%23222222"/></svg>');
+  background-image: url('../images/icon-form-select.svg');
   background-repeat: no-repeat;
-  background-position: calc(100% - 16px) center;
-  background-size: 9px 5px;
-  @include form-controls-common-style();
+  background-position: calc(100% - 26px) center;
+  background-size: 10px 6px;
+  @include form-controls-input-style();
 
   @include breakpoint(small down) {
-    padding: 9px 12px;
+    background-position: calc(100% - 12px) center;
+    background-size: 9px 5px;
   }
 }
 
