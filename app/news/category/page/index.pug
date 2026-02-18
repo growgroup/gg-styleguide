@@ -8,10 +8,12 @@ block append config
   - current.depth = 4 // ページの階層
 
 block page_header
+  //- 記事タイトルをh1にするのでページヘッダーはdivにする。未指定はh1になる
   +l_page_header({
     image: "img-page-header-format.jpg",
     title: "お知らせ",
-    subtitle: "news"
+    subtitle: "news",
+    tag: "div"
   })
   +c_breadcrumb({
     paths: [
