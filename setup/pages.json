@@ -1,0 +1,55 @@
+[
+  {
+    "label": "TOP",
+    "path": "/"
+  },
+  {
+    "label": "私たちについて",
+    "path": "/about/",
+    "layout": "base-twocolumn"
+  },
+  {
+    "label": "お知らせ",
+    "path": "/news/"
+  },
+  {
+    "label": "記事詳細",
+    "path": "/news/detail/"
+  },
+  {
+    "label": "コスメ事業",
+    "path": "/products/cosme/"
+  },
+  {
+    "label": "商品詳細01",
+    "path": "/products/cosme/item01/"
+  },
+  {
+    "label": "フード事業",
+    "path": "/products/foods/"
+  },
+  {
+    "label": "商品詳細01",
+    "path": "/products/foods/item01/"
+  },
+  {
+    "label": "ショップリスト",
+    "path": "/shop/"
+  },
+  {
+    "label": "サステナブル・CSR",
+    "path": "/csr/"
+  },
+  {
+    "label": "企業情報",
+    "path": "/company/"
+  },
+  {
+    "label": "お問い合わせ",
+    "path": "/contact/"
+  },
+  {
+    "label": "個人情報保護方針",
+    "path": "/privacy-policy/"
+  }
+]
