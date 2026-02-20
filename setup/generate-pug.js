@@ -2,14 +2,14 @@
  * Pug ページ一括生成スクリプト
  *
  * 概要:
- *   config/pages.json を読み、app/<path>/index.pug を雛形ベースで生成する。
+ *   setup/pages.json を読み、app/<path>/index.pug を雛形ベースで生成する。
  *   既存ファイルは上書きしない（スキップ・ログのみ）。
  *
  * 実行:
  *   npm run setup  （package.json の scripts.setup から呼ばれる）
  *
  * 前提:
- *   - config/pages.json が存在し、配列形式であること
+ *   - setup/pages.json が存在し、配列形式であること
  *   - 各要素に path, label（または title）が含まれること
  *
  * レイアウト:
@@ -24,7 +24,7 @@ const path = require("path");
 // -----------------------------------------------------------------------------
 
 const ROOT = path.join(__dirname, "..");
-const CONFIG_PATH = path.join(ROOT, "config", "pages.json");
+const CONFIG_PATH = path.join(__dirname, "pages.json");
 const APP_DIR = path.join(ROOT, "app");
 const PREFIX = "[setup]";
 
@@ -281,20 +281,20 @@ function loadConfig() {
     return JSON.parse(raw);
   } catch (err) {
     if (err.code === "ENOENT") {
-      exitWithError("config/pages.json が見つかりません。");
+      exitWithError("setup/pages.json が見つかりません。");
     }
     if (err instanceof SyntaxError) {
       exitWithError(
-        "config/pages.json の形式が正しくありません。JSON を確認してください。"
+        "setup/pages.json の形式が正しくありません。JSON を確認してください。"
       );
     }
-    exitWithError(`config/pages.json を読み込めません。 ${err.message}`);
+    exitWithError(`setup/pages.json を読み込めません。 ${err.message}`);
   }
 }
 
 function validateConfig(config) {
   if (!Array.isArray(config)) {
-    exitWithError("config/pages.json は配列である必要があります。");
+    exitWithError("setup/pages.json は配列である必要があります。");
   }
   for (let i = 0; i < config.length; i++) {
     const result = validateEntry(config[i], i);
@@ -382,7 +382,7 @@ function main() {
   const pathToLabel = buildPathToLabelMap(config);
   const counts = { created: 0, skipped: 0 };
 
-  console.log(`${PREFIX} config/pages.json を読み込み、Pug ファイルを生成します。`);
+  console.log(`${PREFIX} setup/pages.json を読み込み、Pug ファイルを生成します。`);
 
   for (const entry of config) {
     processEntry(entry, pathToLabel, counts);
