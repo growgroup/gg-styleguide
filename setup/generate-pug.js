@@ -8,6 +8,10 @@
  * 実行:
  *   npm run setup  （package.json の scripts.setup から呼ばれる）
  *
+ * テンプレート:
+ *   setup/pug-templates.js が必須。configBlock / pageHeader / oneColumn / twoColumn を export すること。
+ *   無い・不足時はエラーで終了する。
+ *
  * 前提:
  *   - setup/pages.json が存在し、配列形式であること
  *   - 各要素に path, label（または title）が含まれること
@@ -38,20 +42,43 @@ const EXTENDS_PATH = {
   [LAYOUT.TWOCOLUMN]: "/inc/foundation/_base-twocolumn.pug",
 };
 
-/** 生成される Pug のデフォルト値。ブロック中身の変更はここで一元管理する */
-const TEMPLATE_DEFAULTS = {
-  pageHeaderImage: "img-page-header-format.jpg",
-  oneColumn: {
-    bodySection: "section.l-section",
-    underMainMixin: "+l_offer",
-  },
-  twoColumn: {
-    layoutParamsComment: '"" or "is-reverse"',
-    bodySection: "section.l-section.is-md",
-    bodyInner: ".l-container",
-    asideMixin: "+l-aside()",
-  },
-};
+/** 外部テンプレート（setup/pug-templates.js）。必須。無い・失敗時はエラーで終了する */
+let EXTERNAL_TEMPLATES = null;
+function loadExternalTemplates() {
+  if (EXTERNAL_TEMPLATES !== null) return EXTERNAL_TEMPLATES;
+  const templatePath = path.join(__dirname, "pug-templates.js");
+  if (!fs.existsSync(templatePath)) {
+    exitWithError("setup/pug-templates.js が見つかりません。ファイルを作成してください。");
+  }
+  try {
+    EXTERNAL_TEMPLATES = require(templatePath);
+  } catch (err) {
+    exitWithError(`setup/pug-templates.js の読み込みに失敗しました。${err.message}`);
+  }
+  const required = ["configBlock", "pageHeader", "oneColumn", "twoColumn"];
+  for (const key of required) {
+    if (!EXTERNAL_TEMPLATES[key]) {
+      exitWithError(`setup/pug-templates.js に ${key} を export してください。`);
+    }
+  }
+  return EXTERNAL_TEMPLATES;
+}
+
+/**
+ * テンプレート文字列内の {{key}} を vars[key] で置換する。
+ * @param {string} str
+ * @param {Record<string, string|number>} vars
+ * @returns {string}
+ */
+function applyPlaceholders(str, vars) {
+  if (typeof str !== "string") return "";
+  return str.replace(/\{\{(\w+)\}\}/g, (_, key) => {
+    if (Object.prototype.hasOwnProperty.call(vars, key)) {
+      return String(vars[key]);
+    }
+    return `{{${key}}}`;
+  });
+}
 
 // -----------------------------------------------------------------------------
 // ユーティリティ
@@ -116,8 +143,8 @@ function getPageMeta(entry, normalizedPath) {
  * @param {number} depth - ページ階層
  * @param {string[]} segments - パスのセグメント配列
  * @param {Record<string, string>} pathToLabel - 正規化 path → label のマップ
- * @param {number} [itemIndent=8] - paths 各要素の行頭スペース数（breadcrumb 内で揃える用）
- * @returns {string} paths: [ ... ] の [ ] 内の行（空または "        {url: ..., text: ...},\n" の並び）
+ * @param {number} [itemIndent=8] - paths 各要素の行頭スペース数（breadcrumb のインデント揃え用）
+ * @returns {string} 空文字、または "        {url: \"seg\", text: \"ラベル\"},\n" の並び（ [ ] の中身のみ）
  */
 function buildBreadcrumbPathsPugString(depth, segments, pathToLabel, itemIndent = 8) {
   if (depth < 2) return "";
@@ -138,41 +165,13 @@ function buildBreadcrumbPathsPugString(depth, segments, pathToLabel, itemIndent 
  * block append config の Pug 文字列を組み立てる。
  */
 function buildConfigBlock(id, title, currentPath, depth) {
-  return `block append config
-  - current.id = "${escapePugString(id)}" // ページのID
-  - current.title = "${escapePugString(title)}" // タイトル
-  //- - current.description = \`これは\${current.title}についての説明文です\` // ページごとに説明文を設定する場合のみ
-  - current.bodyClass = \`\${current.id}\` // body に付与するクラス
-  - current.path = "${escapePugString(currentPath)}" // ページのpath
-  - current.depth = ${depth} // ページの階層`;
-}
-
-function buildPageHeaderBlock(title, depth, segments, pathToLabel) {
-  const pathsStr = buildBreadcrumbPathsPugString(depth, segments, pathToLabel);
-  const pathsBlock =
-    pathsStr === ""
-      ? "      []"
-      : `[\n${pathsStr}\n      ]`;
-  const img = TEMPLATE_DEFAULTS.pageHeaderImage;
-
-  // breadcrumb 一体型（分離型をコメントアウトする）
-  return `block page_header
-  +l_page_header({
-    title: current.title,
-    breadcrumb: {
-      paths: ${pathsBlock}
-    }
-  })`;
-
-  // // breadcrumb 分離型は以下のコメントを外す（一体型をコメントアウトする）
-  // return `block page_header
-  // +l_page_header({
-  //   image: "${img}",
-  //   title: current.title,
-  // })
-  // +c_breadcrumb({
-  //   paths: ${pathsStr === "" ? "[]" : `[\n${pathsStr}\n    ]`}
-  // })`;
+  const t = loadExternalTemplates();
+  return applyPlaceholders(t.configBlock, {
+    id: escapePugString(id),
+    title: escapePugString(title),
+    currentPath: escapePugString(currentPath),
+    depth,
+  });
 }
 
 // -----------------------------------------------------------------------------
@@ -180,42 +179,21 @@ function buildPageHeaderBlock(title, depth, segments, pathToLabel) {
 // -----------------------------------------------------------------------------
 
 function buildOneColumnContent(extendsPath, configBlock, pageHeaderBlock) {
-  const { bodySection, underMainMixin } = TEMPLATE_DEFAULTS.oneColumn;
-  return `extends ${extendsPath}
-${configBlock}
-
-${pageHeaderBlock}
-
-block body
-  ${bodySection}
-
-block under_main
-  ${underMainMixin}
-`;
+  const t = loadExternalTemplates();
+  return applyPlaceholders(t.oneColumn, {
+    extendsPath,
+    configBlock,
+    pageHeaderBlock,
+  });
 }
 
 function buildTwoColumnContent(extendsPath, configBlock, pageHeaderBlock) {
-  const {
-    layoutParamsComment,
-    bodySection,
-    bodyInner,
-    asideMixin,
-  } = TEMPLATE_DEFAULTS.twoColumn;
-  return `extends ${extendsPath}
-${configBlock}
-
-block layout_params
-  - twoColumnAddClass = "" //- ${layoutParamsComment}
-
-${pageHeaderBlock}
-
-block body
-  ${bodySection}
-    ${bodyInner}
-
-block aside
-  ${asideMixin}
-`;
+  const t = loadExternalTemplates();
+  return applyPlaceholders(t.twoColumn, {
+    extendsPath,
+    configBlock,
+    pageHeaderBlock,
+  });
 }
 
 // -----------------------------------------------------------------------------
@@ -236,12 +214,11 @@ function generatePugContent(entry, normalizedPath, pathToLabel, layout) {
 
   const extendsPath = EXTENDS_PATH[layout] ?? EXTENDS_PATH[LAYOUT.BASE];
   const configBlock = buildConfigBlock(id, title, currentPath, depth);
-  const pageHeaderBlock = buildPageHeaderBlock(
-    title,
-    depth,
-    segments,
-    pathToLabel
-  );
+  const pathsStr = buildBreadcrumbPathsPugString(depth, segments, pathToLabel);
+  const pathsBlock =
+    pathsStr === "" ? "[]" : `[\n${pathsStr}\n      ]`;
+  const t = loadExternalTemplates();
+  const pageHeaderBlock = applyPlaceholders(t.pageHeader, { pathsBlock });
 
   return layout === LAYOUT.TWOCOLUMN
     ? buildTwoColumnContent(extendsPath, configBlock, pageHeaderBlock)
@@ -265,7 +242,7 @@ function validateEntry(entry, index) {
     return { ok: false, message: requiredMsg };
   }
   const pathVal = entry.path;
-  const labelOrTitle = entry.label != null ? entry.label : entry.title;
+  const labelOrTitle = entry.label ?? entry.title;
   if (pathVal == null || pathVal === "") return { ok: false, message: requiredMsg };
   if (labelOrTitle == null || labelOrTitle === "") return { ok: false, message: requiredMsg };
   const norm = normalizePath(pathVal);
