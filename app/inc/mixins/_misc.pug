@@ -9,7 +9,7 @@ mixin img(file,alt,width,height)
   img(src=src, alt!=alt, width!=width, height!=height)&attributes(attributes)
 
 //- picture タグ
-//-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 768, 768)
+//-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 750, 750)
 //-PC/SPでaspect比共通ならSP用のwidthとheightは不要
 mixin picture(opts)
   -
@@ -196,7 +196,7 @@ mixin select-prefectures()
     <option value="沖縄県">沖縄県</option>
 
 mixin select-nums(name="age", start=18, end=50,selected="選択してください", unit)
-  select(name=name)
+  select(name=name)&attributes(attributes)
     option(disabled,selected) !{selected}
     - for (let i = start; i <= end; i++)
       <option value="#{i}">#{i}#{unit || ""}</option>

@@ -4,12 +4,13 @@
 
 // メールフォーム専用の input,textarea,select 共通スタイル
 @mixin forms-input-common-style {
-  border-radius: 2px;
-  background-color: #F9F8F7;
+  border-radius: 4px;
+  background-color: $color-background;
 
 
   &:focus,
   &:active {
+    background-color: $color-white;
     border-color: $form-controls-active-border-color;
   }
 }
@@ -18,18 +19,28 @@
 // styles
 //============================
 .c-forms {
-  max-width: 800px;
   margin: auto;
-  padding: 54px 32px 58px;
+  padding: 80px 96px 80px;
   background: $color-white;
+  line-height: 1.6;
 
   @include breakpoint(small only) {
     padding: 32px 16px;
   }
 
+  &.is-padding-sm {
+    padding: 32px 24px;
+    @include breakpoint(small only) {
+      padding: 24px 12px;
+    }
+  }
+
+
+  &:has(.c-forms__block.is-horizontal) {
+    padding: 0 0;
+  }
+
   &__inner {
-    width: 100%;
-    max-width: 500px;
     margin: auto;
 
     @include breakpoint(small only) {
@@ -48,11 +59,12 @@
   }
 
   &__text {
-    font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 64px;
+    text-align: center;
 
     @include breakpoint(small only) {
       margin-bottom: 24px;
+      text-align: left;
     }
   }
 
@@ -62,28 +74,37 @@
   &__blocks {
     @include breakpoint(small only) {
     }
+
   }
 
   &__block {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 4px;
+    row-gap: 8px;
 
-    &:not(:last-child) {
-      margin-bottom: 20px;
+    &:where(:not(:last-child)) {
+      margin-bottom: 40px;
     }
 
     //項目名と項目の横並び
-    &.is-horizontal {
-      grid-template-columns: minmax(auto, min-content) 1fr;
-      column-gap: 60px;
+    &:where(.is-horizontal) {
+      grid-template-columns: max(calc(332/1140*100%), 220px) 1fr;
+      column-gap: 52px;
+      border-bottom: 1px solid $border-base-color;
+      padding: 32px 0 32px 24px;
+      margin: 0;
+
+      &:where(:first-child) {
+        border-top: 1px solid $border-base-color;
+      }
 
       @include breakpoint(small only) {
         grid-template-columns: 1fr;
+        padding: 24px 0;
       }
 
       .c-forms__title {
-        min-width: 220px;
+        // min-width: 220px;
         justify-content: space-between;
 
         @include breakpoint(small only) {
@@ -103,27 +124,37 @@
     gap: 8px;
     align-items: baseline;
     align-self: center;
-    font-size: 14px;
-    --letter-spacing: 0;
+    font-weight: 700;
 
 
     &.is-vertical-top {
       align-self: start;
+      padding-top: 16px;
+
+      @include breakpoint(small only) {
+        padding-top: 0;
+      }
     }
   }
 
   //ラベル
   &__label {
     display: block;
-    min-width: 34px;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: $color-accent; //#F44336
+    padding: 3px 8px 4px 8px;
+    border-radius: 2px;
+    background-color:#D03045;
     text-align: center;
     color: $color-white;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 700;
     line-height: 1;
-    --letter-spacing: 0em;
+    flex-shrink: 0;
+
+    &.is-optional {
+      background-color: $color-white;
+      color: $font-base-color;
+      border: 1px solid $border-base-color;
+    }
   }
 
   &__content {
@@ -156,9 +187,9 @@
     //CF7のバリデーションチップ対応
     .wpcf7-not-valid-tip {
       font-weight: 400;
-      font-size: 12px;
-      line-height: 1.7;
       color: $color-state-danger;
+      margin-top: 8px;
+      display: block;
     }
 
     &:has(.wpcf7-not-valid-tip) {
@@ -167,7 +198,7 @@
       select,
       label:has(input[type="radio"]),
       label:has(input[type="checkbox"]) {
-        background-color: rgba($color-state-danger, 0.05);
+        background-color: $color-state-danger-fill;
         color: $color-state-danger;
         border-color: $color-state-danger;
       }
@@ -178,28 +209,20 @@
   // フォームコントロール
   //============================
 
+
+
   //インプット
   &__input {
-    width: 100%;
-
     input {
       @include forms-input-common-style;
-    }
-
-    &.is-sm {
-      width: 180px;
-
-      input {
-      }
     }
   }
 
   &__file {
-    width: 100%;
-
-
     input {
-      @include forms-input-common-style;
+      border-radius: 4px;
+      background-color: $color-background;
+      border: none;
       width: 100%;
       &::file-selector-button {
       }
@@ -207,47 +230,69 @@
   }
 
   &__select {
-    width: 100%;
-
     select {
       @include forms-input-common-style;
-    }
-
-    &.is-sm {
-      width: 180px;
     }
   }
 
   &__textarea {
     textarea {
       @include forms-input-common-style;
+      resize: vertical;
+    }
+  }
+
+
+  //サイズバリエーション
+  &__input, &__select, &__file, &__textarea {
+    width: 100%;
+
+    &.is-md {
+      width: 240px;
+    }
+
+    &.is-sm {
+      width: 150px;
+
+      @include breakpoint(small down) {
+        width: 78px;
+      }
     }
   }
 
   //ラジオボタン,チェックボックス
   &__radio,
   &__checkbox {
+    --_options-gap: 9px;
     //Contact Form 7
     &:where(:not(.is-mw)) {
       & > span > span {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-        line-height: 1.2;
-        @include breakpoint(small only) {
-          flex-direction: column;
-        }
+        align-items: stretch;
+        gap: var(--_options-gap);
       }
 
       & > span > span > span {
-        width: calc(50% - #{5px});
+        //幅は要素にあわせて自動調整
+      }
+
+      &.is-column {
+        //2列
         @include breakpoint(small only) {
-          width: 100%;
+          flex-direction: column;
+        }
+
+        & > span > span > span {
+          width: calc(50% - (var(--_options-gap) / 2));
+          @include breakpoint(small only) {
+            width: 100%;
+          }
         }
       }
 
       &.is-vertical {
+        //縦並び
         flex-direction: column;
 
         & > span > span > span {
@@ -262,8 +307,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      line-height: 1.2;
+      gap: var(--_options-gap);
 
       @include breakpoint(small only) {
         flex-direction: column;
@@ -274,10 +318,20 @@
       }
 
       & > span {
-        width: calc(50% - #{5px});
+        //幅は要素にあわせて自動調整
+      }
+
+      &.is-column {
+        //2列
+        flex-direction: column;
+
+        & > span {
+          width: calc(50% - (var(--_options-gap) / 2));
+        }
       }
 
       &.is-vertical {
+        //縦並び
         flex-direction: column;
 
         & > span {
@@ -300,11 +354,17 @@
 
 
     &.is-border {
+      --_options-gap: 4px;
       label {
-        @include forms-input-common-style;
-        padding: 11px 8px;
+        border-radius: 4px;
+        background-color: $color-background;
+        padding: 12px 32px 12px 16px;
         border: 1px solid $border-base-color;
-        border-radius: $border-radius;
+        height: 100%;
+
+        @include breakpoint(small only) {
+          padding: 9px 24px 9px 12px;
+        }
       }
     }
 
@@ -318,8 +378,8 @@
           appearance: none;
           background: $color-white;
           border: 1px solid $border-base-color;
-          width: 20px;
-          height: 20px;
+          width: 24px;
+          height: 24px;
           position: relative;
 
           &:checked {
@@ -328,13 +388,11 @@
               height: 100%;
               position: relative;
               top: 50%;
-              left: -1px;
               transform: translateY(-50%);
               background-color: $color-white;
               content: '';
               display: inline-block;
               visibility: visible;
-              border: 1px solid $color-primary;
             }
           }
         }
@@ -346,18 +404,24 @@
 
           &:checked::after {
             content: '';
-            background: radial-gradient($color-primary 48%, $color-white 50%);
+            background: radial-gradient($color-primary 45%, $color-white 50%);
           }
         }
 
         &[type='checkbox'] {
+          border-radius: 2px;
+
           &:checked {
+            background: $color-primary;
+            border-color: $color-primary;
             &::after {
               content: "check";
               @include icon-font();
+              width: 100%;
+              height: 100%;
               display: grid;
               place-content: center;
-              background: $color-primary;
+              background: transparent;
               color: $color-white;
               font-size: 20px;
             }
@@ -368,9 +432,12 @@
   }
 
   &__note {
-    margin-top: 4px;
-    opacity: 0.6;
-    font-size: 12px;
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    &.is-mg-lg {
+      margin-bottom: 16px;
+    }
 
     small {
       font-size: inherit;
@@ -379,43 +446,67 @@
 
 
   &__privacy {
+    &.is-display-contents {
+      display: contents;
+    }
+
     margin-top: 24px;
     text-align: center;
 
-    input {
-      margin-right: 10px;
-    }
-
-    a {
-      font-weight: 400;
-      text-decoration-line: underline;
-      color: $font-base-color;
+    &:not(.is-display-contents) {
+      input {
+        margin-right: 10px;
+      }
     }
   }
 
   &__flex-al {
     display: flex;
     align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
-    gap: 16px;
+    gap: 12px;
+
+    @include breakpoint(small only) {
+      gap: 6px;
+    }
+
+    &.is-gap-lg{
+      gap: 24px;
+
+      @include breakpoint(small only) {
+        gap: 8px;
+      }
+    }
+
+    &.is-gap-sm{
+      gap: 8px;
+    }
   }
 
   &__flex-al-label{
     flex-shrink: 0;
     width: 32px;
     text-align: right;
-    padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{57px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+
+    @include breakpoint(small only) {
+      padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+    }
   }
 
   &__flex-al-unit{
     flex-shrink: 0;
-    padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+    padding-top:calc((#{57px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+
+    @include breakpoint(small only) {
+      padding-top:calc((#{44px} - 1lh)/2);// （inputの高さ - 行の高さ）÷ 2
+    }
   }
 
   &__flexbox {
     display: flex;
     align-items: flex-start;//エラーメッセージが &__input 内に出たときのため flex-startにする
     margin-bottom: 16px;
-    gap: 16px;
+    gap: 8px;
     @include breakpoint(small only) {
       display: block;
     }
@@ -448,29 +539,39 @@
   // 住所自動入力ボタン
   &__button {
     flex: none;
-    max-width: 132px;
     border: 1px solid $font-base-color;
     outline: none;
     background-color: $color-white;
-    padding: 4px 12px;
-    display: block;
+    display: grid;
+    padding: 16px 24px;
+    // height: 57px;
+    align-self: stretch;
+    place-content: center;
     text-align: center;
-    border-radius: 2px;
-    font-size: 14px;
-    margin-top: calc((#{44px} - #{34px})/2);// （inputの高さ - ボタンの高さ）÷ 2
+    border-radius: 4px;
+    margin-top: calc((#{57px} - #{57px})/2);// （inputの高さ - ボタンの高さ）÷ 2
 
     @include breakpoint(small only) {
       padding: 6px 12px;
-      margin-top: calc((#{44px} - #{38px})/2);// （inputの高さ - ボタンの高さ）÷ 2
+      height: 40px;
+      margin-top: calc((#{44px} - #{40px})/2);// （inputの高さ - ボタンの高さ）÷ 2
+    }
+  }
+
+
+  &__privacy + &__submit {
+    margin-top: 40px;
+    @include breakpoint(small only) {
+      margin-top: 32px;
     }
   }
 
   // 送信ボタン
   &__submit {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 64px;
     @include breakpoint(small only) {
-      margin-top: 32px;
+      margin-top: 48px;
     }
 
     &__back {

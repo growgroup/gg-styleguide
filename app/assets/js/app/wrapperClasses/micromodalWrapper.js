@@ -88,13 +88,19 @@ export default class MicromodalWrapper {
    * @param {string} id - モーダルのID
    * @param {string} content - モーダル内に表示するコンテンツ
    * @param {string} modalTitle - モーダルのタイトル
+   * @param {Object} modalOptions - モーダルの表示オプション
    */
-  createModalElement(id, content, modalTitle) {
+  createModalElement(id, content, modalTitle, modalOptions = {}) {
     const modalElement = document.createElement("div");
     modalElement.className = "c-mm";
     modalElement.id = id;
     modalElement.setAttribute("aria-hidden", "true");
-    modalElement.innerHTML = this.generateModalHTML(id, content, modalTitle);
+    modalElement.innerHTML = this.generateModalHTML(
+      id,
+      content,
+      modalTitle,
+      modalOptions
+    );
     document.body.appendChild(modalElement);
   }
 
@@ -103,11 +109,15 @@ export default class MicromodalWrapper {
    * @param {string} id - モーダルのID
    * @param {string} content - モーダル内に表示するコンテンツ
    * @param {string} modalTitle - モーダルのタイトル
+   * @param {Object} modalOptions - モーダルの表示オプション
    * @returns {string} 生成されたHTML文字列
    */
-  generateModalHTML(id, content, modalTitle) {
+  generateModalHTML(id, content, modalTitle, modalOptions = {}) {
+    const { lightDismiss = true } = modalOptions;
+    const overlayCloseAttribute = lightDismiss ? "data-micromodal-close" : "";
+
     return `
-      <div class="c-mm__overlay" tabindex="-1" data-micromodal-close>
+      <div class="c-mm__overlay" tabindex="-1" ${overlayCloseAttribute}>
         <div role="dialog" class="c-mm__container" aria-modal="true" aria-label="${modalTitle}">
           <button class="c-mm__close" aria-label="Close modal" data-micromodal-close></button>
           <div class="c-mm__container-inner" id="${id}-container-inner">
@@ -149,11 +159,24 @@ export default class MicromodalWrapper {
     const modalId = `modal-${type}-${Math.random().toString(36).slice(2, 11)}`;
     const modalTitle =
       trigger.dataset.modalTitle || this.wrapperOptions.defaultModalTitle;
+    const lightDismiss = this.parseLightDismiss(trigger.dataset.modalLightDismiss);
 
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
-      this.createAndShowModal(type, href, modalId, trigger, modalTitle);
+      this.createAndShowModal(
+        type,
+        href,
+        modalId,
+        trigger,
+        modalTitle,
+        { lightDismiss }
+      );
     });
+  }
+
+  parseLightDismiss(value) {
+    if (value == null) return true;
+    return !["false", "0", "off"].includes(String(value).toLowerCase());
   }
 
   /**
@@ -163,11 +186,12 @@ export default class MicromodalWrapper {
    * @param {string} modalId - モーダルのID
    * @param {HTMLElement} trigger - モーダルをトリガーする要素
    * @param {string} modalTitle - モーダルのタイトル
+   * @param {Object} modalOptions - モーダルの表示オプション
    */
-  createAndShowModal(type, href, modalId, trigger, modalTitle) {
+  createAndShowModal(type, href, modalId, trigger, modalTitle, modalOptions = {}) {
     const contentMap = {
       image: () =>
-        `<img src="${href}" alt="${trigger.textContent}" class="c-mm__img">`,
+        `<img src="${href}" alt="${trigger?.textContent || ""}" class="c-mm__img">`,
       youtube: () => this.createYouTubeEmbed(href),
       video: () => this.createVideoEmbed(href),
       iframe: () => `<iframe class="c-mm__iframe" src="${href}"></iframe>`,
@@ -184,7 +208,7 @@ export default class MicromodalWrapper {
     const content = contentFunction();
     if (!content) return; // コンテンツが無い場合は終了
 
-    this.createModalElement(modalId, content, modalTitle);
+    this.createModalElement(modalId, content, modalTitle, modalOptions);
     MicroModal.show(modalId, {
       ...this.micromodalOptions,
       onShow: (modal) => {
