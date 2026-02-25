@@ -1,0 +1,14 @@
+//- エントリーモーダル
+
+mixin entry-modal01()
+  //- エントリーモーダルサンプル01
+  #entry-modal-content-01.js-auto-entry-modal(
+    style="display: none"
+    data-entry-modal-id="entry-modal-01"
+    data-entry-modal-src="#entry-modal-content-01"
+    data-entry-modal-title="モーダルタイトル"
+    data-entry-modal-light-dismiss="false"
+  )
+    +a("https://example.com")
+      +img("img-sample.jpg")
+
