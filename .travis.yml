@@ -1,9 +1,0 @@
-sudo: false
-language: node_js
-node_js:
-  - '6'
-install:
-  - npm install -g node-gyp
-  - npm install
-script:
-  - npm run build
