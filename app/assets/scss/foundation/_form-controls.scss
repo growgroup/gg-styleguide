@@ -67,8 +67,6 @@ input:where(
 
 // ファイル選択
 input:where([type="file"]) {
-  font-size: 12px;
-
   &::file-selector-button {
     background-image: url('../images/icon-form-file.svg');
     background-repeat: no-repeat;
