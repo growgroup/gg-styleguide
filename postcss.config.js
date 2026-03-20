@@ -25,6 +25,60 @@ module.exports = (ctx) => ({
           // タグ名単体またはタグ名[属性名]のみのセレクタに対して「祖先に.acf-fieldsまたは.components-placeholderがないときだけ」を付与
           transform: function (prefix, selector) {
             let hasEditorWrapper = false;
+            const isAttributeOnlyWherePseudo = (pseudoNode) => {
+              if (
+                pseudoNode.type !== "pseudo" ||
+                pseudoNode.value !== ":where" ||
+                !Array.isArray(pseudoNode.nodes) ||
+                pseudoNode.nodes.length === 0
+              ) {
+                return false;
+              }
+
+              return pseudoNode.nodes.every((innerSelector) => {
+                return (
+                  innerSelector.type === "selector" &&
+                  innerSelector.nodes.length > 0 &&
+                  innerSelector.nodes.every((innerNode) => innerNode.type === "attribute")
+                );
+              });
+            };
+            const isRootTagOnlySelector = (sel) => {
+              const compounds = [];
+              let currentCompound = [];
+
+              sel.each((node) => {
+                if (node.type === "combinator") {
+                  if (currentCompound.length) {
+                    compounds.push(currentCompound);
+                    currentCompound = [];
+                  }
+                } else {
+                  currentCompound.push(node);
+                }
+              });
+              if (currentCompound.length) compounds.push(currentCompound);
+              if (compounds.length !== 1) return false;
+
+              const compound = compounds[0];
+              const tagNodes = compound.filter((n) => n.type === "tag");
+              if (tagNodes.length !== 1) return false;
+
+              const tagName = tagNodes[0].value && tagNodes[0].value.toLowerCase();
+              if (tagName !== "html" && tagName !== "body") return false;
+
+              return compound.every((n) => {
+                if (
+                  n.type === "tag" ||
+                  n.type === "attribute" ||
+                  isAttributeOnlyWherePseudo(n) ||
+                  (n.type === "pseudo" && n.toString() === EXCLUSION_GUARD)
+                ) {
+                  return true;
+                }
+                return false;
+              });
+            };
 
             // セレクタをASTとして走査し、必要なものだけ除外ガードを付与する
             const modifiedSelector = selectorParser((selectors) => {
@@ -76,24 +130,6 @@ module.exports = (ctx) => ({
                 const pseudoElementIndex = compound.findIndex(
                   (n) => n.type === "pseudo" && n.value && n.value.startsWith("::")
                 );
-                const isAttributeOnlyWherePseudo = (pseudoNode) => {
-                  if (
-                    pseudoNode.type !== "pseudo" ||
-                    pseudoNode.value !== ":where" ||
-                    !Array.isArray(pseudoNode.nodes) ||
-                    pseudoNode.nodes.length === 0
-                  ) {
-                    return false;
-                  }
-
-                  return pseudoNode.nodes.every((innerSelector) => {
-                    return (
-                      innerSelector.type === "selector" &&
-                      innerSelector.nodes.length > 0 &&
-                      innerSelector.nodes.every((innerNode) => innerNode.type === "attribute")
-                    );
-                  });
-                };
                 const isUniversal =
                   compound.length === 1 && compound[0].type === "universal";
                 const isSinglePseudoElement =
@@ -140,12 +176,31 @@ module.exports = (ctx) => ({
               });
             }).processSync(selector);
 
+            // html/body 系は配下指定ではなくラッパー自体のセレクタに正規化する
+            const normalizedSelector = selectorParser((selectors) => {
+              selectors.each((sel) => {
+                if (!isRootTagOnlySelector(sel)) {
+                  return;
+                }
+                sel.removeAll();
+                sel.append(selectorParser.id({ value: EDITOR_WRAPPER_ID }));
+              });
+            }).processSync(modifiedSelector);
+
+            const hasEditorWrapperAfterNormalize = selectorParser((selectors) => {
+              selectors.walkIds((idNode) => {
+                if (idNode.value === EDITOR_WRAPPER_ID) {
+                  hasEditorWrapper = true;
+                }
+              });
+            }).processSync(normalizedSelector);
+
             // 既に #growp-editor-wrapper を含む場合はそのまま返し、なければprefixを付与
             if (hasEditorWrapper) {
-              return modifiedSelector;
+              return hasEditorWrapperAfterNormalize;
             }
 
-            return prefix + modifiedSelector;
+            return prefix + hasEditorWrapperAfterNormalize;
           },
         }
         : false,
