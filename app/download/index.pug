@@ -18,13 +18,16 @@ block page_header
 block body
   section.l-section.is-lg.is-bg-color
     .l-container
-      +c_anchor-nav("u-mbs is-bottom",{
-        link: "#block01",
-        title: "タイトル1",
-      },{
-        link: "#block02",
-        title: "タイトル2",
-      })
+      +c_anchor-nav([
+        {
+          link: "#block01",
+          title: "タイトル1",
+        },
+        {
+          link: "#block02",
+          title: "タイトル2",
+        },
+      ]).u-mbs.is-bottom
       +c.card-download.u-mbs.is-top#block01
         +e.head.c-heading.is-sm.is-mg-level-4: b.is-main タイトル1
         +e.blocks

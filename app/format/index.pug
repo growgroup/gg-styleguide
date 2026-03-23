@@ -19,39 +19,44 @@ block page_header
 block body
   section.l-section.is-lg
     .l-container
-      +c_anchor-nav("u-mbs is-bottom",{
-        link: "#text",
-        title: "テキスト",
-      },
-      {
-        link: "#heading",
-        title: "見出し",
-      },
-      {
-        link: "#hr",
-        title: "区切り線",
-      },
-      {
-        link: "#list",
-        title: "リスト",
-      },
-      {
-        link: "#table",
-        title: "テーブル",
-      },
-      {
-        link: "#button",
-        title: "ボタン",
-      },{
-        link: "#other",
-        title: "その他",
-      },{
-        link: "#tab",
-        title: "タブ",
-      },{
-        link: "#anchor-demo",
-        title: "アンカーのデモ",
-      })
+      +c_anchor-nav([
+        {
+          link: "#text",
+          title: "テキスト",
+        },
+        {
+          link: "#heading",
+          title: "見出し",
+        },
+        {
+          link: "#hr",
+          title: "区切り線",
+        },
+        {
+          link: "#list",
+          title: "リスト",
+        },
+        {
+          link: "#table",
+          title: "テーブル",
+        },
+        {
+          link: "#button",
+          title: "ボタン",
+        },
+        {
+          link: "#other",
+          title: "その他",
+        },
+        {
+          link: "#tab",
+          title: "タブ",
+        },
+        {
+          link: "#anchor-demo",
+          title: "アンカーのデモ",
+        },
+      ]).u-mbs.is-bottom
 
 
       h2#text テキスト
