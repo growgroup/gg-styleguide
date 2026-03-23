@@ -164,7 +164,7 @@ block aside //- サイドバー
 
 ---
 
-## 4. 基本タグMixin（tags.pug）
+## 4. 基本タグMixin（misc.pug）
 
 ### 4.1 画像 `+img`
 
