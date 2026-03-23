@@ -10,7 +10,9 @@
   display: flow-root;
   //word-break: break-all;
 
-  > * + * { //投稿内の各ブロックの間に1emのマージンを設定
+  > * + *:not(html) {
+    //:not(html)は詳細度を 0,0,1 にするための記述
+    //投稿内の各ブロックの間に1emのマージンを設定
     margin-top: 1em;
   }
 
