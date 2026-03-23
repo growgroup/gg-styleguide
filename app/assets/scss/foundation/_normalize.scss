@@ -189,7 +189,7 @@ h6 {
  */
 
 small {
-  font-size: 80%;
+  @include text-small();
 }
 
 /**
@@ -210,6 +210,18 @@ sup {
 
 sub {
   bottom: -0.25em;
+}
+
+p{
+  margin: 0;
+}
+
+strong{
+  font-weight: bold;
+}
+
+del{
+  text-decoration-line: line-through;
 }
 
 /* Embedded content

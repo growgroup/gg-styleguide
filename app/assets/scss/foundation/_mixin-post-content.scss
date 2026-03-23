@@ -179,6 +179,10 @@
   }
 }
 
+@mixin text-small{
+  font-size: 0.85em;
+}
+
 // c-table
 @mixin c-table {
   width: 100%;
