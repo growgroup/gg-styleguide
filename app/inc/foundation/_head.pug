@@ -57,7 +57,8 @@ html(lang="ja")
 
     //- ヘッダーに組み込むスクリプト
     block head_script
-      | <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      | <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+      +script('/assets/js/app.js')(defer)
 
   body(class!=current.bodyClass)
     //- スマホメニュー
@@ -67,4 +68,4 @@ html(lang="ja")
 
     //- フッターに組み込むスクリプト
     block footer_scripts
-      +script('/assets/js/app.js')
+
