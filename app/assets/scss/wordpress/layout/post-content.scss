@@ -5,7 +5,7 @@
 
 @use "sass:math";
 
-.l-post-content {
+:where(.l-post-content) {
   // l-post-content 内のスタイルはすべてmixinに記述すること
   @include l-post-content;
 }

@@ -6,7 +6,6 @@
 //
 // Styleguide 1.2.1
 
-p,
 .u-text-normal {
   margin: 0;
 }
@@ -15,9 +14,8 @@ p,
 //
 // Styleguide 1.2.2
 
-small,
 .u-text-small {
-  font-size: 0.85em;
+  @include text-small();
 }
 body.en{
   //small,
@@ -30,7 +28,6 @@ body.en{
 //
 // Styleguide 1.2.3
 
-strong,
 .u-text-strong {
   font-weight: 700;
 }
@@ -39,7 +36,6 @@ strong,
 //
 // Styleguide 1.2.4
 
-del,
 .u-text-del {
   text-decoration-line: line-through;
 }
