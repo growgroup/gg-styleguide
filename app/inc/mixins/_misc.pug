@@ -99,16 +99,16 @@ mixin tr(th, td)
     th!= th
     td!= td
 
-mixin c_relation(title,...data)
-  +c.relation
+mixin c_relation(title,data)
+  +c.relation(class=attributes.class)
     .l-container
       +e.title.c-heading.is-sm.is-center !{title}
       +e.buttons
         each itemData in data
           +e.button: +a(itemData.link).c-button.is-xlg.is-primary.js-current-nav !{itemData.title}
 
-mixin c_anchor-nav(style,...data)
-  +c.anchor-nav(class=style)
+mixin c_anchor-nav(data)
+  +c.anchor-nav(class=attributes.class)
     +e.buttons
       each itemData in data
         +e.button: +a(itemData.link).c-button.is-nav.js-anchor !{itemData.title}

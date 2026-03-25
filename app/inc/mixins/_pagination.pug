@@ -1,6 +1,6 @@
 //- ページネーション
-mixin c_pagination(data)
-  +c.pagination(class=data)
+mixin c_pagination()
+  +c.pagination(class=attributes.class)
     ul.c-pagination__list
       li.c-pagination__prev: +a("#").c-pagination__num <span class="c-icon-font">chevron_left</span>
       li: span.c-pagination__num.is-current 1

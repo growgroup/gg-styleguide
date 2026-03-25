@@ -16,31 +16,40 @@ div.u-mbs.is-bottom
 div.u-mbs.is-bottom
   +a("#").c-button.is-xs ボタンテキスト
 
-+c_anchor-nav("u-mbs is-bottom",{
-  link: "#section01",
-  title: "テキストテキスト",
-},{
-  link: "#section02",
-  title: "テキストテキスト",
-},{
-  link: "#section03",
-  title: "テキストテキスト",
-},{
-  link: "#section04",
-  title: "テキストテキスト",
-})
++c_anchor-nav([
+  {
+    link: "#section01",
+    title: "テキストテキスト",
+  },
+  {
+    link: "#section02",
+    title: "テキストテキスト",
+  },
+  {
+    link: "#section03",
+    title: "テキストテキスト",
+  },
+  {
+    link: "#section04",
+    title: "テキストテキスト",
+  }]).u-mbs.is-bottom
 
 section.l-section.is-sm
-  +c_relation("関連するコンテンツ",{
-    link: "/format/",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  },{
-    link: "#",
-    title: "テキストテキスト",
-  })
+  +c_relation("関連するコンテンツ",[
+    {
+      link: "/format/",
+      title: "テキストテキスト",
+    },
+    {
+      link: "#",
+      title: "テキストテキスト",
+    },
+    {
+      link: "#",
+      title: "テキストテキスト",
+    },
+    {
+      link: "#",
+      title: "テキストテキスト",
+    }
+  ])

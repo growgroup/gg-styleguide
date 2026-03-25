@@ -26,19 +26,24 @@ block body
   section.l-section.is-md.is-bg-color
     .l-container
       h2.c-heading.is-lg.is-mg-level-6 セクションタイトル
-      +c_anchor-nav("u-mbs is-bottom",{
-        link: "#section01",
-        title: "テキストテキスト",
-      },{
-        link: "#section02",
-        title: "テキストテキスト",
-      },{
-        link: "#section03",
-        title: "テキストテキスト",
-      },{
-        link: "#section04",
-        title: "テキストテキスト",
-      })
+      +c_anchor-nav([
+        {
+          link: "#section01",
+          title: "テキストテキスト",
+        },
+        {
+          link: "#section02",
+          title: "テキストテキスト",
+        },
+        {
+          link: "#section03",
+          title: "テキストテキスト",
+        },
+        {
+          link: "#section04",
+          title: "テキストテキスト",
+        },
+      ]).u-mbs.is-bottom
       .u-mbs.is-sm
         p
           | 基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。基本文章テキストです。
