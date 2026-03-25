@@ -1,0 +1,17 @@
+---
+description: Figma から Pug/SCSS で実装するときは .cursor/docs の COMPONENT_STYLING, PUG_RULE, SCSS_RULE を正とし、必要に応じて読み込んで従う。
+globs: |
+  app/**/*.pug
+  app/assets/scss/object/components/**/*.scss
+  app/assets/scss/object/project/**/*.scss
+  app/assets/scss/layout/**/*.scss
+alwaysApply: false
+---
+
+# Figma 実装時の Pug/SCSS
+
+Figma デザインを Pug/SCSS で実装するときは、**次の 3 つのドキュメントを正**とし、実装内容（命名・mixin・ファイル配置・変数・禁止事項など）はすべてそこを参照して解決する。
+
+2. **`.cursor/docs/COMPONENT_STYLING.md`**
+3. **`.cursor/docs/PUG_RULE.md`**
+4. **`.cursor/docs/SCSS_RULE.md`**
