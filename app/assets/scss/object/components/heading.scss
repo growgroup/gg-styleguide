@@ -21,26 +21,26 @@ category: Heading
     .is-eng {
       display: block;
       @include webfont();
-      @include font-format-light(42, 52);
+      font-size: 42px;
       @include breakpoint(small only) {
-        font-size: 42px*0.8;
+        font-size: 38px;
       }
     }
     .is-ja {
       display: block;
-      @include font-format-light(16, 26);
+      font-size: 16px;
       @include breakpoint(small only) {
-        font-size: 16px*0.8;
+        font-size: 14px;
       }
     }
   }
 
   // h2
   &.is-lg {
-    @include font-format-light(32,40);
+    font-size: 32px;
 
     @include breakpoint(small only) {
-      font-size: 32px*0.8;
+      font-size: 28px;
     }
 
     .is-eng {
@@ -50,17 +50,17 @@ category: Heading
 
     .is-ja {
       display: block;
-      @include font-format-light(14, 20);
+      font-size: 14px;
       margin-top: 6px;
       @include breakpoint(small only) {
-        font-size: 14px*0.8;
+        font-size: 13px;
       }
     }
   }
 
   // h3
   &.is-md {
-    @include font-format-light(28,38);
+    font-size: 28px;
 
     @include breakpoint(small only) {
       font-size: 28px*0.8;
@@ -69,27 +69,27 @@ category: Heading
 
   // h4
   &.is-sm {
-    @include font-format-light(24, 34);
+    font-size: 24px;
     @include breakpoint(small only) {
-      font-size: 24px*0.8;
+      font-size: 20px;
     }
   }
 
   // h5
   &.is-xs {
-    @include font-format-light(20,30);
+    font-size: 20px;
 
     @include breakpoint(small only) {
-      font-size: 20px*0.8;
+      font-size: 18px;
     }
   }
 
   // h6
   &.is-xxs {
-    @include font-format-light(18, 28);
+    font-size: 18px;
 
     @include breakpoint(small only) {
-      font-size: 18px*0.8;
+      font-size: 16px;
     }
   }
 

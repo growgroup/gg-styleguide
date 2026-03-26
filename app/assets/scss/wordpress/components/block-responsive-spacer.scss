@@ -3,9 +3,9 @@
 
 .c-block-responsive-spacer {
 
-  // height: rem-calc(nth($sectionDefault , 1));
+  // height: #{$sectionDefault[1] * 1px};
   // @include breakpoint(small down) {
-  //   height: rem-calc(nth($sectionDefault, 2));
+  //   height: #{$sectionDefault[2] * 1px};
   // }
 
   @each $key, $value in $sectionSizes {
@@ -13,10 +13,10 @@
     $sp-value: nth($value, 2); // SP用
 
     &.is-#{$key} {
-      height: rem-calc($pc-value); // PCサイズ
+      height: #{$pc-value * 1px}; // PCサイズ
 
       @include breakpoint(small down) {
-        height: rem-calc($sp-value); // SPサイズ
+        height: #{$sp-value * 1px}; // SPサイズ
       }
     }
   }

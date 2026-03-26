@@ -1,0 +1,84 @@
+// 値をvwに変換する関数
+@function vw-calc($value, $viewport: 1400) {
+  // 単位を取り除きvwを掛ける
+  @return calc(strip-unit($value) / strip-unit($viewport)) * 100vw;
+}
+
+// 値をcqwに変換する関数
+// container-type を指定したコンテナのデザイン上の幅を第2引数に指定すること
+@function cqw-calc($value, $container-width: 1400) {
+  @return calc(strip-unit($value) / strip-unit($container-width)) * 100cqw;
+}
+
+// レスポンシブな最小値を生成するmin関数
+// @return {String} - min関数を使用したレスポンシブな値
+// @example
+//   .element {
+//     font-size: miv-vw(16);      // デザイン上のサイズ
+//     margin: miv-vw(24, 1200);   // 基準値, 基準にするデザインフレームの横幅
+//   }
+@function min-vw($values...) {
+  $value: nth($values, 1);
+  $viewport: if(length($values) > 1, nth($values, 2), 1400);
+
+  @return min(
+    $value * 1px,
+    vw-calc($value, $viewport)
+  );
+}
+
+// レスポンシブな値を生成するためのclamp関数
+// @return {String} - clamp関数を使用したレスポンシブな値
+// @example
+//   .element {
+//     font-size: clamp-vw(16);             // デザイン上のサイズ
+//     margin: clamp-vw(24, 10);            // デザイン上のサイズ, 最小値
+//     padding: clamp-vw(24, 10, 2560);     // デザイン上のサイズ, 最小値, 最大画面幅
+//     width: clamp-vw(24, 10, 2560, 1400); // デザイン上のサイズ, 最小値, 最大画面幅, 基準にするデザインフレームの横幅
+//   }
+@function clamp-vw($values...) {
+  // デフォルト値の設定
+  $value: nth($values, 1);
+  $viewport: 1400;      // デフォルトのビューポート幅
+  $viewport-max: 2560;  // デフォルトの最大ビューポート幅
+  $min: 10;            // デフォルトの最小値
+
+  // 引数の数に応じて値を上書き
+  @if length($values) >= 2 { $min: nth($values, 2); }
+  @if length($values) >= 3 { $viewport-max: nth($values, 3); }
+  @if length($values) >= 4 { $viewport: nth($values, 4); }
+
+  // clamp関数で最小値、可変値、最大値を設定
+  @return clamp(
+    $min * 1px,
+    vw-calc($value, $viewport),
+    (math.div($value, $viewport) * $viewport-max) * 1px
+  );
+}
+
+
+// remを計算する関数 ※通常はrem-calcを使わずに pxで書けばビルド時自動で 16px -> 1rem 変換されます
+@function rem-calc($values, $base: null) {
+  // 結果を保存するリスト
+  $rem-values: ();
+  // 入力された値の長さ
+  $count: length($values);
+  // 基準値がnullの場合、デフォルトサイズを使用
+  @if $base == null {
+    $base: $font-html-size;
+  }
+  // 基準値が%の場合、pxに変換
+  @if unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+  // 入力された値が一つだけの場合
+  @if $count == 1 {
+    @return to-rem($values, $base);
+  }
+  // すべての値をremに変換してリストに追加
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, to-rem(nth($values, $i), $base));
+  }
+  // 最終的なrem値のリストを返す
+  @return $rem-values;
+}

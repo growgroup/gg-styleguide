@@ -1,50 +1,31 @@
-// regular400
+// 英語フォント利用箇所：デザインに合わせて変更
 @mixin webfont() {
   font-family: 'Roboto', sans-serif;
 }
 
+
+
+// アイコンフォント利用箇所では基本的にこちらを挿入
 @mixin icon-font() {
   font-family: $font-icon-family;
   @include icon-font-style();
   @include icon-font-size-control();
 }
 
-//@mixin material-icon-default() {
-//  font-weight: normal;
-//  font-style: normal;
-//  font-size: 24px;
-//  line-height: 1;
-//  letter-spacing: normal;
-//  text-transform: none;
-//  display: inline-block;
-//  white-space: nowrap;
-//  word-wrap: normal;
-//  direction: ltr;
-//  -webkit-font-feature-settings: 'liga';
-//  -webkit-font-smoothing: antialiased;
-//}
-//.material-icons-round {
-//  font-family: 'Material Icons Round';
-//  @include material-icon-default();
-//}
-//
-//.material-icons-outlined {
-//  font-family: 'Material Icons Outlined';
-//  @include material-icon-default();
-//}
-//
-//.material-icons {
-//  font-family: 'Material Icons';
-//  @include material-icon-default();
-//}
-//
-//.material-icons-sharp {
-//  font-family: 'Material Icons Sharp';
-//  @include material-icon-default();
-//}
-//
-//.material-icons-two-tone {
-//  font-family: 'Material Icons Two Tone';
-//  @include material-icon-default();
-//}
+//通常 icon-fontのmixinで読み込む
+@mixin icon-font-style {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  overflow: hidden;
+}
 
+//通常 icon-fontのmixinで読み込む
+@mixin icon-font-size-control{
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}

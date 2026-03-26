@@ -1,0 +1,71 @@
+//- 単体で使用せず、他のmixin上での計算を支援する関数を定義
+
+@use "sass:math";
+
+// 数値の単位を削除する関数
+@function strip-unit($number) {
+  // 数値が単位付きの場合
+  @if type-of($number) == 'number' and not unitless($number) {
+    // 単位を削除するために1で割る
+    @return math.div($number, $number * 0 + 1);
+  }
+  // 単位が無い場合はそのまま返す
+  @return $number;
+}
+
+// 値をremに変換する関数
+@function to-rem($value, $base: $font-html-size) {
+  // 値が数値でない場合の警告
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+  // 値がremでない場合
+  @if unit($value) != 'rem' {
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+  }
+  // 値が0remの場合
+  @if $value == 0rem {
+    $value: 0;
+  }
+  // 最終的なrem値を返す
+  @return $value;
+}
+
+// 値をemに変換する関数
+@function to-em($value) {
+  // 値がpxまたは単位なしの場合、remに変換
+  @if unit($value) == 'px' or unitless($value) {
+    $value: rem-calc($value, $base: 16px);
+  }
+  // 単位を取り除きemを掛ける
+  @return strip-unit($value) * 1em;
+}
+
+
+
+// mapの次の値を取得する関数
+@function map-next($map, $key) {
+  $values: map-values($map); // mapの値のリスト
+  $i: 1; // インデックスの初期値
+  $found: false; // 発見フラグの初期化
+  // mapのキーを順に確認
+  @each $val in map-keys($map) {
+    @if $found == false {
+      // キーが見つかった場合、次のループで値を取得
+      @if ($key == $val) {
+        $found: true;
+      }
+      $i: $i + 1;
+    }
+  }
+  // 最後の値を超えた場合はnullを返す
+  @if $i > length($map) {
+    @return null;
+  }
+    // 次の値を返す
+  @else {
+    @return nth($values, $i);
+  }
+}
+
