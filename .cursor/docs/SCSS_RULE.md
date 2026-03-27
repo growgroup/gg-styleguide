@@ -11,7 +11,10 @@ app/assets/scss/
 ├── style.scss              # メインエントリーポイント
 ├── foundation/             # 基盤設定
 │   ├── _settings.scss      # 変数定義（カラー、フォント、ブレイクポイント等）
-│   ├── _mixin.scss         # 汎用mixin・function定義
+│   ├── basic/_mixin-basic.scss   # 単位変換・map操作などの基礎function
+│   ├── _mixin-math-unit.scss     # rem/vw/cqw/clamp/min などの単位計算function
+│   ├── _mixin-queries.scss       # breakpoint/container query 関連
+│   ├── _mixin.scss         # 汎用mixin定義（hover/transition等）
 │   ├── _mixin-post-content.scss  # 投稿記事用mixin
 │   ├── _normalize.scss     # リセットCSS
 │   ├── _webfont.scss       # Webフォント設定
@@ -228,11 +231,12 @@ $breakpoints: (
 ### 4.4 単位変換Function
 
 ```scss
-// pxからremへ変換
-font-size: rem-calc(16); // 1rem
 
 // pxからvwへ変換（デザイン幅1400px基準）
 width: vw-calc(700); // 50vw
+
+// pxからcqwへ変換（container-type 指定済みコンテナを基準に計算）
+width: cqw-calc(700, 1400);
 
 // clamp関数でレスポンシブ値
 font-size: clamp-vw(24, 16); // clamp(1rem, vw計算値, 最大値)
@@ -332,17 +336,6 @@ category: Category
 
 ```scss
 .l-container {
-  max-width: rem-calc($grid-row-width); // 1240px
-  margin-inline: auto;
-  padding-inline: 80px;
-
-  @include breakpoint(medium down) {
-    padding-inline: 32px;
-  }
-
-  @include breakpoint(small down) {
-    padding-inline: 16px;
-  }
 }
 ```
 
@@ -441,10 +434,18 @@ Material Iconsを使用しています。
 - 例外として、**ユーティリティ**および既存パターン（例：`.l-section.is-top` / `.l-section.is-bottom` / `.u-mbs.is-top` / `.u-mbs.is-bottom` など「片側だけを確実に打ち消す」用途）では使用可
 - 新規で `!important` を追加する場合は、理由をコメントで残す
 
+### 10.5 単位指定の方針
+
+- 通常のサイズ指定は `px` を基本とする（ビルド時に `rem` へ自動変換される前提）
+- `rem-calc()` は原則不要。複数値の変換など「関数が必要な場面」に限定して使用する
+
 ---
 
 ## 11. 参考ファイル
 
 - `/format/index.html` - デザインフォーマット確認用(Figmaメインコンポーネントおよび、サイト内頻出コンポーネント確認用)
 - `foundation/_settings.scss` - 変数定義
-- `foundation/_mixin.scss` - mixin定義
+- `foundation/basic/_mixin-basic.scss` - 基礎function
+- `foundation/_mixin-math-unit.scss` - 単位計算function
+- `foundation/_mixin-queries.scss` - メディア/コンテナクエリ関連
+- `foundation/_mixin.scss` - 汎用mixin
