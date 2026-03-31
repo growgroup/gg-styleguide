@@ -11,7 +11,7 @@ app/assets/scss/
 ├── style.scss              # メインエントリーポイント
 ├── foundation/             # 基盤設定
 │   ├── _settings.scss      # 変数定義（カラー、フォント、ブレイクポイント等）
-│   ├── basic/_mixin-basic.scss   # 単位変換・map操作などの基礎function
+│   ├── _mixin-basic.scss   # 単位変換・map操作などの基礎function
 │   ├── _mixin-math-unit.scss     # rem/vw/cqw/clamp/min などの単位計算function
 │   ├── _mixin-queries.scss       # breakpoint/container query 関連
 │   ├── _mixin.scss         # 汎用mixin定義（hover/transition等）
@@ -445,7 +445,7 @@ Material Iconsを使用しています。
 
 - `/format/index.html` - デザインフォーマット確認用(Figmaメインコンポーネントおよび、サイト内頻出コンポーネント確認用)
 - `foundation/_settings.scss` - 変数定義
-- `foundation/basic/_mixin-basic.scss` - 基礎function
+- `foundation/_mixin-basic.scss` - 基礎function
 - `foundation/_mixin-math-unit.scss` - 単位計算function
 - `foundation/_mixin-queries.scss` - メディア/コンテナクエリ関連
-- `foundation/_mixin.scss` - 汎用mixin
+- `foundation/_mixin.scss` - その他汎用mixin
