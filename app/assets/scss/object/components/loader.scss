@@ -19,7 +19,7 @@
   }
 
   &__title {
-    @include font-format(40,.1,50,bold);
+    font-size: 40px;
     @include webfont;
     opacity: 0;
     color: $color-primary;

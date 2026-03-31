@@ -37,11 +37,11 @@
   }
 
   &__text {
-    @include font-format(12,.1,24,400);
+    font-size: 12px;
     color: $color-white;
 
     @include breakpoint(small only) {
-      @include font-format(10,.08,18,400);
+      font-size: 10px;
       margin-bottom: 16px;
     }
   }
@@ -56,7 +56,7 @@
     }
 
     a {
-      @include font-format(13,.14,19,400);
+      font-size: 13px;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -67,7 +67,7 @@
 
       @include breakpoint(small only) {
         width: 100%;
-        @include font-format(12,.12,18,400);
+        font-size: 12px;
         padding: 14px 100px;
       }
     }

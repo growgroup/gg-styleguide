@@ -111,7 +111,7 @@ category: Components
     left: auto;
     bottom: auto;
     color: $color-white;
-    @include font-format(16,0.04,20,300);
+    font-size: 16px;
 
     &:after {
       flex: none;

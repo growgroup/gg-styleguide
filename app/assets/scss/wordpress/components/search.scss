@@ -5,7 +5,7 @@
 .c-search {
 
   &__head {
-    @include font-format-light(20, 30);
+    font-size: 20px;
     margin-bottom: 24px;
 
     @include breakpoint(small down) {

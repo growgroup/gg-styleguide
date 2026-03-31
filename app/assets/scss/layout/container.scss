@@ -15,7 +15,7 @@
 // Styleguide 5.5.0
 
 .l-container {
-  max-width: rem-calc($grid-row-width);
+  max-width: #{$grid-row-width * 1px};
   margin-inline: auto;
   box-sizing: content-box;
   padding-inline: map-get($grid-responsive-margin,"md");
