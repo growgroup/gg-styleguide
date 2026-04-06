@@ -36,6 +36,7 @@
     font-size: 25px;
     line-height: 1;
     border: 1px solid $font-base-color;
+    padding: 0;
 
     &:after {
       content: "expand_less";
