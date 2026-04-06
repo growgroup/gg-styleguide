@@ -67,4 +67,9 @@ category: PostContent
       box-shadow: none;
     }
   }
+  .toc_number {
+      &::after {
+      content: ".";
+    }
+  }
 }
