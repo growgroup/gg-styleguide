@@ -74,8 +74,8 @@ $font-base-style: normal !default; // フォントスタイル
 
 //en
 $font-base-size-en: 15px !default; // body.en のフォントサイズ
-$font-base-line-height-en: 1.8 !default; // body.en のフォントサイズ
-$font-base-letter-spacing-en: 0 !default; // body.en のフォントサイズ
+$font-base-line-height-en: 1.8 !default; // body.en の行間（本文の行間）
+$font-base-letter-spacing-en: 0 !default; // body.en の基本文字間隔
 
 //icon
 $font-icon-family: 'Material Icons Outlined' !default; // アイコンフォントファミリー
