@@ -1,72 +1,100 @@
 {
+  "excludeFiles": [
+    "./dist/format/*.html",
+    "./dist/design-format/*.html"
+  ],
   "rules": {
     "attr-duplication": true,
-    "deprecated-attr": false,
+    "deprecated-attr": true,
     "deprecated-element": true,
-    "disallowed-element": true,
-    "doctype": true,
+    "doctype": "always",
+    "end-tag": true,
+    "heading-levels": {
+      "severity": "warning"
+    },
     "id-duplication": true,
-    "ineffective-attr": false,
     "invalid-attr": true,
-    "landmark-roles": false,
-    "no-hard-code-id": false,
-    "no-refer-to-non-existent-id": false,
-    "no-use-event-handler-attr": false,
+    "label-has-control": {
+      "severity": "warning"
+    },
+    "no-orphaned-end-tag": true,
     "permitted-contents": true,
-    "required-attr": true,
     "required-element": true,
+    "require-datetime": true,
+    "required-attr": true,
     "required-h1": true,
-    "use-list": false,
-    "wai-aria": false
+    "table-row-column-alignment": true
   },
   "nodeRules": [
     {
       "selector": "meta[property]",
       "rules": {
         "invalid-attr": {
-          "option": {
-            "attrs": {
-              "property": {
-                "type": "Any"
-              },
-              "content": {
-                "type": "Any"
-              }
-            }
+          "options": {
+            "allowAttrs": ["property", "content"]
           }
         }
       }
     },
     {
-      "tagName": "meta",
+      "selector": "meta",
       "rules": {
         "required-attr": false
       }
     },
-      {
-        "tagName": "iframe",
-        "rules": {
-          "invalid-attr": false,
-          "required-attr": false
-        }
-      },
-      {
-        "selector": ".fb-like",
-        "rules": {
-          "invalid-attr": false,
-          "required-attr": false
+    {
+      "selector": "iframe",
+      "rules": {
+        "invalid-attr": false,
+        "required-attr": false,
+        "deprecated-attr": false
+      }
+    },
+    {
+      "selector": ".fb-like",
+      "rules": {
+        "invalid-attr": false,
+        "required-attr": false,
+        "deprecated-attr": false
+      }
+    },
+    {
+      "selector": ".l-main img",
+      "rules": {
+        "invalid-attr": {
+          "options": {
+            "disallowAttrs": [
+              "class"
+            ]
+          },
+          "severity": "warning",
+          "reason": "WordPress案件では .l-main内で imgに直接classをつけず親要素にclassをつけてください。"
         }
       }
-  ],
-    "childNodeRules": [
-      {
-        "selector": "svg",
-        "inheritance": true,
-        "rules": {
-          "invalid-attr": false,
-          "id-duplication": false,
-          "required-attr": false
+    },
+    {
+      "selector": "table",
+      "rules": {
+        "required-element": {
+          "value": ["tbody"],
+          "options": {
+            "ignoreOmittedElements": true
+          },
+          "severity": "warning",
+          "reason": "WordPress案件ではtable要素でtbody要素を省略できません。"
         }
-      },
-    ]
+      }
+    }
+  ],
+  "childNodeRules": [
+    {
+      "selector": "svg",
+      "inheritance": true,
+      "rules": {
+        "invalid-attr": false,
+        "id-duplication": false,
+        "required-attr": false
+      }
+    }
+  ]
 }

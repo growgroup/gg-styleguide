@@ -24,7 +24,7 @@
     "format:beautify-support": "node ./build/beautify-support.js",
     "make-admin-style": "postcss -o dist/assets/css/admin-style.css dist/assets/css/style.css",
     "prepend-selector-admin-style": "postcss -o dist/assets/css/admin-style.css dist/assets/css/admin-style.css",
-    "lint:html": "markuplint \"./dist/**/*.html\"",
+    "lint:html": "markuplint \"./dist/**/*.html\" --progressive-output --locale ja",
     "lint:scss": "stylelint \"./app/**/*.scss\" --fix",
     "lint": "run-s --continue-on-error lint:*"
   },
@@ -46,7 +46,7 @@
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.7.1",
     "js-beautify": "^1.15.4",
-    "markuplint": "^2.11.4",
+    "markuplint": "^5.0.0-rc.4",
     "mini-css-extract-plugin": "^2.9.2",
     "node-notifier": "^10.0.1",
     "node-sass-glob-importer": "^5.3.3",
