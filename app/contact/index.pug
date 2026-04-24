@@ -280,12 +280,12 @@ block body
                   span.c-forms__label 必須
                 +e.content
                   +e.flex-al.is-gap-lg
-                    +e("label").flex-al
-                      +e("span").flex-al-label 姓
-                      +e("span").input: input(type="text", name="last-name", placeholder="山田")
-                    +e("label").flex-al
-                      +e("span").flex-al-label 名
-                      +e("span").input: input(type="text", name="first-name", placeholder="太郎")
+                    +e.flex-al
+                      +e("label").flex-al-label(for="last-name") 姓
+                      +e.input: input(type="text", name="last-name", placeholder="山田")
+                    +e.flex-al
+                      +e("label").flex-al-label(for="first-name") 名
+                      +e.input: input(type="text", name="first-name", placeholder="太郎")
             +e.block
               +e("fieldset").fieldset
                 +e("legend").title
