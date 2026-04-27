@@ -280,12 +280,12 @@ block body
                   span.c-forms__label 必須
                 +e.content
                   +e.flex-al.is-gap-lg
-                    +e("label").flex-al
-                      +e("span").flex-al-label 姓
-                      +e.input: input(type="text", name="last-name", placeholder="山田")
-                    +e("label").flex-al
-                      +e("span").flex-al-label 名
-                      +e.input: input(type="text", name="first-name", placeholder="太郎")
+                    +e.flex-al
+                      +e("label").flex-al-label(for="last-name") 姓
+                      +e.input: input(type="text", name="last-name", placeholder="山田" id="last-name")
+                    +e.flex-al
+                      +e("label").flex-al-label(for="first-name") 名
+                      +e.input: input(type="text", name="first-name", placeholder="太郎" id="first-name")
             +e.block
               +e("fieldset").fieldset
                 +e("legend").title
@@ -293,10 +293,10 @@ block body
                   span.c-forms__label 必須
                 +e.content
                   +e.flex-al.is-gap-lg
-                    +e("label").flex-al
-                      +e("span").flex-al-label(for="last-kana-name") セイ
+                    +e.flex-al
+                      +e("label").flex-al-label(for="last-kana-name") セイ
                       +e.input: input(type="text", name="last-kana-name", placeholder="ヤマダ" , id="last-kana-name")
-                    +e("span").flex-al
+                    +e.flex-al
                       +e("label").flex-al-label(for="first-kana-name") メイ
                       +e.input: input(type="text", name="first-kana-name", placeholder="タロウ" , id="first-kana-name")
 
@@ -309,15 +309,15 @@ block body
                 +e.flex-al.is-gap-lg
                   +e("label").flex-al
                     //-+e.flex-al-label 西暦
-                    +e.input.is-sm
+                    +span.input.is-sm
                       input(type="text", name="birth-year", placeholder="1980")
                     +span.flex-al-unit 年
                   +e("label").flex-al
-                    +e.input.is-sm
+                    +span.input.is-sm
                       input(type="text", name="birth-month", placeholder="01")
                     +span.flex-al-unit 月
                   +e("label").flex-al
-                    +e.input.is-sm
+                    +span.input.is-sm
                       input(type="text", name="birth-day", placeholder="01")
                     +span.flex-al-unit 日
             +e.block
@@ -483,7 +483,7 @@ block body
 
 
   section.l-section.is-xlg
-    h1 タイプ2：横列組
+    h2 タイプ2：横列組
 
     .l-container
       //- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
