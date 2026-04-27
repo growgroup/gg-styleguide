@@ -9,9 +9,9 @@
 
 .l-section {
 
-  // height: rem-calc(nth($sectionDefault , 1));
+  // height: #{$sectionDefault[1] * 1px};
   // @include breakpoint(small down) {
-  //   height: rem-calc(nth($sectionDefault, 2));
+  //   height: #{$sectionDefault[2] * 1px};
   // }
 
   // サイズ設定
@@ -20,24 +20,24 @@
     $sp-value: nth($value, 2); // SP用
 
     &.is-#{$key} {
-      padding-top: rem-calc($pc-value);
-      padding-bottom: rem-calc($pc-value);
+      padding-top: #{$pc-value * 1px};
+      padding-bottom: #{$pc-value * 1px};
       @include breakpoint(small down) {
-        padding-top: rem-calc($sp-value);
-        padding-bottom: rem-calc($sp-value);
+        padding-top: #{$sp-value * 1px};
+        padding-bottom: #{$sp-value * 1px};
       }
 
       &-top {
-        padding-top: rem-calc($pc-value);
+        padding-top: #{$pc-value * 1px};
         @include breakpoint(small down) {
-          padding-top: rem-calc($sp-value);
+          padding-top: #{$sp-value * 1px};
         }
       }
 
       &-bottom {
-        padding-bottom: rem-calc($pc-value);
+        padding-bottom: #{$pc-value * 1px};
         @include breakpoint(small down) {
-          padding-bottom: rem-calc($sp-value);
+          padding-bottom: #{$sp-value * 1px};
         }
       }
     }

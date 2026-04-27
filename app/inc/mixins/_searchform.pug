@@ -1,4 +1,4 @@
-//- ヘッダーのサイト内検索フォーム部分
+//- ヘッダーのサイト内検索フォーム部分：デザインに合わせて変更
 mixin l_searchform()
   .l-searchform
     .l-searchform__overlay
@@ -8,7 +8,7 @@ mixin l_searchform()
           span.c-icon-font.l-searchform__close__icon close
         +c_searchform-bar("headerSearch").js-header-searchform-content
 
-//- サイト内共通の検索フォーム部分（ヘッダー、サイト内検索）
+//- サイト内共通の検索フォーム部分（ヘッダー、サイト内検索）：デザインに合わせて変更（/result/ の表示要確認）
 mixin c_searchform-bar(label)
   - var labeltext = label || "searchform"
   form.c-searchform-bar&attributes(attributes)

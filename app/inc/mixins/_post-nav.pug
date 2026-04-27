@@ -1,0 +1,13 @@
+//- 投稿ページナビゲーション: aタグのclass名・テキスト・アイコン箇所以外は通常変更しない
+//- 前後の記事へのリンク無しのときは使用しなくてOK
+mixin c_post_nav(listID)
+  -
+    if (typeof listID === "undefined") {
+      var listID = "news"
+    }
+    var path = config.rootpath + "/" + listID + "/";
+  nav.c-post-navs
+    ul
+      li.c-post-navs__prev: +a(path +"page/").c-button.is-sm.is-arrow-left 前の記事へ
+      li.c-post-navs__archive: +a(path).c-button.is-sm <span class="c-icon-font">list</span>記事一覧へ
+      li.c-post-navs__next: +a(path+"page/").c-button.is-sm 次の記事へ

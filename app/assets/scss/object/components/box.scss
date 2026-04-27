@@ -16,86 +16,11 @@ category: Components
 
     }
   }
-  &.is-number-left {
-    .c-box__block {
-      position: relative;
-      &::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 32px 33px 0 33px;
-        border-color: $color-primary transparent transparent transparent;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-50%,100%);
-        @include breakpoint(small only) {
-          border-width: 16px 16px 0 16px;
-        }
-      }
-    }
-    .c-box__number {
-      background-color: $color-primary;
-      color: $color-white;
-      width: 86px;
-      height: 86px;
-      text-align: center;
-      @include webfont();
-      position: absolute;
-      top: 0;
-      line-height: 1;
-      left: 0;
-      padding-top: 14px;
-      @include breakpoint(small only) {
-        width: 64px;
-        height: 64px;
-        padding-top: 10px;
-      }
-      small {
-        @include webfont();
-        font-size: 18px;
-        letter-spacing: 0.1em;
-        display: block;
-        @include breakpoint(small only) {
-          font-size: 14px;
-        }
-      }
-      span {
-        font-size: 42px;
-        letter-spacing: 0;
-        display: block;
-        @include breakpoint(small only) {
-          font-size: 32px;
-        }
-      }
-    }
-  }
+
+
   &__image {
     @include breakpoint(small only) {
       margin-bottom: 16px;
     }
-  }
-
-  //丸画像
-  &.is-roundimg {
-
-    .c-box__image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      position: relative;
-      @include center-block();
-      img {
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        @include center-both();
-      }
-    }
-
   }
 }

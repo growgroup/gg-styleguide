@@ -1,0 +1,159 @@
+//- メディアクエリ・コンテナクエリ用のmixinと関数の定義
+
+@use "sass:math";
+
+
+// ブレイクポイントのメディアクエリ文字列を返し、方向も返す関数
+@function breakpoint($val: small) {
+  $bp: nth($val, 1); // ブレイクポイントの値
+  $bp-max: 0; // 最大値の初期化
+  $dir: if(length($val) > 1, nth($val, 2), up); // 方向の設定
+  $named: false; // Namedフラグの初期化
+
+  // ブレイクポイントが文字列の場合
+  @if type-of($bp) == 'string' {
+    // ブレイクポイントが設定に存在する場合
+    @if map-has-key($breakpoints, $bp) {
+      // 方向が'only'または'down'の場合、最大値を設定
+      @if $dir == 'only' or $dir == 'down' {
+        $next-bp: map-next($breakpoints, $bp); // 次のブレイクポイントを取得
+        // 次のブレイクポイントがない場合の警告
+        @if $next-bp == null {
+          $bp-max: null;
+          @warn 'breakpoint(): the media query "#{$val}" cannot be used because #{$bp} is the largest breakpoint.';
+        }
+          // 次のブレイクポイントを最大値に設定
+        @else {
+          $bp-max: $next-bp;
+        }
+      }
+      $bp: map-get($breakpoints, $bp); // 現在のブレイクポイント値を取得
+      $named: true; // Namedフラグをtrueに設定
+    }
+      // ブレイクポイントが設定に存在しない場合
+    @else {
+      $bp: 0;
+    }
+  } @else {
+    // ブレイクポイントが数値の場合
+    @if $dir == 'only' or $dir == 'down' {
+      $bp-max: $bp;
+    }
+  }
+
+
+  // ブレイクポイント値をemに変換
+  @if $bp {
+    $bp: to-em($bp);
+  }
+
+  // ブレイクポイント最大値がある場合、emに変換
+  @if $bp-max {
+    $bp-max: to-em($bp-max);
+  }
+
+  // dir が upで bpが0の場合、dirを''に設定
+  @if $dir == 'up' and $bp <= 0em {
+    $dir: '';
+  }
+
+  // dir が onlyで bpが0の場合、dirをdownに設定
+  @if $dir == 'only' and $bp <= 0em {
+    $dir: 'down';
+  }
+
+  // 最終的なメディアクエリ文字列と方向をリストで返す
+  @return (
+    $bp,
+    $bp-max,
+    $dir
+  );
+}
+
+// ブレイクポイントのメディアクエリを出力するミキシン
+@mixin breakpoint($value) {
+  $result: breakpoint($value); // ブレイクポイントの値を取得
+  $bp: nth($result, 1); // サイズを取得
+  $bp-max: nth($result, 2); // サイズを取得2
+  $dir: nth($result, 3); // 方向を取得
+
+  // 方向指定なしの場合はそのまま内容を出力
+  @if $dir == '' {
+    @content;
+  } @else {
+    // メディアクエリがある場合、条件付きで内容を出力
+    @if $dir == 'only' {
+      @media screen and (#{$bp} <= width < #{$bp-max}) {
+        @content;
+      }
+    } @else if $dir == 'down' {
+      @media screen and (width < #{$bp-max}) {
+        @content;
+      }
+    } @else if $dir == 'up' {
+      @media screen and (width >= #{$bp}) {
+        @content;
+      }
+    }
+  }
+}
+
+// コンテナクエリのブレイクポイント関数
+@function container($val) {
+  $min: null;
+  $max: null;
+  $dir: null;
+
+  // 範囲指定 (最小値 + 最大値)
+  @if length($val) == 2 and type-of(nth($val, 1)) == 'number' and type-of(nth($val, 2)) == 'number' {
+    $min: to-rem(min(nth($val, 1), nth($val, 2)));
+    $max: to-rem(max(nth($val, 1), nth($val, 2)));
+    $dir: 'range';
+  }
+  // 数値 + 方向指定 (up または down)
+  @else if length($val) == 2 and type-of(nth($val, 1)) == 'number' and type-of(nth($val, 2)) == 'string' {
+    $bp: nth($val, 1);
+    $dir: nth($val, 2);
+
+    @if $dir == 'down' {
+      $max: to-rem($bp);
+    } @else if $dir == 'up' {
+      $min: to-rem($bp);
+    } @else {
+      @error 'container(): Direction must be "up" or "down".';
+    }
+  }
+  // 数値のみ (up をデフォルトに)
+  @else if length($val) == 1 and type-of(nth($val, 1)) == 'number' {
+    $min: to-rem(nth($val, 1));
+    $dir: 'up';
+  }
+  // 不正な入力の場合
+  @else {
+    @error 'container(): Invalid input. Provide one or two numbers, or a number with "up"/"down".';
+  }
+
+  @return ( $min, $max, $dir );
+}
+
+// コンテナクエリ用 Mixin
+@mixin container($value) {
+  $result: container($value);
+  $min: nth($result, 1);
+  $max: nth($result, 2);
+  $dir: nth($result, 3);
+
+  @if $dir == 'range' {
+    @container (#{$min} < width <= #{$max}) {
+      @content;
+    }
+  } @else if $dir == 'down' {
+    @container (width <= #{$max}) {
+      @content;
+    }
+  } @else if $dir == 'up' {
+    @container (width > #{$min}) {
+      @content;
+    }
+  }
+}

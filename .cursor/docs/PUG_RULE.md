@@ -20,7 +20,9 @@ app/
 │   │   ├── _aside.pug
 │   └── mixins/            # mixin定義ファイル
 │       ├── _mixins.pug    # 全mixinをincludeするエントリポイント
+│       ├── _utility.pug   # 汎用ユーティリティmixin（+loop など）
 │       ├── _cssrules.pug  # BEM命名用mixin（+c, +e, +l など）
+│       ├── _tags.pug      # 基本タグmixin（+a, +img, +picture など）
 │       ├── _misc.pug      # 汎用コンポーネントmixin
 │       └── ...
 ├── format/                # デザインフォーマット確認用
@@ -123,7 +125,7 @@ block aside //- サイドバー
 
 このプロジェクトにはリンク用mixinが2種類あります。
 
-- `+a(href, autoTarget)`（`/inc/mixins/_anchor.pug`）
+- `+a(href, autoTarget)`（`/inc/mixins/_tags.pug`）
   パス解決（`config.rootpath` の付与）と、target属性の自動設定を行う通常のリンクです。クラスは通常どおり指定します。
 - `+ae(href, autoTarget)`（`/inc/mixins/_cssrules.pug`）
   `+a` と同じ挙動に加えて、`+c/+e` の文脈で **BEMクラスを継承**します（`.link` 等の指定から `c-xxx__link` を自動生成）。
@@ -164,7 +166,7 @@ block aside //- サイドバー
 
 ---
 
-## 4. 基本タグMixin（misc.pug）
+## 4. 基本タグMixin（tags.pug）
 
 ### 4.1 画像 `+img`
 
@@ -196,14 +198,14 @@ block aside //- サイドバー
 
 ---
 
-## 5. 汎用コンポーネントMixin（misc.pug）
+## 5. 汎用コンポーネントMixin（misc.pug / utility.pug / scrollable.pug）
 
 よく使うコンポーネントのmixinが定義されています。
 
+- `+loop` は `/inc/mixins/_utility.pug`
+- `+c_scrollable` は `/inc/mixins/_scrollable.pug`
 
 ```pug
-
-
 //- ループ
 +loop(10)
   p ループコンテンツ
@@ -304,4 +306,7 @@ block aside
 ## 9. 参考ファイル
 
 - `/format/index.pug` - デザインフォーマット確認用（頻出レイアウト・パーツ・メインコンポーネントのまとめ領域）
+- `/inc/mixins/_utility.pug` - 汎用ユーティリティmixin定義（`+loop` など）
+- `/inc/mixins/_tags.pug` - 基本タグmixin定義（`+a`, `+img`, `+picture` など）
+- `/inc/mixins/_scrollable.pug` - スクロール可能領域mixin定義（`+c_scrollable`）
 - `/inc/mixins/_misc.pug` - 汎用mixin定義

@@ -1,11 +1,11 @@
-//- 矢印アイコン
+//- 矢印アイコン：デザインに合わせて変更OK
 mixin c_breadcrumb_arrow()
   span.is-arrow
     span.c-icon-font
       | chevron_right
 
 
-//- パンくずリスト
+//- パンくずリスト：通常は変更しない
 mixin c_breadcrumb(props, cache)
 
   if cache && cache.count === props.paths.length

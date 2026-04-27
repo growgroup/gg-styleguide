@@ -2,11 +2,11 @@
 
 .u-mbs {
 
-  margin-top: rem-calc(nth($marginDefault, 1));
-  margin-bottom: rem-calc(nth($marginDefault, 1));
+  margin-top: #{nth($marginDefault, 1) * 1px};
+  margin-bottom: #{nth($marginDefault, 1) * 1px};
   @include breakpoint(small down) {
-    margin-top: rem-calc(nth($marginDefault, 2));
-    margin-bottom: rem-calc(nth($marginDefault, 2));
+    margin-top: #{nth($marginDefault, 2) * 1px};
+    margin-bottom: #{nth($marginDefault, 2) * 1px};
   }
 
   // サイズ設定
@@ -15,11 +15,11 @@
     $sp-value: nth($value, 2); // SP用
 
     &.is-#{$key} {
-      margin-top: rem-calc($pc-value);
-      margin-bottom: rem-calc($pc-value);
+      margin-top: #{$pc-value * 1px};
+      margin-bottom: #{$pc-value * 1px};
       @include breakpoint(small down) {
-        margin-top: rem-calc($sp-value);
-        margin-bottom: rem-calc($sp-value);
+        margin-top: #{$sp-value * 1px};
+        margin-bottom: #{$sp-value * 1px};
       }
     }
   }

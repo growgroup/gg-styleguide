@@ -15,7 +15,7 @@
 
     a {
       text-decoration: none;
-      @include font-format(20, 0, 32, bold);
+      font-size: 20px;
       color: $font-base-color;
       position: relative;
       padding-bottom: 10px;
@@ -109,7 +109,7 @@
     }
 
     a {
-      @include font-format(16, 0, 25, normal);
+      font-size: 16px;
       border-bottom: none;
       padding: 0;
 
@@ -129,7 +129,7 @@
 
 
       a {
-        @include font-format(13, 0, 28, normal);
+        font-size: 13px;
         &:before {
           content: "-";
           display: inline-block;

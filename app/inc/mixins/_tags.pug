@@ -1,0 +1,103 @@
+//- link タグ
+mixin link(href)
+  link(href=config.rootpath + href)&attributes(attributes)
+
+//- script タグ
+mixin script(src)
+  script(src=config.rootpath + src)&attributes(attributes)
+
+//- a タグ
+  +a("https://example.com")
+  →　-<a href="https://example.com" target="_blank"></a>
+  +a("/assets/files/sample.pdf")
+  →　<a href="/assets/files/sample.pdf" target="_blank"></a>
+  +a("/format/")
+  →　<a href="/format/"></a>
+  +a("https://example.com",false)
+  →　<a href="https://example.com"></a>
+  +a("/format/",'blank') または +a("/format/")(target="_blank")
+  →　<a href="/format/" target="_blank"></a>
+mixin a(href,autoTarget)
+  -
+    if (autoTarget === undefined) {//autoTargetが未定義の場合はtrueとする
+      autoTarget = true;
+    }
+    href = setHrefValue(href);//hrefの値に応じてconfig.rootpathを付与する
+    if (autoTarget) {//autoTargetがtrueの場合はtarget属性を設定する
+      target = setTargetValue(href, autoTarget);
+    }
+  a(href!= href target!=target)&attributes(attributes)
+    block
+
+//- external link
+//- DEPRECATED: Use `a(href)`
+mixin a-ex(href)
+  - href = setHrefValue(href);
+  a(href!= href target="_blank")&attributes(attributes)
+    block
+
+
+//- img タグ
+mixin img(file,alt,width,height)
+  -
+    src = setSrcValue(file, "/assets/images/")
+  -
+    if ( typeof alt === "undefined" ){
+    var alt = ""
+    }
+  img(src=src, alt!=alt, width!=width, height!=height)&attributes(attributes)
+
+//- picture タグ
+//-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 750, 750)
+//-PC/SPでaspect比共通ならSP用のwidthとheightは不要
+mixin picture(opts)
+  -
+    opts = opts || {}
+    var pc = opts.pc || "",
+      sp = opts.sp || "",
+      alt = opts.alt || "",
+      width = opts.width || null,
+      height = opts.height || null,
+      widthSp = opts.widthSp || null,
+      heightSp = opts.heightSp || null,
+      media = opts.media || "",
+      fetchpriority = opts.fetchpriority || null
+
+  -
+    pc = setSrcValue(pc, "/assets/images/")
+    sp = setSrcValue(sp, "/assets/images/")
+
+  -
+    if (!media || media === "") {
+      media = '(width < 46.875em)'
+    } else if (media === "medium") {
+      media = '(width < 59.375em)'
+    }
+
+  picture&attributes(attributes)
+    source(
+      srcset=sp
+      media!=media
+      width!=widthSp
+      height!=heightSp
+    )
+    img(
+      src=pc
+      alt=alt
+      width!=width
+      height!=height
+      fetchpriority!=fetchpriority
+    )
+
+//- video タグ
+mixin video(file)
+  -
+    file = setSrcValue(file, "/assets/files/")
+  video(src=file)&attributes(attributes)
+
+//- 背景画像
+mixin bgimg(file)
+  -
+    file = setSrcValue(file, "/assets/images/")
+  div(style="background-image: url(" + file + ")")&attributes(attributes)
+    block

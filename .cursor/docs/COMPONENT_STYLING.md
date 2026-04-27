@@ -76,7 +76,7 @@
 
 **Figmaのローカル「テキストスタイル」が指定されている場合**
 
-Figma側で「ローカルスタイル（Text Styles）」が当たっているときは、値を直書きせず、**対応するテキストmixin** を使って統一します（`app/assets/scss/foundation/_mixin.scss`）。
+Figma側で「ローカルスタイル（Text Styles）」が当たっているとき、**対応するテキストmixin** があれば値を直書きせず、mixinを使って統一します（`app/assets/scss/foundation/` 配下のmixin群を優先）。
 
 #### 5.4 レスポンシブ（breakpoint mixin）
 
