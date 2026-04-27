@@ -1,0 +1,215 @@
+.c-gallery-image {
+
+  //============================
+  // メインスライダー
+  //============================
+
+  &__main-slider-outer {
+    position: relative;
+  }
+
+  &__main-slider {
+
+
+  }
+
+
+  &__main-slider-item {}
+
+  &__main-slider-image {
+    aspect-ratio: 944 / 300;
+    overflow: hidden;
+
+    img {
+      @include img-option();
+    }
+  }
+
+  &__main-slider-caption {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  &__main-slider:not(.swiper-initialized) + &__main-slider-nav {
+    display: none;
+  }
+
+  &__main-slider-nav {
+    aspect-ratio: 944 / 300;//*メインスライダーのアスペクト比にあわせる
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__main-slider-prev,
+  &__main-slider-next {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-radius: 4px;
+    width: 38px;
+    height: 148px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 10;
+    @include transition-colors();
+
+    @include hover() {
+      background-color: rgba($color-white, 0.8);
+    }
+
+    @include breakpoint(small only) {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+    }
+
+
+    &::before {
+      content: "chevron_right";
+      @include icon-font();
+      color: $color-primary;
+    }
+  }
+
+  &__main-slider-prev {
+    left: 0;
+
+    @include breakpoint(small only) {
+      left: -20px;
+    }
+
+    &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__main-slider-next {
+    right: 0;
+
+    @include breakpoint(small only) {
+      right: -20px;
+    }
+  }
+
+
+  //============================
+  // サムネイルスライダー
+  //============================
+
+  &__thumbnail-slider-outer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    &:not(:has(.swiper-initialized)) {
+
+      .c-gallery-image__thumbnail-slider-prev,
+      .c-gallery-image__thumbnail-slider-next {
+        display: none;
+      }
+    }
+  }
+
+  &__thumbnail-slider {
+    width: calc(100% - 100px);
+    margin: 0;
+    order: 2;
+    padding:2px;
+
+    @include breakpoint(small down) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__thumbnail-slider-wrapper {
+    display: flex;
+    gap: 4px;
+
+    @at-root .swiper-initialized & {
+      gap: 0;
+    }
+  }
+
+  &__thumbnail-slider-item {
+    width: calc(100% / 6 - (4px / 6 * 5));/* 6枚のサムネイルを表示するための幅 */
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    @at-root .swiper-initialized & {
+      width: initial;
+    }
+
+    &.swiper-slide-active,
+    &.swiper-slide-duplicate-active {
+      opacity: 1;
+      box-shadow: 0 0 0 2px $color-black;
+    }
+  }
+
+  &__thumbnail-slider-image {
+    aspect-ratio: 120 / 60;
+    overflow: hidden;
+
+    @include breakpoint(small down) {
+      aspect-ratio: 4/3;
+    }
+
+    img {
+      @include img-option();
+    }
+  }
+
+  &__thumbnail-slider-prev,
+  &__thumbnail-slider-next {
+    @include breakpoint(small down) {
+      display: none;
+    }
+
+    &.swiper-button-lock {
+      display: none;
+    }
+  }
+
+  &__thumbnail-slider-prev,
+  &__thumbnail-slider-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+
+    &::before {
+      content: "chevron_right";
+      @include icon-font();
+      color: $color-primary;
+    }
+
+  }
+
+  &__thumbnail-slider-prev {
+    order: 1;
+
+    &::before {
+      scale: -1 1;
+    }
+  }
+
+  &__thumbnail-slider-next {
+    order: 3;
+  }
+}

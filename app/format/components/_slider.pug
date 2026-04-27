@@ -1,0 +1,82 @@
+h3 カードスライダー
+div.u-mbs.is-bottom
+  +c.card.js-card-slider.swiper
+    +e.slider.swiper-wrapper
+      +loop(4)
+        +e.block.swiper-slide
+          +e.image: +img("img-card-01.jpg","",712,420)
+          +e.content
+            h3.c-card__title 一次停止ボタンサンプル
+            p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+    +e.slider-nav
+      +button.button-prev.js-card-slider-prev < 前へ
+      +button.button-next.js-card-slider-next > 次へ
+    +e.slider-pagination.js-card-slider-pagination
+    +button.button-pause.js-card-slider-pause pause
+
+div.u-mbs.is-bottom
+  +c.card.js-card-slider.swiper
+    +e.slider.swiper-wrapper
+      +loop(2)
+        +e.block.swiper-slide
+          +e.image: +img("img-card-01.jpg","",712,420)
+          +e.content
+            h3.c-card__title スマホでスライダーになるサンプル
+            p.c-card__text ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+
+    +e.slider-nav
+      +button.button-prev.js-card-slider-prev < 前へ
+      +button.button-next.js-card-slider-next > 次へ
+    +e.slider-pagination.js-card-slider-pagination
+
+  h3 横に流れ続けるスライダー（小さい画像やテキストを自動複製したいとき）
+  div.u-mbs.is-bottom
+    +c.gallery-text.js-infinite-slider(data-infinite-speed="10000")
+      +e.track.js-infinite-slider-track
+        +e.item TEXTGALLERY
+
+    +c.gallery-logo.js-infinite-slider(data-infinite-speed="5000")
+      +e.track.js-infinite-slider-track
+        for num in [1,2]
+          - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+          +e.image: +img(img)
+
+    +c.gallery-logo.js-infinite-slider(data-infinite-speed="5000" data-infinite-direction="reverse")
+      +e.track.js-infinite-slider-track
+        for num in [1,2,3,4,5,6]
+          - var img = "https://placehold.jp/3d4070/ffffff/300x80.png?text=" + num + ".png"
+          +e.image: +img(img)
+
+h3 横に流れ続けるスライダー（大きい画像1点を動かしたいとき:CSS）
+div.u-mbs.is-bottom
+  +c.image-loop
+    +bgimg("img-sample.jpg").bg-img
+
+
+h3 サムネイル付きギャラリー
+.l-container.is-sm
+  +c.gallery-image.js-gallery-image-group
+    +e.main-slider-outer
+      +e.main-slider.swiper.js-gallery-image-main
+        +e.main-slider-wrapper.swiper-wrapper
+          +loop(7)
+            +e.main-slider-item.swiper-slide
+              +e.main-slider-image
+                +img("img-card-01.jpg")
+
+      +e.main-slider-nav
+        +button.main-slider-prev.js-gallery-image-main-prev(aria-label="前へ")
+        +button.main-slider-next.js-gallery-image-main-next(aria-label="次へ")
+
+    +e.thumbnail-slider-outer
+      +e.thumbnail-slider.swiper.js-gallery-image-thumbnail
+        +e.thumbnail-slider-wrapper.swiper-wrapper
+          +loop(7)
+            +e.thumbnail-slider-item.swiper-slide
+              +e.thumbnail-slider-image
+                +img("img-card-01.jpg")
+
+      +button.thumbnail-slider-prev.js-gallery-image-thumbnail-prev.c-button-icon.is-sm(aria-label="前へ")
+      +button.thumbnail-slider-next.js-gallery-image-thumbnail-next.c-button-icon.is-sm(aria-label="次へ")
+

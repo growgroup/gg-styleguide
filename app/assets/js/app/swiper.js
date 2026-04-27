@@ -77,6 +77,7 @@ export default class SwiperSlider {
       this.MainVisualSlider(); //->メインビジュアル
       this.runCardSlider(); //->カードスライダー
       this.documentSlider(); //->ドキュメントスライダー
+      this.galleryImageSlider(); //->ギャラリーイメージスライダー
     });
   }
 
@@ -101,6 +102,7 @@ export default class SwiperSlider {
     // const next = document.querySelector(targetSelector + '-next');
     const pagination = document.querySelector(targetSelector + '-pagination');
     const bar = document.querySelector(targetSelector + '-bar span');
+    const pause = document.querySelector(targetSelector + '-pause');
     const delayTime = 4000;
 
     const swiper = new Swiper(targetSelector, {
@@ -131,6 +133,22 @@ export default class SwiperSlider {
         },
       },
     });
+
+    //★ポーズボタン実装があるとき
+    if (pause) {
+      pause.addEventListener('click', () => {
+        if (!swiper || !swiper.autoplay) return;
+        if (swiper.autoplay.running) {
+          swiper.autoplay.stop();
+          pause.innerHTML = 'play';
+          pause.classList.add('is-active');
+        } else {
+          swiper.autoplay.start();
+          pause.innerHTML = 'pause';
+          pause.classList.remove('is-active');
+        }
+      });
+    }
   }
 
 
@@ -158,6 +176,13 @@ export default class SwiperSlider {
       loop: true,
       // loopedSlidesLimit:false, //スライドの複製を無制限にする
       // loopedSlides: 2, //スライドの複製数を指定する
+
+      //*ポーズボタンのサンプル用に自動再生を設定しています。要件になければ削除してください。
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+
       navigation: {
         nextEl: next,
         prevEl: prev,
@@ -219,6 +244,24 @@ export default class SwiperSlider {
           swiper = this.initCardSlider(slider, 4);
         }
       );
+
+      //★ポーズボタン実装があるとき
+      const pause = slider.querySelector('.js-card-slider-pause');
+      if (pause) {
+        pause.addEventListener('click', () => {
+          if (!swiper || !swiper.autoplay) return;
+          if (swiper.autoplay.running) {
+            swiper.autoplay.stop();
+            pause.innerHTML = 'play';
+            pause.classList.add('is-active');
+          } else {
+            pause.classList.remove('is-active');
+            pause.innerHTML = 'pause';
+            swiper.autoplay.start();
+          }
+        });
+      }
+
     });
   }
 
@@ -269,4 +312,117 @@ export default class SwiperSlider {
   }
 
 
+  // サムネイルもメイン部分も両方スライドするギャラリーのサンプル
+  galleryImageSlider() {
+    const mainMinSlides = 2;
+    const thumbnailMinSlides = 7;
+
+    const galleryGroupSelector = '.js-gallery-image-group';
+    const galleryGroup = document.querySelectorAll(galleryGroupSelector);
+
+    galleryGroup.forEach(group => {
+      const mainTarget = group.querySelector('.js-gallery-image-main');
+      const thumbnailTarget = group.querySelector('.js-gallery-image-thumbnail');
+      const mainPrev = group.querySelector('.js-gallery-image-main-prev');
+      const mainNext = group.querySelector('.js-gallery-image-main-next');
+      const thumbnailPrev = group.querySelector('.js-gallery-image-thumbnail-prev');
+      const thumbnailNext = group.querySelector('.js-gallery-image-thumbnail-next');
+      const mainTargetSlides = mainTarget.querySelectorAll('.swiper-slide');
+      const thumbnailTargetSlides = thumbnailTarget.querySelectorAll('.swiper-slide');
+      let thumbnailLoop = true;
+
+      //メインスライドが少ない場合はそもそも発火しない（サムネイルの方はまた別）
+      if (mainTargetSlides.length < mainMinSlides) {
+        return;
+      }
+
+
+      //メイン側のスライダーを初期化
+      const mainSwiper = new Swiper(mainTarget, {
+        speed: 500,
+        loop: true,
+        loopedSlides: mainTargetSlides.length,
+        slidesPerView: 1,
+        spaceBetween: 4,
+        threshold: 10,
+        navigation: {
+          nextEl: mainNext,
+          prevEl: mainPrev,
+        },
+      });
+
+
+      //サムネイル側のスライダーを初期化
+      if (thumbnailTargetSlides.length >= thumbnailMinSlides) {
+        const thumbnailSwiper = new Swiper(thumbnailTarget, {
+          speed: 500,
+          loop: thumbnailLoop,
+          threshold: 10,
+          slidesPerView: 6,
+
+          slideToClickedSlide: true,
+          spaceBetween: 4,
+          // centeredSlides: true,
+          loopedSlidesLimit: false, //スライドの複製を無制限にする
+          loopedSlides: mainTargetSlides.length, //メインスライダーと同じ複製数に設定
+          controller: {
+            control: mainSwiper,
+          },
+          navigation: {
+            nextEl: thumbnailNext,
+            prevEl: thumbnailPrev,
+          },
+        });
+
+        mainSwiper.controller.control = thumbnailSwiper;
+
+      }
+      else {
+        //サムネイルスライダーの1枚目にactiveクラスを付与する
+        thumbnailTargetSlides[0].classList.add('swiper-slide-active');
+
+        //サムネイルスライダーを初期化せずに、サムネイルリストをクリックしたらメインスライダーを切り替えるようにする
+        thumbnailTargetSlides.forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+            mainSwiper.slideTo(index);
+            thumbnailTargetSlides.forEach((slide, index) => {
+              slide.classList.toggle('swiper-slide-active', index === current);
+            });
+          });
+        });
+        //メインスライダーが切り替わったらサムネイルスライダーを更新する
+        mainSwiper.on('slideChange', () => {
+          const current = mainSwiper.realIndex;
+          thumbnailTargetSlides.forEach((slide, index) => {
+            slide.classList.toggle('swiper-slide-active', index === current);
+          });
+        });
+      }
+
+      // 自動再生するタイプだともしかして以下いるかも
+      // サムネイルスライダーのスライドをクリックした時に実行
+      // thumbnailTarget.addEventListener('click', () => {
+      //   setTimeout(() => {
+      //     thumbnailSwiper.autoplay.start();
+      //   }, 3000);
+      // });
+
+      // メインスライダーを手動で切り替えた時に実行
+      // mainSwiper.on('touchEnd', () => {
+      //   slideChangePermit = true;
+      // });
+
+      // mainSwiper.on('slideChange', () => {
+      //   if (slideChangePermit) {
+      //     const current = mainSwiper.realIndex;
+      //     thumbnailSwiper.slideTo(current);
+      //     setTimeout(() => {
+      //       thumbnailSwiper.autoplay.start();
+      //     }, 3000);
+      //     slideChangePermit = false;
+      //   }
+      // });
+
+    });
+  }
 }
