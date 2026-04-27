@@ -17,6 +17,9 @@
   @include breakpoint(medium down) {
     --header-height: #{$header-height-sp * 1px};
   }
+
+  // 100vwがスクロールバーを含まずに計算されるようになる
+  scrollbar-gutter: stable;
 }
 
 /**
