@@ -64,7 +64,10 @@ block under_main
 
 // -----------------------------------------------------------------------------
 // 2カラムレイアウト全文（_base-twocolumn.pug 用）
-// 置換: {{extendsPath}} {{configBlock}} {{pageHeaderBlock}} のみ。block body / aside 等は自由に記述可。
+// 置換: {{extendsPath}} {{configBlock}} {{pageHeaderBlock}} のみ。
+// block body / aside / l-main_top / l-main_bottom 等は自由に記述可。
+// l-main_top / l-main_bottom は .l-main 内（.l-two-column の上下）に出力される枠。
+// ページ固有コンテンツを .l-main の外へ誤配置する事故を防ぐ目的であらかじめ用意。
 // -----------------------------------------------------------------------------
 const twoColumn = `extends {{extendsPath}}
 {{configBlock}}
@@ -74,12 +77,18 @@ block layout_params
 
 {{pageHeaderBlock}}
 
+block l-main_top
+  //- ページ固有のコンテンツかつ2カラムの上に出したいコンテンツをここに記述
+
 block body
   section.l-section.is-md
     .l-container
 
 block aside
   +l-aside()
+
+block l-main_bottom
+  //- ページ固有のコンテンツかつ2カラムの下に出したいコンテンツをここに記述
 `;
 
 // -----------------------------------------------------------------------------
