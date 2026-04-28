@@ -6,8 +6,8 @@
 
 
 .c-slidebar-menu {
-  height: calc(100vh - #{$slidebar-header-height}px);
-  padding: 0 0 104px;
+  height: calc(100dvh - #{$slidebar-header-height}px);
+  padding: 0;
   position: fixed;
   background-color: $slidebar-menu-bg;
   z-index: 9980;
