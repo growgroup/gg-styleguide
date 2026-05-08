@@ -301,31 +301,31 @@
 // c-list-ol （.c-list.is-outline）
 @mixin c-list-ol { //l-post-content 用に > が必要
   counter-reset: list-counter;
+  padding-left: 16px;
+
 
   > li {
-    padding-left: 16px;
-
     &::before {
       content: counter(list-counter) ".";
       counter-increment: list-counter;
-      width: 16px;
-      height: 1lh;
+      position: absolute;
+      translate: -100% 0;
     }
   }
 
   //l-post-content 用に > を使ったので ol > liも必要
   ol {
     counter-reset: list-counter;
+    padding-left: 16px;
 
     > li {
-      padding-left: 16px;
 
       &::before {
-        //content: counters(list-counter, "-")".";//2-1のようなカウンター用
+        // content: counters(list-counter, "-")".";//2-1のようなカウンター用
         content: counter(list-counter) ".";
         counter-increment: list-counter;
-        width: 16px;
-        height: 1lh;
+        position: absolute;
+        translate: -100% 0;
       }
     }
   }
