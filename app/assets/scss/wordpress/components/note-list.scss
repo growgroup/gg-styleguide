@@ -1,0 +1,36 @@
+.c-note-list {
+  padding-left: 1em;
+
+  li {
+    position: relative;
+
+    padding-left: initial; //* l-post-content内のul/ol用スタイルの打ち消し */
+
+    &::before {
+      content: "※";
+      position: absolute;
+      translate: -100% 0;
+
+      //* l-post-content内のul/ol用スタイルの打ち消し */
+      width: auto;
+      height: auto;
+      aspect-ratio: auto;
+      background-color: transparent;
+      border-radius: 0;
+      inset: initial;
+    }
+  }
+
+  &.is-number {
+    counter-reset: note-list;
+    padding-left: 1.8em;
+
+    li {
+      &::before {
+        content: "※" counter(note-list);
+        padding-right: 0.2em;
+        counter-increment: note-list;
+      }
+    }
+  }
+}
