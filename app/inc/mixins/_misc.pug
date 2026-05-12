@@ -63,28 +63,30 @@ mixin c_news-lg__block(data)
       +ae(item.url).block
         if item.img
           +e.block-image: +img(item.img)
-        +e.block-content
-          +e.block-data
-            +e.block-date !{item.date}
-            +e.block-label
-              each label in item.label
-                span.c-label !{label}
-          +e.block-text !{item.title}
-          +e.block-excerpt !{item.excerpt}
-        +e.block-icon
-          span.c-icon-font !{item.icon}
+        +e.block-content-wrapper
+          +e.block-content
+            +e.block-data
+              +e.block-date !{item.date}
+              +e.block-label
+                each label in item.label
+                  span.c-label !{label}
+            +e.block-text !{item.title}
+            +e.block-excerpt !{item.excerpt}
+          +e.block-icon
+            span.c-icon-font !{item.icon}
     else
       +e.block
         if item.img
           +e.block-image: +img(item.img)
-        +e.block-content
-          +e.block-data
-            +e.block-date !{item.date}
-            +e.block-label
-              each label in item.label
-                span.c-label !{label}
-          +e.block-text !{item.title}
-          +e.block-excerpt !{item.excerpt}
+        +e.block-content-wrapper
+          +e.block-content
+            +e.block-data
+              +e.block-date !{item.date}
+              +e.block-label
+                each label in item.label
+                  span.c-label !{label}
+            +e.block-text !{item.title}
+            +e.block-excerpt !{item.excerpt}
 
 
 
