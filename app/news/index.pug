@@ -98,14 +98,33 @@ block body
               li: +a("/news/category/") 2019年01月
               li: +a("/news/category/") 2019年01月
               li: +a("/news/category/") 2019年01月
-        +c.news-lg.u-mbs.is-top.is-lg
-          +loop(5)
-            +a("/news/category/page/").c-news-lg__block
-              +e.sup
-                +e.label.c-label.is-sm お知らせ
-                +e.date 2018.06.01
-              +e.title お知らせの投稿タイトルがここに入ります。
-              +e.excerpt 簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト＜続きを読む＞
+        .u-mbs.is-top.is-lg
+        +c.news-lg
+          +c_news-lg__block([
+            {
+              url: "/news/category/page/",
+              date: "2022.01.01",
+              label: ["カテゴリ"],
+              title: "お知らせの投稿タイトルがここに入ります。",
+              excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+              icon: "arrow_forward",
+            },
+            {
+              url: "/news/category/page/",
+              img: "img-sample.jpg",
+              date: "2022.01.01",
+              label: ["カテゴリ","カテゴリ2"],
+              title: "お知らせの投稿タイトルがここに入ります。",
+              excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+              icon: "arrow_forward",
+            },
+            {
+              date: "2022.01.01",
+              label: ["カテゴリ","カテゴリ2"],
+              title: "リンク無しのテスト",
+            },
+            undefined
+          ])
         +c_pagination().is-align-left
 
         +c.card-post.is-tag-hidden.u-mbs.is-top.is-lg

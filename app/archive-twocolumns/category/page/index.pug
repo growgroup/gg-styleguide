@@ -148,23 +148,37 @@ block body
       hr.c-hr
       +c_post_nav("post-twocolumns")
       h3 関連コンテンツ
-      +c.news-lg.is-image-display
-        +a("#").c-news-lg__block
-          +e.image: +img("img-thumbnail-01.jpg")
-          +e.content
-            +e.sup
-              +e.label.c-label.is-sm お知らせ
-              +e.date 2018.06.01
-            +e.title お知らせの投稿タイトルがここに入ります。
-            +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
-        +a("#").c-news-lg__block
-          +e.image: +img("img-thumbnail-01.jpg")
-          +e.content
-            +e.sup
-              +e.label.c-label.is-sm お知らせ
-              +e.date 2018.06.01
-            +e.title お知らせの投稿タイトルがここに入ります。
-            +e.excerpt 本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本文内容の一文が抜粋されてここに掲載を行います。本…[続きを見る]
+      +c.news-lg
+        +c_news-lg__block([
+          {
+            url: "/archive-twocolumns/category/page/",
+            img: "img-sample.jpg",
+            date: "2022.01.01",
+            label: ["カテゴリ"],
+            title: "お知らせの投稿タイトルがここに入ります。",
+            excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+            icon: "arrow_forward",
+          },
+          {
+            url: "/archive-twocolumns/category/page/",
+            img: "img-sample.jpg",
+            date: "2022.01.01",
+            label: ["カテゴリ"],
+            title: "お知らせの投稿タイトルがここに入ります。",
+            excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+            icon: "arrow_forward",
+          },
+          {
+            url: "/archive-twocolumns/category/page/",
+            img: "img-sample.jpg",
+            date: "2022.01.01",
+            label: ["カテゴリ"],
+            title: "お知らせの投稿タイトルがここに入ります。",
+            excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+            icon: "arrow_forward",
+          }
+        ])
+
       div.u-mbs.is-top.is-lg
         +c.card-post.is-tag-hidden
           +loop(3)
