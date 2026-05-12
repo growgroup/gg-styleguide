@@ -1,0 +1,95 @@
+
+.c-form-head{
+  &__block{
+    display: flex;
+    justify-content: space-between;
+    @mixin breakpoint medium down {
+      display: block;
+    }
+  }
+
+  &__title{
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    line-height: sass-div(42, 24)*1;
+    margin-top: 0;
+    @mixin breakpoint medium down {
+      font-size: 18px;
+    }
+  }
+
+  &__list{
+    display: flex;
+    @mixin breakpoint medium down {
+      justify-content: center;
+      margin-top: 24px;
+    }
+  }
+
+  &__item{
+    padding-left: 70px;
+    position: relative;
+    @mixin breakpoint medium down {
+      padding-left: 30px;
+    }
+    &:first-of-type{
+      padding-left: 0px;
+      &::before{
+        display: none;
+      }
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 0;
+      margin:auto;
+      width: 35px;
+      height: 1px;
+      transform: translateX(50%);
+      background: $color-primary;
+      @mixin breakpoint medium down {
+        width: 15px;
+      }
+    }
+    &-number{
+      width: 30px;
+      height: 30px;
+      color: $color-white;
+      background: $color-gray;
+      border-radius: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      margin:auto;
+      @mixin breakpoint medium down {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+      }
+    }
+    &-text{
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      line-height: sass-div(24, 14)*1;
+      margin-top: 10px;
+      @mixin breakpoint medium down {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.c-form-head{
+  &__item{
+    &.is-current{
+      .c-form-head__item-number{
+        background: $color-primary;
+      }
+      .c-form-head__item-text{
+        color: $color-primary;
+      }
+    }
+  }
+}

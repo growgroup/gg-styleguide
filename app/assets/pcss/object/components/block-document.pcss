@@ -1,0 +1,31 @@
+.c-block-document {
+  display: grid;
+  grid-template-columns: 660fr 480fr;
+
+  @mixin breakpoint medium down {
+    grid-template-columns: 1fr;
+  }
+
+  &__detail {
+    background: $color-white;
+    padding: 56px calc(62/1140*100%);
+
+    @mixin breakpoint medium down {
+      width: 100%;
+      padding: 40px 32px;
+    }
+
+    @mixin breakpoint small only {
+      padding: 24px 20px;
+    }
+  }
+
+  &__form {
+    background: #DEE0E3;
+
+    .c-forms {
+      background: transparent;
+      width: 100%;
+    }
+  }
+}

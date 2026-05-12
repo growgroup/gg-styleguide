@@ -1,0 +1,29 @@
+/*
+---
+name: <table> テーブル
+category: Base
+---
+*/
+.c-table {
+  @mixin c-table;
+
+  &.is-th-bgcolor {
+    tbody {
+      th,
+      td {
+        padding: 13px 24px;
+      }
+    }
+
+    th {
+      color: $font-base-color;
+      width: 236px;
+      position: relative;
+      background-color: $color-secondary;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

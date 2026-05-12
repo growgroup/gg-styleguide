@@ -1,0 +1,98 @@
+// セクション
+//
+// セクションのスタイル
+//
+// markup:
+// <div class="l-section [is-lg | is-md | is-sm | is-bottom | is-top]"></div>
+//
+// Styleguide 5.3.0
+
+.l-section {
+
+  // height: #{$sectionDefault[1] * 1px};
+  // @mixin breakpoint small down {
+  //   height: #{$sectionDefault[2] * 1px};
+  // }
+
+  &.is-xlg { padding-block: 120px; }
+  &.is-lg { padding-block: 100px; }
+  &.is-md { padding-block: 80px; }
+  &.is-sm { padding-block: 64px; }
+  &.is-xs { padding-block: 32px; }
+
+  &.is-xlg-top { padding-top: 120px; }
+  &.is-lg-top { padding-top: 100px; }
+  &.is-md-top { padding-top: 80px; }
+  &.is-sm-top { padding-top: 64px; }
+  &.is-xs-top { padding-top: 32px; }
+
+  &.is-xlg-bottom { padding-bottom: 120px; }
+  &.is-lg-bottom { padding-bottom: 100px; }
+  &.is-md-bottom { padding-bottom: 80px; }
+  &.is-sm-bottom { padding-bottom: 64px; }
+  &.is-xs-bottom { padding-bottom: 32px; }
+
+  @mixin breakpoint small down {
+    &.is-xlg { padding-block: 60px; }
+    &.is-lg { padding-block: 50px; }
+    &.is-md { padding-block: 40px; }
+    &.is-sm { padding-block: 32px; }
+    &.is-xs { padding-block: 16px; }
+
+    &.is-xlg-top { padding-top: 60px; }
+    &.is-lg-top { padding-top: 50px; }
+    &.is-md-top { padding-top: 40px; }
+    &.is-sm-top { padding-top: 32px; }
+    &.is-xs-top { padding-top: 16px; }
+
+    &.is-xlg-bottom { padding-bottom: 60px; }
+    &.is-lg-bottom { padding-bottom: 50px; }
+    &.is-md-bottom { padding-bottom: 40px; }
+    &.is-sm-bottom { padding-bottom: 32px; }
+    &.is-xs-bottom { padding-bottom: 16px; }
+  }
+
+
+  // カラー設定
+  //->プライマリー
+  &.is-color-primary {
+    background-color: $color-primary;
+  }
+  //->セカンダリー
+  &.is-color-secondary {
+    background-color: $color-secondary;
+  }
+
+  // マージン設定
+  &.is-top {
+    padding-bottom: 0 !important;
+  }
+
+  &.is-bottom {
+    padding-top: 0 !important;
+  }
+
+  &.is-bg-color{
+    background: $color-background;
+  }
+}
+
+
+.l-section.is-scroll-margin-responsive {
+  scroll-margin-top: 200px;
+  @mixin breakpoint small only {
+    scroll-margin-top: 0;
+  }
+}
+
+
+//検索結果
+.l-section.is-search-result {
+  padding-top: 48px;
+  padding-bottom: 80px;
+
+  @mixin breakpoint medium down {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}

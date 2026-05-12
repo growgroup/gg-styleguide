@@ -1,0 +1,50 @@
+/*
+---
+name: <table> テーブル_小
+category: Base
+---
+*/
+
+
+.c-table-xlg {
+  width: 100%;
+  border-top: 1px solid $border-base-color;
+  @mixin breakpoint small only {
+    width: 944px;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid $border-base-color;
+  }
+
+  thead {
+    background-color: $color-secondary;
+
+    th,
+    td {
+      padding: 10px 16px;
+      @mixin breakpoint small only {
+        padding: 6px 8px;
+      }
+    }
+  }
+
+  tbody {
+    th,
+    td {
+      padding: 20px 32px;
+      font-weight: 400;
+      @mixin breakpoint small only {
+        padding: 12px 24px;
+      }
+    }
+
+    th {
+      background-color: rgba($color-secondary, .9);
+      text-align: center;
+      vertical-align: middle;
+      width: sass-div(294, 1140)*100%;
+    }
+  }
+}

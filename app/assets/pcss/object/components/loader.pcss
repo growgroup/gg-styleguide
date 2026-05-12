@@ -1,0 +1,47 @@
+.c-loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin:auto;
+  width: 100vw;
+  height: 100vh;
+  background: $color-white;
+  z-index: 99999;
+  @mixin transition-opacity 1s;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 40px;
+    @mixin webfont;
+    opacity: 0;
+    color: $color-primary;
+    @mixin transition-opacity 1s;
+  }
+
+  &.is-active {
+    .c-loader__title {
+      opacity: 1;
+    }
+  }
+  &.is-close {
+    opacity: 0;
+  }
+  &.is-hidden {
+    visibility: hidden;
+  }
+
+  &.is-already {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+

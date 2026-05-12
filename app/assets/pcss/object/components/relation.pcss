@@ -1,0 +1,72 @@
+.c-relation {
+
+  &__title {
+
+    &.c-heading.is-sm {
+      margin-bottom: 40px;
+
+      @mixin breakpoint small only {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -18px;
+
+    @mixin breakpoint small only {
+      display: block;
+      margin: 0;
+    }
+
+    &.is-center {
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    width: calc(33.3% - 36px);
+    margin: 0 18px;
+
+    @mixin breakpoint medium down {
+      width: calc(50% - 36px);
+    }
+
+    @mixin breakpoint small only {
+      width: 100%;
+      margin: 0;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 36px;
+    }
+
+    &:nth-child(n + 3) {
+
+      @mixin breakpoint medium down {
+        margin-top: 36px;
+      }
+    }
+
+    &:not(:first-child) {
+
+      @mixin breakpoint small only {
+        margin-top: 16px;
+      }
+    }
+
+    .c-button {
+      max-width: 100%;
+
+
+      &.is-current {
+        pointer-events: none;
+        background: $color-white;
+        color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+  }
+}

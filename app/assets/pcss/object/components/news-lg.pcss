@@ -1,0 +1,84 @@
+/*
+---
+name: お知らせ_1カラム_アーカイブ02
+category: News
+---
+*/
+.c-news-lg {
+  &__block {
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    color: $font-base-color;
+    padding: 24px 0;
+    @mixin breakpoint small only {
+      padding: 16px 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    @mixin hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  &__sup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    @mixin breakpoint small only {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__label {
+
+  }
+
+  &__date {
+    @mixin news-date;
+    margin-left: 12px;
+
+    &::before {
+      content: "schedule";
+      @mixin icon-font;
+      margin-right: 4px;
+      vertical-align: top;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    @mixin breakpoint small only {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__excerpt {
+    font-size: 12px;
+  }
+
+  // サムネイル有り
+  &.is-image-display {
+    .c-news-lg__block {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid $border-base-color;
+    }
+
+    .c-news-lg__image {
+      width: 136px;
+      flex-shrink: 0;
+      margin-right: 24px;
+      @mixin breakpoint small only {
+        width: 100px;
+        margin-right: 24px;
+      }
+    }
+  }
+}

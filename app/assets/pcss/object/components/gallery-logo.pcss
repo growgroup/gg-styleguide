@@ -1,0 +1,24 @@
+.c-gallery-logo {
+  overflow: hidden;
+
+  &__track {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__image {
+    position: relative;
+    width: 240px;
+    max-width: 100%;
+
+    @mixin breakpoint small down {
+      width: 120px;
+    }
+
+    img {
+      @mixin img-option contain;
+      aspect-ratio: 160/64;
+    }
+  }
+
+}

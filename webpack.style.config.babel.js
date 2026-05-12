@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const path = require('path');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
@@ -22,22 +23,66 @@ module.exports = (env, argv) => {
     //     }
     // },
     entry: {
-      style: __dirname + '/app/assets/scss/style.scss',
-      editor: __dirname + '/app/assets/scss/editor.scss',
-      print: __dirname + '/app/assets/scss/print.scss',
+      style: __dirname + '/app/assets/pcss/style.pcss',
+      editor: __dirname + '/app/assets/pcss/editor.pcss',
+      print: __dirname + '/app/assets/pcss/print.pcss',
     },
     output: {
       path: path.join(__dirname, 'dist/'),
       filename: 'assets/js/[name].js',
       publicPath: BASE_DIR,
     },
+    optimization: {
+      minimizer: [
+        `...`,
+        new CssMinimizerPlugin({
+          minify: async (data, inputMap, minimizerOptions) => {
+            const [[filename, source]] = Object.entries(data);
+            const postcss = require('postcss');
+            const cssnano = require('cssnano');
+
+            let cleaned = '';
+            let i = 0;
+            while (i < source.length) {
+              if (source[i] === '/' && source[i + 1] === '*') {
+                const end = source.indexOf('*/', i + 2);
+                const slice = end === -1 ? source.slice(i) : source.slice(i, end + 2);
+                cleaned += slice;
+                i += slice.length;
+              } else if (source[i] === '"' || source[i] === "'") {
+                const q = source[i];
+                let j = i + 1;
+                while (j < source.length && source[j] !== q) {
+                  if (source[j] === '\\') j++;
+                  j++;
+                }
+                cleaned += source.slice(i, j + 1);
+                i = j + 1;
+              } else if (source[i] === '/' && source[i + 1] === '/') {
+                const nl = source.indexOf('\n', i);
+                i = nl === -1 ? source.length : nl;
+              } else {
+                cleaned += source[i];
+                i++;
+              }
+            }
+
+            const result = await postcss([cssnano({ preset: 'default' })]).process(cleaned, {
+              from: filename,
+              to: filename,
+            });
+            return { code: result.css, map: result.map?.toString() };
+          },
+        }),
+      ],
+    },
     watch: false,
     module: {
       rules: [
         {
-          test: /\.(scss|css|sass)$/,
+          test: /\.(pcss|css)$/,
           include: [
-            path.resolve(__dirname, 'app/assets/scss'),
+            path.resolve(__dirname, 'app/assets/pcss'),
           ],
           use: [
             {
@@ -51,29 +96,6 @@ module.exports = (env, argv) => {
             },
             {
               loader: "postcss-loader",
-              options: {
-                postcssOptions: {
-                  plugins: [
-                    [
-                      'postcss-sort-media-queries',
-                      {
-                        sort: 'desktop-first',
-                        onlyTopLevel: true,
-                      }
-                    ],
-                  ],
-                },
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                // dart-sassのJS APIに渡すオプション
-                sassOptions: {
-                  silenceDeprecations:['mixed-decls']
-                  // silenceDeprecations: ['DEPRECATION_MIXED_DECLARATIONS']
-                }
-              }
             }
           ],
         },
@@ -82,7 +104,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new StylelintWebpackPlugin({
-        files: 'assets/scss/**/*.scss', // チェック対象のファイルパターン
+        files: 'assets/pcss/**/*.pcss', // チェック対象のファイルパターン
         fix: true, // 自動修正を有効にする場合
         failOnError: false, // エラーがあった場合ビルドを中断するか
       }),

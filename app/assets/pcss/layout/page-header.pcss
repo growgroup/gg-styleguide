@@ -1,0 +1,68 @@
+/*
+---
+name: ページヘッダー_通常
+category: Layout
+---
+*/
+/*
+---
+name: ページヘッダー_単色
+category: Layout
+---
+*/
+
+.l-page-header {
+  position: relative;
+
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    img {
+      @mixin img-option;
+    }
+
+    &::after {
+      @mixin img-curtain $color-black,0.2;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    text-align: center;
+    color: $color-white;
+    padding: 64px 16px;
+    @mixin breakpoint small only {
+      padding: 46px 8px;
+    }
+  }
+
+
+  &__title {
+    @mixin webfont;
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    margin: 0;
+    @mixin breakpoint small only {
+      font-size: sass-div(42px, 1.5);
+    }
+  }
+  &__subtitle {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  // 画像なし単色
+  &.is-image-hidden {
+    height: 200px;
+    background-color: $color-secondary;
+    &::after {
+      display: none;
+    }
+    .l-page-header__inner {
+      color: $color-primary;
+    }
+  }
+}

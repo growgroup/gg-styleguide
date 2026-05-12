@@ -1,0 +1,99 @@
+/*
+---
+name: アコーディオン_Q&A
+category: Components
+---
+*/
+
+.c-accordion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px; //ブロック間
+
+  &__block{
+    border: solid 1px $color-border;
+  }
+
+  //タイトル
+  &__title{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 16px;
+    padding: 16px 48px 16px 24px;
+    position: relative;
+
+    @mixin breakpoint small only {
+      padding: 16px 32px 12px 16px;
+    }
+
+    //*矢印
+    &::after {
+      content: "expand_more";
+      @mixin icon-font;
+      color: $color-primary;
+      position: absolute;
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      right: 24px;
+      @mixin breakpoint small only {
+        right: 16px;
+      }
+    }
+
+    @at-root {
+      .c-accordion__block[open] > &::after {
+        content: "expand_less";
+      }
+    }
+
+
+    &::-webkit-details-marker{
+      display: none;//Safariの矢印を非表示
+    }
+  }
+
+  //アイコン共通
+  &__title-icon, &__content-icon{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 24px;
+    @mixin webfont;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  &__content-icon{
+    background-color: $color-accent;
+  }
+
+
+  //コンテンツ
+  &__content-wrapper{
+    padding: 0 24px 16px 24px;
+
+    @mixin breakpoint small only {
+      padding: 0 16px 12px 16px;
+    }
+  }
+
+  &__content{
+    border-top: solid 1px $color-border;
+    padding-top: 20px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__content-inner{
+    flex-grow: 1;
+
+  }
+
+}

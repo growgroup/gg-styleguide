@@ -1,0 +1,104 @@
+// テキスト
+//
+// Styleguide 1.2.0
+
+// テキスト - 通常
+//
+// Styleguide 1.2.1
+
+.u-text-normal {
+  margin: 0;
+}
+
+// テキスト - 縮小
+//
+// Styleguide 1.2.2
+
+.u-text-small {
+  @mixin text-small;
+}
+body.en{
+  //small,
+  //.u-text-small {
+  //  font-size: 0.85em;
+  //}
+}
+
+// テキスト - 強調
+//
+// Styleguide 1.2.3
+
+.u-text-strong {
+  font-weight: 700;
+}
+
+// テキスト - 打ち消し線
+//
+// Styleguide 1.2.4
+
+.u-text-del {
+  text-decoration-line: line-through;
+}
+
+// テキスト - リンク
+// Styleguide 1.2.5
+// aタグには直接スタイルを当てない
+.u-text-link {
+  // u-text-link と .l-post-content a は同じスタイルを適用する
+  @mixin text-link;
+}
+
+// u-text-link には アイコン用のスタイルを追加する
+.u-text-link {
+  &.is-pdf {
+
+    &:after {
+      content: "picture_as_pdf";
+      @mixin icon-font;
+    }
+  }
+
+  &.is-map {
+    //下線が気になるようであれば下記を使用
+    //text-underline-offset: 3px;
+
+    &::before {
+      content: "location_on";
+      @mixin icon-font;
+    }
+  }
+
+  &.is-outlink {
+
+    &::after {
+      content: "open_in_new";
+      @mixin icon-font;
+    }
+  }
+}
+
+.u-text-link.is-hover {
+  opacity: $base-hover-opacity;
+}
+
+.u-hover-disabled, .u-pointer-events-none {
+  pointer-events: none;
+}
+
+
+// 用途別テキストカラー
+.u-text-primary {
+  color: $color-primary;
+}
+
+.u-text-danger {
+  color: $color-state-danger;
+}
+
+.u-text-info {
+  color: $color-state-info;
+}
+
+.u-text-success {
+  color: $color-state-info;
+}

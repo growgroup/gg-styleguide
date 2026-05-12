@@ -1,0 +1,18 @@
+.c-gallery-text {
+  overflow: hidden;
+
+  &__track{
+    display: flex;
+    gap: 48px;
+  }
+
+  &__item{
+    flex-shrink: 0;
+    color: rgba($font-base-color,0.5);
+    font-size: 100px;
+
+    @mixin breakpoint small down {
+      font-size: 70px;
+    }
+  }
+}

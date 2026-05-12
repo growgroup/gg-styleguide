@@ -171,7 +171,7 @@ bs.watch(["app/*.pug", "app/**/*.pug"]).on("change", function (event) {
     bs.reload("*.html")
 });
 
-bs.watch("app/assets/**/*.scss").on("change", function (event) {
+bs.watch("app/assets/**/*.pcss").on("change", function (event) {
   bs.reload("*.css")
 });
 bs.watch("dist/assets/**/*.js").on("change", function () {

@@ -1,0 +1,75 @@
+.c-block-cookie {
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba($font-base-color, .8);
+  padding: 14px 0;
+  opacity: 0;
+  visibility: hidden;
+  @mixin transition;
+
+  @mixin breakpoint small only {
+    padding: 20px 0;
+  }
+
+  &.is-fixed {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    @mixin breakpoint small only {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    color: $color-white;
+
+    @mixin breakpoint small only {
+      font-size: 10px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__button {
+    flex: none;
+    margin-left: 32px;
+
+    @mixin breakpoint small only {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    a {
+      font-size: 13px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-white;
+      padding: 15px 100px;
+      background: $color-gray;
+
+      @mixin breakpoint small only {
+        width: 100%;
+        font-size: 12px;
+        padding: 14px 100px;
+      }
+    }
+  }
+}

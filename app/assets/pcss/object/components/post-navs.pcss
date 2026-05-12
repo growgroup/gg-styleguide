@@ -1,0 +1,82 @@
+/*
+---
+name: 投稿ナビゲーション_通常
+category: Navigation
+---
+*/
+.c-post-navs {
+  margin: 64px 0;
+  @mixin breakpoint small only {
+    margin: 32px 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  li {
+    width: 155px;
+    max-width: 33%;
+    @mixin breakpoint small only {
+      width: calc(33% - 8px);
+    }
+  }
+
+  .c-button {
+    @mixin breakpoint small only {
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+  }
+
+  & &__prev {
+    margin-right: auto;
+
+    a {
+      @mixin breakpoint small only {
+        padding-left: 20px;
+        padding-right: 8px;
+      }
+    }
+  }
+
+  & &__archive {
+    a {
+      align-items: center;
+      margin: auto;
+
+      @mixin breakpoint small only {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      span {
+        font-size: 16px;
+        margin-right: 12px;
+
+        @mixin breakpoint small only {
+          display: none;
+        }
+      }
+    }
+  }
+
+  & &__next {
+    margin-left: auto;
+
+    a {
+      margin-left: auto;
+      @mixin breakpoint small only {
+        padding-right: 20px;
+        padding-left: 8px;
+      }
+    }
+  }
+}

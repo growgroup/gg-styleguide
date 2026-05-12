@@ -23,13 +23,13 @@
 
 ### 2. このプロジェクトのSCSS構造（importと置き場所）
 
-- **エントリ**: `app/assets/scss/style.scss`
+- **エントリ**: `app/assets/pcss/style.scss`
   - `foundation/` → `layout/` → `object/components/` → `object/project/` → `object/utility/` の順で読み込まれる
-- **汎用コンポーネント（c-）**: `app/assets/scss/object/components/`
-  - 追加したら `app/assets/scss/object/components/_index.scss` に `@import "<file>";` を追記する
-- **ページ固有（p-）**: `app/assets/scss/object/project/`（追加時は `_index.scss` に追記）
-- **レイアウト（l-）**: `app/assets/scss/layout/`（追加時は `_index.scss` に追記）
-- **ユーティリティ（u-）**: `app/assets/scss/object/utility/`（追加時は `_index.scss` に追記）
+- **汎用コンポーネント（c-）**: `app/assets/pcss/object/components/`
+  - 追加したら `app/assets/pcss/object/components/_index.scss` に `@import "<file>";` を追記する
+- **ページ固有（p-）**: `app/assets/pcss/object/project/`（追加時は `_index.scss` に追記）
+- **レイアウト（l-）**: `app/assets/pcss/layout/`（追加時は `_index.scss` に追記）
+- **ユーティリティ（u-）**: `app/assets/pcss/object/utility/`（追加時は `_index.scss` に追記）
 
 ---
 
@@ -76,7 +76,7 @@
 
 **Figmaのローカル「テキストスタイル」が指定されている場合**
 
-Figma側で「ローカルスタイル（Text Styles）」が当たっているとき、**対応するテキストmixin** があれば値を直書きせず、mixinを使って統一します（`app/assets/scss/foundation/` 配下のmixin群を優先）。
+Figma側で「ローカルスタイル（Text Styles）」が当たっているとき、**対応するテキストmixin** があれば値を直書きせず、mixinを使って統一します（`app/assets/pcss/foundation/` 配下のmixin群を優先）。
 
 #### 5.4 レスポンシブ（breakpoint mixin）
 

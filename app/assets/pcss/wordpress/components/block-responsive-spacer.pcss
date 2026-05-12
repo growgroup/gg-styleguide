@@ -1,0 +1,25 @@
+
+// setting.pcssからインポート
+
+.c-block-responsive-spacer {
+
+  // height: #{$sectionDefault[1] * 1px};
+  // @mixin breakpoint small down {
+  //   height: #{$sectionDefault[2] * 1px};
+  // }
+
+  &.is-xlg { height: 120px; }
+  &.is-lg { height: 100px; }
+  &.is-md { height: 80px; }
+  &.is-sm { height: 64px; }
+  &.is-xs { height: 32px; }
+
+  @mixin breakpoint small down {
+    &.is-xlg { height: 60px; }
+    &.is-lg { height: 50px; }
+    &.is-md { height: 40px; }
+    &.is-sm { height: 32px; }
+    &.is-xs { height: 16px; }
+  }
+
+}

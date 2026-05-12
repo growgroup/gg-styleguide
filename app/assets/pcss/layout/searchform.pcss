@@ -1,0 +1,63 @@
+.l-searchform {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  padding: 90px 0;
+  @mixin transition .2s;
+
+  @mixin breakpoint medium down {
+    top: 55px;
+  }
+  @mixin breakpoint small down {
+    padding: 60px 0;
+  }
+
+  &__inner {
+    width: 100%;
+    max-width: 748px;
+    position: relative;
+    margin: auto;
+  }
+
+  &__overlay {
+    position: absolute;
+    background: rgba($font-base-color, .9);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__close {
+    position: absolute;
+    right: -66px;
+    top: -66px;
+    color: $color-white;
+    background: transparent;
+    border: none;
+    padding: 0;
+    @mixin breakpoint medium down {
+      right: -4px;
+      top: -48px;
+    }
+
+    @mixin hover{
+      opacity: 0.5;
+    }
+
+    &__icon {
+      font-size: 48px;
+    }
+  }
+}
+
+body.is-search-modal-open {
+  .l-searchform {
+    visibility: visible;
+    opacity: 1;
+  }
+}

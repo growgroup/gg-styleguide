@@ -1,0 +1,171 @@
+// サイト内共通のフォームコントロール用スタイル
+
+//============================
+// variables / mixins
+//============================
+$form-controls-font-size: 16px;
+$form-controls-border-color: $border-base-color;
+$form-controls-border-radius: 4px;
+$form-controls-active-border-color: $color-primary;
+//active-border-colorはプライマリーカラーがエラーと区別がつかないときは #0097D8
+
+//input, textarea, selectの共通スタイル
+@define-mixin form-controls-common-style {
+  font-size: $form-controls-font-size;
+  color: $font-base-color;
+  border: 1px solid $form-controls-border-color;
+  background-color: $color-background;
+  width: 100%;
+  box-shadow: none;
+  @mixin transition-colors 0.2s,ease-in-out;
+
+  @mixin breakpoint small down {
+    font-size: 16px; //16px以下にするのはNG
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+//input, textareaの共通スタイル
+@define-mixin form-controls-input-style {
+  padding: 16px 24px;
+  @mixin form-controls-common-style;
+
+  @mixin breakpoint small down {
+    padding: 9px 12px;
+  }
+}
+
+
+//============================
+// style
+//============================
+
+//共通分
+input:where(
+  [type="text"],
+  [type="url"],
+  [type="search"],
+  [type="email"],
+  [type="password"],
+  [type="tel"],
+  [type="number"],
+  [type="date"],
+  [type="time"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"],
+  [type="file"]
+  ),
+  textarea {
+  @mixin form-controls-input-style;
+}
+
+// ファイル選択
+input:where([type="file"]) {
+  &::file-selector-button {
+    background-image: url('../images/icon-form-file.svg');
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 10px 12px;
+    background-color: $color-white;
+    border-radius: 4px;
+    border: 1px solid $font-base-color;
+    padding: 3px 16px 3px 40px;
+    margin-right: 16px;
+    color: $font-base-color;
+    appearance: none;
+
+    @mixin breakpoint small only {
+      padding: 3px 12px;
+      background: $color-white;
+    }
+  }
+}
+
+// テキストエリア
+//
+// markup:
+// <textarea row="100" col="50" name="" placeholder="テキストエリア"></textarea>
+//
+// Styleguide 1.6.2
+textarea {
+  min-height: 136px;
+  display: block;
+}
+
+// チェックボックス
+//
+// markup:
+// <label for="checkbox"><input id="checkbox" type="checkbox" value="1"> チェックボックス</label>
+//
+// Styleguide 1.6.3
+
+
+input:where([type="checkbox"]) {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  accent-color: $color-primary;
+  flex-shrink: 0;
+}
+
+// ラジオボックス
+//
+// markup:
+// <label for="radio"><input id="radio" type="radio" value="1"> ラジオボックス</label>
+//
+// Styleguide 1.6.4
+
+input:where([type="radio"]) {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  accent-color: $color-primary;
+  flex-shrink: 0;
+}
+
+// セレクトボックス
+//
+// markup:
+// <label for="select">
+//    <select id="select" name="select">
+//        <option>選択してください</option>
+//        <option value="1">サンプルオプション1</option>
+//        <option value="2">サンプルオプション2</option>
+//        <option value="3">サンプルオプション3</option>
+//    </select>
+// </label>
+//
+// Styleguide 1.6.5
+select {
+  display: block;
+  text-transform: none;
+  appearance: none;
+  background-image: url('../images/icon-form-select.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 26px) center;
+  background-size: 10px 6px;
+  @mixin form-controls-input-style;
+
+  @mixin breakpoint small down {
+    background-position: calc(100% - 12px) center;
+    background-size: 9px 5px;
+  }
+}
+
+/*  プレイスホルダーの色変更 */
+::placeholder {
+  color: rgba($font-base-color, 0.3);
+
+  //スマホだけ文字サイズを変更したいとき
+  //@mixin breakpoint small down {
+  //  font-size: 14px;
+  //}
+}
+

@@ -29,10 +29,10 @@ var pugconfig = {
         wpFolderName = 'wordpress/layout';
       }
 
-      let componentPath = __dirname + '/../app/assets/scss/' + folderName + '/' + componentName + '.scss';
-      let indexFilePath = __dirname + '/../app/assets/scss/' + folderName + '/_index.scss';
-      let wpComponentPath = __dirname + '/../app/assets/scss/' + wpFolderName + '/' + componentName + '.scss';
-      let wpIndexFilePath = __dirname + '/../app/assets/scss/' + wpFolderName + '/_index.scss';
+      let componentPath = __dirname + '/../app/assets/pcss/' + folderName + '/' + componentName + '.pcss';
+      let indexFilePath = __dirname + '/../app/assets/pcss/' + folderName + '/_index.pcss';
+      let wpComponentPath = __dirname + '/../app/assets/pcss/' + wpFolderName + '/' + componentName + '.pcss';
+      let wpIndexFilePath = __dirname + '/../app/assets/pcss/' + wpFolderName + '/_index.pcss';
 
       try {
         fs.statSync(componentPath);
@@ -50,7 +50,7 @@ var pugconfig = {
           // どちらにも存在しない場合のみ、ファイルを作成
           await fs.writeFileSync(componentPath, '.' + typePrefix + componentName + ' {\n\n}', {flag: "a"});
 
-          // index.scss にインポート文を追加
+          // index.pcss にインポート文を追加
           let indexContent = fs.readFileSync(indexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
           let wpIndexContent = fs.readFileSync(wpIndexFilePath, {encoding: 'utf8', flag: 'r'}).split("\n");
           let newImportStmt = "@import '" + componentName + "';";

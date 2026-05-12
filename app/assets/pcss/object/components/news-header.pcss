@@ -1,0 +1,66 @@
+/*
+---
+name: お知らせ_ヘッダー
+category: PostContent
+---
+*/
+.c-news-header {
+  margin-bottom: 32px;
+  @mixin breakpoint small only {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    margin-top: 0;
+    @mixin breakpoint small only {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__sup {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    @mixin breakpoint small down {
+      gap: 8px 16px;
+    }
+  }
+
+  &__label {
+
+  }
+
+  &__date {
+    @mixin news-date;
+  }
+
+  &__tag {
+    @mixin breakpoint small only {
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+
+      li {
+
+        a {
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 14px;
+          display: block;
+        }
+      }
+    }
+  }
+}

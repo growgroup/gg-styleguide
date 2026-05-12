@@ -1,0 +1,53 @@
+/*
+---
+name: アーカイブナビ_通常
+category: Navigation
+---
+*/
+.c-box-archive {
+  &__block {
+    border: 1px solid $color-primary;
+    padding: 24px 32px 12px;
+    margin-bottom: 16px;
+    @mixin breakpoint small only {
+      padding: 16px 24px 12px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: $color-primary;
+    margin-bottom: 16px;
+    @mixin breakpoint small only {
+      font-size: 16px;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    li {
+      margin-right: 48px;
+      margin-bottom: 12px;
+      @mixin breakpoint small only {
+        margin-right: 24px;
+        margin-bottom: 8px;
+      }
+      &::before {
+        content: "chevron_right";
+        @mixin icon-font;
+        color: $color-primary;
+        padding-right: 8px;
+      }
+      a {
+        color: $font-base-color;
+        text-decoration: none;
+        font-weight: 400;
+      }
+    }
+  }
+}

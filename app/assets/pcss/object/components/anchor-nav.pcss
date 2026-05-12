@@ -1,0 +1,84 @@
+/*
+---
+name: カプセルナビ_ページ内リンク
+category: Navigation
+---
+*/
+/*
+---
+name: カプセルナビ_ボタン型
+category: Navigation
+---
+*/
+.c-anchor-nav {
+
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -6px;
+
+    @mixin breakpoint small only {
+      margin: 0;
+    }
+
+    //中央に寄せたい
+    &.is-center {
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    width: calc(33.3% - 12px);
+    margin: 0 6px;
+
+    @mixin breakpoint small only {
+      width: 100%;
+      margin: 0;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 12px;
+    }
+
+    &:not(:first-child) {
+
+      @mixin breakpoint small only {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  //他ページへの遷移
+  &.is-next {
+
+    .c-anchor-nav__buttons {
+      margin: 0 -16px;
+
+      @mixin breakpoint small only {
+        margin: 0;
+      }
+    }
+
+    .c-anchor-nav__button {
+      width: calc(50% - 32px);
+      margin: 0 16px;
+
+      @mixin breakpoint small only {
+        width: 100%;
+        margin: 0;
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: 24px;
+      }
+
+      &:not(:first-child) {
+
+        @mixin breakpoint small only {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}

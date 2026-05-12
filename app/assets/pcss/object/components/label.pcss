@@ -1,0 +1,51 @@
+
+.c-label {
+  background-color: $color-primary;
+  color: $color-white;
+  display: inline-block;
+  text-align: center;
+  min-width: 116px;
+  padding: 1px 8px;
+  border: 1px solid $color-primary;
+  font-size: 14px;
+  font-weight: 700;
+
+  @mixin breakpoint small only {
+    font-size: 13px;
+    min-width: 88px;
+  }
+
+  &.is-xlg {
+    min-width: 156px;
+    font-size: 14px;
+    padding: 3px 8px;
+    @mixin breakpoint small only {
+      min-width: 120px;
+      font-size: 12px;
+      padding: 2px 8px;
+    }
+  }
+  &.is-lg {
+    min-width: 160px;
+    font-size: 13px;
+  }
+  &.is-sm {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  // カラー
+  &.is-white {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+  &.is-secondary {
+    background: $color-secondary;
+    color: $font-base-color;
+  }
+
+  &.is-radius {
+    border-radius: 100px;
+  }
+}

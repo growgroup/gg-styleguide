@@ -1,0 +1,93 @@
+.c-forms-document-detail {
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+
+    @mixin breakpoint small down {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    background: $color-background;
+    aspect-ratio: 282/158;
+    padding: 16px;
+
+    &.swiper-slide {
+      cursor: pointer;
+    }
+
+    img {
+      @mixin img-option contain;
+      @mixin transition;
+    }
+
+    .is-no {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-content: center;
+      font-size: 17px;
+      color: rgba($font-base-color,0.5);
+
+      @mixin breakpoint small only {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: 24px;
+
+    @mixin breakpoint small down {
+      margin-top: 20px;
+    }
+
+    .swiper-nav {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+
+      .swiper-button-prev ,.swiper-button-next {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        @mixin transition;
+
+        &::after {
+          content: "chevron_right";
+          @mixin icon-font;
+          color: $color-primary;
+        }
+
+
+        @mixin hover {
+          opacity: 0.5;
+        }
+      }
+
+      .swiper-button-prev {
+
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}

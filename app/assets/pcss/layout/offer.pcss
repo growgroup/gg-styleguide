@@ -1,0 +1,206 @@
+/*
+---
+name: オファー_通常
+category: Layout
+---
+*/
+.l-offer {
+  text-align: center;
+  color: $color-white;
+  padding: 48px 0;
+  position: relative;
+
+  @mixin breakpoint small only {
+    padding: 40px 0;
+  }
+  // padding大きめ
+  &.is-padding-lg {
+    padding: 64px 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    img {
+      @mixin img-option;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+
+    margin-top: 48px;
+    @mixin breakpoint small only {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    // ボタン1つ
+    &.is-button-one {
+      margin-top: 24px;
+      text-align: center;
+      .l-offer__button {
+        max-width: 454px;
+      }
+    }
+  }
+  &__button {
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $color-white;
+    padding: 24px 32px;
+    position: relative;
+    width: 100%;
+    min-height: 88px;
+    @mixin breakpoint small only {
+      font-size: 15px;
+      min-height: 64px;
+    }
+    &::after {
+      content: "chevron_right";
+      @mixin icon-font;
+      position: absolute;
+      font-size: 20px;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      font-weight: 400;
+      @mixin breakpoint small only {
+        font-size: 18px;
+      }
+    }
+    &.is-bgcolor-primary {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+    //->電話番号はアクセントフォント
+    &.is-tel {
+      @mixin webfont;
+      font-size: 32px;
+      line-height: 1;
+      @mixin breakpoint small only {
+        font-size: 28px;
+      }
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+  &__subtext {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 14px;
+    @mixin breakpoint small only {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+  }
+}
+/*
+---
+name: オファー_その他
+category: Layout
+---
+```types.html
+<div class="l-offer is-color-primary">
+          <div class="l-container">
+            <div class="l-offer__inner">
+              <h2 class="c-heading is-xlg is-white is-bottom"><span>CONTACT</span><small>お問い合わせ</small></h2>
+              <div class="l-offer__text">弊社のサービスへ興味をお持ちの方は、<br>下記の電話番号、もしくはお問い合わせフォームよりお気軽に問い合わせください。</div>
+              <div class="l-offer__items">
+                <div class="row">
+                  <div class="large-5 is-push-lg-1 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">お電話の際は「ホームページを見て」と<br>お伝えください。</div>
+                      <div class="l-offer__box-tel"><i class="fa fa-phone" aria-hidden="true"></i>00-000-0000<small>電話受付時間 / 平日00：00～00：00</small></div>
+                    </div>
+                  </div>
+                  <div class="large-5 small-12">
+                    <div class="l-offer__box">
+                      <div class="l-offer__box-text">メールでのご相談・ご質問は<br>お問い合わせフォームをご活用ください。</div><a class="c-button is-lg is-white" href="#">お問い合わせフォーム</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+```
+*/
+.l-offer {
+  // primary
+  &.is-color-primary {
+    background-image: none;
+    background-color: $color-primary;
+    padding: 64px 0;
+    @mixin breakpoint small only {
+      padding: 48px 0;
+    }
+    .c-heading {
+      color: $color-white;
+      margin-bottom: 32px;
+      @mixin breakpoint small only {
+        margin-bottom: 24px;
+      }
+    }
+    .l-offer__items {
+      margin-top: 32px;
+    }
+    .l-offer__box {
+      border: 1px solid $color-white;
+      height: 100%;
+      text-align: center;
+      padding: 32px 48px;
+      @mixin breakpoint small only {
+        margin-bottom: 8px;
+        height: inherit;
+        padding: 24px;
+      }
+    }
+    .l-offer__box-text {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      @mixin breakpoint small only {
+        margin-bottom: 12px;
+      }
+    }
+    .l-offer__box-tel {
+      @mixin webfont;
+      font-size: 32px;
+      line-height: 1;
+      i {
+        margin-right: 8px;
+      }
+      small {
+        display: block;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        margin-top: 8px;
+      }
+    }
+  }
+}

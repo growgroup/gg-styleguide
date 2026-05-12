@@ -1,0 +1,150 @@
+/*
+---
+name: フッター_サイトマップ型
+category: Layout
+---
+*/
+
+.l-footer__unit {
+  @mixin breakpoint medium down {
+    display: none;
+  }
+}
+.l-footer {
+  position: relative;
+  background-color: $font-base-color;
+  color: $color-white;
+  &__menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 56px;
+    @mixin breakpoint medium down {
+      display: block;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+  &__block {
+    padding-right: 40px;
+    @media (max-width: 900px) {
+      padding-right: 24px;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    @mixin breakpoint medium down {
+      padding: 0;
+    }
+  }
+  &__menutitle {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    @mixin breakpoint medium down {
+      border-bottom: 1px solid $border-base-color;
+      padding: 12px 24px;
+      margin: 0;
+      background-color: $font-base-color;
+      &::before {
+        content: "chevron_right";
+        @mixin icon-font;
+        color: $color-primary;
+        padding-right: 12px;
+      }
+      &.is-open {
+        &::before {
+          content: "\f106";
+        }
+      }
+    }
+  }
+  &__menulist {
+    li {
+      margin-bottom: 20px;
+      @mixin breakpoint medium down {
+        margin: 0;
+        border-bottom: 1px solid $border-base-color;
+      }
+    }
+    a {
+      color: $color-white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      @mixin breakpoint medium down {
+        padding: 14px 24px;
+        display: block;
+        background-color: $font-base-color;
+
+        @mixin hover {
+          opacity: 1;
+        }
+      }
+    }
+    &.is-sub {
+      @mixin breakpoint medium down {
+        display: none;
+      }
+      li {
+        margin-bottom: 8px;
+        @mixin breakpoint medium down {
+          border: none;
+        }
+      }
+      a {
+        font-weight: 400;
+        color: rgba($color-white,0.7);
+        @mixin breakpoint medium down {
+          background-color: rgba($font-base-color,0.8);
+          padding: 10px 44px;
+        }
+      }
+    }
+  }
+  &__content {
+    border-top: 1px solid rgba($border-base-color,0.2);
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    @mixin breakpoint medium down {
+      display: block;
+      padding: 24px 0;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 175px;
+  }
+  &__address {
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-left: 24px;
+    @mixin breakpoint medium down {
+      margin: 24px 0;
+      font-size: 12px;
+    }
+  }
+  &__copyright {
+    opacity: 0.5;
+    margin-left: auto;
+    margin-top: 12px;
+    display: block;
+    font-size: 12px;
+    @mixin breakpoint medium down {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+}
+
+.l-footer.is-simple {
+  .l-footer__menu {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+/*
+---
+name: ブロック_通常
+category: Components
+---
+*/
+.c-block {
+  &__block {
+    margin-bottom: 64px;
+    @mixin breakpoint small only {
+      margin-bottom: 64px*0.5;
+    }
+  }
+  &__content {
+    p {
+      @mixin breakpoint small only {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  &__image {
+    @mixin breakpoint small only {
+      margin-bottom: 16px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

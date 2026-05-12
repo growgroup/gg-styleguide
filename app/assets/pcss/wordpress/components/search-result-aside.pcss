@@ -1,0 +1,36 @@
+// WordPress
+//
+// 検索結果のサイドナビゲーション
+//
+.c-search-result-aside {
+  padding-top: 48px;
+
+  @mixin breakpoint small down {
+    padding-top: 32px;
+  }
+
+  &__popular{
+    padding: 20px 16px 30px;
+    border: 1px solid $color-border;
+  }
+
+  &__title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  &__keyword{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 8px;
+    font-size: 14px;
+
+    @mixin breakpoint small down {
+      font-size: 13px;
+    }
+  }
+
+}

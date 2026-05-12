@@ -1,0 +1,31 @@
+// 英語フォント利用箇所：デザインに合わせて変更
+@define-mixin webfont {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+// アイコンフォント利用箇所では基本的にこちらを挿入
+@define-mixin icon-font {
+  font-family: $font-icon-family;
+  @mixin icon-font-style;
+  @mixin icon-font-size-control;
+}
+
+//通常 icon-fontのmixinで読み込む
+@define-mixin icon-font-style {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  overflow: hidden;
+}
+
+//通常 icon-fontのmixinで読み込む
+@define-mixin icon-font-size-control{
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}

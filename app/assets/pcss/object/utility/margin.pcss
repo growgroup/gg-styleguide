@@ -1,0 +1,33 @@
+
+
+.u-mbs {
+
+  margin-top: 56px;
+  margin-bottom: 56px;
+  @mixin breakpoint small down {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  &.is-xlg { margin-block: 120px; }
+  &.is-lg { margin-block: 100px; }
+  &.is-md { margin-block: 64px; }
+  &.is-sm { margin-block: 42px; }
+  &.is-xs { margin-block: 24px; }
+
+  @mixin breakpoint small down {
+    &.is-xlg { margin-block: 60px; }
+    &.is-lg { margin-block: 50px; }
+    &.is-md { margin-block: 32px; }
+    &.is-sm { margin-block: 20px; }
+    &.is-xs { margin-block: 12px; }
+  }
+
+  &.is-top {
+    margin-bottom: 0 !important;
+  }
+
+  &.is-bottom {
+    margin-top: 0 !important;
+  }
+}

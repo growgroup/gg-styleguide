@@ -60,7 +60,7 @@ dist ディレクトリ内に展開します。
 │   │   ├── fonts
 │   │   ├── images
 │   │   ├── js
-│   │   └── scss
+│   │   └── pcss
 │   │       ├── foundation
 │   │       ├── layout
 │   │       ├── object
@@ -70,7 +70,7 @@ dist ディレクトリ内に展開します。
 │   │       ├── wordpress
 │   │       │    ├── layout
 │   │       │    ├── components
-│   │       └── style.scss
+│   │       └── style.pcss
 │   ├── inc
 │   │   ├── foundation
 │   │   ├── layout
@@ -166,4 +166,3 @@ JavaScript の構文チェッカーとして ESLint を採用しています。
 
 * [HTMLコーディング規約](docs/RULES_HTML_CODING.md)
 * [命名規則](docs/RULES_NAMING.md)
-

@@ -2,9 +2,9 @@
 description: Figma から Pug/SCSS で実装するときは .cursor/docs の COMPONENT_STYLING, PUG_RULE, SCSS_RULE を正とし、必要に応じて読み込んで従う。
 globs: |
   app/**/*.pug
-  app/assets/scss/object/components/**/*.scss
-  app/assets/scss/object/project/**/*.scss
-  app/assets/scss/layout/**/*.scss
+  app/assets/pcss/object/components/**/*.scss
+  app/assets/pcss/object/project/**/*.scss
+  app/assets/pcss/layout/**/*.scss
 alwaysApply: false
 ---
 

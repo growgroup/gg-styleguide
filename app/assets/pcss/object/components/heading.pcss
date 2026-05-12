@@ -1,0 +1,138 @@
+/*
+---
+name: 見出し_テンプレート
+category: Heading
+---
+*/
+
+.c-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.c-heading {
+
+  // h1
+  &.is-xlg {
+    color: $color-primary;
+
+    .is-eng {
+      display: block;
+      @mixin webfont;
+      font-size: 42px;
+      @mixin breakpoint small only {
+        font-size: 38px;
+      }
+    }
+    .is-ja {
+      display: block;
+      font-size: 16px;
+      @mixin breakpoint small only {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // h2
+  &.is-lg {
+    font-size: 32px;
+
+    @mixin breakpoint small only {
+      font-size: 28px;
+    }
+
+    .is-eng {
+      display: block;
+      @mixin webfont;
+    }
+
+    .is-ja {
+      display: block;
+      font-size: 14px;
+      margin-top: 6px;
+      @mixin breakpoint small only {
+        font-size: 13px;
+      }
+    }
+  }
+
+  // h3
+  &.is-md {
+    font-size: 28px;
+
+    @mixin breakpoint small only {
+      font-size: 28px*0.8;
+    }
+  }
+
+  // h4
+  &.is-sm {
+    font-size: 24px;
+    @mixin breakpoint small only {
+      font-size: 20px;
+    }
+  }
+
+  // h5
+  &.is-xs {
+    font-size: 20px;
+
+    @mixin breakpoint small only {
+      font-size: 18px;
+    }
+  }
+
+  // h6
+  &.is-xxs {
+    font-size: 18px;
+
+    @mixin breakpoint small only {
+      font-size: 16px;
+    }
+  }
+
+
+  //--------------------------------
+  // カラー設定
+  &.is-color-primary {
+    color: $color-primary;
+  }
+  &.is-color-secondary {
+    color: $color-secondary;
+  }
+  &.is-color-white {
+    color: $color-white;
+  }
+
+
+  //--------------------------------
+  // 位置調整
+  &.is-center {
+    text-align: center;
+  }
+
+  //--------------------------------
+  // マージン調整
+  &.is-mg-level-1 { margin-bottom: 64px; }
+  &.is-mg-level-2 { margin-bottom: 40px; }
+  &.is-mg-level-3 { margin-bottom: 32px; }
+  &.is-mg-level-4 { margin-bottom: 24px; }
+  &.is-mg-level-5 { margin-bottom: 20px; }
+  &.is-mg-level-6 { margin-bottom: 16px; }
+
+  @mixin breakpoint small down {
+    &.is-mg-level-1 { margin-bottom: 40px; }
+    &.is-mg-level-2 { margin-bottom: 32px; }
+    &.is-mg-level-3 { margin-bottom: 24px; }
+    &.is-mg-level-4 { margin-bottom: 20px; }
+    &.is-mg-level-5 { margin-bottom: 16px; }
+    &.is-mg-level-6 { margin-bottom: 16px; }
+  }
+
+  &.is-top {margin-top: 0 !important;}
+  &.is-bottom {margin-bottom: 0 !important;}
+  &.is-mg-none {margin-block: 0 !important;}
+
+}

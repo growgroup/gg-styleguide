@@ -7,7 +7,7 @@
 ## 1. ディレクトリ構成
 
 ```
-app/assets/scss/
+app/assets/pcss/
 ├── style.scss              # メインエントリーポイント
 ├── foundation/             # 基盤設定
 │   ├── _settings.scss      # 変数定義（カラー、フォント、ブレイクポイント等）
