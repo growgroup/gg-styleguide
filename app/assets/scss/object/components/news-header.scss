@@ -6,7 +6,7 @@ category: PostContent
 */
 .c-news-header {
   margin-bottom: 32px;
-  @include breakpoint(small only) {
+  @include breakpoint(small down) {
     margin-bottom: 16px;
   }
 
@@ -17,7 +17,7 @@ category: PostContent
     line-height: 1.5;
     margin-bottom: 24px;
     margin-top: 0;
-    @include breakpoint(small only) {
+    @include breakpoint(small down) {
       font-size: 20px;
       margin-bottom: 16px;
     }
@@ -33,8 +33,13 @@ category: PostContent
     }
   }
 
-  &__label {
-
+  &__labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    @include breakpoint(small down) {
+      gap: 4px;
+    }
   }
 
   &__date {
@@ -42,7 +47,9 @@ category: PostContent
   }
 
   &__tag {
-    @include breakpoint(small only) {
+    font-size: 14px;
+
+    @include breakpoint(small down) {
       width: 100%;
     }
 
@@ -51,16 +58,6 @@ category: PostContent
       flex-wrap: wrap;
       align-items: center;
       gap: 8px 16px;
-
-      li {
-
-        a {
-          text-decoration: none;
-          font-weight: 400;
-          font-size: 14px;
-          display: block;
-        }
-      }
     }
   }
 }
