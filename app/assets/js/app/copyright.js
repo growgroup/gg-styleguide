@@ -7,14 +7,14 @@ let defaultOptions = {
 export default class CopyRight {
 
   constructor(options) {
-    this.options = $.extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
     this.init();
   }
   /**
    * 初期化
    */
   init() {
-    this.targetEle = $(this.options.selector);
+    this.targetEle = document.querySelectorAll(this.options.selector);
     this.run();
   }
 
@@ -22,6 +22,8 @@ export default class CopyRight {
    * 実行
    */
   run() {
-    this.targetEle.text(new Date().getFullYear());
+    this.targetEle.forEach((element) => {
+      element.textContent = new Date().getFullYear();
+    });
   }
 }

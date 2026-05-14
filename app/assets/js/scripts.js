@@ -6,8 +6,7 @@
  * @license  MIT Licence
  * ====================================================================
  */
-
-(function ($) {
+(function () {
   var growApp = function () {
 
   };
@@ -18,20 +17,17 @@
   growApp.prototype.myCode = function () {
   }
 
-  // growApp.prototype.modalContents = function () {
-  //   $('.js-modal-content').modaal();
-  // }
 
   growApp.prototype.enterAnimation = function () {
-    let $loader = $('.c-loader');
-    if (!$loader.length === 0) {
+    let loader = document.querySelector('.c-loader');
+    if (!loader) {
       return false;
     }
 
     function changeClass(el, className, time) {
       return new Promise(function (resolve) {
         setTimeout(function () {
-          el.addClass(className);
+          el.classList.add(className);
           resolve(className);
         }, time);
       });
@@ -39,7 +35,7 @@
     function removeClass(el, className, time) {
       return new Promise(function (resolve) {
         setTimeout(function () {
-          el.removeClass(className);
+          el.classList.remove(className);
           resolve(className);
         }, time);
       });
@@ -47,10 +43,10 @@
 
     var loaderFunction = async function () {
       // ここから実行
-      if ($loader) {
-        await changeClass($loader, "is-active", 1000);
-        await changeClass($loader, "is-close", 2000);
-        await changeClass($loader, "is-hidden", 1000);
+      if (loader) {
+        await changeClass(loader, "is-active", 1000);
+        await changeClass(loader, "is-close", 2000);
+        await changeClass(loader, "is-hidden", 1000);
       }
     };
 
@@ -61,7 +57,7 @@
     } else {
       // テストはこちらをコメントアウト外す
       // loaderFunction();
-      $loader.addClass('is-already');
+      loader.classList.add('is-already');
     }
   };
 
@@ -76,37 +72,44 @@
 
   // Cookie
   growApp.prototype.showCookie = function () {
-    const cookie = $(".js-cookie");
-    const cookieId = $("#cookie");
-    const btn = $("#wt-cli-accept-all-btn");
+    const cookie = document.querySelector(".js-cookie");
+    const cookieId = document.querySelector("#cookie");
+    const btn = document.querySelector("#wt-cli-accept-all-btn");
 
-    if (cookie.length || btn.length) {
+    if (cookie || btn) {
 
       const isCookiePermitted = sessionStorage.getItem('session-cookie-permission');
 
       if (isCookiePermitted) {
-        cookie.addClass("is-hidden");
+        if (cookie) {
+          cookie.classList.add("is-hidden");
+        }
         return;
       }
 
-      btn.click(function (e) {
-        e.preventDefault();
-        sessionStorage.setItem('session-cookie-permission', true);
-        cookie.addClass("is-hidden");
-      });
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          sessionStorage.setItem('session-cookie-permission', true);
+          if (cookie) {
+            cookie.classList.add("is-hidden");
+          }
+        });
+      }
     }
 
     window.onscroll = function (e) {
+      if (!cookieId) {
+        return;
+      }
       if (window.pageYOffset > 100) {
-        cookieId.addClass("is-fixed");
+        cookieId.classList.add("is-fixed");
       } else {
-        cookieId.removeClass("is-fixed");
+        cookieId.classList.remove("is-fixed");
       }
     }
   }
-
-
-  $(function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var app = new growApp();
     app.myCode();
     // app.modalContents();
@@ -114,4 +117,4 @@
     app.showCookie();
     // app.backCache();
   });
-})(jQuery);
+})();
