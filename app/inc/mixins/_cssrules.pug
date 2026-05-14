@@ -13,7 +13,7 @@
         }
         temp_element = classlist[target_component_class_key]
         delete classlist[target_component_class_key]
-        attributes.class = classlist.join(" ")
+        attributes.class = classlist.filter(Boolean).join(" ")
         cssrules.element = temp_element
       }
 
@@ -51,7 +51,7 @@ mixin c(el)
       }
       temp_class = classlist[target_component_class_key]
       delete classlist[target_component_class_key]
-      attributes.class =  classlist.join(" ")
+      attributes.class = classlist.filter(Boolean).join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "c"
       locals.locals.addFile(temp_class, "component")
@@ -77,7 +77,7 @@ mixin pr(el)
       }
       temp_class = classlist[target_component_class_key]
       delete classlist[target_component_class_key]
-      attributes.class =  classlist.join(" ")
+      attributes.class = classlist.filter(Boolean).join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "p"
       locals.locals.addFile(temp_class, "project")
@@ -105,7 +105,7 @@ mixin e(el,component_name,history)
 
       temp_element = classlist[target_component_class_key]
       delete classlist[target_component_class_key]
-      attributes.class =  classlist.join(" ")
+      attributes.class = classlist.filter(Boolean).join(" ")
       cssrules.element = temp_element
     }
     if ( typeof component_name !== "undefined" ){
@@ -157,7 +157,7 @@ mixin l(el)
       }
       temp_class = classlist[target_component_class_key]
       delete classlist[target_component_class_key]
-      attributes.class =  classlist.join(" ")
+      attributes.class = classlist.filter(Boolean).join(" ")
       cssrules.addComponent(temp_class)
       cssrules.layer = "l"
       locals.locals.addFile(temp_class, "layout")
