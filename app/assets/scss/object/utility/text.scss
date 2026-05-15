@@ -88,7 +88,15 @@ body.en{
 
 // 用途別テキストカラー
 .u-text-primary {
+  //WordPress上のテキスト色変更機能でも使うため、class名は原則変更しない。
+  //色変数名はデザインに応じて変更してOK。
   color: $color-primary;
+}
+
+.u-text-accent {
+  //WordPress上のテキスト色変更機能でも使うため、class名は原則変更しない。
+  //色変数名はデザインに応じて変更してOK。
+  color: $color-accent;
 }
 
 .u-text-danger {
