@@ -7,6 +7,12 @@ mixin l-aside
         +e.list-item: +ae("/twocolumns/").list-link 通常リンク
         +e.list-item: +ae("/twocolumns/").list-link.js-current-nav カレントリンク
         +e.list-item: +ae("/twocolumns/page/").list-link 通常リンク
+    +e.block
+      +e.head
+        +e.head-title スクロールスパイ
+      +e.list.js-scrollspy-nav
+        +e.list-item: +ae("#section01").list-link セクション01
+        +e.list-item: +ae("#section02").list-link セクション02
 
     +e.block
       +e.head

@@ -1,6 +1,8 @@
 
 
 .l-aside {
+  height: 100%;//sticky対応のため
+
   @include breakpoint(medium down) {
     padding-inline: map-get($grid-responsive-margin,"md");
   }
