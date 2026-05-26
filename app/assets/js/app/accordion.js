@@ -93,11 +93,6 @@ export default class Accordion {
       } else {
         this.elementInit(target);
       }
-
-      // divかつfalseの時、データ属性を付与
-      if (!target.defaultOpen) {
-        target.attr("data-open", 'true');
-      }
     }
   }
 
@@ -121,11 +116,15 @@ export default class Accordion {
    * ターゲットの破棄
    */
   elementDestroy(target) {
-    target.attr("open", '');
+    if (target.isDetails) {
+      target.attr("open", '');
+    } else {
+      target.attr("data-open", "true");
+    }
 
     target.title.off('click');
     target.title.on('click', (e) => {
-      if (e.target.tagName.toLowerCase() === 'a') {
+      if (e.target.closest('a')) {
         return;
       }
       e.preventDefault(); // デフォルトの動作をキャンセル
@@ -154,6 +153,7 @@ export default class Accordion {
       } else {
         // 通常のアコーディオン (divなど)
         if (el.content.parent().attr("data-open")) {
+          console.log(el.content.parent().attr("data-open"));
           el.content.slideUp(this.options.speed, function () {
             $(this).parent().removeAttr("data-open").show();
           });
