@@ -15,7 +15,7 @@
 }
 
 // デスクトップだけ隠す
-@include breakpoint(medium up) {
+@include breakpoint(large up) {
   .u-hidden-lg {
     display: none !important;
   }
@@ -51,7 +51,7 @@
 }
 
 // デスクトップだけ表示する
-@include breakpoint(medium up) {
+@include breakpoint(large up) {
   .u-visible-lg {
     display: block !important;
     &.is-inlineblock {
