@@ -46,6 +46,50 @@ mixin c_news__block(data)
         +e.block-icon
           span.c-icon-font !{item.icon}
 
+mixin c_news-lg__block(data)
+  each item in data
+    -
+      if (typeof item === "undefined"){
+        var item = {
+          url: "/news/category/page/",
+          date: "2022.01.01",
+          label: ["カテゴリ"],
+          title: "お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。お知らせの投稿タイトルがここに入ります。",
+          excerpt: "簡単な説明テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+          icon: "arrow_forward",
+        }
+      }
+    if item.url
+      +ae(item.url).block
+        if item.img
+          +e.block-image: +img(item.img)
+        +e.block-content-wrapper
+          +e.block-content
+            +e.block-data
+              +e.block-date !{item.date}
+              +e.block-label
+                each label in item.label
+                  span.c-label !{label}
+            +e.block-text !{item.title}
+            +e.block-excerpt !{item.excerpt}
+          +e.block-icon
+            span.c-icon-font !{item.icon}
+    else
+      +e.block
+        if item.img
+          +e.block-image: +img(item.img)
+        +e.block-content-wrapper
+          +e.block-content
+            +e.block-data
+              +e.block-date !{item.date}
+              +e.block-label
+                each label in item.label
+                  span.c-label !{label}
+            +e.block-text !{item.title}
+            +e.block-excerpt !{item.excerpt}
+
+
+
 mixin select-prefectures(optgroup=false)
   -
     //- select-prefectures(optgroup=true) の場合は地域ごとにグループ表示

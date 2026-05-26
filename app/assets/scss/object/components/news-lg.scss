@@ -6,40 +6,78 @@ category: News
 */
 .c-news-lg {
   &__block {
-    display: block;
-    text-decoration: none;
-    font-weight: 400;
-    color: $font-base-color;
+    display: flex;
+    align-items: flex-start;
     padding: 24px 0;
-    @include breakpoint(small only) {
+    gap: 24px;
+
+    @include breakpoint(small down) {
       padding: 16px 0;
+      gap: 16px;
+      flex-direction: column;
     }
 
     &:first-child {
-      padding-top: 0;
+      // padding-top: 0;
     }
 
     @include hover() {
+      opacity: 1;
       background-color: $color-secondary;
     }
   }
 
-  &__sup {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    @include breakpoint(small only) {
-      margin-bottom: 8px;
+  //============================
+  // サムネイル
+  //============================
+  &__block-image {
+    width: calc(200/944 * 100%);
+    flex-shrink: 0;
+    aspect-ratio: 200/136;
+
+    @include breakpoint(small down) {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    img {
+      @include img-option();
     }
   }
 
-  &__label {
+  //============================
+  // コンテンツ本体
+  //============================
 
+  &__block-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: inherit;
   }
 
-  &__date {
+  &__block-content {
+    flex-grow: 1;
+  }
+
+  &__block-data {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  &__block-label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px 4px;
+  }
+
+  &__block-date {
     @include news-date();
-    margin-left: 12px;
 
     &::before {
       content: "schedule";
@@ -49,36 +87,26 @@ category: News
     }
   }
 
-  &__title {
+  &__block-text {
     font-size: 24px;
-    margin-bottom: 8px;
     line-height: 1.5;
-    @include breakpoint(small only) {
+    margin-bottom: 8px;
+    @include breakpoint(small down) {
       font-size: 18px;
       margin-bottom: 4px;
     }
   }
 
-  &__excerpt {
+  &__block-excerpt {
     font-size: 12px;
   }
 
-  // サムネイル有り
-  &.is-image-display {
-    .c-news-lg__block {
-      display: flex;
-      align-items: flex-start;
-      border-bottom: 1px solid $border-base-color;
-    }
-
-    .c-news-lg__image {
-      width: 136px;
-      flex-shrink: 0;
-      margin-right: 24px;
-      @include breakpoint(small only) {
-        width: 100px;
-        margin-right: 24px;
-      }
-    }
+  //============================
+  // アイコン
+  //============================
+  &__block-icon {
+    flex-shrink: 0;
+    align-self: center;
+    text-align: center;
   }
 }
