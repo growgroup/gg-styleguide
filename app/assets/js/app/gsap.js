@@ -30,6 +30,7 @@ export default class GsapAnimation {
    */
   run() {
       this.mainVisual();
+      this.scrollSpy();
       // this.sampleCustomSpring();
   }
 
@@ -56,6 +57,84 @@ export default class GsapAnimation {
           duration: 1,
         }
       )
+  }
+
+  /**
+   * ScrollSpy
+   *
+   * example: 横スクロールあり
+   *
+   * <nav class="js-scrollspy-nav">
+   *   <ul class="js-scrollspy-nav-inner">
+   *     <li><a href="#one">one</a></li>
+   *     <li><a href="#two">two</a></li>
+   *     <li><a href="#three">three</a></li>
+   *   </ul>
+   * </nav>
+   *
+   * example: 横スクロールなし
+   *
+   * <nav class="js-scrollspy-nav">
+   *   <ul>
+   *     <li><a href="#one">one</a></li>
+   *     <li><a href="#two">two</a></li>
+   *     <li><a href="#three">three</a></li>
+   *   </ul>
+   * </nav>
+   *
+   * <section id="one"></section>
+   * <section id="two"></section>
+   * <section id="three"></section>
+   */
+  scrollSpy() {
+    const targetSelector = ".js-scrollspy-nav";
+    const mediaQuery = "(width > 950px)";//PCのみ発火させる
+    // const InnerSelector = ".js-scrollspy-nav-inner"; //ナビ内の横スクロールありの場合は使用
+    const scrollspyNavs = document.querySelectorAll(targetSelector);
+    if (!scrollspyNavs.length) {
+      return;
+    }
+
+    const mm = gsap.matchMedia();
+    mm.add(mediaQuery, () => {
+      scrollspyNavs.forEach((nav) => {
+        const links = nav.querySelectorAll("a[href^='#']");
+        // const scrollWrap = nav.querySelector(InnerSelector); //ナビ内の横スクロールありの場合は使用
+
+        links.forEach((link, index) => {
+          const target = link.getAttribute("href");
+          if (!target || target === "#" || !document.querySelector(target)) {
+            return;
+          }
+
+          ScrollTrigger.create({
+            trigger: target,
+            start: "top 80%",//スクロール位置適宜調整
+            end: "bottom 80%",//スクロール位置適宜調整
+            toggleClass: {
+              targets: link,
+              className: "is-current",
+            },
+            //ナビ内の横スクロールありの場合は使用
+            // onToggle: (self) => {
+            //   //もしscrollWrapが存在するなら、スクロールさせる
+            //   if (!self.isActive || !scrollWrap) {
+            //     return;
+            //   }
+
+            //   const linkLeft = link.offsetLeft;
+            //   const linkWidth = link.offsetWidth;
+            //   const wrapWidth = scrollWrap.clientWidth;
+
+            //   scrollWrap.scrollTo({
+            //     left: linkLeft - wrapWidth / 2 + linkWidth / 2,
+            //     behavior: "smooth",
+            //   });
+            // },
+          });
+        });
+      });
+    });
   }
 
   // /**

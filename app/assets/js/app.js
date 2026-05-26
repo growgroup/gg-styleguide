@@ -10,7 +10,6 @@ import FixedHeader from './app/fixedheader.js';
 import CopyRight from './app/copyright.js';
 import Slidebar from './app/slidebar.js';
 import Tab from './app/tab.js';
-// import ScrollSpy from './app/scroll-spy.js';
 import CurrentNav from './app/current-nav.js';
 import myScript from './scripts.js';
 import SwiperSlider from "./app/swiper.js";
@@ -36,7 +35,6 @@ class App {
     this.modal = new modal();
     this.CopyRight = new CopyRight();
     this.Slidebar = new Slidebar();
-    // this.ScrollSpy = new ScrollSpy();
     this.CurrentNav = new CurrentNav();
     this.Tab = new Tab();
     this.gsap = new GsapAnimation();

@@ -1,4 +1,7 @@
 .c-aside-navs {
+  position: sticky;  //stickyしたいとき用の設定
+  top: var(--header-height);  //stickyしたいとき用の設定
+
 
   &__block {
     &:where(:not(:first-child)) {
