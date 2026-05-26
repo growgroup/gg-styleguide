@@ -5,7 +5,7 @@ export default class CustomFunctions {
    * @param options
    */
   constructor(options) {
-    this.options = $.extend(options);
+    this.options = Object.assign({}, options);
     this.init();
   }
 
@@ -25,28 +25,29 @@ export default class CustomFunctions {
     const triggerbtnName = ".js-header-searchform-open";
     const contentName = ".js-header-searchform-content";
     // const closebtnName = ".js-header-searchform-close";
-    const $triggerbtn = $(triggerbtnName);
-    const $content = $(contentName);
-    // const $closebtn = $(closebtnName);
+    const triggerBtns = document.querySelectorAll(triggerbtnName);
+    // const closeBtns = document.querySelectorAll(closebtnName);
 
-    $triggerbtn.click(function (e) {
-      //トリガーボタンを押したときの動作
-      if($("body").hasClass('is-search-modal-open')){
-        $("body").removeClass("is-search-modal-open");
-        $triggerbtn.removeClass("is-active");
-      }else{
-        $("body").addClass("is-search-modal-open");
-        $triggerbtn.addClass("is-active");
-      }
+    triggerBtns.forEach((triggerBtn) => {
+      triggerBtn.addEventListener('click', function (e) {
+        //トリガーボタンを押したときの動作
+        if(document.body.classList.contains('is-search-modal-open')){
+          document.body.classList.remove("is-search-modal-open");
+          triggerBtns.forEach((button) => button.classList.remove("is-active"));
+        }else{
+          document.body.classList.add("is-search-modal-open");
+          triggerBtns.forEach((button) => button.classList.add("is-active"));
+        }
+      });
     });
-    $(document).on('click', function(e) {
+    document.addEventListener('click', function(e) {
       //bodyに.is-search-modal-openがついているときに、
       //検索フォーム本体でもトリガーボタンでも無い要素が押されたら
-      if(!$(e.target).closest(contentName).length && !$(e.target).closest(triggerbtnName).length){
-        if($("body").hasClass('is-search-modal-open')){
+      if(!e.target.closest(contentName) && !e.target.closest(triggerbtnName)){
+        if(document.body.classList.contains('is-search-modal-open')){
           //bodyの.is-search-modal-openと、トリガーボタンの.is-activeを外す
-          $("body").removeClass("is-search-modal-open");
-          $triggerbtn.removeClass("is-active");
+          document.body.classList.remove("is-search-modal-open");
+          triggerBtns.forEach((button) => button.classList.remove("is-active"));
         }
       }
     });
@@ -61,7 +62,4 @@ export default class CustomFunctions {
 
 
 }
-
-
-
 

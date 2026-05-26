@@ -16,7 +16,7 @@ export default class LenisScroll {
    * @param options
    */
   constructor(options) {
-    this.options = $.extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
     this.init();
   }
 

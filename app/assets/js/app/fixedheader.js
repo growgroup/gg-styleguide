@@ -24,7 +24,7 @@ var defaultOptions = {
 export default class Fixedheader {
 
     constructor(options){
-        this.options = $.extend(defaultOptions, options);
+        this.options = Object.assign(defaultOptions, options);
         this.init();
     }
 
@@ -32,7 +32,7 @@ export default class Fixedheader {
      * 初期化する
      */
     init() {
-        this.target = $(this.options.selector);
+        this.target = document.querySelectorAll(this.options.selector);
 
         this.isFixed = this.isFixed.bind(this);
         this.run = this.run.bind(this);
@@ -50,9 +50,9 @@ export default class Fixedheader {
      */
     run() {
         if (this.isFixed()) {
-            this.target.addClass(this.options.activeClass);
+            this.target.forEach((element) => element.classList.add(this.options.activeClass));
         } else {
-            this.target.removeClass(this.options.activeClass);
+            this.target.forEach((element) => element.classList.remove(this.options.activeClass));
         }
 
         window.requestAnimationFrame(this.run);

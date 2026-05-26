@@ -27,7 +27,7 @@ export default class Scrollable {
   }
 
   init() {
-    const elements = $(this.targetSelector);
+    const elements = document.querySelectorAll(this.targetSelector);
     if (elements.length === 0) return;
     this.run();
   }

@@ -20,7 +20,7 @@ export default class GsapAnimation {
    * @param options
    */
   constructor(options) {
-    this.options = $.extend(options);
+    this.options = Object.assign({}, options);
     this.run();
   }
 

@@ -12,7 +12,7 @@ let defaultOptions = {
 export default class Parallax {
 
   constructor(options) {
-    this.options = $.extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
     this.targetClassName = ".js-parallax";
     this.init();
   }
@@ -20,7 +20,7 @@ export default class Parallax {
    * 初期化
    */
   init() {
-    this.targetEle = $(this.targetClassName);
+    this.targetEle = document.querySelectorAll(this.targetClassName);
     this.run();
   }
 
@@ -82,4 +82,3 @@ export default class Parallax {
     });
   }
 }
-

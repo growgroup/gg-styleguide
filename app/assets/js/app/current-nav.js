@@ -7,13 +7,13 @@ var defaultOptions = {
 export default class CurrentNav {
 
   constructor(options) {
-    this.options = $.extend(defaultOptions, options)
+    this.options = Object.assign(defaultOptions, options)
     this.init();
   }
 
   init() {
     // ナビゲーションのターゲット
-    this.target = $(this.options.targetSelector);
+    this.target = document.querySelectorAll(this.options.targetSelector);
 
     // 付与するクラス
     this.activeClass = this.options.activeClass;
@@ -31,14 +31,16 @@ export default class CurrentNav {
    * @param selector
    */
   setTarget(selector) {
-    this.target = $(selector);
+    this.target = document.querySelectorAll(selector);
   }
 
   /**
    * リセット
    */
   reset() {
-    this.target.removeClass("is-current");
+    this.target.forEach((element) => {
+      element.classList.remove("is-current");
+    });
   }
 
   /**
@@ -47,22 +49,22 @@ export default class CurrentNav {
   run() {
     this.reset();
     for (var i = this.target.length - 1; i >= 0; i--) {
-      var $element = $(this.target[i]);
-      var href = $element.attr('href');
+      var element = this.target[i];
+      var href = element.getAttribute('href');
       href = this.isHttp(href);
       href = this.isIndexPage(href);
 
       //ここでelementを渡す
-      if (this.isMatch(href, $element)) {
-        $(this.target[i]).addClass(this.activeClass);
+      if (this.isMatch(href, element)) {
+        this.target[i].classList.add(this.activeClass);
       }
     }
   }
 
   // ここでelementを受け取る
-  isMatch(path, $element) {
+  isMatch(path, element) {
     path = path.replace(/^(.*(?:\.\.?))/,'')
-    if (this.currentPathname === path || $element.attr(defaultOptions.childrenData) === "true" && this.currentPathname.includes(path)) {
+    if (this.currentPathname === path || element.getAttribute(defaultOptions.childrenData) === "true" && this.currentPathname.includes(path)) {
       return true;
     }
     return false;
