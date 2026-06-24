@@ -114,6 +114,8 @@ export default class Slidebar {
   }
 
   close() {
+    if(!this.isActive) return;
+
     $("body").removeClass('is-slidebar-active');
     this.isActive = false;
     this.menu.attr("inert", "inert");
