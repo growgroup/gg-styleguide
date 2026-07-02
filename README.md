@@ -15,7 +15,7 @@ SCSS & Pug を利用しています。
 
 Homebrew、もしくはその他の方法でインストールすること。
 
-* node >= 20.12.2
+* node >= 22.0.0
 * git
 * editorconfig (各IDE, テキストエディタのプラグイン/パッケージ)
 
