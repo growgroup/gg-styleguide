@@ -1,5 +1,5 @@
 -
-  var className = "l-header"
+  var className = "l-header js-drawer-clone-source"
   var isSimplePages = ["contact", "confirm", "complete"]
   var tag = "div"
   var img = "logo.png"
@@ -52,4 +52,9 @@ header(class=className)
       button.l-header__search.js-header-searchform-open(aria-label="キーワードから検索") <span>キーワードから検索</span>
       +a("/contact/").l-header__button.c-button.is-sm <span class="c-icon-font">mail</span>お問い合わせ
 
-+l_searchform
+  //- スマホメニュー(ボタン)
+  +c_drawer_button
+  +l_searchform
+
+//- スマホメニュー(メニュー)
++c_drawer_menu

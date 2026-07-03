@@ -1,0 +1,190 @@
+.c-drawer-menu {
+  //dialog要素自体＝画面全体に透明で表示されるように設定
+  width: 100%;
+  height: 100%;
+  max-width: initial;
+  max-height: initial;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    @include transition-opacity(.2s, ease-in-out);
+  }
+
+  &.is-open {
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+
+  // スライドインするメニュー本体
+  &__inner {
+    transform: translate3d(0px, -100%, 0px);//初期位置
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: #{$slidebar-header-height}px;
+    height: calc(100dvh - #{$slidebar-header-height}px);
+    background-color: $slidebar-menu-bg;
+    width: $slidebar-menu-width;
+    padding: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    @include transition(.2s, ease-in-out);
+  }
+
+  &.is-open &__inner {
+    transform: translate3d(0, 0, 0);//展開後の位置
+    opacity: 1;
+  }
+
+  // メニュー要素（一番外・全体で共通する設定）
+  &__list {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+
+    :where(&) {
+      a,
+      span,
+      summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: inherit;
+        font-weight: inherit;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+          content: "navigate_next";
+          @include icon-font();
+        }
+      }
+
+      summary::-webkit-details-marker {
+        display: none; // Safariの矢印を非表示
+      }
+    }
+
+    [data-accordion-title] {
+      &::after {
+        content: "add";
+      }
+    }
+
+    [open] > [data-accordion-title] {
+      &::after {
+        content: "remove";
+      }
+    }
+  }
+
+  &__parent {
+    color: $slidebar-menu-text-color;
+    border-bottom: solid 1px rgba($slidebar-menu-text-color, 0.4);
+  }
+
+  &__parent-link {
+    cursor: pointer;
+    padding: 18px 46px 18px 20px;
+  }
+
+  &__children {
+    font-size: 13px;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    display: none;
+  }
+
+  &__child {
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 4px;
+  }
+
+  &__child-link {
+    padding: 13px 48px 13px 20px;
+  }
+
+  &__grandchildren {
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    display: none;
+    border-top: solid 1px $border-base-color;
+    padding-left: 26px;
+  }
+
+  &__grandchild {
+    border-top: solid 1px $border-base-color;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  &__grandchild-link {
+    padding: 12px 40px 12px 0px;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  &__button + &__button {
+    margin-top: 8px;
+  }
+
+  &__button {
+    max-width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    color: $color-primary;
+    background-color: $color-white;
+    padding: 24px;
+    text-align: center;
+
+    &::after {
+      content: none;
+    }
+
+    &__icon {
+      display: inline;
+      vertical-align: -6px;
+      line-height: 1;
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  }
+
+  &__sns-btns {
+    max-width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  &__sns-btn {
+    background: $color-white;
+    color: $color-primary;
+    text-decoration: none;
+    margin: 0 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// 有効時のbodyのスクロールを禁止
+.is-drawer-active {
+  overflow: hidden;
+}
