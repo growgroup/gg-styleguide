@@ -154,8 +154,8 @@
       width: initial;
     }
 
-    &.swiper-slide-active,
-    &.swiper-slide-duplicate-active {
+    // Thumbs モジュールはアクティブなサムネイルに .swiper-slide-thumb-active を付与する
+    &.swiper-slide-thumb-active {
       opacity: 1;
       box-shadow: 0 0 0 2px $color-black;
     }

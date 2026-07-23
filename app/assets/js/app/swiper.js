@@ -1,27 +1,30 @@
-// core version + navigation, pagination modules:
-import Swiper, {
+// Swiper v9 以降、モジュールは 'swiper/modules' から読み込み、
+// 各インスタンスの modules オプションに渡す（v8 までの Swiper.use() は廃止）
+import Swiper from 'swiper';
+import {
   Navigation,
   Pagination,
   Autoplay,
   Controller,
   Keyboard,
   EffectFade,
+  Thumbs,
   // EffectCreative,
   // Scrollbar,
-  // Thumbs,
-} from 'swiper';
+} from 'swiper/modules';
 
-Swiper.use([
+// 各スライダーで利用するモジュール（new Swiper の modules オプションに渡す）
+const modules = [
   Pagination,
   Navigation,
   Autoplay,
   Controller,
   Keyboard,
   EffectFade,
+  Thumbs,
   // EffectCreative,
-  // Scrollbar,
-  // Thumbs
-]);
+  // Scrollbar
+];
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -106,6 +109,7 @@ export default class SwiperSlider {
     const delayTime = 4000;
 
     const swiper = new Swiper(targetSelector, {
+      modules,
       loop: true,
       //loopedSlidesLimit:false, //スライドの複製を無制限にする
       //loopedSlides: 2, //スライドの複製数を指定する
@@ -153,9 +157,44 @@ export default class SwiperSlider {
 
 
 
+  // ループに必要な枚数を満たすようスライドを複製する（v8 の loopedSlides 相当）。
+  // v14 のループは実スライドを並べ替える方式で、少数枚数＋見切れ表示では
+  // 左右の隣スライドが不足して端が空き、シームレスにループできない。
+  // そこで要件を満たすまで元スライドを丸ごと複製して補い、無限ループを成立させる。
+  prepareLoopSlides(target, minSlides) {
+    const wrapper = target.querySelector('.swiper-wrapper');
+    if (!wrapper) {
+      return;
+    }
+    // 既存の複製を除去してオリジナルだけに戻してから複製し直す（レスポンシブ再初期化での累積防止）
+    this.resetLoopSlides(target);
+    const originals = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+    if (originals.length === 0 || originals.length >= minSlides) {
+      return;
+    }
+    // 末尾で同じスライドが隣り合わないよう、オリジナル枚数の倍数になるまで複製する
+    const multiple = Math.ceil(minSlides / originals.length);
+    for (let m = 1; m < multiple; m += 1) {
+      originals.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        clone.setAttribute('data-card-slide-clone', '');
+        wrapper.appendChild(clone);
+      });
+    }
+  }
+
+  // prepareLoopSlides で追加した複製スライドを取り除く（オリジナルのみに戻す）
+  resetLoopSlides(target) {
+    const wrapper = target.querySelector('.swiper-wrapper');
+    if (!wrapper) {
+      return;
+    }
+    wrapper.querySelectorAll('[data-card-slide-clone]').forEach(el => el.remove());
+  }
+
   // スマホとPCで最低限必要なスライド数が異なる場合のサンプル
   //initとrunを分ける（init側は、スライダーの初期化のみを行う）
-  initCardSlider(target, minSlides) {
+  initCardSlider(target, minSlides, originalCount) {
     // ターゲット要素が存在しない場合、nullを返して処理を終了する
     if (!target) {
       return null;
@@ -171,11 +210,18 @@ export default class SwiperSlider {
       return null;
     }
 
+    // pagination を type:'custom' にするとコンテナに swiper-pagination-bullets が付かず、
+    // Swiper 標準CSSのドット間マージン（.swiper-pagination-bullets .swiper-pagination-bullet）が
+    // 効かなくなる。手動で付与して標準の余白を維持する。
+    if (pagination) {
+      pagination.classList.add('swiper-pagination-bullets');
+    }
+
     return new Swiper(target, {
+      modules,
       spaceBetween: 40,
+      // 枚数は呼び出し前に prepareLoopSlides で複製して確保しているため、常に無限ループさせる
       loop: true,
-      // loopedSlidesLimit:false, //スライドの複製を無制限にする
-      // loopedSlides: 2, //スライドの複製数を指定する
 
       //*ポーズボタンのサンプル用に自動再生を設定しています。要件になければ削除してください。
       autoplay: {
@@ -190,6 +236,19 @@ export default class SwiperSlider {
       pagination: {
         el: pagination,
         clickable: false,
+        // prepareLoopSlides で複製した分だけドットが増えてしまうため、
+        // 元スライド枚数（originalCount）だけドットを描画する。複製は同じ並びの
+        // 繰り返しなので realIndex % originalCount で対応する元スライドを特定できる。
+        type: 'custom',
+        renderCustom: (sw) => {
+          const count = originalCount || sw.slides.length;
+          const active = sw.realIndex % count;
+          let html = '';
+          for (let i = 0; i < count; i += 1) {
+            html += `<span class="swiper-pagination-bullet${i === active ? ' swiper-pagination-bullet-active' : ''}"></span>`;
+          }
+          return html;
+        },
       },
       threshold: 10, // allowTouchMoveがtrueのとき、スライド内のリンクがクリックできない問題の解決
       keyboard: {
@@ -202,10 +261,12 @@ export default class SwiperSlider {
           centeredSlides: true,
           spaceBetween: 16,
         },
-        950: {
+        750: {
           spaceBetween: 40,
           slidesPerView: 3,
-          loopAdditionalSlides: 3,
+          // v14 の loop は「slidesPerView + slidesPerGroup + loopAdditionalSlides」枚以上ないと
+          // 無効化される。loopAdditionalSlides を足すと必要枚数が増えるだけで、スライド数が
+          // 少ないと逆に loop が壊れる（「次へ」が途中で止まる）ため指定しない。
         }
       },
     });
@@ -217,16 +278,40 @@ export default class SwiperSlider {
     const targetSelector = '.js-card-slider';
     const sliders = document.querySelectorAll(targetSelector);
 
+    // v14 のループは「実スライド数 >= slidesPerView + loopedSlides」でないと成立しない。
+    // ブレークポイントで必要枚数が異なるため、満たない場合は prepareLoopSlides で
+    // スライドを複製してから初期化し、少数枚数でも見切れ表示のまま無限ループさせる。
+    //   - SP : slidesPerView 1.25 + centeredSlides → 5枚以上必要
+    //   - PC : slidesPerView 3                     → 4枚以上必要
+    const spLoopMinSlides = 5;
+    const pcLoopMinSlides = 4;
+
+    // スライダー化する最低枚数（これ未満はスライダーにせず素の表示のまま）
+    //   - SP : 2枚以上でスライダー化
+    //   - PC : 4枚以上でスライダー化（未満は 3カラムグリッド表示のまま）
+    const spMinSlides = 2;
+    const pcMinSlides = 4;
+
     sliders.forEach(slider => {
       let swiper = null;
+      // オリジナル枚数（複製前）。responsiveMatch より前に取得するのでクローンは含まない
+      const slideCount = slider.querySelectorAll('.swiper-slide').length;
 
       utils.responsiveMatch(
         // SP (mobile) の場合の処理
         () => {
           if (swiper) {
             swiper.destroy();
+            swiper = null;
           }
-          swiper = this.initCardSlider(slider, 2);
+          // SP の最低枚数に満たなければスライダー化しない
+          if (slideCount < spMinSlides) {
+            this.resetLoopSlides(slider);
+            return;
+          }
+          // 無限ループに必要な枚数まで複製してから初期化する
+          this.prepareLoopSlides(slider, spLoopMinSlides);
+          swiper = this.initCardSlider(slider, spMinSlides, slideCount);
           // ナビゲーション表示非表示方法参考
           //  &__slider-nav {
           //     display: none;
@@ -240,9 +325,18 @@ export default class SwiperSlider {
         () => {
           if (swiper) {
             swiper.destroy();
+            swiper = null;
           }
-          swiper = this.initCardSlider(slider, 4);
-        }
+          // PC の最低枚数未満はスライダー化しない（グリッド表示のまま）
+          // （.swiper-initialized が付かないため .c-card__slider は既定の 3カラムグリッド表示に戻る）
+          if (slideCount < pcMinSlides) {
+            this.resetLoopSlides(slider);
+            return;
+          }
+          // 無限ループに必要な枚数まで複製してから初期化する
+          this.prepareLoopSlides(slider, pcLoopMinSlides);
+          swiper = this.initCardSlider(slider, pcMinSlides, slideCount);
+        },
       );
 
       //★ポーズボタン実装があるとき
@@ -292,9 +386,8 @@ export default class SwiperSlider {
       const delayTime = 4000;
 
       const swiper = new Swiper(target, {
+        modules,
         loop: true,
-        //loopedSlidesLimit:false, //スライドの複製を無制限にする
-        //loopedSlides: 2, //スライドの複製数を指定する
         effect: 'slide',
         autoplay: {
           delay: delayTime, // ４秒後に次の画像へ
@@ -315,7 +408,6 @@ export default class SwiperSlider {
   // サムネイルもメイン部分も両方スライドするギャラリーのサンプル
   galleryImageSlider() {
     const mainMinSlides = 2;
-    const thumbnailMinSlides = 7;
 
     const galleryGroupSelector = '.js-gallery-image-group';
     const galleryGroup = document.querySelectorAll(galleryGroupSelector);
@@ -329,19 +421,42 @@ export default class SwiperSlider {
       const thumbnailNext = group.querySelector('.js-gallery-image-thumbnail-next');
       const mainTargetSlides = mainTarget.querySelectorAll('.swiper-slide');
       const thumbnailTargetSlides = thumbnailTarget.querySelectorAll('.swiper-slide');
-      let thumbnailLoop = true;
+      const thumbnailPerView = 6;
 
-      //メインスライドが少ない場合はそもそも発火しない（サムネイルの方はまた別）
+      //メインスライドが少ない場合はそもそも発火しない
       if (mainTargetSlides.length < mainMinSlides) {
         return;
       }
 
+      // v14 の loop は実スライドを動的に並べ替える方式（旧 loopedSlidesLimit のような
+      // 無制限クローンは不可）。slidesPerView + 1 枚以上ないと loop が無効化され警告が出るため、
+      // 枚数が足りるときだけ loop を有効にする。
+      const thumbnailLoop = thumbnailTargetSlides.length >= thumbnailPerView + 1;
 
-      //メイン側のスライダーを初期化
+      // メイン↔サムネの連携は Thumbs モジュールで行う。
+      // Swiper v9 以降、双方向 controller での連携はアンチパターン。特に v11+ の動的 loop や
+      // slidesPerView が異なるスライダー同士では controller の translate 補間で同期がずれ、
+      // メイン操作時にサムネのアクティブ表示・位置が破綻するため Thumbs に統一する。
+      // next で1枚ずつ送るため freeMode は使わず、slidesPerGroup は既定の 1 のままにする。
+      // ※ Thumbs で参照するため、サムネ側をメイン側より先に初期化すること。
+      const thumbnailSwiper = new Swiper(thumbnailTarget, {
+        modules,
+        speed: 500,
+        loop: thumbnailLoop,
+        threshold: 10,
+        slidesPerView: thumbnailPerView,
+        spaceBetween: 4,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        // サムネの前へ/次へは「メインを送る」ために使うため、サムネ自身の navigation には割り当てない
+        // （Thumbs ではサムネ nav は本来ストリップのスクロール用で、メインとは同期しないため）。
+      });
+
+      //メイン側のスライダーを初期化（サムネと Thumbs で連携）
       const mainSwiper = new Swiper(mainTarget, {
+        modules,
         speed: 500,
         loop: true,
-        loopedSlides: mainTargetSlides.length,
         slidesPerView: 1,
         spaceBetween: 4,
         threshold: 10,
@@ -349,54 +464,17 @@ export default class SwiperSlider {
           nextEl: mainNext,
           prevEl: mainPrev,
         },
+        thumbs: {
+          swiper: thumbnailSwiper,
+        },
       });
 
-
-      //サムネイル側のスライダーを初期化
-      if (thumbnailTargetSlides.length >= thumbnailMinSlides) {
-        const thumbnailSwiper = new Swiper(thumbnailTarget, {
-          speed: 500,
-          loop: thumbnailLoop,
-          threshold: 10,
-          slidesPerView: 6,
-
-          slideToClickedSlide: true,
-          spaceBetween: 4,
-          // centeredSlides: true,
-          loopedSlidesLimit: false, //スライドの複製を無制限にする
-          loopedSlides: mainTargetSlides.length, //メインスライダーと同じ複製数に設定
-          controller: {
-            control: mainSwiper,
-          },
-          navigation: {
-            nextEl: thumbnailNext,
-            prevEl: thumbnailPrev,
-          },
-        });
-
-        mainSwiper.controller.control = thumbnailSwiper;
-
+      // サムネの前へ/次へでもメインを1枚ずつ送る（サムネのハイライト・スクロールは Thumbs が追従する）
+      if (thumbnailNext) {
+        thumbnailNext.addEventListener('click', () => mainSwiper.slideNext());
       }
-      else {
-        //サムネイルスライダーの1枚目にactiveクラスを付与する
-        thumbnailTargetSlides[0].classList.add('swiper-slide-active');
-
-        //サムネイルスライダーを初期化せずに、サムネイルリストをクリックしたらメインスライダーを切り替えるようにする
-        thumbnailTargetSlides.forEach((slide, index) => {
-          slide.addEventListener('click', () => {
-            mainSwiper.slideTo(index);
-            thumbnailTargetSlides.forEach((slide, index) => {
-              slide.classList.toggle('swiper-slide-active', index === current);
-            });
-          });
-        });
-        //メインスライダーが切り替わったらサムネイルスライダーを更新する
-        mainSwiper.on('slideChange', () => {
-          const current = mainSwiper.realIndex;
-          thumbnailTargetSlides.forEach((slide, index) => {
-            slide.classList.toggle('swiper-slide-active', index === current);
-          });
-        });
+      if (thumbnailPrev) {
+        thumbnailPrev.addEventListener('click', () => mainSwiper.slidePrev());
       }
 
       // 自動再生するタイプだともしかして以下いるかも
