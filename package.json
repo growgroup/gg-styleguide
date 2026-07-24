@@ -43,7 +43,6 @@
     "css-loader": "^7.1.2",
     "fast-sass-loader": "^2.0.1",
     "file-loader": "^6.2.0",
-    "import-glob-loader": "^1.1.0",
     "jquery": "^3.7.1",
     "js-beautify": "^1.15.4",
     "markuplint": "^2.11.4",

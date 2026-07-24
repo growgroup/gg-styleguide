@@ -32,11 +32,6 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(scss|css|sass)/,
-          enforce: 'pre',
-          loader: 'import-glob-loader'
-        },
-        {
           test: /\.js$/,
           exclude: /node_modules/,
           enforce: 'pre',
