@@ -48,8 +48,28 @@ mixin img(file,alt,width,height)
   img(src=src, alt!=alt, width!=width, height!=height)&attributes(attributes)
 
 //- picture タグ
-//-+picture("img-sample-pc.jpg", "img-sample-sp.jpg","text", 1920, 1080, 750, 750)
-//-PC/SPでaspect比共通ならSP用のwidthとheightは不要
+  オプションはオブジェクトで渡す
+  pc                 : PC用画像ファイル名（/assets/images/ 起点。http 始まりはそのまま使用）
+  sp                 : SP用画像ファイル名（同上）
+  alt                : alt属性の値（省略時は ""）
+  width / height     : PC用画像の実サイズ。img に付与
+  widthSp / heightSp : SP用画像の実サイズ。source に付与
+                       PC/SPでaspect比が共通ならSP用のwidthとheightは不要
+  media              : 画像を切り替える media クエリ
+                       省略時   → "(width < 46.875em)" = 750px 未満で SP 画像
+                       "medium" → "(width < 59.375em)" = 950px 未満で SP 画像
+                       任意の media クエリ文字列も直接指定可
+  fetchpriority      : img に付与（他のリソースより優先に読ませたい場合 "high" を指定）
+
+  +picture({
+    pc: "img-sample-pc.jpg",
+    sp: "img-sample-sp.jpg",
+    alt: "テキスト",
+    width: 1920,
+    height: 1080,
+    widthSp: 750,
+    heightSp: 750
+  })
 mixin picture(opts)
   -
     opts = opts || {}
