@@ -49,17 +49,18 @@ mixin img(file,alt,width,height)
 
 //- picture タグ
   オプションはオブジェクトで渡す
-  pc                 : PC用画像ファイル名（/assets/images/ 起点。http 始まりはそのまま使用）
-  sp                 : SP用画像ファイル名（同上）
-  alt                : alt属性の値（省略時は ""）
-  width / height     : PC用画像の実サイズ。img に付与
-  widthSp / heightSp : SP用画像の実サイズ。source に付与
-                       PC/SPでaspect比が共通ならSP用のwidthとheightは不要
-  media              : 画像を切り替える media クエリ
-                       省略時   → "(width < 46.875em)" = 750px 未満で SP 画像
-                       "medium" → "(width < 59.375em)" = 950px 未満で SP 画像
-                       任意の media クエリ文字列も直接指定可
-  fetchpriority      : img に付与（他のリソースより優先に読ませたい場合 "high" を指定）
+  pc                         : PC用画像ファイル名（/assets/images/ 起点。http 始まりはそのまま使用）
+  sp                         : SP用画像ファイル名（同上）
+  alt (省略可)                : alt属性の値（省略時は ""）
+  width / height (省略可)     : PC用画像の実サイズ。img に付与
+                                CLS防止のため指定推奨
+  widthSp / heightSp (省略可) : SP用画像の実サイズ。source に付与
+                                PC/SPでaspect比が共通ならSP用のwidthとheightは不要
+  media (省略可)              : 画像を切り替える media クエリ
+                                省略時   → "(width < 46.875em)" = 750px 未満で SP 画像
+                                "medium" → "(width < 59.375em)" = 950px 未満で SP 画像
+                                任意の media クエリ文字列も直接指定可
+  fetchpriority (省略可)      : img に付与（他のリソースより優先に読ませたい場合 "high" を指定）
 
   +picture({
     pc: "img-sample-pc.jpg",
