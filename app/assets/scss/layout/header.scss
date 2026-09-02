@@ -207,6 +207,7 @@ category: Layout
       color: $color-white;
       font-size: min-vw(14);
       max-width: min-vw(196);
+      padding-right: 32px;
 
       &::after {
         display: none;
@@ -216,7 +217,7 @@ category: Layout
     //*アイコン
     span {
       font-size: 16px;
-      padding-right: min-vw(8);
+      margin-right: min-vw(8);
       vertical-align: sub;
     }
   }
