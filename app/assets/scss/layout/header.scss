@@ -216,7 +216,8 @@ category: Layout
     //*アイコン
     span {
       font-size: 16px;
-      padding-right: min-vw(8);
+      //paddingだとアイコンの1emボックスを内側に削ってしまうためmarginで空ける
+      margin-right: min-vw(8);
       vertical-align: sub;
     }
   }

@@ -3,15 +3,37 @@
 */
 @use "pkg:@fontsource-utils/scss" as fontsource;
 
-//@use "pkg:@fontsource/material-icons/scss" as material-icons;
-//@use "pkg:@fontsource/material-icons-round/scss" as material-icons;
-@use "pkg:@fontsource/material-icons-outlined/scss" as material-icons;
-//@use "pkg:@fontsource/material-icons-sharp/scss" as material-icons;
-//@use "pkg:@fontsource/material-icons-two-tone/scss" as material-icons;
+//- 使用するアイコンフォントを1つだけ有効化する
+//- Material Symbols と Material Icons は併用しない（表示の軽快さに影響が出るため）
+//- 切り替えた場合は foundation/_settings.scss の $font-icon-family も合わせて変更する
 
-//font-displayの値を変更
+// Material Symbols 可変フォント版（デフォルト）
+@use "pkg:@fontsource-variable/material-symbols-outlined/scss" as icons;
+//@use "pkg:@fontsource-variable/material-symbols-rounded/scss" as icons;
+//@use "pkg:@fontsource-variable/material-symbols-sharp/scss" as icons;
+
+// Material Symbols 静的版
+// 約320KBと軽いが Weight / Fill を変更できない（font-variation-settings が無効）
+// 有効化する際は下記 faces() の $axes 行を削除し、$font-icon-family の "Variable" を外す
+//@use "pkg:@fontsource/material-symbols-outlined/scss" as icons;
+//@use "pkg:@fontsource/material-symbols-rounded/scss" as icons;
+//@use "pkg:@fontsource/material-symbols-sharp/scss" as icons;
+
+// Material Icons（旧デフォルト。リガチャ名はSymbolsと概ね互換）
+// 有効化する際は下記 faces() の $axes 行を削除する
+//@use "pkg:@fontsource/material-icons/scss" as icons;
+//@use "pkg:@fontsource/material-icons-round/scss" as icons;
+//@use "pkg:@fontsource/material-icons-outlined/scss" as icons;
+//@use "pkg:@fontsource/material-icons-sharp/scss" as icons;
+//@use "pkg:@fontsource/material-icons-two-tone/scss" as icons;
+
+//$display: アイコンフォントなので block を使う（swap にするとアイコン名のテキストが露出する）
+//$axes: 読み込む可変軸。Fill を使うデザインは (FILL, wght) で約1.1MB。
+//Fill を一切使わないデザインなら wght のみにすると約750KBに軽くできる。
+//GRAD / opsz は原則変更しない（full 指定となり約3.9MBまで膨らむため）。
 
 @include fontsource.faces(
-  $metadata: material-icons.$metadata,
+  $metadata: icons.$metadata,
   $display: block,
+  $axes: (FILL, wght),
 );

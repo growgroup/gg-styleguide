@@ -150,7 +150,7 @@ $font-base-letter-spacing: 0 !default;
 $font-base-color: $color-black !default;
 $font-base-family: "Noto Sans JP Variable", sans-serif !default;
 $font-base-weight: normal !default;
-$font-icon-family: "Material Icons" !default;
+$font-icon-family: "Material Symbols Outlined Variable" !default;
 ```
 
 ### 3.3 ブレイクポイント
@@ -376,7 +376,9 @@ category: Category
 
 ## 8. アイコンフォント
 
-Material Iconsを使用しています。
+Material Symbols の可変フォント版（`@fontsource-variable/material-symbols-outlined`）を使用しています。
+Material Icons との併用は行いません。Outlined / Rounded / Sharp もサイト内で1種類のみ使用します。
+バリアントの切り替えは `app/assets/scss/font.scss` の `@use` と `$font-icon-family` を対応させて行います。
 
 ```scss
 // アイコンフォント出力
@@ -390,7 +392,16 @@ Material Iconsを使用しています。
   @include icon-font-style;
   @include icon-font-size-control;
 }
+
+// 一部のアイコンのみ塗り（Fill:1）にする
+.c-icon-font.is-fill {
+  font-variation-settings: 'FILL' 1;
+}
 ```
+
+サイト全体の標準が Weight:400 / Fill:0 以外の場合は、`foundation/_webfont.scss` の `icon-font()` 内の
+`font-weight` / `font-variation-settings` のコメントを解除して調整します。
+Weight は100単位、Fill は 0 か 1 で指定し、GRAD / opsz は原則変更しません（フォントサイズが約3.9MBまで増えるため）。
 
 ---
 

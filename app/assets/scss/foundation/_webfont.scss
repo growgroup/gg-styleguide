@@ -6,10 +6,15 @@
 
 
 // アイコンフォント利用箇所では基本的にこちらを挿入
+// Material Symbols のデフォルトは Weight:400 / Fill:0
+// サイト内の標準的なアイコンがそれ以外の場合のみ、下記のコメントを解除して調整する
+// Weight は100単位、Fill は 0 か 1 で指定する（GRAD / opsz は原則変更しない）
 @mixin icon-font() {
   font-family: $font-icon-family;
   @include icon-font-style();
   @include icon-font-size-control();
+  //font-weight: 200;
+  //font-variation-settings: 'FILL' 1;
 }
 
 //通常 icon-fontのmixinで読み込む
@@ -20,6 +25,10 @@
   letter-spacing: 0;
   text-transform: none;
   overflow: hidden;
+  font-feature-settings: 'liga'; // Material Symbols はリガチャでアイコン名を解決する
+  //normalizeの overflow-wrap: anywhere で1em幅のボックス内でアイコン名が折り返されると
+  //リガチャが解除されて "mail" のような文字が露出するため、折り返しを禁止する
+  white-space: nowrap;
 }
 
 //通常 icon-fontのmixinで読み込む

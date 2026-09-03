@@ -1,4 +1,4 @@
-//Material Icons
+//Material Symbols（アイコンフォント）
 import "../scss/font.scss";
 
 

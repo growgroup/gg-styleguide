@@ -78,7 +78,18 @@ $font-base-line-height-en: 1.8 !default; // body.en の行間（本文の行間�
 $font-base-letter-spacing-en: 0 !default; // body.en の基本文字間隔
 
 //icon
-$font-icon-family: 'Material Icons Outlined' !default; // アイコンフォントファミリー
+$font-icon-family: 'Material Symbols Outlined Variable' !default; // アイコンフォントファミリー
+//- 切り替える場合は font.scss の @use も合わせて変更する
+//$font-icon-family: 'Material Symbols Rounded Variable' !default;
+//$font-icon-family: 'Material Symbols Sharp Variable' !default;
+//$font-icon-family: 'Material Symbols Outlined' !default; // 静的版（軸なし）
+//$font-icon-family: 'Material Symbols Rounded' !default;
+//$font-icon-family: 'Material Symbols Sharp' !default;
+//$font-icon-family: 'Material Icons' !default; // 旧: Material Icons
+//$font-icon-family: 'Material Icons Round' !default;
+//$font-icon-family: 'Material Icons Outlined' !default;
+//$font-icon-family: 'Material Icons Sharp' !default;
+//$font-icon-family: 'Material Icons Two Tone' !default;
 
 // ==============================
 // # 3. border
