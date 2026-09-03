@@ -1,11 +1,16 @@
 // ex.
 // span.c-icon-font close
+// span.c-icon-font.is-fill favorite
 
 .c-icon-font {
   @include icon-font();
 
-  //アイコンを複数混在させる必要がある場合
-  //&.is-outlined{
-  //font-family: 'Material Icons Outlined';
-  //}
+  //基本 Fill:0 だが一部のアイコンのみ Fill:1 にする場合のバリエーション
+  //フォントの追加読み込みなしで塗り／線を使い分けられる
+  &.is-fill {
+    font-variation-settings: 'FILL' 1;
+  }
 }
+
+//- Material Symbols と Material Icons、および Outlined / Rounded / Sharp の併用は行わない
+//- サイト内で利用するアイコンフォントは1種類、設定のバリエーションは2つ程度までにする
